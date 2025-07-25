@@ -36,8 +36,8 @@ export default function RootLayout({
       <body className={inter.className}>
         <ClientLayout>
           <Navbar />
-          {/* Add pt-16 to offset for the fixed header (h-16) */}
-          <main className="flex-1 pt-16">{children}</main>
+          {/* Changed pt-16 to pt-20 to match the new taller navbar */}
+          <main>{children}</main>
           <Footer />
         </ClientLayout>
       </body>

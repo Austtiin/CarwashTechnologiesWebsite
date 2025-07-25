@@ -7,25 +7,20 @@
   html {
     scroll-behavior: smooth;
   }
-  
   body {
-    @apply bg-white text-secondary-dark;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    @apply bg-white text-gray-800 antialiased;
   }
 }
 
 @layer components {
-  /* Global Button Styles using theme colors */
+  /* Global Button Styles with a consistent yellow theme */
   .btn-primary {
-    @apply inline-block rounded-lg bg-primary px-6 py-3 text-center font-semibold text-secondary-dark shadow-md transition-all duration-300 hover:bg-primary-dark hover:scale-105;
+    @apply inline-block rounded-lg bg-yellow-400 px-6 py-3 text-center font-semibold text-gray-900 shadow-md transition-all duration-300 hover:bg-yellow-500 hover:scale-105;
   }
 
   .btn-secondary {
-    @apply inline-block rounded-lg bg-secondary-light px-6 py-3 text-center font-semibold text-white transition-all duration-300 hover:bg-secondary;
+    @apply inline-block rounded-lg border-2 border-gray-800 bg-transparent px-6 py-3 text-center font-semibold text-gray-800 transition-all duration-300 hover:bg-gray-800 hover:text-white;
   }
-
-  /* ... other component styles ... */
 
   /* Global Container Padding */
   .container-padding {
@@ -34,18 +29,18 @@
 
   /* Typography */
   h1, h2, h3, h4, h5, h6 {
-    @apply font-bold tracking-tight;
+    @apply font-bold tracking-tight text-gray-900;
   }
 
   h1 { @apply text-4xl sm:text-5xl lg:text-6xl; }
   h2 { @apply text-3xl sm:text-4xl; }
   h3 { @apply text-xl sm:text-2xl; }
-  h4 { @apply text-lg sm:text-xl; }
-  p { @apply leading-relaxed text-secondary-light; }
+  p { @apply leading-relaxed text-gray-600; }
 }
 
 @layer utilities {
+  /* A nice yellow-to-amber gradient */
   .text-gradient {
-    @apply bg-gradient-to-r from-primary to-primary-dark bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-yellow-500 to-amber-600 bg-clip-text text-transparent;
   }
 }
