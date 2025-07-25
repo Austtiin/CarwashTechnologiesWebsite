@@ -34,7 +34,12 @@ const RecentProjects = () => {
       <h2 className="text-2xl font-bold mb-4">Recent Projects</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {recentProjectsData.map((project) => (
-          <Card key={project.id} title={project.title} description={project.description} imageUrl={project.imageUrl} />
+          <Card
+            key={project.id}
+            title={project.title}
+            description={project.description}
+            imageUrl={project.imageUrl}
+          />
         ))}
       </div>
     </section>
