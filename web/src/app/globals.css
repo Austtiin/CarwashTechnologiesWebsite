@@ -1,21 +1,52 @@
 /* src/app/globals.css */
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
 
-@layer base {
+/* This one line imports all of Tailwind's base, component, and utility styles */
+@import "tailwindcss";
+
+/* In Tailwind v4, we use standard CSS custom properties.
+  We can use the theme() function to access our design tokens.
+*/
+
+/* Base styles for headings */
+h1 {
+  font-size: theme(fontSize.4xl);
+  font-weight: theme(fontWeight.bold);
+  letter-spacing: theme(letterSpacing.tight);
+  color: theme(colors.gray.900);
+}
+
+@media (min-width: 640px) {
   h1 {
-    @apply text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl;
-  }
-  
-  p {
-    @apply text-lg text-gray-600;
+    font-size: theme(fontSize.5xl);
   }
 }
 
-@layer components {
-  /* Yellow button style */
-  .btn-primary {
-    @apply inline-block rounded-lg bg-yellow-400 px-6 py-3 text-center font-semibold text-gray-900 shadow-sm transition hover:bg-yellow-500;
+@media (min-width: 1024px) {
+  h1 {
+    font-size: theme(fontSize.6xl);
   }
+}
+
+p {
+  font-size: theme(fontSize.lg);
+  color: theme(colors.gray.600);
+}
+
+/* Our custom button class */
+.btn-primary {
+  display: inline-block;
+  border-radius: theme(borderRadius.lg);
+  background-color: theme(colors.yellow.400);
+  padding: 0.75rem 1.5rem; /* Equivalent to py-3 px-6 */
+  text-align: center;
+  font-weight: theme(fontWeight.semibold);
+  color: theme(colors.gray.900);
+  box-shadow: theme(boxShadow.sm);
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.btn-primary:hover {
+  background-color: theme(colors.yellow.500);
 }

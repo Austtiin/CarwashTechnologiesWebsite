@@ -1,10 +1,18 @@
-// src/app/page.tsx
-import HeroHome from "@/./app/components/hero-home";
+import React from 'react';
+import HeroSection from './components/home/hero-section';
+import ServicesOverview from './components/home/services-overview';
+import RecentProjects from './components/home/recent-projects';
+import ChemicalsSection from './components/home/chemicals-section';
 
-export default function Home() {
+const HomePage = () => {
   return (
-    <>
-      <HeroHome />
-    </>
+    <div>
+      <HeroSection />
+      <ServicesOverview />
+      <RecentProjects />
+      <ChemicalsSection />
+    </div>
   );
-}
+};
+
+export default HomePage;
