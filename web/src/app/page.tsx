@@ -38,7 +38,7 @@ export default function Home() {
           colorStops={["#017cff", "#f85656", "#1cc251"]} // Yellow theme colors
           blend={0.7}
           amplitude={0.25}
-          speed={15.0}
+          speed={16.0}
           time={time}
         />
       </div>
@@ -214,16 +214,17 @@ export default function Home() {
               </ul>
               <a href="/chemicals" className="btn-primary">Explore Chemicals</a>
             </div>
+            
             <div className="bg-white/90 backdrop-blur-sm p-8 rounded-lg shadow-lg">
               <div className="text-center">
                 <div className="w-30 h-30 flex items-center justify-center mx-auto mb-4">
                   <div className="mx-auto flex items-center justify-center p-2">
-                    <img src="/LogoSonnys.jpg" alt="Chemical Icon" className="max-w-full max-h-full" />
-                    <img src="/avw-logo.jpg" alt="Chemical Icon" className="max-w-full max-h-full" />
-                    <img src="/OIP.jpg" alt="Chemical Icon" className="max-w-full max-h-full" />
-                    <img src="/peco-logo.jpg" alt="Chemical Icon" className="max-w-full max-h-full" />
-                    <img src="/logoPDQ.jpg" alt="Chemical Icon" className="max-w-full max-h-full" />
-                    <img src="/logoBelanger.jpg" alt="Chemical Icon" className="max-w-full max-h-full" />
+                    <img src="../../public/logoSonnys.jpg" alt="Chemical Icon" className="max-w-full max-h-full" />
+                    <img src="../../public/avw-logo.jpg" alt="Chemical Icon" className="max-w-full max-h-full" />
+                    <img src="../../public/OIP.jpg" alt="Chemical Icon" className="max-w-full max-h-full" />
+                    <img src="../../public/peco-logo.jpg" alt="Chemical Icon" className="max-w-full max-h-full" />
+                    <img src="../../public/logoPDQ.jpg" alt="Chemical Icon" className="max-w-full max-h-full" />
+                    <img src="../../public/logoBelanger.jpg" alt="Chemical Icon" className="max-w-full max-h-full" />
                   </div>
                 </div>
                 <h3 className="text-xl font-semibold mb-2">Quality Guarantee</h3>
