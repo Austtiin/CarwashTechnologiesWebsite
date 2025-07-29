@@ -84,7 +84,7 @@ export default function Home() {
             <div className="fade-in-up flex justify-center">
               <div className="flex items-center justify-center w-[400px] h-[400px] bg-white/10  rounded-2xl p-3">
                 <img
-                  src="/Carwash-Fuhr (1)_edited.webp"
+                  src="/logoCWT.webp"
                   alt="Carwash Technologies Logo"
                   className="max-w-full max-h-full object-contain drop-shadow-2xl"
                 />
@@ -217,19 +217,16 @@ export default function Home() {
             
             <div className="bg-white/90 backdrop-blur-sm p-8 rounded-lg shadow-lg">
               <div className="text-center">
-                <div className="w-30 h-30 flex items-center justify-center mx-auto mb-4">
-                  <div className="mx-auto flex items-center justify-center p-2">
-                    <img src="/logoSonnys.webp" alt="Chemical Icon" className="max-w-full max-h-full" />
-                    <img src="/avw-logo.webp" alt="Chemical Icon" className="max-w-full max-h-full" />
-                    <img src="/OIP.webp" alt="Chemical Icon" className="max-w-full max-h-full" />
-                    <img src="/peco-logo.webp" alt="Chemical Icon" className="max-w-full max-h-full" />
-                    <img src="/logoPDQ.webp" alt="Chemical Icon" className="max-w-full max-h-full" />
-                    <img src="/logoBelanger.webp" alt="Chemical Icon" className="max-w-full max-h-full" />
-                  </div>
+              <div className="w-30 h-30 flex items-center-center mx-auto mb-5">
+                <div className="mx-auto flex items-center justify-center p-1 gap-6">
+                    <img src="/logoSimo.webp" alt="Chemical Icon" className="max-w-full max-h-full" /> 
+                <img src="/logoCWT.webp" alt="Chemical Icon" className="max-w-full max-h-full" />
+                <img src="/logoVertech.webp" alt="Chemical Icon" className="max-w-full max-h-full" />
                 </div>
+              </div>
                 <h3 className="text-xl font-semibold mb-2">Quality Guarantee</h3>
                 <p className="text-gray-600">
-                  All of our washes and chemicals meet the highest industry standards for performance and environmental safety.
+                  All of our chemicals meet the highest industry standards for performance and environmental safety.
                 </p>
               </div>
             </div>
@@ -255,24 +252,30 @@ export default function Home() {
             className="text-xl mb-8 text-gray-300"
           />
 
-          <div className="grid md:grid-cols-3 gap-8 mb-8">
+          <div className="grid md:grid-cols-3 gap-3 mb-8">
             <div>
                 <h3 className="text-xl font-semibold mb-2 text-yellow-400 border-b-2 border-yellow-400 inline-block pb-1">Phone</h3>
               <p className="text-lg">(612) 408-9010</p>
             </div>
             <div>
-              <h3 className="text-xl font-semibold mb-2 text-yellow-400 border-b-2 border-yellow-400 inline-block pb-1">Email</h3>
-              <p className="text-lg">info@carwashtechnologiesmn.com</p>
+              <h3 className="text-xl font-semibold mb-2 text-yellow-400 border-b-2 border-yellow-400 inline-block pb-1">Contact Us</h3>
+                {/* Contact Us button placed under the "Contact Us" label */}
+                <div className="flex flex-col items-center mt-4 space-y-2">
+                  <a href="/contact" className="btn-primary block">Contact Us Today</a>
+                </div>
             </div>
+            
             <div>
               <h3 className="text-xl font-semibold mb-2 text-yellow-400 border-b-2 border-yellow-400 inline-block pb-1">Address</h3>
               <p className="text-lg">322 19th St. SW<br />Forest Lake, MN 55025</p>
+              
             </div>
+            
           </div>
-
-          <a href="/contact" className="btn-primary">Contact Us Today</a>
+          
         </div>
       </section>
     </div>
   );
 }
+

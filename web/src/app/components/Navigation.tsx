@@ -15,7 +15,7 @@ const Navbar = () => {
           {/* Logo / Business Name */}
           <div className="flex items-center space-x-3">
             <Image
-              src="/Carwash-Fuhr (1)_edited.webp"
+              src="/logoCWT.webp"
               alt="Carwash Technologies Logo"
               width={32}
               height={32}
@@ -99,3 +99,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
