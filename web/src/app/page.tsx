@@ -34,17 +34,17 @@ export default function Home() {
       {/* Background gradient for the entire page */}
       {/* Aurora Background */}
       <div className="fixed inset-0 z-0 pointer-events-none">
-        <Aurora 
-          colorStops={["#FDE047", "#cfc28e", "#EAB308"]} // Yellow theme colors
-          amplitude={1.2}
-          blend={0.6}
-          speed={0.5}
+        <Aurora
+          colorStops={["#017cff", "#f85656", "#1cc251"]} // Yellow theme colors
+          blend={0.7}
+          amplitude={0.25}
+          speed={15.0}
           time={time}
         />
       </div>
 
       {/* Hero Section: Displays a welcome message and company logo */}
-      <section className="relative z-10 bg-gradient-to-r from-yellow-500/30 to-yellow-400/30 text-white py-20">
+      <section className="relative z-10 bg-gradient-to-r from-gray-50/95 to-gray-90/95 text-white py-20">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Text content for the hero section */}
@@ -55,7 +55,7 @@ export default function Home() {
                 speed={3}
                 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6"
               />
-              
+
               <BlurText
                 text="Sales, Service and Consulting"
                 delay={150}
@@ -63,15 +63,15 @@ export default function Home() {
                 direction="top"
                 className="text-2xl md:text-3xl mb-8 text-yellow-100 font-semibold"
               />
-              
+
               <BlurText
                 text="Carwash Technologies proudly service the Minnesota, North Dakota, South Dakota and Wisconsin markets."
                 delay={200}
                 animateBy="words"
                 direction="bottom"
-                className="text-xl md:text-2xl mb-8 text-gray-200"
+                className="text-xl md:text-2xl mb-8 text-gray-900"
               />
-              
+
               <div className="space-x-4 fade-in-up">
                 <a href="/contact" className="btn-primary">Get Started</a>
                 <a href="/services" className="border border-white text-white px-6 py-3 rounded-lg hover:bg-white hover:text-yellow-600 transition-colors">
@@ -79,12 +79,12 @@ export default function Home() {
                 </a>
               </div>
             </div>
-            
+
             {/* Company Logo */}
             <div className="fade-in-up flex justify-center">
-              <div className="flex items-center justify-center w-[400px] h-[400px] bg-white/10 backdrop-blur-sm rounded-2xl p-8">
-                <img 
-                  src="/Carwash-Fuhr (1)_edited.png" 
+              <div className="flex items-center justify-center w-[400px] h-[400px] bg-white/10  rounded-2xl p-3">
+                <img
+                  src="/Carwash-Fuhr (1)_edited.png"
                   alt="Carwash Technologies Logo"
                   className="max-w-full max-h-full object-contain drop-shadow-2xl"
                 />
@@ -95,7 +95,7 @@ export default function Home() {
       </section>
 
       {/* Services Overview Section */}
-      <section className="relative z-10 py-16 bg-gray-50/95 backdrop-blur-sm">
+      <section className="relative z-10 py-16 bg-gray-50/100 backdrop-blur-sm">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <BlurText
@@ -113,7 +113,7 @@ export default function Home() {
               className="text-xl text-gray-600 max-w-3xl mx-auto"
             />
           </div>
-          
+
           <div className="grid md:grid-cols-3 gap-8">
             <Card
               title="Equipment Sales"
@@ -135,7 +135,7 @@ export default function Home() {
       </section>
 
       {/* Recent Projects Section */}
-      <section className="relative z-10 py-16 bg-white/95 backdrop-blur-sm">
+      <section className="relative z-10 py-16 bg-gradient-to-b from-white/100 via-gray-50/80 to-yellow-50/60 backdrop-blur-sm">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <BlurText
@@ -153,7 +153,7 @@ export default function Home() {
               className="text-xl text-gray-600"
             />
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card
               title="SuperWash Express - St. Paul"
@@ -171,7 +171,7 @@ export default function Home() {
               link="/projects"
             />
           </div>
-          
+
           <div className="text-center mt-8">
             <a href="/projects" className="btn-primary">View All Projects</a>
           </div>
@@ -179,7 +179,7 @@ export default function Home() {
       </section>
 
       {/* Chemicals Section */}
-      <section className="relative z-10 py-16 bg-yellow-50/95 backdrop-blur-sm">
+      <section className="relative z-10 py-16 bg-yellow-50/100 backdrop-blur-sm">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -191,7 +191,7 @@ export default function Home() {
                 className="text-3xl font-bold text-gray-900 mb-6"
               />
               <p className="text-lg text-gray-600 mb-6">
-                We supply high-quality car wash chemicals that deliver superior cleaning results while being 
+                We supply high-quality car wash chemicals that deliver superior cleaning results while being
                 environmentally responsible. Our chemical programs are designed to maximize efficiency and minimize waste.
               </p>
               <ul className="space-y-3 text-gray-700 mb-8">
@@ -237,7 +237,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section className="relative z-10 py-16 bg-gray-900/95 backdrop-blur-sm text-white">
+      <section className="relative z-10 py-16 bg-gray-100/100 backdrop-blur-sm text-white">
         <div className="container mx-auto px-4 text-center">
           <BlurText
             text="Ready to Get Started?"
@@ -253,22 +253,22 @@ export default function Home() {
             direction="bottom"
             className="text-xl mb-8 text-gray-300"
           />
-          
+
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
-              <h3 className="text-xl font-semibold mb-2 text-yellow-400">Phone</h3>
+                <h3 className="text-xl font-semibold mb-2 text-yellow-400 border-b-2 border-yellow-400 inline-block pb-1">Phone</h3>
               <p className="text-lg">(612) 408-9010</p>
             </div>
             <div>
-              <h3 className="text-xl font-semibold mb-2 text-yellow-400">Email</h3>
+              <h3 className="text-xl font-semibold mb-2 text-yellow-400 border-b-2 border-yellow-400 inline-block pb-1">Email</h3>
               <p className="text-lg">info@carwashtechnologiesmn.com</p>
             </div>
             <div>
-              <h3 className="text-xl font-semibold mb-2 text-yellow-400">Address</h3>
+              <h3 className="text-xl font-semibold mb-2 text-yellow-400 border-b-2 border-yellow-400 inline-block pb-1">Address</h3>
               <p className="text-lg">322 19th St. SW<br />Forest Lake, MN 55025</p>
             </div>
           </div>
-          
+
           <a href="/contact" className="btn-primary">Contact Us Today</a>
         </div>
       </section>
