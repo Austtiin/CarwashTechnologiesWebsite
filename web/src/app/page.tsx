@@ -61,7 +61,7 @@ export default function Home() {
                 delay={150}
                 animateBy="words"
                 direction="top"
-                className="text-2xl md:text-3xl mb-8 text-yellow-100 font-semibold"
+                className="md:!text-[2rem] text-[6rem] font-extrabold text-gray-900 mb-6"
               />
 
               <BlurText
@@ -97,22 +97,22 @@ export default function Home() {
       {/* Services Overview Section */}
       <section className="relative z-10 py-16 bg-gray-50/100 backdrop-blur-sm">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
+            <div className="text-center mb-16">
             <BlurText
               text="Our Expertise"
               delay={100}
               animateBy="words"
               direction="top"
-              className="text-3xl font-bold text-gray-900 mb-4"
+              className="md:!text-[2rem] text-[6rem] font-extrabold text-gray-900 mb-6"
             />
-            <BlurText
-              text="Let our experienced technicians help you make your car wash more profitable or get you started with a new site. With over 50 years of combined experience, our staff has the knowledge to overcome any hurdle."
-              delay={150}
-              animateBy="words"
-              direction="bottom"
-              className="text-xl text-gray-600 max-w-3xl mx-auto"
-            />
-          </div>
+
+            <span className="block md:text-2xl text-gray-600 mt-4">
+              Let our experienced technicians help you make your car wash more profitable or get you started with a new site.
+            </span>
+            <span className="block md:text-2xl text-gray-600 mt-4">
+              With over 50 years of combined experience, our staff has the knowledge to overcome any hurdle.
+            </span>
+            </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             <Card
@@ -143,7 +143,7 @@ export default function Home() {
               delay={100}
               animateBy="words"
               direction="top"
-              className="text-3xl font-bold text-gray-900 mb-4"
+              className="md:!text-[2rem] text-[6rem] font-extrabold text-gray-900 mb-6"
             />
             <BlurText
               text="See our latest installations and success stories"
@@ -188,7 +188,7 @@ export default function Home() {
                 delay={100}
                 animateBy="words"
                 direction="top"
-                className="text-3xl font-bold text-gray-900 mb-6"
+                className="md:!text-[2rem] text-[6rem] font-extrabold text-gray-900 mb-6"
               />
               <p className="text-lg text-gray-600 mb-6">
                 We supply high-quality car wash chemicals that deliver superior cleaning results while being
@@ -244,7 +244,7 @@ export default function Home() {
             delay={100}
             animateBy="words"
             direction="top"
-            className="text-3xl font-bold mb-8"
+            className="md:!text-[2rem] text-[6rem] font-extrabold text-gray-900 mb-6"
           />
           <BlurText
             text="Carwash Technologies offers quality service at a competitive price."
