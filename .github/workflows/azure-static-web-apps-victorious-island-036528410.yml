@@ -82,7 +82,7 @@ jobs:
           app_location: "web" # App source code path (your project root)
           api_location: "" # Api source code path - optional
           # Ensure this matches where your 'npm run build' command outputs the files
-          output_location: "build" # Built app content directory. If Next.js static export, this should be "out".
+          output_location: "out" # Built app content directory. If Next.js static export, this should be "out".
           # data_api_location: "swa-db-connections" # Uncomment if you have a Data API
           # github_id_token: ${{ steps.idtoken.outputs.result }} # Uncomment if you're using OIDC
           
