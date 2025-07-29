@@ -1,48 +1,117 @@
-import React from 'react';
-import CarWashAnimation from './components/animations/car-wash-animation';
+'use client';
+import React, { useState, useEffect } from 'react';
+import BlurText from './components/animations/BlurText';
 import Card from './components/ui/card';
+import Aurora from './components/animations/Aurora';
+import ShinyText from './components/animations/ShinyText';
 
 export default function Home() {
+  const [time, setTime] = useState(0);
+
+  // Update time for Aurora animation using requestAnimationFrame
+  useEffect(() => {
+    let animationId: number;
+    const startTime = Date.now();
+
+    const updateTime = () => {
+      const elapsed = (Date.now() - startTime) / 1000; // Convert to seconds
+      setTime(elapsed);
+      animationId = requestAnimationFrame(updateTime);
+    };
+
+    animationId = requestAnimationFrame(updateTime);
+
+    return () => cancelAnimationFrame(animationId);
+  }, []);
+
+  // Callback function for when the hero animation completes
+  const handleAnimationComplete = () => {
+    console.log('Hero animation completed!');
+  };
+
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
+    <div className="min-h-screen relative">
+      {/* Background gradient for the entire page */}
+      {/* Aurora Background */}
+      <div className="fixed inset-0 z-0 pointer-events-none">
+        <Aurora 
+          colorStops={["#FDE047", "#cfc28e", "#EAB308"]} // Yellow theme colors
+          amplitude={1.2}
+          blend={0.6}
+          speed={0.5}
+          time={time}
+        />
+      </div>
+
+      {/* Hero Section: Displays a welcome message and company logo */}
+      <section className="relative z-10 bg-gradient-to-r from-yellow-500/30 to-yellow-400/30 text-white py-20">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="fade-in-up">
-              <h1 className="text-5xl md:text-6xl font-bold mb-6">
-                Vehicle Wash
-                <span className="block text-yellow-400">Technologies</span>
-              </h1>
-              <p className="text-xl mb-8 text-blue-100">
-                Sales, Service and Consulting
-              </p>
-              <p className="text-lg mb-8 text-blue-100">
-                Carwash Technologies proudly service the Minnesota, North Dakota, South Dakota and Wisconsin markets.
-              </p>
-              <div className="space-x-4">
+            {/* Text content for the hero section */}
+            <div>
+              <ShinyText
+                text="Welcome to Carwash Technologies"
+                disabled={false}
+                speed={3}
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6"
+              />
+              
+              <BlurText
+                text="Sales, Service and Consulting"
+                delay={150}
+                animateBy="words"
+                direction="top"
+                className="text-2xl md:text-3xl mb-8 text-yellow-100 font-semibold"
+              />
+              
+              <BlurText
+                text="Carwash Technologies proudly service the Minnesota, North Dakota, South Dakota and Wisconsin markets."
+                delay={200}
+                animateBy="words"
+                direction="bottom"
+                className="text-xl md:text-2xl mb-8 text-gray-200"
+              />
+              
+              <div className="space-x-4 fade-in-up">
                 <a href="/contact" className="btn-primary">Get Started</a>
-                <a href="/services" className="border border-white text-white px-6 py-3 rounded-lg hover:bg-white hover:text-blue-800 transition-colors">
+                <a href="/services" className="border border-white text-white px-6 py-3 rounded-lg hover:bg-white hover:text-yellow-600 transition-colors">
                   Our Services
                 </a>
               </div>
             </div>
-            <div className="fade-in-up">
-              <CarWashAnimation />
+            
+            {/* Company Logo */}
+            <div className="fade-in-up flex justify-center">
+              <div className="flex items-center justify-center w-[400px] h-[400px] bg-white/10 backdrop-blur-sm rounded-2xl p-8">
+                <img 
+                  src="/Carwash-Fuhr (1)_edited.png" 
+                  alt="Carwash Technologies Logo"
+                  className="max-w-full max-h-full object-contain drop-shadow-2xl"
+                />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Services Overview */}
-      <section className="py-16 bg-gray-50">
+      {/* Services Overview Section */}
+      <section className="relative z-10 py-16 bg-gray-50/95 backdrop-blur-sm">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Expertise</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Let our experienced technicians help you make your car wash more profitable or get you started with a new site. 
-              With over 50 years of combined experience, our staff has the knowledge to overcome any hurdle.
-            </p>
+            <BlurText
+              text="Our Expertise"
+              delay={100}
+              animateBy="words"
+              direction="top"
+              className="text-3xl font-bold text-gray-900 mb-4"
+            />
+            <BlurText
+              text="Let our experienced technicians help you make your car wash more profitable or get you started with a new site. With over 50 years of combined experience, our staff has the knowledge to overcome any hurdle."
+              delay={150}
+              animateBy="words"
+              direction="bottom"
+              className="text-xl text-gray-600 max-w-3xl mx-auto"
+            />
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
@@ -65,12 +134,24 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Recent Projects */}
-      <section className="py-16">
+      {/* Recent Projects Section */}
+      <section className="relative z-10 py-16 bg-white/95 backdrop-blur-sm">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Recent Projects</h2>
-            <p className="text-xl text-gray-600">See our latest installations and success stories</p>
+            <BlurText
+              text="Recent Projects"
+              delay={100}
+              animateBy="words"
+              direction="top"
+              className="text-3xl font-bold text-gray-900 mb-4"
+            />
+            <BlurText
+              text="See our latest installations and success stories"
+              delay={150}
+              animateBy="words"
+              direction="bottom"
+              className="text-xl text-gray-600"
+            />
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -98,11 +179,17 @@ export default function Home() {
       </section>
 
       {/* Chemicals Section */}
-      <section className="py-16 bg-yellow-50">
+      <section className="relative z-10 py-16 bg-yellow-50/95 backdrop-blur-sm">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Premium Car Wash Chemicals</h2>
+              <BlurText
+                text="Premium Car Wash Chemicals"
+                delay={100}
+                animateBy="words"
+                direction="top"
+                className="text-3xl font-bold text-gray-900 mb-6"
+              />
               <p className="text-lg text-gray-600 mb-6">
                 We supply high-quality car wash chemicals that deliver superior cleaning results while being 
                 environmentally responsible. Our chemical programs are designed to maximize efficiency and minimize waste.
@@ -127,16 +214,21 @@ export default function Home() {
               </ul>
               <a href="/chemicals" className="btn-primary">Explore Chemicals</a>
             </div>
-            <div className="bg-white p-8 rounded-lg shadow-lg">
+            <div className="bg-white/90 backdrop-blur-sm p-8 rounded-lg shadow-lg">
               <div className="text-center">
-                <div className="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                  </svg>
+                <div className="w-30 h-30 flex items-center justify-center mx-auto mb-4">
+                  <div className="mx-auto flex items-center justify-center p-2">
+                    <img src="/LogoSonnys.jpg" alt="Chemical Icon" className="max-w-full max-h-full" />
+                    <img src="/avw-logo.jpg" alt="Chemical Icon" className="max-w-full max-h-full" />
+                    <img src="/OIP.jpg" alt="Chemical Icon" className="max-w-full max-h-full" />
+                    <img src="/peco-logo.jpg" alt="Chemical Icon" className="max-w-full max-h-full" />
+                    <img src="/logoPDQ.jpg" alt="Chemical Icon" className="max-w-full max-h-full" />
+                    <img src="/logoBelanger.jpg" alt="Chemical Icon" className="max-w-full max-h-full" />
+                  </div>
                 </div>
                 <h3 className="text-xl font-semibold mb-2">Quality Guarantee</h3>
                 <p className="text-gray-600">
-                  All our chemicals meet the highest industry standards for performance and environmental safety.
+                  All of our washes and chemicals meet the highest industry standards for performance and environmental safety.
                 </p>
               </div>
             </div>
@@ -145,12 +237,22 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-16 bg-gray-900 text-white">
+      <section className="relative z-10 py-16 bg-gray-900/95 backdrop-blur-sm text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-8">Ready to Get Started?</h2>
-          <p className="text-xl mb-8 text-gray-300">
-            Carwash Technologies offers quality service at a competitive price.
-          </p>
+          <BlurText
+            text="Ready to Get Started?"
+            delay={100}
+            animateBy="words"
+            direction="top"
+            className="text-3xl font-bold mb-8"
+          />
+          <BlurText
+            text="Carwash Technologies offers quality service at a competitive price."
+            delay={150}
+            animateBy="words"
+            direction="bottom"
+            className="text-xl mb-8 text-gray-300"
+          />
           
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>

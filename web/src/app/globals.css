@@ -77,3 +77,40 @@ p {
 .fade-in-up {
   animation: fadeInUp 0.6s ease-out;
 }
+
+
+.shiny-text {
+  color: black; /* Changed to black for the main text color */
+  background: linear-gradient(
+    120deg,
+    transparent 40%, /* Changed to transparent for the background */
+    rgba(128, 128, 128, 0.8) 50%, /* Grey for the "shine" effect, adjust opacity as needed */
+    transparent 60% /* Changed to transparent for the background */
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text; /* This still clips the gradient to the text shape */
+  background-clip: text;
+  display: inline-block;
+  animation: shine 5s linear infinite;
+  /* Add a text-shadow for a subtle "behind" effect, if desired */
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Optional: adds a slight shadow to make the text pop */
+}
+
+@keyframes shine {
+  0% {
+    background-position: 100%;
+  }
+  100% {
+    background-position: -100%;
+  }
+}
+
+.shiny-text.disabled {
+  animation: none;
+}
+
+
+.aurora-container {
+  width: 100%;
+  height: 100%;
+}
