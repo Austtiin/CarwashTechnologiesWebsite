@@ -15,7 +15,7 @@ const Navbar = () => {
           {/* Logo / Business Name */}
           <div className="flex items-center space-x-3">
             <Image
-              src="/Carwash-Fuhr (1)_edited.png"
+              src="/Carwash-Fuhr (1)_edited.webp"
               alt="Carwash Technologies Logo"
               width={32}
               height={32}

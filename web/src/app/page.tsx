@@ -84,7 +84,7 @@ export default function Home() {
             <div className="fade-in-up flex justify-center">
               <div className="flex items-center justify-center w-[400px] h-[400px] bg-white/10  rounded-2xl p-3">
                 <img
-                  src="/Carwash-Fuhr (1)_edited.png"
+                  src="/Carwash-Fuhr (1)_edited.webp"
                   alt="Carwash Technologies Logo"
                   className="max-w-full max-h-full object-contain drop-shadow-2xl"
                 />
@@ -219,12 +219,12 @@ export default function Home() {
               <div className="text-center">
                 <div className="w-30 h-30 flex items-center justify-center mx-auto mb-4">
                   <div className="mx-auto flex items-center justify-center p-2">
-                    <img src="../../public/logoSonnys.jpg" alt="Chemical Icon" className="max-w-full max-h-full" />
-                    <img src="../../public/avw-logo.jpg" alt="Chemical Icon" className="max-w-full max-h-full" />
-                    <img src="../../public/OIP.jpg" alt="Chemical Icon" className="max-w-full max-h-full" />
-                    <img src="../../public/peco-logo.jpg" alt="Chemical Icon" className="max-w-full max-h-full" />
-                    <img src="../../public/logoPDQ.jpg" alt="Chemical Icon" className="max-w-full max-h-full" />
-                    <img src="../../public/logoBelanger.jpg" alt="Chemical Icon" className="max-w-full max-h-full" />
+                    <img src="/logoSonnys.webp" alt="Chemical Icon" className="max-w-full max-h-full" />
+                    <img src="/avw-logo.webp" alt="Chemical Icon" className="max-w-full max-h-full" />
+                    <img src="/OIP.webp" alt="Chemical Icon" className="max-w-full max-h-full" />
+                    <img src="/peco-logo.webp" alt="Chemical Icon" className="max-w-full max-h-full" />
+                    <img src="/logoPDQ.webp" alt="Chemical Icon" className="max-w-full max-h-full" />
+                    <img src="/logoBelanger.webp" alt="Chemical Icon" className="max-w-full max-h-full" />
                   </div>
                 </div>
                 <h3 className="text-xl font-semibold mb-2">Quality Guarantee</h3>
