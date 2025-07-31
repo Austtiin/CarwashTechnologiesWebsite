@@ -2,6 +2,8 @@
 
 import React, { useState, useMemo, useEffect } from 'react';
 import BlurText from '../components/animations/BlurText';
+// Import the generated PDF list (change this line)
+import pdfFileList from '../../data/pdf-list.json';
 
 interface SDSDocument {
   id: string;
@@ -75,23 +77,14 @@ export default function SafetyDataSheets() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  // Static list of PDF files - you'll need to update this manually when adding new PDFs
-  const pdfFileList = [
-    'V_EXT374-4-4-1-10-15-2018.pdf',
-    // Add more PDF filenames here as you add them to your PDFs folder
-    // Example:
-    // 'S_WashDetergent-Premium-2024.pdf',
-    // 'C_PreTreatment-Heavy-Duty.pdf',
-  ];
-
   // Load PDF files on component mount
   useEffect(() => {
     const loadPDFFiles = async () => {
       try {
         setLoading(true);
         
-        // Temporarily skip the HEAD request check and assume all files exist
-        const documents: SDSDocument[] = pdfFileList.map((filename, index) => {
+        // Use the imported PDF list
+        const documents: SDSDocument[] = pdfFileList.map((filename: string, index: number) => {
           const manufacturer = getManufacturerFromFilename(filename);
           const cleanName = cleanProductName(filename);
           const category = guessCategoryFromFilename(filename);

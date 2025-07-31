@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "generate-pdfs": "node ../scripts/generate-pdf-list.js",
+    "prebuild": "npm run generate-pdfs",
+    "dev": "npm run generate-pdfs && next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
