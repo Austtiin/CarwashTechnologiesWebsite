@@ -6,65 +6,97 @@ export default function Services() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-white to-yellow-500 text-yellow-900 py-20 overflow-hidden">
-        {/* Background decorative elements */}
+      <section className="relative bg-gradient-to-br from-[#26231d] via-[#595646] to-[#4c6461] text-white py-24">
+        {/* Enhanced Background Elements */}
         <div className="absolute inset-0">
-          <div className="absolute top-0 left-0 w-72 h-72 bg-yellow-200 rounded-full opacity-20 -translate-x-36 -translate-y-36"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-yellow-200 rounded-full opacity-10 translate-x-48 translate-y-48"></div>
-          <div className="absolute top-1/2 left-1/4 w-32 h-32 bg-yellow-200 rounded-full opacity-5"></div>
-          <div className="absolute top-3/4 right-1/3 w-20 h-20 bg-yellow-200 rounded-full opacity-10"></div>
+          {/* Animated gradient overlays using brand colors */}
+          <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-[#f0da11]/20 to-transparent rounded-full opacity-60 -translate-x-48 -translate-y-48 animate-pulse"></div>
+          <div className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-tl from-[#d0b211]/30 to-transparent rounded-full opacity-50 translate-x-32 translate-y-32 animate-pulse" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-gradient-to-br from-[#bfb986]/15 to-transparent rounded-full opacity-40 animate-pulse" style={{ animationDelay: '2s' }}></div>
+          
+          {/* Subtle grid pattern */}
+          <div className="absolute inset-0 opacity-5">
+            <div className="h-full w-full" style={{
+              backgroundImage: `radial-gradient(circle at 1px 1px, #cecece 1px, transparent 1px)`,
+              backgroundSize: '20px 20px'
+            }}></div>
+          </div>
         </div>
-        
+
         {/* Content */}
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="max-w-4xl mx-auto">
-            <div className="inline-flex items-center bg-yellow-100/40 backdrop-blur-sm rounded-full px-6 py-2 mb-6">
-              <span className="text-sm font-medium text-yellow-700">Professional Car Wash Solutions</span>
+            <div className="inline-flex items-center bg-[#f0da11]/10 backdrop-blur-sm rounded-full px-8 py-3 mb-8 border border-[#f0da11]/30">
+              <svg className="w-5 h-5 mr-3 text-[#f0da11]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+              <span className="text-sm font-semibold text-[#f0da11] tracking-wide">Professional Car Wash Solutions</span>
             </div>
-            
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-yellow-700 to-yellow-400 bg-clip-text text-transparent">
-              Our Services
+
+            <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
+              <span className="bg-gradient-to-r from-[#cecece] via-[#f0da11] to-[#bfb986] bg-clip-text text-transparent">
+                Our Services
+              </span>
             </h1>
-          
+
             <div className="flex justify-center">
               <BlurText
                 text="Comprehensive car wash solutions from equipment sales to ongoing support"
                 delay={100}
                 animateBy="words"
                 direction="top"
-                className="text-xl md:text-2xl text-yellow-700 max-w-3xl mx-auto leading-relaxed"
+                className="text-xl md:text-2xl !text-[#f0da11] max-w-3xl mx-auto leading-relaxed font-light"
               />
             </div>
-            
+
             {/* Stats or highlights */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 pt-8 border-t border-yellow-400/30">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 pt-8 border-t border-[#f0da11]/30">
               <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-yellow-900 mb-1">50+</div>
-                <div className="text-sm text-yellow-700">Years Experience Combined</div>
+                <div className="text-2xl md:text-3xl font-bold text-[#f0da11] mb-1">25+</div>
+                <div className="text-sm text-[#cecece]">Years Experience</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-yellow-900 mb-1">200+</div>
-                <div className="text-sm text-yellow-700">Installations</div>
+                <div className="text-2xl md:text-3xl font-bold text-[#f0da11] mb-1">500+</div>
+                <div className="text-sm text-[#cecece]">Installations</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-yellow-900 mb-1">4</div>
-                <div className="text-sm text-yellow-700">States Served</div>
+                <div className="text-2xl md:text-3xl font-bold text-[#f0da11] mb-1">4</div>
+                <div className="text-sm text-[#cecece]">States Served</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-yellow-900 mb-1">24/7</div>
-                <div className="text-sm text-yellow-700">Support Available</div>
+                <div className="text-2xl md:text-3xl font-bold text-[#f0da11] mb-1">24/7</div>
+                <div className="text-sm text-[#cecece]">Support Available</div>
               </div>
             </div>
           </div>
         </div>
-        
-        {/* Bottom wave decoration */}
-        <div className="absolute bottom-0 left-0 right-0">
-          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-16">
-            <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" className="fill-yellow-200"></path>
-            <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" className="fill-yellow-100"></path>
-            <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" className="fill-white"></path>
-          </svg>
+
+        {/* Enhanced Wave Transition with Brand Colors */}
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none pointer-events-none z-20">
+            <svg
+                viewBox="0 0 1440 120"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-full h-32 md:h-40"
+                preserveAspectRatio="none"
+            >
+                <defs>
+                    <linearGradient id="waveGradient" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stopColor="#f0da11" stopOpacity="0.18" />
+                        <stop offset="40%" stopColor="#bfb986" stopOpacity="0.12" />
+                        <stop offset="100%" stopColor="#fff" stopOpacity="0.9" />
+                    </linearGradient>
+                </defs>
+                <path
+                    d="M0,60 C360,120 1080,0 1440,60 L1440,120 L0,120 Z"
+                    fill="url(#waveGradient)"
+                />
+                <path
+                    d="M0,90 C480,30 960,150 1440,90 L1440,120 L0,120 Z"
+                    fill="#fff"
+                    fillOpacity="0.8"
+                />
+            </svg>
         </div>
       </section>
 
@@ -86,12 +118,14 @@ export default function Services() {
           <div className="grid md:grid-cols-4 gap-8">
             <div className="group">
               <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <div className="w-8 h-8 bg-white/20 rounded-lg"></div>
+                <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 7.172V5L8 4z" />
+                  </svg>
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Equipment Sales</h3>
                 <p className="text-gray-600 leading-relaxed">Premium car wash equipment from leading manufacturers. We help you choose the right equipment for your specific needs and budget.</p>
-                <div className="mt-4 inline-flex items-center text-blue-600 font-medium">
+                <div className="mt-4 inline-flex items-center text-yellow-600 font-medium">
                 </div>
               </div>
             </div>
@@ -99,7 +133,10 @@ export default function Services() {
             <div className="group">
               <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
                 <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <div className="w-8 h-8 bg-white/20 rounded-lg"></div>
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Installation & Setup</h3>
                 <p className="text-gray-600 leading-relaxed">Professional installation services ensuring your equipment is properly configured and optimized for maximum performance.</p>
@@ -111,7 +148,9 @@ export default function Services() {
             <div className="group">
               <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
                 <div className="w-16 h-16 bg-gradient-to-br from-orange-400 to-orange-600 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <div className="w-8 h-8 bg-white/20 rounded-lg"></div>
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4" />
+                  </svg>
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Service & Maintenance</h3>
                 <p className="text-gray-600 leading-relaxed">Regular maintenance and emergency repair services to keep your car wash running smoothly and minimize downtime.</p>
@@ -123,7 +162,9 @@ export default function Services() {
             <div className="group">
               <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
                 <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <div className="w-8 h-8 bg-white/20 rounded-lg"></div>
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 7.172V5L8 4z" />
+                  </svg>
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Chemical Sales</h3>
                 <p className="text-gray-600 leading-relaxed">High-quality car wash chemicals to keep your operation running smoothly with consistent, professional results.</p>
@@ -152,7 +193,9 @@ export default function Services() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition-shadow duration-300 border border-gray-100">
               <div className="w-14 h-14 bg-gradient-to-br from-cyan-400 to-cyan-600 rounded-lg flex items-center justify-center mx-auto mb-4">
-                <div className="w-7 h-7 bg-white/20 rounded"></div>
+                <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                </svg>
               </div>
               <h3 className="text-xl font-semibold mb-3 text-gray-900">Tunnel Systems</h3>
               <p className="text-gray-600">Complete conveyor car wash systems for high-volume operations</p>
@@ -160,7 +203,9 @@ export default function Services() {
             
             <div className="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition-shadow duration-300 border border-gray-100">
               <div className="w-14 h-14 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-lg flex items-center justify-center mx-auto mb-4">
-                <div className="w-7 h-7 bg-white/20 rounded"></div>
+                <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
               </div>
               <h3 className="text-xl font-semibold mb-3 text-gray-900">Self-Serve Bays</h3>
               <p className="text-gray-600">High-pressure wash systems and bay equipment for self-service operations</p>
@@ -168,15 +213,19 @@ export default function Services() {
             
             <div className="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition-shadow duration-300 border border-gray-100">
               <div className="w-14 h-14 bg-gradient-to-br from-indigo-400 to-indigo-600 rounded-lg flex items-center justify-center mx-auto mb-4">
-                <div className="w-7 h-7 bg-white/20 rounded"></div>
+                <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                </svg>
               </div>
               <h3 className="text-xl font-semibold mb-3 text-gray-900">Touch & Touchless</h3>
-              <p className="text-gray-600">Automated touchless wash systems for gentle, effective cleaning</p>
+              <p className="text-gray-600">Automated touch and touchless wash systems for gentle, effective cleaning</p>
             </div>
             
             <div className="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition-shadow duration-300 border border-gray-100">
               <div className="w-14 h-14 bg-gradient-to-br from-teal-400 to-teal-600 rounded-lg flex items-center justify-center mx-auto mb-4">
-                <div className="w-7 h-7 bg-white/20 rounded"></div>
+                <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
               </div>
               <h3 className="text-xl font-semibold mb-3 text-gray-900">Water Recovery</h3>
               <p className="text-gray-600">Water reclaim and recycling systems for environmental responsibility</p>
@@ -209,7 +258,7 @@ export default function Services() {
                   </span>
                   <div>
                     <h3 className="font-semibold text-gray-900">Pre-Treatment</h3>
-                    <p className="text-gray-600">Bug removers, tire cleaners, and pre-soak solutions</p>
+                    <p className="text-gray-600">Bug removers, tire cleaners, and scent shots</p>
                   </div>
                 </div>
                 
@@ -219,7 +268,7 @@ export default function Services() {
                   </span>
                   <div>
                     <h3 className="font-semibold text-gray-900">Wash Chemicals</h3>
-                    <p className="text-gray-600">Detergents, soaps, and foaming agents for effective cleaning</p>
+                    <p className="text-gray-600">Detergents, soaps, and lubricants for effective cleaning</p>
                   </div>
                 </div>
                 
@@ -261,7 +310,7 @@ export default function Services() {
                     <svg className="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
                     </svg>
-                    <span className="font-medium">No Long-Term Contracts Required</span>
+                    <span className="font-medium">No Contracts Required</span>
                   </li>
                   <li className="flex items-center">
                     <svg className="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">

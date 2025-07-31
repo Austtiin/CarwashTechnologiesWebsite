@@ -111,7 +111,7 @@ const Navbar = () => {
             <a href="tel:612-408-9010" className="hidden lg:block font-semibold text-gray-800 hover:text-yellow-500 transition-colors">
               612-408-9010
             </a>
-            <Link href="/contact" className="bg-gradient-to-r from-yellow-500 to-yellow-600 text-white px-6 py-2 rounded-lg font-semibold hover:from-yellow-600 hover:to-yellow-700 transition-all duration-300 shadow-md hover:shadow-lg">
+            <Link href="/contact" className="bg-gradient-to-r from-yellow-400 to-yellow-300 text-white px-6 py-2 rounded-lg font-semibold hover:from-yellow-600 hover:to-yellow-700 transition-all duration-300 shadow-md hover:shadow-lg">
               Get Quote
             </Link>
             

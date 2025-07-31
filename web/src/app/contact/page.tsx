@@ -38,7 +38,12 @@ const ContactPage = () => {
       bgColor: 'from-purple-50 to-purple-100',
       borderColor: 'border-purple-200',
       textColor: 'text-purple-600',
-      details: 'Get information about our chemical programs, pricing, and delivery options for detergents, waxes, and specialty solutions.'
+      details: 'Get information about our chemical programs, pricing, and delivery options for detergents, waxes, and specialty solutions.',
+      icon: (
+        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 7.172V5L8 4z" />
+        </svg>
+      )
     },
     {
       id: 'service' as ContactType,
@@ -48,7 +53,12 @@ const ContactPage = () => {
       bgColor: 'from-orange-50 to-orange-100',
       borderColor: 'border-orange-200',
       textColor: 'text-orange-600',
-      details: 'Schedule maintenance, request emergency repairs, or inquire about our comprehensive service programs.'
+      details: 'Schedule maintenance, request emergency repairs, or inquire about our comprehensive service programs.',
+      icon: (
+        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4" />
+        </svg>
+      )
     },
     {
       id: 'sales' as ContactType,
@@ -58,7 +68,13 @@ const ContactPage = () => {
       bgColor: 'from-blue-50 to-blue-100',
       borderColor: 'border-blue-200',
       textColor: 'text-blue-600',
-      details: 'Explore our equipment options, get quotes, and learn about installation services for new or existing facilities.'
+      details: 'Explore our equipment options, get quotes, and learn about installation services for new or existing facilities.',
+      icon: (
+        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+        </svg>
+      )
     }
   ];
 
@@ -120,24 +136,37 @@ const ContactPage = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-white to-yellow-500 text-yellow-900 py-20 overflow-hidden">
-        {/* Background decorative elements */}
+      <section className="relative bg-gradient-to-br from-[#26231d] via-[#595646] to-[#4c6461] text-white py-24">
+        {/* Enhanced Background Elements */}
         <div className="absolute inset-0">
-          <div className="absolute top-0 left-0 w-72 h-72 bg-yellow-200 rounded-full opacity-20 -translate-x-36 -translate-y-36"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-yellow-200 rounded-full opacity-10 translate-x-48 translate-y-48"></div>
-          <div className="absolute top-1/2 left-1/4 w-32 h-32 bg-yellow-200 rounded-full opacity-5"></div>
-          <div className="absolute top-3/4 right-1/3 w-20 h-20 bg-yellow-200 rounded-full opacity-10"></div>
+          {/* Animated gradient overlays using brand colors */}
+          <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-[#f0da11]/20 to-transparent rounded-full opacity-60 -translate-x-48 -translate-y-48 animate-pulse"></div>
+          <div className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-tl from-[#d0b211]/30 to-transparent rounded-full opacity-50 translate-x-32 translate-y-32 animate-pulse" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-gradient-to-br from-[#bfb986]/15 to-transparent rounded-full opacity-40 animate-pulse" style={{ animationDelay: '2s' }}></div>
+          
+          {/* Subtle grid pattern */}
+          <div className="absolute inset-0 opacity-5">
+            <div className="h-full w-full" style={{
+              backgroundImage: `radial-gradient(circle at 1px 1px, #cecece 1px, transparent 1px)`,
+              backgroundSize: '20px 20px'
+            }}></div>
+          </div>
         </div>
 
         {/* Content */}
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="max-w-4xl mx-auto">
-            <div className="inline-flex items-center bg-yellow-100/40 backdrop-blur-sm rounded-full px-6 py-2 mb-6">
-              <span className="text-sm font-medium text-yellow-700">Get In Touch</span>
+            <div className="inline-flex items-center bg-[#f0da11]/10 backdrop-blur-sm rounded-full px-8 py-3 mb-8 border border-[#f0da11]/30">
+              <svg className="w-5 h-5 mr-3 text-[#f0da11]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+              </svg>
+              <span className="text-sm font-semibold text-[#f0da11] tracking-wide">Get In Touch</span>
             </div>
 
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-yellow-700 to-yellow-400 bg-clip-text text-transparent">
-              Contact Us
+            <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
+              <span className="bg-gradient-to-r from-[#cecece] via-[#f0da11] to-[#bfb986] bg-clip-text text-transparent">
+                Contact Us
+              </span>
             </h1>
 
             <div className="flex justify-center">
@@ -146,19 +175,38 @@ const ContactPage = () => {
                 delay={100}
                 animateBy="words"
                 direction="top"
-                className="text-xl md:text-2xl text-yellow-700 max-w-3xl mx-auto leading-relaxed"
+                className="text-xl md:text-2xl !text-[#f0da11] max-w-3xl mx-auto leading-relaxed font-light"
               />
             </div>
           </div>
         </div>
 
-        {/* Bottom wave decoration */}
-        <div className="absolute bottom-0 left-0 right-0">
-          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-16">
-            <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" className="fill-yellow-200"></path>
-            <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" className="fill-yellow-100"></path>
-            <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" className="fill-white"></path>
-          </svg>
+        {/* Enhanced Wave Transition with Brand Colors */}
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none pointer-events-none z-20">
+            <svg
+                viewBox="0 0 1440 120"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-full h-32 md:h-40"
+                preserveAspectRatio="none"
+            >
+                <defs>
+                    <linearGradient id="waveGradient" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stopColor="#f0da11" stopOpacity="0.18" />
+                        <stop offset="40%" stopColor="#bfb986" stopOpacity="0.12" />
+                        <stop offset="100%" stopColor="#fff" stopOpacity="0.9" />
+                    </linearGradient>
+                </defs>
+                <path
+                    d="M0,60 C360,120 1080,0 1440,60 L1440,120 L0,120 Z"
+                    fill="url(#waveGradient)"
+                />
+                <path
+                    d="M0,90 C480,30 960,150 1440,90 L1440,120 L0,120 Z"
+                    fill="#fff"
+                    fillOpacity="0.8"
+                />
+            </svg>
         </div>
       </section>
 
@@ -191,7 +239,7 @@ const ContactPage = () => {
                       className={`group cursor-pointer bg-gradient-to-br ${option.bgColor} p-8 rounded-2xl border ${option.borderColor} hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2`}
                     >
                       <div className={`w-16 h-16 bg-gradient-to-br ${option.color} rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                        <span className="w-8 h-8 bg-white/20 rounded-lg"></span>
+                        {option.icon}
                       </div>
                       <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">{option.title}</h3>
                       <p className="text-gray-700 text-center mb-4">{option.description}</p>
@@ -207,28 +255,36 @@ const ContactPage = () => {
             ) : (
               // Contact Form
               <>
-                <div className="text-center mb-12">
-                  <button
-                    onClick={resetForm}
-                    className="inline-flex items-center text-gray-600 hover:text-gray-800 mb-6 group"
-                  >
-                    <span className="mr-2 group-hover:-translate-x-1 transition-transform duration-300">←</span>
-                    Back to options
-                  </button>
-
-                  <div className={`inline-flex items-center bg-gradient-to-br ${selectedOption?.bgColor} rounded-full px-6 py-3 mb-6`}>
-                    <div className={`w-8 h-8 bg-gradient-to-br ${selectedOption?.color} rounded-lg flex items-center justify-center mr-3`}>
-                      <span className="w-4 h-4 bg-white/20 rounded"></span>
-                    </div>
-                    <span className="font-medium text-gray-800">{selectedOption?.title}</span>
+                <div className="mb-12">
+                  {/* Back Button */}
+                  <div className="mb-8">
+                    <button
+                      onClick={resetForm}
+                      className="inline-flex items-center text-gray-600 hover:text-gray-800 group transition-colors duration-300"
+                    >
+                      <svg className="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                      </svg>
+                      Back to options
+                    </button>
                   </div>
 
-                  <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-                    Let's Connect
-                  </h2>
-                  <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                    {selectedOption?.details}
-                  </p>
+                  {/* Service Type Badge and Title */}
+                  <div className="text-center">
+                    <div className={`inline-flex items-center bg-gradient-to-br ${selectedOption?.bgColor} rounded-full px-6 py-3 mb-6`}>
+                      <div className={`w-8 h-8 bg-gradient-to-br ${selectedOption?.color} rounded-lg flex items-center justify-center mr-3`}>
+                        {selectedOption?.icon && React.cloneElement(selectedOption.icon as React.ReactElement, { className: "w-4 h-4 text-white" })}
+                      </div>
+                      <span className="font-medium text-gray-800">{selectedOption?.title}</span>
+                    </div>
+
+                    <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                      Let's Connect
+                    </h2>
+                    <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                      {selectedOption?.details}
+                    </p>
+                  </div>
                 </div>
 
                 {submitStatus === 'success' ? (
@@ -244,7 +300,7 @@ const ContactPage = () => {
                       </p>
                       <button
                         onClick={resetForm}
-                        className="bg-yellow-500 text-white px-8 py-3 rounded-xl font-semibold hover:bg-yellow-600 transition-colors duration-300"
+                        className="bg-[#f0da11] text-gray-900 px-8 py-3 rounded-xl font-semibold hover:bg-[#d0b211] transition-colors duration-300"
                       >
                         Submit Another Inquiry
                       </button>
@@ -266,7 +322,7 @@ const ContactPage = () => {
                             required
                             value={formData.name}
                             onChange={handleInputChange}
-                            className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-300"
+                            className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#f0da11] focus:border-transparent transition-all duration-300"
                             placeholder="Enter your full name"
                           />
                         </div>
@@ -282,7 +338,7 @@ const ContactPage = () => {
                             required
                             value={formData.email}
                             onChange={handleInputChange}
-                            className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-300"
+                            className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#f0da11] focus:border-transparent transition-all duration-300"
                             placeholder="your.email@example.com"
                           />
                         </div>
@@ -297,7 +353,7 @@ const ContactPage = () => {
                             name="phone"
                             value={formData.phone}
                             onChange={handleInputChange}
-                            className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-300"
+                            className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#f0da11] focus:border-transparent transition-all duration-300"
                             placeholder="(555) 123-4567"
                           />
                         </div>
@@ -312,7 +368,7 @@ const ContactPage = () => {
                             name="company"
                             value={formData.company}
                             onChange={handleInputChange}
-                            className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-300"
+                            className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#f0da11] focus:border-transparent transition-all duration-300"
                             placeholder="Your business name"
                           />
                         </div>
@@ -331,7 +387,7 @@ const ContactPage = () => {
                             rows={4}
                             value={formData.inquiry}
                             onChange={handleInputChange}
-                            className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-300"
+                            className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#f0da11] focus:border-transparent transition-all duration-300"
                             placeholder={`Tell us about your ${selectedOption?.title.toLowerCase()} needs...`}
                           />
                         </div>
@@ -345,7 +401,7 @@ const ContactPage = () => {
                             name="bestTime"
                             value={formData.bestTime}
                             onChange={handleInputChange}
-                            className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-300"
+                            className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#f0da11] focus:border-transparent transition-all duration-300"
                           >
                             <option value="">Select preferred time</option>
                             <option value="morning">Morning (8AM - 12PM)</option>
@@ -364,7 +420,7 @@ const ContactPage = () => {
                             name="urgency"
                             value={formData.urgency}
                             onChange={handleInputChange}
-                            className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-300"
+                            className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#f0da11] focus:border-transparent transition-all duration-300"
                           >
                             <option value="normal">Normal - Within a few days</option>
                             <option value="soon">Soon - Within 24 hours</option>
@@ -375,7 +431,7 @@ const ContactPage = () => {
                         <div className={`p-4 rounded-xl bg-gradient-to-br ${selectedOption?.bgColor} border ${selectedOption?.borderColor}`}>
                           <h4 className="font-semibold text-gray-900 mb-2">What to expect:</h4>
                           <ul className="text-sm text-gray-700 space-y-1">
-                            <li>• Response within 24 hours</li>
+                            <li>• Response as soon as we are able</li>
                             <li>• Direct connection with a specialist</li>
                             <li>• Customized solutions for your needs</li>
                             <li>• No obligation consultation</li>
@@ -388,7 +444,7 @@ const ContactPage = () => {
                       <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="group bg-gradient-to-r from-yellow-500 to-yellow-600 text-white px-12 py-4 rounded-2xl font-bold text-lg hover:from-yellow-600 hover:to-yellow-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                        className="group bg-gradient-to-r from-[#f0da11] to-[#d0b211] text-gray-900 px-12 py-4 rounded-2xl font-bold text-lg hover:from-[#d0b211] hover:to-[#bfb986] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                       >
                         {isSubmitting ? (
                           <span className="flex items-center">
@@ -420,3 +476,4 @@ const ContactPage = () => {
 };
 
 export default ContactPage;
+
