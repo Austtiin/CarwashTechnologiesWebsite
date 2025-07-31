@@ -90,21 +90,8 @@ export default function SafetyDataSheets() {
       try {
         setLoading(true);
         
-        // Check which PDFs actually exist by trying to fetch them
-        const existingPDFs = [];
-        
-        for (const filename of pdfFileList) {
-          try {
-            const response = await fetch(`/PDFs/${filename}`, { method: 'HEAD' });
-            if (response.ok) {
-              existingPDFs.push(filename);
-            }
-          } catch (err) {
-            console.log(`PDF not found: ${filename}`);
-          }
-        }
-        
-        const documents: SDSDocument[] = existingPDFs.map((filename, index) => {
+        // Temporarily skip the HEAD request check and assume all files exist
+        const documents: SDSDocument[] = pdfFileList.map((filename, index) => {
           const manufacturer = getManufacturerFromFilename(filename);
           const cleanName = cleanProductName(filename);
           const category = guessCategoryFromFilename(filename);
@@ -116,14 +103,14 @@ export default function SafetyDataSheets() {
             manufacturer: manufacturer,
             description: `Safety data sheet for ${cleanName}`,
             pdfUrl: `/PDFs/${filename}`,
-            lastUpdated: '2024-01-15', // You can update this manually or remove it
+            lastUpdated: '2024-01-15',
             fileName: filename
           };
         });
         
         setSdsDocuments(documents);
       } catch (err) {
-        setError('Failed to load PDF files. Please ensure PDFs are in the /public/PDFs folder.');
+        setError('Failed to load PDF files.');
         console.error('Error loading PDF files:', err);
       } finally {
         setLoading(false);
@@ -215,15 +202,15 @@ export default function SafetyDataSheets() {
                 <div className="text-sm text-[#bfb986] font-medium uppercase tracking-wide">Safety Sheets</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-[#d0b211] mb-2">3</div>
+                <div className="text-3xl md:text-4xl font-bold text-[#f0da11] mb-2">3</div>
                 <div className="text-sm text-[#bfb986] font-medium uppercase tracking-wide">Manufacturers</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-[#b2a738] mb-2">24/7</div>
+                <div className="text-3xl md:text-4xl font-bold text-[#f0da11] mb-2">24/7</div>
                 <div className="text-sm text-[#bfb986] font-medium uppercase tracking-wide">Access</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-[#a08f2a] mb-2">100%</div>
+                <div className="text-3xl md:text-4xl font-bold text-[#f0da11] mb-2">100%</div>
                 <div className="text-sm text-[#bfb986] font-medium uppercase tracking-wide">Compliant</div>
               </div>
             </div>

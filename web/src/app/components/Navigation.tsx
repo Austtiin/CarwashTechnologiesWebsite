@@ -29,7 +29,7 @@ const Navbar = () => {
               alt="Carwash Technologies Logo"
               width={32}
               height={32}
-              className="h-8 w-auto"
+              className="w-8 h-auto" // Changed from "h-8 w-auto" to maintain aspect ratio
               priority
             />
             <Link href="/" className="text-2xl font-bold text-gray-900">
