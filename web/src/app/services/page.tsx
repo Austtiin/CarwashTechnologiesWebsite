@@ -185,7 +185,7 @@ export default function Services() {
               delay={50}
               animateBy="words"
               direction="top"
-              className="text-5xl md:text-6xl font-bold text-gray-900 mb-6"
+              className="md:!text-[2rem] text-[6rem] font-extrabold text-gray-900 mb-6"
             />
             <p className="text-xl text-gray-600">Complete range of car wash equipment solutions</p>
           </div>
@@ -244,7 +244,7 @@ export default function Services() {
                 delay={50}
                 animateBy="words"
                 direction="top"
-                className="text-5xl md:text-6xl font-bold text-gray-900 mb-6"
+                className="md:!text-[2rem] text-[6rem] font-extrabold text-gray-900 mb-6"
               />
               <p className="text-lg text-gray-600 mb-6">
                 We supply a complete line of high-performance car wash chemicals designed to 
@@ -366,7 +366,7 @@ export default function Services() {
               delay={50}
               animateBy="words"
               direction="top"
-              className="text-5xl md:text-6xl font-bold text-gray-900 mb-6"
+              className="md:!text-[2rem] text-[6rem] font-extrabold text-gray-900 mb-6"
             />
             <p className="text-xl text-gray-600">Expert guidance for every stage of your car wash journey</p>
           </div>
@@ -431,7 +431,7 @@ export default function Services() {
             delay={50}
             animateBy="words"
             direction="top"
-            className="text-4xl md:text-6xl font-bold mb-6"
+            className="md:!text-[2rem] text-[6rem] font-extrabold text-gray-900 mb-6"
           />
           <p className="text-xl text-yellow-100 mb-8 max-w-2xl mx-auto">
             Contact us today to discuss your car wash needs and discover how we can help your business thrive.

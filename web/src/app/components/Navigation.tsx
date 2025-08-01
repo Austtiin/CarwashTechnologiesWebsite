@@ -9,12 +9,12 @@ const Navbar = () => {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
 
   const serviceLinks = [
-    { name: 'Equipment Sales', href: '/services#equipment', description: 'Premium car wash equipment' },
-    { name: 'Installation & Setup', href: '/services#installation', description: 'Professional installation services' },
-    { name: 'Service & Maintenance', href: '/services#maintenance', description: 'Ongoing support and repairs' },
-    { name: 'Chemical Sales', href: '/services#chemicals', description: 'High-quality car wash chemicals' },
+    { name: 'Equipment Sales', href: '/equipment-sales', description: 'Premium car wash equipment' },
+    { name: 'Installation & Setup', href: '/installation-setup', description: 'Professional installation services' },
+    { name: 'Service & Maintenance', href: '/service-maintenance', description: 'Ongoing support and repairs' },
+    { name: 'Chemical Sales', href: '/chemical-sales', description: 'High-quality car wash chemicals' },
     { name: 'Safety Data Sheets', href: '/sds', description: 'Product safety information' },
-    { name: 'Consulting Services', href: '/services#consulting', description: 'Expert guidance and planning' }
+    { name: 'Consulting Services', href: '/consulting-services', description: 'Expert guidance and planning' }
   ];
 
   return (

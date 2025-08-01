@@ -404,15 +404,15 @@ const AboutPage = () => {
             <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" className="fill-white"></path>
           </svg>
         </div>
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <div className="max-w-4xl mx-auto">
-            <BlurText
-              text="Ready to Partner with Us?"
-              delay={50}
-              animateBy="words"
-              direction="top"
-              className="md:!text-[2rem] text-[6rem] font-extrabold text-gray-900 mb-6"
-            />
+        <div className="text-center mx-auto px-4 relative z-10">
+            <div className="text-center mb-16">
+                  <BlurText
+                    text="Ready to partner with us?"
+                    delay={50}
+                    animateBy="words"
+                    direction="top"
+                    className="md:!text-[2rem] text-[6rem] font-extrabold text-gray-900 mb-6"
+                  />
             <p className="text-xl text-yellow-100 mb-12 max-w-2xl mx-auto leading-relaxed">
               Whether you're planning a new car wash or looking to upgrade your existing operation, 
               we're here to help you succeed. Let's discuss your vision and make it a reality.

@@ -224,7 +224,7 @@ const ContactPage = () => {
                     delay={50}
                     animateBy="words"
                     direction="top"
-                    className="text-5xl md:text-6xl font-bold text-gray-900 mb-6"
+                    className="md:!text-[2rem] text-[6rem] font-extrabold text-gray-900 mb-6"
                   />
                   <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                     Choose the service area you're interested in to get connected with the right specialist

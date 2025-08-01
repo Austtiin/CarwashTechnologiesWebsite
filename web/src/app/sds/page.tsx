@@ -32,6 +32,8 @@ const categories = [
   'Other'
 ];
 
+const ITEMS_PER_PAGE = 10;
+
 // Helper function to determine manufacturer from filename
 const getManufacturerFromFilename = (filename: string): string => {
   const firstChar = filename.charAt(0).toUpperCase();
@@ -76,6 +78,7 @@ export default function SafetyDataSheets() {
   const [sdsDocuments, setSdsDocuments] = useState<SDSDocument[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [displayedCount, setDisplayedCount] = useState(ITEMS_PER_PAGE);
 
   // Load PDF files on component mount
   useEffect(() => {
@@ -113,6 +116,11 @@ export default function SafetyDataSheets() {
     loadPDFFiles();
   }, []);
 
+  // Reset displayed count when filters change
+  useEffect(() => {
+    setDisplayedCount(ITEMS_PER_PAGE);
+  }, [selectedManufacturer, selectedCategory, searchTerm]);
+
   const filteredDocuments = useMemo(() => {
     return sdsDocuments.filter(doc => {
       const matchesManufacturer = selectedManufacturer === 'all' || doc.manufacturer === selectedManufacturer;
@@ -123,6 +131,13 @@ export default function SafetyDataSheets() {
       return matchesManufacturer && matchesCategory && matchesSearch;
     });
   }, [selectedManufacturer, selectedCategory, searchTerm, sdsDocuments]);
+
+  const displayedDocuments = filteredDocuments.slice(0, displayedCount);
+  const hasMoreDocuments = displayedCount < filteredDocuments.length;
+
+  const handleLoadMore = () => {
+    setDisplayedCount(prev => prev + ITEMS_PER_PAGE);
+  };
 
   const handleDownload = (pdfUrl: string, fileName: string) => {
     const link = document.createElement('a');
@@ -316,7 +331,7 @@ export default function SafetyDataSheets() {
           <div className="mb-8">
             <p className="text-gray-600">
               {loading ? 'Loading PDF files...' : 
-               `Showing ${filteredDocuments.length} safety data sheet${filteredDocuments.length !== 1 ? 's' : ''}`}
+               `Showing ${displayedDocuments.length} of ${filteredDocuments.length} safety data sheet${filteredDocuments.length !== 1 ? 's' : ''}`}
             </p>
           </div>
 
@@ -327,45 +342,62 @@ export default function SafetyDataSheets() {
           )}
 
           {!loading && (
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredDocuments.map((doc) => {
-                const manufacturer = manufacturers.find(m => m.id === doc.manufacturer);
-                return (
-                  <div key={doc.id} className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-200">
-                    <div className="p-6">
-                      <div className="flex items-start justify-between mb-4">
-                        <div className={`px-3 py-1 rounded-full text-xs font-medium bg-gradient-to-r ${manufacturer?.color} text-white`}>
-                          {manufacturer?.name}
+            <>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {displayedDocuments.map((doc) => {
+                  const manufacturer = manufacturers.find(m => m.id === doc.manufacturer);
+                  return (
+                    <div key={doc.id} className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-200">
+                      <div className="p-6">
+                        <div className="flex items-start justify-between mb-4">
+                          <div className={`px-3 py-1 rounded-full text-xs font-medium bg-gradient-to-r ${manufacturer?.color} text-white`}>
+                            {manufacturer?.name}
+                          </div>
+                          <span className="text-xs text-gray-500">
+                            Updated: {new Date(doc.lastUpdated).toLocaleDateString()}
+                          </span>
                         </div>
-                        <span className="text-xs text-gray-500">
-                          Updated: {new Date(doc.lastUpdated).toLocaleDateString()}
-                        </span>
-                      </div>
 
-                      <h3 className="text-lg font-bold text-gray-900 mb-2">{doc.name}</h3>
-                      <p className="text-sm text-gray-600 mb-2">{doc.category}</p>
-                      <p className="text-gray-700 mb-4 text-sm leading-relaxed">{doc.description}</p>
-                      <p className="text-xs text-gray-500 mb-4">File: {doc.fileName}</p>
+                        <h3 className="text-lg font-bold text-gray-900 mb-2">{doc.name}</h3>
+                        <p className="text-sm text-gray-600 mb-2">{doc.category}</p>
+                        <p className="text-gray-700 mb-4 text-sm leading-relaxed">{doc.description}</p>
+                        <p className="text-xs text-gray-500 mb-4">File: {doc.fileName}</p>
 
-                      <div className="flex gap-3">
-                        <button
-                          onClick={() => handleView(doc.pdfUrl)}
-                          className="flex-1 bg-[#f0da11] text-gray-900 px-4 py-2 rounded-lg hover:bg-[#d0b211] transition-colors duration-300 text-sm font-medium"
-                        >
-                          View PDF
-                        </button>
-                        <button
-                          onClick={() => handleDownload(doc.pdfUrl, doc.fileName)}
-                          className="flex-1 bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600 transition-colors duration-300 text-sm font-medium"
-                        >
-                          Download
-                        </button>
+                        <div className="flex gap-3">
+                          <button
+                            onClick={() => handleView(doc.pdfUrl)}
+                            className="flex-1 bg-[#f0da11] text-gray-900 px-4 py-2 rounded-lg hover:bg-[#d0b211] transition-colors duration-300 text-sm font-medium"
+                          >
+                            View PDF
+                          </button>
+                          <button
+                            onClick={() => handleDownload(doc.pdfUrl, doc.fileName)}
+                            className="flex-1 bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600 transition-colors duration-300 text-sm font-medium"
+                          >
+                            Download
+                          </button>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                );
-              })}
-            </div>
+                  );
+                })}
+              </div>
+
+              {/* Load More Button */}
+              {hasMoreDocuments && (
+                <div className="text-center mt-12">
+                  <button
+                    onClick={handleLoadMore}
+                    className="bg-[#f0da11] text-gray-900 px-8 py-4 rounded-xl font-semibold hover:bg-[#d0b211] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 inline-flex items-center"
+                  >
+                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                    </svg>
+                    Load More ({filteredDocuments.length - displayedCount} remaining)
+                  </button>
+                </div>
+              )}
+            </>
           )}
 
           {!loading && filteredDocuments.length === 0 && (
