@@ -19,7 +19,7 @@ const Navbar = () => {
 
   return (
     <header className="sticky top-0 z-50 bg-white shadow-md">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-1 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
           
           {/* Logo / Business Name */}
@@ -27,9 +27,9 @@ const Navbar = () => {
             <Image
               src="/logoCWT.webp"
               alt="Carwash Technologies Logo"
-              width={32}
-              height={32}
-              className="w-8 h-auto" // Changed from "h-8 w-auto" to maintain aspect ratio
+              width={48}
+              height={48}
+              className="w-12 h-auto" // Changed from "h-8 w-auto" to maintain aspect ratio
               priority
             />
             <Link href="/" className="text-2xl font-bold text-gray-900">

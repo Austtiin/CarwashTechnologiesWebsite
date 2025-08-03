@@ -14,10 +14,10 @@ const AboutPage = () => {
           <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-gradient-to-br from-[#bfb986]/15 to-transparent rounded-full opacity-40 animate-pulse" style={{ animationDelay: '2s' }}></div>
           
           {/* Subtle grid pattern */}
-          <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0 opacity-10">
             <div className="h-full w-full" style={{
-              backgroundImage: `radial-gradient(circle at 1px 1px, #cecece 1px, transparent 1px)`,
-              backgroundSize: '20px 20px'
+              backgroundImage: `radial-gradient(circle at 1px 1px, #fff 1px, transparent 1px)`,
+              backgroundSize: '30px 30px'
             }}></div>
           </div>
         </div>
@@ -395,42 +395,59 @@ const AboutPage = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-10 relative bg-gradient-to-br from-yellow-400 via-yellow-500 to-orange-400 text-white overflow-hidden">
-        {/* Decorative background shapes */}
+      <section className="py-20 relative bg-gradient-to-br from-[#f0da11] via-[#d0b211] to-[#bfb986] text-white overflow-hidden">
+        {/* Enhanced background elements */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-[600px] h-[700px] bg-yellow-200 opacity-20 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-orange-300 opacity-10 rounded-full blur-2xl translate-x-1/3 translate-y-1/3"></div>
-          <svg className="absolute left-0 bottom-0 w-full h-24" viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" className="fill-white"></path>
-          </svg>
+          {/* Animated gradient overlays */}
+          <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-white/20 to-transparent rounded-full opacity-60 -translate-x-48 -translate-y-48 animate-pulse"></div>
+          <div className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-tl from-white/30 to-transparent rounded-full opacity-50 translate-x-32 translate-y-32 animate-pulse" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-gradient-to-br from-white/15 to-transparent rounded-full opacity-40 animate-pulse" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute top-1/2 left-1/4 w-48 h-48 bg-gradient-to-br from-white/10 to-transparent rounded-full opacity-30 animate-pulse" style={{ animationDelay: '3s' }}></div>
+          
+          {/* Subtle grid pattern */}
+          <div className="absolute inset-0 opacity-10">
+            <div className="h-full w-full" style={{
+              backgroundImage: `radial-gradient(circle at 1px 1px, #fff 1px, transparent 1px)`,
+              backgroundSize: '30px 30px'
+            }}></div>
+          </div>
+          
+          {/* Geometric shapes for visual interest */}
+          <div className="absolute top-10 right-10 w-20 h-20 border-2 border-white/20 rounded-xl rotate-12 animate-bounce" style={{ animationDelay: '0.5s' }}></div>
+          <div className="absolute bottom-20 left-16 w-16 h-16 border-2 border-white/20 rounded-full animate-pulse" style={{ animationDelay: '1.5s' }}></div>
+          <div className="absolute top-1/4 left-10 w-12 h-12 bg-white/10 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '8s' }}></div>
         </div>
-        <div className="text-center mx-auto px-4 relative z-10">
-            <div className="text-center mb-16">
-                  <BlurText
-                    text="Ready to partner with us?"
-                    delay={50}
-                    animateBy="words"
-                    direction="top"
-                    className="md:!text-[2rem] text-[6rem] font-extrabold text-gray-900 mb-6"
-                  />
-            <p className="text-xl text-yellow-100 mb-12 max-w-2xl mx-auto leading-relaxed">
-              Whether you're planning a new car wash or looking to upgrade your existing operation, 
-              we're here to help you succeed. Let's discuss your vision and make it a reality.
-            </p>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="mb-12">
+              <div className="text-center mb-6">
+                <BlurText
+                  text="Ready to partner with us?"
+                  delay={50}
+                  animateBy="words"
+                  direction="top"
+                  className="md:!text-[2rem] text-[6rem] font-extrabold text-gray-900 mb-6"                />
+              </div>
+              <p className="text-xl text-gray-800 mb-8 max-w-3xl mx-auto leading-relaxed font-medium">
+                Whether you're planning a new car wash or looking to upgrade your existing operation, 
+                we're here to help you succeed. Let's discuss your vision and make it a reality.
+              </p>
+            </div>
             
-            <div className="flex flex-col sm:flex-row gap-5 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
               <a 
                 href="/contact" 
-                className="bg-white text-yellow-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-200 transition-colors duration-300 inline-flex items-center shadow-lg hover:shadow-xl"
+                className="bg-gray-900 text-white px-8 py-4 rounded-xl font-semibold hover:bg-gray-800 transition-all duration-300 inline-flex items-center shadow-lg hover:shadow-xl transform hover:-translate-y-1"
               >
                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 012 2z" />
                 </svg>
                 Start a Conversation
               </a>
               <a 
                 href="/services" 
-                className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-yellow-600 transition-colors duration-300 inline-flex items-center"
+                className="border-2 border-gray-900 text-gray-900 px-8 py-4 rounded-xl font-semibold hover:bg-gray-900 hover:text-white transition-all duration-300 inline-flex items-center transform hover:-translate-y-1"
               >
                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
@@ -439,9 +456,15 @@ const AboutPage = () => {
               </a>
             </div>
             
-            <div className="mt-10 pt-4 border-t border-yellow-400/30">
-              <p className="text-yellow-100 text-lg">
-                <span className="font-semibold">Quick Response Guarantee:</span> We respond to all requests as soon as possible, typically within 24 hours.
+            <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-6 border border-white/30 max-w-2xl mx-auto shadow-lg">
+              <div className="flex items-center justify-center mb-3">
+                <svg className="w-6 h-6 text-gray-800 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span className="font-semibold text-gray-800">Quick Response Guarantee</span>
+              </div>
+              <p className="text-gray-700 font-medium">
+                We respond to all requests as soon as possible, typically within 24 hours.
               </p>
             </div>
           </div>
