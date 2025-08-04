@@ -19,8 +19,8 @@ interface SDSDocument {
 const manufacturers = [
   { id: 'all', name: 'All Manufacturers', color: 'from-gray-400 to-gray-600' },
   { id: 'vertech', name: 'Vertech', color: 'from-green-400 to-green-600' },
-  { id: 'cwt', name: 'Carwash Technologies', color: 'from-blue-400 to-blue-600' },
-  { id: 'simoniz', name: 'Simoniz', color: 'from-purple-400 to-purple-600' }
+  { id: 'cwt', name: 'Carwash Technologies', color: 'from-yellow-400 to-yellow-600' },
+  { id: 'simoniz', name: 'Simoniz', color: 'from-red-400 to-red-600' }
 ];
 
 const categories = [
