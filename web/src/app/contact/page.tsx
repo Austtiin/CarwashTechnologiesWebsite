@@ -33,7 +33,7 @@ const ContactPage = () => {
     {
       id: 'chemicals' as ContactType,
       title: 'Chemical Sales',
-      description: 'High-quality car wash chemicals and chemical programs',
+      description: 'High-quality wash chemicals and chemical programs',
       color: 'from-purple-400 to-purple-600',
       bgColor: 'from-purple-50 to-purple-100',
       borderColor: 'border-purple-200',
@@ -63,7 +63,7 @@ const ContactPage = () => {
     {
       id: 'sales' as ContactType,
       title: 'Equipment Sales',
-      description: 'Premium car wash equipment and installation',
+      description: 'Premium wash equipment and installation',
       color: 'from-blue-400 to-blue-600',
       bgColor: 'from-blue-50 to-blue-100',
       borderColor: 'border-blue-200',
@@ -171,7 +171,7 @@ const ContactPage = () => {
 
             <div className="flex justify-center">
               <BlurText
-                text="Ready to start your car wash journey? We're here to help you succeed."
+                text="Ready to start your wash journey? We're here to help you succeed."
                 delay={100}
                 animateBy="words"
                 direction="top"

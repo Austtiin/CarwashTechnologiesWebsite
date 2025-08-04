@@ -27,7 +27,7 @@ export default function ChemicalSales() {
               <svg className="w-5 h-5 mr-3 text-[#f0da11]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 7.172V5L8 4z" />
               </svg>
-              <span className="text-sm font-semibold text-[#f0da11] tracking-wide">Professional Car Wash Chemicals</span>
+              <span className="text-sm font-semibold text-[#f0da11] tracking-wide">Professional Wash Chemicals</span>
             </div>
 
             <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
@@ -38,7 +38,7 @@ export default function ChemicalSales() {
 
             <div className="flex justify-center">
               <BlurText
-                text="High-performance car wash chemicals for superior cleaning results"
+                text="High-performance wash chemicals for superior cleaning results"
                 delay={100}
                 animateBy="words"
                 direction="top"
@@ -89,7 +89,7 @@ export default function ChemicalSales() {
               className="md:!text-[2rem] text-[6rem] font-extrabold text-gray-900 mb-6"
             />
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We partner with leading chemical manufacturers to provide you with the highest quality car wash solutions
+              We partner with leading chemical manufacturers to provide you with the highest quality wash solutions
             </p>
           </div>
 
@@ -144,7 +144,7 @@ export default function ChemicalSales() {
               direction="top"
               className="md:!text-[2rem] text-[6rem] font-extrabold text-gray-900 mb-6"
             />
-            <p className="text-xl text-gray-600">Complete range of car wash chemical solutions</p>
+            <p className="text-xl text-gray-600">Complete range of wash chemical solutions</p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -337,7 +337,7 @@ export default function ChemicalSales() {
                 className="md:!text-[2rem] text-[6rem] font-extrabold text-gray-900 mb-6"
               />
               <p className="text-lg text-gray-600 mb-8">
-                We supply a complete line of high-performance car wash chemicals designed to 
+                We supply a complete line of high-performance wash chemicals designed to 
                 deliver superior results while being environmentally responsible and cost-effective.
               </p>
               
@@ -382,7 +382,7 @@ export default function ChemicalSales() {
               <div className="mt-8 p-6 bg-gray-50 rounded-xl border border-gray-200">
                 <div className="grid grid-cols-2 gap-6">
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-[#f0da11] mb-2">98%</div>
+                    <div className="text-3xl font-bold text-[#f0da11] mb-2">99%</div>
                     <div className="text-sm text-gray-600">Customer Satisfaction</div>
                   </div>
                   <div className="text-center">

@@ -27,7 +27,7 @@ export default function EquipmentSales() {
               <svg className="w-5 h-5 mr-3 text-[#f0da11]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 7.172V5L8 4z" />
               </svg>
-              <span className="text-sm font-semibold text-[#f0da11] tracking-wide">Premium Car Wash Equipment</span>
+              <span className="text-sm font-semibold text-[#f0da11] tracking-wide">Premium Wash Equipment</span>
             </div>
 
             <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
@@ -38,7 +38,7 @@ export default function EquipmentSales() {
 
             <div className="flex justify-center">
               <BlurText
-                text="Industry-leading car wash equipment from trusted manufacturers"
+                text="Industry-leading wash equipment from trusted manufacturers"
                 delay={100}
                 animateBy="words"
                 direction="top"
@@ -89,7 +89,7 @@ export default function EquipmentSales() {
               className="md:!text-[2rem] text-[6rem] font-extrabold text-gray-900 mb-6"
             />
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We partner with industry-leading manufacturers to provide you with the highest quality car wash equipment
+              We partner with industry-leading manufacturers to provide you with the highest quality wash equipment
             </p>
           </div>
 
@@ -168,7 +168,7 @@ export default function EquipmentSales() {
               direction="top"
               className="md:!text-[2rem] text-[6rem] font-extrabold text-gray-900 mb-6"
             />
-            <p className="text-xl text-gray-600">Complete range of car wash equipment solutions</p>
+            <p className="text-xl text-gray-600">Complete range of wash equipment solutions</p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -179,7 +179,7 @@ export default function EquipmentSales() {
                 </svg>
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Tunnel Systems</h3>
-              <p className="text-gray-600 text-center mb-6">Complete conveyor car wash systems for high-volume operations with automated wash sequences.</p>
+              <p className="text-gray-600 text-center mb-6">Complete conveyor wash systems for high-volume operations with automated wash sequences.</p>
               <ul className="space-y-2 text-sm text-gray-600">
                 <li className="flex items-center">
                   <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
@@ -357,7 +357,7 @@ export default function EquipmentSales() {
               />
               <p className="text-lg text-gray-600 mb-8">
                 We provide only the highest quality equipment from trusted manufacturers, 
-                ensuring reliability, performance, and longevity for your car wash operation.
+                ensuring reliability, performance, and longevity for your wash operation.
               </p>
               
               <div className="space-y-6">
@@ -457,7 +457,7 @@ export default function EquipmentSales() {
            className="md:!text-[2rem] text-[6rem] font-extrabold text-gray-900 mb-6"
           />
           <p className="text-xl text-yellow-100 mb-8 max-w-2xl mx-auto">
-            Contact us today to discuss your equipment needs and get a custom quote for your car wash operation.
+            Contact us today to discuss your equipment needs and get a custom quote for your wash operation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a 

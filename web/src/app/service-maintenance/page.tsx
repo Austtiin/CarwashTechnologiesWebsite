@@ -38,7 +38,7 @@ export default function ServiceMaintenance() {
 
             <div className="flex justify-center">
               <BlurText
-                text="Professional maintenance services to keep your car wash running at peak performance"
+                text="Professional maintenance services to keep your wash running at peak performance"
                 delay={100}
                 animateBy="words"
                 direction="top"
@@ -77,179 +77,6 @@ export default function ServiceMaintenance() {
         </div>
       </section>
 
-      {/* Service Plans Overview */}
-      <section className="py-16 bg-gradient-to-b from-white to-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <BlurText
-              text="Maintenance Service Plans"
-              delay={50}
-              animateBy="words"
-              direction="top"
-              className="text-5xl md:text-6xl font-bold text-gray-900 mb-6"
-            />
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Choose the maintenance plan that fits your operation and budget requirements
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 flex flex-col h-full">
-              <div className="text-center mb-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">Basic Plan</h3>
-                <p className="text-gray-600">Essential maintenance for smaller operations</p>
-              </div>
-              
-              <ul className="space-y-3 mb-8 flex-grow">
-                <li className="flex items-center">
-                  <svg className="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
-                  </svg>
-                  <span>Quarterly service visits</span>
-                </li>
-                <li className="flex items-center">
-                  <svg className="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
-                  </svg>
-                  <span>Basic equipment inspection</span>
-                </li>
-                <li className="flex items-center">
-                  <svg className="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
-                  </svg>
-                  <span>Parts discounts</span>
-                </li>
-                <li className="flex items-center">
-                  <svg className="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
-                  </svg>
-                  <span>Phone support</span>
-                </li>
-              </ul>
-              
-              <div className="text-center mt-auto">
-                <div className="text-3xl font-bold text-[#f0da11] mb-2">$199/mo</div>
-                <a href="/contact" className="bg-gray-200 text-gray-800 px-6 py-3 rounded-lg font-medium hover:bg-gray-300 transition-colors">
-                  Choose Plan
-                </a>
-              </div>
-            </div>
-
-            <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-2 border-[#f0da11] relative flex flex-col h-full">
-              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                <span className="bg-[#f0da11] text-gray-900 px-4 py-2 rounded-full text-sm font-semibold">MOST POPULAR</span>
-              </div>
-              <div className="text-center mb-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-                  </svg>
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">Professional Plan</h3>
-                <p className="text-gray-600">Comprehensive maintenance for busy operations</p>
-              </div>
-              
-              <ul className="space-y-3 mb-8 flex-grow">
-                <li className="flex items-center">
-                  <svg className="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
-                  </svg>
-                  <span>Monthly service visits</span>
-                </li>
-                <li className="flex items-center">
-                  <svg className="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
-                  </svg>
-                  <span>Comprehensive inspection</span>
-                </li>
-                <li className="flex items-center">
-                  <svg className="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
-                  </svg>
-                  <span>Preventive maintenance</span>
-                </li>
-                <li className="flex items-center">
-                  <svg className="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
-                  </svg>
-                  <span>Priority support</span>
-                </li>
-                <li className="flex items-center">
-                  <svg className="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
-                  </svg>
-                  <span>Emergency service</span>
-                </li>
-              </ul>
-              
-              <div className="text-center mt-auto">
-                <div className="text-3xl font-bold text-[#f0da11] mb-2">$399/mo</div>
-                <a href="/contact" className="bg-[#f0da11] text-gray-900 px-6 py-3 rounded-lg font-medium hover:bg-[#d0b211] transition-colors">
-                  Choose Plan
-                </a>
-              </div>
-            </div>
-
-            <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 flex flex-col h-full">
-              <div className="text-center mb-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">Enterprise Plan</h3>
-                <p className="text-gray-600">Premium maintenance for large operations</p>
-              </div>
-              
-              <ul className="space-y-3 mb-8 flex-grow">
-                <li className="flex items-center">
-                  <svg className="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
-                  </svg>
-                  <span>Bi-weekly service visits</span>
-                </li>
-                <li className="flex items-center">
-                  <svg className="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
-                  </svg>
-                  <span>Predictive maintenance</span>
-                </li>
-                <li className="flex items-center">
-                  <svg className="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
-                  </svg>
-                  <span>Dedicated technician</span>
-                </li>
-                <li className="flex items-center">
-                  <svg className="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
-                  </svg>
-                  <span>24/7 emergency service</span>
-                </li>
-                <li className="flex items-center">
-                  <svg className="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
-                  </svg>
-                  <span>Custom reporting</span>
-                </li>
-              </ul>
-              
-              <div className="text-center mt-auto">
-                <div className="text-3xl font-bold text-[#f0da11] mb-2">Custom</div>
-                <a href="/contact" className="bg-gray-200 text-gray-800 px-6 py-3 rounded-lg font-medium hover:bg-gray-300 transition-colors">
-                  Contact Sales
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Service Types */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -259,9 +86,9 @@ export default function ServiceMaintenance() {
               delay={50}
               animateBy="words"
               direction="top"
-              className="text-5xl md:text-6xl font-bold text-gray-900 mb-6"
+              className="md:!text-[2rem] text-[6rem] font-extrabold text-gray-900 mb-6"
             />
-            <p className="text-xl text-gray-600">Comprehensive maintenance services for all your car wash equipment</p>
+            <p className="text-xl text-gray-600">Comprehensive maintenance services for all your wash equipment</p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -300,7 +127,7 @@ export default function ServiceMaintenance() {
                 </svg>
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Emergency Repairs</h3>
-              <p className="text-gray-600 text-center mb-6">24/7 emergency service to get your car wash back up and running quickly.</p>
+              <p className="text-gray-600 text-center mb-6">24/7 emergency service to get your wash back up and running quickly.</p>
               <ul className="space-y-2 text-sm text-gray-600">
                 <li className="flex items-center">
                   <span className="w-2 h-2 bg-red-500 rounded-full mr-3"></span>
@@ -328,7 +155,7 @@ export default function ServiceMaintenance() {
                 </svg>
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Electrical Systems</h3>
-              <p className="text-gray-600 text-center mb-6">Specialized electrical maintenance and troubleshooting for all car wash systems.</p>
+              <p className="text-gray-600 text-center mb-6">Specialized electrical maintenance and troubleshooting for all wash systems.</p>
               <ul className="space-y-2 text-sm text-gray-600">
                 <li className="flex items-center">
                   <span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
@@ -498,10 +325,10 @@ export default function ServiceMaintenance() {
                 delay={50}
                 animateBy="words"
                 direction="top"
-                className="text-5xl md:text-6xl font-bold text-gray-900 mb-6"
+                className="md:!text-[2rem] text-[6rem] font-extrabold text-gray-900 mb-6"
               />
               <p className="text-lg text-gray-600 mb-8">
-                Our certified technicians provide expert maintenance services to keep your car wash 
+                Our certified technicians provide expert maintenance services to keep your wash 
                 equipment running smoothly and efficiently, minimizing downtime and maximizing profitability.
               </p>
               
@@ -569,9 +396,9 @@ export default function ServiceMaintenance() {
               delay={50}
               animateBy="words"
               direction="top"
-              className="text-5xl md:text-6xl font-bold text-gray-900 mb-6"
+              className="md:!text-[2rem] text-[6rem] font-extrabold text-gray-900 mb-6"
             />
-            <p className="text-xl text-gray-600">When your car wash goes down, every minute counts</p>
+            <p className="text-xl text-gray-600">When your wash goes down, every minute counts</p>
           </div>
 
           <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden">
@@ -634,6 +461,223 @@ export default function ServiceMaintenance() {
         </div>
       </section>
 
+      {/* Equipment We Service */}
+      <section className="py-16 bg-gradient-to-b from-white to-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <BlurText
+              text="Equipment We Service"
+              delay={50}
+              animateBy="words"
+              direction="top"
+              className="md:!text-[2rem] text-[6rem] font-extrabold text-gray-900 mb-6"
+            />
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Our certified technicians are trained to service all major wash equipment brands and systems
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+              <div className="text-center mb-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">Tunnel Systems</h3>
+                <p className="text-gray-600">Conveyor tunnels, brush systems, and automated wash equipment</p>
+              </div>
+              
+              <ul className="space-y-3 text-sm text-gray-600">
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
+                  Conveyor systems & motors
+                </li>
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
+                  Brush assemblies & drives
+                </li>
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
+                  Wrap-around brushes
+                </li>
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
+                  Top brushes & oscillators
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+              <div className="text-center mb-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-700 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">Self-Serve Bays</h3>
+                <p className="text-gray-600">Self-service equipment, pressure washers, and coin operations</p>
+              </div>
+              
+              <ul className="space-y-3 text-sm text-gray-600">
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
+                  High-pressure pumps
+                </li>
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
+                  Boom assemblies
+                </li>
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
+                  Coin mechanisms
+                </li>
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
+                  Timer systems
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+              <div className="text-center mb-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-700 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">Chemical Systems</h3>
+                <p className="text-gray-600">Chemical injection, mixing, and delivery systems</p>
+              </div>
+              
+              <ul className="space-y-3 text-sm text-gray-600">
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
+                  Proportioning pumps
+                </li>
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
+                  Chemical tanks & mixers
+                </li>
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
+                  Injection systems
+                </li>
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
+                  Dosing controllers
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+              <div className="text-center mb-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-700 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">Water Treatment</h3>
+                <p className="text-gray-600">Water reclaim, filtration, and treatment systems</p>
+              </div>
+              
+              <ul className="space-y-3 text-sm text-gray-600">
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>
+                  Reclaim systems
+                </li>
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>
+                  Filter assemblies
+                </li>
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>
+                  Clarifiers & separators
+                </li>
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>
+                  Holding tanks
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+              <div className="text-center mb-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-700 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">Electrical Controls</h3>
+                <p className="text-gray-600">Control panels, PLCs, and electrical systems</p>
+              </div>
+              
+              <ul className="space-y-3 text-sm text-gray-600">
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-red-500 rounded-full mr-3"></span>
+                  PLC programming
+                </li>
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-red-500 rounded-full mr-3"></span>
+                  Motor controls
+                </li>
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-red-500 rounded-full mr-3"></span>
+                  Safety circuits
+                </li>
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-red-500 rounded-full mr-3"></span>
+                  VFD drives
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+              <div className="text-center mb-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-teal-500 to-teal-700 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">Dryer Systems</h3>
+                <p className="text-gray-600">Air dryers, blowers, and drying equipment</p>
+              </div>
+              
+              <ul className="space-y-3 text-sm text-gray-600">
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-teal-500 rounded-full mr-3"></span>
+                  Blower assemblies
+                </li>
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-teal-500 rounded-full mr-3"></span>
+                  Air manifolds
+                </li>
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-teal-500 rounded-full mr-3"></span>
+                  Nozzle systems
+                </li>
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-teal-500 rounded-full mr-3"></span>
+                  Filter maintenance
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="text-center mt-12">
+            <div className="inline-flex items-center bg-[#f0da11]/10 backdrop-blur-sm rounded-full px-8 py-4 border border-[#f0da11]/30">
+              <svg className="w-6 h-6 mr-3 text-[#f0da11]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span className="text-lg font-semibold text-gray-900">
+                Trained technicians for all major brands including Belanger, PECO, AVW, PDQ and more.
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Call to Action */}
       <section className="py-20 relative bg-gradient-to-br from-yellow-400 via-yellow-500 to-orange-400 text-white overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
@@ -643,11 +687,11 @@ export default function ServiceMaintenance() {
         
         <div className="container mx-auto px-4 text-center relative z-10">
           <BlurText
-            text="Keep Your Car Wash Running Smoothly"
+            text="Keep Your Wash Running Smoothly"
             delay={50}
             animateBy="words"
             direction="top"
-            className="text-4xl md:text-6xl font-bold mb-6"
+            className="md:!text-[2rem] text-[6rem] font-extrabold text-gray-900 mb-6"
           />
           <p className="text-xl text-yellow-100 mb-8 max-w-2xl mx-auto">
             Contact us today to discuss your maintenance needs and schedule your service plan.
@@ -663,7 +707,7 @@ export default function ServiceMaintenance() {
               Schedule Service
             </a>
             <a 
-              href="tel:+18005559274" 
+              href="/contact" 
               className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-yellow-600 transition-colors duration-300 inline-flex items-center"
             >
               <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -62,7 +62,7 @@ export default function Projects() {
                 </svg>
               </div>
               <h3 className="text-xl font-semibold mb-3">New Installations</h3>
-              <p className="text-gray-600">Complete car wash facility construction and equipment installation</p>
+              <p className="text-gray-600">Complete wash facility construction and equipment installation</p>
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
@@ -72,7 +72,7 @@ export default function Projects() {
                 </svg>
               </div>
               <h3 className="text-xl font-semibold mb-3">Equipment Upgrades</h3>
-              <p className="text-gray-600">Modernization and enhancement of existing car wash equipment</p>
+              <p className="text-gray-600">Modernization and enhancement of existing wash equipment</p>
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
@@ -82,7 +82,7 @@ export default function Projects() {
                 </svg>
               </div>
               <h3 className="text-xl font-semibold mb-3">System Renovations</h3>
-              <p className="text-gray-600">Complete overhaul and modernization of aging car wash systems</p>
+              <p className="text-gray-600">Complete overhaul and modernization of aging wash systems</p>
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
@@ -131,7 +131,7 @@ export default function Projects() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Start Your Project?</h2>
           <p className="text-xl mb-8 text-blue-100">
-            Let us help you create a successful car wash operation that exceeds your goals
+            Let us help you create a successful wash operation that exceeds your goals
           </p>
           <a href="/contact" className="btn-primary">Get Started Today</a>
         </div>

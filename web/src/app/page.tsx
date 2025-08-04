@@ -38,9 +38,9 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Carwash Technologies - Car Wash Equipment Sales, Service & Consulting | Minnesota, North Dakota, South Dakota, Wisconsin</title>
-        <meta name="description" content="Carwash Technologies provides premium car wash equipment sales, professional service & maintenance, and expert consulting across Minnesota, North Dakota, South Dakota, and Wisconsin. Over 50 years combined experience." />
-        <meta name="keywords" content="car wash equipment, car wash service, car wash consulting, Minnesota car wash, North Dakota car wash, South Dakota car wash, Wisconsin car wash, car wash chemicals, tunnel wash equipment, self-serve car wash, auto dealership wash systems" />
+        <title>Carwash Technologies - Wash Equipment Sales, Service & Consulting | Minnesota, North Dakota, South Dakota, Wisconsin</title>
+        <meta name="description" content="Carwash Technologies provides premium wash equipment sales, professional service & maintenance, and expert consulting across Minnesota, North Dakota, South Dakota, and Wisconsin. Over 50 years combined experience." />
+        <meta name="keywords" content="Wash equipment, wash service, wash consulting, Minnesota wash, North Dakota wash, South Dakota wash, Wisconsin wash, wash chemicals, tunnel wash equipment, self-serve wash, auto dealership wash systems" />
         <meta name="author" content="Carwash Technologies" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="robots" content="index, follow" />
@@ -271,7 +271,7 @@ export default function Home() {
                   />
                 </div>
                 <BlurText
-                  text="Let our experienced technicians help you make your car wash more profitable or get you started with a new site."
+                  text="Let our experienced technicians help you make your wash more profitable or get you started with a new site."
                   delay={150}
                   animateBy="words"
                   direction="bottom"
@@ -296,7 +296,7 @@ export default function Home() {
                   </svg>
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Equipment Sales</h3>
-                <p className="text-gray-600 text-center mb-6 leading-relaxed">Quality car wash equipment from trusted manufacturers to get your operation running smoothly and efficiently.</p>
+                <p className="text-gray-600 text-center mb-6 leading-relaxed">Quality wash equipment from trusted manufacturers to get your operation running smoothly and efficiently.</p>
                 <div className="text-center">
                   <a href="/equipment-sales" className="inline-flex items-center px-6 py-3 bg-[#f0da11] text-gray-900 rounded-lg font-semibold hover:bg-[#d0b211] transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1">
                     <span>Learn More</span>
@@ -315,7 +315,7 @@ export default function Home() {
                   </svg>
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Service & Maintenance</h3>
-                <p className="text-gray-600 text-center mb-6 leading-relaxed">Professional service and maintenance to keep your car wash operating at peak efficiency year-round.</p>
+                <p className="text-gray-600 text-center mb-6 leading-relaxed">Professional service and maintenance to keep your wash operating at peak efficiency year-round.</p>
                 <div className="text-center">
                   <a href="/services" className="inline-flex items-center px-6 py-3 bg-[#f0da11] text-gray-900 rounded-lg font-semibold hover:bg-[#d0b211] transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1">
                     <span>Learn More</span>
@@ -334,7 +334,7 @@ export default function Home() {
                   </svg>
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Consulting</h3>
-                <p className="text-gray-600 text-center mb-6 leading-relaxed">Expert guidance for new installations and optimization of existing car wash operations for maximum profitability.</p>
+                <p className="text-gray-600 text-center mb-6 leading-relaxed">Expert guidance for new installations and optimization of existing wash operations for maximum profitability.</p>
                 <div className="text-center">
                   <a href="/services" className="inline-flex items-center px-6 py-3 bg-[#f0da11] text-gray-900 rounded-lg font-semibold hover:bg-[#d0b211] transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1">
                     <span>Learn More</span>
@@ -437,7 +437,7 @@ export default function Home() {
                 </svg>     
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">Sparkle Auto Spa - Madison</h3>
-              <p className="text-gray-600 text-center mb-4 text-sm leading-relaxed">Full-service car wash upgrade including new conveyor system and water reclaim.</p>
+              <p className="text-gray-600 text-center mb-4 text-sm leading-relaxed">Full-service wash upgrade including new conveyor system and water reclaim.</p>
               <div className="text-center">
                 <a href="/projects" className="inline-flex items-center text-[#f0da11] hover:text-[#d0b211] font-semibold transition-colors duration-300">
                   <span>View Details</span>
@@ -471,7 +471,7 @@ export default function Home() {
                 className="text-3xl md:!text-[2rem] font-extrabold text-gray-900 mb-6"
               />
               <BlurText
-                text="From new entrepreneurs to established businesses, we provide tailored solutions for every car wash operation"
+                text="From new entrepreneurs to established businesses, we provide tailored solutions for every wash operation"
                 delay={150}
                 animateBy="words"
                 direction="bottom"
@@ -488,8 +488,8 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">New Car Wash Owners</h3>
-              <p className="text-gray-600 text-center text-sm leading-relaxed">Complete turnkey solutions for entrepreneurs starting their first car wash business. From site planning to grand opening.</p>
+              <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">New Wash Owners</h3>
+              <p className="text-gray-600 text-center text-sm leading-relaxed">Complete turnkey solutions for entrepreneurs starting their first wash business. From site planning to grand opening.</p>
             </a>
 
             <a href="/services" className="bg-white/70 backdrop-blur-sm rounded-xl p-6 border border-gray-200/40 hover:bg-white/85 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group block">
@@ -552,14 +552,14 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <BlurText
-                text="Premium Car Wash Chemicals"
+                text="Premium Wash Chemicals"
                 delay={100}
                 animateBy="words"
                 direction="top"
                 className="text-3xl md:!text-[2rem] font-extrabold text-gray-900 mb-6"
               />
               <p className="text-lg text-gray-700 mb-6">
-                We supply high-quality car wash chemicals that deliver superior cleaning results while being
+                We supply high-quality wash chemicals that deliver superior cleaning results while being
                 environmentally responsible. Our chemical programs are designed to maximize efficiency and minimize waste.
               </p>
               <ul className="space-y-3 text-gray-700 mb-8">

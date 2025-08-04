@@ -30,7 +30,7 @@ export default function Services() {
               <svg className="w-5 h-5 mr-3 text-[#f0da11]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
-              <span className="text-sm font-semibold text-[#f0da11] tracking-wide">Professional Car Wash Solutions</span>
+              <span className="text-sm font-semibold text-[#f0da11] tracking-wide">Professional Wash Solutions</span>
             </div>
 
             <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
@@ -41,7 +41,7 @@ export default function Services() {
 
             <div className="flex justify-center">
               <BlurText
-                text="Comprehensive car wash solutions from equipment sales to ongoing support"
+                text="Comprehensive wash solutions from equipment sales to ongoing support"
                 delay={100}
                 animateBy="words"
                 direction="top"
@@ -112,7 +112,7 @@ export default function Services() {
                 className="md:!text-[2rem] text-[6rem] font-extrabold text-gray-900 mb-6"
               />
             <p className="text-xl text-gray-600 max-w-5xl mx-auto">
-              From initial consultation to ongoing support, we provide comprehensive solutions for your car wash business
+              From initial consultation to ongoing support, we provide comprehensive solutions for your wash business
             </p>
           </div>
           <div className="grid md:grid-cols-4 gap-8">
@@ -124,7 +124,7 @@ export default function Services() {
                   </svg>
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Equipment Sales</h3>
-                <p className="text-gray-600 leading-relaxed">Premium car wash equipment from leading manufacturers. We help you choose the right equipment for your specific needs and budget.</p>
+                <p className="text-gray-600 leading-relaxed">Premium wash equipment from leading manufacturers. We help you choose the right equipment for your specific needs and budget.</p>
                 <div className="mt-4 inline-flex items-center text-yellow-600 font-medium">
                 </div>
               </div>
@@ -153,7 +153,7 @@ export default function Services() {
                   </svg>
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Service & Maintenance</h3>
-                <p className="text-gray-600 leading-relaxed">Regular maintenance and emergency repair services to keep your car wash running smoothly and minimize downtime.</p>
+                <p className="text-gray-600 leading-relaxed">Regular maintenance and emergency repair services to keep your wash running smoothly and minimize downtime.</p>
                 <div className="mt-4 inline-flex items-center text-orange-600 font-medium">
                 </div>
               </div>
@@ -167,7 +167,7 @@ export default function Services() {
                   </svg>
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Chemical Sales</h3>
-                <p className="text-gray-600 leading-relaxed">High-quality car wash chemicals to keep your operation running smoothly with consistent, professional results.</p>
+                <p className="text-gray-600 leading-relaxed">High-quality wash chemicals to keep your operation running smoothly with consistent, professional results.</p>
                 <div className="mt-4 inline-flex items-center text-purple-600 font-medium">
                 </div>
               </div>
@@ -187,7 +187,7 @@ export default function Services() {
               direction="top"
               className="md:!text-[2rem] text-[6rem] font-extrabold text-gray-900 mb-6"
             />
-            <p className="text-xl text-gray-600">Complete range of car wash equipment solutions</p>
+            <p className="text-xl text-gray-600">Complete range of wash equipment solutions</p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -198,7 +198,7 @@ export default function Services() {
                 </svg>
               </div>
               <h3 className="text-xl font-semibold mb-3 text-gray-900">Tunnel Systems</h3>
-              <p className="text-gray-600">Complete conveyor car wash systems for high-volume operations</p>
+              <p className="text-gray-600">Complete conveyor wash systems for high-volume operations</p>
             </div>
             
             <div className="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition-shadow duration-300 border border-gray-100">
@@ -247,7 +247,7 @@ export default function Services() {
                 className="md:!text-[2rem] text-[6rem] font-extrabold text-gray-900 mb-6"
               />
               <p className="text-lg text-gray-600 mb-6">
-                We supply a complete line of high-performance car wash chemicals designed to 
+                We supply a complete line of high-performance wash chemicals designed to 
                 deliver superior results while being environmentally responsible.
               </p>
               
@@ -368,7 +368,7 @@ export default function Services() {
               direction="top"
               className="md:!text-[2rem] text-[6rem] font-extrabold text-gray-900 mb-6"
             />
-            <p className="text-xl text-gray-600">Expert guidance for every stage of your car wash journey</p>
+            <p className="text-xl text-gray-600">Expert guidance for every stage of your wash journey</p>
           </div>
           
           <div className="grid md:grid-cols-2 gap-8">
@@ -379,7 +379,7 @@ export default function Services() {
                 </svg>
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">New Site Development</h3>
-              <p className="text-gray-600">Complete site analysis, equipment recommendations, and project planning for new car wash facilities.</p>
+              <p className="text-gray-600">Complete site analysis, equipment recommendations, and project planning for new wash facilities.</p>
             </div>
             
             <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
@@ -434,7 +434,7 @@ export default function Services() {
             className="md:!text-[2rem] text-[6rem] font-extrabold text-gray-900 mb-6"
           />
           <p className="text-xl text-yellow-100 mb-8 max-w-2xl mx-auto">
-            Contact us today to discuss your car wash needs and discover how we can help your business thrive.
+            Contact us today to discuss your wash needs and discover how we can help your business thrive.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a 

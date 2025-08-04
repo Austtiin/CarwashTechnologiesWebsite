@@ -39,7 +39,7 @@ export default function InstallationSetup() {
 
             <div className="flex justify-center">
               <BlurText
-                text="Expert installation and setup services for your car wash equipment"
+                text="Expert installation and setup services for your wash equipment"
                 delay={100}
                 animateBy="words"
                 direction="top"
@@ -90,7 +90,7 @@ export default function InstallationSetup() {
               className="md:!text-[2rem] text-[6rem] font-extrabold text-gray-900 mb-6"
             />
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              From initial planning to final testing, we ensure your car wash equipment is installed correctly and efficiently
+              From initial planning to final testing, we ensure your wash equipment is installed correctly and efficiently
             </p>
           </div>
 
@@ -161,7 +161,7 @@ export default function InstallationSetup() {
               direction="top"
               className="md:!text-[2rem] text-[6rem] font-extrabold text-gray-900 mb-6"
             />
-            <p className="text-xl text-gray-600">Complete installation services for all types of car wash equipment</p>
+            <p className="text-xl text-gray-600">Complete installation services for all types of wash equipment</p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -256,7 +256,7 @@ export default function InstallationSetup() {
                 </svg>
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Payment System Integration</h3>
-              <p className="text-gray-600 text-center mb-6">Complete payment system installation and integration with your car wash operations.</p>
+              <p className="text-gray-600 text-center mb-6">Complete payment system installation and integration with your wash operations.</p>
               <ul className="space-y-2 text-sm text-gray-600">
                 <li className="flex items-center">
                   <span className="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>
@@ -349,7 +349,7 @@ export default function InstallationSetup() {
                 className="md:!text-[2rem] text-[6rem] font-extrabold text-gray-900 mb-6"
               />
               <p className="text-lg text-gray-600 mb-8">
-                Our experienced installation team ensures your car wash equipment is installed correctly, 
+                Our experienced installation team ensures your wash equipment is installed correctly, 
                 safely, and efficiently, minimizing downtime and maximizing performance.
               </p>
               
@@ -362,7 +362,7 @@ export default function InstallationSetup() {
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold text-gray-900 mb-2">Certified Technicians</h3>
-                    <p className="text-gray-600">Factory-trained and certified installation technicians with years of experience in car wash equipment.</p>
+                    <p className="text-gray-600">Factory-trained and certified installation technicians with years of experience in wash equipment.</p>
                   </div>
                 </div>
                 
@@ -374,7 +374,7 @@ export default function InstallationSetup() {
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold text-gray-900 mb-2">On-Time Completion</h3>
-                    <p className="text-gray-600">We stick to our installation schedules and timelines to get your car wash operational as quickly as possible.</p>
+                    <p className="text-gray-600">We stick to our installation schedules and timelines to get your wash operational as quickly as possible.</p>
                   </div>
                 </div>
                 
@@ -538,7 +538,7 @@ export default function InstallationSetup() {
                   </div>
                   <div className="ml-8 bg-white p-6 rounded-xl shadow-lg border border-gray-200 flex-1">
                     <h3 className="text-xl font-bold text-gray-900 mb-2">Grand Opening</h3>
-                    <p className="text-gray-600 mb-4">Your car wash is ready for operation with full support and warranty coverage.</p>
+                    <p className="text-gray-600 mb-4">Your wash is ready for operation with full support and warranty coverage.</p>
                     <div className="text-sm text-green-600 font-semibold">Ready for Business!</div>
                   </div>
                 </div>
@@ -564,7 +564,7 @@ export default function InstallationSetup() {
             className="md:!text-[2rem] text-[6rem] font-extrabold text-gray-900 mb-6"
           />
           <p className="text-xl text-yellow-100 mb-8 max-w-2xl mx-auto">
-            Contact us today to schedule your installation consultation and get your car wash project started.
+            Contact us today to schedule your installation consultation and get your wash project started.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a 
