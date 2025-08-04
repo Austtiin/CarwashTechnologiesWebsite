@@ -1,5 +1,6 @@
 'use client';
 import React, { useState, useEffect } from 'react';
+import Head from 'next/head';
 import BlurText from './components/animations/BlurText';
 import Card from './components/ui/card';
 import Aurora from './components/animations/Aurora';
@@ -35,284 +36,368 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen relative">
-      {/* Aurora Background for Hero Section */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <Aurora
-          colorStops={["#00e5ff", "#f00000", "#ff00b7", "#06ffa5"]} // Car wash RGB colors
-          blend={0.1}
-          amplitude={0.65}
-          speed={15.0}
-          time={time}
-        />
-      </div>
-
-      {/* Hero Section - With wave transition like about page */}
-      <section className="relative z-10 bg-gradient-to-br from-white/100 via-white/30 to-white/50 text-white py-16 min-h-[70vh] flex items-center">
-        {/* Subtle grid pattern */}
-        <div className="absolute inset-0 opacity-30 pointer-events-none z-0">
-          <div
-            className="h-full w-full"
-            style={{
-              backgroundImage: `radial-gradient(circle at 16px 16px, rgba(0, 0, 0, 0.15) 1px, transparent 1px)`,
-              backgroundSize: '32px 32px'
-            }}
-          ></div>
-        </div>
-
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* Text content for the hero section */}
-            <div>
-              <ShinyText
-                text="Welcome to"
-                disabled={false}
-                speed={3}
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-2 !text-gray-900"
-              />
-              <ShinyText
-                text="Carwash Technologies"
-                disabled={false}
-                speed={3}
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 !text-gray-900"
-              />
-
-              <BlurText
-                text="Sales, Service and Consulting"
-                delay={150}
-                animateBy="words"
-                direction="top"
-                className="text-2xl md:text-3xl lg:text-4xl font-semibold !text-white mb-6"
-              />
-
-              <BlurText
-                text="Carwash Technologies proudly service the Minnesota, North Dakota, South Dakota and Wisconsin markets."
-                delay={200}
-                animateBy="words"
-                direction="bottom"
-                className="text-xl md:text-xl mb-8 !text-white"
-              />
-
-              <div className="space-x-4 fade-in-up">
-                <a href="/contact" className="bg-[#f0da11] text-gray-900 px-8 py-4 rounded-xl font-semibold hover:bg-[#d0b211] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">Get Started</a>
-                <a href="/services" className="border-2 border-white text-white px-8 py-4 rounded-xl hover:bg-white hover:text-gray-900 transition-all duration-300 font-semibold">
-                  Our Services
-                </a>
-              </div>
-            </div>
-
-            {/* Company Logo */}
-            <div className="fade-in-up flex justify-center">
-              <div className="flex items-center justify-center w-[350px] h-[350px] bg-white/10 backdrop-blur-sm rounded-2xl p-3 border border-white/20">
-                <img
-                  src="/logoCWT.webp"
-                  alt="Carwash Technologies Logo"
-                  className="max-w-full max-h-full object-contain drop-shadow-2xl"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
+    <>
+      <Head>
+        <title>Carwash Technologies - Car Wash Equipment Sales, Service & Consulting | Minnesota, North Dakota, South Dakota, Wisconsin</title>
+        <meta name="description" content="Carwash Technologies provides premium car wash equipment sales, professional service & maintenance, and expert consulting across Minnesota, North Dakota, South Dakota, and Wisconsin. Over 50 years combined experience." />
+        <meta name="keywords" content="car wash equipment, car wash service, car wash consulting, Minnesota car wash, North Dakota car wash, South Dakota car wash, Wisconsin car wash, car wash chemicals, tunnel wash equipment, self-serve car wash, auto dealership wash systems" />
+        <meta name="author" content="Carwash Technologies" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://carwashtechnologies.com/" />
         
-        {/* Enhanced Wave transition at bottom - matching about page style */}
-        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none pointer-events-none z-20">
-            <svg
-                viewBox="0 0 1440 120"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-full h-40 md:h-40"
-                preserveAspectRatio="none"
-            >
-                <defs>
-                    <linearGradient id="heroWaveGradient" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor="#FEFCE8" stopOpacity=".8" />
-                      <stop offset="100%" stopColor="#FEFCE8" stopOpacity="1" />
-                      <stop offset="50%" stopColor="#FEFCE8" stopOpacity=".8" />
-                    </linearGradient>
-                </defs>
-                <path
-                    d="M0,60 C360,120 1080,0 1440,60 L1440,120 L0,120 Z"
-                    fill="url(#heroWaveGradient)"
-                />
-                <path
-                    d="M0,90 C480,30 960,150 1440,90 L1440,120 L0,120 Z"
-                    fill="#FEFCE8"
-                    fillOpacity="1.0"
-                />
-            </svg>
-        </div>
-      </section>
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://carwashtechnologies.com/" />
+        <meta property="og:title" content="Carwash Technologies - Car Wash Equipment Sales, Service & Consulting" />
+        <meta property="og:description" content="Premium car wash equipment sales, professional service & maintenance, and expert consulting across the Midwest. Over 50 years combined experience serving Minnesota, North Dakota, South Dakota, and Wisconsin." />
+        <meta property="og:image" content="https://carwashtechnologies.com/logoCWT.webp" />
+        <meta property="og:site_name" content="Carwash Technologies" />
+        <meta property="og:locale" content="en_US" />
 
-      {/* Services Overview Section */}
-      <section className="relative z-10 py-20 bg-yellow-50 backdrop-blur-sm overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          {/* Spinning squares instead of moving bubbles */}
-          <div className="absolute top-12 left-12 w-16 h-16 border-2 border-[#f0da11]/25 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '8s' }}></div>
-          <div className="absolute top-1/4 right-20 w-12 h-12 border-2 border-[#bfb986]/30 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '6s', animationDelay: '1s' }}></div>
-          <div className="absolute bottom-20 left-1/4 w-20 h-20 border-2 border-[#d0b211]/20 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '10s', animationDelay: '2s' }}></div>
-          <div className="absolute bottom-1/3 right-16 w-14 h-14 border-2 border-[#f0da11]/35 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '7s', animationDelay: '1.5s' }}></div>
-          <div className="absolute top-1/2 left-1/3 w-10 h-10 border-2 border-[#bfb986]/25 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '9s', animationDelay: '0.5s' }}></div>
-          
-          {/* Yellow dot grid pattern - consistent across all sections */}
-          <div className="absolute inset-0 opacity-20 pointer-events-none z-10">
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://carwashtechnologies.com/" />
+        <meta property="twitter:title" content="Carwash Technologies - Car Wash Equipment Sales, Service & Consulting" />
+        <meta property="twitter:description" content="Premium car wash equipment sales, professional service & maintenance, and expert consulting across the Midwest. Over 50 years combined experience." />
+        <meta property="twitter:image" content="https://carwashtechnologies.com/logoCWT.webp" />
+
+        {/* Additional SEO tags */}
+        <meta name="geo.region" content="US-MN" />
+        <meta name="geo.placename" content="Forest Lake, Minnesota" />
+        <meta name="geo.position" content="45.2719;-92.9852" />
+        <meta name="ICBM" content="45.2719, -92.9852" />
+        
+        {/* Business Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Carwash Technologies",
+            "description": "Car wash equipment sales, service, and consulting across Minnesota, North Dakota, South Dakota, and Wisconsin",
+            "url": "https://carwashtechnologies.com",
+            "telephone": "(612) 408-9010",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "322 19th St. SW",
+              "addressLocality": "Forest Lake",
+              "addressRegion": "MN",
+              "postalCode": "55025",
+              "addressCountry": "US"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": "45.2719",
+              "longitude": "-92.9852"
+            },
+            "areaServed": [
+              {
+                "@type": "State",
+                "name": "Minnesota"
+              },
+              {
+                "@type": "State", 
+                "name": "North Dakota"
+              },
+              {
+                "@type": "State",
+                "name": "South Dakota"
+              },
+              {
+                "@type": "State",
+                "name": "Wisconsin"
+              }
+            ],
+            "serviceType": [
+              "Car Wash Equipment Sales",
+              "Car Wash Service and Maintenance", 
+              "Car Wash Consulting",
+              "Car Wash Chemicals"
+            ],
+            "logo": "https://carwashtechnologies.com/logoCWT.webp",
+            "image": "https://carwashtechnologies.com/logoCWT.webp"
+          })}
+        </script>
+      </Head>
+
+      <div className="min-h-screen relative">
+        {/* Aurora Background for Hero Section */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <Aurora
+            colorStops={["#00e5ff", "#f00000", "#ff00b7", "#06ffa5"]} // Car wash RGB colors
+            blend={0.1}
+            amplitude={0.65}
+            speed={15.0}
+            time={time}
+          />
+        </div>
+
+        {/* Hero Section - With wave transition like about page */}
+        <section className="relative z-10 bg-gradient-to-br from-white/100 via-white/30 to-white/50 text-white py-16 min-h-[70vh] flex items-center">
+          {/* Subtle grid pattern */}
+          <div className="absolute inset-0 opacity-30 pointer-events-none z-0">
             <div
               className="h-full w-full"
               style={{
-                backgroundImage: `radial-gradient(circle at 1px, #9b9000 1px, transparent 1px)`,
-                backgroundSize: '24px 24px'
+                backgroundImage: `radial-gradient(circle at 16px 16px, rgba(0, 0, 0, 0.15) 1px, transparent 1px)`,
+                backgroundSize: '32px 32px'
               }}
             ></div>
           </div>
-          
-          {/* Additional spinning squares for visual interest */}
-          <div className="absolute top-10 left-10 w-10 h-10 border-2 border-[#f011b8]/30 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '6s' }}></div>
-          <div className="absolute top-1/3 right-24 w-8 h-8 border-2 border-[#86bf8b]/30 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '7s', animationDelay: '1s' }}></div>
-          <div className="absolute bottom-24 left-1/4 w-12 h-12 border-2 border-[#d01151]/30 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '8s', animationDelay: '2s' }}></div>
-          <div className="absolute bottom-10 right-10 w-9 h-9 border-2 border-[#f011cb]/20 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '5s', animationDelay: '1.5s' }}></div>
-          <div className="absolute top-20 right-20 w-12 h-12 border-2 border-[#114cf0]/15 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '8s' }}></div>
-          <div className="absolute bottom-32 left-16 w-8 h-8 bg-[#9586bf]/15 rounded-full animate-bounce" style={{ animationDelay: '1.5s' }}></div>
-        </div>
 
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-16">
-            <div className="max-w-4xl mx-auto bg-white/75 backdrop-blur-sm rounded-xl p-8 border border-gray-200/40 shadow-md mb-8">
-              <div className="text-center mb-4">
+          <div className="container mx-auto px-4">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              {/* Text content for the hero section */}
+              <div>
+                <ShinyText
+                  text="Welcome to"
+                  disabled={false}
+                  speed={3}
+                  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-2 !text-gray-900"
+                />
+                <ShinyText
+                  text="Carwash Technologies"
+                  disabled={false}
+                  speed={3}
+                  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 !text-gray-900"
+                />
+
                 <BlurText
-                  text="Our Expertise"
+                  text="Sales, Service and Consulting"
+                  delay={150}
+                  animateBy="words"
+                  direction="top"
+                  className="text-2xl md:text-3xl lg:text-4xl font-semibold !text-white mb-6"
+                />
+
+                <BlurText
+                  text="Carwash Technologies proudly service the Minnesota, North Dakota, South Dakota and Wisconsin markets."
+                  delay={200}
+                  animateBy="words"
+                  direction="bottom"
+                  className="text-xl md:text-xl mb-8 !text-white"
+                />
+
+                <div className="space-x-4 fade-in-up">
+                  <a href="/contact" className="bg-[#f0da11] text-gray-900 px-8 py-4 rounded-xl font-semibold hover:bg-[#d0b211] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">Get Started</a>
+                  <a href="/services" className="border-2 border-white text-white px-8 py-4 rounded-xl hover:bg-white hover:text-gray-900 transition-all duration-300 font-semibold">
+                    Our Services
+                  </a>
+                </div>
+              </div>
+
+              {/* Company Logo */}
+              <div className="fade-in-up flex justify-center">
+                <div className="flex items-center justify-center w-[350px] h-[350px] bg-white/10 backdrop-blur-sm rounded-2xl p-3 border border-white/20">
+                  <img
+                    src="/logoCWT.webp"
+                    alt="Carwash Technologies Logo"
+                    className="max-w-full max-h-full object-contain drop-shadow-2xl"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Enhanced Wave transition at bottom - matching about page style */}
+          <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none pointer-events-none z-20">
+              <svg
+                  viewBox="0 0 1440 120"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-full h-40 md:h-40"
+                  preserveAspectRatio="none"
+              >
+                  <defs>
+                      <linearGradient id="heroWaveGradient" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stopColor="#FEFCE8" stopOpacity=".8" />
+                        <stop offset="100%" stopColor="#FEFCE8" stopOpacity="1" />
+                        <stop offset="50%" stopColor="#FEFCE8" stopOpacity=".8" />
+                      </linearGradient>
+                  </defs>
+                  <path
+                      d="M0,60 C360,120 1080,0 1440,60 L1440,120 L0,120 Z"
+                      fill="url(#heroWaveGradient)"
+                  />
+                  <path
+                      d="M0,90 C480,30 960,150 1440,90 L1440,120 L0,120 Z"
+                      fill="#FEFCE8"
+                      fillOpacity="1.0"
+                  />
+              </svg>
+          </div>
+        </section>
+
+        {/* Services Overview Section */}
+        <section className="relative z-10 py-20 bg-yellow-50 backdrop-blur-sm overflow-hidden">
+          <div className="absolute inset-0 pointer-events-none">
+            {/* Spinning squares instead of moving bubbles */}
+            <div className="absolute top-12 left-12 w-16 h-16 border-2 border-[#f0da11]/25 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '8s' }}></div>
+            <div className="absolute top-1/4 right-20 w-12 h-12 border-2 border-[#bfb986]/30 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '6s', animationDelay: '1s' }}></div>
+            <div className="absolute bottom-20 left-1/4 w-20 h-20 border-2 border-[#d0b211]/20 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '10s', animationDelay: '2s' }}></div>
+            <div className="absolute bottom-1/3 right-16 w-14 h-14 border-2 border-[#f0da11]/35 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '7s', animationDelay: '1.5s' }}></div>
+            <div className="absolute top-1/2 left-1/3 w-10 h-10 border-2 border-[#bfb986]/25 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '9s', animationDelay: '0.5s' }}></div>
+            
+            {/* Yellow dot grid pattern - consistent across all sections */}
+            <div className="absolute inset-0 opacity-20 pointer-events-none z-10">
+              <div
+                className="h-full w-full"
+                style={{
+                  backgroundImage: `radial-gradient(circle at 1px, #9b9000 1px, transparent 1px)`,
+                  backgroundSize: '24px 24px'
+                }}
+              ></div>
+            </div>
+            
+            {/* Additional spinning squares for visual interest */}
+            <div className="absolute top-10 left-10 w-10 h-10 border-2 border-[#f011b8]/30 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '6s' }}></div>
+            <div className="absolute top-1/3 right-24 w-8 h-8 border-2 border-[#86bf8b]/30 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '7s', animationDelay: '1s' }}></div>
+            <div className="absolute bottom-24 left-1/4 w-12 h-12 border-2 border-[#d01151]/30 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '8s', animationDelay: '2s' }}></div>
+            <div className="absolute bottom-10 right-10 w-9 h-9 border-2 border-[#f011cb]/20 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '5s', animationDelay: '1.5s' }}></div>
+            <div className="absolute top-20 right-20 w-12 h-12 border-2 border-[#114cf0]/15 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '8s' }}></div>
+            <div className="absolute bottom-32 left-16 w-8 h-8 bg-[#9586bf]/15 rounded-full animate-bounce" style={{ animationDelay: '1.5s' }}></div>
+          </div>
+
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="text-center mb-16">
+              <div className="max-w-4xl mx-auto bg-white/75 backdrop-blur-sm rounded-xl p-8 border border-gray-200/40 shadow-md mb-8">
+                <div className="text-center mb-4">
+                  <BlurText
+                    text="Our Expertise"
+                    delay={100}
+                    animateBy="words"
+                    direction="top"
+                    className="text-3xl md:!text-[2rem] font-extrabold text-gray-900 mb-6"
+                  />
+                </div>
+                <BlurText
+                  text="Let our experienced technicians help you make your car wash more profitable or get you started with a new site."
+                  delay={150}
+                  animateBy="words"
+                  direction="bottom"
+                  className="text-lg md:text-xl text-gray-700 mb-4"
+                />
+                <BlurText
+                  text="With over 50 years of combined experience, our staff has the knowledge to overcome any hurdle."
+                  delay={200}
+                  animateBy="words"
+                  direction="bottom"
+                  className="text-lg md:text-xl text-gray-700"
+                />
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              {/* Equipment Sales Card */}
+              <div className="bg-white/70 backdrop-blur-sm rounded-xl p-8 border border-gray-200/30 hover:bg-white/85 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 7.172V5L8 4z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Equipment Sales</h3>
+                <p className="text-gray-600 text-center mb-6 leading-relaxed">Quality car wash equipment from trusted manufacturers to get your operation running smoothly and efficiently.</p>
+                <div className="text-center">
+                  <a href="/equipment-sales" className="inline-flex items-center px-6 py-3 bg-[#f0da11] text-gray-900 rounded-lg font-semibold hover:bg-[#d0b211] transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1">
+                    <span>Learn More</span>
+                    <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
+              {/* Service & Maintenance Card */}
+              <div className="bg-white/70 backdrop-blur-sm rounded-xl p-8 border border-gray-200/30 hover:bg-white/85 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group">
+                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Service & Maintenance</h3>
+                <p className="text-gray-600 text-center mb-6 leading-relaxed">Professional service and maintenance to keep your car wash operating at peak efficiency year-round.</p>
+                <div className="text-center">
+                  <a href="/services" className="inline-flex items-center px-6 py-3 bg-[#f0da11] text-gray-900 rounded-lg font-semibold hover:bg-[#d0b211] transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1">
+                    <span>Learn More</span>
+                    <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
+              {/* Consulting Card */}
+              <div className="bg-white/70 backdrop-blur-sm rounded-xl p-8 border border-gray-200/30 hover:bg-white/85 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group">
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Consulting</h3>
+                <p className="text-gray-600 text-center mb-6 leading-relaxed">Expert guidance for new installations and optimization of existing car wash operations for maximum profitability.</p>
+                <div className="text-center">
+                  <a href="/services" className="inline-flex items-center px-6 py-3 bg-[#f0da11] text-gray-900 rounded-lg font-semibold hover:bg-[#d0b211] transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1">
+                    <span>Learn More</span>
+                    <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Recent Projects & Who We Serve Section */}
+        <section className="relative z-10 py-20 bg-yellow-50 backdrop-blur-sm overflow-hidden">
+          <div className="absolute inset-0 pointer-events-none">
+            {/* Spinning squares instead of moving bubbles - different positions */}
+            <div className="absolute top-16 right-12 w-18 h-18 border-2 border-[#f0da11]/30 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '9s' }}></div>
+            <div className="absolute bottom-12 left-20 w-14 h-14 border-2 border-[#bfb986]/25 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '7s', animationDelay: '1s' }}></div>
+            <div className="absolute top-1/2 left-16 w-16 h-16 border-2 border-[#d0b211]/35 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '11s', animationDelay: '2s' }}></div>
+            <div className="absolute top-1/3 right-1/4 w-10 h-10 border-2 border-[#f0da11]/40 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '6s', animationDelay: '0.5s' }}></div>
+            <div className="absolute bottom-1/4 left-1/3 w-12 h-12 border-2 border-[#bfb986]/30 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '8s', animationDelay: '1.5s' }}></div>
+            <div className="absolute top-20 left-1/2 w-8 h-8 border-2 border-[#d0b211]/25 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '10s', animationDelay: '3s' }}></div>
+            
+            {/* Yellow dot grid pattern - consistent */}
+            <div className="absolute inset-0 opacity-20 pointer-events-none z-10">
+              <div
+                className="h-full w-full"
+                style={{
+                  backgroundImage: `radial-gradient(circle at 1px, #f0da11 1px, transparent 1px)`,
+                  backgroundSize: '24px 24px'
+                }}
+              ></div>
+            </div>
+          </div>
+
+          <div className="container mx-auto px-4 relative z-10">
+            {/* Recent Projects Section */}
+            <div className="max-w-4xl mx-auto bg-white/75 backdrop-blur-sm rounded-xl p-8 border border-gray-200/40 shadow-md mb-16">
+              <div className="text-center">
+                <BlurText
+                  text="Recent Projects"
                   delay={100}
                   animateBy="words"
                   direction="top"
                   className="text-3xl md:!text-[2rem] font-extrabold text-gray-900 mb-6"
                 />
-              </div>
-              <BlurText
-                text="Let our experienced technicians help you make your car wash more profitable or get you started with a new site."
-                delay={150}
-                animateBy="words"
-                direction="bottom"
-                className="text-lg md:text-xl text-gray-700 mb-4"
-              />
-              <BlurText
-                text="With over 50 years of combined experience, our staff has the knowledge to overcome any hurdle."
-                delay={200}
-                animateBy="words"
-                direction="bottom"
-                className="text-lg md:text-xl text-gray-700"
-              />
-            </div>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Equipment Sales Card */}
-            <div className="bg-white/70 backdrop-blur-sm rounded-xl p-8 border border-gray-200/30 hover:bg-white/85 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group">
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 7.172V5L8 4z" />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Equipment Sales</h3>
-              <p className="text-gray-600 text-center mb-6 leading-relaxed">Quality car wash equipment from trusted manufacturers to get your operation running smoothly and efficiently.</p>
-              <div className="text-center">
-                <a href="/equipment-sales" className="inline-flex items-center px-6 py-3 bg-[#f0da11] text-gray-900 rounded-lg font-semibold hover:bg-[#d0b211] transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1">
-                  <span>Learn More</span>
-                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </a>
+                <BlurText
+                  text="See our latest installations and success stories across the Midwest"
+                  delay={150}
+                  animateBy="words"
+                  direction="bottom"
+                  className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto"
+                />
               </div>
             </div>
 
-            {/* Service & Maintenance Card */}
-            <div className="bg-white/70 backdrop-blur-sm rounded-xl p-8 border border-gray-200/30 hover:bg-white/85 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group">
-              <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4" />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Service & Maintenance</h3>
-              <p className="text-gray-600 text-center mb-6 leading-relaxed">Professional service and maintenance to keep your car wash operating at peak efficiency year-round.</p>
-              <div className="text-center">
-                <a href="/services" className="inline-flex items-center px-6 py-3 bg-[#f0da11] text-gray-900 rounded-lg font-semibold hover:bg-[#d0b211] transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1">
-                  <span>Learn More</span>
-                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </a>
-              </div>
-            </div>
-
-            {/* Consulting Card */}
-            <div className="bg-white/70 backdrop-blur-sm rounded-xl p-8 border border-gray-200/30 hover:bg-white/85 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group">
-              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Consulting</h3>
-              <p className="text-gray-600 text-center mb-6 leading-relaxed">Expert guidance for new installations and optimization of existing car wash operations for maximum profitability.</p>
-              <div className="text-center">
-                <a href="/services" className="inline-flex items-center px-6 py-3 bg-[#f0da11] text-gray-900 rounded-lg font-semibold hover:bg-[#d0b211] transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1">
-                  <span>Learn More</span>
-                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Recent Projects & Who We Serve Section */}
-      <section className="relative z-10 py-20 bg-yellow-50 backdrop-blur-sm overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          {/* Spinning squares instead of moving bubbles - different positions */}
-          <div className="absolute top-16 right-12 w-18 h-18 border-2 border-[#f0da11]/30 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '9s' }}></div>
-          <div className="absolute bottom-12 left-20 w-14 h-14 border-2 border-[#bfb986]/25 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '7s', animationDelay: '1s' }}></div>
-          <div className="absolute top-1/2 left-16 w-16 h-16 border-2 border-[#d0b211]/35 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '11s', animationDelay: '2s' }}></div>
-          <div className="absolute top-1/3 right-1/4 w-10 h-10 border-2 border-[#f0da11]/40 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '6s', animationDelay: '0.5s' }}></div>
-          <div className="absolute bottom-1/4 left-1/3 w-12 h-12 border-2 border-[#bfb986]/30 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '8s', animationDelay: '1.5s' }}></div>
-          <div className="absolute top-20 left-1/2 w-8 h-8 border-2 border-[#d0b211]/25 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '10s', animationDelay: '3s' }}></div>
-          
-          {/* Yellow dot grid pattern - consistent */}
-          <div className="absolute inset-0 opacity-20 pointer-events-none z-10">
-            <div
-              className="h-full w-full"
-              style={{
-                backgroundImage: `radial-gradient(circle at 1px, #f0da11 1px, transparent 1px)`,
-                backgroundSize: '24px 24px'
-              }}
-            ></div>
-          </div>
-        </div>
-
-        <div className="container mx-auto px-4 relative z-10">
-          {/* Recent Projects Section */}
-          <div className="max-w-4xl mx-auto bg-white/75 backdrop-blur-sm rounded-xl p-8 border border-gray-200/40 shadow-md mb-16">
-            <div className="text-center">
-              <BlurText
-                text="Recent Projects"
-                delay={100}
-                animateBy="words"
-                direction="top"
-                className="text-3xl md:!text-[2rem] font-extrabold text-gray-900 mb-6"
-              />
-              <BlurText
-                text="See our latest installations and success stories across the Midwest"
-                delay={150}
-                animateBy="words"
-                direction="bottom"
-                className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto"
-              />
-            </div>
-          </div>
-
-          {/* Project cards */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            <div className="bg-white/75 backdrop-blur-sm rounded-xl p-6 border border-gray-200/40 hover:bg-white/90 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group">
-              <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+            {/* Project cards */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+              <div className="bg-white/75 backdrop-blur-sm rounded-xl p-6 border border-gray-200/40 hover:bg-white/90 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group">
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                 </svg>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">SuperWash Express - St. Paul</h3>
@@ -646,5 +731,6 @@ export default function Home() {
         }
       `}</style>
     </div>
+    </>
   );
 }
