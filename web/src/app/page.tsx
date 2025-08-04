@@ -9,19 +9,24 @@ export default function Home() {
   const [time, setTime] = useState(0);
 
   // Update time for Aurora animation using requestAnimationFrame
+  const animationIdRef = React.useRef<number>();
+
   useEffect(() => {
-    let animationId: number;
     const startTime = Date.now();
 
     const updateTime = () => {
       const elapsed = (Date.now() - startTime) / 1000; // Convert to seconds
       setTime(elapsed);
-      animationId = requestAnimationFrame(updateTime);
+      animationIdRef.current = requestAnimationFrame(updateTime);
     };
 
-    animationId = requestAnimationFrame(updateTime);
+    animationIdRef.current = requestAnimationFrame(updateTime);
 
-    return () => cancelAnimationFrame(animationId);
+    return () => {
+      if (animationIdRef.current !== undefined) {
+        cancelAnimationFrame(animationIdRef.current);
+      }
+    };
   }, []);
 
   // Callback function for when the hero animation completes
@@ -35,21 +40,21 @@ export default function Home() {
       <div className="absolute inset-0 z-0 pointer-events-none">
         <Aurora
           colorStops={["#00e5ff", "#f00000", "#ff00b7", "#06ffa5"]} // Car wash RGB colors
-          blend={0.9}
-          amplitude={0.1}
-          speed={10.0}
+          blend={0.1}
+          amplitude={0.65}
+          speed={15.0}
           time={time}
         />
       </div>
 
-      {/* Hero Section - Reduced height */}
-      <section className="relative z-10 bg-gradient-to-br from-white/50 via-white/20 to-white/50 text-white py-16 min-h-[70vh] flex items-center">
+      {/* Hero Section - With wave transition like about page */}
+      <section className="relative z-10 bg-gradient-to-br from-white/100 via-white/30 to-white/50 text-white py-16 min-h-[70vh] flex items-center">
         {/* Subtle grid pattern */}
         <div className="absolute inset-0 opacity-30 pointer-events-none z-0">
           <div
             className="h-full w-full"
             style={{
-              backgroundImage: `radial-gradient(circle at 16px 16px, rgba(0, 0, 0, 0.15) 2px, transparent 2px)`,
+              backgroundImage: `radial-gradient(circle at 16px 16px, rgba(0, 0, 0, 0.15) 1px, transparent 1px)`,
               backgroundSize: '32px 32px'
             }}
           ></div>
@@ -60,39 +65,39 @@ export default function Home() {
             {/* Text content for the hero section */}
             <div>
               <ShinyText
-              text="Welcome to"
-              disabled={false}
-              speed={3}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-2 !text-gray-900"
+                text="Welcome to"
+                disabled={false}
+                speed={3}
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-2 !text-gray-900"
               />
               <ShinyText
-              text="Carwash Technologies"
-              disabled={false}
-              speed={3}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 !text-gray-900"
+                text="Carwash Technologies"
+                disabled={false}
+                speed={3}
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 !text-gray-900"
               />
 
               <BlurText
-              text="Sales, Service and Consulting"
-              delay={150}
-              animateBy="words"
-              direction="top"
-              className="text-2xl md:text-3xl lg:text-4xl font-semibold !text-white mb-6"
+                text="Sales, Service and Consulting"
+                delay={150}
+                animateBy="words"
+                direction="top"
+                className="text-2xl md:text-3xl lg:text-4xl font-semibold !text-white mb-6"
               />
 
               <BlurText
-              text="Carwash Technologies proudly service the Minnesota, North Dakota, South Dakota and Wisconsin markets."
-              delay={200}
-              animateBy="words"
-              direction="bottom"
-              className="text-xl md:text-xl mb-8 !text-white"
+                text="Carwash Technologies proudly service the Minnesota, North Dakota, South Dakota and Wisconsin markets."
+                delay={200}
+                animateBy="words"
+                direction="bottom"
+                className="text-xl md:text-xl mb-8 !text-white"
               />
 
               <div className="space-x-4 fade-in-up">
-              <a href="/contact" className="bg-[#f0da11] text-gray-900 px-8 py-4 rounded-xl font-semibold hover:bg-[#d0b211] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">Get Started</a>
-              <a href="/services" className="border-2 border-white text-white px-8 py-4 rounded-xl hover:bg-white hover:text-gray-900 transition-all duration-300 font-semibold">
-                Our Services
-              </a>
+                <a href="/contact" className="bg-[#f0da11] text-gray-900 px-8 py-4 rounded-xl font-semibold hover:bg-[#d0b211] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">Get Started</a>
+                <a href="/services" className="border-2 border-white text-white px-8 py-4 rounded-xl hover:bg-white hover:text-gray-900 transition-all duration-300 font-semibold">
+                  Our Services
+                </a>
               </div>
             </div>
 
@@ -109,70 +114,90 @@ export default function Home() {
           </div>
         </div>
         
-        {/* Wave transition at bottom */}
-        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
-          <svg className="relative block w-full h-24" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" className="fill-yellow-50"></path>
-            {/* Grey overlay on the wave */}
-            <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" className="fill-gray-900/5"></path>
-          </svg>
+        {/* Enhanced Wave transition at bottom - matching about page style */}
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none pointer-events-none z-20">
+            <svg
+                viewBox="0 0 1440 120"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-full h-40 md:h-40"
+                preserveAspectRatio="none"
+            >
+                <defs>
+                    <linearGradient id="heroWaveGradient" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stopColor="#FEFCE8" stopOpacity=".8" />
+                      <stop offset="100%" stopColor="#FEFCE8" stopOpacity="1" />
+                      <stop offset="50%" stopColor="#FEFCE8" stopOpacity=".8" />
+                    </linearGradient>
+                </defs>
+                <path
+                    d="M0,60 C360,120 1080,0 1440,60 L1440,120 L0,120 Z"
+                    fill="url(#heroWaveGradient)"
+                />
+                <path
+                    d="M0,90 C480,30 960,150 1440,90 L1440,120 L0,120 Z"
+                    fill="#FEFCE8"
+                    fillOpacity="1.0"
+                />
+            </svg>
         </div>
       </section>
 
       {/* Services Overview Section */}
       <section className="relative z-10 py-20 bg-yellow-50 backdrop-blur-sm overflow-hidden">
-        {/* Enhanced background elements with grey overlay and moving bubbles */}
         <div className="absolute inset-0 pointer-events-none">
-          {/* Grey overlay - matching other sections */}
-          <div className="absolute inset-0 bg-gray-900/5"></div>
+          {/* Spinning squares instead of moving bubbles */}
+          <div className="absolute top-12 left-12 w-16 h-16 border-2 border-[#f0da11]/25 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '8s' }}></div>
+          <div className="absolute top-1/4 right-20 w-12 h-12 border-2 border-[#bfb986]/30 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '6s', animationDelay: '1s' }}></div>
+          <div className="absolute bottom-20 left-1/4 w-20 h-20 border-2 border-[#d0b211]/20 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '10s', animationDelay: '2s' }}></div>
+          <div className="absolute bottom-1/3 right-16 w-14 h-14 border-2 border-[#f0da11]/35 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '7s', animationDelay: '1.5s' }}></div>
+          <div className="absolute top-1/2 left-1/3 w-10 h-10 border-2 border-[#bfb986]/25 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '9s', animationDelay: '0.5s' }}></div>
           
-          {/* Moving bubbles */}
-          <div className="absolute top-0 left-0 w-80 h-80 bg-gradient-to-br from-[#f0da11]/8 to-transparent rounded-full opacity-60 -translate-x-32 -translate-y-32 animate-pulse"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-tl from-[#bfb986]/12 to-transparent rounded-full opacity-50 translate-x-48 translate-y-48 animate-pulse" style={{ animationDelay: '1s' }}></div>
-          <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-gradient-to-br from-[#d0b211]/6 to-transparent rounded-full opacity-40 -translate-x-32 -translate-y-32 animate-pulse" style={{ animationDelay: '2s' }}></div>
-          
-          {/* Subtle grid pattern */}
-          <div className="absolute inset-0 opacity-20 pointer-events-none z-0">
+          {/* Yellow dot grid pattern - consistent across all sections */}
+          <div className="absolute inset-0 opacity-20 pointer-events-none z-10">
             <div
               className="h-full w-full"
               style={{
-                backgroundImage: `radial-gradient(circle at 16px 16px, #f0da11 4px, transparent 4px)`,
-                backgroundSize: '48px 48px'
+                backgroundImage: `radial-gradient(circle at 1px, #9b9000 1px, transparent 1px)`,
+                backgroundSize: '24px 24px'
               }}
             ></div>
           </div>
           
-          {/* Geometric shapes */}
-          <div className="absolute top-20 right-20 w-12 h-12 border-2 border-[#f0da11]/15 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '8s' }}></div>
-          <div className="absolute bottom-32 left-16 w-8 h-8 bg-[#bfb986]/15 rounded-full animate-bounce" style={{ animationDelay: '1.5s' }}></div>
+          {/* Additional spinning squares for visual interest */}
+          <div className="absolute top-10 left-10 w-10 h-10 border-2 border-[#f011b8]/30 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '6s' }}></div>
+          <div className="absolute top-1/3 right-24 w-8 h-8 border-2 border-[#86bf8b]/30 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '7s', animationDelay: '1s' }}></div>
+          <div className="absolute bottom-24 left-1/4 w-12 h-12 border-2 border-[#d01151]/30 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '8s', animationDelay: '2s' }}></div>
+          <div className="absolute bottom-10 right-10 w-9 h-9 border-2 border-[#f011cb]/20 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '5s', animationDelay: '1.5s' }}></div>
+          <div className="absolute top-20 right-20 w-12 h-12 border-2 border-[#114cf0]/15 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '8s' }}></div>
+          <div className="absolute bottom-32 left-16 w-8 h-8 bg-[#9586bf]/15 rounded-full animate-bounce" style={{ animationDelay: '1.5s' }}></div>
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-          
             <div className="max-w-4xl mx-auto bg-white/75 backdrop-blur-sm rounded-xl p-8 border border-gray-200/40 shadow-md mb-8">
               <div className="text-center mb-4">
-              <BlurText
-                text="Our Expertise"
-                delay={100}
-                animateBy="words"
-                direction="top"
-                className="md:!text-[2rem] text-[6rem] font-extrabold text-gray-900 mb-6"
-              />
+                <BlurText
+                  text="Our Expertise"
+                  delay={100}
+                  animateBy="words"
+                  direction="top"
+                  className="text-3xl md:!text-[2rem] font-extrabold text-gray-900 mb-6"
+                />
               </div>
               <BlurText
-              text="Let our experienced technicians help you make your car wash more profitable or get you started with a new site."
-              delay={150}
-              animateBy="words"
-              direction="bottom"
-              className="text-lg md:text-xl text-gray-700 mb-4"
+                text="Let our experienced technicians help you make your car wash more profitable or get you started with a new site."
+                delay={150}
+                animateBy="words"
+                direction="bottom"
+                className="text-lg md:text-xl text-gray-700 mb-4"
               />
               <BlurText
-              text="With over 50 years of combined experience, our staff has the knowledge to overcome any hurdle."
-              delay={200}
-              animateBy="words"
-              direction="bottom"
-              className="text-lg md:text-xl text-gray-700"
+                text="With over 50 years of combined experience, our staff has the knowledge to overcome any hurdle."
+                delay={200}
+                animateBy="words"
+                direction="bottom"
+                className="text-lg md:text-xl text-gray-700"
               />
             </div>
           </div>
@@ -239,33 +264,26 @@ export default function Home() {
       </section>
 
       {/* Recent Projects & Who We Serve Section */}
-      <section className="relative z-10 py-20 bg-gradient-to-b from-yellow-50/95 via-yellow-50/90 to-yellow-50/85 backdrop-blur-sm overflow-hidden">
-        {/* Enhanced background elements with grey overlay and moving bubbles */}
+      <section className="relative z-10 py-20 bg-yellow-50 backdrop-blur-sm overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          {/* Grey overlay */}
-          <div className="absolute inset-0 bg-gray-900/5"></div>
+          {/* Spinning squares instead of moving bubbles - different positions */}
+          <div className="absolute top-16 right-12 w-18 h-18 border-2 border-[#f0da11]/30 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '9s' }}></div>
+          <div className="absolute bottom-12 left-20 w-14 h-14 border-2 border-[#bfb986]/25 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '7s', animationDelay: '1s' }}></div>
+          <div className="absolute top-1/2 left-16 w-16 h-16 border-2 border-[#d0b211]/35 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '11s', animationDelay: '2s' }}></div>
+          <div className="absolute top-1/3 right-1/4 w-10 h-10 border-2 border-[#f0da11]/40 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '6s', animationDelay: '0.5s' }}></div>
+          <div className="absolute bottom-1/4 left-1/3 w-12 h-12 border-2 border-[#bfb986]/30 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '8s', animationDelay: '1.5s' }}></div>
+          <div className="absolute top-20 left-1/2 w-8 h-8 border-2 border-[#d0b211]/25 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '10s', animationDelay: '3s' }}></div>
           
-          {/* Moving bubbles */}
-          <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-[#f0da11]/12 to-transparent rounded-full opacity-60 translate-x-32 -translate-y-32 animate-pulse"></div>
-          <div className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tl from-[#bfb986]/15 to-transparent rounded-full opacity-50 -translate-x-24 translate-y-24 animate-pulse" style={{ animationDelay: '1s' }}></div>
-          <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-gradient-to-br from-[#d0b211]/8 to-transparent rounded-full opacity-40 -translate-x-32 -translate-y-32 animate-pulse" style={{ animationDelay: '2s' }}></div>
-          
-          {/* Subtle grid pattern */}
-          <div className="absolute inset-0 opacity-20 pointer-events-none z-0">
+          {/* Yellow dot grid pattern - consistent */}
+          <div className="absolute inset-0 opacity-20 pointer-events-none z-10">
             <div
               className="h-full w-full"
               style={{
-                backgroundImage: `radial-gradient(circle at 16px 16px, #f0da11 4px, transparent 4px)`,
-
-                backgroundSize: '48px 48px'
+                backgroundImage: `radial-gradient(circle at 1px, #f0da11 1px, transparent 1px)`,
+                backgroundSize: '24px 24px'
               }}
             ></div>
           </div>
-          
-          {/* Geometric shapes */}
-          <div className="absolute top-24 left-20 w-14 h-14 border-2 border-[#f0da11]/20 rounded-xl rotate-12 animate-spin" style={{ animationDuration: '12s' }}></div>
-          <div className="absolute bottom-32 right-16 w-10 h-10 bg-[#bfb986]/15 rounded-full animate-bounce" style={{ animationDelay: '1.5s' }}></div>
-          <div className="absolute top-1/3 right-1/4 w-6 h-6 bg-[#f0da11]/25 rounded-lg rotate-45 animate-pulse" style={{ animationDelay: '2.5s' }}></div>
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
@@ -273,18 +291,18 @@ export default function Home() {
           <div className="max-w-4xl mx-auto bg-white/75 backdrop-blur-sm rounded-xl p-8 border border-gray-200/40 shadow-md mb-16">
             <div className="text-center">
               <BlurText
-          text="Recent Projects"
-          delay={100}
-          animateBy="words"
-          direction="top"
-          className="md:!text-[2rem] text-[6rem] font-extrabold text-gray-900 mb-6"
+                text="Recent Projects"
+                delay={100}
+                animateBy="words"
+                direction="top"
+                className="text-3xl md:!text-[2rem] font-extrabold text-gray-900 mb-6"
               />
               <BlurText
-          text="See our latest installations and success stories across the Midwest"
-          delay={150}
-          animateBy="words"
-          direction="bottom"
-          className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto"
+                text="See our latest installations and success stories across the Midwest"
+                delay={150}
+                animateBy="words"
+                direction="bottom"
+                className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto"
               />
             </div>
           </div>
@@ -331,7 +349,7 @@ export default function Home() {
               <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" />
-                </svg>
+                </svg>     
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">Sparkle Auto Spa - Madison</h3>
               <p className="text-gray-600 text-center mb-4 text-sm leading-relaxed">Full-service car wash upgrade including new conveyor system and water reclaim.</p>
@@ -347,15 +365,17 @@ export default function Home() {
           </div>
 
           <div className="text-center mb-20">
-            <a href="/projects" className="inline-flex items-center bg-[#f0da11] text-gray-900 px-8 py-4 rounded-xl font-semibold hover:bg-[#d0b211] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-              <span>View All Projects</span>
-              <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <a href="/projects" className="inline-flex items-center text-[#f0da11] hover:text-[#d0b211] font-semibold transition-colors duration-300">
+                <button className="bg-[#f0da11] text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-[#d0b211] transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1">
+                View All Projects
+                </button>
+              <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </a>
           </div>
 
-          {/* Who We Serve Section with missing box */}
+          {/* Who We Serve Section */}
           <div className="max-w-4xl mx-auto bg-white/75 backdrop-blur-sm rounded-xl p-8 border border-gray-200/40 shadow-md mb-12">
             <div className="text-center">
               <BlurText
@@ -363,7 +383,7 @@ export default function Home() {
                 delay={100}
                 animateBy="words"
                 direction="top"
-                className="md:!text-[2rem] text-[6rem] font-extrabold text-gray-900 mb-6"
+                className="text-3xl md:!text-[2rem] font-extrabold text-gray-900 mb-6"
               />
               <BlurText
                 text="From new entrepreneurs to established businesses, we provide tailored solutions for every car wash operation"
@@ -421,25 +441,23 @@ export default function Home() {
       </section>
 
       {/* Chemicals Section */}
-      <section className="relative z-10 py-20 bg-gradient-to-b from-yellow-50/85 to-yellow-50/100 backdrop-blur-sm">
-        {/* Enhanced background elements with grey overlay and moving bubbles */}
+      <section className="relative z-10 py-20 bg-yellow-50 backdrop-blur-sm overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          {/* Grey overlay */}
-          <div className="absolute inset-0 bg-gray-900/5"></div>
+          {/* Spinning squares instead of moving bubbles - different arrangement */}
+          <div className="absolute top-1/4 right-1/5 w-15 h-15 border-2 border-[#f03e11]/28 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '12s' }}></div>
+          <div className="absolute bottom-1/3 left-1/4 w-11 h-11 border-2 border-[#bfb986]/35 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '8s', animationDelay: '1.5s' }}></div>
           
-          {/* Moving bubbles */}
-          <div className="absolute top-1/4 right-1/4 w-72 h-72 bg-gradient-to-br from-[#f0da11]/10 to-transparent rounded-full opacity-50 animate-pulse"></div>
-          <div className="absolute bottom-1/3 left-1/3 w-64 h-64 bg-gradient-to-tl from-[#bfb986]/12 to-transparent rounded-full opacity-40 animate-pulse" style={{ animationDelay: '1.5s' }}></div>
-          <div className="absolute top-1/2 left-1/4 w-48 h-48 bg-gradient-to-br from-[#d0b211]/8 to-transparent rounded-full opacity-30 animate-pulse" style={{ animationDelay: '2.5s' }}></div>
+          <div className="absolute top-16 left-1/2 w-9 h-9 border-2 border-[#1132f0]/40 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '7s', animationDelay: '0.8s' }}></div>
+          <div className="absolute bottom-20 right-1/3 w-17 h-17 border-2 border-[#bf8686]/25 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '10s', animationDelay: '2s' }}></div>
+          <div className="absolute top-1/3 right-16 w-8 h-8 border-2 border-[#7411d0]/35 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '6s', animationDelay: '1.2s' }}></div>
           
-          {/* Subtle grid pattern */}
-          <div className="absolute inset-0 opacity-20 pointer-events-none z-0">
+          {/* Yellow dot grid pattern - consistent */}
+          <div className="absolute inset-0 opacity-20 pointer-events-none z-10">
             <div
               className="h-full w-full"
               style={{
-                backgroundImage: `radial-gradient(circle at 16px 16px, #f0da11 4px, transparent 4px)`,
-
-                backgroundSize: '48px 48px'
+                backgroundImage: `radial-gradient(circle at 1px, #9b9000 1px, transparent 1px)`,
+                backgroundSize: '24px 24px'
               }}
             ></div>
           </div>
@@ -453,7 +471,7 @@ export default function Home() {
                 delay={100}
                 animateBy="words"
                 direction="top"
-                className="md:!text-[2rem] text-[6rem] font-extrabold text-gray-900 mb-6"
+                className="text-3xl md:!text-[2rem] font-extrabold text-gray-900 mb-6"
               />
               <p className="text-lg text-gray-700 mb-6">
                 We supply high-quality car wash chemicals that deliver superior cleaning results while being
@@ -461,19 +479,19 @@ export default function Home() {
               </p>
               <ul className="space-y-3 text-gray-700 mb-8">
                 <li className="flex items-center">
-                  <span className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></span>
+                  <span className="w-1 h-1 bg-yellow-400 rounded-full mr-3"></span>
                   Pre-soak and tire cleaners
                 </li>
                 <li className="flex items-center">
-                  <span className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></span>
+                  <span className="w-1 h-1 bg-yellow-400 rounded-full mr-3"></span>
                   Foaming detergents and soaps
                 </li>
                 <li className="flex items-center">
-                  <span className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></span>
+                  <span className="w-1 h-1 bg-yellow-400 rounded-full mr-3"></span>
                   Spot-free rinse aids and drying agents
                 </li>
                 <li className="flex items-center">
-                  <span className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></span>
+                  <span className="w-1 h-1 bg-yellow-400 rounded-full mr-3"></span>
                   Wax and protective coatings
                 </li>
               </ul>
@@ -482,7 +500,7 @@ export default function Home() {
             
             <div className="bg-white/90 backdrop-blur-sm p-8 rounded-lg shadow-lg">
               <div className="text-center">
-                <div className="w-30 h-30 flex items-center-center mx-auto mb-5">
+                <div className="w-30 h-30 flex items-center justify-center mx-auto mb-5">
                   <div className="mx-auto flex items-center justify-center p-1 gap-6">
                     <img src="/logoSimo.webp" alt="Chemical Icon" className="max-w-full max-h-full" /> 
                     <img src="/logoCWT.webp" alt="Chemical Icon" className="max-w-full max-h-full" />
@@ -501,24 +519,28 @@ export default function Home() {
 
       {/* Call to Action Section */}
       <section className="relative z-10 py-20 bg-gradient-to-br from-[#26231d] via-[#595646] to-[#4c6461] text-white overflow-hidden">
-        {/* Enhanced background elements */}
         <div className="absolute inset-0 pointer-events-none">
-          {/* Animated gradient overlays using brand colors */}
-          <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-[#f0da11]/20 to-transparent rounded-full opacity-60 translate-x-48 -translate-y-48 animate-pulse"></div>
-          <div className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tl from-[#d0b211]/30 to-transparent rounded-full opacity-50 -translate-x-32 translate-y-32 animate-pulse" style={{ animationDelay: '1s' }}></div>
-          <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-gradient-to-br from-[#bfb986]/15 to-transparent rounded-full opacity-40 animate-pulse" style={{ animationDelay: '2s' }}></div>
-          <div className="absolute bottom-1/4 right-1/3 w-48 h-48 bg-gradient-to-br from-[#f0da11]/10 to-transparent rounded-full opacity-30 animate-pulse" style={{ animationDelay: '3s' }}></div>
+          {/* Spinning squares instead of gradient overlays */}
+          <div className="absolute top-20 right-24 w-20 h-20 border-2 border-[#f0da11]/25 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '15s' }}></div>
+          <div className="absolute bottom-16 left-20 w-16 h-16 border-2 border-[#bfb986]/30 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '12s', animationDelay: '1s' }}></div>
+          <div className="absolute top-1/2 left-1/4 w-14 h-14 border-2 border-[#d0b211]/35 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '10s', animationDelay: '2s' }}></div>
+          <div className="absolute bottom-1/4 right-1/4 w-12 h-12 border-2 border-[#f0da11]/40 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '8s', animationDelay: '3s' }}></div>
+          <div className="absolute top-1/3 right-1/3 w-10 h-10 border-2 border-[#bfb986]/25 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '13s', animationDelay: '0.5s' }}></div>
+          <div className="absolute bottom-32 left-1/3 w-18 h-18 border-2 border-[#d0b211]/30 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '11s', animationDelay: '1.8s' }}></div>
           
-          {/* Subtle grid pattern */}
-          <div className="absolute inset-0 opacity-5">
-            <div className="h-full w-full" style={{
-              backgroundImage: `radial-gradient(circle at 1px 1px, #cecece 1px, transparent 1px)`,
-              backgroundSize: '25px 25px'
-            }}></div>
+          {/* Yellow dot grid pattern - consistent but lower opacity for dark background */}
+          <div className="absolute inset-0 opacity-10 pointer-events-none z-10">
+            <div
+              className="h-full w-full"
+              style={{
+                backgroundImage: `radial-gradient(circle at 1px, #9b9000 1px, transparent 1px)`,
+                backgroundSize: '24px 24px'
+              }}
+            ></div>
           </div>
           
-          {/* Geometric shapes for visual interest */}
-          <div className="absolute top-16 left-16 w-16 h-16 border-2 border-[#f0da11]/30 rounded-lg rotate-12 animate-bounce" style={{ animationDelay: '0.5s' }}></div>
+          {/* Additional geometric shapes for visual interest */}
+          <div className="absolute top-16 left-16 w-16 h-16 border-2 border-[#f0da11]/30 rounded-lg rotate-45 animate-bounce" style={{ animationDelay: '0.5s' }}></div>
           <div className="absolute bottom-24 right-20 w-12 h-12 border-2 border-[#bfb986]/30 rounded-full animate-pulse" style={{ animationDelay: '1.5s' }}></div>
           <div className="absolute top-1/3 right-16 w-8 h-8 bg-[#f0da11]/20 rounded-full animate-ping" style={{ animationDelay: '2.5s' }}></div>
           <div className="absolute bottom-1/3 left-20 w-10 h-10 bg-[#bfb986]/20 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '10s' }}></div>
@@ -537,27 +559,29 @@ export default function Home() {
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
-          {/* Call to Action Content - Properly Centered */}
-          <div className="text-center mb-12">
-            <div className="max-w-4xl mx-auto">
+          {/* Call to Action Content */}
+          <div className="flex flex-col items-center justify-center text-center mb-12">
+            <div className="w-full flex justify-center mb-6">
               <BlurText
                 text="Ready to Transform Your Wash Business?"
                 delay={100}
                 animateBy="words"
                 direction="top"
-                className="md:!text-[2rem] text-[6rem] font-extrabold !text-white mb-6"
+                className="text-3xl md:!text-[2rem] font-extrabold !text-white mb-6"
               />
+            </div>
+            <div className="flex flex-col items-center justify-center text-center mb-12">
               <BlurText
-                text="Join hundreds of satisfied customers across the Midwest who trust Carwash Technologies for their equipment, service, and chemical needs."
-                delay={150}
-                animateBy="words"
-                direction="bottom"
-                className="md:!text-[1.2rem] text-[3rem] mb-8 !text-white max-w-3xl mx-auto"
+              text="Join hundreds of satisfied customers across the Midwest who trust Carwash Technologies for their equipment, service, and chemical needs."
+              delay={150}
+              animateBy="words"
+              direction="bottom"
+              className="text-lg md:text-xl lg:text-2xl !text-white"
               />
             </div>
           </div>
 
-          {/* Contact Information Cards - Properly Centered */}
+          {/* Contact Information Cards */}
           <div className="max-w-5xl mx-auto mb-12">
             <div className="grid md:grid-cols-3 gap-8">
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
@@ -597,7 +621,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Main CTA Buttons - Properly Centered */}
+          {/* Main CTA Buttons */}
           <div className="text-center">
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a href="/contact" className="bg-[#f0da11] text-gray-900 px-8 py-4 rounded-xl font-semibold hover:bg-[#d0b211] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-lg">
@@ -610,7 +634,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      
+
       {/* Custom CSS for floating animation */}
       <style jsx>{`
         @keyframes float {
