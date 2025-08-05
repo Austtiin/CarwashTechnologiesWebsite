@@ -1,6 +1,7 @@
 import React from 'react';
 import BlurText from '../components/animations/BlurText';
 import Image from 'next/image';
+import SafeLink from '../components/ui/SafeLink'; // Add this import
 
 export default function EquipmentSales() {
   return (
@@ -86,7 +87,7 @@ export default function EquipmentSales() {
               delay={150}
               animateBy="words"
               direction="top"
-              className="md:!text-[2rem] text-[6rem] font-extrabold text-gray-900 mb-6"
+              className="md:!text-[2rem] !text-[2rem] font-extrabold text-gray-900 mb-6"
             />
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               We partner with industry-leading manufacturers to provide you with the highest quality wash equipment
@@ -166,7 +167,7 @@ export default function EquipmentSales() {
               delay={50}
               animateBy="words"
               direction="top"
-              className="md:!text-[2rem] text-[6rem] font-extrabold text-gray-900 mb-6"
+              className="md:!text-[2rem] !text-[2rem] font-extrabold text-gray-900 mb-6"
             />
             <p className="text-xl text-gray-600">Complete range of wash equipment solutions</p>
           </div>
@@ -353,7 +354,7 @@ export default function EquipmentSales() {
                 delay={50}
                 animateBy="words"
                 direction="top"
-                className="md:!text-[2rem] text-[6rem] font-extrabold text-gray-900 mb-6"
+                className="md:!text-[2rem] !text-[2rem] font-extrabold text-gray-900 mb-6"
               />
               <p className="text-lg text-gray-600 mb-8">
                 We provide only the highest quality equipment from trusted manufacturers, 
@@ -426,7 +427,7 @@ export default function EquipmentSales() {
               </div>
               
               <div className="text-center">
-                <a 
+                <SafeLink 
                   href="/contact" 
                   className="bg-[#f0da11] text-gray-900 px-8 py-3 rounded-xl font-semibold hover:bg-[#d0b211] transition-colors duration-300 inline-flex items-center"
                 >
@@ -434,7 +435,7 @@ export default function EquipmentSales() {
                   <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
-                </a>
+                </SafeLink>
               </div>
             </div>
           </div>
@@ -454,13 +455,13 @@ export default function EquipmentSales() {
             delay={50}
             animateBy="words"
             direction="top"
-           className="md:!text-[2rem] text-[6rem] font-extrabold text-gray-900 mb-6"
+            className="md:!text-[2rem] !text-[2rem] font-extrabold text-gray-900 mb-6"
           />
           <p className="text-xl text-yellow-100 mb-8 max-w-2xl mx-auto">
             Contact us today to discuss your equipment needs and get a custom quote for your wash operation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a 
+            <SafeLink 
               href="/contact" 
               className="bg-white text-yellow-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-200 transition-colors duration-300 inline-flex items-center shadow-lg hover:shadow-xl"
             >
@@ -468,8 +469,8 @@ export default function EquipmentSales() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
               Get Quote
-            </a>
-            <a 
+            </SafeLink>
+            <SafeLink 
               href="/services" 
               className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-yellow-600 transition-colors duration-300 inline-flex items-center"
             >
@@ -477,7 +478,7 @@ export default function EquipmentSales() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
               Learn More
-            </a>
+            </SafeLink>
           </div>
         </div>
       </section>

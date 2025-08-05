@@ -5,6 +5,8 @@ import BlurText from './components/animations/BlurText';
 import Card from './components/ui/card';
 import Aurora from './components/animations/Aurora';
 import ShinyText from './components/animations/ShinyText';
+import { sanitize } from '../lib/security';
+import SafeLink from './components/ui/SafeLink';
 
 export default function Home() {
   const [time, setTime] = useState(0);
@@ -29,11 +31,6 @@ export default function Home() {
       }
     };
   }, []);
-
-  // Callback function for when the hero animation completes
-  const handleAnimationComplete = () => {
-    console.log('Hero animation completed!');
-  };
 
   return (
     <>
@@ -149,25 +146,27 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               {/* Text content for the hero section */}
               <div>
-                <ShinyText
-                  text="Welcome to"
-                  disabled={false}
-                  speed={3}
-                  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-2 !text-gray-900"
-                />
-                <ShinyText
-                  text="Carwash Technologies"
-                  disabled={false}
-                  speed={3}
-                  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 !text-gray-900"
-                />
+                <div className="block">
+                  <ShinyText
+                    text="Welcome to"
+                    disabled={false}
+                    speed={3}
+                    className="text-4xl md:text-3xl lg:text-4xl font-extrabold !text-gray-900 block"
+                  />
+                  <ShinyText
+                    text="Carwash Technologies"
+                    disabled={false}
+                    speed={3}
+                    className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 !text-gray-900 block"
+                  />
+                </div>
 
                 <BlurText
                   text="Sales, Service and Consulting"
                   delay={150}
                   animateBy="words"
                   direction="top"
-                  className="text-2xl md:text-3xl lg:text-4xl font-semibold !text-white mb-6"
+                  className="text-2xl md:text-3xl lg:text-4xl font-semibold !text-gray-900 block p-2.50 mb-6"
                 />
 
                 <BlurText
@@ -178,13 +177,16 @@ export default function Home() {
                   className="text-xl md:text-xl mb-8 !text-white"
                 />
 
-                <div className="space-x-4 fade-in-up">
-                  <a href="/contact" className="bg-[#f0da11] text-gray-900 px-8 py-4 rounded-xl font-semibold hover:bg-[#d0b211] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">Get Started</a>
-                  <a href="/services" className="border-2 border-white text-white px-8 py-4 rounded-xl hover:bg-white hover:text-gray-900 transition-all duration-300 font-semibold">
-                    Our Services
-                  </a>
+                {/* Use flex-col for mobile, flex-row for sm+ */}
+                <div className="flex flex-col sm:flex-row gap-4 fade-in-up">
+                  <SafeLink href="/contact" className="bg-[#f0da11] text-gray-900 px-8 py-4 rounded-xl font-semibold hover:bg-[#d0b211] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                  Get Started
+                  </SafeLink>
+                  <SafeLink href="/services" className="border-2 border-white text-white px-8 py-4 rounded-xl hover:bg-white hover:text-gray-900 transition-all duration-300 font-semibold">
+                  Our Services
+                  </SafeLink>
                 </div>
-              </div>
+                </div>
 
               {/* Company Logo */}
               <div className="fade-in-up flex justify-center">
@@ -267,7 +269,7 @@ export default function Home() {
                     delay={100}
                     animateBy="words"
                     direction="top"
-                    className="text-3xl md:!text-[2rem] font-extrabold text-gray-900 mb-6"
+                    className="!text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6"
                   />
                 </div>
                 <BlurText
@@ -298,12 +300,12 @@ export default function Home() {
                 <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Equipment Sales</h3>
                 <p className="text-gray-600 text-center mb-6 leading-relaxed">Quality wash equipment from trusted manufacturers to get your operation running smoothly and efficiently.</p>
                 <div className="text-center">
-                  <a href="/equipment-sales" className="inline-flex items-center px-6 py-3 bg-[#f0da11] text-gray-900 rounded-lg font-semibold hover:bg-[#d0b211] transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1">
+                  <SafeLink href="/equipment-sales" className="inline-flex items-center px-6 py-3 bg-[#f0da11] text-gray-900 rounded-lg font-semibold hover:bg-[#d0b211] transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1">
                     <span>Learn More</span>
                     <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
-                  </a>
+                  </SafeLink>
                 </div>
               </div>
 
@@ -317,12 +319,12 @@ export default function Home() {
                 <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Service & Maintenance</h3>
                 <p className="text-gray-600 text-center mb-6 leading-relaxed">Professional service and maintenance to keep your wash operating at peak efficiency year-round.</p>
                 <div className="text-center">
-                  <a href="/services" className="inline-flex items-center px-6 py-3 bg-[#f0da11] text-gray-900 rounded-lg font-semibold hover:bg-[#d0b211] transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1">
+                  <SafeLink href="/services" className="inline-flex items-center px-6 py-3 bg-[#f0da11] text-gray-900 rounded-lg font-semibold hover:bg-[#d0b211] transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1">
                     <span>Learn More</span>
                     <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
-                  </a>
+                  </SafeLink>
                 </div>
               </div>
 
@@ -336,12 +338,12 @@ export default function Home() {
                 <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Consulting</h3>
                 <p className="text-gray-600 text-center mb-6 leading-relaxed">Expert guidance for new installations and optimization of existing wash operations for maximum profitability.</p>
                 <div className="text-center">
-                  <a href="/services" className="inline-flex items-center px-6 py-3 bg-[#f0da11] text-gray-900 rounded-lg font-semibold hover:bg-[#d0b211] transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1">
+                  <SafeLink href="/services" className="inline-flex items-center px-6 py-3 bg-[#f0da11] text-gray-900 rounded-lg font-semibold hover:bg-[#d0b211] transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1">
                     <span>Learn More</span>
                     <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
-                  </a>
+                  </SafeLink>
                 </div>
               </div>
             </div>
@@ -380,7 +382,7 @@ export default function Home() {
                   delay={100}
                   animateBy="words"
                   direction="top"
-                  className="text-3xl md:!text-[2rem] font-extrabold text-gray-900 mb-6"
+                  className="!text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6"
                 />
                 <BlurText
                   text="See our latest installations and success stories across the Midwest"
@@ -398,339 +400,299 @@ export default function Home() {
                 <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">SuperWash Express - St. Paul</h3>
-              <p className="text-gray-600 text-center mb-4 text-sm leading-relaxed">Complete tunnel wash installation with state-of-the-art equipment and chemical systems.</p>
-              <div className="text-center">
-                <a href="/projects" className="inline-flex items-center text-[#f0da11] hover:text-[#d0b211] font-semibold transition-colors duration-300">
-                  <span>View Details</span>
-                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
-                </a>
-              </div>
-            </div>
-
-            <div className="bg-white/75 backdrop-blur-sm rounded-xl p-6 border border-gray-200/40 hover:bg-white/90 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group">
-              <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">Quick Clean - Fargo</h3>
-              <p className="text-gray-600 text-center mb-4 text-sm leading-relaxed">Self-serve bay renovation with new high-pressure systems and modern payment solutions.</p>
-              <div className="text-center">
-                <a href="/projects" className="inline-flex items-center text-[#f0da11] hover:text-[#d0b211] font-semibold transition-colors duration-300">
-                  <span>View Details</span>
-                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </a>
-              </div>
-            </div>
-
-            <div className="bg-white/75 backdrop-blur-sm rounded-xl p-6 border border-gray-200/40 hover:bg-white/90 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group">
-              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" />
-                </svg>     
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">Sparkle Auto Spa - Madison</h3>
-              <p className="text-gray-600 text-center mb-4 text-sm leading-relaxed">Full-service wash upgrade including new conveyor system and water reclaim.</p>
-              <div className="text-center">
-                <a href="/projects" className="inline-flex items-center text-[#f0da11] hover:text-[#d0b211] font-semibold transition-colors duration-300">
-                  <span>View Details</span>
-                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div className="text-center mb-20">
-            <a href="/projects" className="inline-flex items-center text-[#f0da11] hover:text-[#d0b211] font-semibold transition-colors duration-300">
-                <button className="bg-[#f0da11] text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-[#d0b211] transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1">
-                View All Projects
-                </button>
-              <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </a>
-          </div>
-
-          {/* Who We Serve Section */}
-          <div className="max-w-4xl mx-auto bg-white/75 backdrop-blur-sm rounded-xl p-8 border border-gray-200/40 shadow-md mb-12">
-            <div className="text-center">
-              <BlurText
-                text="Who We Serve"
-                delay={100}
-                animateBy="words"
-                direction="top"
-                className="text-3xl md:!text-[2rem] font-extrabold text-gray-900 mb-6"
-              />
-              <BlurText
-                text="From new entrepreneurs to established businesses, we provide tailored solutions for every wash operation"
-                delay={150}
-                animateBy="words"
-                direction="bottom"
-                className="text-lg md:text-xl text-gray-700"
-              />
-            </div>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* Who We Serve cards */}
-            <a href="/services" className="bg-white/70 backdrop-blur-sm rounded-xl p-6 border border-gray-200/40 hover:bg-white/85 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group block">
-              <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">New Wash Owners</h3>
-              <p className="text-gray-600 text-center text-sm leading-relaxed">Complete turnkey solutions for entrepreneurs starting their first wash business. From site planning to grand opening.</p>
-            </a>
-
-            <a href="/services" className="bg-white/70 backdrop-blur-sm rounded-xl p-6 border border-gray-200/40 hover:bg-white/85 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group block">
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">Existing Wash Owners</h3>
-              <p className="text-gray-600 text-center text-sm leading-relaxed">Upgrades, retrofits, and maintenance services to improve efficiency and increase profitability of your current operation.</p>
-            </a>
-
-            <a href="/services" className="bg-white/70 backdrop-blur-sm rounded-xl p-6 border border-gray-200/40 hover:bg-white/85 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group block">
-              <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">Auto Dealerships</h3>
-              <p className="text-gray-600 text-center text-sm leading-relaxed">Professional wash systems designed for high-volume dealership operations. Keep your inventory looking showroom-ready.</p>
-            </a>
-
-            <a href="/services" className="bg-white/70 backdrop-blur-sm rounded-xl p-6 border border-gray-200/40 hover:bg-white/85 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group block">
-              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">Small Businesses</h3>
-              <p className="text-gray-600 text-center text-sm leading-relaxed">Equipment and solutions for detailers, fleet services, and other small businesses requiring professional vehicle cleaning.</p>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Chemicals Section */}
-      <section className="relative z-10 py-20 bg-yellow-50 backdrop-blur-sm overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          {/* Spinning squares instead of moving bubbles - different arrangement */}
-          <div className="absolute top-1/4 right-1/5 w-15 h-15 border-2 border-[#f03e11]/28 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '12s' }}></div>
-          <div className="absolute bottom-1/3 left-1/4 w-11 h-11 border-2 border-[#bfb986]/35 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '8s', animationDelay: '1.5s' }}></div>
-          
-          <div className="absolute top-16 left-1/2 w-9 h-9 border-2 border-[#1132f0]/40 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '7s', animationDelay: '0.8s' }}></div>
-          <div className="absolute bottom-20 right-1/3 w-17 h-17 border-2 border-[#bf8686]/25 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '10s', animationDelay: '2s' }}></div>
-          <div className="absolute top-1/3 right-16 w-8 h-8 border-2 border-[#7411d0]/35 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '6s', animationDelay: '1.2s' }}></div>
-          
-          {/* Yellow dot grid pattern - consistent */}
-          <div className="absolute inset-0 opacity-20 pointer-events-none z-10">
-            <div
-              className="h-full w-full"
-              style={{
-                backgroundImage: `radial-gradient(circle at 1px, #9b9000 1px, transparent 1px)`,
-                backgroundSize: '24px 24px'
-              }}
-            ></div>
-          </div>
-        </div>
-
-        <div className="container mx-auto px-4 relative z-10 pt-12">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <BlurText
-                text="Premium Wash Chemicals"
-                delay={100}
-                animateBy="words"
-                direction="top"
-                className="text-3xl md:!text-[2rem] font-extrabold text-gray-900 mb-6"
-              />
-              <p className="text-lg text-gray-700 mb-6">
-                We supply high-quality wash chemicals that deliver superior cleaning results while being
-                environmentally responsible. Our chemical programs are designed to maximize efficiency and minimize waste.
-              </p>
-              <ul className="space-y-3 text-gray-700 mb-8">
-                <li className="flex items-center">
-                  <span className="w-1 h-1 bg-yellow-400 rounded-full mr-3"></span>
-                  Pre-soak and tire cleaners
-                </li>
-                <li className="flex items-center">
-                  <span className="w-1 h-1 bg-yellow-400 rounded-full mr-3"></span>
-                  Foaming detergents and soaps
-                </li>
-                <li className="flex items-center">
-                  <span className="w-1 h-1 bg-yellow-400 rounded-full mr-3"></span>
-                  Spot-free rinse aids and drying agents
-                </li>
-                <li className="flex items-center">
-                  <span className="w-1 h-1 bg-yellow-400 rounded-full mr-3"></span>
-                  Wax and protective coatings
-                </li>
-              </ul>
-              <a href="/chemicals" className="bg-[#f0da11] text-gray-900 px-8 py-4 rounded-xl font-semibold hover:bg-[#d0b211] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">Explore Chemicals</a>
-            </div>
-            
-            <div className="bg-white/90 backdrop-blur-sm p-8 rounded-lg shadow-lg">
-              <div className="text-center">
-                <div className="w-30 h-30 flex items-center justify-center mx-auto mb-5">
-                  <div className="mx-auto flex items-center justify-center p-1 gap-6">
-                    <img src="/logoSimo.webp" alt="Chemical Icon" className="max-w-full max-h-full" /> 
-                    <img src="/logoCWT.webp" alt="Chemical Icon" className="max-w-full max-h-full" />
-                    <img src="/logoVertech.webp" alt="Chemical Icon" className="max-w-full max-h-full" />
-                  </div>
                 </div>
-                <h3 className="text-xl font-semibold mb-2 text-gray-900">Quality Guarantee</h3>
-                <p className="text-gray-600">
-                  All of our chemicals meet the highest industry standards for performance and environmental safety.
+                <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">SuperWash Express - St. Paul</h3>
+                <p className="text-gray-600 text-center mb-4 text-sm leading-relaxed">Complete tunnel wash installation with state-of-the-art equipment and chemical systems.</p>
+                <div className="text-center">
+                  <SafeLink href="/projects" className="inline-flex items-center text-[#f0da11] hover:text-[#d0b211] font-semibold transition-colors duration-300">
+                    <span>View Details</span>
+                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </SafeLink>
+                </div>
+              </div>
+
+              <div className="bg-white/75 backdrop-blur-sm rounded-xl p-6 border border-gray-200/40 hover:bg-white/90 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group">
+                <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">Quick Clean - Fargo</h3>
+                <p className="text-gray-600 text-center mb-4 text-sm leading-relaxed">Self-serve bay renovation with new high-pressure systems and modern payment solutions.</p>
+                <div className="text-center">
+                  <SafeLink href="/projects" className="inline-flex items-center text-[#f0da11] hover:text-[#d0b211] font-semibold transition-colors duration-300">
+                    <span>View Details</span>
+                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </SafeLink>
+                </div>
+              </div>
+
+              <div className="bg-white/75 backdrop-blur-sm rounded-xl p-6 border border-gray-200/40 hover:bg-white/90 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group">
+                <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" />
+                  </svg>     
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">Sparkle Auto Spa - Madison</h3>
+                <p className="text-gray-600 text-center mb-4 text-sm leading-relaxed">Full-service wash upgrade including new conveyor system and water reclaim.</p>
+                <div className="text-center">
+                  <SafeLink href="/projects" className="inline-flex items-center text-[#f0da11] hover:text-[#d0b211] font-semibold transition-colors duration-300">
+                    <span>View Details</span>
+                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </SafeLink>
+                </div>
+              </div>
+            </div>
+
+            <div className="text-center mb-20">
+              <SafeLink href="/projects" className="bg-[#f0da11] text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-[#d0b211] transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1 inline-flex items-center">
+                View All Projects
+                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </SafeLink>
+            </div>
+
+            {/* Who We Serve Section */}
+            <div className="max-w-4xl mx-auto bg-white/75 backdrop-blur-sm rounded-xl p-8 border border-gray-200/40 shadow-md mb-12">
+              <div className="text-center">
+                <BlurText
+                  text="Who We Serve"
+                  delay={100}
+                  animateBy="words"
+                  direction="top"
+                  className="!text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6"
+                />
+                <BlurText
+                  text="From new entrepreneurs to established businesses, we provide tailored solutions for every wash operation"
+                  delay={150}
+                  animateBy="words"
+                  direction="bottom"
+                  className="text-lg md:text-xl text-gray-700"
+                />
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {/* Who We Serve cards */}
+              <SafeLink href="/services" className="bg-white/70 backdrop-blur-sm rounded-xl p-6 border border-gray-200/40 hover:bg-white/85 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group block">
+                <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">New Wash Owners</h3>
+                <p className="text-gray-600 text-center text-sm leading-relaxed">Complete turnkey solutions for entrepreneurs starting their first wash business. From site planning to grand opening.</p>
+              </SafeLink>
+
+              <SafeLink href="/services" className="bg-white/70 backdrop-blur-sm rounded-xl p-6 border border-gray-200/40 hover:bg-white/85 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group block">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">Existing Wash Owners</h3>
+                <p className="text-gray-600 text-center text-sm leading-relaxed">Upgrades, retrofits, and maintenance services to improve efficiency and increase profitability of your current operation.</p>
+              </SafeLink>
+
+              <SafeLink href="/services" className="bg-white/70 backdrop-blur-sm rounded-xl p-6 border border-gray-200/40 hover:bg-white/85 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group block">
+                <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">Auto Dealerships</h3>
+                <p className="text-gray-600 text-center text-sm leading-relaxed">Professional wash systems designed for high-volume dealership operations. Keep your inventory looking showroom-ready.</p>
+              </SafeLink>
+
+              <SafeLink href="/services" className="bg-white/70 backdrop-blur-sm rounded-xl p-6 border border-gray-200/40 hover:bg-white/85 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group block">
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">Small Businesses</h3>
+                <p className="text-gray-600 text-center text-sm leading-relaxed">Equipment and solutions for detailers, fleet services, and other small businesses requiring professional vehicle cleaning.</p>
+              </SafeLink>
+            </div>
+          </div>
+        </section>
+
+        {/* Chemicals Section */}
+        <section className="relative z-10 py-20 bg-yellow-50 backdrop-blur-sm overflow-hidden">
+          <div className="absolute inset-0 pointer-events-none">
+            {/* Spinning squares instead of moving bubbles - different arrangement */}
+            <div className="absolute top-1/4 right-1/5 w-15 h-15 border-2 border-[#f03e11]/28 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '12s' }}></div>
+            <div className="absolute bottom-1/3 left-1/4 w-11 h-11 border-2 border-[#bfb986]/35 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '8s', animationDelay: '1.5s' }}></div>
+            
+            <div className="absolute top-16 left-1/2 w-9 h-9 border-2 border-[#1132f0]/40 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '7s', animationDelay: '0.8s' }}></div>
+            <div className="absolute bottom-20 right-1/3 w-17 h-17 border-2 border-[#bf8686]/25 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '10s', animationDelay: '2s' }}></div>
+            <div className="absolute top-1/3 right-16 w-8 h-8 border-2 border-[#7411d0]/35 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '6s', animationDelay: '1.2s' }}></div>
+            
+            {/* Yellow dot grid pattern - consistent */}
+            <div className="absolute inset-0 opacity-20 pointer-events-none z-10">
+              <div
+                className="h-full w-full"
+                style={{
+                  backgroundImage: `radial-gradient(circle at 1px, #9b9000 1px, transparent 1px)`,
+                  backgroundSize: '24px 24px'
+                }}
+              ></div>
+            </div>
+          </div>
+
+          <div className="container mx-auto px-4 relative z-10 pt-12">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div>
+                <BlurText
+                  text="Premium Wash Chemicals"
+                  delay={100}
+                  animateBy="words"
+                  direction="top"
+                  className="!text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6"
+                />
+                <p className="text-lg text-gray-700 mb-6">
+                  We supply high-quality wash chemicals that deliver superior cleaning results while being
+                  environmentally responsible. Our chemical programs are designed to maximize efficiency and minimize waste.
                 </p>
+                <ul className="space-y-3 text-gray-700 mb-8">
+                  <li className="flex items-center">
+                    <span className="w-1 h-1 bg-yellow-400 rounded-full mr-3"></span>
+                    Pre-soak and tire cleaners
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-1 h-1 bg-yellow-400 rounded-full mr-3"></span>
+                    Foaming detergents and soaps
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-1 h-1 bg-yellow-400 rounded-full mr-3"></span>
+                    Spot-free rinse aids and drying agents
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-1 h-1 bg-yellow-400 rounded-full mr-3"></span>
+                    Wax and protective coatings
+                  </li>
+                </ul>
+                <SafeLink href="/chemicals" className="bg-[#f0da11] text-gray-900 px-8 py-4 rounded-xl font-semibold hover:bg-[#d0b211] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">Explore Chemicals</SafeLink>
+              </div>
+              
+              <div className="bg-white/90 backdrop-blur-sm p-8 rounded-lg shadow-lg">
+                <div className="text-center">
+                  <div className="w-30 h-30 flex items-center justify-center mx-auto mb-5">
+                    <div className="mx-auto flex items-center justify-center p-1 gap-6">
+                      <img src="/logoSimo.webp" alt="Chemical Icon" className="max-w-full max-h-full" /> 
+                      <img src="/logoCWT.webp" alt="Chemical Icon" className="max-w-full max-h-full" />
+                      <img src="/logoVertech.webp" alt="Chemical Icon" className="max-w-full max-h-full" />
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2 text-gray-900">Quality Guarantee</h3>
+                  <p className="text-gray-600">
+                    All of our chemicals meet the highest industry standards for performance and environmental safety.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Call to Action Section */}
-      <section className="relative z-10 py-20 bg-gradient-to-br from-[#26231d] via-[#595646] to-[#4c6461] text-white overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          {/* Spinning squares instead of gradient overlays */}
-          <div className="absolute top-20 right-24 w-20 h-20 border-2 border-[#f0da11]/25 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '15s' }}></div>
-          <div className="absolute bottom-16 left-20 w-16 h-16 border-2 border-[#bfb986]/30 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '12s', animationDelay: '1s' }}></div>
-          <div className="absolute top-1/2 left-1/4 w-14 h-14 border-2 border-[#d0b211]/35 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '10s', animationDelay: '2s' }}></div>
-          <div className="absolute bottom-1/4 right-1/4 w-12 h-12 border-2 border-[#f0da11]/40 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '8s', animationDelay: '3s' }}></div>
-          <div className="absolute top-1/3 right-1/3 w-10 h-10 border-2 border-[#bfb986]/25 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '13s', animationDelay: '0.5s' }}></div>
-          <div className="absolute bottom-32 left-1/3 w-18 h-18 border-2 border-[#d0b211]/30 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '11s', animationDelay: '1.8s' }}></div>
-          
-          {/* Yellow dot grid pattern - consistent but lower opacity for dark background */}
-          <div className="absolute inset-0 opacity-10 pointer-events-none z-10">
-            <div
-              className="h-full w-full"
-              style={{
-                backgroundImage: `radial-gradient(circle at 1px, #9b9000 1px, transparent 1px)`,
-                backgroundSize: '24px 24px'
-              }}
-            ></div>
+        {/* Call to Action Section */}
+        <section className="relative z-10 py-20 bg-gradient-to-br from-[#26231d] via-[#595646] to-[#4c6461] text-white overflow-hidden">
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-20 right-24 w-20 h-20 border-2 border-[#f0da11]/25 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '15s' }}></div>
+            <div className="absolute bottom-16 left-20 w-16 h-16 border-2 border-[#bfb986]/30 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '12s', animationDelay: '1s' }}></div>
+            <div className="absolute top-1/2 left-1/4 w-14 h-14 border-2 border-[#d0b211]/35 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '10s', animationDelay: '2s' }}></div>
           </div>
-          
-          {/* Additional geometric shapes for visual interest */}
-          <div className="absolute top-16 left-16 w-16 h-16 border-2 border-[#f0da11]/30 rounded-lg rotate-45 animate-bounce" style={{ animationDelay: '0.5s' }}></div>
-          <div className="absolute bottom-24 right-20 w-12 h-12 border-2 border-[#bfb986]/30 rounded-full animate-pulse" style={{ animationDelay: '1.5s' }}></div>
-          <div className="absolute top-1/3 right-16 w-8 h-8 bg-[#f0da11]/20 rounded-full animate-ping" style={{ animationDelay: '2.5s' }}></div>
-          <div className="absolute bottom-1/3 left-20 w-10 h-10 bg-[#bfb986]/20 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '10s' }}></div>
-          
-          {/* Car wash themed icons floating in background */}
-          <div className="absolute top-20 right-1/4 opacity-10">
-            <svg className="w-16 h-16 text-[#f0da11] animate-float" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M19 7h-3V6a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v1H7a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1zM12 6h2v1h-2V6zm-2 3h4v8h-4V9z"/>
-            </svg>
-          </div>
-          <div className="absolute bottom-32 left-1/4 opacity-10">
-            <svg className="w-12 h-12 text-[#bfb986] animate-float" fill="currentColor" viewBox="0 0 24 24" style={{ animationDelay: '1s' }}>
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
-            </svg>
-          </div>
-        </div>
 
-        <div className="container mx-auto px-4 relative z-10">
-          {/* Call to Action Content */}
-          <div className="flex flex-col items-center justify-center text-center mb-12">
-            <div className="w-full flex justify-center mb-6">
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="flex flex-col items-center justify-center text-center mb-12">
               <BlurText
                 text="Ready to Transform Your Wash Business?"
                 delay={100}
                 animateBy="words"
                 direction="top"
-                className="text-3xl md:!text-[2rem] font-extrabold !text-white mb-6"
+                className="!text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold !text-white mb-6"
               />
-            </div>
-            <div className="flex flex-col items-center justify-center text-center mb-12">
               <BlurText
-              text="Join hundreds of satisfied customers across the Midwest who trust Carwash Technologies for their equipment, service, and chemical needs."
-              delay={150}
-              animateBy="words"
-              direction="bottom"
-              className="text-lg md:text-xl lg:text-2xl !text-white"
+                text="Join hundreds of satisfied customers across the Midwest who trust Carwash Technologies for their equipment, service, and chemical needs."
+                delay={150}
+                animateBy="words"
+                direction="bottom"
+                className="text-lg md:text-xl lg:text-2xl !text-white"
               />
             </div>
-          </div>
 
-          {/* Contact Information Cards */}
-          <div className="max-w-5xl mx-auto mb-12">
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
-                <div className="w-12 h-12 bg-gradient-to-br from-[#f0da11] to-[#d0b211] rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042,0,0,1,5.516,5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                  </svg>
+            {/* Contact Information Cards */}
+            <div className="max-w-5xl mx-auto mb-12">
+              <div className="grid md:grid-cols-3 gap-8">
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
+                  <div className="w-12 h-12 bg-gradient-to-br from-[#f0da11] to-[#d0b211] rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <svg className="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042,0,0,1,5.516,5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2 text-white text-center">Call Us Today</h3>
+                  <p className="text-lg !text-white font-semibold text-center">(612) 408-9010</p>
                 </div>
-                <h3 className="text-xl font-semibold mb-2 text-white text-center">Call Us Today</h3>
-                <p className="text-lg !text-white font-semibold text-center">(612) 408-9010</p>
-              </div>
         
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
-                <div className="w-12 h-12 bg-gradient-to-br from-[#f0da11] to-[#d0b211] rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
+                  <div className="w-12 h-12 bg-gradient-to-br from-[#f0da11] to-[#d0b211] rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <svg className="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2 text-white text-center">Get a Quote</h3>
+                  <div className="mt-4 text-center">
+                    <SafeLink href="/contact" className="bg-[#f0da11] text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-[#d0b211] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                      Contact Us Today
+                    </SafeLink>
+                  </div>
                 </div>
-                <h3 className="text-xl font-semibold mb-2 text-white text-center">Get a Quote</h3>
-                <div className="mt-4 text-center">
-                  <a href="/contact" className="bg-[#f0da11] text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-[#d0b211] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-                    Contact Us Today
-                  </a>
+                
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
+                  <div className="w-12 h-12 bg-gradient-to-br from-[#f0da11] to-[#d0b211] rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <svg className="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2 text-white text-center">Visit Our Location</h3>
+                  <p className="text-lg !text-white text-center">322 19th St. SW<br />Forest Lake, MN 55025</p>
                 </div>
               </div>
-              
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
-                <div className="w-12 h-12 bg-gradient-to-br from-[#f0da11] to-[#d0b211] rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-semibold mb-2 text-white text-center">Visit Our Location</h3>
-                <p className="text-lg !text-white text-center">322 19th St. SW<br />Forest Lake, MN 55025</p>
+            </div>
+
+            {/* Main CTA Buttons */}
+            <div className="text-center">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <SafeLink href="/contact" className="bg-[#f0da11] text-gray-900 px-8 py-4 rounded-xl font-semibold hover:bg-[#d0b211] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-lg">
+                  Get Started Today
+                </SafeLink>
+                <SafeLink href="/services" className="border-2 border-[#f0da11] text-[#f0da11] px-8 py-4 rounded-xl hover:bg-[#f0da11] hover:text-gray-900 transition-all duration-300 font-semibold text-lg">
+                  View Our Services
+                </SafeLink>
               </div>
             </div>
           </div>
+        </section>
 
-          {/* Main CTA Buttons */}
-          <div className="text-center">
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <a href="/contact" className="bg-[#f0da11] text-gray-900 px-8 py-4 rounded-xl font-semibold hover:bg-[#d0b211] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-lg">
-                Get Started Today
-              </a>
-              <a href="/services" className="border-2 border-[#f0da11] text-[#f0da11] px-8 py-4 rounded-xl hover:bg-[#f0da11] hover:text-gray-900 transition-all duration-300 font-semibold text-lg">
-                View Our Services
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Custom CSS for floating animation */}
-      <style jsx>{`
-        @keyframes float {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-15px); }
-        }
-        .animate-float {
-          animation: float 4s ease-in-out infinite;
-        }
-      `}</style>
-    </div>
+        {/* Custom CSS for floating animation */}
+        <style jsx>{`
+          @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+          }
+          .animate-float {
+            animation: float 4s ease-in-out infinite;
+          }
+        `}</style>
+      </div>
     </>
   );
 }

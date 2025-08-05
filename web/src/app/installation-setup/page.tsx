@@ -1,6 +1,7 @@
 import React from 'react';
 import BlurText from '../components/animations/BlurText';
 import Image from 'next/image';
+import SafeLink from '../components/ui/SafeLink'; // Add this import
 
 export default function InstallationSetup() {
   return (
@@ -87,7 +88,7 @@ export default function InstallationSetup() {
               delay={50}
               animateBy="words"
               direction="top"
-              className="md:!text-[2rem] text-[6rem] font-extrabold text-gray-900 mb-6"
+              className="md:!text-[2rem] !text-[2rem] font-extrabold text-gray-900 mb-6"
             />
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               From initial planning to final testing, we ensure your wash equipment is installed correctly and efficiently
@@ -159,7 +160,7 @@ export default function InstallationSetup() {
               delay={50}
               animateBy="words"
               direction="top"
-              className="md:!text-[2rem] text-[6rem] font-extrabold text-gray-900 mb-6"
+              className="md:!text-[2rem] !text-[2rem] font-extrabold text-gray-900 mb-6"
             />
             <p className="text-xl text-gray-600">Complete installation services for all types of wash equipment</p>
           </div>
@@ -346,7 +347,7 @@ export default function InstallationSetup() {
                 delay={50}
                 animateBy="words"
                 direction="top"
-                className="md:!text-[2rem] text-[6rem] font-extrabold text-gray-900 mb-6"
+                className="md:!text-[2rem] !text-[2rem] font-extrabold text-gray-900 mb-6"
               />
               <p className="text-lg text-gray-600 mb-8">
                 Our experienced installation team ensures your wash equipment is installed correctly, 
@@ -412,7 +413,7 @@ export default function InstallationSetup() {
               
               <div className="grid grid-cols-2 gap-6 mb-8">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-[#f0da11] mb-2">500+</div>
+                  <div className="text-3xl font-bold text-[#f0da11] mb-2">99+</div>
                   <div className="text-sm text-gray-600">Successful Installations</div>
                 </div>
                 <div className="text-center">
@@ -420,7 +421,7 @@ export default function InstallationSetup() {
                   <div className="text-sm text-gray-600">Years Experience</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-[#f0da11] mb-2">98%</div>
+                  <div className="text-3xl font-bold text-[#f0da11] mb-2">99%</div>
                   <div className="text-sm text-gray-600">Customer Satisfaction</div>
                 </div>
                 <div className="text-center">
@@ -451,7 +452,7 @@ export default function InstallationSetup() {
               </div>
               
               <div className="text-center">
-                <a 
+                <SafeLink 
                   href="/contact" 
                   className="bg-[#f0da11] text-gray-900 px-8 py-3 rounded-xl font-semibold hover:bg-[#d0b211] transition-colors duration-300 inline-flex items-center"
                 >
@@ -459,7 +460,7 @@ export default function InstallationSetup() {
                   <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
-                </a>
+                </SafeLink>
               </div>
             </div>
           </div>
@@ -475,7 +476,7 @@ export default function InstallationSetup() {
               delay={50}
               animateBy="words"
               direction="top"
-             className="md:!text-[2rem] text-[6rem] font-extrabold text-gray-900 mb-6"
+             className="md:!text-[2rem] !text-[2rem] font-extrabold text-gray-900 mb-6"
             />
             <p className="text-xl text-gray-600">From planning to operation, here's what to expect during your installation</p>
           </div>
@@ -561,13 +562,13 @@ export default function InstallationSetup() {
             delay={50}
             animateBy="words"
             direction="top"
-            className="md:!text-[2rem] text-[6rem] font-extrabold text-gray-900 mb-6"
+            className="md:!text-[2rem] !text-[2rem] font-extrabold text-gray-900 mb-6"
           />
           <p className="text-xl text-yellow-100 mb-8 max-w-2xl mx-auto">
             Contact us today to schedule your installation consultation and get your wash project started.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a 
+            <SafeLink 
               href="/contact" 
               className="bg-white text-yellow-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-200 transition-colors duration-300 inline-flex items-center shadow-lg hover:shadow-xl"
             >
@@ -575,8 +576,8 @@ export default function InstallationSetup() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
               Schedule Consultation
-            </a>
-            <a 
+            </SafeLink>
+            <SafeLink 
               href="/equipment-sales" 
               className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-yellow-600 transition-colors duration-300 inline-flex items-center"
             >
@@ -584,7 +585,7 @@ export default function InstallationSetup() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 7.172V5L8 4z" />
               </svg>
               View Equipment
-            </a>
+            </SafeLink>
           </div>
         </div>
       </section>

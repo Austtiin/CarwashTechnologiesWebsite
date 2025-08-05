@@ -2,6 +2,7 @@
 
 import React, { useState, useMemo, useEffect } from 'react';
 import BlurText from '../components/animations/BlurText';
+import SafeLink from '../components/ui/SafeLink'; // Add this import
 // Import the generated PDF list (change this line)
 import pdfFileList from '../../data/pdf-list.json';
 
@@ -427,7 +428,9 @@ export default function SafetyDataSheets() {
                 <p className="text-blue-800 leading-relaxed">
                   Always read and follow safety data sheet instructions before using any chemical products. 
                   If you cannot find the SDS for a specific product, please contact us immediately at{' '}
-                  <a href="/contact" className="underline font-medium">our contact page</a> or call our safety hotline.
+                  <SafeLink href="/contact" className="underline font-medium text-blue-800 hover:text-blue-900">
+                    our contact page
+                  </SafeLink> or call our safety hotline.
                   Keep safety data sheets readily available at your facility for emergency reference.
                 </p>
               </div>

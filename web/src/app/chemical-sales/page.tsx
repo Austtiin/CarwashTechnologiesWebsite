@@ -1,6 +1,7 @@
 import React from 'react';
 import BlurText from '../components/animations/BlurText';
 import Image from 'next/image';
+import SafeLink from '../components/ui/SafeLink'; // Add this import
 
 export default function ChemicalSales() {
   return (
@@ -86,7 +87,7 @@ export default function ChemicalSales() {
               delay={150}
               animateBy="words"
               direction="top"
-              className="md:!text-[2rem] text-[6rem] font-extrabold text-gray-900 mb-6"
+              className="md:!text-[2rem] !text-[2rem] font-extrabold text-gray-900 mb-6"
             />
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               We partner with leading chemical manufacturers to provide you with the highest quality wash solutions
@@ -142,7 +143,7 @@ export default function ChemicalSales() {
               delay={50}
               animateBy="words"
               direction="top"
-              className="md:!text-[2rem] text-[6rem] font-extrabold text-gray-900 mb-6"
+              className="md:!text-[2rem] !text-[2rem] font-extrabold text-gray-900 mb-6"
             />
             <p className="text-xl text-gray-600">Complete range of wash chemical solutions</p>
           </div>
@@ -334,7 +335,7 @@ export default function ChemicalSales() {
                 delay={50}
                 animateBy="words"
                 direction="top"
-                className="md:!text-[2rem] text-[6rem] font-extrabold text-gray-900 mb-6"
+                className="md:!text-[2rem] !text-[2rem] font-extrabold text-gray-900 mb-6"
               />
               <p className="text-lg text-gray-600 mb-8">
                 We supply a complete line of high-performance wash chemicals designed to 
@@ -405,7 +406,7 @@ export default function ChemicalSales() {
               delay={50}
               animateBy="words"
               direction="top"
-              className="md:!text-[2rem] text-[6rem] font-extrabold text-gray-900 mb-6"
+              className="md:!text-[2rem] !text-[2rem] font-extrabold text-gray-900 mb-6"
             />
             <p className="text-xl text-gray-600">Choose the program that works best for your operation</p>
           </div>
@@ -437,9 +438,12 @@ export default function ChemicalSales() {
                 </li>
               </ul>
               <div className="text-center mt-auto">
-                <a href="/contact" className="bg-gray-200 text-gray-800 px-6 py-3 rounded-lg font-medium hover:bg-gray-300 transition-colors">
+                <SafeLink 
+                  href="/contact" 
+                  className="bg-gray-200 text-gray-800 px-6 py-3 rounded-lg font-medium hover:bg-gray-300 transition-colors"
+                >
                   Get Pricing
-                </a>
+                </SafeLink>
               </div>
             </div>
 
@@ -478,9 +482,12 @@ export default function ChemicalSales() {
                 </li>
               </ul>
               <div className="text-center mt-auto">
-                <a href="/contact" className="bg-[#f0da11] text-gray-900 px-6 py-3 rounded-lg font-medium hover:bg-[#d0b211] transition-colors">
+                <SafeLink 
+                  href="/contact" 
+                  className="bg-[#f0da11] text-gray-900 px-6 py-3 rounded-lg font-medium hover:bg-[#d0b211] transition-colors"
+                >
                   Start Program
-                </a>
+                </SafeLink>
               </div>
             </div>
 
@@ -516,9 +523,12 @@ export default function ChemicalSales() {
                 </li>
               </ul>
               <div className="text-center mt-auto">
-                <a href="/contact" className="bg-gray-200 text-gray-800 px-6 py-3 rounded-lg font-medium hover:bg-gray-300 transition-colors">
+                <SafeLink 
+                  href="/contact" 
+                  className="bg-gray-200 text-gray-800 px-6 py-3 rounded-lg font-medium hover:bg-gray-300 transition-colors"
+                >
                   Contact Sales
-                </a>
+                </SafeLink>
               </div>
             </div>
           </div>
@@ -538,13 +548,13 @@ export default function ChemicalSales() {
             delay={50}
             animateBy="words"
             direction="top"
-            className="md:!text-[2rem] text-[6rem] font-extrabold text-gray-900 mb-6"
+            className="md:!text-[2rem] !text-[2rem] font-extrabold text-gray-900 mb-6"
           />
           <p className="text-xl text-yellow-100 mb-8 max-w-2xl mx-auto">
             Contact us today to discuss your chemical needs and discover how our solutions can improve your wash quality and profitability.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a 
+            <SafeLink 
               href="/contact" 
               className="bg-white text-yellow-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-200 transition-colors duration-300 inline-flex items-center shadow-lg hover:shadow-xl"
             >
@@ -552,8 +562,8 @@ export default function ChemicalSales() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
               Get Chemical Quote
-            </a>
-            <a 
+            </SafeLink>
+            <SafeLink 
               href="/services" 
               className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-yellow-600 transition-colors duration-300 inline-flex items-center"
             >
@@ -561,7 +571,7 @@ export default function ChemicalSales() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
               Learn More
-            </a>
+            </SafeLink>
           </div>
         </div>
       </section>

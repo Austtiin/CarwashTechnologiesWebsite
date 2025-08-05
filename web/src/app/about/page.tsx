@@ -1,9 +1,17 @@
 import React from 'react';
 import BlurText from '../components/animations/BlurText';
+import SafeLink from '../components/ui/SafeLink'; // Add this import
+
+// Reusable heading component for large responsive headings
+const Heading: React.FC<{ children: React.ReactNode }> = ({ children }) => (
+  <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
+    {children}
+  </h1>
+);
 
 const AboutPage = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-[#26231d] via-[#595646] to-[#4c6461] text-white py-24">
         {/* Enhanced Background Elements */}
@@ -32,11 +40,11 @@ const AboutPage = () => {
               <span className="text-sm font-semibold text-[#f0da11] tracking-wide">About Our Company</span>
             </div>
             
-            <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
+            <Heading>
               <span className="bg-gradient-to-r from-[#cecece] via-[#f0da11] to-[#bfb986] bg-clip-text text-transparent">
                 Carwash Technologies
               </span>
-            </h1>
+            </Heading>
           
             <div className="flex justify-center">
               <BlurText
@@ -109,7 +117,7 @@ const AboutPage = () => {
                 delay={50}
                 animateBy="words"
                 direction="top"
-                className="md:!text-[2rem] text-[6rem] font-extrabold text-gray-900 mb-6"
+                className="md:!text-[2rem] !text-[2rem] font-extrabold text-gray-900 mb-6"
               />
               <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
                 Built on a foundation of expertise, innovation, and unwavering commitment to customer success
@@ -180,7 +188,7 @@ const AboutPage = () => {
                 delay={50}
                 animateBy="words"
                 direction="top"
-                className="md:!text-[2rem] text-[6rem] font-extrabold text-gray-900 mb-6"
+                className="md:!text-[2rem] !text-[2rem] font-extrabold text-gray-900 mb-6"
               />
             </div>
             
@@ -222,7 +230,7 @@ const AboutPage = () => {
                 delay={50}
                 animateBy="words"
                 direction="top"
-                className="md:!text-[2rem] text-[6rem] font-extrabold text-gray-900 mb-6"
+                className="md:!text-[2rem] !text-[2rem] font-extrabold text-gray-900 mb-6"
               />
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div className="text-center">
@@ -280,7 +288,7 @@ const AboutPage = () => {
                 delay={50}
                 animateBy="words"
                 direction="top"
-                className="md:!text-[2rem] text-[6rem] font-extrabold text-gray-900 mb-6"
+                className="md:!text-[2rem] !text-[2rem] font-extrabold text-gray-900 mb-6"
               />
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 We're more than just a supplier – we're your partner in success
@@ -342,7 +350,7 @@ const AboutPage = () => {
                 delay={50}
                 animateBy="words"
                 direction="top"
-                className="md:!text-[2rem] text-[6rem] font-extrabold text-gray-900 mb-6"
+                className="md:!text-[2rem] !text-[2rem] font-extrabold text-gray-900 mb-6"
               />
               <p className="text-xl text-gray-600">
                 Proudly serving wash businesses across four states
@@ -427,7 +435,8 @@ const AboutPage = () => {
                   delay={50}
                   animateBy="words"
                   direction="top"
-                  className="md:!text-[2rem] text-[6rem] font-extrabold text-gray-900 mb-6"                />
+                    className="md:!text-[2rem] !text-[2rem] font-extrabold text-gray-900 mb-6"
+                  />
               </div>
               <p className="text-xl text-gray-800 mb-8 max-w-3xl mx-auto leading-relaxed font-medium">
                 Whether you're planning a new wash or looking to upgrade your existing operation, 
@@ -436,7 +445,7 @@ const AboutPage = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
-              <a 
+              <SafeLink 
                 href="/contact" 
                 className="bg-gray-900 text-white px-8 py-4 rounded-xl font-semibold hover:bg-gray-800 transition-all duration-300 inline-flex items-center shadow-lg hover:shadow-xl transform hover:-translate-y-1"
               >
@@ -444,8 +453,8 @@ const AboutPage = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 012 2z" />
                 </svg>
                 Start a Conversation
-              </a>
-              <a 
+              </SafeLink>
+              <SafeLink 
                 href="/services" 
                 className="border-2 border-gray-900 text-gray-900 px-8 py-4 rounded-xl font-semibold hover:bg-gray-900 hover:text-white transition-all duration-300 inline-flex items-center transform hover:-translate-y-1"
               >
@@ -453,7 +462,7 @@ const AboutPage = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                 </svg>
                 View Our Services
-              </a>
+              </SafeLink>
             </div>
             
             <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-6 border border-white/30 max-w-2xl mx-auto shadow-lg">
