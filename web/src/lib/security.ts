@@ -151,7 +151,7 @@ export function createSafeProps<T extends Record<string, unknown>>(
   // Apply custom validation if provided
   if (validationSchema) {
     try {
-      return validationSchema.parse(safeProps);
+      return validationSchema.parse(safeProps) as T;
     } catch (error) {
       console.warn('Props validation failed:', error);
       return safeProps;
@@ -187,3 +187,4 @@ export class RateLimiter {
 }
 
 export const globalRateLimiter = new RateLimiter();
+
