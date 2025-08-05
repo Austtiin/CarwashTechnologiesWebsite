@@ -12,7 +12,7 @@ export default function Home() {
   const [time, setTime] = useState(0);
 
   // Update time for Aurora animation using requestAnimationFrame
-  const animationIdRef = React.useRef<number>();
+  const animationIdRef = React.useRef<number | null>(null);
 
   useEffect(() => {
     const startTime = Date.now();
@@ -26,7 +26,7 @@ export default function Home() {
     animationIdRef.current = requestAnimationFrame(updateTime);
 
     return () => {
-      if (animationIdRef.current !== undefined) {
+      if (animationIdRef.current !== null) {
         cancelAnimationFrame(animationIdRef.current);
       }
     };
@@ -696,3 +696,4 @@ export default function Home() {
     </>
   );
 }
+
