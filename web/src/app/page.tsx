@@ -1,18 +1,17 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
+import Image from 'next/image';
 import BlurText from './components/animations/BlurText';
-import Card from './components/ui/card';
 import Aurora from './components/animations/Aurora';
 import ShinyText from './components/animations/ShinyText';
-import { sanitize } from '../lib/security';
 import SafeLink from './components/ui/SafeLink';
 
 export default function Home() {
   const [time, setTime] = useState(0);
 
   // Update time for Aurora animation using requestAnimationFrame
-  const animationIdRef = React.useRef<number>();
+  const animationIdRef = React.useRef<number | null>(null);
 
   useEffect(() => {
     const startTime = Date.now();
@@ -26,7 +25,7 @@ export default function Home() {
     animationIdRef.current = requestAnimationFrame(updateTime);
 
     return () => {
-      if (animationIdRef.current !== undefined) {
+      if (animationIdRef.current !== null) {
         cancelAnimationFrame(animationIdRef.current);
       }
     };
@@ -191,10 +190,13 @@ export default function Home() {
               {/* Company Logo */}
               <div className="fade-in-up flex justify-center">
                 <div className="flex items-center justify-center w-[350px] h-[350px] bg-white/10 backdrop-blur-sm rounded-2xl p-3 border border-white/20">
-                  <img
+                  <Image
                     src="/logoCWT.webp"
                     alt="Carwash Technologies Logo"
+                    width={350}
+                    height={350}
                     className="max-w-full max-h-full object-contain drop-shadow-2xl"
+                    priority
                   />
                 </div>
               </div>
@@ -587,9 +589,27 @@ export default function Home() {
                 <div className="text-center">
                   <div className="w-30 h-30 flex items-center justify-center mx-auto mb-5">
                     <div className="mx-auto flex items-center justify-center p-1 gap-6">
-                      <img src="/logoSimo.webp" alt="Chemical Icon" className="max-w-full max-h-full" /> 
-                      <img src="/logoCWT.webp" alt="Chemical Icon" className="max-w-full max-h-full" />
-                      <img src="/logoVertech.webp" alt="Chemical Icon" className="max-w-full max-h-full" />
+                      <Image 
+                        src="/logoSimo.webp" 
+                        alt="Simo Logo" 
+                        width={100} 
+                        height={100} 
+                        className="object-contain"
+                      />
+                      <Image 
+                        src="/logoCWT.webp" 
+                        alt="Carwash Technologies Logo" 
+                        width={100} 
+                        height={100} 
+                        className="object-contain"
+                      />
+                      <Image 
+                        src="/logoVertech.webp" 
+                        alt="Vertech Logo" 
+                        width={100} 
+                        height={100} 
+                        className="object-contain"
+                      />
                     </div>
                   </div>
                   <h3 className="text-xl font-semibold mb-2 text-gray-900">Quality Guarantee</h3>
