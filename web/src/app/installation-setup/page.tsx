@@ -1,6 +1,5 @@
 import React from 'react';
 import BlurText from '../components/animations/BlurText';
-import Image from 'next/image';
 import SafeLink from '../components/ui/SafeLink'; // Add this import
 
 export default function InstallationSetup() {
@@ -478,8 +477,7 @@ export default function InstallationSetup() {
               direction="top"
              className="md:!text-[2rem] !text-[2rem] font-extrabold text-gray-900 mb-6"
             />
-            <p className="text-xl text-gray-600">From planning to operation, here's what to expect during your installation</p>
-          </div>
+            <p className="text-xl text-gray-600">From planning to operation, here&apos;s what to expect during your installation</p>
 
           <div className="max-w-4xl mx-auto">
             <div className="relative">
@@ -546,6 +544,7 @@ export default function InstallationSetup() {
               </div>
             </div>
           </div>
+        </div>
         </div>
       </section>
 

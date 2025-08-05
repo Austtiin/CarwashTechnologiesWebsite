@@ -1,6 +1,6 @@
 import React from 'react';
 import BlurText from '../components/animations/BlurText';
-import Image from 'next/image';
+
 import SafeLink from '../components/ui/SafeLink'; // Add this import
 
 export default function ServiceMaintenance() {

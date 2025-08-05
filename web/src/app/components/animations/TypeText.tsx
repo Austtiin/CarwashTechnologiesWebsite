@@ -5,7 +5,7 @@ import { gsap } from "gsap";
 
 type TextTypeProps = {
   text: string | string[];
-  as?: keyof JSX.IntrinsicElements | React.JSXElementConstructor<any>;
+  as?: keyof JSX.IntrinsicElements | React.JSXElementConstructor<unknown>;
   typingSpeed?: number;
   initialDelay?: number;
   pauseDuration?: number;
@@ -22,12 +22,12 @@ type TextTypeProps = {
   onSentenceComplete?: (sentence: string, index: number) => void;
   startOnVisible?: boolean;
   reverseMode?: boolean;
-  [key: string]: any;
+  [key: string]: unknown;
 };
 
 const TextType = ({
   text,
-  as: Component = "div",
+  as: Component = "lottie-player",
   typingSpeed = 50,
   initialDelay = 0,
   pauseDuration = 2000,
@@ -45,7 +45,7 @@ const TextType = ({
   startOnVisible = false,
   reverseMode = false,
   ...props
-}: TextTypeProps) => {
+}: TextTypeProps & Record<string, unknown>) => {
   const [displayedText, setDisplayedText] = useState("");
   const [currentCharIndex, setCurrentCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);

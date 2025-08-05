@@ -127,12 +127,12 @@ const AboutPage = () => {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  At Carwash Technologies, we've been at the forefront of the wash industry for over two decades. 
+                  At Carwash Technologies, we&apos;ve been at the forefront of the wash industry for over two decades. 
                   What started as a small operation has grown into a trusted partner for wash businesses across the Midwest.
                 </p>
                 <p className="text-lg text-gray-700 leading-relaxed">
                   Our journey began with a simple belief: every wash deserves equipment that works reliably, 
-                  chemicals that deliver consistent results, and support that's there when you need it most.
+                  chemicals that deliver consistent results, and support that&apos;s there when you need it most.
                 </p>
                 <p className="text-lg text-gray-700 leading-relaxed">
                   Today, we continue to build on that foundation, combining decades of experience with the latest 
@@ -250,7 +250,7 @@ const AboutPage = () => {
                     </svg>
                   </div>
                   <h4 className="text-xl font-bold text-gray-900 mb-3">Customer Focus</h4>
-                  <p className="text-gray-600">Our customers' success is our success. We listen, understand, and deliver solutions that exceed expectations.</p>
+                  <p className="text-gray-600">Our customers&apos; success is our success. We listen, understand, and deliver solutions that exceed expectations.</p>
                 </div>
                 
                 <div className="text-center">
@@ -291,7 +291,7 @@ const AboutPage = () => {
                 className="md:!text-[2rem] !text-[2rem] font-extrabold text-gray-900 mb-6"
               />
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                We're more than just a supplier – we're your partner in success
+                We&apos;re more than just a supplier – we&apos;re your partner in success
               </p>
             </div>
             
@@ -331,7 +331,7 @@ const AboutPage = () => {
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">24/7 Support</h3>
                 <p className="text-gray-700">
-                  When your equipment needs attention, we're here. Our support team is available 
+                  When your equipment needs attention, we&apos;re here. Our support team is available 
                   around the clock to keep you running.
                 </p>
               </div>
@@ -439,8 +439,8 @@ const AboutPage = () => {
                   />
               </div>
               <p className="text-xl text-gray-800 mb-8 max-w-3xl mx-auto leading-relaxed font-medium">
-                Whether you're planning a new wash or looking to upgrade your existing operation, 
-                we're here to help you succeed. Let's discuss your vision and make it a reality.
+                Whether you&apos;re planning a new wash or looking to upgrade your existing operation, 
+                we&apos;re here to help you succeed. Let&apos;s discuss your vision and make it a reality.
               </p>
             </div>
             

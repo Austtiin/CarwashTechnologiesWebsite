@@ -116,29 +116,36 @@ export const sanitize = {
   }
 };
 
+// Type definition for props with potentially dangerous properties
+interface PropsWithUrlFields {
+  href?: string;
+  src?: string;
+  className?: string;
+  [key: string]: unknown;
+}
+
 // Safe component props wrapper
 export function createSafeProps<T extends Record<string, unknown>>(
   props: T,
   validationSchema?: z.ZodSchema
 ): T {
   const safeProps = { ...props };
+  const typedProps = safeProps as PropsWithUrlFields;
 
   // Sanitize common dangerous props
-  if (Object.prototype.hasOwnProperty.call(safeProps, 'href') && typeof (safeProps as any).href === 'string') {
-    (safeProps as any).href = sanitize.url((safeProps as any).href);
+  if (Object.prototype.hasOwnProperty.call(safeProps, 'href') && typeof typedProps.href === 'string') {
+    typedProps.href = sanitize.url(typedProps.href);
   }
 
-  if (Object.prototype.hasOwnProperty.call(safeProps, 'src') && typeof (safeProps as any).src === 'string') {
-    (safeProps as any).src = sanitize.url((safeProps as any).src);
+  if (Object.prototype.hasOwnProperty.call(safeProps, 'src') && typeof typedProps.src === 'string') {
+    typedProps.src = sanitize.url(typedProps.src);
   }
 
   if (
     Object.prototype.hasOwnProperty.call(safeProps, 'className') &&
-    typeof (safeProps as Record<string, unknown>)['className'] === 'string'
+    typeof typedProps.className === 'string'
   ) {
-    (safeProps as Record<string, unknown>)['className'] = sanitize.className(
-      (safeProps as Record<string, unknown>)['className']
-    );
+    typedProps.className = sanitize.className(typedProps.className);
   }
 
   // Remove any event handlers that might have been passed as props
@@ -187,4 +194,3 @@ export class RateLimiter {
 }
 
 export const globalRateLimiter = new RateLimiter();
-
