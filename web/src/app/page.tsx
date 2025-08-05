@@ -3,9 +3,19 @@ import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import BlurText from './components/animations/BlurText';
-import Aurora from './components/animations/Aurora';
-import ShinyText from './components/animations/ShinyText';
+import dynamic from 'next/dynamic';
 import SafeLink from './components/ui/SafeLink';
+
+// Lazy load heavy animation components
+const Aurora = dynamic(() => import('./components/animations/Aurora'), {
+  ssr: false,
+  loading: () => <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-purple-50" />
+});
+
+const ShinyText = dynamic(() => import('./components/animations/ShinyText'), {
+  ssr: false,
+  loading: () => <span>Loading...</span>
+});
 
 export default function Home() {
   const [time, setTime] = useState(0);
@@ -15,16 +25,33 @@ export default function Home() {
 
   useEffect(() => {
     const startTime = Date.now();
-
-    const updateTime = () => {
-      const elapsed = (Date.now() - startTime) / 1000; // Convert to seconds
-      setTime(elapsed);
-      animationIdRef.current = requestAnimationFrame(updateTime);
+    let isVisible = true;
+    
+    // Pause animation when page is not visible
+    const handleVisibilityChange = () => {
+      isVisible = !document.hidden;
+      if (isVisible && !animationIdRef.current) {
+        updateTime();
+      }
     };
-
+    
+    const updateTime = () => {
+      if (!isVisible) return;
+      
+      const elapsed = (Date.now() - startTime) / 1000;
+      setTime(elapsed);
+      
+      // Throttle to 30fps instead of 60fps
+      setTimeout(() => {
+        animationIdRef.current = requestAnimationFrame(updateTime);
+      }, 1000/30);
+    };
+    
+    document.addEventListener('visibilitychange', handleVisibilityChange);
     animationIdRef.current = requestAnimationFrame(updateTime);
-
+    
     return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
       if (animationIdRef.current !== null) {
         cancelAnimationFrame(animationIdRef.current);
       }
@@ -197,6 +224,9 @@ export default function Home() {
                     height={350}
                     className="max-w-full max-h-full object-contain drop-shadow-2xl"
                     priority
+                    sizes="(max-width: 768px) 300px, 350px" // Add this
+                    placeholder="blur"
+                    blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQ..." // Add blur placeholder
                   />
                 </div>
               </div>
@@ -711,8 +741,33 @@ export default function Home() {
           .animate-float {
             animation: float 4s ease-in-out infinite;
           }
+
+          /* Instead of animating multiple properties */
+          .spinning-square {
+            animation: spin 8s linear infinite;
+            will-change: transform; /* Hint to browser for optimization */
+          }
+
+          @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+          }
+
+          /* Use transform3d for hardware acceleration */
+          .animate-bounce {
+            animation: bounce3d 2s infinite;
+          }
+
+          @keyframes bounce3d {
+            0%, 100% { transform: translate3d(0, 0, 0); }
+            50% { transform: translate3d(0, -15px, 0); }
+          }
         `}</style>
       </div>
     </>
   );
 }
+
+// Remove Next.js config from this file. 
+// Place Next.js config in a separate next.config.js file at the project root.
+
