@@ -80,6 +80,7 @@ export const sanitize = {
       .replace(/<[^>]*>/g, '')
       .replace(/javascript:/gi, '')
       .replace(/vbscript:/gi, '')
+      .replace(/data:/gi, '')
       .replace(/on\w+\s*=/gi, '')
       .replace(/expression\s*\(/gi, '')
       .replace(/eval\s*\(/gi, '')
