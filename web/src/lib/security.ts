@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import sanitizeHtml from 'sanitize-html';
 
 // Comprehensive input validation schemas
 export const securitySchemas = {
@@ -74,16 +75,8 @@ export const sanitize = {
   // HTML sanitization - removes all HTML tags and dangerous content
   html: (input: unknown): string => {
     if (typeof input !== 'string') return '';
-    
-    return input
-      .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
-      .replace(/<[^>]*>/g, '')
-      .replace(/javascript:/gi, '')
-      .replace(/vbscript:/gi, '')
-      .replace(/data:/gi, '')
-      .replace(/on\w+\s*=/gi, '')
-      .replace(/expression\s*\(/gi, '')
-      .replace(/eval\s*\(/gi, '')
+    // Use sanitize-html to remove all HTML tags and dangerous content
+    return sanitizeHtml(input, { allowedTags: [], allowedAttributes: {} })
       .trim()
       .substring(0, 1000);
   },
