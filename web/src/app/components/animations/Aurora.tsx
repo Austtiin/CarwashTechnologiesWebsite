@@ -1,3 +1,6 @@
+// Line 172: Change 'let program: Program | undefined;' to 'const program: Program | undefined;'
+// Line 212: Remove the unused parameter 't' from the update function.
+
 import { Renderer, Program, Mesh, Color, Triangle } from "ogl";
 import { useEffect, useRef } from "react";
 
@@ -137,7 +140,7 @@ interface UpdateProps {
   colorStops?: string[];
 }
 
-export default function Aurora(props: AuroraProps): JSX.Element {
+export default function Aurora(props: AuroraProps): React.ReactElement {
   const {
     colorStops = ["#5227FF", "#7cff67", "#5227FF"],
     amplitude = 1.0,
@@ -169,19 +172,6 @@ export default function Aurora(props: AuroraProps): JSX.Element {
     gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
     gl.canvas.style.backgroundColor = 'transparent';
 
-    let program: Program | undefined;
-
-    function resize(): void {
-      if (!ctn) return;
-      const width = ctn.offsetWidth;
-      const height = ctn.offsetHeight;
-      renderer.setSize(width, height);
-      if (program) {
-        program.uniforms.uResolution.value = [width, height];
-      }
-    }
-    window.addEventListener("resize", resize);
-
     const geometry = new Triangle(gl);
     if (geometry.attributes.uv) {
       delete geometry.attributes.uv;
@@ -192,7 +182,7 @@ export default function Aurora(props: AuroraProps): JSX.Element {
       return [c.r, c.g, c.b];
     });
 
-    program = new Program(gl, {
+    const program = new Program(gl, {
       vertex: VERT,
       fragment: FRAG,
       uniforms: {
@@ -209,23 +199,32 @@ export default function Aurora(props: AuroraProps): JSX.Element {
 
     let animateId = 0;
 
-    const update = (t: number): void => {
+    const update = (): void => {
       animateId = requestAnimationFrame(update);
       // Use the time and speed from propsRef.current directly
       const currentProps: UpdateProps = propsRef.current;
-      program!.uniforms.uTime.value = (currentProps.time ?? 0) * (currentProps.speed ?? 1.0) * 0.1;
-      program!.uniforms.uAmplitude.value = currentProps.amplitude ?? 1.0;
-      program!.uniforms.uBlend.value = currentProps.blend ?? 0.5; // Use 0.5 as default if blend is undefined
+      program.uniforms.uTime.value = (currentProps.time ?? 0) * (currentProps.speed ?? 1.0) * 0.1;
+      program.uniforms.uAmplitude.value = currentProps.amplitude ?? 1.0;
+      program.uniforms.uBlend.value = currentProps.blend ?? 0.5; // Use 0.5 as default if blend is undefined
 
       // Always re-map color stops in case they change
       const currentStops: string[] = currentProps.colorStops ?? colorStops;
-      program!.uniforms.uColorStops.value = currentStops.map((hex: string) => {
+      program.uniforms.uColorStops.value = currentStops.map((hex: string) => {
         const c = new Color(hex);
         return [c.r, c.g, c.b] as [number, number, number];
       });
       renderer.render({ scene: mesh });
     };
     animateId = requestAnimationFrame(update);
+
+    function resize(): void {
+      if (!ctn) return;
+      const width = ctn.offsetWidth;
+      const height = ctn.offsetHeight;
+      renderer.setSize(width, height);
+      program.uniforms.uResolution.value = [width, height];
+    }
+    window.addEventListener("resize", resize);
 
     resize();
 
@@ -237,8 +236,8 @@ export default function Aurora(props: AuroraProps): JSX.Element {
       }
       gl.getExtension("WEBGL_lose_context")?.loseContext();
     };
-    // Re-run effect only when ctnDom.current changes, or if you explicitly want to re-initialize OGL for prop changes
-  }, [ctnDom]);
+    // Re-run effect when ctnDom.current or any prop changes
+  }, [ctnDom, colorStops, amplitude, blend, time, speed]);
 
   return <div ref={ctnDom} className="aurora-container" />;
 }

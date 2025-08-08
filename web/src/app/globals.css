@@ -2,49 +2,62 @@
 
 @import "tailwindcss";
 
-
 /* Base styles for headings */
 h1 {
-  font-size: theme(fontSize.4xl);
-  font-weight: theme(fontWeight.bold);
-  letter-spacing: theme(letterSpacing.tight);
-  color: theme(colors.gray.900);
+  font-size: 2.25rem; /* text-4xl */
+  font-weight: 700;   /* font-bold */
+  letter-spacing: -0.025em; /* tracking-tight */
+  color: #1a202c;     /* text-gray-900 */
 }
 
 @media (min-width: 640px) {
   h1 {
-    font-size: theme(fontSize.5xl);
+    font-size: 3rem; /* Tailwind's text-5xl is 3rem */
+    line-height: 1;
   }
 }
 
 @media (min-width: 1024px) {
   h1 {
-    font-size: theme(fontSize.6xl);
+    font-size: 3.75rem; /* text-6xl */
+    color: #4b5563;      /* text-gray-600 */
   }
 }
 
 p {
-  font-size: theme(fontSize.lg);
-  color: theme(colors.gray.600);
+  font-size: 1.125rem; /* text-lg */
+  color: #4b5563; /* text-gray-600 */
+  display: inline-block;
+  border-radius: 0.5rem; /* rounded-lg */
+  background-color: #f7f5f1/0; /* bg-yellow-500 - removed duplicate */
+  padding-top: 0.75rem; /* py-3 */
+  padding-left: 1.5rem; /* px-6 */
+  padding-right: 1.5rem;
+  text-align: center;
+  font-weight: 600; /* font-semibold */
+  color: #1a202c; /* text-gray-900 */
+  box-shadow: 0 0px 0px 0 rgba(0,0,0,0.05); /* shadow-sm */
+  transition: all 150ms ease-in-out;
 }
 
 /* Our custom button class */
 .btn-primary {
   display: inline-block;
-  border-radius: theme(borderRadius.lg);
-  background-color: theme(colors.yellow.400);
-  padding: 0.75rem 1.5rem; /* Equivalent to py-3 px-6 */
+  border-radius: 0.5rem; /* rounded-lg */
+  background-color: #ffffff; /* bg-yellow-400 */
+  padding-top: 0.75rem; /* py-3 */
+  padding-bottom: 0.75rem;
+  padding-left: 1.5rem; /* px-6 */
+  padding-right: 1.5rem;
   text-align: center;
-  font-weight: theme(fontWeight.semibold);
-  color: theme(colors.gray.900);
-  box-shadow: theme(boxShadow.sm);
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
+  font-weight: 600; /* font-semibold */
+  color: #1a202c; /* text-gray-900 */
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05); /* shadow-sm */
+  transition: all 150ms ease-in-out;
 }
 
 .btn-primary:hover {
-  background-color: theme(colors.yellow.500);
+  background-color: #eab308; /* bg-yellow-500 */
 }
 
 /* Car wash animation */
@@ -73,7 +86,6 @@ p {
 .fade-in-up {
   animation: fadeInUp 0.6s ease-out;
 }
-
 
 .shiny-text {
   color: black; /* Changed to black for the main text color */
@@ -105,50 +117,150 @@ p {
   animation: none;
 }
 
-
 .aurora-container {
   width: 100%;
   height: 100%;
 }
 
-@layer base {
-  html {
-    scroll-behavior: smooth;
+/* Consolidated media queries */
+@media (min-width: 640px) {
+  .btn-mobile {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
   }
   
-  body {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
+  .section-padding {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
   }
+}
+
+@media (min-width: 1024px) {
+  .heading-responsive {
+    font-size: 2.25rem; /* text-4xl */
+  }
+  
+  .text-responsive {
+    font-size: 1.125rem; /* text-lg */
+  }
+  
+  .container-mobile {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  
+  .section-padding {
+    padding-top: 4rem; /* py-16 */
+    padding-bottom: 4rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .heading-responsive {
+    font-size: 3rem; /* text-5xl */
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 @layer utilities {
   /* Mobile-first spacing utilities */
   .container-mobile {
-    @apply w-full px-4 sm:px-6 lg:px-8;
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  @media (min-width: 640px) {
+    .container-mobile {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .container-mobile {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
   }
   
   .text-responsive {
-    @apply text-sm sm:text-base lg:text-lg;
+    font-size: 0.875rem;
+  }
+  @media (min-width: 640px) {
+    .text-responsive {
+      font-size: 1rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    .text-responsive {
+      font-size: 1.125rem;
+    }
   }
   
   .heading-responsive {
-    @apply text-2xl sm:text-3xl lg:text-4xl xl:text-5xl;
+    font-size: 1.5rem;
+  }
+  @media (min-width: 640px) {
+    .heading-responsive {
+      font-size: 1.875rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    .heading-responsive {
+      font-size: 2.25rem;
+    }
+  }
+  @media (min-width: 1280px) {
+    .heading-responsive {
+      font-size: 3rem;
+    }
   }
   
   .section-padding {
-    @apply py-8 sm:py-12 lg:py-16;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  @media (min-width: 640px) {
+    .section-padding {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    .section-padding {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
   }
   
   /* Fix common mobile issues */
   .no-horizontal-scroll {
-    @apply overflow-x-hidden w-full max-w-full;
+    min-width: 44px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
   }
   
-  /* Touch-friendly buttons */
-  .btn-mobile {
-    @apply min-h-[44px] min-w-[44px] px-4 py-2 sm:px-6 sm:py-3;
+  @media (min-width: 640px) {
+    .btn-mobile {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
   }
 }
 
@@ -183,3 +295,4 @@ html, body {
     padding: 0.5rem 1rem !important;
   }
 }
+

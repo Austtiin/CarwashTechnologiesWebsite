@@ -38,7 +38,7 @@ export default function NotFound() {
             {/* Error Message */}
             <div className="mb-8">
               <BlurText
-                text="Oops! This page went through the wash cycle and didn't come out."
+                text="Oops! This page went through the wash cycle and didn&#39;t come out."
                 delay={50}
                 animateBy="words"
                 direction="top"
@@ -49,7 +49,7 @@ export default function NotFound() {
             {/* Subtitle */}
             <div className="flex justify-center mb-12">
               <BlurText
-                text="The page you're looking for doesn't exist, but don't worry - we'll help you get back on track!"
+                text="The page you&#39;re looking for doesn&#39;t exist, but don&#39;t worry - we&#39;ll help you get back on track!"
                 delay={100}
                 animateBy="words"
                 direction="top"
@@ -116,8 +116,8 @@ export default function NotFound() {
               
               <h2 className="text-2xl font-bold text-gray-900 mb-4">Lost in the Wash?</h2>
               <p className="text-gray-600 mb-6">
-                Don't worry! Even the best car wash systems sometimes miss a spot. 
-                Our team is here to help you find exactly what you're looking for.
+                Don&#39;t worry! Even the best car wash systems sometimes miss a spot. 
+                Our team is here to help you find exactly what you&#39;re looking for.
               </p>
               
               <div className="space-y-4">

@@ -4,9 +4,8 @@ import { useEffect } from 'react';
 export default function SecurityWrapper({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     //Disable right-click context menu
-    const handleContextMenu = (e: MouseEvent) => {
-      //e.preventDefault();
-      //return false;
+    const handleContextMenu = () => {
+      // Context menu disabled (function intentionally left blank)
     };
 
     // Disable common developer tool shortcuts

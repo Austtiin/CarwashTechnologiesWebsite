@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import sanitizeHtml from 'sanitize-html';
 
 // Comprehensive input validation schemas
 export const securitySchemas = {
@@ -74,15 +75,8 @@ export const sanitize = {
   // HTML sanitization - removes all HTML tags and dangerous content
   html: (input: unknown): string => {
     if (typeof input !== 'string') return '';
-    
-    return input
-      .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
-      .replace(/<[^>]*>/g, '')
-      .replace(/javascript:/gi, '')
-      .replace(/vbscript:/gi, '')
-      .replace(/on\w+\s*=/gi, '')
-      .replace(/expression\s*\(/gi, '')
-      .replace(/eval\s*\(/gi, '')
+    // Use sanitize-html to remove all HTML tags and dangerous content
+    return sanitizeHtml(input, { allowedTags: [], allowedAttributes: {} })
       .trim()
       .substring(0, 1000);
   },
@@ -122,29 +116,36 @@ export const sanitize = {
   }
 };
 
+// Type definition for props with potentially dangerous properties
+interface PropsWithUrlFields {
+  href?: string;
+  src?: string;
+  className?: string;
+  [key: string]: unknown;
+}
+
 // Safe component props wrapper
 export function createSafeProps<T extends Record<string, unknown>>(
   props: T,
   validationSchema?: z.ZodSchema
 ): T {
   const safeProps = { ...props };
+  const typedProps = safeProps as PropsWithUrlFields;
 
   // Sanitize common dangerous props
-  if (Object.prototype.hasOwnProperty.call(safeProps, 'href') && typeof (safeProps as any).href === 'string') {
-    (safeProps as any).href = sanitize.url((safeProps as any).href);
+  if (Object.prototype.hasOwnProperty.call(safeProps, 'href') && typeof typedProps.href === 'string') {
+    typedProps.href = sanitize.url(typedProps.href);
   }
 
-  if (Object.prototype.hasOwnProperty.call(safeProps, 'src') && typeof (safeProps as any).src === 'string') {
-    (safeProps as any).src = sanitize.url((safeProps as any).src);
+  if (Object.prototype.hasOwnProperty.call(safeProps, 'src') && typeof typedProps.src === 'string') {
+    typedProps.src = sanitize.url(typedProps.src);
   }
 
   if (
     Object.prototype.hasOwnProperty.call(safeProps, 'className') &&
-    typeof (safeProps as Record<string, unknown>)['className'] === 'string'
+    typeof typedProps.className === 'string'
   ) {
-    (safeProps as Record<string, unknown>)['className'] = sanitize.className(
-      (safeProps as Record<string, unknown>)['className']
-    );
+    typedProps.className = sanitize.className(typedProps.className);
   }
 
   // Remove any event handlers that might have been passed as props
@@ -157,7 +158,7 @@ export function createSafeProps<T extends Record<string, unknown>>(
   // Apply custom validation if provided
   if (validationSchema) {
     try {
-      return validationSchema.parse(safeProps);
+      return validationSchema.parse(safeProps) as T;
     } catch (error) {
       console.warn('Props validation failed:', error);
       return safeProps;

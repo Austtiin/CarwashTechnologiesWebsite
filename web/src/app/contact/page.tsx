@@ -2,8 +2,8 @@
 
 import React, { useState, useCallback } from 'react';
 import BlurText from '../components/animations/BlurText';
-import SafeLink from '../components/ui/SafeLink'; // Add this import
-import { sanitize, securitySchemas, createSafeProps, globalRateLimiter } from '@/lib/security';
+import SafeLink from '../components/ui/SafeLink';
+import { sanitize, securitySchemas, globalRateLimiter } from '../../lib/security';
 import { z } from 'zod';
 
 type ContactType = 'chemicals' | 'service' | 'sales';
@@ -244,8 +244,8 @@ const ContactPage = () => {
       <section className="relative py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white overflow-hidden min-h-[50vh] flex items-center">
         {/* Advanced Background Effects */}
         <div className="absolute inset-0 pointer-events-none">
-          {/* Animated gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-[#f0da11]/20 via-Yellow-600/10 to-yellow-600/20 opacity-70"></div>
+          {/* Animated gradient overlay - FIXED: from-Yellow-600/10 to from-yellow-600/10 */}
+          <div className="absolute inset-0 bg-gradient-to-br from-[#f0da11]/20 via-yellow-600/10 to-yellow-600/20 opacity-70"></div>
           
           {/* Floating geometric shapes with different animations */}
           <div className="absolute top-10 left-10 w-4 h-4 bg-[#f0da11]/40 rotate-45 animate-pulse"></div>
@@ -742,7 +742,7 @@ const ContactPage = () => {
                       </div>
                     </div>
 
-                    {/* Enhanced Submit Button */}
+                    {/* Enhanced Submit Button - FIXED: border-3 to border-4 */}
                     <div className="mt-10 text-center sm:mt-12">
                       <button
                         type="submit"
@@ -754,7 +754,7 @@ const ContactPage = () => {
                         
                         {isSubmitting ? (
                           <span className="flex items-center justify-center relative z-10">
-                            <div className="w-6 h-6 border-3 border-gray-900 border-t-transparent rounded-full animate-spin mr-4"></div>
+                            <div className="w-6 h-6 border-4 border-gray-900 border-t-transparent rounded-full animate-spin mr-4"></div>
                             Sending Your Message...
                           </span>
                         ) : (
