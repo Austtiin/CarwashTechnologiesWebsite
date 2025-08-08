@@ -1,25 +1,112 @@
 import React from 'react';
+import { Metadata } from 'next';
 import BlurText from '../components/animations/BlurText';
 import Image from 'next/image';
-import SafeLink from '../components/ui/SafeLink'; // Add this import
+import SafeLink from '../components/ui/SafeLink';
+import CallToAction from '../components/ui/CallToAction';
 
-export default function EquipmentSales() {
+export const metadata: Metadata = {
+  title: 'Equipment Sales | Carwash Technologies',
+  description: 'Premium car wash equipment from industry-leading manufacturers. Tunnel systems, automatic systems, self-serve bays, and more. Serving Minnesota, North Dakota, South Dakota, and Wisconsin.',
+  keywords: 'car wash equipment, tunnel systems, automatic wash, self-serve equipment, wash equipment sales',
+  openGraph: {
+    title: 'Equipment Sales | Carwash Technologies',
+    description: 'Premium car wash equipment from industry-leading manufacturers',
+    type: 'website',
+  },
+};
+
+// Server component data fetching
+async function getEquipmentData() {
+  return {
+    manufacturers: [
+      { name: 'PECO', logo: '/peco-logo.webp', alt: 'PECO' },
+      { name: 'Sonnys', logo: '/logoSonnys.webp', alt: "Sonny's" },
+      { name: 'PDQ', logo: '/logoPDQ.webp', alt: 'PDQ' },
+      { name: 'Belanger', logo: '/logoBelanger.webp', alt: 'Belanger' },
+      { name: 'AVW', logo: '/AVW-logo.webp', alt: 'AVW' },
+    ],
+    categories: [
+      {
+        id: 'tunnel',
+        title: 'Tunnel Systems',
+        description: 'Complete conveyor wash systems for high-volume operations with automated wash sequences.',
+        icon: 'M13 7h8m0 0v8m0-8l-8 8-4-4-6 6',
+        color: 'blue',
+        features: ['Conveyor systems', 'Automated wash arches', 'Dryer systems', 'Control systems']
+      },
+      {
+        id: 'self-serve',
+        title: 'Self-Serve Bays',
+        description: 'High-pressure wash systems and bay equipment for self-service operations.',
+        icon: 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z',
+        color: 'green',
+        features: ['High-pressure pumps', 'Wash guns & wands', 'Chemical injection systems', 'Payment systems']
+      },
+      {
+        id: 'automatic',
+        title: 'Automatic Systems',
+        description: 'Touch and touchless automatic wash systems for gentle, effective cleaning.',
+        icon: 'M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z',
+        color: 'purple',
+        features: ['Touchless systems', 'Soft-touch systems', 'Rollover systems', 'In-bay automatics']
+      },
+      {
+        id: 'water-recovery',
+        title: 'Water Recovery',
+        description: 'Water reclaim and recycling systems for environmental responsibility.',
+        icon: 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z',
+        color: 'orange',
+        features: ['Reclaim systems', 'Water treatment', 'Filtration systems', 'Storage tanks']
+      },
+      {
+        id: 'dryer',
+        title: 'Dryer Systems',
+        description: 'High-performance dryer systems for spot-free vehicle drying.',
+        icon: 'M13 10V3L4 14h7v7l9-11h-7z',
+        color: 'red',
+        features: ['Blower systems', 'Follow-you dryers', 'Overhead dryers', 'Side dryers']
+      },
+      {
+        id: 'payment',
+        title: 'Payment Systems',
+        description: 'Modern payment solutions for seamless customer transactions.',
+        icon: 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
+        color: 'teal',
+        features: ['Credit card readers', 'Mobile payment', 'Token systems', 'Management software']
+      }
+    ],
+    stats: {
+      experience: '25+',
+      installations: '500+',
+      support: '24/7',
+      states: '4'
+    }
+  };
+}
+
+// Color mapping for categories
+const colorMap = {
+  blue: { bg: 'from-blue-400 to-blue-600', dot: 'bg-blue-500' },
+  green: { bg: 'from-green-400 to-green-600', dot: 'bg-green-500' },
+  purple: { bg: 'from-purple-400 to-purple-600', dot: 'bg-purple-500' },
+  orange: { bg: 'from-orange-400 to-orange-600', dot: 'bg-orange-500' },
+  red: { bg: 'from-red-400 to-red-600', dot: 'bg-red-500' },
+  teal: { bg: 'from-teal-400 to-teal-600', dot: 'bg-teal-500' },
+};
+
+export default async function EquipmentSales() {
+  const data = await getEquipmentData();
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-[#26231d] via-[#595646] to-[#4c6461] text-white py-24">
-        {/* Enhanced Background Elements */}
+        {/* Background Elements */}
         <div className="absolute inset-0">
           <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-[#f0da11]/20 to-transparent rounded-full opacity-60 -translate-x-48 -translate-y-48 animate-pulse"></div>
           <div className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-tl from-[#d0b211]/30 to-transparent rounded-full opacity-50 translate-x-32 translate-y-32 animate-pulse" style={{ animationDelay: '1s' }}></div>
           <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-gradient-to-br from-[#bfb986]/15 to-transparent rounded-full opacity-40 animate-pulse" style={{ animationDelay: '2s' }}></div>
-          
-          <div className="absolute inset-0 opacity-5">
-            <div className="h-full w-full" style={{
-              backgroundImage: `radial-gradient(circle at 1px 1px, #cecece 1px, transparent 1px)`,
-              backgroundSize: '20px 20px'
-            }}></div>
-          </div>
         </div>
 
         <div className="container mx-auto px-4 text-center relative z-10">
@@ -48,34 +135,6 @@ export default function EquipmentSales() {
             </div>
           </div>
         </div>
-
-        {/* Wave Transition */}
-        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none pointer-events-none z-20">
-          <svg
-            viewBox="0 0 1440 120"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-full h-32 md:h-40"
-            preserveAspectRatio="none"
-          >
-            <defs>
-              <linearGradient id="waveGradient" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="#f0da11" stopOpacity="0.18" />
-                <stop offset="40%" stopColor="#bfb986" stopOpacity="0.12" />
-                <stop offset="100%" stopColor="#fff" stopOpacity="0.9" />
-              </linearGradient>
-            </defs>
-            <path
-              d="M0,60 C360,120 1080,0 1440,60 L1440,120 L0,120 Z"
-              fill="url(#waveGradient)"
-            />
-            <path
-              d="M0,90 C480,30 960,150 1440,90 L1440,120 L0,120 Z"
-              fill="#fff"
-              fillOpacity="0.8"
-            />
-          </svg>
-        </div>
       </section>
 
       {/* Trusted Partners Section */}
@@ -95,65 +154,20 @@ export default function EquipmentSales() {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center justify-items-center">
-            <div className="group hover:scale-110 transition-transform duration-300">
-              <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
-                <Image
-                  src="/peco-logo.webp"
-                  alt="PECO"
-                  width={120}
-                  height={60}
-                  className="h-60 w-auto object-contain"
-                />
+            {data.manufacturers.map((manufacturer, index) => (
+              <div key={manufacturer.name} className="group hover:scale-110 transition-transform duration-300">
+                <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+                  <Image
+                    src={manufacturer.logo}
+                    alt={manufacturer.alt}
+                    width={120}
+                    height={60}
+                    className="h-16 w-auto object-contain"
+                    priority={index < 3}
+                  />
+                </div>
               </div>
-            </div>
-            
-            <div className="group hover:scale-110 transition-transform duration-300">
-              <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
-                <Image
-                  src="/logoSonnys.webp"
-                  alt="Sonny's"
-                  width={120}
-                  height={60}
-                  className="h-60 w-auto object-contain"
-                />
-              </div>
-            </div>
-            
-            <div className="group hover:scale-110 transition-transform duration-300">
-              <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
-                <Image
-                  src="/logoPDQ.webp"
-                  alt="PDQ"
-                  width={120}
-                  height={60}
-                  className="h-60 w-auto object-contain"
-                />
-              </div>
-            </div>
-            
-            <div className="group hover:scale-110 transition-transform duration-300">
-              <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
-                <Image
-                  src="/logoBelanger.webp"
-                  alt="Belanger"
-                  width={120}
-                  height={60}
-                  className="h-60 w-auto object-contain"
-                />
-              </div>
-            </div>
-            
-            <div className="group hover:scale-110 transition-transform duration-300">
-              <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
-                <Image
-                  src="/AVW-logo.webp"
-                  alt="AVW"
-                  width={120}
-                  height={60}
-                  className="h-60 w-auto object-contain"
-                />
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -173,173 +187,28 @@ export default function EquipmentSales() {
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-6">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Tunnel Systems</h3>
-              <p className="text-gray-600 text-center mb-6">Complete conveyor wash systems for high-volume operations with automated wash sequences.</p>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
-                  Conveyor systems
-                </li>
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
-                  Automated wash arches
-                </li>
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
-                  Dryer systems
-                </li>
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
-                  Control systems
-                </li>
-              </ul>
-            </div>
-            
-            <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
-              <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-xl flex items-center justify-center mx-auto mb-6">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Self-Serve Bays</h3>
-              <p className="text-gray-600 text-center mb-6">High-pressure wash systems and bay equipment for self-service operations.</p>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
-                  High-pressure pumps
-                </li>
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
-                  Wash guns & wands
-                </li>
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
-                  Chemical injection systems
-                </li>
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
-                  Payment systems
-                </li>
-              </ul>
-            </div>
-            
-            <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
-              <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-6">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Automatic Systems</h3>
-              <p className="text-gray-600 text-center mb-6">Touch and touchless automatic wash systems for gentle, effective cleaning.</p>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
-                  Touchless systems
-                </li>
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
-                  Soft-touch systems
-                </li>
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
-                  Rollover systems
-                </li>
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
-                  In-bay automatics
-                </li>
-              </ul>
-            </div>
-            
-            <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
-              <div className="w-16 h-16 bg-gradient-to-br from-orange-400 to-orange-600 rounded-xl flex items-center justify-center mx-auto mb-6">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Water Recovery</h3>
-              <p className="text-gray-600 text-center mb-6">Water reclaim and recycling systems for environmental responsibility.</p>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>
-                  Reclaim systems
-                </li>
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>
-                  Water treatment
-                </li>
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>
-                  Filtration systems
-                </li>
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>
-                  Storage tanks
-                </li>
-              </ul>
-            </div>
-            
-            <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
-              <div className="w-16 h-16 bg-gradient-to-br from-red-400 to-red-600 rounded-xl flex items-center justify-center mx-auto mb-6">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Dryer Systems</h3>
-              <p className="text-gray-600 text-center mb-6">High-performance dryer systems for spot-free vehicle drying.</p>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-red-500 rounded-full mr-3"></span>
-                  Blower systems
-                </li>
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-red-500 rounded-full mr-3"></span>
-                  Follow-you dryers
-                </li>
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-red-500 rounded-full mr-3"></span>
-                  Overhead dryers
-                </li>
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-red-500 rounded-full mr-3"></span>
-                  Side dryers
-                </li>
-              </ul>
-            </div>
-            
-            <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
-              <div className="w-16 h-16 bg-gradient-to-br from-teal-400 to-teal-600 rounded-xl flex items-center justify-center mx-auto mb-6">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Payment Systems</h3>
-              <p className="text-gray-600 text-center mb-6">Modern payment solutions for seamless customer transactions.</p>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-teal-500 rounded-full mr-3"></span>
-                  Credit card readers
-                </li>
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-teal-500 rounded-full mr-3"></span>
-                  Mobile payment
-                </li>
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-teal-500 rounded-full mr-3"></span>
-                  Token systems
-                </li>
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-teal-500 rounded-full mr-3"></span>
-                  Management software
-                </li>
-              </ul>
-            </div>
+            {data.categories.map((category) => {
+              const colors = colorMap[category.color as keyof typeof colorMap];
+              return (
+                <div key={category.id} className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                  <div className={`w-16 h-16 bg-gradient-to-br ${colors.bg} rounded-xl flex items-center justify-center mx-auto mb-6`}>
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={category.icon} />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">{category.title}</h3>
+                  <p className="text-gray-600 text-center mb-6">{category.description}</p>
+                  <ul className="space-y-2 text-sm text-gray-600">
+                    {category.features.map((feature, index) => (
+                      <li key={index} className="flex items-center">
+                        <span className={`w-2 h-2 ${colors.dot} rounded-full mr-3`}></span>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -440,47 +309,34 @@ export default function EquipmentSales() {
             </div>
           </div>
         </div>
+
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 relative bg-gradient-to-br from-yellow-400 via-yellow-500 to-orange-400 text-white overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-[600px] h-[600px] bg-yellow-200 opacity-20 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-orange-300 opacity-10 rounded-full blur-2xl translate-x-1/3 translate-y-1/3"></div>
-        </div>
-        
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <BlurText
-            text="Ready to Upgrade Your Equipment?"
-            delay={50}
-            animateBy="words"
-            direction="top"
-            className="md:!text-[2rem] !text-[2rem] font-extrabold text-gray-900 mb-6"
-          />
-          <p className="text-xl text-yellow-100 mb-8 max-w-2xl mx-auto">
-            Contact us today to discuss your equipment needs and get a custom quote for your wash operation.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <SafeLink 
-              href="/contact" 
-              className="bg-white text-yellow-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-200 transition-colors duration-300 inline-flex items-center shadow-lg hover:shadow-xl"
-            >
-              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
-              Get Quote
-            </SafeLink>
-            <SafeLink 
-              href="/services" 
-              className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-yellow-600 transition-colors duration-300 inline-flex items-center"
-            >
-              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              Learn More
-            </SafeLink>
-          </div>
-        </div>
+      <section>
+        <CallToAction
+          title="Ready to Transform Your Wash Business?"
+          description="Join hundreds of satisfied customers across the Midwest who trust Carwash Technologies for their equipment, service, and chemical needs."
+          buttons={[
+            {
+              text: "Get Started Today",
+              href: "/contact",
+              variant: "primary"
+            },
+            {
+              text: "View Our Services", 
+              href: "/services",
+              variant: "secondary"
+            }
+          ]}
+          contactInfo={{
+            phone: "(612) 408-9010",
+            address: "322 19th St. SW<br />Forest Lake, MN 55025",
+            showContactCard: true
+          }}
+          backgroundVariant="dark"
+          showDecorations={true}
+        />
       </section>
     </div>
   );

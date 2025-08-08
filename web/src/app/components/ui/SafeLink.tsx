@@ -2,47 +2,32 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { createSafeProps } from '../../../lib/security';
+import { createSafeProps } from '@/lib/security';
 
-type SafeLinkProps = {
+interface SafeLinkProps {
   href: string;
-  className?: string;
   children: React.ReactNode;
+  className?: string;
   target?: string;
   rel?: string;
-} & React.ComponentPropsWithoutRef<'a'>;
+}
 
 /**
  * A wrapper for Next.js Link that automatically sanitizes its props,
  * particularly 'href', to prevent XSS attacks.
  */
-const SafeLink = ({ href, children, className, ...otherProps }: SafeLinkProps) => {
-  // Use your createSafeProps function to validate and sanitize the props
-  const safeProps = createSafeProps({ href, ...otherProps });
+export default function SafeLink({ href, children, className, target, rel }: SafeLinkProps) {
+  // Only sanitize href, keep other props as-is for styling
+  const safeHref = createSafeProps({ href }).href;
   
-  // Check if it's an external link
-  const isExternal = href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('tel:');
-  
-  if (isExternal) {
-    // For external links, use regular anchor tag
-    return (
-      <a 
-        {...safeProps} 
-        className={className}
-        target="_blank" 
-        rel="noopener noreferrer"
-      >
-        {children}
-      </a>
-    );
-  }
-  
-  // For internal links, use Next.js Link
   return (
-    <Link href={safeProps.href} className={className}>
+    <Link 
+      href={safeHref}
+      className={className} // Pass className directly without sanitization
+      target={target}
+      rel={rel}
+    >
       {children}
     </Link>
   );
-};
-
-export default SafeLink;
+}
