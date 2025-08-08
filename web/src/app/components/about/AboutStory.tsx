@@ -18,12 +18,12 @@ export default function AboutStory() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <p className="text-lg text-gray-700 leading-relaxed">
-                At Carwash Technologies, we've been at the forefront of the wash industry for over two decades. 
+                At Carwash Technologies, we&#39;ve been at the forefront of the wash industry for over two decades. 
                 What started as a small operation has grown into a trusted partner for wash businesses across the Midwest.
               </p>
               <p className="text-lg text-gray-700 leading-relaxed">
                 Our journey began with a simple belief: every wash deserves equipment that works reliably, 
-                chemicals that deliver consistent results, and support that's there when you need it most.
+                chemicals that deliver consistent results, and support that&#39;s there when you need it most.
               </p>
               <p className="text-lg text-gray-700 leading-relaxed">
                 Today, we continue to build on that foundation, combining decades of experience with the latest 

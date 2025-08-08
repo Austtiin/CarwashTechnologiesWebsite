@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
 import BlurText from '../animations/BlurText';
 import ShinyText from '../animations/ShinyText';
 import SafeLink from '../../components/ui/SafeLink'; // Adjust the import based on your project structure

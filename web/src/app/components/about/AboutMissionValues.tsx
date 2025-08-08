@@ -76,7 +76,7 @@ export default function AboutMissionValues() {
                   </svg>
                 </div>
                 <h4 className="text-xl font-bold text-gray-900 mb-3">Customer Focus</h4>
-                <p className="text-gray-600">Our customers' success is our success. We listen, understand, and deliver solutions that exceed expectations.</p>
+                <p className="text-gray-600">Our customers&#39; success is our success. We listen, understand, and deliver solutions that exceed expectations.</p>
               </div>
               
               <div className="text-center">

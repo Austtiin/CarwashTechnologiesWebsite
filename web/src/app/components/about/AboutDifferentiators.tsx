@@ -9,7 +9,7 @@ export default function AboutDifferentiators() {
           <div className="text-center mb-16">
             <SectionHeader
               title="What Sets Us Apart"
-              description="We're more than just a supplier – we're your partner in success"
+              description="We&#39;re more than just a supplier – we&#39;re your partner in success"
               titleDelay={50}
               descriptionDelay={100}
             />
@@ -51,7 +51,7 @@ export default function AboutDifferentiators() {
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-3">24/7 Support</h3>
               <p className="text-gray-700">
-                When your equipment needs attention, we're here. Our support team is available 
+                When your equipment needs attention, we&#39;re here. Our support team is available 
                 around the clock to keep you running.
               </p>
             </div>

@@ -18,7 +18,7 @@ precision highp float;
 
 uniform float uTime;
 uniform float uAmplitude;
-uniform vec3 uColorStops[3]; // Still using 3 color stops as per your initial setup
+uniform vec3 uColorStops[3];
 uniform vec2 uResolution;
 uniform float uBlend;
 
@@ -68,15 +68,11 @@ float snoise(vec2 v){
   return 130.0 * dot(m, g);
 }
 
-// Defining ColorStop as a struct (no changes needed here)
 struct ColorStop {
   vec3 color;
   float position;
 };
 
-// --- FIX START ---
-// Corrected COLOR_RAMP to handle 3 color stops properly
-// This now correctly interpolates between all three color stops based on the factor.
 vec3 getColorFromRamp(ColorStop colors[3], float factor) {
   vec3 finalColor;
   if (factor <= colors[0].position) {
@@ -87,14 +83,13 @@ vec3 getColorFromRamp(ColorStop colors[3], float factor) {
     float range = colors[1].position - colors[0].position;
     float lerpFactor = (factor - colors[0].position) / range;
     finalColor = mix(colors[0].color, colors[1].color, lerpFactor);
-  } else { // factor >= colors[1].position
+  } else {
     float range = colors[2].position - colors[1].position;
     float lerpFactor = (factor - colors[1].position) / range;
     finalColor = mix(colors[1].color, colors[2].color, lerpFactor);
   }
   return finalColor;
 }
-// --- FIX END ---
 
 void main() {
   vec2 uv = gl_FragCoord.xy / uResolution;
@@ -104,11 +99,7 @@ void main() {
   colors[1] = ColorStop(uColorStops[1], 0.5);
   colors[2] = ColorStop(uColorStops[2], 1.0);
   
-  vec3 rampColor;
-  // --- FIX START ---
-  // Call the new function instead of the macro
-  rampColor = getColorFromRamp(colors, uv.x);
-  // --- FIX END ---
+  vec3 rampColor = getColorFromRamp(colors, uv.x);
   
   float height = snoise(vec2(uv.x * 2.0 + uTime * 0.1, uTime * 0.25)) * 0.5 * uAmplitude;
   height = exp(height);
@@ -132,112 +123,129 @@ interface AuroraProps {
   speed?: number;
 }
 
-interface UpdateProps {
-  time?: number;
-  speed?: number;
-  amplitude?: number;
-  blend?: number;
-  colorStops?: string[];
-}
-
 export default function Aurora(props: AuroraProps): React.ReactElement {
   const {
     colorStops = ["#5227FF", "#7cff67", "#5227FF"],
     amplitude = 1.0,
     blend = 0.5,
-    time = 0, // Add time to props with a default
-    speed = 1.0 // Add speed to props with a default
+    time = 0,
+    speed = 1.0
   } = props;
-  const propsRef = useRef<AuroraProps>(props);
-  // Ensure propsRef.current is always up-to-date with the latest props
-  useEffect(() => {
-    propsRef.current = props;
-  }, [props]);
-
 
   const ctnDom = useRef<HTMLDivElement>(null);
+  const rendererRef = useRef<Renderer | null>(null);
+  const programRef = useRef<Program | null>(null);
+  const meshRef = useRef<Mesh | null>(null);
+  const animationIdRef = useRef<number | null>(null);
 
+  // Initialize WebGL once
   useEffect(() => {
     const ctn = ctnDom.current;
-    if (!ctn) return;
+    if (!ctn || rendererRef.current) return;
 
-    const renderer = new Renderer({
-      alpha: true,
-      premultipliedAlpha: true,
-      antialias: true
-    });
-    const gl = renderer.gl;
-    gl.clearColor(0, 0, 0, 0);
-    gl.enable(gl.BLEND);
-    gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
-    gl.canvas.style.backgroundColor = 'transparent';
+    try {
+      const renderer = new Renderer({
+        alpha: true,
+        premultipliedAlpha: true,
+        antialias: true
+      });
+      
+      const gl = renderer.gl;
+      gl.clearColor(0, 0, 0, 0);
+      gl.enable(gl.BLEND);
+      gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
+      gl.canvas.style.backgroundColor = 'transparent';
 
-    const geometry = new Triangle(gl);
-    if (geometry.attributes.uv) {
-      delete geometry.attributes.uv;
+      const geometry = new Triangle(gl);
+      if (geometry.attributes.uv) {
+        delete geometry.attributes.uv;
+      }
+
+      const colorStopsArray: [number, number, number][] = colorStops.slice(0, 3).map((hex: string): [number, number, number] => {
+        const c = new Color(hex);
+        return [c.r, c.g, c.b];
+      });
+
+      const program = new Program(gl, {
+        vertex: VERT,
+        fragment: FRAG,
+        uniforms: {
+          uTime: { value: time * speed * 0.1 },
+          uAmplitude: { value: amplitude },
+          uColorStops: { value: colorStopsArray },
+          uResolution: { value: [ctn.offsetWidth, ctn.offsetHeight] },
+          uBlend: { value: blend }
+        }
+      });
+
+      const mesh = new Mesh(gl, { geometry, program });
+      
+      rendererRef.current = renderer;
+      programRef.current = program;
+      meshRef.current = mesh;
+      
+      ctn.appendChild(gl.canvas);
+
+      // Resize handler
+      const resize = () => {
+        if (!ctn || !renderer || !program) return;
+        const width = ctn.offsetWidth;
+        const height = ctn.offsetHeight;
+        renderer.setSize(width, height);
+        program.uniforms.uResolution.value = [width, height];
+      };
+
+      window.addEventListener("resize", resize);
+      resize();
+
+      return () => {
+        window.removeEventListener("resize", resize);
+        if (animationIdRef.current) {
+          cancelAnimationFrame(animationIdRef.current);
+          animationIdRef.current = null;
+        }
+        if (ctn && gl.canvas.parentNode === ctn) {
+          ctn.removeChild(gl.canvas);
+        }
+        gl.getExtension("WEBGL_lose_context")?.loseContext();
+        rendererRef.current = null;
+        programRef.current = null;
+        meshRef.current = null;
+      };
+    } catch (error) {
+      console.error('Error initializing Aurora WebGL:', error);
     }
+  }, [amplitude, blend, colorStops, speed, time]); // Add all dependencies
 
-    const colorStopsArray: [number, number, number][] = colorStops.map((hex: string): [number, number, number] => {
+  // Update uniforms when props change
+  useEffect(() => {
+    const program = programRef.current;
+    const renderer = rendererRef.current;
+    const mesh = meshRef.current;
+    
+    if (!program || !renderer || !mesh) return;
+
+    // Update uniforms
+    program.uniforms.uTime.value = time * speed * 0.1;
+    program.uniforms.uAmplitude.value = amplitude;
+    program.uniforms.uBlend.value = blend;
+
+    // Update color stops
+    const colorStopsArray: [number, number, number][] = colorStops.slice(0, 3).map((hex: string): [number, number, number] => {
       const c = new Color(hex);
       return [c.r, c.g, c.b];
     });
+    program.uniforms.uColorStops.value = colorStopsArray;
 
-    const program = new Program(gl, {
-      vertex: VERT,
-      fragment: FRAG,
-      uniforms: {
-        uTime: { value: time * speed * 0.1 }, // Initialize with current prop values
-        uAmplitude: { value: amplitude },
-        uColorStops: { value: colorStopsArray },
-        uResolution: { value: [ctn.offsetWidth, ctn.offsetHeight] },
-        uBlend: { value: blend }
-      }
-    });
+    // Render
+    renderer.render({ scene: mesh });
+  }, [time, speed, amplitude, blend, colorStops]);
 
-    const mesh = new Mesh(gl, { geometry, program });
-    ctn.appendChild(gl.canvas);
-
-    let animateId = 0;
-
-    const update = (): void => {
-      animateId = requestAnimationFrame(update);
-      // Use the time and speed from propsRef.current directly
-      const currentProps: UpdateProps = propsRef.current;
-      program.uniforms.uTime.value = (currentProps.time ?? 0) * (currentProps.speed ?? 1.0) * 0.1;
-      program.uniforms.uAmplitude.value = currentProps.amplitude ?? 1.0;
-      program.uniforms.uBlend.value = currentProps.blend ?? 0.5; // Use 0.5 as default if blend is undefined
-
-      // Always re-map color stops in case they change
-      const currentStops: string[] = currentProps.colorStops ?? colorStops;
-      program.uniforms.uColorStops.value = currentStops.map((hex: string) => {
-        const c = new Color(hex);
-        return [c.r, c.g, c.b] as [number, number, number];
-      });
-      renderer.render({ scene: mesh });
-    };
-    animateId = requestAnimationFrame(update);
-
-    function resize(): void {
-      if (!ctn) return;
-      const width = ctn.offsetWidth;
-      const height = ctn.offsetHeight;
-      renderer.setSize(width, height);
-      program.uniforms.uResolution.value = [width, height];
-    }
-    window.addEventListener("resize", resize);
-
-    resize();
-
-    return () => {
-      cancelAnimationFrame(animateId);
-      window.removeEventListener("resize", resize);
-      if (ctn && gl.canvas.parentNode === ctn) {
-        (ctn as HTMLElement).removeChild(gl.canvas);
-      }
-      gl.getExtension("WEBGL_lose_context")?.loseContext();
-    };
-    // Re-run effect when ctnDom.current or any prop changes
-  }, [ctnDom, colorStops, amplitude, blend, time, speed]);
-
-  return <div ref={ctnDom} className="aurora-container" />;
+  return (
+    <div 
+      ref={ctnDom} 
+      className="aurora-container w-full h-full"
+      style={{ minHeight: '100%' }}
+    />
+  );
 }
