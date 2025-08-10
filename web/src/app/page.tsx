@@ -1,10 +1,10 @@
 import SEOHead from './components/ui/SEOHead';
-import HeroSection from './components/sections/HeroSection';
-import ServicesSection from './components/home/services-overview';
+import ServicesSection from './components/home/sections/ServicesSection';
 import ProjectsSection from './components/home/recent-projects';
 import ChemicalsSection from './components/home/chemicals-section';
-import WhoWeServeSection from './components/home/who-we-serve-section'; // Add this import
+import WhoWeServeSection from './components/home/who-we-serve-section';
 import CallToAction from './components/ui/CallToAction';
+import HeroSection from './components/home/sections/HeroSection';
 
 export default function Home() {
   return (
@@ -17,12 +17,14 @@ export default function Home() {
       />
 
       <div className="min-h-screen relative">
+        {/* Use the HeroSection component instead of duplicating hero content */}
         <HeroSection />
+
+        {/* Sections */}
         <ServicesSection />
         <ProjectsSection />
         <WhoWeServeSection />
         <ChemicalsSection />
-        
 
         <CallToAction
           title="Ready to Transform Your Wash Business?"
@@ -34,7 +36,7 @@ export default function Home() {
               variant: "primary"
             },
             {
-              text: "View Our Services", 
+              text: "View Our Services",
               href: "/services",
               variant: "secondary"
             }

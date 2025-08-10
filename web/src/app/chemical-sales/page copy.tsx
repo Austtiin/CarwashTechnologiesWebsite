@@ -1,5 +1,5 @@
 import SEOHead from '../components/ui/SEOHead';
-import HeroSection from '../components/sections/HeroSection';
+import HeroSection from '../components/home/sections/HeroSection';
 import ServicesSection from '../components/home/services-overview';
 import ProjectsSection from '../components/home/recent-projects';
 import ChemicalsSection from '../components/home/chemicals-section';
