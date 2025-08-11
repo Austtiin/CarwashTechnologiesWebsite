@@ -1,7 +1,6 @@
 // Server Component
 import React from 'react';
 import Image from 'next/image';
-import HeroClient from './HeroClient';
 import BlurText from '../../animations/BlurText';
 
 export default function HeroSection() {
