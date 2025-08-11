@@ -1,9 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
-  trailingSlash: true,
+  
   images: {
-    unoptimized: true
+    domains: ['www.CarwashTechnologies.com'], // Add your image domains here
   },
   
   compiler: {

@@ -38,10 +38,9 @@ export default function NotFound() {
             {/* Error Message */}
             <div className="mb-8">
               <BlurText
-                text="Oops! This page went through the wash cycle and didn&#39;t come out."
-                delay={50}
-                animateBy="words"
-                direction="top"
+                text="Oops! This page went through the wash cycle and didn't come out."
+                delay={0.1}
+                duration={0.8}
                 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6"
               />
             </div>
@@ -49,11 +48,10 @@ export default function NotFound() {
             {/* Subtitle */}
             <div className="flex justify-center mb-12">
               <BlurText
-                text="The page you&#39;re looking for doesn&#39;t exist, but don&#39;t worry - we&#39;ll help you get back on track!"
-                delay={100}
-                animateBy="words"
-                direction="top"
-                className="text-xl md:text-2xl !text-[#f0da11] max-w-3xl mx-auto leading-relaxed font-light"
+                text="The page you're looking for doesn't exist, but don't worry - we'll help you get back on track!"
+                delay={0.3}
+                duration={1.0}
+                className="text-xl md:text-2xl text-[#f0da11] max-w-3xl mx-auto leading-relaxed font-light"
               />
             </div>
 
@@ -116,8 +114,8 @@ export default function NotFound() {
               
               <h2 className="text-2xl font-bold text-gray-900 mb-4">Lost in the Wash?</h2>
               <p className="text-gray-600 mb-6">
-                Don&#39;t worry! Even the best car wash systems sometimes miss a spot. 
-                Our team is here to help you find exactly what you&#39;re looking for.
+                Don&apos;t worry! Even the best car wash systems sometimes miss a spot. 
+                Our team is here to help you find exactly what you&apos;re looking for.
               </p>
               
               <div className="space-y-4">
@@ -131,7 +129,7 @@ export default function NotFound() {
                   <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
-            
+                  Email us for assistance
                 </div>
               </div>
             </div>

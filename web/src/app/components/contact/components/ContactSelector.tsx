@@ -1,13 +1,24 @@
 'use client';
 
 import React, { useState } from 'react';
-import { contactOptions } from '../../../contact/page';
 import ContactOptionCard from './ContactOptionCard';
 import ContactForm from './ContactForm';
 import BlurText from '../../animations/BlurText';
 
 type ContactType = 'chemicals' | 'service' | 'sales';
-type ContactOption = typeof contactOptions[0];
+
+interface ContactOption {
+  id: ContactType;
+  title: string;
+  description: string;
+  color: string;
+  bgColor: string;
+  borderColor: string;
+  textColor: string;
+  details: string;
+  icon: string;
+  features: string[];
+}
 
 interface ContactSelectorProps {
   contactOptions: ContactOption[];
@@ -49,12 +60,11 @@ export default function ContactSelector({ contactOptions }: ContactSelectorProps
               <div className="text-center mb-12 sm:mb-16">
                 <BlurText
                   text="How Can We Help?"
-                  delay={50}
-                  animateBy="words"
-                  direction="top"
-                  className="md:!text-[2rem] !text-[2rem] font-extrabold text-gray-900 mb-6"
+                  delay={0.1}
+                  duration={0.8}
+                  className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6"
                 />
-                <p className="!text-lg !text-gray-600 max-w-3xl mx-auto sm:!text-xl">
+                <p className="text-lg text-gray-600 max-w-3xl mx-auto sm:text-xl">
                   Choose the service area you&#39;re interested in to get connected with the right specialist
                 </p>
               </div>

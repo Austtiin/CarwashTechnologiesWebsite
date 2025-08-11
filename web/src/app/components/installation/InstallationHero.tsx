@@ -1,4 +1,3 @@
-
 'use client';
 
 import React from 'react';
@@ -42,11 +41,26 @@ export default function InstallationHero() {
           <div className="flex justify-center">
             <BlurText
               text="Expert installation and setup services for your wash equipment"
-              delay={100}
-              animateBy="words"
-              direction="top"
-              className="text-xl md:text-2xl !text-[#f0da11] max-w-3xl mx-auto leading-relaxed font-light"
+              delay={0.1}
+              duration={0.8}
+              className="text-xl md:text-2xl text-[#f0da11] max-w-3xl mx-auto leading-relaxed font-light"
             />
+          </div>
+
+          {/* Additional installation highlights */}
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mt-12 pt-8 border-t border-[#f0da11]/30">
+            <div className="text-center">
+              <div className="text-2xl md:text-3xl font-bold text-[#f0da11] mb-1">Expert</div>
+              <div className="text-sm text-[#cecece]">Installation</div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl md:text-3xl font-bold text-[#f0da11] mb-1">Licensed</div>
+              <div className="text-sm text-[#cecece]">Technicians</div>
+            </div>
+            <div className="text-center md:col-span-1 col-span-2">
+              <div className="text-2xl md:text-3xl font-bold text-[#f0da11] mb-1">Warranty</div>
+              <div className="text-sm text-[#cecece]">Included</div>
+            </div>
           </div>
         </div>
       </div>
@@ -61,7 +75,7 @@ export default function InstallationHero() {
           preserveAspectRatio="none"
         >
           <defs>
-            <linearGradient id="waveGradient" x1="0" y1="0" x2="0" y2="1">
+            <linearGradient id="installationWaveGradient" x1="0" y1="0" x2="0" y2="1">
               <stop offset="0%" stopColor="#f0da11" stopOpacity="0.18" />
               <stop offset="40%" stopColor="#bfb986" stopOpacity="0.12" />
               <stop offset="100%" stopColor="#fff" stopOpacity="0.9" />
@@ -69,7 +83,7 @@ export default function InstallationHero() {
           </defs>
           <path
             d="M0,60 C360,120 1080,0 1440,60 L1440,120 L0,120 Z"
-            fill="url(#waveGradient)"
+            fill="url(#installationWaveGradient)"
           />
           <path
             d="M0,90 C480,30 960,150 1440,90 L1440,120 L0,120 Z"

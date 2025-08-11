@@ -28,18 +28,18 @@ export default function HeroSection() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             
             {/* Left side - Content */}
-            <div className="text-center lg:text-left space-y-8">
+            <div className="text-center lg:text-left space-y-8 bg-white/15 rounded-2xl p-10">
               {/* Logo above title on mobile/tablet */}
               <div className="lg:hidden flex justify-center mb-8">
                 <div className="relative">
-                  <div className="absolute inset-0 bg-yellow-400/20 rounded-2xl blur-xl" />
+                  <div className="absolute inset-0 rounded-2xl" />
                   
                   <Image
                     src="/logoCWT.webp"
                     alt="Carwash Technologies Logo"
                     width={100}
                     height={100}
-                    className="relative rounded-2xl shadow-2xl border-2 border-yellow-400/30"
+                    className="relative rounded-2xl shadow-lg p-4"
                   />
                 </div>
               </div>
@@ -57,7 +57,7 @@ export default function HeroSection() {
 
               {/* Interactive rotating text component */}
               <div className="py-6">
-                <HeroClient />
+                
               </div>
 
               {/* Description */}
@@ -66,45 +66,47 @@ export default function HeroSection() {
               </p>
 
               {/* Market Serving Text */}
-              <BlurText
-                text="Proudly serving the Minnesota, North Dakota, South Dakota and Wisconsin markets."
-                delay={0.5}
-                className="text-md md:text-xl text-white drop-shadow-lg"
-              />
+              
 
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+                {/* CTA Buttons */}
+                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-center pt-4">
                 <button className="group bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 text-gray-900 px-8 py-4 rounded-xl font-bold text-lg hover:from-yellow-500 hover:via-yellow-600 hover:to-yellow-700 transition-all duration-300 shadow-xl hover:shadow-yellow-400/25 transform hover:-translate-y-1">
                   <span className="flex items-center justify-center">
-                    Get Started Today
-                    <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
+                  Get Started Today
+                  <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
                   </span>
                 </button>
 
-                <button className="group border-2 border-yellow-400/40 text-yellow-400 px-8 py-4 rounded-xl font-bold text-lg hover:bg-yellow-400 hover:text-gray-900 transition-all duration-300 backdrop-blur-sm">
+                <button className="group border-2 border-slate-900 text-black px-8 py-4 rounded-xl text-lg hover:bg-yellow-400/20 hover:text-gray-900 transition-all duration-300 backdrop-blur-sm">
                   <span className="flex items-center justify-center">
-                    <svg className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                    </svg>
-                    (612) 408-9010
+                  <svg className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                  (612) 408-9010
                   </span>
                 </button>
-              </div>
+                </div>
+
+              <BlurText
+                  text="Proudly serving the Minnesota, North Dakota, South Dakota and Wisconsin markets."
+                  delay={0.5}
+                  className="text-center text-md md:text-xl text-black drop-shadow-lg"
+                />
 
               {/* Stats */}
-              <div className="grid grid-cols-3 gap-8 pt-8 border-t border-gray-700">
+              <div className="grid grid-cols-3 gap-8 pt-8 border-t border-gray-700 justify-items-center">
                 <div className="text-center lg:text-left">
-                  <div className="text-3xl font-bold text-yellow-400 mb-1">50+</div>
+                  <div className="text-3xl font-bold text-yellow-500 mb-1">50+</div>
                   <div className="text-sm text-gray-400">Years Experience</div>
                 </div>
                 <div className="text-center lg:text-left">
-                  <div className="text-3xl font-bold text-yellow-400 mb-1">24/7</div>
+                  <div className="text-3xl font-bold text-yellow-500 mb-1">24/7</div>
                   <div className="text-sm text-gray-400">Emergency Service</div>
                 </div>
                 <div className="text-center lg:text-left">
-                  <div className="text-3xl font-bold text-yellow-400 mb-1">100%</div>
+                  <div className="text-3xl font-bold text-yellow-500 mb-1">100%</div>
                   <div className="text-sm text-gray-400">Satisfaction</div>
                 </div>
               </div>
@@ -114,16 +116,16 @@ export default function HeroSection() {
             <div className="hidden lg:flex justify-center items-center">
               <div className="relative">
                 {/* Glowing background effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/20 via-yellow-500/30 to-yellow-400/20 rounded-3xl blur-3xl transform scale-110" />
-                
+                <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/20 via-yellow-500/30 to-yellow-400/5 rounded-3xl transform scale-110 blur overflow-hidden" />
+
                 {/* Logo container */}
-                <div className="relative bg-white/5 backdrop-blur-sm rounded-3xl p-12 border border-yellow-400/20 shadow-2xl">
+                <div className="relative backdrop-blur-sm rounded-3xl p-12 border border-yellow-400/20 shadow-2xl">
                   <Image
                     src="/logoCWT.webp"
                     alt="Carwash Technologies Logo"
                     width={300}
                     height={300}
-                    className="rounded-2xl shadow-2xl"
+                    className="rounded-2xl"
                     priority
                   />
                 </div>
@@ -141,7 +143,7 @@ export default function HeroSection() {
       {/* Clean professional transition - NO WAVES */}
       <div className="absolute bottom-0 left-0 w-full">
         {/* Simple clean edge */}
-        <div className="h-16 bg-white"></div>
+        <div className=""></div>
       </div>
     </section>
   );

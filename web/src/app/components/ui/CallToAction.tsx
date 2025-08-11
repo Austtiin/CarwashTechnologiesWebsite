@@ -82,17 +82,15 @@ const CallToAction: React.FC<CallToActionProps> = ({
         <div className="flex flex-col items-center justify-center text-center mb-12">
           <BlurText
             text={title}
-            delay={100}
-            animateBy="words"
-            direction="top"
-            className={`!text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 !text-white`}
+            delay={0.1}
+            duration={0.8}
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 text-white"
           />
           <BlurText
             text={description}
-            delay={150}
-            animateBy="words"
-            direction="bottom"
-            className={`text-lg md:text-xl lg:text-2xl max-w-4xl !text-white`}
+            delay={0.3}
+            duration={1.0}
+            className="text-lg md:text-xl lg:text-2xl max-w-4xl text-white"
           />
         </div>
 
@@ -108,7 +106,7 @@ const CallToAction: React.FC<CallToActionProps> = ({
                     </svg>
                   </div>
                   <h3 className="text-xl font-semibold mb-2 text-white text-center">Call Us Today</h3>
-                  <p className="text-lg !text-white font-semibold text-center">{contactInfo.phone}</p>
+                  <p className="text-lg text-white font-semibold text-center">{contactInfo.phone}</p>
                 </div>
               )}
 
@@ -135,7 +133,7 @@ const CallToAction: React.FC<CallToActionProps> = ({
                     </svg>
                   </div>
                   <h3 className="text-xl font-semibold mb-2 text-white text-center">Visit Our Location</h3>
-                  <p className="text-lg !text-white text-center" dangerouslySetInnerHTML={{ __html: contactInfo.address }}></p>
+                  <p className="text-lg text-white text-center" dangerouslySetInnerHTML={{ __html: contactInfo.address }}></p>
                 </div>
               )}
             </div>

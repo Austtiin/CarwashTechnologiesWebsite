@@ -51,10 +51,9 @@ export default function SDSHero({ stats }: SDSHeroProps) {
           <div className="flex justify-center mb-12">
             <BlurText
               text="Comprehensive safety information for all our chemical products"
-              delay={100}
-              animateBy="words"
-              direction="top"
-              className="text-xl md:text-2xl !text-[#f0da11] max-w-4xl mx-auto leading-relaxed font-light"
+              delay={0.1}
+              duration={0.8}
+              className="text-xl md:text-2xl text-[#f0da11] max-w-4xl mx-auto leading-relaxed font-light"
             />
           </div>
           

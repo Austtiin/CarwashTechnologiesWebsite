@@ -41,10 +41,9 @@ export default function Services() {
             <div className="flex justify-center">
               <BlurText
                 text="Comprehensive wash solutions from equipment sales to ongoing support"
-                delay={100}
-                animateBy="words"
-                direction="top"
-                className="text-xl md:text-2xl !text-[#f0da11] max-w-3xl mx-auto leading-relaxed font-light"
+                delay={0.1}
+                duration={0.8}
+                className="text-xl md:text-2xl text-[#f0da11] max-w-3xl mx-auto leading-relaxed font-light"
               />
             </div>
 
@@ -103,13 +102,12 @@ export default function Services() {
       <section className="py-16 bg-gradient-to-b from-white to-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-20">
-        <BlurText
-                text="Our Core Services"
-                delay={150}
-                animateBy="words"
-                direction="top"
-                className="md:!text-[2rem] text-[6rem] font-extrabold text-gray-900 mb-6"
-              />
+            <BlurText
+              text="Our Core Services"
+              delay={0.1}
+              duration={0.8}
+              className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-6"
+            />
             <p className="text-xl text-gray-600 max-w-5xl mx-auto">
               From initial consultation to ongoing support, we provide comprehensive solutions for your wash business
             </p>
@@ -181,10 +179,9 @@ export default function Services() {
           <div className="text-center mb-12">
             <BlurText
               text="Equipment Categories"
-              delay={50}
-              animateBy="words"
-              direction="top"
-              className="md:!text-[2rem] text-[6rem] font-extrabold text-gray-900 mb-6"
+              delay={0.1}
+              duration={0.8}
+              className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-6"
             />
             <p className="text-xl text-gray-600">Complete range of wash equipment solutions</p>
           </div>
@@ -240,10 +237,9 @@ export default function Services() {
             <div>
               <BlurText
                 text="Chemical Solutions"
-                delay={50}
-                animateBy="words"
-                direction="top"
-                className="md:!text-[2rem] text-[6rem] font-extrabold text-gray-900 mb-6"
+                delay={0.1}
+                duration={0.8}
+                className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-6"
               />
               <p className="text-lg text-gray-600 mb-6">
                 We supply a complete line of high-performance wash chemicals designed to 
@@ -362,10 +358,9 @@ export default function Services() {
           <div className="text-center mb-12">
             <BlurText
               text="Consulting Services"
-              delay={50}
-              animateBy="words"
-              direction="top"
-              className="md:!text-[2rem] text-[6rem] font-extrabold text-gray-900 mb-6"
+              delay={0.1}
+              duration={0.8}
+              className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-6"
             />
             <p className="text-xl text-gray-600">Expert guidance for every stage of your wash journey</p>
           </div>
@@ -427,10 +422,9 @@ export default function Services() {
         <div className="container mx-auto px-4 text-center">
           <BlurText
             text="Ready to Get Started?"
-            delay={50}
-            animateBy="words"
-            direction="top"
-            className="md:!text-[2rem] text-[6rem] font-extrabold text-gray-900 mb-6"
+            delay={0.1}
+            duration={0.8}
+            className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-6"
           />
           <p className="text-xl text-yellow-100 mb-8 max-w-2xl mx-auto">
             Contact us today to discuss your wash needs and discover how we can help your business thrive.

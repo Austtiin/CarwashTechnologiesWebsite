@@ -11,10 +11,9 @@ export default function AboutMissionValues() {
           <div className="text-center mb-16">
             <BlurText
               text="Our Mission & Values"
-              delay={50}
-              animateBy="words"
-              direction="top"
-              className="md:!text-[2rem] !text-[2rem] font-extrabold text-gray-900 mb-6"
+              delay={0.1}
+              duration={0.8}
+              className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6"
             />
           </div>
           
@@ -53,10 +52,9 @@ export default function AboutMissionValues() {
           <div className="mt-16">
             <BlurText
               text="Our Core Values"
-              delay={50}
-              animateBy="words"
-              direction="top"
-              className="md:!text-[2rem] !text-[2rem] font-extrabold text-gray-900 mb-6 text-center"
+              delay={0.1}
+              duration={0.8}
+              className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 text-center"
             />
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               <div className="text-center">

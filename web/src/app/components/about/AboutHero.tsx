@@ -52,10 +52,9 @@ export default function AboutHero() {
           <div className="flex justify-center">
             <BlurText
               text="25+ years of expertise in wash solutions across the Midwest"
-              delay={100}
-              animateBy="words"
-              direction="top"
-              className="text-xl md:text-2xl !text-[#f0da11] max-w-3xl mx-auto leading-relaxed font-light"
+              delay={0.1}
+              duration={0.8}
+              className="text-xl md:text-2xl text-[#f0da11] max-w-3xl mx-auto leading-relaxed font-light"
             />
           </div>
 

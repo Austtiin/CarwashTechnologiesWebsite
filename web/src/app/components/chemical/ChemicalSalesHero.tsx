@@ -1,4 +1,3 @@
-
 'use client';
 
 import React from 'react';
@@ -39,11 +38,26 @@ export default function ChemicalSalesHero() {
           <div className="flex justify-center">
             <BlurText
               text="High-performance wash chemicals for superior cleaning results"
-              delay={100}
-              animateBy="words"
-              direction="top"
-              className="text-xl md:text-2xl !text-[#f0da11] max-w-3xl mx-auto leading-relaxed font-light"
+              delay={0.1}
+              duration={0.8}
+              className="text-xl md:text-2xl text-[#f0da11] max-w-3xl mx-auto leading-relaxed font-light"
             />
+          </div>
+
+          {/* Additional stats or highlights */}
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mt-12 pt-8 border-t border-[#f0da11]/30">
+            <div className="text-center">
+              <div className="text-2xl md:text-3xl font-bold text-[#f0da11] mb-1">100%</div>
+              <div className="text-sm text-[#cecece]">Biodegradable</div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl md:text-3xl font-bold text-[#f0da11] mb-1">24/7</div>
+              <div className="text-sm text-[#cecece]">Support</div>
+            </div>
+            <div className="text-center md:col-span-1 col-span-2">
+              <div className="text-2xl md:text-3xl font-bold text-[#f0da11] mb-1">Custom</div>
+              <div className="text-sm text-[#cecece]">Programs</div>
+            </div>
           </div>
         </div>
       </div>

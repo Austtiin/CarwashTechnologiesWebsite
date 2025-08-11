@@ -32,16 +32,14 @@ const WhoWeServeSection = () => {
           <div className="text-center">
             <BlurText
               text="Who We Serve"
-              delay={100}
-              animateBy="words"
-              direction="top"
-              className="!text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6"
+              delay={0.1}
+              duration={0.8}
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6"
             />
             <BlurText
               text="From new entrepreneurs to established businesses, we provide tailored solutions for every wash operation"
-              delay={150}
-              animateBy="words"
-              direction="bottom"
+              delay={0.3}
+              duration={1.0}
               className="text-lg md:text-xl text-gray-700"
             />
           </div>

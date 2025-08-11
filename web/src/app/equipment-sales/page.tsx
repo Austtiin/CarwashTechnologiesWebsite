@@ -128,9 +128,8 @@ export default async function EquipmentSales() {
               <BlurText
                 text="Industry-leading wash equipment from trusted manufacturers"
                 delay={100}
-                animateBy="words"
-                direction="top"
-                className="text-xl md:text-2xl !text-[#f0da11] max-w-3xl mx-auto leading-relaxed font-light"
+                duration={1.0}
+            className="text-lg md:text-xl lg:text-2xl max-w-4xl text-white"
               />
             </div>
           </div>
@@ -144,9 +143,8 @@ export default async function EquipmentSales() {
             <BlurText
               text="Trusted Equipment Partners"
               delay={150}
-              animateBy="words"
-              direction="top"
-              className="md:!text-[2rem] !text-[2rem] font-extrabold text-gray-900 mb-6"
+              duration={1.0}
+            className="text-lg md:text-xl lg:text-2xl max-w-4xl text-white"
             />
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               We partner with industry-leading manufacturers to provide you with the highest quality wash equipment
@@ -179,9 +177,8 @@ export default async function EquipmentSales() {
             <BlurText
               text="Equipment Categories"
               delay={50}
-              animateBy="words"
-              direction="top"
-              className="md:!text-[2rem] !text-[2rem] font-extrabold text-gray-900 mb-6"
+              duration={1.0}
+            className="text-lg md:text-xl lg:text-2xl max-w-4xl text-white"
             />
             <p className="text-xl text-gray-600">Complete range of wash equipment solutions</p>
           </div>
@@ -221,9 +218,8 @@ export default async function EquipmentSales() {
               <BlurText
                 text="Why Choose Our Equipment"
                 delay={50}
-                animateBy="words"
-                direction="top"
-                className="md:!text-[2rem] !text-[2rem] font-extrabold text-gray-900 mb-6"
+                duration={1.0}
+            className="text-lg md:text-xl lg:text-2xl max-w-4xl text-white"
               />
               <p className="text-lg text-gray-600 mb-8">
                 We provide only the highest quality equipment from trusted manufacturers, 

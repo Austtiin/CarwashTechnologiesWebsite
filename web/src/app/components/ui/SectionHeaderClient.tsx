@@ -27,14 +27,11 @@ export default function SectionHeaderClient({
   titleDelay = 100,
   descriptionDelay = 150,
   subtitleDelay = 200,
-  animationDirection = 'top',
+ 
   backgroundVariant = 'default',
   textAlign = 'center',
   maxWidth = 'max-w-4xl',
   className = '',
-  titleClassName = '',
-  descriptionClassName = '',
-  subtitleClassName = ''
 }: SectionHeaderClientProps) {
   const getBackgroundClasses = () => {
     switch (backgroundVariant) {
@@ -60,15 +57,7 @@ export default function SectionHeaderClient({
     }
   };
 
-  const defaultTitleClasses = `!text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6 ${titleClassName}`;
-  const defaultDescriptionClasses = `text-lg md:text-xl text-gray-700 ${description && !subtitle ? 'mb-0' : 'mb-4'} ${descriptionClassName}`;
-  const defaultSubtitleClasses = `text-lg md:text-xl text-gray-700 ${subtitleClassName}`;
-
-  // Only allow 'top', 'bottom', or undefined for BlurText direction
-  const getBlurTextDirection = (dir: 'top' | 'bottom' | 'left' | 'right') => {
-    if (dir === 'top' || dir === 'bottom') return dir;
-    return undefined;
-  };
+ 
 
   return (
     <div className={`${maxWidth} mx-auto ${getBackgroundClasses()} ${className}`}>
@@ -77,9 +66,8 @@ export default function SectionHeaderClient({
         <BlurText
           text={title}
           delay={titleDelay}
-          animateBy="words"
-          direction={getBlurTextDirection(animationDirection)}
-          className={defaultTitleClasses}
+          duration={1.0}
+            className="text-lg md:text-xl lg:text-2xl max-w-4xl text-white"
         />
 
         {/* Description with Animation */}
@@ -87,9 +75,8 @@ export default function SectionHeaderClient({
           <BlurText
             text={description}
             delay={descriptionDelay}
-            animateBy="words"
-            direction={getBlurTextDirection(animationDirection === 'top' ? 'bottom' : animationDirection)}
-            className={defaultDescriptionClasses}
+            duration={1.0}
+            className="text-lg md:text-xl lg:text-2xl max-w-4xl text-white"
           />
         )}
 
@@ -98,9 +85,8 @@ export default function SectionHeaderClient({
           <BlurText
             text={subtitle}
             delay={subtitleDelay}
-            animateBy="words"
-            direction={getBlurTextDirection(animationDirection === 'top' ? 'bottom' : animationDirection)}
-            className={defaultSubtitleClasses}
+            duration={1.0}
+            className="text-lg md:text-xl lg:text-2xl max-w-4xl text-white"
           />
         )}
       </div>

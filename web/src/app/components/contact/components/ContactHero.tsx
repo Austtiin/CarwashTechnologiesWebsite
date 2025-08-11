@@ -31,17 +31,15 @@ export default function ContactHero() {
         <div className="max-w-4xl mx-auto">
           <BlurText
             text="Get In Touch"
-            delay={50}
-            animateBy="words"
-            direction="top"
-            className="!text-4xl font-extrabold !text-white mb-6 tracking-tight"
+            delay={0.1}
+            duration={0.6}
+            className="text-4xl font-extrabold text-white mb-6 tracking-tight"
           />
           <BlurText
             text="Ready to transform your wash operation? Let's discuss your specific needs and create a customized solution that drives results."
-            delay={150}
-            animateBy="words"
-            direction="bottom"
-            className="!text-xl !text-gray-300 max-w-3xl mx-auto leading-relaxed sm:!text-2xl"
+            delay={0.3}
+            duration={0.8}
+            className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed sm:text-2xl"
           />
           
           {/* Static CTA badges */}

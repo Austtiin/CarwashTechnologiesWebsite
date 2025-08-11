@@ -33,10 +33,9 @@ const ChemicalsSection = () => {
           <div>
             <BlurText
               text="Premium Wash Chemicals"
-              delay={100}
-              animateBy="words"
-              direction="top"
-              className="!text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6"
+              delay={0.1}
+              duration={0.8}
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6"
             />
             <p className="text-lg text-gray-700 mb-6">
               We supply high-quality wash chemicals that deliver superior cleaning results while being
