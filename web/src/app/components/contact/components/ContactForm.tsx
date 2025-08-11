@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState, useCallback } from 'react';
-import { submitContactForm } from '../actions/contact-actions';
 
 interface ContactOption {
   id: string;
@@ -60,13 +59,16 @@ export default function ContactForm({ selectedOption, onReset }: ContactFormProp
     setIsSubmitting(true);
 
     try {
-      const formDataToSubmit = new FormData();
-      Object.entries(formData).forEach(([key, value]) => {
-        formDataToSubmit.append(key, value);
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+          ...formData, 
+          contactType: selectedOption?.id || 'general' 
+        }),
       });
-      formDataToSubmit.append('contactType', selectedOption?.id || 'general');
-
-      const result = await submitContactForm(formDataToSubmit);
+      
+      const result = await response.json();
 
       if (result.success) {
         setSubmitStatus('success');
