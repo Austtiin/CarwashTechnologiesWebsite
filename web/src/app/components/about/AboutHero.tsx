@@ -44,7 +44,7 @@ export default function AboutHero() {
           </div>
           
           <Heading>
-            <span className="bg-gradient-to-r from-[#cecece] via-[#f0da11] to-[#bfb986] bg-clip-text text-transparent">
+            <span className="font-friz bg-gradient-to-r from-[#cecece] via-[#f0da11] to-[#bfb986] bg-clip-text text-transparent">
               Carwash Technologies
             </span>
           </Heading>

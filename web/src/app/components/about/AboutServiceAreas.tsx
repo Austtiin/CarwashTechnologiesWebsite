@@ -1,5 +1,5 @@
 import React from 'react';
-import SectionHeader from '../ui/SectionHeader';
+import BlurText from '../animations/BlurText';
 
 export default function AboutServiceAreas() {
   return (
@@ -7,11 +7,12 @@ export default function AboutServiceAreas() {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <SectionHeader
-              title="Serving the Midwest"
-              description="Proudly serving wash businesses across four states"
-              titleDelay={50}
-              descriptionDelay={100}
+            <BlurText
+              text="Serving the Midwest"
+              className="font-friz text-4xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-4 sm:mb-6"
+              delay={0.1}
+              duration={0.1}
+
             />
           </div>
           

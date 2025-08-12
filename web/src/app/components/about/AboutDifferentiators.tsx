@@ -1,5 +1,5 @@
 import React from 'react';
-import SectionHeader from '../ui/SectionHeader';
+import BlurText from '../animations/BlurText';
 
 export default function AboutDifferentiators() {
   return (
@@ -7,12 +7,16 @@ export default function AboutDifferentiators() {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <SectionHeader
-              title="What Sets Us Apart"
-              description="We&#39;re more than just a supplier – we&#39;re your partner in success"
-              titleDelay={50}
-              descriptionDelay={100}
+            
+            <BlurText
+              text="What Sets Us Apart"
+              className="font-friz text-4xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-4 sm:mb-6"
+              delay={0.1}
+              duration={0.1}
+
             />
+
+            
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">

@@ -33,13 +33,13 @@ const WhoWeServeSection = () => {
             <BlurText
               text="Who We Serve"
               delay={0.1}
-              duration={0.8}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6"
+              duration={0.1}
+              className="font-friz text-4xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold text-gray-900 mb-6"
             />
             <BlurText
               text="From new entrepreneurs to established businesses, we provide tailored solutions for every wash operation"
-              delay={0.3}
-              duration={1.0}
+              delay={0.1}
+              duration={0.1}
               className="text-lg md:text-xl text-gray-700"
             />
           </div>

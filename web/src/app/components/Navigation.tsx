@@ -4,7 +4,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect, useRef } from 'react';
 
-
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
@@ -19,19 +18,13 @@ const Navbar = () => {
     { name: 'Consulting Services', href: '/consulting-services', description: 'Expert guidance and planning' }
   ];
 
-  // Auto-close menu when clicking outside
+  // Event handlers
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
         setIsMenuOpen(false);
         setIsServicesOpen(false);
       }
-    };
-
-    // Auto-close menu when scrolling
-    const handleScroll = () => {
-      setIsMenuOpen(false);
-      setIsServicesOpen(false);
     };
 
     // Auto-close menu when resizing to desktop
@@ -42,21 +35,42 @@ const Navbar = () => {
       }
     };
 
-    if (isMenuOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
-      document.addEventListener('scroll', handleScroll);
-      window.addEventListener('resize', handleResize);
-      // Prevent body scroll when menu is open
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
+    document.addEventListener('mousedown', handleClickOutside);
+    window.addEventListener('resize', handleResize);
 
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
-      document.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', handleResize);
-      document.body.style.overflow = 'unset';
+    };
+  }, []);
+
+  // FIXED: Better scroll management - prevent background scroll without affecting position
+  useEffect(() => {
+    if (isMenuOpen) {
+      // Save current scroll position
+      const scrollY = window.scrollY;
+      
+      // Prevent background scroll but maintain position
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = '100%';
+    } else {
+      // Restore scroll position
+      const scrollY = document.body.style.top;
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+      
+      if (scrollY) {
+        window.scrollTo(0, parseInt(scrollY || '0') * -1);
+      }
+    }
+
+    // Cleanup on unmount
+    return () => {
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
     };
   }, [isMenuOpen]);
 
@@ -71,6 +85,12 @@ const Navbar = () => {
     closeAllMenus();
   };
 
+  // Function to handle menu toggle with better state management
+  const handleMenuToggle = () => {
+    setIsMenuOpen(prev => !prev);
+    setIsServicesOpen(false); // Close services when toggling main menu
+  };
+
   return (
     <header className="sticky top-0 z-50 bg-white shadow-md" ref={menuRef}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -83,12 +103,12 @@ const Navbar = () => {
               alt="Carwash Technologies Logo"
               width={48}
               height={48}
-              className="w-8 h-auto sm:w-12" // Smaller on mobile
+              className="w-8 h-auto sm:w-12"
               priority
             />
             <Link href="/" className="text-lg sm:text-2xl font-bold text-gray-900" onClick={closeAllMenus}>
-              <span className="hidden sm:inline">Carwash Technologies</span>
-              <span className="sm:hidden">CWT</span> {/* Shorter name on mobile */}
+              <span className="font-friz hidden sm:inline">Carwash Technologies</span>
+              <span className="font-friz sm:hidden">CWT</span>
             </Link>
           </div>
           
@@ -168,7 +188,7 @@ const Navbar = () => {
             </a>
             <Link 
               href="/contact" 
-              className="bg-gradient-to-r from-yellow-400 to-yellow-300 text-white px-3 py-2 sm:px-6 text-sm sm:text-base rounded-lg font-semibold hover:from-yellow-600 hover:to-yellow-700 transition-all duration-300 shadow-md hover:shadow-lg"
+              className="bg-gradient-to-r from-yellow-400/60 to-yellow-300 text-black px-3 py-2 sm:px-6 text-sm sm:text-base rounded-lg font-semibold hover:from-yellow-300 hover:to-yellow-200 transition-all duration-300 shadow-md hover:shadow-lg hover:text-slate-500/40"
               onClick={closeAllMenus}
             >
               <span className="hidden sm:inline">Get Quote</span>
@@ -177,8 +197,8 @@ const Navbar = () => {
             
             {/* Mobile menu button */}
             <button
-              className="md:hidden p-2 touch-manipulation"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="md:hidden p-2 relative z-50"
+              onClick={handleMenuToggle}
               aria-label="Toggle mobile menu"
               aria-expanded={isMenuOpen}
             >
@@ -198,79 +218,84 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* FIXED: Mobile Navigation with fixed positioning when open */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t bg-white">
-            <nav className="flex flex-col space-y-4">
-              <Link 
-                href="/" 
-                className="font-medium text-gray-600 hover:text-yellow-500 transition-colors px-4 py-2 touch-manipulation"
-                onClick={handleMobileNavClick}
-              >
-                Home
-              </Link>
-              <Link 
-                href="/about" 
-                className="font-medium text-gray-600 hover:text-yellow-500 transition-colors px-4 py-2 touch-manipulation"
-                onClick={handleMobileNavClick}
-              >
-                About
-              </Link>
-              
-              {/* Mobile Services Section */}
-              <div className="px-4">
-                <button 
-                  onClick={() => setIsServicesOpen(!isServicesOpen)}
-                  className="font-medium text-gray-600 hover:text-yellow-500 transition-colors flex items-center justify-between w-full py-2 touch-manipulation"
+          <div 
+            className="md:hidden fixed inset-x-0 top-16 sm:top-20 bg-white border-b border-gray-200 shadow-lg z-40"
+            style={{ maxHeight: 'calc(100vh - 4rem)' }} // Adjust based on header height
+          >
+            <div className="max-h-96 overflow-y-auto py-4">
+              <nav className="flex flex-col space-y-4">
+                <Link 
+                  href="/" 
+                  className="font-medium text-gray-600 hover:text-yellow-500 transition-colors px-4 py-2"
+                  onClick={handleMobileNavClick}
                 >
-                  Services
-                  <svg 
-                    className={`w-4 h-4 transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`} 
-                    fill="none" 
-                    stroke="currentColor" 
-                    viewBox="0 0 24 24"
+                  Home
+                </Link>
+                <Link 
+                  href="/about" 
+                  className="font-medium text-gray-600 hover:text-yellow-500 transition-colors px-4 py-2"
+                  onClick={handleMobileNavClick}
+                >
+                  About
+                </Link>
+                
+                {/* Mobile Services Section */}
+                <div className="px-4">
+                  <button 
+                    onClick={() => setIsServicesOpen(!isServicesOpen)}
+                    className="font-medium text-gray-600 hover:text-yellow-500 transition-colors flex items-center justify-between w-full py-2"
                   >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </button>
-                {isServicesOpen && (
-                  <div className="ml-4 mt-2 space-y-2 bg-gray-50 rounded-lg p-2">
-                    {serviceLinks.map((link) => (
-                      <Link
-                        key={link.name}
-                        href={link.href}
-                        className="block text-sm text-gray-500 hover:text-yellow-500 transition-colors py-2 px-2 rounded touch-manipulation"
-                        onClick={handleMobileNavClick}
-                      >
-                        {link.name}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-              
-              <Link 
-                href="/projects" 
-                className="font-medium text-gray-600 hover:text-yellow-500 transition-colors px-4 py-2 touch-manipulation"
-                onClick={handleMobileNavClick}
-              >
-                Projects
-              </Link>
-              <Link 
-                href="/contact" 
-                className="font-medium text-gray-600 hover:text-yellow-500 transition-colors px-4 py-2 touch-manipulation"
-                onClick={handleMobileNavClick}
-              >
-                Contact
-              </Link>
-              <a 
-                href="tel:612-408-9010" 
-                className="font-semibold text-gray-800 hover:text-yellow-500 transition-colors px-4 py-2 touch-manipulation"
-                onClick={handleMobileNavClick}
-              >
-                📞 612-408-9010
-              </a>
-            </nav>
+                    Services
+                    <svg 
+                      className={`w-4 h-4 transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`} 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  {isServicesOpen && (
+                    <div className="ml-4 mt-2 space-y-2 bg-gray-50 rounded-lg p-2">
+                      {serviceLinks.map((link) => (
+                        <Link
+                          key={link.name}
+                          href={link.href}
+                          className="block text-sm text-gray-500 hover:text-yellow-500 transition-colors py-2 px-2 rounded"
+                          onClick={handleMobileNavClick}
+                        >
+                          {link.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+                
+                <Link 
+                  href="/projects" 
+                  className="font-medium text-gray-600 hover:text-yellow-500 transition-colors px-4 py-2"
+                  onClick={handleMobileNavClick}
+                >
+                  Projects
+                </Link>
+                <Link 
+                  href="/contact" 
+                  className="font-medium text-gray-600 hover:text-yellow-500 transition-colors px-4 py-2"
+                  onClick={handleMobileNavClick}
+                >
+                  Contact
+                </Link>
+                <a 
+                  href="tel:612-408-9010" 
+                  className="font-semibold text-gray-800 hover:text-yellow-500 transition-colors px-4 py-2"
+                  onClick={handleMobileNavClick}
+                >
+                  📞 612-408-9010
+                </a>
+              </nav>
+            </div>
           </div>
         )}
       </div>

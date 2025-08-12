@@ -264,6 +264,15 @@ body {
   }
 }
 
+.font-friz {
+  font-family: var(--font-custom);
+}
+
+.font-friz-bold {
+  font-family: var(--font-custom);
+  font-weight: 700;
+}
+
 /* Prevent horizontal scrolling issues */
 * {
   box-sizing: border-box;
@@ -325,4 +334,9 @@ html, body {
 .card-spotlight:hover::before,
 .card-spotlight:focus-within::before {
   opacity: 0.6;
+}
+
+/* Add to your globals.css or component styles */
+.bg-gradient-radial {
+  background: radial-gradient(circle, var(--tw-gradient-stops));
 }
