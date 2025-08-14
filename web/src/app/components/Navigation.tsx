@@ -94,16 +94,16 @@ const Navbar = () => {
   return (
     <header className="sticky top-0 z-50 bg-white shadow-md" ref={menuRef}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 sm:h-20 items-center justify-between">
+        <div className="flex h-16 sm:h-20 items-center justify-center relative">
           
-          {/* Logo / Business Name */}
-          <div className="flex items-center space-x-2 sm:space-x-3">
+          {/* Logo / Business Name - positioned absolutely to left */}
+          <div className="absolute left-0 flex items-center space-x-2 sm:space-x-3">
             <Image
               src="/logoCWT.webp"
               alt="Carwash Technologies Logo"
               width={48}
               height={48}
-              className="w-8 h-auto sm:w-12"
+              className="w-12 h-auto sm:w-12"
               priority
             />
             <Link href="/" className="text-lg sm:text-2xl font-bold text-gray-900" onClick={closeAllMenus}>
@@ -112,7 +112,7 @@ const Navbar = () => {
             </Link>
           </div>
           
-          {/* Desktop Navigation Links */}
+          {/* Desktop Navigation Links - now centered */}
           <nav className="hidden md:flex items-center space-x-8">
             <Link href="/" className="font-medium text-gray-600 hover:text-yellow-500 transition-colors">
               Home
@@ -181,8 +181,8 @@ const Navbar = () => {
             </Link>
           </nav>
           
-          {/* Phone & CTA */}
-          <div className="flex items-center gap-2 sm:gap-4">
+          {/* Phone & CTA - positioned absolutely to right */}
+          <div className="absolute right-0 flex items-center gap-2 sm:gap-4">
             <a href="tel:612-408-9010" className="hidden lg:block font-semibold text-gray-800 hover:text-yellow-500 transition-colors">
               612-408-9010
             </a>

@@ -1,5 +1,6 @@
 // Server Component
 import React from 'react';
+import Image from 'next/image';
 import SafeLink from '../../ui/SafeLink';
 import BlurText from '../../animations/BlurText';
 
@@ -33,19 +34,19 @@ export default function ServicesSection() {
             <BlurText 
               text="Our Expertise"
               className="font-friz text-4xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-4 sm:mb-6"
-              delay={0.1}
+              delay={0.0}
               duration={0.1}
             />
             <BlurText 
               text="Let our experienced technicians help you make your wash more profitable or get you started with a new site."
-              className="text-lg sm:text-xl text-gray-700 mb-3 sm:mb-4 max-w-3xl mx-auto leading-relaxed"
-              delay={0.1}
+              className="text-lg sm:text-xl text-gray-700 mb-3 sm:mb-4 max-w-3xl mx-auto"
+              delay={0.0}
               duration={0.1}
             />
             <BlurText 
               text="With over 50 years of combined experience, our staff has the knowledge to overcome any hurdle."
-              className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed"
-              delay={0.1}
+              className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto"
+              delay={0.0}
               duration={0.1}
             />
           </div>
@@ -65,6 +66,77 @@ export default function ServicesSection() {
             </div>
             <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 text-center relative z-10">Equipment Sales</h3>
             <p className="text-sm sm:text-base text-gray-600 text-center mb-6 leading-relaxed flex-grow relative z-10">Quality wash equipment from trusted manufacturers to get your operation running smoothly and efficiently.</p>
+            
+            {/* Equipment Brand Logos */}
+            <div className="relative z-10 mb-6">
+              <div className="bg-gray-100/90 backdrop-blur-sm rounded-lg p-4 border border-gray-200/50">
+                <div className="grid grid-cols-2 gap-2 max-w-xs mx-auto">
+                  <div className="group/logo relative">
+                    <div className="bg-white hover:bg-gray-50 border border-gray-200/50 rounded-lg p-3 h-16 flex items-center justify-center transition-all duration-300 hover:shadow-md relative overflow-hidden">
+                      <Image 
+                        src="/logoPDQ.webp" 
+                        alt="PDQ Logo" 
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
+                    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-900 text-white text-xs rounded-lg opacity-0 group-hover/logo:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-20">
+                      PDQ
+                      <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-900"></div>
+                    </div>
+                  </div>
+
+                  {/* PECO Logo Box */}
+                  <div className="group/logo relative">
+                    <div className="bg-white hover:bg-gray-50 border border-gray-200/50 rounded-lg p-3 h-16 flex items-center justify-center transition-all duration-300 hover:shadow-md relative overflow-hidden">
+                      <Image 
+                        src="/peco-logo.webp" 
+                        alt="PECO Logo" 
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
+                    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-900 text-white text-xs rounded-lg opacity-0 group-hover/logo:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-20">
+                      PECO
+                      <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-900"></div>
+                    </div>
+                  </div>
+
+                  {/* Belanger Logo Box */}
+                  <div className="group/logo relative">
+                    <div className="bg-white hover:bg-gray-50 border border-gray-200/50 rounded-lg p-3 h-16 flex items-center justify-center transition-all duration-300 hover:shadow-md relative overflow-hidden">
+                      <Image 
+                        src="/logoBelanger.webp" 
+                        alt="Belanger Logo" 
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
+                    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-900 text-white text-xs rounded-lg opacity-0 group-hover/logo:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-20">
+                      BELANGER
+                      <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-900"></div>
+                    </div>
+                  </div>
+
+                  {/* Sonnys Logo Box */}
+                  <div className="group/logo relative">
+                    <div className="bg-white hover:bg-gray-50 border border-gray-200/50 rounded-lg p-3 h-16 flex items-center justify-center transition-all duration-300 hover:shadow-md relative overflow-hidden">
+                      <Image 
+                        src="/logoSonnys.webp" 
+                        alt="Sonnys Logo" 
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
+                    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-900 text-white text-xs rounded-lg opacity-0 group-hover/logo:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-20">
+                      SONNYS
+                      <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-900"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div className="text-center relative z-10">
               <SafeLink href="/equipment-sales" className="inline-flex items-center px-4 py-2 sm:px-6 sm:py-3 bg-yellow-400 text-gray-900 rounded-lg font-semibold hover:bg-yellow-500 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1 text-sm sm:text-base">
                 <span>Learn More</span>
@@ -89,6 +161,33 @@ export default function ServicesSection() {
             <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 text-center relative z-10">Service & Maintenance</h3>
             <p className="text-sm sm:text-base text-gray-600 text-center mb-6 leading-relaxed flex-grow relative z-10">Professional maintenance and emergency repair services to keep your wash operation running at peak performance.</p>
             <div className="text-center relative z-10">
+              
+              {/* Equipment Brand Logos */}
+            <div className="relative z-10 mb-6">
+              <div className="bg-gray-100/90 backdrop-blur-sm rounded-lg p-4 border border-gray-200/50">
+                <div className="grid grid-cols-2 gap-2 max-w-xs mx-auto">
+                  {/* AVW Logo Box */}
+                  <div className="group/logo relative">
+                    <div className="bg-white hover:bg-gray-50 border border-gray-200/50 rounded-lg p-3 h-16 flex items-center justify-center transition-all duration-300 hover:shadow-md relative overflow-hidden">
+                      <Image 
+                        src="/AVW-logo.webp" 
+                        alt="AVW Logo" 
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
+                    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-900 text-white text-xs rounded-lg opacity-0 group-hover/logo:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-20">
+                      AVW
+                      <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-900"></div>
+                    </div>
+                  </div>
+
+                  
+
+                </div>
+              </div>
+            </div>
+              
               <SafeLink href="/service-maintenance" className="inline-flex items-center px-4 py-2 sm:px-6 sm:py-3 bg-yellow-400 text-gray-900 rounded-lg font-semibold hover:bg-yellow-500 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1 text-sm sm:text-base">
                 <span>Learn More</span>
                 <svg className="w-3 h-3 sm:w-4 sm:h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -111,7 +210,63 @@ export default function ServicesSection() {
             <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 text-center relative z-10">Chemical Programs</h3>
             <p className="text-sm sm:text-base text-gray-600 text-center mb-6 leading-relaxed flex-grow relative z-10">High-quality chemical solutions and custom programs designed to maximize wash performance and customer satisfaction.</p>
             <div className="text-center relative z-10">
-              <SafeLink href="/chemical-programs" className="inline-flex items-center px-4 py-2 sm:px-6 sm:py-3 bg-yellow-400 text-gray-900 rounded-lg font-semibold hover:bg-yellow-500 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1 text-sm sm:text-base">
+              
+              {/* Equipment Brand Logos */}
+            <div className="relative z-10 mb-6">
+              <div className="bg-gray-100/90 backdrop-blur-sm rounded-lg p-4 border border-gray-200/50">
+                <div className="grid grid-cols-2 gap-2 max-w-xs mx-auto">
+                  <div className="group/logo relative">
+                    <div className="bg-white hover:bg-gray-50 border border-gray-200/50 rounded-lg p-3 h-16 flex items-center justify-center transition-all duration-300 hover:shadow-md relative overflow-hidden">
+                      <Image 
+                        src="/logoVertech.webp" 
+                        alt="Vertech Logo" 
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
+                    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-900 text-white text-xs rounded-lg opacity-0 group-hover/logo:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-20">
+                      Vertech
+                      <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-900"></div>
+                    </div>
+                  </div>
+
+                  {/* PECO Logo Box */}
+                  <div className="group/logo relative">
+                    <div className="bg-white hover:bg-gray-50 border border-gray-200/50 rounded-lg p-3 h-16 flex items-center justify-center transition-all duration-300 hover:shadow-md relative overflow-hidden">
+                      <Image 
+                        src="/logoCWT.webp" 
+                        alt="CWT Logo" 
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
+                    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-900 text-white text-xs rounded-lg opacity-0 group-hover/logo:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-20">
+                      CWT
+                      <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-900"></div>
+                    </div>
+                  </div>
+
+                  {/* Belanger Logo Box */}
+                  <div className="group/logo relative">
+                    <div className="bg-white hover:bg-gray-50 border border-gray-200/50 rounded-lg p-3 h-16 flex items-center justify-center transition-all duration-300 hover:shadow-md relative overflow-hidden">
+                      <Image 
+                        src="/logoSimo.webp" 
+                        alt="Simoniz Logo" 
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
+                    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-900 text-white text-xs rounded-lg opacity-0 group-hover/logo:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-20">
+                      Simoniz
+                      <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-900"></div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+              
+              <SafeLink href="/chemical-sales" className="inline-flex items-center px-4 py-2 sm:px-6 sm:py-3 bg-yellow-400 text-gray-900 rounded-lg font-semibold hover:bg-yellow-500 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1 text-sm sm:text-base">
                 <span>Learn More</span>
                 <svg className="w-3 h-3 sm:w-4 sm:h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

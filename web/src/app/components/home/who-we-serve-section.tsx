@@ -15,12 +15,12 @@ const WhoWeServeSection = () => {
         <div className="absolute top-1/4 left-1/2 w-18 h-18 border-2 border-[#bfb986]/20 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '14s', animationDelay: '0.5s' }}></div>
         
         {/* Yellow dot grid pattern */}
-        <div className="absolute inset-0 opacity-20 pointer-events-none z-10">
+        <div className="absolute inset-0 opacity-10 sm:opacity-20 pointer-events-none z-10">
           <div
             className="h-full w-full"
             style={{
               backgroundImage: `radial-gradient(circle at 1px, #9b9000 1px, transparent 1px)`,
-              backgroundSize: '24px 24px'
+              backgroundSize: '16px 16px'
             }}
           ></div>
         </div>
@@ -32,13 +32,13 @@ const WhoWeServeSection = () => {
           <div className="text-center">
             <BlurText
               text="Who We Serve"
-              delay={0.1}
+              delay={0.0}
               duration={0.1}
               className="font-friz text-4xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold text-gray-900 mb-6"
             />
             <BlurText
               text="From new entrepreneurs to established businesses, we provide tailored solutions for every wash operation"
-              delay={0.1}
+              delay={0.0}
               duration={0.1}
               className="text-lg md:text-xl text-gray-700"
             />

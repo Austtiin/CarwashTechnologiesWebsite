@@ -16,12 +16,12 @@ const ChemicalsSection = () => {
         <div className="absolute top-1/3 right-16 w-8 h-8 border-2 border-[#7411d0]/35 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '6s', animationDelay: '1.2s' }}></div>
         
         {/* Yellow dot grid pattern */}
-        <div className="absolute inset-0 opacity-20 pointer-events-none z-10">
+        <div className="absolute inset-0 opacity-10 sm:opacity-20 pointer-events-none z-10">
           <div
             className="h-full w-full"
             style={{
               backgroundImage: `radial-gradient(circle at 1px, #9b9000 1px, transparent 1px)`,
-              backgroundSize: '24px 24px'
+              backgroundSize: '16px 16px'
             }}
           ></div>
         </div>
@@ -33,8 +33,8 @@ const ChemicalsSection = () => {
           <div>
             <BlurText
               text="Premium Wash Chemicals"
-              delay={0.1}
-              duration={0.8}
+              delay={0.0}
+              duration={0.1}
               className="font-friz text-4xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold text-gray-900 mb-6"
             />
             <p className="text-lg text-gray-700 mb-6">
