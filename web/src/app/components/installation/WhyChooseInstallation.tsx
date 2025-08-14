@@ -44,16 +44,23 @@ export default function WhyChooseInstallation({ stats }: WhyChooseInstallationPr
   return (
     <section className="py-16">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        {/* Centered Section Header */}
+        <div className="w-full flex justify-center mb-16">
+          <SectionHeader
+            title="Why Choose Our Installation Services"
+            description="Our experienced installation team ensures your wash equipment is installed correctly, safely, and efficiently, minimizing downtime and maximizing performance."
+            titleDelay={0}
+            descriptionDelay={0}
+            textAlign="center"
+            maxWidth="max-w-4xl"
+          />
+        </div>
+
+        {/* Two Column Layout */}
+        <div className="grid md:grid-cols-2 gap-12 items-start">
+          {/* Left Column - Benefits List */}
           <div>
-            <SectionHeader
-              title="Why Choose Our Installation Services"
-              description="Our experienced installation team ensures your wash equipment is installed correctly, safely, and efficiently, minimizing downtime and maximizing performance."
-              titleDelay={50}
-              descriptionDelay={100}
-            />
-            
-            <div className="space-y-6 mt-8">
+            <div className="space-y-6">
               {benefits.map((benefit, index) => (
                 <div key={index} className="flex items-start">
                   <div className={`w-12 h-12 bg-gradient-to-br ${benefit.color} rounded-lg flex items-center justify-center mr-4 flex-shrink-0`}>
@@ -61,7 +68,7 @@ export default function WhyChooseInstallation({ stats }: WhyChooseInstallationPr
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={benefit.icon} />
                     </svg>
                   </div>
-                  <div>
+                  <div className="text-left">
                     <h3 className="text-xl font-semibold text-gray-900 mb-2">{benefit.title}</h3>
                     <p className="text-gray-600">{benefit.description}</p>
                   </div>
@@ -70,6 +77,7 @@ export default function WhyChooseInstallation({ stats }: WhyChooseInstallationPr
             </div>
           </div>
           
+          {/* Right Column - Installation Guarantee Card */}
           <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-8 rounded-2xl border border-gray-200">
             <div className="text-center mb-8">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Installation Guarantee</h3>
@@ -133,3 +141,4 @@ export default function WhyChooseInstallation({ stats }: WhyChooseInstallationPr
     </section>
   );
 }
+

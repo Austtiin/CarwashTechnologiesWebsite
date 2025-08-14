@@ -20,8 +20,8 @@ export default function InstallationTimeline({ timeline }: InstallationTimelineP
           <SectionHeader
             title="Typical Installation Timeline"
             description="From planning to operation, here's what to expect during your installation"
-            titleDelay={50}
-            descriptionDelay={100}
+            titleDelay={0}
+            descriptionDelay={0}
           />
         </div>
 
@@ -64,3 +64,4 @@ export default function InstallationTimeline({ timeline }: InstallationTimelineP
     </section>
   );
 }
+

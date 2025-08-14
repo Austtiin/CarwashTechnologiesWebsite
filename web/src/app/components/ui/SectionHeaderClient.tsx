@@ -57,8 +57,6 @@ export default function SectionHeaderClient({
     }
   };
 
- 
-
   return (
     <div className={`${maxWidth} mx-auto ${getBackgroundClasses()} ${className}`}>
       <div className={getTextAlignClasses()}>
@@ -66,8 +64,8 @@ export default function SectionHeaderClient({
         <BlurText
           text={title}
           delay={titleDelay}
-          duration={1.0}
-            className="text-lg md:text-xl lg:text-2xl max-w-4xl text-white"
+          duration={0.1}
+            className="font-friz text-sm md:text-xl lg:text-2xl max-w-2xl text-black"
         />
 
         {/* Description with Animation */}
@@ -75,8 +73,8 @@ export default function SectionHeaderClient({
           <BlurText
             text={description}
             delay={descriptionDelay}
-            duration={1.0}
-            className="text-lg md:text-xl lg:text-2xl max-w-4xl text-white"
+            duration={0.1}
+            className="text-sm md:text-sm lg:text-xl max-w-xl text-black"
           />
         )}
 
@@ -85,7 +83,7 @@ export default function SectionHeaderClient({
           <BlurText
             text={subtitle}
             delay={subtitleDelay}
-            duration={1.0}
+            duration={0.1}
             className="text-lg md:text-xl lg:text-2xl max-w-4xl text-white"
           />
         )}
@@ -93,3 +91,4 @@ export default function SectionHeaderClient({
     </div>
   );
 }
+

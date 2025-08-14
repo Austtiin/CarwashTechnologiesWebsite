@@ -28,12 +28,12 @@ export default function InstallationServices({ services }: InstallationServicesP
   return (
     <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <div className="w-full flex justify-center mb-16">
           <SectionHeader
             title="Installation Services"
             description="Complete installation services for all types of wash equipment"
-            titleDelay={50}
-            descriptionDelay={100}
+            titleDelay={0}
+            descriptionDelay={0}
           />
         </div>
         
@@ -65,3 +65,4 @@ export default function InstallationServices({ services }: InstallationServicesP
     </section>
   );
 }
+

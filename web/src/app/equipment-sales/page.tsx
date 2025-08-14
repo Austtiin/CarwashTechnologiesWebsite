@@ -119,7 +119,7 @@ export default async function EquipmentSales() {
             </div>
 
             <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
-              <span className="bg-gradient-to-r from-[#cecece] via-[#f0da11] to-[#bfb986] bg-clip-text text-transparent">
+              <span className="font-friz bg-gradient-to-r from-[#cecece] via-[#f0da11] to-[#bfb986] bg-clip-text text-transparent">
                 Equipment Sales
               </span>
             </h1>
@@ -127,8 +127,8 @@ export default async function EquipmentSales() {
             <div className="flex justify-center">
               <BlurText
                 text="Industry-leading wash equipment from trusted manufacturers"
-                delay={100}
-                duration={1.0}
+                delay={0.0}
+                duration={0.1}
             className="text-lg md:text-xl lg:text-2xl max-w-4xl text-white"
               />
             </div>
@@ -138,13 +138,13 @@ export default async function EquipmentSales() {
 
       {/* Trusted Partners Section */}
       <section className="py-16 bg-gradient-to-b from-white to-gray-50">
-        <div className="container mx-auto px-4">
+        <div className="items-center container mx-auto px-4">
           <div className="text-center mb-16">
             <BlurText
               text="Trusted Equipment Partners"
-              delay={150}
-              duration={1.0}
-            className="text-lg md:text-xl lg:text-2xl max-w-4xl text-white"
+              delay={0.0}
+              duration={0.1}
+            className="font-friz text-xl md:text-xl lg:text-4xl max-w-4xl text-black mx-auto py-4"
             />
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               We partner with industry-leading manufacturers to provide you with the highest quality wash equipment
@@ -176,9 +176,9 @@ export default async function EquipmentSales() {
           <div className="text-center mb-16">
             <BlurText
               text="Equipment Categories"
-              delay={50}
-              duration={1.0}
-            className="text-lg md:text-xl lg:text-2xl max-w-4xl text-white"
+              delay={0.0}
+              duration={0.1}
+            className="font-friz text-xl md:text-xl lg:text-4xl max-w-4xl text-black mx-auto py-4"
             />
             <p className="text-xl text-gray-600">Complete range of wash equipment solutions</p>
           </div>
@@ -217,9 +217,9 @@ export default async function EquipmentSales() {
             <div>
               <BlurText
                 text="Why Choose Our Equipment"
-                delay={50}
-                duration={1.0}
-            className="text-lg md:text-xl lg:text-2xl max-w-4xl text-white"
+                delay={0.0}
+              duration={0.1}
+            className="font-friz text-xl md:text-xl lg:text-4xl max-w-4xl text-black mx-auto py-4"
               />
               <p className="text-lg text-gray-600 mb-8">
                 We provide only the highest quality equipment from trusted manufacturers, 
@@ -233,7 +233,7 @@ export default async function EquipmentSales() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
-                  <div>
+                  <div className="text-left">
                     <h3 className="text-xl font-semibold text-gray-900 mb-2">Industry-Leading Quality</h3>
                     <p className="text-gray-600">Premium equipment from manufacturers with decades of experience and proven track records.</p>
                   </div>
@@ -337,3 +337,4 @@ export default async function EquipmentSales() {
     </div>
   );
 }
+

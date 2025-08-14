@@ -36,12 +36,15 @@ export default function InstallationProcess() {
   return (
     <section className="py-16 bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        {/* Ensure the header is properly centered */}
+        <div className="w-full flex justify-center mb-16">
           <SectionHeader
             title="Our Installation Process"
             description="From initial planning to final testing, we ensure your wash equipment is installed correctly and efficiently"
-            titleDelay={50}
-            descriptionDelay={100}
+            titleDelay={0}
+            descriptionDelay={0}
+            textAlign="center"
+            maxWidth="max-w-4xl"
           />
         </div>
 
@@ -67,3 +70,4 @@ export default function InstallationProcess() {
     </section>
   );
 }
+
