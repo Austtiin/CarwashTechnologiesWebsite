@@ -71,7 +71,7 @@ async function getChemicalData() {
         id: 'pay-as-go',
         title: 'Pay-As-You-Go',
         description: 'Perfect for small operations or seasonal businesses',
-        features: ['No minimum orders', 'Flexible ordering', 'Full product line access'],
+        features: ['No minimum orders', 'Flexible ordering', 'Full product line access', 'Monday to Friday Pickup'],
         cta: 'Get Pricing',
         popular: false
       },
@@ -153,3 +153,4 @@ export default async function ChemicalSales() {
     </div>
   );
 }
+

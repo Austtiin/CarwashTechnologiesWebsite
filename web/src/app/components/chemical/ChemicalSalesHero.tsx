@@ -30,7 +30,7 @@ export default function ChemicalSalesHero() {
           </div>
 
           <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
-            <span className="bg-gradient-to-r from-[#cecece] via-[#f0da11] to-[#bfb986] bg-clip-text text-transparent">
+            <span className="font-friz bg-gradient-to-r from-[#cecece] via-[#f0da11] to-[#bfb986] bg-clip-text text-transparent">
               Chemical Sales
             </span>
           </h1>
@@ -38,8 +38,8 @@ export default function ChemicalSalesHero() {
           <div className="flex justify-center">
             <BlurText
               text="High-performance wash chemicals for superior cleaning results"
-              delay={0.1}
-              duration={0.8}
+              delay={0.0}
+              duration={0.1}
               className="text-xl md:text-2xl text-[#f0da11] max-w-3xl mx-auto leading-relaxed font-light"
             />
           </div>
@@ -92,3 +92,4 @@ export default function ChemicalSalesHero() {
     </section>
   );
 }
+

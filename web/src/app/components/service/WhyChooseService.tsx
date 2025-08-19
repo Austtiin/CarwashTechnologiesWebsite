@@ -70,15 +70,19 @@ export default function WhyChooseService({ stats }: WhyChooseServiceProps) {
               </ul>
             </div>
           </div>
-          
+
           <div>
-            <SectionHeader
-              title="Expert Service & Maintenance"
-              description="Our certified technicians provide expert maintenance services to keep your wash equipment running smoothly and efficiently, minimizing downtime and maximizing profitability."
-              titleDelay={50}
-              descriptionDelay={100}
-            />
-            
+            <div className="w-full flex justify-center mb-16">
+              <SectionHeader
+                title="Expert Service & Maintenance"
+                description="Our certified technicians provide expert maintenance services to keep your wash equipment running smoothly and efficiently, minimizing downtime and maximizing profitability."
+                titleDelay={0}
+                descriptionDelay={0}
+                textAlign="center"
+                maxWidth="max-w-4xl"
+              />
+            </div>
+
             <div className="space-y-6 mt-8">
               {benefits.map((benefit, index) => (
                 <div key={index} className="flex items-start">
@@ -113,3 +117,4 @@ export default function WhyChooseService({ stats }: WhyChooseServiceProps) {
     </section>
   );
 }
+

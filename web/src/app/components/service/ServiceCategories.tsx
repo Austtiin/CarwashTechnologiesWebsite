@@ -28,14 +28,16 @@ export default function ServiceCategories({ categories }: ServiceCategoriesProps
   return (
     <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <SectionHeader
-            title="Our Service Categories"
-            description="Comprehensive maintenance services for all your wash equipment"
-            titleDelay={50}
-            descriptionDelay={100}
-          />
-        </div>
+        <div className="w-full flex justify-center mb-16">
+                  <SectionHeader
+                    title="Our Service Categories"
+                    description="Comprehensive maintenance services for all your wash equipment"
+                    titleDelay={0}
+                    descriptionDelay={0}
+                    textAlign="center"
+                    maxWidth="max-w-4xl"
+                  />
+                </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {categories.map((category) => {
@@ -65,3 +67,4 @@ export default function ServiceCategories({ categories }: ServiceCategoriesProps
     </section>
   );
 }
+

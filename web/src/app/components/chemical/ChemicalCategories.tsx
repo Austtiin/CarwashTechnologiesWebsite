@@ -28,17 +28,19 @@ export default function ChemicalCategories({ categories }: ChemicalCategoriesPro
   return (
     <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <SectionHeader
-            title="Chemical Categories"
-            description="Complete range of wash chemical solutions"
-            titleDelay={50}
-            descriptionDelay={100}
-          />
-        </div>
+        <div className="w-full flex justify-center mb-16">
+                  <SectionHeader
+                    title="Chemical Categories"
+                    description="Complete range of wash chemical solutions"
+                    titleDelay={0}
+                    descriptionDelay={0}
+                    textAlign="center"
+                    maxWidth="max-w-4xl"
+                  />
+                </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {categories.map((category) => {
+          {categories.map((category: ChemicalCategory) => {
             const colors = colorMap[category.color as keyof typeof colorMap];
             return (
               <div key={category.id} className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
@@ -65,3 +67,4 @@ export default function ChemicalCategories({ categories }: ChemicalCategoriesPro
     </section>
   );
 }
+

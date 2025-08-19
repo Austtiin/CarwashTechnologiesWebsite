@@ -72,13 +72,18 @@ export default function ChemicalProgramBenefits({ benefits, stats }: ChemicalPro
           </div>
           
           <div>
-            <SectionHeader
-              title="Why Choose Our Chemicals"
-              description="We supply a complete line of high-performance wash chemicals designed to deliver superior results while being environmentally responsible and cost-effective."
-              titleDelay={50}
-              descriptionDelay={100}
-            />
             
+            <div className="w-full flex justify-center mb-16">
+                              <SectionHeader
+                                title="Why Choose Our Chemicals"
+                                description="We supply a complete line of high-performance wash chemicals designed to deliver superior results while being environmentally responsible and cost-effective."
+                                titleDelay={0}
+                                descriptionDelay={0}
+                                textAlign="center"
+                                maxWidth="max-w-4xl"
+                              />
+                            </div>
+                    
             <div className="space-y-6 mt-8">
               {whyChooseReasons.map((reason, index) => (
                 <div key={index} className="flex items-start">
@@ -89,7 +94,7 @@ export default function ChemicalProgramBenefits({ benefits, stats }: ChemicalPro
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold text-gray-900 mb-2">{reason.title}</h3>
-                    <p className="text-gray-600">{reason.description}</p>
+                    <p className="text-gray-">{reason.description}</p>
                   </div>
                 </div>
               ))}
@@ -113,3 +118,4 @@ export default function ChemicalProgramBenefits({ benefits, stats }: ChemicalPro
     </section>
   );
 }
+

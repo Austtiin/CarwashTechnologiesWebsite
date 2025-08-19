@@ -144,9 +144,6 @@ export default async function ServiceMaintenance() {
       {/* Why Choose Our Service - Server Component */}
       <WhyChooseService stats={data.stats} />
 
-      {/* Emergency Service - Server Component */}
-      <EmergencyService />
-
       {/* Equipment We Service - Server Component */}
       <EquipmentWeService equipment={data.equipmentTypes} />
 
@@ -176,3 +173,4 @@ export default async function ServiceMaintenance() {
       </div>
   );
 }
+

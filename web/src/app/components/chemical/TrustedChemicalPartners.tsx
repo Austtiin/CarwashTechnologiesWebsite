@@ -16,12 +16,14 @@ export default function TrustedChemicalPartners({ manufacturers }: TrustedChemic
   return (
     <section className="py-16 bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <div className="w-full flex justify-center mb-16">
           <SectionHeader
             title="Trusted Chemical Partners"
             description="We partner with leading chemical manufacturers to provide you with the highest quality wash solutions"
-            titleDelay={150}
-            descriptionDelay={200}
+            titleDelay={0}
+            descriptionDelay={0}
+            textAlign="center"
+            maxWidth="max-w-4xl"
           />
         </div>
 
@@ -45,3 +47,4 @@ export default function TrustedChemicalPartners({ manufacturers }: TrustedChemic
     </section>
   );
 }
+

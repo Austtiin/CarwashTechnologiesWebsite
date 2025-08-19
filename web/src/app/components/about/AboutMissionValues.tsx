@@ -50,12 +50,11 @@ export default function AboutMissionValues() {
           </div>
 
           {/* Values */}
-          <div className="mt-16 text-center py-20">
-
+          <div className="mt-16 text-center py-10">
 
             <BlurText
               text="Our Core Values"
-              className="font-friz text-4xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-4 sm:mb-6"
+              className="font-friz text-4xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-4 sm:mb-6 pb-9"
               delay={0.1}
               duration={0.1}
 
@@ -108,3 +107,4 @@ export default function AboutMissionValues() {
     </section>
   );
 }
+

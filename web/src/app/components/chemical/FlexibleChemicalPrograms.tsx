@@ -19,14 +19,17 @@ export default function FlexibleChemicalPrograms({ programs }: FlexibleChemicalP
   return (
     <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <SectionHeader
-            title="Flexible Chemical Programs"
-            description="Choose the program that works best for your operation"
-            titleDelay={50}
-            descriptionDelay={100}
-          />
-        </div>
+        
+        <div className="w-full flex justify-center mb-16">
+                  <SectionHeader
+                    title="Flexible Chemical Programs"
+                    description="Choose the program that works best for your operations"
+                    titleDelay={0}
+                    descriptionDelay={0}
+                    textAlign="center"
+                    maxWidth="max-w-4xl"
+                  />
+                </div>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {programs.map((program) => (
@@ -53,7 +56,7 @@ export default function FlexibleChemicalPrograms({ programs }: FlexibleChemicalP
               
               <ul className="space-y-3 mb-8 flex-grow">
                 {program.features.map((feature, index) => (
-                  <li key={index} className="flex items-center">
+                  <li key={index} className="flex items-center ">
                     <svg className="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
                     </svg>
@@ -81,3 +84,4 @@ export default function FlexibleChemicalPrograms({ programs }: FlexibleChemicalP
     </section>
   );
 }
+
