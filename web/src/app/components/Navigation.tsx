@@ -15,7 +15,7 @@ const Navbar = () => {
     { name: 'Service & Maintenance', href: '/service-maintenance', description: 'Ongoing support and repairs' },
     { name: 'Chemical Sales', href: '/chemical-sales', description: 'High-quality car wash chemicals' },
     { name: 'Safety Data Sheets', href: '/sds', description: 'Product safety information' },
-    { name: 'Consulting Services', href: '/consulting-services', description: 'Expert guidance and planning' }
+    { name: 'Consulting Services', href: '/consulting', description: 'Expert guidance and planning' }
   ];
 
   // Event handlers
@@ -114,17 +114,17 @@ const Navbar = () => {
           
           {/* Desktop Navigation Links - now centered */}
           <nav className="hidden md:flex items-center space-x-8">
-            <Link href="/" className="font-medium text-gray-600 hover:text-yellow-500 transition-colors">
+            <Link href="/" className="font-medium text-gray-700 hover:text-[#d0b211] transition-colors">
               Home
             </Link>
-            <Link href="/about" className="font-medium text-gray-600 hover:text-yellow-500 transition-colors">
+            <Link href="/about" className="font-medium text-gray-700 hover:text-[#d0b211] transition-colors">
               About
             </Link>
             
             {/* Services Dropdown */}
             <div className="relative group">
               <button 
-                className="font-medium text-gray-600 hover:text-yellow-500 transition-colors flex items-center focus:outline-none"
+                className="font-medium text-gray-700 hover:text-[#d0b211] transition-colors flex items-center focus:outline-none"
                 onMouseEnter={() => setIsServicesOpen(true)}
                 onMouseLeave={() => setIsServicesOpen(false)}
                 onClick={() => setIsServicesOpen(!isServicesOpen)}
@@ -157,10 +157,10 @@ const Navbar = () => {
                       <Link
                         key={link.name}
                         href={link.href}
-                        className="block p-3 rounded-lg hover:bg-yellow-50 hover:border-yellow-200 border border-transparent transition-all duration-200 group"
+                        className="block p-3 rounded-lg hover:bg-slate-50 hover:border-slate-200 border border-transparent transition-colors duration-200 group"
                         onClick={() => setIsServicesOpen(false)}
                       >
-                        <div className="font-medium text-gray-900 group-hover:text-yellow-600 transition-colors duration-200">
+                        <div className="font-medium text-gray-900 group-hover:text-[#d0b211] transition-colors duration-200">
                           {link.name}
                         </div>
                         <div className="text-sm text-gray-600 mt-1 group-hover:text-gray-700">
@@ -173,22 +173,22 @@ const Navbar = () => {
               </div>
             </div>
             
-            <Link href="/projects" className="font-medium text-gray-600 hover:text-yellow-500 transition-colors">
+            <Link href="/projects" className="font-medium text-gray-700 hover:text-[#d0b211] transition-colors">
               Projects
             </Link>
-            <Link href="/contact" className="font-medium text-gray-600 hover:text-yellow-500 transition-colors">
+            <Link href="/contact" className="font-medium text-gray-700 hover:text-[#d0b211] transition-colors">
               Contact
             </Link>
           </nav>
           
           {/* Phone & CTA - positioned absolutely to right */}
           <div className="absolute right-0 flex items-center gap-2 sm:gap-4">
-            <a href="tel:612-408-9010" className="hidden lg:block font-semibold text-gray-800 hover:text-yellow-500 transition-colors">
+            <a href="tel:612-408-9010" className="hidden lg:block font-semibold text-gray-800 hover:text-[#d0b211] transition-colors">
               612-408-9010
             </a>
             <Link 
               href="/contact" 
-              className="bg-gradient-to-r from-yellow-400/60 to-yellow-300 text-black px-3 py-2 sm:px-6 text-sm sm:text-base rounded-lg font-semibold hover:from-yellow-300 hover:to-yellow-200 transition-all duration-300 shadow-md hover:shadow-lg hover:text-slate-500/40"
+              className="bg-[#f0da11] text-black px-3 py-2 sm:px-6 text-sm sm:text-base rounded-lg font-semibold hover:bg-[#d0b211] transition-colors duration-200 shadow-md hover:shadow-lg"
               onClick={closeAllMenus}
             >
               <span className="hidden sm:inline">Get Quote</span>

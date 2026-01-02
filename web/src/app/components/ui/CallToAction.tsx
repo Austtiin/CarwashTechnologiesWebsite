@@ -36,12 +36,12 @@ const CallToAction: React.FC<CallToActionProps> = ({
   const getBackgroundClasses = () => {
     switch (backgroundVariant) {
       case 'gradient':
-        return 'bg-gradient-to-br from-yellow-400 via-yellow-500 to-orange-400';
+        return 'bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900';
       case 'light':
         return 'bg-gray-50';
       case 'dark':
       default:
-        return 'bg-gradient-to-br from-[#26231d] via-[#595646] to-[#4c6461]';
+        return 'bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900';
     }
   };
 
@@ -51,7 +51,7 @@ const CallToAction: React.FC<CallToActionProps> = ({
 
   const getPrimaryButtonClasses = () => {
     if (backgroundVariant === 'gradient') {
-      return 'bg-white text-yellow-600 hover:bg-gray-200';
+      return 'bg-[#f0da11] text-slate-900 hover:bg-[#d0b211]';
     }
     return 'bg-[#f0da11] text-gray-900 hover:bg-[#d0b211]';
   };
@@ -61,19 +61,24 @@ const CallToAction: React.FC<CallToActionProps> = ({
       return 'border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white';
     }
     if (backgroundVariant === 'gradient') {
-      return 'border-2 border-white text-white hover:bg-white hover:text-yellow-600';
+      return 'border border-slate-300 text-white hover:bg-slate-800 hover:border-slate-200';
     }
-    return 'border-2 border-[#f0da11] text-[#f0da11] hover:bg-[#f0da11] hover:text-gray-900';
+    return 'border border-slate-300 text-white hover:bg-slate-800 hover:border-slate-200';
   };
 
   return (
     <section className={`relative z-10 py-12 sm:py-16 md:py-20 ${getBackgroundClasses()} ${getTextColor()} overflow-hidden`}>
-      {/* Decorative Elements - Hidden on mobile for cleaner look */}
+      {/* Subtle decorative grid */}
       {showDecorations && (
-        <div className="absolute inset-0 pointer-events-none hidden sm:block">
-          <div className="absolute top-20 right-24 w-16 h-16 md:w-20 md:h-20 border-2 border-[#f0da11]/25 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '15s' }}></div>
-          <div className="absolute bottom-16 left-20 w-12 h-12 md:w-16 md:h-16 border-2 border-[#bfb986]/30 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '12s', animationDelay: '1s' }}></div>
-          <div className="absolute top-1/2 left-1/4 w-10 h-10 md:w-14 md:h-14 border-2 border-[#d0b211]/35 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '10s', animationDelay: '2s' }}></div>
+        <div className="absolute inset-0 pointer-events-none opacity-20">
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage:
+                'linear-gradient(rgba(148,163,184,0.25) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,0.25) 1px, transparent 1px)',
+              backgroundSize: '40px 40px',
+            }}
+          />
         </div>
       )}
 

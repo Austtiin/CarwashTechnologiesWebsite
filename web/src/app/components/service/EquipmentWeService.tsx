@@ -1,14 +1,14 @@
 import React from 'react';
 import SectionHeader from '../ui/SectionHeader';
 
-// Color mapping for equipment cards
+// Professional color mapping for equipment cards
 const colorMap = {
-  blue: { bg: 'from-blue-500 to-blue-700', dot: 'bg-blue-500' },
-  green: { bg: 'from-green-500 to-green-700', dot: 'bg-green-500' },
-  purple: { bg: 'from-purple-500 to-purple-700', dot: 'bg-purple-500' },
-  orange: { bg: 'from-orange-500 to-orange-700', dot: 'bg-orange-500' },
-  red: { bg: 'from-red-500 to-red-700', dot: 'bg-red-500' },
-  teal: { bg: 'from-teal-500 to-teal-700', dot: 'bg-teal-500' },
+  blue: { bg: 'from-slate-700 to-slate-800', dot: 'bg-[#f0da11]' },
+  green: { bg: 'from-slate-700 to-slate-800', dot: 'bg-[#f0da11]' },
+  purple: { bg: 'from-slate-700 to-slate-800', dot: 'bg-[#f0da11]' },
+  orange: { bg: 'from-slate-700 to-slate-800', dot: 'bg-[#f0da11]' },
+  red: { bg: 'from-slate-700 to-slate-800', dot: 'bg-[#f0da11]' },
+  teal: { bg: 'from-slate-700 to-slate-800', dot: 'bg-[#f0da11]' },
 };
 
 interface EquipmentType {
@@ -26,7 +26,15 @@ interface EquipmentWeServiceProps {
 
 export default function EquipmentWeService({ equipment }: EquipmentWeServiceProps) {
   return (
-    <section className="py-16 bg-gradient-to-b from-white to-gray-50">
+    <>
+      {/* Angular Transition */}
+      <div className="relative h-20 bg-gray-50">
+        <div className="absolute inset-0 bg-white" style={{clipPath: 'polygon(0 100%, 100% 0, 100% 100%, 0 100%)'}}></div>
+      </div>
+
+      <section className="py-20 bg-white relative">
+        <div className="absolute left-0 top-1/4 w-2 h-40 bg-slate-900"></div>
+        <div className="absolute right-0 bottom-1/3 w-2 h-40 bg-[#f0da11]"></div>
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <SectionHeader
@@ -77,5 +85,6 @@ export default function EquipmentWeService({ equipment }: EquipmentWeServiceProp
         </div>
       </div>
     </section>
+    </>
   );
 }

@@ -4,27 +4,19 @@ import BlurText from '../../animations/BlurText';
 // Server Component - Static hero content
 export default function ContactHero() {
   return (
-    <section className="relative py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white overflow-hidden min-h-[50vh] flex items-center">
-      {/* Background Effects */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#f0da11]/20 via-yellow-600/10 to-yellow-600/20 opacity-70"></div>
-        
-        {/* Floating geometric shapes */}
-        <div className="absolute top-10 left-10 w-4 h-4 bg-[#f0da11]/40 rotate-45 animate-pulse"></div>
-        <div className="absolute top-20 right-20 w-6 h-6 bg-blue-400/30 rotate-45 animate-bounce" style={{ animationDelay: '0.5s' }}></div>
-        <div className="absolute bottom-32 left-16 w-8 h-8 bg-purple-400/25 rotate-45 animate-pulse" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute bottom-16 right-12 w-5 h-5 bg-orange-400/35 rotate-45 animate-bounce" style={{ animationDelay: '1.5s' }}></div>
-        
-        {/* Grid pattern */}
-        <div className="absolute inset-0 opacity-10 pointer-events-none">
-          <div
-            className="h-full w-full"
-            style={{
-              backgroundImage: `linear-gradient(rgba(240, 218, 17, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(240, 218, 17, 0.1) 1px, transparent 1px)`,
-              backgroundSize: '50px 50px'
-            }}
-          ></div>
-        </div>
+    <section className="relative py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white overflow-hidden min-h-[50vh] flex items-center">
+      {/* Subtle background accents */}
+      <div className="absolute inset-0 pointer-events-none opacity-20">
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage:
+              'linear-gradient(rgba(148,163,184,0.16) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,0.16) 1px, transparent 1px)',
+            backgroundSize: '40px 40px',
+          }}
+        />
+        <div className="absolute -top-32 -left-24 h-64 w-64 rounded-full bg-[#f0da11]/12 blur-3xl" />
+        <div className="absolute -bottom-40 -right-24 h-72 w-72 rounded-full bg-slate-500/20 blur-3xl" />
       </div>
 
       <div className="container mx-auto px-4 text-center relative z-10 sm:px-6 lg:px-8">

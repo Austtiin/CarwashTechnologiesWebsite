@@ -36,8 +36,17 @@ export default function ChemicalProgramBenefits({ benefits, stats }: ChemicalPro
   ];
 
   return (
-    <section className="py-16">
-      <div className="container mx-auto px-4">
+    <>
+      {/* Angular Transition */}
+      <div className="relative h-20 bg-gray-50">
+        <div className="absolute inset-0 bg-white" style={{clipPath: 'polygon(0 100%, 100% 0, 100% 100%, 0 100%)'}}></div>
+      </div>
+
+      <section className="py-20 bg-white relative">
+        {/* Side accent bars */}
+        <div className="absolute left-0 top-1/4 w-2 h-32 bg-slate-900"></div>
+        <div className="absolute right-0 top-1/2 w-2 h-32 bg-[#f0da11]"></div>
+        <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="bg-gradient-to-br from-yellow-50 to-orange-50 p-8 rounded-2xl border border-yellow-200 relative overflow-hidden">
             <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-yellow-200 to-orange-200 rounded-full -mr-16 -mt-16 opacity-50"></div>
@@ -116,6 +125,7 @@ export default function ChemicalProgramBenefits({ benefits, stats }: ChemicalPro
         </div>
       </div>
     </section>
+    </>
   );
 }
 

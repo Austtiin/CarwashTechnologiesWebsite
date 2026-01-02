@@ -6,7 +6,15 @@ import BlurText from '../../animations/BlurText';
 
 export default function ServicesSection() {
   return (
-    <section className="relative z-10 py-12 sm:py-16 lg:py-20 bg-yellow-50 backdrop-blur-sm overflow-hidden">
+    <>
+      {/* Diagonal Transition from Hero */}
+      <div className="relative h-16 bg-yellow-50">
+        <div className="absolute inset-0 bg-slate-900" style={{clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 0)'}}></div>
+      </div>
+
+      <section className="relative z-10 py-12 sm:py-16 lg:py-20 bg-yellow-50 backdrop-blur-sm overflow-hidden">
+        {/* Accent stripe */}
+        <div className="absolute top-0 left-0 w-1 h-full bg-slate-900 z-20"></div>
       {/* Static decorative elements - responsive positioning */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-6 left-4 sm:top-12 sm:left-12 w-12 h-12 sm:w-16 sm:h-16 border-2 border-yellow-400/25 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '8s' }} />
@@ -277,5 +285,6 @@ export default function ServicesSection() {
         </div>
       </div>
     </section>
+    </>
   );
 }

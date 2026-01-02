@@ -17,8 +17,17 @@ interface FlexibleChemicalProgramsProps {
 
 export default function FlexibleChemicalPrograms({ programs }: FlexibleChemicalProgramsProps) {
   return (
-    <section className="py-16 bg-gray-50">
-      <div className="container mx-auto px-4">
+    <>
+      {/* Bold Angular Divider */}
+      <div className="relative h-16">
+        <div className="absolute inset-0 bg-slate-900" style={{clipPath: 'polygon(0 0, 100% 100%, 0 100%)'}}></div>
+        <div className="absolute right-0 top-0 w-1/3 h-full bg-[#f0da11]" style={{clipPath: 'polygon(30% 0, 100% 0, 100% 100%)'}}></div>
+      </div>
+
+      <section className="py-20 bg-gray-50 relative">
+        {/* Decorative corner */}
+        <div className="absolute bottom-0 left-0 w-40 h-40 border-b-4 border-l-4 border-slate-900 opacity-10"></div>
+        <div className="container mx-auto px-4">
         
         <div className="w-full flex justify-center mb-16">
                   <SectionHeader
@@ -82,6 +91,7 @@ export default function FlexibleChemicalPrograms({ programs }: FlexibleChemicalP
         </div>
       </div>
     </section>
+    </>
   );
 }
 

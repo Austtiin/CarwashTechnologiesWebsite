@@ -4,38 +4,27 @@ import SafeLink from '../ui/SafeLink';
 
 const WhoWeServeSection = () => {
   return (
-    <section className="relative z-10 py-20 bg-yellow-50 backdrop-blur-sm overflow-hidden">
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 pointer-events-none">
-        {/* Spinning squares with different colors and timing */}
-        <div className="absolute top-20 right-24 w-20 h-20 border-2 border-[#f0da11]/25 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '15s' }}></div>
-        <div className="absolute bottom-16 left-20 w-16 h-16 border-2 border-[#bfb986]/30 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '12s', animationDelay: '1s' }}></div>
-        <div className="absolute top-1/2 left-1/4 w-14 h-14 border-2 border-[#d0b211]/35 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '10s', animationDelay: '2s' }}></div>
-        <div className="absolute bottom-1/3 right-1/4 w-12 h-12 border-2 border-[#f0da11]/40 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '8s', animationDelay: '1.5s' }}></div>
-        <div className="absolute top-1/4 left-1/2 w-18 h-18 border-2 border-[#bfb986]/20 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '14s', animationDelay: '0.5s' }}></div>
-        
-        {/* Yellow dot grid pattern */}
-        <div className="absolute inset-0 opacity-10 sm:opacity-20 pointer-events-none z-10">
-          <div
-            className="h-full w-full"
-            style={{
-              backgroundImage: `radial-gradient(circle at 1px, #9b9000 1px, transparent 1px)`,
-              backgroundSize: '16px 16px'
-            }}
-          ></div>
-        </div>
+    <>
+      {/* Angular Transition */}
+      <div className="relative h-20 bg-yellow-50">
+        <div className="absolute inset-0 bg-slate-50" style={{clipPath: 'polygon(0 100%, 100% 0, 100% 100%, 0 100%)'}}></div>
       </div>
+
+      <section className="relative z-10 py-20 bg-slate-50">
+        {/* Side accents */}
+        <div className="absolute left-0 top-1/4 w-2 h-40 bg-[#f0da11] z-20"></div>
+        <div className="absolute right-0 bottom-1/3 w-2 h-40 bg-slate-900 z-20"></div>
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
-        <div className="max-w-4xl mx-auto bg-white/75 backdrop-blur-sm rounded-xl p-8 border border-gray-200/40 shadow-md mb-12">
+        <div className="max-w-4xl mx-auto bg-white rounded-xl p-8 border border-gray-200 shadow-md mb-12">
           <div className="text-center">
-            <BlurText
-              text="Who We Serve"
-              delay={0.0}
-              duration={0.1}
-              className="font-friz text-4xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold text-gray-900 mb-6"
-            />
+              <BlurText
+                text="Who We Serve"
+                delay={0.0}
+                duration={0.1}
+                className="font-friz text-3xl sm:text-3xl md:text-4xl lg:text-4xl font-extrabold text-gray-900 mb-6"
+              />
             <BlurText
               text="From new entrepreneurs to established businesses, we provide tailored solutions for every wash operation"
               delay={0.0}
@@ -113,6 +102,7 @@ const WhoWeServeSection = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

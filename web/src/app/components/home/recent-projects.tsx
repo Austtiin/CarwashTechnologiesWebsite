@@ -4,7 +4,13 @@ import BlurText from '../animations/BlurText';
 
 const ProjectsSection = () => {
   return (
-    <section className="relative z-10 py-12 sm:py-16 lg:py-20 bg-yellow-50 backdrop-blur-sm overflow-hidden">
+    <>
+      {/* Bold Divider */}
+      <div className="h-2 bg-gradient-to-r from-slate-900 via-[#f0da11] to-slate-900"></div>
+
+      <section className="relative z-10 py-12 sm:py-16 lg:py-20 bg-yellow-50 backdrop-blur-sm overflow-hidden">
+        {/* Corner accent */}
+        <div className="absolute top-0 right-0 w-32 h-32 border-t-4 border-r-4 border-slate-900 opacity-10 z-20"></div>
       {/* Animated Background Elements - Reduced for mobile */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Spinning squares with responsive sizes */}
@@ -133,6 +139,7 @@ const ProjectsSection = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

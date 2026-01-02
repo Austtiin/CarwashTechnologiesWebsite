@@ -42,8 +42,17 @@ export default function WhyChooseInstallation({ stats }: WhyChooseInstallationPr
   ];
 
   return (
-    <section className="py-16">
-      <div className="container mx-auto px-4">
+    <>
+      {/* Angular Transition */}
+      <div className="relative h-20 bg-white">
+        <div className="absolute inset-0 bg-gray-50" style={{clipPath: 'polygon(0 0, 100% 100%, 0 100%)'}}></div>
+      </div>
+
+      <section className="py-20 bg-gray-50 relative">
+        {/* Side accents */}
+        <div className="absolute left-0 top-1/3 w-2 h-40 bg-[#f0da11]"></div>
+        <div className="absolute right-0 bottom-1/4 w-2 h-40 bg-slate-900"></div>
+        <div className="container mx-auto px-4">
         {/* Centered Section Header */}
         <div className="w-full flex justify-center mb-16">
           <SectionHeader
@@ -139,6 +148,7 @@ export default function WhyChooseInstallation({ stats }: WhyChooseInstallationPr
         </div>
       </div>
     </section>
+    </>
   );
 }
 

@@ -1,11 +1,8 @@
 import React from 'react';
 import { Metadata } from 'next';
-import InstallationHero from '../components/installation/InstallationHero';
-import InstallationProcess from '../components/installation/InstallationProcess';
-import InstallationServices from '../components/installation/InstallationServices';
-import WhyChooseInstallation from '../components/installation/WhyChooseInstallation';
-import InstallationTimeline from '../components/installation/InstallationTimeline';
-import CallToAction from '../components/ui/CallToAction';
+import GenericHero from '../components/ui/GenericHero';
+import GenericServicesGrid from '../components/ui/GenericServicesGrid';
+import CallToActionNew from '../components/ui/CallToActionNew';
 
 export const metadata: Metadata = {
   title: 'Installation & Setup | Carwash Technologies',
@@ -109,47 +106,103 @@ async function getInstallationData() {
 export default async function InstallationSetup() {
   const data = await getInstallationData();
 
+  // Transform services for GenericServicesGrid
+  const installationServices = data.services.map(service => ({
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={service.icon} />
+      </svg>
+    ),
+    title: service.title,
+    description: service.description + ' ' + service.features.join(', ')
+  }));
+
+  // Transform timeline into service items
+  const timelineItems = data.timeline.map(phase => ({
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    ),
+    title: `Week ${phase.week}: ${phase.title}`,
+    description: `${phase.description} (${phase.duration})`
+  }));
+
   return (
     <div className="min-h-screen">
-      {/* Hero Section - Client Component for animations */}
-      <InstallationHero />
+      {/* Hero Section */}
+      <GenericHero
+        eyebrow="Professional Installation"
+        title="Installation & Setup"
+        highlightedWord="Installation"
+        subtitle="Expert Equipment Installation"
+        description="Professional car wash equipment installation and setup services. Expert technicians, certified installation, comprehensive training, and ongoing support across the Midwest."
+        stats={[
+          { value: data.stats.installations, label: 'Installations' },
+          { value: data.stats.experience, label: 'Years Experience' },
+          { value: data.stats.satisfaction, label: 'Satisfaction' },
+          { value: data.stats.support, label: 'Support' }
+        ]}
+        buttons={[
+          {
+            text: "Plan Installation",
+            href: "/contact",
+            variant: "primary"
+          },
+          {
+            text: "View Our Services",
+            href: "/services",
+            variant: "secondary"
+          }
+        ]}
+        backgroundVariant="white"
+        showPattern={true}
+      />
 
-      {/* Installation Process - Server Component */}
-      <InstallationProcess />
+      {/* Installation Services */}
+      <GenericServicesGrid
+        eyebrow="Our Services"
+        title="Installation Services"
+        highlightedWord="Installation"
+        description="Complete installation services for all types of car wash equipment and systems"
+        items={installationServices}
+        columns={3}
+        backgroundVariant="light-grey"
+      />
 
-      {/* Installation Services - Server Component */}
-      <InstallationServices services={data.services} />
+      {/* Installation Timeline */}
+      <GenericServicesGrid
+        eyebrow="Project Timeline"
+        title="Installation Process"
+        highlightedWord="Process"
+        description="Typical installation timeline from planning to completion for a standard car wash facility"
+        items={timelineItems}
+        columns={4}
+        backgroundVariant="white"
+      />
 
-      {/* Why Choose Our Installation - Server Component */}
-      <WhyChooseInstallation stats={data.stats} />
-
-      {/* Installation Timeline - Server Component */}
-      <InstallationTimeline timeline={data.timeline} />
-
-      {/* Call to Action - Using your existing CTA component */}
-      <CallToAction
-          title="Ready to Transform Your Wash Business?"
-          description="Join hundreds of satisfied customers across the Midwest who trust Carwash Technologies for their equipment, service, and chemical needs."
-          buttons={[
-            {
-              text: "Get Started Today",
-              href: "/contact",
-              variant: "primary"
-            },
-            {
-              text: "View Our Services", 
-              href: "/services",
-              variant: "secondary"
-            }
-          ]}
-          contactInfo={{
-            phone: "(612) 408-9010",
-            address: "322 19th St. SW<br />Forest Lake, MN 55025",
-            showContactCard: true
-          }}
-          backgroundVariant="dark"
-          showDecorations={true}
-        />
+      {/* Call to Action */}
+      <CallToActionNew
+        title="Let's Build Something Great"
+        description="Join hundreds of satisfied customers across the Midwest who trust Carwash Technologies for their equipment, service, and chemical needs."
+        buttons={[
+          {
+            text: "Get Started Today",
+            href: "/contact",
+            variant: "primary"
+          },
+          {
+            text: "View Our Services", 
+            href: "/services",
+            variant: "secondary"
+          }
+        ]}
+        contactInfo={{
+          phone: "(612) 408-9010",
+          address: "322 19th St. SW<br />Forest Lake, MN 55025",
+          showContactCard: true
+        }}
+      />
     </div>
   );
 }

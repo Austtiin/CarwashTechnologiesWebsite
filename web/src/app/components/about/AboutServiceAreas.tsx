@@ -3,7 +3,15 @@ import BlurText from '../animations/BlurText';
 
 export default function AboutServiceAreas() {
   return (
-    <section className="py-20 bg-gray-50">
+    <>
+      {/* Bold Divider with Angular Accent */}
+      <div className="relative h-16">
+        <div className="absolute inset-0 bg-slate-900" style={{clipPath: 'polygon(0 0, 100% 100%, 0 100%)'}}></div>
+        <div className="absolute right-0 top-0 w-1/3 h-full bg-[#f0da11]" style={{clipPath: 'polygon(30% 0, 100% 0, 100% 100%)'}}></div>
+      </div>
+
+      <section className="py-20 bg-gray-50 relative">
+        <div className="absolute bottom-0 left-0 w-40 h-40 border-b-4 border-l-4 border-[#f0da11] opacity-20"></div>
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
@@ -60,5 +68,6 @@ export default function AboutServiceAreas() {
         </div>
       </div>
     </section>
+    </>
   );
 }

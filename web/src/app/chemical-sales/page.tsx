@@ -1,11 +1,9 @@
 import React from 'react';
 import { Metadata } from 'next';
-import ChemicalSalesHero from '../components/chemical/ChemicalSalesHero';
-import TrustedChemicalPartners from '../components/chemical/TrustedChemicalPartners';
-import ChemicalCategories from '../components/chemical/ChemicalCategories';
-import ChemicalProgramBenefits from '../components/chemical/ChemicalProgramBenefits';
-import FlexibleChemicalPrograms from '../components/chemical/FlexibleChemicalPrograms';
-import CallToAction from '../components/ui/CallToAction';
+import Image from 'next/image';
+import GenericHero from '../components/ui/GenericHero';
+import GenericServicesGrid from '../components/ui/GenericServicesGrid';
+import CallToActionNew from '../components/ui/CallToActionNew';
 
 export const metadata: Metadata = {
   title: 'Chemical Sales | Carwash Technologies',
@@ -106,50 +104,132 @@ async function getChemicalData() {
 export default async function ChemicalSales() {
   const data = await getChemicalData();
 
+  // Transform categories for GenericServicesGrid
+  const chemicalServices = data.categories.map(category => ({
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={category.icon} />
+      </svg>
+    ),
+    title: category.title,
+    description: category.description + ' ' + category.features.join(', ')
+  }));
+
+  // Transform benefits into service items
+  const benefitServices = data.benefits.map((benefit, index) => ({
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+      </svg>
+    ),
+    title: benefit,
+    description: "Trusted chemical solutions with proven results"
+  }));
+
   return (
     <div className="min-h-screen">
-      {/* Hero Section - Client Component for animations */}
-      <ChemicalSalesHero />
-
-      {/* Trusted Chemical Partners - Server Component */}
-      <TrustedChemicalPartners manufacturers={data.manufacturers} />
-
-      {/* Chemical Categories - Server Component */}
-      <ChemicalCategories categories={data.categories} />
-
-      {/* Chemical Program Benefits - Server Component */}
-      <ChemicalProgramBenefits 
-        benefits={data.benefits} 
-        stats={data.stats} 
+      {/* Hero Section */}
+      <GenericHero
+        eyebrow="High-Performance Chemicals"
+        title="Chemical Sales"
+        highlightedWord="Chemical"
+        subtitle="Superior Cleaning Results"
+        description="Professional-grade wash chemicals from trusted manufacturers. Complete chemical programs for pre-treatment, wash solutions, finishing products, and specialty applications."
+        stats={[
+          { value: data.stats.satisfaction, label: 'Satisfaction' },
+          { value: data.stats.support, label: 'Support' },
+          { value: data.stats.delivery, label: 'Delivery' },
+          { value: data.stats.coverage, label: data.stats.coverage }
+        ]}
+        buttons={[
+          {
+            text: "Get Chemical Quote",
+            href: "/contact",
+            variant: "primary"
+          },
+          {
+            text: "View Programs",
+            href: "#programs",
+            variant: "secondary"
+          }
+        ]}
+        backgroundVariant="white"
+        showPattern={true}
       />
 
-      {/* Flexible Chemical Programs - Server Component */}
-      <FlexibleChemicalPrograms programs={data.programs} />
+      {/* Trusted Chemical Partners */}
+      <section className="py-16 bg-gradient-to-b from-white via-gray-50 to-white">
+        <div className="items-center container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="font-friz text-3xl md:text-4xl text-gray-900 mb-4">
+              Trusted Chemical <span className="text-[#f0da11]">Partners</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              We partner with industry-leading manufacturers to provide you with the highest quality wash chemicals
+            </p>
+          </div>
 
-      {/* Call to Action - Using your existing CTA component */}
-      <CallToAction
-          title="Ready to Transform Your Wash Business?"
-          description="Join hundreds of satisfied customers across the Midwest who trust Carwash Technologies for their equipment, service, and chemical needs."
-          buttons={[
-            {
-              text: "Get Started Today",
-              href: "/contact",
-              variant: "primary"
-            },
-            {
-              text: "View Our Services", 
-              href: "/services",
-              variant: "secondary"
-            }
-          ]}
-          contactInfo={{
-            phone: "(612) 408-9010",
-            address: "322 19th St. SW<br />Forest Lake, MN 55025",
-            showContactCard: true
-          }}
-          backgroundVariant="dark"
-          showDecorations={true}
-        />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center justify-items-center max-w-4xl mx-auto">
+            {data.manufacturers.map((manufacturer, index) => (
+              <div key={manufacturer.name} className="bg-white border-l-4 border-[#f0da11] p-8 hover:shadow-lg transition-shadow duration-300 w-full">
+                <Image
+                  src={manufacturer.logo}
+                  alt={manufacturer.alt}
+                  width={180}
+                  height={90}
+                  className="h-20 w-auto object-contain mx-auto"
+                  priority={index < 3}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Chemical Categories */}
+      <GenericServicesGrid
+        eyebrow="Our Products"
+        title="Chemical Categories"
+        highlightedWord="Chemical"
+        description="Complete range of wash chemical solutions for every stage of the wash process"
+        items={chemicalServices}
+        columns={4}
+        backgroundVariant="light-grey"
+      />
+
+      {/* Chemical Benefits */}
+      <GenericServicesGrid
+        eyebrow="Why Choose Us"
+        title="Program Benefits"
+        highlightedWord="Benefits"
+        description="Flexible chemical programs designed to meet your operation's unique needs"
+        items={benefitServices}
+        columns={3}
+        backgroundVariant="white"
+      />
+
+      {/* Call to Action */}
+      <CallToActionNew
+        title="Let's Build Something Great"
+        description="Join hundreds of satisfied customers across the Midwest who trust Carwash Technologies for their equipment, service, and chemical needs."
+        buttons={[
+          {
+            text: "Get Started Today",
+            href: "/contact",
+            variant: "primary"
+          },
+          {
+            text: "View Our Services", 
+            href: "/services",
+            variant: "secondary"
+          }
+        ]}
+        contactInfo={{
+          phone: "(612) 408-9010",
+          address: "322 19th St. SW<br />Forest Lake, MN 55025",
+          showContactCard: true
+        }}
+      />
     </div>
   );
 }

@@ -14,7 +14,15 @@ interface TrustedChemicalPartnersProps {
 
 export default function TrustedChemicalPartners({ manufacturers }: TrustedChemicalPartnersProps) {
   return (
-    <section className="py-16 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+    <>
+      {/* Angled Transition from Hero */}
+      <div className="relative h-16 bg-white">
+        <div className="absolute inset-0 bg-slate-900" style={{clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 0)'}}></div>
+      </div>
+
+      <section className="py-20 bg-white relative overflow-hidden">
+        {/* Accent stripe */}
+        <div className="absolute top-0 left-0 w-1 h-full bg-[#f0da11]"></div>
       {/* Decorative Logos */}
       <Image
         src="/THU100.webp"
@@ -63,6 +71,7 @@ export default function TrustedChemicalPartners({ manufacturers }: TrustedChemic
         </div>
       </div>
     </section>
+    </>
   );
 }
 

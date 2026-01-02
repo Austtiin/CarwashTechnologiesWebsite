@@ -8,34 +8,41 @@ export default function InstallationProcess() {
       title: 'Site Assessment',
       description: 'Comprehensive evaluation of your location to determine optimal equipment placement and requirements.',
       icon: 'M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01',
-      color: 'from-blue-400 to-blue-600'
+      color: 'from-[#f0da11] to-[#d0b211]'
     },
     {
       number: 2,
       title: 'Custom Design',
       description: 'Detailed engineering and design plans tailored specifically to your site and operational needs.',
       icon: 'M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17v4a2 2 0 002 2h4M11 7.343V10a1 1 0 001 1h2.657',
-      color: 'from-green-400 to-green-600'
+      color: 'from-slate-700 to-slate-800'
     },
     {
       number: 3,
       title: 'Professional Installation',
       description: 'Expert installation by certified technicians using industry best practices and safety standards.',
       icon: 'M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 7.172V5L8 4z',
-      color: 'from-purple-400 to-purple-600'
+      color: 'from-[#f0da11] to-[#d0b211]'
     },
     {
       number: 4,
       title: 'Testing & Training',
       description: 'Comprehensive system testing and staff training to ensure optimal operation from day one.',
       icon: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z',
-      color: 'from-orange-400 to-orange-600'
+      color: 'from-slate-700 to-slate-800'
     }
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-b from-white to-gray-50">
-      <div className="container mx-auto px-4">
+    <>
+      {/* Bold Divider */}
+      <div className="h-2 bg-gradient-to-r from-slate-900 via-[#f0da11] to-slate-900"></div>
+
+      <section className="py-20 bg-white relative">
+        {/* Corner accents */}
+        <div className="absolute top-0 right-0 w-32 h-32 border-t-4 border-r-4 border-[#f0da11] opacity-20"></div>
+        <div className="absolute bottom-0 left-0 w-40 h-40 border-b-4 border-l-4 border-slate-900 opacity-10"></div>
+        <div className="container mx-auto px-4">
         {/* Ensure the header is properly centered */}
         <div className="w-full flex justify-center mb-16">
           <SectionHeader
@@ -68,6 +75,7 @@ export default function InstallationProcess() {
         </div>
       </div>
     </section>
+    </>
   );
 }
 

@@ -1,10 +1,10 @@
 import SEOHead from './components/ui/SEOHead';
-import ServicesSection from './components/home/sections/ServicesSection';
-import ProjectsSection from './components/home/recent-projects';
-import ChemicalsSection from './components/home/chemicals-section';
-import WhoWeServeSection from './components/home/who-we-serve-section';
-import CallToAction from './components/ui/CallToAction';
-import HeroSection from './components/home/sections/HeroSection';
+import HeroSectionNew from './components/home/sections/HeroSectionNew';
+import ServicesSectionNew from './components/home/sections/ServicesSectionNew';
+import ProjectsSectionNew from './components/home/sections/ProjectsSectionNew';
+import WhoWeServeSectionNew from './components/home/sections/WhoWeServeSectionNew';
+import ChemicalsSectionNew from './components/home/sections/ChemicalsSectionNew';
+import CallToActionNew from './components/ui/CallToActionNew';
 
 export default function Home() {
   return (
@@ -17,16 +17,23 @@ export default function Home() {
       />
 
       <div className="min-h-screen relative">
-        {/* Use the HeroSection component instead of duplicating hero content */}
-        <HeroSection />
+        {/* Clean Tech Hero Section */}
+        <HeroSectionNew />
 
-        {/* Sections */}
-        <ServicesSection />
-        <ProjectsSection />
-        <WhoWeServeSection />
-        <ChemicalsSection />
+        {/* Core Service Offerings */}
+        <ServicesSectionNew />
 
-        <CallToAction
+        {/* Recent Projects Showcase */}
+        <ProjectsSectionNew />
+
+        {/* Customer Segments */}
+        <WhoWeServeSectionNew />
+
+        {/* Chemical Programs */}
+        <ChemicalsSectionNew />
+
+        {/* Final Call to Action */}
+        <CallToActionNew
           title="Ready to Transform Your Wash Business?"
           description="Join hundreds of satisfied customers across the Midwest who trust Carwash Technologies for their equipment, service, and chemical needs."
           buttons={[
@@ -46,8 +53,6 @@ export default function Home() {
             address: "322 19th St. SW<br />Forest Lake, MN 55025",
             showContactCard: true
           }}
-          backgroundVariant="dark"
-          showDecorations={true}
         />
       </div>
     </>

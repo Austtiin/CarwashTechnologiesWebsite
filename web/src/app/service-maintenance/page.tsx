@@ -1,11 +1,8 @@
 import React from 'react';
 import { Metadata } from 'next';
-import ServiceMaintenanceHero from '../components/service/ServiceMaintenanceHero';
-import ServiceCategories from '../components/service/ServiceCategories';
-import WhyChooseService from '../components/service/WhyChooseService';
-import EmergencyService from '../components/service/EmergencyService';
-import EquipmentWeService from '../components//service/EquipmentWeService';
-import CallToAction from '../components/ui/CallToAction';
+import GenericHero from '../components/ui/GenericHero';
+import GenericServicesGrid from '../components/ui/GenericServicesGrid';
+import CallToActionNew from '../components/ui/CallToActionNew';
 
 export const metadata: Metadata = {
   title: 'Service & Maintenance | Carwash Technologies',
@@ -133,44 +130,103 @@ async function getServiceData() {
 export default async function ServiceMaintenance() {
   const data = await getServiceData();
 
+  // Transform service categories for GenericServicesGrid
+  const serviceItems = data.serviceCategories.map(category => ({
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={category.icon} />
+      </svg>
+    ),
+    title: category.title,
+    description: category.description + ' ' + category.features.join(', ')
+  }));
+
+  // Transform equipment types for GenericServicesGrid
+  const equipmentItems = data.equipmentTypes.map(equipment => ({
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={equipment.icon} />
+      </svg>
+    ),
+    title: equipment.title,
+    description: equipment.description + ' ' + equipment.services.join(', ')
+  }));
+
   return (
     <div className="min-h-screen">
-      {/* Hero Section - Client Component for animations */}
-      <ServiceMaintenanceHero />
+      {/* Hero Section */}
+      <GenericHero
+        eyebrow="Professional Service"
+        title="Service & Maintenance"
+        highlightedWord="Service"
+        subtitle="Keeping Your Wash Running Smoothly"
+        description="Expert service and maintenance for all car wash equipment. 24/7 emergency service, preventive maintenance, and certified technicians across the Midwest."
+        stats={[
+          { value: data.stats.serviceCalls, label: 'Service Calls' },
+          { value: data.stats.satisfaction, label: 'Satisfaction' },
+          { value: data.stats.responseTime, label: 'Response Time' },
+          { value: data.stats.coverage, label: data.stats.coverage }
+        ]}
+        buttons={[
+          {
+            text: "Schedule Service",
+            href: "/contact",
+            variant: "primary"
+          },
+          {
+            text: "Emergency Service",
+            href: "tel:+16124089010",
+            variant: "secondary"
+          }
+        ]}
+        backgroundVariant="white"
+        showPattern={true}
+      />
 
-      {/* Service Categories - Server Component */}
-      <ServiceCategories categories={data.serviceCategories} />
+      {/* Service Categories */}
+      <GenericServicesGrid
+        eyebrow="Our Services"
+        title="Service Categories"
+        highlightedWord="Service"
+        description="Comprehensive service solutions to keep your car wash equipment running at peak performance"
+        items={serviceItems}
+        columns={3}
+        backgroundVariant="light-grey"
+      />
 
-      {/* Why Choose Our Service - Server Component */}
-      <WhyChooseService stats={data.stats} />
+      {/* Equipment We Service */}
+      <GenericServicesGrid
+        eyebrow="Equipment Expertise"
+        title="Equipment We Service"
+        highlightedWord="Equipment"
+        description="Experienced technicians servicing all major car wash equipment types and manufacturers"
+        items={equipmentItems}
+        columns={3}
+        backgroundVariant="white"
+      />
 
-      {/* Equipment We Service - Server Component */}
-      <EquipmentWeService equipment={data.equipmentTypes} />
-
-      <CallToAction
-          title="Ready to Transform Your Wash Business?"
-          description="Join hundreds of satisfied customers across the Midwest who trust Carwash Technologies for their equipment, service, and chemical needs."
-          buttons={[
-            {
-              text: "Get Started Today",
-              href: "/contact",
-              variant: "primary"
-            },
-            {
-              text: "View Our Services", 
-              href: "/services",
-              variant: "secondary"
-            }
-          ]}
-          contactInfo={{
-            phone: "(612) 408-9010",
-            address: "322 19th St. SW<br />Forest Lake, MN 55025",
-            showContactCard: true
-          }}
-          backgroundVariant="dark"
-          showDecorations={true}
-        />
-      </div>
+      <CallToActionNew
+        title="Let's Build Something Great"
+        description="Join hundreds of satisfied customers across the Midwest who trust Carwash Technologies for their equipment, service, and chemical needs."
+        buttons={[
+          {
+            text: "Get Started Today",
+            href: "/contact",
+            variant: "primary"
+          },
+          {
+            text: "View Our Services", 
+            href: "/services",
+            variant: "secondary"
+          }
+        ]}
+        contactInfo={{
+          phone: "(612) 408-9010",
+          address: "322 19th St. SW<br />Forest Lake, MN 55025",
+          showContactCard: true
+        }}
+      />
+    </div>
   );
 }
 

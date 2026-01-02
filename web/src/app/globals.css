@@ -2,42 +2,54 @@
 
 @import "tailwindcss";
 
-/* Base styles for headings */
+/* Smooth scrolling and overall flow improvements */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease;
+}
+
+/* Improved transitions for interactive elements */
+a, button {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Section transitions */
+section {
+  transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+}
+
+/* Base typography */
 h1 {
-  font-size: 2.25rem; /* text-4xl */
-  font-weight: 700;   /* font-bold */
-  letter-spacing: -0.025em; /* tracking-tight */
-  color: #1a202c;     /* text-gray-900 */
+  font-size: 2.25rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: #0f172a;
+  transition: color 0.3s ease;
 }
 
 @media (min-width: 640px) {
   h1 {
-    font-size: 3rem; /* Tailwind's text-5xl is 3rem */
-    line-height: 1;
+    font-size: 3rem;
+    line-height: 1.1;
   }
 }
 
 @media (min-width: 1024px) {
   h1 {
-    font-size: 3.75rem; /* text-6xl */
-    color: #4b5563;      /* text-gray-600 */
+    font-size: 3.75rem;
   }
 }
 
 p {
-  font-size: 1.125rem; /* text-lg */
-  color: #4b5563; /* text-gray-600 */
-  display: inline-block;
-  border-radius: 0.5rem; /* rounded-lg */
-  background-color: #f7f5f1/0; /* bg-yellow-500 - removed duplicate */
-  padding-top: 0.75rem; /* py-3 */
-  padding-left: 1.5rem; /* px-6 */
-  padding-right: 1.5rem;
-  text-align: center;
-  font-weight: 600; /* font-semibold */
-  color: #1a202c; /* text-gray-900 */
-  box-shadow: 0 0px 0px 0 rgba(0,0,0,0.05); /* shadow-sm */
-  transition: all 150ms ease-in-out;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #4b5563;
+  margin-bottom: 0.75rem;
 }
 
 /* Our custom button class */
@@ -171,6 +183,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  background-color: #f9fafb;
+  color: #0f172a;
 }
 
 @layer utilities {

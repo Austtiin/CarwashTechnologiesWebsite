@@ -5,7 +5,17 @@ import BlurText from '../animations/BlurText';
 
 export default function AboutMissionValues() {
   return (
-    <section className="py-20 bg-gray-50">
+    <>
+      {/* Bold Divider */}
+      <div className="h-1 bg-gradient-to-r from-transparent via-[#f0da11] to-transparent"></div>
+
+      <section className="py-20 bg-gradient-to-b from-gray-50 via-white to-gray-50 relative">
+        <div className="absolute top-0 right-0 w-32 h-32 border-t-2 border-r-2 border-[#f0da11]/20"></div>
+        {/* Pattern Background */}
+        <div className="absolute inset-0 opacity-[0.03]" style={{
+          backgroundImage: `linear-gradient(to right, #1f2937 1px, transparent 1px), linear-gradient(to bottom, #1f2937 1px, transparent 1px)`,
+          backgroundSize: '60px 60px'
+        }}></div>
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
@@ -105,6 +115,7 @@ export default function AboutMissionValues() {
         </div>
       </div>
     </section>
+    </>
   );
 }
 
