@@ -37,7 +37,7 @@ export default function SDSFilters({
             <button
               key="all"
               onClick={() => onManufacturerChange('all')}
-              className={`px-6 py-3 rounded-xl font-medium transition-all duration-300 ${
+              className={`px-6 py-3 rounded-xl font-medium transition-all duration-300 cursor-pointer ${
                 selectedManufacturer === 'all'
                   ? 'bg-gray-800 text-white shadow-lg'
                   : 'bg-white text-gray-700 border border-gray-300 hover:border-gray-400'
@@ -49,7 +49,7 @@ export default function SDSFilters({
               <button
                 key={manufacturer.id}
                 onClick={() => onManufacturerChange(manufacturer.id)}
-                className={`px-6 py-3 rounded-xl font-medium transition-all duration-300 ${
+                className={`px-6 py-3 rounded-xl font-medium transition-all duration-300 cursor-pointer ${
                   selectedManufacturer === manufacturer.id
                     ? `bg-gradient-to-r ${manufacturer.color} text-white shadow-lg`
                     : 'bg-white text-gray-700 border border-gray-300 hover:border-gray-400'

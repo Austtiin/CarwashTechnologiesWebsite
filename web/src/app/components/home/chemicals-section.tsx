@@ -58,21 +58,21 @@ const ChemicalsSection = () => {
               <div className="w-30 h-30 flex items-center justify-center mx-auto mb-5">
                 <div className="mx-auto flex items-center justify-center p-1 gap-6">
                   <Image 
-                    src="/logoSimo.webp" 
+                    src="/logos/logoSimo.webp" 
                     alt="Simoniz Logo" 
                     width={100} 
                     height={100} 
                     className="object-contain"
                   />
                   <Image 
-                    src="/logoCWT.webp" 
+                    src="/logos/logoCWT.webp" 
                     alt="Carwash Technologies Logo" 
                     width={100} 
                     height={100} 
                     className="object-contain"
                   />
                   <Image 
-                    src="/logoVertech.webp" 
+                    src="/logos/logoVertech.webp" 
                     alt="Vertech Logo" 
                     width={100} 
                     height={100} 

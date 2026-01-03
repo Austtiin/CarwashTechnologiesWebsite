@@ -6,11 +6,11 @@ import CallToActionNew from '@/app/components/ui/CallToActionNew';
 
 export const metadata: Metadata = {
   title: 'Consulting Services | Carwash Technologies',
-  description: 'Expert carwash consulting services for site development, operational optimization, equipment selection, and business strategy. 25+ years of industry experience helping wash businesses succeed.',
+  description: 'Expert carwash consulting services for site development, operational optimization, equipment selection, and business strategy. 50+ years of combined industry experience helping wash businesses succeed.',
   keywords: 'carwash consulting, wash business consulting, site development, operational optimization, equipment consulting, wash business strategy',
   openGraph: {
     title: 'Consulting Services | Carwash Technologies',
-    description: 'Expert carwash consulting services with 25+ years of industry experience',
+    description: 'Expert carwash consulting services with 50+ years of combined industry experience',
     type: 'website',
   },
 };
@@ -81,7 +81,7 @@ export default function ConsultingPage() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
       ),
-      title: '25+ Years Experience',
+      title: '50+ Years Combined Experience',
       description: 'Deep industry knowledge and proven track record of successful projects'
     },
     {
@@ -113,8 +113,8 @@ export default function ConsultingPage() {
         subtitle="Strategic Guidance & Expertise"
         description="Transform your car wash business with expert consulting services. From site development to operational optimization, we provide the strategic guidance you need to succeed."
         stats={[
-          { value: '25+', label: 'Years Experience' },
-          { value: '100+', label: 'Projects Completed' },
+          { value: '50+', label: 'Years Combined Experience' },
+          { value: '500+', label: 'Projects Completed' },
           { value: '95%', label: 'Client Satisfaction' },
           { value: '4', label: 'States Served' }
         ]}
@@ -132,6 +132,8 @@ export default function ConsultingPage() {
         ]}
         backgroundVariant="white"
         showPattern={true}
+        leftImage="/imgs/BelangerTunnel.jpg"
+        rightImage="/imgs/SpinLite.jpg"
       />
 
       <GenericServicesGrid

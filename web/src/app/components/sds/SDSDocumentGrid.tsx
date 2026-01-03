@@ -129,13 +129,13 @@ export default function SDSDocumentGrid({ documents, manufacturers, categories }
                     <div className="flex gap-3">
                       <button
                         onClick={() => handleView(doc.pdfUrl)}
-                        className="flex-1 bg-[#f0da11] text-gray-900 px-4 py-2 rounded-lg hover:bg-[#d0b211] transition-colors duration-300 text-sm font-medium"
+                        className="flex-1 bg-[#f0da11] text-gray-900 px-4 py-2 rounded-lg hover:bg-[#d0b211] transition-colors duration-300 text-sm font-medium cursor-pointer"
                       >
                         View PDF
                       </button>
                       <button
                         onClick={() => handleDownload(doc.pdfUrl, doc.fileName)}
-                        className="flex-1 bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600 transition-colors duration-300 text-sm font-medium"
+                        className="flex-1 bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600 transition-colors duration-300 text-sm font-medium cursor-pointer"
                       >
                         Download
                       </button>
@@ -150,7 +150,7 @@ export default function SDSDocumentGrid({ documents, manufacturers, categories }
             <div className="text-center mt-12">
               <button
                 onClick={handleLoadMore}
-                className="bg-[#f0da11] text-gray-900 px-8 py-4 rounded-xl font-semibold hover:bg-[#d0b211] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 inline-flex items-center"
+                className="bg-[#f0da11] text-gray-900 px-8 py-4 rounded-xl font-semibold hover:bg-[#d0b211] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 inline-flex items-center cursor-pointer"
               >
                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />

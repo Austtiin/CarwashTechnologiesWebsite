@@ -3,6 +3,7 @@
 // Clean Tech Services Section
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function ServicesSectionNew() {
   const services = [
@@ -24,7 +25,7 @@ export default function ServicesSectionNew() {
         </svg>
       ),
       title: 'Service & Maintenance',
-      description: '24/7 emergency service and preventive maintenance programs to keep your operation running smoothly.',
+      description: 'Preventive maintenance & repair services to keep your operation running smoothly.',
       link: '/service-maintenance'
     },
     {
@@ -100,34 +101,89 @@ export default function ServicesSectionNew() {
             <Link 
               href={service.link}
               key={index}
-              className="group relative bg-white p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-l-4 border-transparent hover:border-[#f0da11] overflow-hidden"
+              className="group relative bg-white p-8 shadow-2xl hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] transition-all duration-300 hover:-translate-y-2 border-l-4 border-transparent hover:border-[#f0da11] overflow-hidden ring-2 ring-white/80"
               style={{
                 animation: `fadeInUp 0.6s ease-out ${index * 0.1}s forwards`,
-                opacity: 0
+                opacity: 0,
+                boxShadow: '0 20px 40px -10px rgba(0, 0, 0, 0.15), 0 0 0 2px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.5)'
               }}
             >
+              {/* Background Images for different services - visible on right side */}
+              {index === 0 && (
+                <div className="absolute inset-0 z-0">
+                  <Image
+                    src="/imgs/CarWash Controller.jpg"
+                    alt=""
+                    fill
+                    className="object-cover"
+                    style={{ opacity: 0.5 }}
+                  />
+                  {/* Gradient from solid white on left to transparent on right */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-white/60"></div>
+                </div>
+              )}
+              {index === 1 && (
+                <div className="absolute inset-0 z-0">
+                  <Image
+                    src="/imgs/Track.png"
+                    alt=""
+                    fill
+                    className="object-cover"
+                    style={{ opacity: 0.5 }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-white/60"></div>
+                </div>
+              )}
+              {index === 2 && (
+                <div className="absolute inset-0 z-0">
+                  <Image
+                    src="/imgs/chems/MixStir.jpg"
+                    alt=""
+                    fill
+                    className="object-cover"
+                    style={{ opacity: 0.5 }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-white/60"></div>
+                </div>
+              )}
+              {index === 3 && (
+                <div className="absolute inset-0 z-0">
+                  <Image
+                    src="/imgs/Insta-KLEEN-fleet.webp"
+                    alt=""
+                    fill
+                    className="object-cover"
+                    style={{ opacity: 0.5 }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-white/60"></div>
+                </div>
+              )}
+              
               {/* Colored accent bar that grows on hover */}
               <div className="absolute left-0 top-0 w-1 h-0 bg-[#f0da11] group-hover:h-full transition-all duration-300" />
               
-              {/* Icon */}
-              <div className="relative w-12 h-12 bg-gray-100 text-gray-900 flex items-center justify-center mb-6 group-hover:bg-[#f0da11] group-hover:text-black group-hover:scale-110 transition-all duration-200">
-                {service.icon}
-              </div>
+              {/* Content - positioned on left with white background */}
+              <div className="relative z-10">
+                {/* Icon */}
+                <div className="w-12 h-12 bg-gray-100 text-gray-900 flex items-center justify-center mb-6 group-hover:bg-[#f0da11] group-hover:text-black group-hover:scale-110 transition-all duration-200">
+                  {service.icon}
+                </div>
 
-              {/* Content */}
-              <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#f0da11] transition-colors">
-                {service.title}
-              </h3>
-              <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                {service.description}
-              </p>
+                {/* Content */}
+                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#f0da11] transition-colors">
+                  {service.title}
+                </h3>
+                <p className="text-gray-700 text-sm leading-relaxed mb-4 font-medium">
+                  {service.description}
+                </p>
 
-              {/* Arrow */}
-              <div className="flex items-center text-sm font-semibold text-gray-900 group-hover:text-[#f0da11]">
-                <span>Learn more</span>
-                <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
+                {/* Arrow */}
+                <div className="flex items-center text-sm font-semibold text-gray-900 group-hover:text-[#f0da11]">
+                  <span>Learn more</span>
+                  <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
               </div>
             </Link>
           ))}

@@ -3,12 +3,13 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function HeroSectionNew() {
   return (
     <section className="relative bg-gradient-to-br from-white via-gray-50 to-white pt-20 pb-24 overflow-hidden">
       {/* Animated Grid Background */}
-      <div className="absolute inset-0 opacity-[0.12]">
+      <div className="absolute inset-0 opacity-[0.12] overflow-hidden">
         <div
           className="h-full w-full"
           style={{
@@ -17,9 +18,40 @@ export default function HeroSectionNew() {
               linear-gradient(to bottom, #1f2937 1px, transparent 1px)
             `,
             backgroundSize: '60px 60px',
-            animation: 'gridMove 20s linear infinite'
+            animation: 'gridMove 20s linear infinite',
+            position: 'absolute',
+            top: '-60px',
+            left: 0,
+            right: 0,
+            bottom: 0
           }}
         />
+      </div>
+
+      {/* Background Equipment Image - Left Side - Faded and Animated */}
+      <div className="absolute left-0 top-0 bottom-0 w-1/2 pointer-events-none overflow-hidden">
+        <div className="relative w-full h-full">
+          <Image
+            src="/imgs/BelangerTunnel.jpg"
+            alt="Car Wash Tunnel Equipment"
+            fill
+            className="object-cover opacity-50"
+          />
+          <div className="absolute inset-0 bg-gradient-to-l from-white via-white/80 to-transparent"></div>
+        </div>
+      </div>
+
+      {/* Background Equipment Image - Right Side - Faded and Animated */}
+      <div className="absolute right-0 top-0 bottom-0 w-1/2 pointer-events-none overflow-hidden">
+        <div className="relative w-full h-full">
+          <Image
+            src="/imgs/SpinLite.jpg"
+            alt="Car Wash Equipment"
+            fill
+            className="object-cover opacity-50"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent"></div>
+        </div>
       </div>
 
       {/* Diagonal Water Flow Lines */}
@@ -81,12 +113,12 @@ export default function HeroSectionNew() {
 
             {/* Hero Headline */}
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
-              Smarter Car Wash Operations<br />
-              <span className="text-[#f0da11]">Built with Technology</span> That Scales
+              Helping Owners Build <br />
+              <span className="text-[#f0da11]">Better  </span>Car Washes
             </h1>
 
             {/* Subheadline */}
-            <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto font-light">
+            <p className="text-xl md:text-2xl text-slate-900 mb-12 max-w-3xl mx-auto font-light">
               Premium equipment, expert service, and proven strategies for wash businesses across the Midwest
             </p>
 
@@ -118,7 +150,7 @@ export default function HeroSectionNew() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto fade-in-up" style={{animationDelay: '0.2s'}}>
             <div className="text-center">
               <div className="text-4xl font-bold text-gray-900 mb-2">50<span className="text-[#f0da11]">+</span></div>
-              <div className="text-sm font-medium text-gray-600 uppercase tracking-wide">Years Experience</div>
+              <div className="text-sm font-medium text-gray-600 uppercase tracking-wide">Years Combined Experience</div>
             </div>
             <div className="text-center">
               <div className="text-4xl font-bold text-gray-900 mb-2">500<span className="text-[#f0da11]">+</span></div>

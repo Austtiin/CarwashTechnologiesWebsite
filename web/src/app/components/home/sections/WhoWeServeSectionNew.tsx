@@ -33,7 +33,7 @@ export default function WhoWeServeSectionNew() {
         'Equipment upgrades',
         'Efficiency improvements',
         'Technology integration',
-        '24/7 service support'
+        'Priority service support'
       ]
     },
     {
@@ -97,7 +97,7 @@ export default function WhoWeServeSectionNew() {
             Solutions for <span className="text-[#f0da11]">Every</span> Operation
           </h2>
           <p className="text-lg text-gray-600 leading-relaxed">
-            Whether you're starting fresh or scaling up, we have the expertise to help you succeed
+            Whether you&apos;re starting fresh or scaling up, we have the expertise to help you succeed
           </p>
         </div>
 
@@ -112,41 +112,85 @@ export default function WhoWeServeSectionNew() {
                 opacity: 0
               }}
             >
-              {/* Background Image Transitions - Slides in from Right */}
+              {/* Background Image Transitions - Slides in on Load */}
               {index === 0 && (
                 <>
                   <div 
-                    className="absolute right-0 top-0 bottom-0 w-1/2 bg-cover bg-center translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out"
-                    style={{ backgroundImage: 'url(/PDQ.jpg)', opacity: 0.4 }}
+                    className="absolute right-0 top-0 bottom-0 w-1/2 bg-cover bg-center transition-transform duration-700 ease-out"
+                    style={{ 
+                      backgroundImage: 'url(/imgs/PDQ.jpg)', 
+                      opacity: 0.65,
+                      animation: `slideInFromRight 0.8s ease-out ${index * 0.1 + 0.3}s forwards`,
+                      transform: 'translateX(100%)'
+                    }}
                   />
-                  <div className="absolute right-0 top-0 bottom-0 w-1/2 bg-gradient-to-r from-white via-white/90 to-white/60 translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out" />
+                  <div 
+                    className="absolute right-0 top-0 bottom-0 w-1/2 bg-gradient-to-r from-white via-white/90 to-white/60 transition-transform duration-700 ease-out" 
+                    style={{
+                      animation: `slideInFromRight 0.8s ease-out ${index * 0.1 + 0.3}s forwards`,
+                      transform: 'translateX(100%)'
+                    }}
+                  />
                 </>
               )}
               {index === 1 && (
                 <>
                   <div 
-                    className="absolute right-0 top-0 bottom-0 w-1/2 bg-cover bg-center translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out"
-                    style={{ backgroundImage: 'url(/Existing.jpg)', opacity: 0.4 }}
+                    className="absolute right-0 top-0 bottom-0 w-1/2 bg-cover bg-center transition-transform duration-700 ease-out"
+                    style={{ 
+                      backgroundImage: 'url(/imgs/Existing.jpg)', 
+                      opacity: 0.65,
+                      animation: `slideInFromRight 0.8s ease-out ${index * 0.1 + 0.3}s forwards`,
+                      transform: 'translateX(100%)'
+                    }}
                   />
-                  <div className="absolute right-0 top-0 bottom-0 w-1/2 bg-gradient-to-r from-white via-white/90 to-white/60 translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out" />
+                  <div 
+                    className="absolute right-0 top-0 bottom-0 w-1/2 bg-gradient-to-r from-white via-white/90 to-white/60 transition-transform duration-700 ease-out" 
+                    style={{
+                      animation: `slideInFromRight 0.8s ease-out ${index * 0.1 + 0.3}s forwards`,
+                      transform: 'translateX(100%)'
+                    }}
+                  />
                 </>
               )}
               {index === 2 && (
                 <>
                   <div 
-                    className="absolute right-0 top-0 bottom-0 w-1/2 bg-cover bg-center translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out"
-                    style={{ backgroundImage: 'url(/car-wash.jpg)', opacity: 0.4 }}
+                    className="absolute right-0 top-0 bottom-0 w-1/2 bg-cover bg-center transition-transform duration-700 ease-out"
+                    style={{ 
+                      backgroundImage: 'url(/imgs/car-wash.jpg)', 
+                      opacity: 0.65,
+                      animation: `slideInFromRight 0.8s ease-out ${index * 0.1 + 0.3}s forwards`,
+                      transform: 'translateX(100%)'
+                    }}
                   />
-                  <div className="absolute right-0 top-0 bottom-0 w-1/2 bg-gradient-to-r from-white via-white/90 to-white/60 translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out" />
+                  <div 
+                    className="absolute right-0 top-0 bottom-0 w-1/2 bg-gradient-to-r from-white via-white/90 to-white/60 transition-transform duration-700 ease-out" 
+                    style={{
+                      animation: `slideInFromRight 0.8s ease-out ${index * 0.1 + 0.3}s forwards`,
+                      transform: 'translateX(100%)'
+                    }}
+                  />
                 </>
               )}
               {index === 3 && (
                 <>
                   <div 
-                    className="absolute right-0 top-0 bottom-0 w-1/2 bg-cover bg-center translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out"
-                    style={{ backgroundImage: 'url(/Carwash1.jpg)', opacity: 0.4 }}
+                    className="absolute right-0 top-0 bottom-0 w-1/2 bg-cover bg-center transition-transform duration-700 ease-out"
+                    style={{ 
+                      backgroundImage: 'url(/imgs/Carwash1.jpg)', 
+                      opacity: 0.65,
+                      animation: `slideInFromRight 0.8s ease-out ${index * 0.1 + 0.3}s forwards`,
+                      transform: 'translateX(100%)'
+                    }}
                   />
-                  <div className="absolute right-0 top-0 bottom-0 w-1/2 bg-gradient-to-r from-white via-white/90 to-white/60 translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out" />
+                  <div 
+                    className="absolute right-0 top-0 bottom-0 w-1/2 bg-gradient-to-r from-white via-white/90 to-white/60 transition-transform duration-700 ease-out" 
+                    style={{
+                      animation: `slideInFromRight 0.8s ease-out ${index * 0.1 + 0.3}s forwards`,
+                      transform: 'translateX(100%)'
+                    }}
+                  />
                 </>
               )}
               
@@ -181,7 +225,7 @@ export default function WhoWeServeSectionNew() {
         {/* CTA */}
         <div className="text-center mt-12">
           <p className="text-gray-600 mb-6">
-            Not sure which solution fits your needs? Let's talk.
+            Not sure which solution fits your needs? Let&apos;s talk.
           </p>
           <Link 
             href="/contact"
@@ -201,6 +245,15 @@ export default function WhoWeServeSectionNew() {
           to {
             opacity: 1;
             transform: translateY(0);
+          }
+        }
+
+        @keyframes slideInFromRight {
+          from {
+            transform: translateX(100%);
+          }
+          to {
+            transform: translateX(0);
           }
         }
       `}</style>

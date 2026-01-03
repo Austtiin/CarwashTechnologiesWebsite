@@ -1,4 +1,5 @@
 // src/app/layout.tsx
+import React from 'react';
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import localFont from 'next/font/local'
@@ -47,15 +48,17 @@ export default function RootLayout({
         <meta httpEquiv="Expires" content="0" />
       </head>
       <body className={`${inter.className} flex min-h-screen flex-col overflow-x-hidden`}>
-        <SecurityWrapper>
-          <Navbar />
-          <main className="flex-grow w-full">
-            <div className="w-full max-w-none">
-              {children}
-            </div>
-          </main>
-          <Footer />
-        </SecurityWrapper>
+        <React.StrictMode>
+          <SecurityWrapper>
+            <Navbar />
+            <main className="flex-grow w-full pt-16 sm:pt-20">
+              <div className="w-full max-w-none">
+                {children}
+              </div>
+            </main>
+            <Footer />
+          </SecurityWrapper>
+        </React.StrictMode>
       </body>
     </html>
   );

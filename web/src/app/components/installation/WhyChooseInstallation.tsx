@@ -100,7 +100,7 @@ export default function WhyChooseInstallation({ stats }: WhyChooseInstallationPr
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-[#f0da11] mb-2">{stats.experience}</div>
-                <div className="text-sm text-gray-600">Years Experience</div>
+                <div className="text-sm text-gray-600">Years Combined Experience</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-[#f0da11] mb-2">{stats.satisfaction}</div>

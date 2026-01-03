@@ -1,9 +1,9 @@
 import React from 'react';
 import { Metadata } from 'next';
-import Image from 'next/image';
 import GenericHero from '../components/ui/GenericHero';
 import GenericServicesGrid from '../components/ui/GenericServicesGrid';
 import CallToActionNew from '../components/ui/CallToActionNew';
+import TrustedChemicalPartners from '../components/chemical/TrustedChemicalPartners';
 
 export const metadata: Metadata = {
   title: 'Chemical Sales | Carwash Technologies',
@@ -21,14 +21,14 @@ async function getChemicalData() {
   return {
     stats: {
       satisfaction: '99%',
-      support: '24/7',
+      support: 'Full',
       delivery: '48hrs',
       coverage: '4 States'
     },
     manufacturers: [
-      { name: 'CWT', logo: '/logoCWT.webp', alt: 'CWT' },
-      { name: 'Simoniz', logo: '/logoSimo.webp', alt: 'Simoniz' },
-      { name: 'Vertech', logo: '/logoVertech.webp', alt: 'Vertech' }
+      { name: 'Vertech', logo: '/logos/logoVertech.webp', alt: 'Vertech' },
+      { name: 'CWT', logo: '/logos/logoCWT.webp', alt: 'CWT' },
+      { name: 'Simoniz', logo: '/logos/logoSimo.webp', alt: 'Simoniz' }
     ],
     categories: [
       {
@@ -112,22 +112,22 @@ export default async function ChemicalSales() {
       </svg>
     ),
     title: category.title,
-    description: category.description + ' ' + category.features.join(', ')
+    description: category.description
   }));
 
   // Transform benefits into service items
-  const benefitServices = data.benefits.map((benefit, index) => ({
+  const benefitServices = data.benefits.map((benefit) => ({
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
       </svg>
     ),
     title: benefit,
-    description: "Trusted chemical solutions with proven results"
+    description: "Expert chemical programs designed for your success"
   }));
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <GenericHero
         eyebrow="High-Performance Chemicals"
@@ -148,43 +148,19 @@ export default async function ChemicalSales() {
             variant: "primary"
           },
           {
-            text: "View Programs",
-            href: "#programs",
+            text: "View SDS Sheets",
+            href: "/sds",
             variant: "secondary"
           }
         ]}
         backgroundVariant="white"
         showPattern={true}
+        leftImage="/imgs/BelangerTunnel.jpg"
+        rightImage="/imgs/SpinLite.jpg"
       />
 
-      {/* Trusted Chemical Partners */}
-      <section className="py-16 bg-gradient-to-b from-white via-gray-50 to-white">
-        <div className="items-center container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="font-friz text-3xl md:text-4xl text-gray-900 mb-4">
-              Trusted Chemical <span className="text-[#f0da11]">Partners</span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We partner with industry-leading manufacturers to provide you with the highest quality wash chemicals
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center justify-items-center max-w-4xl mx-auto">
-            {data.manufacturers.map((manufacturer, index) => (
-              <div key={manufacturer.name} className="bg-white border-l-4 border-[#f0da11] p-8 hover:shadow-lg transition-shadow duration-300 w-full">
-                <Image
-                  src={manufacturer.logo}
-                  alt={manufacturer.alt}
-                  width={180}
-                  height={90}
-                  className="h-20 w-auto object-contain mx-auto"
-                  priority={index < 3}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Trusted Chemical Manufacturers */}
+      <TrustedChemicalPartners manufacturers={data.manufacturers} />
 
       {/* Chemical Categories */}
       <GenericServicesGrid
@@ -210,7 +186,7 @@ export default async function ChemicalSales() {
 
       {/* Call to Action */}
       <CallToActionNew
-        title="Let's Build Something Great"
+        title="Ready to Transform Your Wash Business?"
         description="Join hundreds of satisfied customers across the Midwest who trust Carwash Technologies for their equipment, service, and chemical needs."
         buttons={[
           {

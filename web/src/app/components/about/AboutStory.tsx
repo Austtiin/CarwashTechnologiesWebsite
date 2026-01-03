@@ -56,10 +56,10 @@ export default function AboutStory() {
               <div className="space-y-6">
               <div className="flex items-center">
                 <div className="w-12 h-12 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-xl flex items-center justify-center mr-4">
-                <span className="text-white font-bold text-xl">25+</span>
+                <span className="text-white font-bold text-xl">50+</span>
                 </div>
                 <div>
-                <h3 className="font-bold text-gray-900">Years of Experience</h3>
+                <h3 className="font-bold text-gray-900">Years of Combined Experience</h3>
                 <p className="text-gray-600">Serving the wash industry</p>
                 </div>
               </div>

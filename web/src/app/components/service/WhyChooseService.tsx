@@ -22,7 +22,7 @@ export default function WhyChooseService({ stats }: WhyChooseServiceProps) {
     },
     {
       title: 'Fast Response',
-      description: 'Emergency service available 24/7 with rapid response times to minimize downtime.',
+      description: 'Emergency service available with rapid response times to minimize downtime.',
       icon: 'M13 10V3L4 14h7v7l9-11h-7z',
       color: 'from-slate-700 to-slate-800'
     },

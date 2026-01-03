@@ -40,7 +40,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <Image
-              src="/logoCWT.webp"
+              src="/logos/logoCWT.webp"
               alt="Carwash Technologies"
               width={40}
               height={40}

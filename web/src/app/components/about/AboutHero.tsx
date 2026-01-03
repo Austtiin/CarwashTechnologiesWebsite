@@ -35,7 +35,7 @@ export default function AboutHero() {
 
           <div className="flex justify-center">
             <BlurText
-              text="25+ years of expertise in wash solutions across the Midwest"
+              text="50+ years of combined expertise in wash solutions across the Midwest"
               delay={0.2}
               duration={0.8}
               className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-light"
@@ -45,8 +45,8 @@ export default function AboutHero() {
           {/* Stats or highlights */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
             <div className="border-l-4 border-transparent hover:border-[#f0da11] bg-white shadow-sm hover:shadow-xl p-6 text-center transition-all duration-300">
-              <div className="text-3xl font-bold text-[#f0da11] mb-2">25+</div>
-              <div className="text-sm text-gray-600 uppercase tracking-wide">Years Experience</div>
+              <div className="text-3xl font-bold text-[#f0da11] mb-2">50+</div>
+              <div className="text-sm text-gray-600 uppercase tracking-wide">Years Combined Experience</div>
             </div>
             <div className="border-l-4 border-transparent hover:border-[#f0da11] bg-white shadow-sm hover:shadow-xl p-6 text-center transition-all duration-300">
               <div className="text-3xl font-bold text-[#f0da11] mb-2">500+</div>
@@ -57,8 +57,8 @@ export default function AboutHero() {
               <div className="text-sm text-gray-600 uppercase tracking-wide">States Served</div>
             </div>
             <div className="border-l-4 border-transparent hover:border-[#f0da11] bg-white shadow-sm hover:shadow-xl p-6 text-center transition-all duration-300">
-              <div className="text-3xl font-bold text-[#f0da11] mb-2">24/7</div>
-              <div className="text-sm text-gray-600 uppercase tracking-wide">Support Available</div>
+              <div className="text-3xl font-bold text-[#f0da11] mb-2">98%</div>
+              <div className="text-sm text-gray-600 uppercase tracking-wide">Satisfaction</div>
             </div>
           </div>
         </div>

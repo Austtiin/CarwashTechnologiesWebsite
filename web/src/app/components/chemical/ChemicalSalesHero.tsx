@@ -47,8 +47,8 @@ export default function ChemicalSalesHero() {
               <div className="text-sm text-gray-300 uppercase tracking-wide">Biodegradable</div>
             </div>
             <div className="border-2 border-gray-700 bg-gray-800/50 p-6 text-center">
-              <div className="text-3xl font-bold text-[#f0da11] mb-2">24/7</div>
-              <div className="text-sm text-gray-300 uppercase tracking-wide">Support</div>
+              <div className="text-3xl font-bold text-[#f0da11] mb-2">Fast</div>
+              <div className="text-sm text-gray-300 uppercase tracking-wide">Response</div>
             </div>
             <div className="border-2 border-gray-700 bg-gray-800/50 p-6 text-center md:col-span-1 col-span-2">
               <div className="text-3xl font-bold text-[#f0da11] mb-2">Custom</div>

@@ -2,7 +2,7 @@ export const contactOptions = [
   {
     id: 'chemicals' as const,
     title: 'Chemical Sales',
-    description: 'High-quality wash chemicals and chemical programs',
+    description: '',
     color: 'from-purple-400 to-purple-600',
     bgColor: 'from-purple-50 to-purple-100',
     borderColor: 'border-purple-200',
@@ -19,7 +19,7 @@ export const contactOptions = [
   {
     id: 'service' as const,
     title: 'Service & Maintenance',
-    description: 'Professional maintenance and repair services',
+    description: '',
     color: 'from-orange-400 to-orange-600',
     bgColor: 'from-orange-50 to-orange-100',
     borderColor: 'border-orange-200',
@@ -27,16 +27,16 @@ export const contactOptions = [
     details: 'Schedule maintenance, request emergency repairs, or inquire about our comprehensive service programs.',
     icon: 'service',
     features: [
-      '24/7 emergency support',
+      'Fast support available',
       'Certified technicians',
-      'Preventive maintenance plans',
+      'Preventive maintenance',
       'Same-day service available'
     ]
   },
   {
     id: 'sales' as const,
     title: 'Equipment Sales',
-    description: 'Premium wash equipment and installation',
+    description: '',
     color: 'from-blue-400 to-blue-600',
     bgColor: 'from-blue-50 to-blue-100',
     borderColor: 'border-blue-200',

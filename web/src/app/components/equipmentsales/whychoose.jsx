@@ -78,7 +78,7 @@ export default function WhyChooseSection({ stats }) {
             <div className="grid grid-cols-2 gap-6 mb-8">
               <div className="text-center">
                 <div className="text-3xl font-bold text-[#f0da11] mb-2">{stats.experience}</div>
-                <div className="text-sm text-gray-600">Years Experience</div>
+                <div className="text-sm text-gray-600">Years Combined Experience</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-[#f0da11] mb-2">{stats.installations}</div>

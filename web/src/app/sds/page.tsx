@@ -48,7 +48,6 @@ async function getSDSData(): Promise<{
   stats: SDSStats;
 }> {
   const manufacturers: Manufacturer[] = [
-    { id: 'all', name: 'All Manufacturers', color: 'from-gray-400 to-gray-600' },
     { id: 'vertech', name: 'Vertech', color: 'from-green-400 to-green-600' },
     { id: 'cwt', name: 'Carwash Technologies', color: 'from-yellow-400 to-yellow-600' },
     { id: 'simoniz', name: 'Simoniz', color: 'from-red-400 to-red-600' },
@@ -135,7 +134,7 @@ async function getSDSData(): Promise<{
   const stats: SDSStats = {
     totalSheets: sdsDocuments.length,
     manufacturers: manufacturers.length - 1,
-    access: '24/7',
+    access: 'Online Access',
     compliance: '100%',
   };
 
@@ -180,6 +179,8 @@ export default async function SafetyDataSheets() {
         ]}
         backgroundVariant="white"
         showPattern={true}
+        leftImage="/imgs/BelangerTunnel.jpg"
+        rightImage="/imgs/SpinLite.jpg"
       />
 
       {/* Document browsing functionality */}

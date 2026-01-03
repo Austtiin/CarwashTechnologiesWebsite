@@ -36,7 +36,7 @@ export default function EmergencyService() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <SectionHeader
-            title="24/7 Emergency Service"
+            title="Emergency Service Available"
             description="When your wash goes down, every minute counts"
             titleDelay={50}
             descriptionDelay={100}
@@ -76,7 +76,7 @@ export default function EmergencyService() {
                 <h4 className="text-lg font-semibold text-red-900">Emergency Service Coverage</h4>
               </div>
               <p className="text-red-800 text-center">
-                Available 24/7/365 across Minnesota, North Dakota, South Dakota, and Wisconsin. 
+                Emergency response available across Minnesota, North Dakota, South Dakota, and Wisconsin. 
                 Emergency service charges apply for after-hours calls.
               </p>
             </div>

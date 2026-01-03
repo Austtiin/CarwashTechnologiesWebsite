@@ -27,9 +27,9 @@ export default function ContactPage() {
         subtitle="Expert Support for Your Wash Business"
         description="Ready to transform your wash operation? Let's discuss your specific needs and create a customized solution that drives results. Our team is here to help with equipment, chemicals, service, and expert guidance."
         stats={[
-          { value: '24/7', label: 'Emergency Service' },
-          { value: '<2hr', label: 'Response Time' },
-          { value: '25+', label: 'Years Experience' },
+          { value: 'Fast', label: 'Response Time' },
+          { value: '50+', label: 'Years Combined Experience' },
+          { value: '500+', label: 'Installations' },
           { value: '4', label: 'States Served' }
         ]}
         buttons={[
@@ -46,6 +46,8 @@ export default function ContactPage() {
         ]}
         backgroundVariant="white"
         showPattern={true}
+        leftImage="/imgs/BelangerTunnel.jpg"
+        rightImage="/imgs/SpinLite.jpg"
       />
 
       {/* Interactive Contact Selection & Form */}

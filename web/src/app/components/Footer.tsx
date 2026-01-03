@@ -11,7 +11,7 @@ const Footer = () => {
           <div className="col-span-1">
             <div className="flex items-center space-x-2 mb-4">
               <Image
-                src="/logoCWT.webp"
+                src="/logos/logoCWT.webp"
                 alt="Carwash Technologies Logo"
                 width={40}
                 height={40}
@@ -108,7 +108,7 @@ const Footer = () => {
               <p className="text-sm font-semibold text-gray-900 mb-2">Business Hours</p>
               <p className="text-sm text-gray-600">
                 Mon-Fri: 8:00 AM - 5:00 PM<br />
-                24/7 Emergency Service
+                Emergency Service Available
               </p>
             </div>
           </div>

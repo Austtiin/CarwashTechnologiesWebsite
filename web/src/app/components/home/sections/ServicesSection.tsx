@@ -82,7 +82,7 @@ export default function ServicesSection() {
                   <div className="group/logo relative">
                     <div className="bg-white hover:bg-gray-50 border border-gray-200/50 rounded-lg p-3 h-16 flex items-center justify-center transition-all duration-300 hover:shadow-md relative overflow-hidden">
                       <Image 
-                        src="/logoPDQ.webp" 
+                        src="/logos/logoPDQ.webp" 
                         alt="PDQ Logo" 
                         fill
                         className="object-contain"
@@ -98,7 +98,7 @@ export default function ServicesSection() {
                   <div className="group/logo relative">
                     <div className="bg-white hover:bg-gray-50 border border-gray-200/50 rounded-lg p-3 h-16 flex items-center justify-center transition-all duration-300 hover:shadow-md relative overflow-hidden">
                       <Image 
-                        src="/peco-logo.webp" 
+                        src="/logos/peco-logo.webp" 
                         alt="PECO Logo" 
                         fill
                         className="object-contain"
@@ -114,7 +114,7 @@ export default function ServicesSection() {
                   <div className="group/logo relative">
                     <div className="bg-white hover:bg-gray-50 border border-gray-200/50 rounded-lg p-3 h-16 flex items-center justify-center transition-all duration-300 hover:shadow-md relative overflow-hidden">
                       <Image 
-                        src="/logoBelanger.webp" 
+                        src="/logos/logoBelanger.webp" 
                         alt="Belanger Logo" 
                         fill
                         className="object-contain"
@@ -130,7 +130,7 @@ export default function ServicesSection() {
                   <div className="group/logo relative">
                     <div className="bg-white hover:bg-gray-50 border border-gray-200/50 rounded-lg p-3 h-16 flex items-center justify-center transition-all duration-300 hover:shadow-md relative overflow-hidden">
                       <Image 
-                        src="/logoSonnys.webp" 
+                        src="/logos/logoSonnys.webp" 
                         alt="Sonnys Logo" 
                         fill
                         className="object-contain"
@@ -167,7 +167,7 @@ export default function ServicesSection() {
               </svg>
             </div>
             <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 text-center relative z-10">Service & Maintenance</h3>
-            <p className="text-sm sm:text-base text-gray-600 text-center mb-6 leading-relaxed flex-grow relative z-10">Professional maintenance and emergency repair services to keep your wash operation running at peak performance.</p>
+            <p className="text-sm sm:text-base text-gray-600 text-center mb-6 leading-relaxed flex-grow relative z-10">Professional maintenance and repair services to keep your wash operation running at peak performance.</p>
             <div className="text-center relative z-10">
               
               {/* Equipment Brand Logos */}
@@ -178,7 +178,7 @@ export default function ServicesSection() {
                   <div className="group/logo relative">
                     <div className="bg-white hover:bg-gray-50 border border-gray-200/50 rounded-lg p-3 h-16 flex items-center justify-center transition-all duration-300 hover:shadow-md relative overflow-hidden">
                       <Image 
-                        src="/AVW-logo.webp" 
+                        src="/logos/AVW-logo.webp" 
                         alt="AVW Logo" 
                         fill
                         className="object-contain"
@@ -226,7 +226,7 @@ export default function ServicesSection() {
                   <div className="group/logo relative">
                     <div className="bg-white hover:bg-gray-50 border border-gray-200/50 rounded-lg p-3 h-16 flex items-center justify-center transition-all duration-300 hover:shadow-md relative overflow-hidden">
                       <Image 
-                        src="/logoVertech.webp" 
+                        src="/logos/logoVertech.webp" 
                         alt="Vertech Logo" 
                         fill
                         className="object-contain"
@@ -242,7 +242,7 @@ export default function ServicesSection() {
                   <div className="group/logo relative">
                     <div className="bg-white hover:bg-gray-50 border border-gray-200/50 rounded-lg p-3 h-16 flex items-center justify-center transition-all duration-300 hover:shadow-md relative overflow-hidden">
                       <Image 
-                        src="/logoCWT.webp" 
+                        src="/logos/logoCWT.webp" 
                         alt="CWT Logo" 
                         fill
                         className="object-contain"
@@ -258,7 +258,7 @@ export default function ServicesSection() {
                   <div className="group/logo relative">
                     <div className="bg-white hover:bg-gray-50 border border-gray-200/50 rounded-lg p-3 h-16 flex items-center justify-center transition-all duration-300 hover:shadow-md relative overflow-hidden">
                       <Image 
-                        src="/logoSimo.webp" 
+                        src="/logos/logoSimo.webp" 
                         alt="Simoniz Logo" 
                         fill
                         className="object-contain"

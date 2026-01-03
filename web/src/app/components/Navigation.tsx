@@ -92,14 +92,14 @@ const Navbar = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-md" ref={menuRef}>
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md" ref={menuRef}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 sm:h-20 items-center justify-center relative">
           
           {/* Logo / Business Name - positioned absolutely to left */}
           <div className="absolute left-0 flex items-center space-x-2 sm:space-x-3">
             <Image
-              src="/logoCWT.webp"
+              src="/logos/logoCWT.webp"
               alt="Carwash Technologies Logo"
               width={48}
               height={48}

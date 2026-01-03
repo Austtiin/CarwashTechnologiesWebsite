@@ -52,8 +52,8 @@ export default function AboutPage() {
   return (
     <>
       <SEOHead
-        title="About Carwash Technologies - 25+ Years of Midwest Wash Solutions"
-        description="Learn about Carwash Technologies' 25+ years of expertise serving Minnesota, North Dakota, South Dakota, and Wisconsin with professional wash equipment, service, and consulting."
+        title="About Carwash Technologies - 50+ Years of Midwest Wash Solutions"
+        description="Learn about Carwash Technologies' 50+ years of combined expertise serving Minnesota, North Dakota, South Dakota, and Wisconsin with professional wash equipment, service, and consulting."
         canonical="https://carwashtechnologies.com/about"
         ogType="website"
       />
@@ -63,16 +63,18 @@ export default function AboutPage() {
           eyebrow="About Our Company"
           title="Carwash Technologies"
           highlightedWord="Technologies"
-          subtitle="25+ Years of Excellence"
+          subtitle="50+ Years of Combined Excellence"
           description="Built on a foundation of expertise, innovation, and unwavering commitment to customer success across Minnesota, North Dakota, South Dakota, and Wisconsin."
           stats={[
-            { value: '25+', label: 'Years Experience' },
+            { value: '50+', label: 'Years Combined Experience' },
             { value: '500+', label: 'Installations' },
             { value: '4', label: 'States Served' },
-            { value: '24/7', label: 'Support' }
+            { value: '98%', label: 'Satisfaction' }
           ]}
           backgroundVariant="white"
           showPattern={true}
+          leftImage="/imgs/BelangerTunnel.jpg"
+          rightImage="/imgs/SpinLite.jpg"
         />
 
         <GenericServicesGrid
@@ -105,7 +107,6 @@ export default function AboutPage() {
         address: "322 19th St. SW<br />Forest Lake, MN 55025",
         showContactCard: true
           }}
-          showDecorations={true}
         />
       </div>
     </>

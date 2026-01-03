@@ -14,9 +14,9 @@ export default function ChemicalsSectionNew() {
   ];
 
   const partners = [
-    { src: '/logoSimo.webp', alt: 'Simoniz', width: 100, height: 100 },
-    { src: '/logoCWT.webp', alt: 'Carwash Technologies', width: 100, height: 100 },
-    { src: '/logoVertech.webp', alt: 'Vertech', width: 100, height: 100 }
+    { src: '/logos/logoSimo.webp', alt: 'Simoniz', width: 100, height: 100 },
+    { src: '/logos/logoCWT.webp', alt: 'Carwash Technologies', width: 100, height: 100 },
+    { src: '/logos/logoVertech.webp', alt: 'Vertech', width: 100, height: 100 }
   ];
 
   return (
@@ -97,11 +97,11 @@ export default function ChemicalsSectionNew() {
             {/* Partners Logos */}
             <div className="mb-8">
               <p className="text-sm font-semibold text-gray-600 uppercase tracking-wider text-center mb-6">
-                Trusted Partners
+                Trusted Chemicals from Leading Brands
               </p>
               <div className="flex items-center justify-center gap-8 flex-wrap">
                 {partners.map((partner, index) => (
-                  <div key={index} className="grayscale hover:grayscale-0 transition-all duration-300">
+                  <div key={index} className="hover:scale-110 transition-all duration-300">
                     <Image 
                       src={partner.src} 
                       alt={partner.alt} 

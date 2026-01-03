@@ -3,6 +3,7 @@
 // Clean Tech Projects Section
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function ProjectsSectionNew() {
   const projects = [
@@ -35,7 +36,7 @@ export default function ProjectsSectionNew() {
       location: 'Forest Lake, MN',
       type: 'Self-Serve & Automatic',
       description: 'Five Bay, featuring three car washes and two self service systems with exterior vacuums.',
-      image: '/IMG_20260101_213851.jpg',
+      image: '/imgs/SudzFL/IMG_20260101_213851.jpg',
       stats: [
         { label: 'Bays', value: '5 Total (3 Wash + 2 Self Serve)' },
         { label: 'Timeline', value: '6 weeks' },
@@ -94,10 +95,11 @@ export default function ProjectsSectionNew() {
               {/* Image Container */}
               <div className="relative h-56 bg-gray-200 overflow-hidden">
                 {/* Actual Image */}
-                <img 
+                <Image
                   src={project.image} 
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110"
+                  fill
+                  className="object-cover transition-transform duration-500 ease-out group-hover:scale-110"
                 />
                 {/* Dark overlay on hover for better text visibility */}
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300" />

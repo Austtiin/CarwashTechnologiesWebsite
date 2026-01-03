@@ -6,11 +6,11 @@ import CallToActionNew from '../components/ui/CallToActionNew';
 
 export const metadata: Metadata = {
   title: 'Service & Maintenance | Carwash Technologies',
-  description: 'Professional car wash equipment service and maintenance. 24/7 emergency service, preventive maintenance, certified technicians across Minnesota, North Dakota, South Dakota, and Wisconsin.',
+  description: 'Professional car wash equipment service and maintenance. Emergency service available, preventive maintenance, certified technicians across Minnesota, North Dakota, South Dakota, and Wisconsin.',
   keywords: 'car wash service, equipment maintenance, emergency repair, preventive maintenance, wash equipment service',
   openGraph: {
     title: 'Service & Maintenance | Carwash Technologies',
-    description: 'Professional car wash equipment service and maintenance with 24/7 emergency support',
+    description: 'Professional car wash equipment service and maintenance with emergency support available',
     type: 'website',
   },
 };
@@ -21,7 +21,7 @@ async function getServiceData() {
     stats: {
       serviceCalls: '1000+',
       satisfaction: '98%',
-      responseTime: '2 Hours',
+      responseTime: 'Same Day',
       coverage: '4 States'
     },
     serviceCategories: [
@@ -36,10 +36,10 @@ async function getServiceData() {
       {
         id: 'emergency',
         title: 'Emergency Repairs',
-        description: '24/7 emergency service to get your wash back up and running quickly.',
+        description: 'Emergency service available to get your wash back up and running quickly.',
         icon: 'M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
         color: 'red',
-        features: ['24/7 emergency response', 'Rapid diagnostics', 'On-site repairs', 'Parts stocking program']
+        features: ['Rapid emergency response', 'Fast diagnostics', 'On-site repairs', 'Parts stocking program']
       },
       {
         id: 'electrical',
@@ -160,7 +160,7 @@ export default async function ServiceMaintenance() {
         title="Service & Maintenance"
         highlightedWord="Service"
         subtitle="Keeping Your Wash Running Smoothly"
-        description="Expert service and maintenance for all car wash equipment. 24/7 emergency service, preventive maintenance, and certified technicians across the Midwest."
+        description="Expert service and maintenance for all car wash equipment. Emergency service available, preventive maintenance, and certified technicians across the Midwest."
         stats={[
           { value: data.stats.serviceCalls, label: 'Service Calls' },
           { value: data.stats.satisfaction, label: 'Satisfaction' },
@@ -181,6 +181,8 @@ export default async function ServiceMaintenance() {
         ]}
         backgroundVariant="white"
         showPattern={true}
+        leftImage="/imgs/BelangerTunnel.jpg"
+        rightImage="/imgs/SpinLite.jpg"
       />
 
       {/* Service Categories */}

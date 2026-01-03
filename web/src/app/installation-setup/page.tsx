@@ -20,9 +20,9 @@ async function getInstallationData() {
   return {
     stats: {
       installations: '500+',
-      experience: '25+',
+      experience: '50+',
       satisfaction: '99%',
-      support: '24/7'
+      support: 'Ongoing'
     },
     services: [
       {
@@ -139,7 +139,7 @@ export default async function InstallationSetup() {
         description="Professional car wash equipment installation and setup services. Expert technicians, certified installation, comprehensive training, and ongoing support across the Midwest."
         stats={[
           { value: data.stats.installations, label: 'Installations' },
-          { value: data.stats.experience, label: 'Years Experience' },
+          { value: data.stats.experience, label: 'Years Combined Experience' },
           { value: data.stats.satisfaction, label: 'Satisfaction' },
           { value: data.stats.support, label: 'Support' }
         ]}
@@ -157,6 +157,8 @@ export default async function InstallationSetup() {
         ]}
         backgroundVariant="white"
         showPattern={true}
+        leftImage="/imgs/BelangerTunnel.jpg"
+        rightImage="/imgs/SpinLite.jpg"
       />
 
       {/* Installation Services */}

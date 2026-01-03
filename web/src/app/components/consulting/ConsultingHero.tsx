@@ -33,7 +33,7 @@ export default function ConsultingHero() {
           />
 
           <BlurText
-            text="Leverage our 25+ years of industry expertise to maximize your wash operation's performance, profitability, and growth potential."
+            text="Leverage our 50+ years of combined industry expertise to maximize your wash operation's performance, profitability, and growth potential."
             delay={0.2}
             duration={0.8}
             className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto"
@@ -60,8 +60,8 @@ export default function ConsultingHero() {
           {/* Stats */}
           <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
             <div className="border-2 border-gray-700 bg-gray-800/50 p-6">
-              <div className="text-4xl font-bold text-[#f0da11] mb-2">25+</div>
-              <div className="text-sm text-gray-300 uppercase tracking-wide">Years Experience</div>
+              <div className="text-4xl font-bold text-[#f0da11] mb-2">50+</div>
+              <div className="text-sm text-gray-300 uppercase tracking-wide">Years Combined Experience</div>
             </div>
             <div className="border-2 border-gray-700 bg-gray-800/50 p-6">
               <div className="text-4xl font-bold text-[#f0da11] mb-2">500+</div>

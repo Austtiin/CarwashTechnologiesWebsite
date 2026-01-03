@@ -42,7 +42,7 @@ export default function Services() {
         </svg>
       ),
       title: 'Service & Maintenance',
-      description: 'Expert service and maintenance to keep your equipment running smoothly. 24/7 emergency service available.',
+      description: 'Expert service and maintenance to keep your equipment running smoothly. Emergency service available.',
       link: '/service-maintenance'
     },
     {
@@ -76,10 +76,10 @@ export default function Services() {
         subtitle="Complete Solutions for Your Wash Business"
         description="From initial consultation to ongoing support, we provide comprehensive solutions for your wash business. Equipment sales, installation, chemicals, service, and consulting."
         stats={[
-          { value: '25+', label: 'Years Experience' },
+          { value: '50+', label: 'Years Combined Experience' },
           { value: '500+', label: 'Installations' },
           { value: '4', label: 'States Served' },
-          { value: '24/7', label: 'Support Available' }
+          { value: 'Fast Response', label: 'Support Available' }
         ]}
         buttons={[
           {
@@ -95,6 +95,8 @@ export default function Services() {
         ]}
         backgroundVariant="white"
         showPattern={true}
+        leftImage="/imgs/BelangerTunnel.jpg"
+        rightImage="/imgs/SpinLite.jpg"
       />
 
       <GenericServicesGrid

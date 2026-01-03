@@ -69,10 +69,10 @@ export default function AboutDifferentiators() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-3">24/7 Support</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-3">Responsive Support</h3>
               <p className="text-gray-700">
                 When your equipment needs attention, we&#39;re here. Our support team is available 
-                around the clock to keep you running.
+                to keep you running smoothly.
               </p>
             </div>
           </div>

@@ -35,7 +35,7 @@ const ProjectsPage = () => {
         description="Transforming wash operations across the Midwest with proven expertise and quality installations. Our track record speaks for itself."
         stats={[
           { value: '500+', label: 'Installations' },
-          { value: '25+', label: 'Years Experience' },
+          { value: '50+', label: 'Years Combined Experience' },
           { value: '98%', label: 'Satisfaction Rate' },
           { value: '4', label: 'States Served' }
         ]}
@@ -53,6 +53,8 @@ const ProjectsPage = () => {
         ]}
         backgroundVariant="white"
         showPattern={true}
+        leftImage="/imgs/BelangerTunnel.jpg"
+        rightImage="/imgs/SpinLite.jpg"
       />
 
       <GenericServicesGrid

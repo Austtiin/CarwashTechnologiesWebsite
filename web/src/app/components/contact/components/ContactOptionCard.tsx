@@ -23,7 +23,7 @@ interface ContactOptionCardProps {
 // Client Component - Interactive card with hover effects
 export default function ContactOptionCard({ option, onSelect }: ContactOptionCardProps) {
   const renderIcon = () => {
-    const iconClass = "w-8 h-8 text-white sm:w-10 sm:h-10";
+    const iconClass = "w-6 h-6 text-white";
     
     switch (option.icon) {
       case 'chemicals':
@@ -53,42 +53,42 @@ export default function ContactOptionCard({ option, onSelect }: ContactOptionCar
   return (
     <div
       onClick={onSelect}
-      className={`group cursor-pointer bg-gradient-to-br ${option.bgColor} p-8 rounded-3xl border-2 ${option.borderColor} hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 relative overflow-hidden sm:p-10`}
+      className={`group cursor-pointer bg-gradient-to-br ${option.bgColor} p-6 rounded-2xl border-2 ${option.borderColor} hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 relative overflow-hidden`}
     >
       {/* Card background glow effect */}
       <div className="absolute inset-0 bg-gradient-to-br from-white/50 to-transparent opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
       
       {/* Icon */}
-      <div className={`relative w-16 h-16 bg-gradient-to-br ${option.color} rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg sm:w-20 sm:h-20 sm:mb-8`}>
+      <div className={`relative w-12 h-12 bg-gradient-to-br ${option.color} rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg`}>
         {renderIcon()}
-        <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-2xl"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-xl"></div>
       </div>
       
       {/* Content */}
-      <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center group-hover:text-gray-800 transition-colors duration-300 sm:text-3xl sm:mb-6">
+      <h3 className="text-xl font-bold text-gray-900 mb-3 text-center group-hover:text-gray-800 transition-colors duration-300">
         {option.title}
       </h3>
-      <p className="text-gray-700 text-center mb-4 leading-relaxed group-hover:text-gray-600 transition-colors duration-300 sm:text-lg sm:mb-6">
+      <p className="text-sm text-gray-700 text-center mb-3 leading-relaxed group-hover:text-gray-600 transition-colors duration-300">
         {option.description}
       </p>
-      <p className="text-sm text-gray-600 text-center mb-6 group-hover:text-gray-500 transition-colors duration-300 sm:text-base sm:mb-8">
+      <p className="text-xs text-gray-600 text-center mb-4 group-hover:text-gray-500 transition-colors duration-300">
         {option.details}
       </p>
       
       {/* Features List */}
-      <ul className="text-sm text-gray-600 mb-6 space-y-2">
+      <ul className="text-xs text-gray-600 mb-4 space-y-1.5">
         {option.features.map((feature, index) => (
           <li key={index} className="flex items-center">
-            <span className="w-2 h-2 bg-[#f0da11] rounded-full mr-3 flex-shrink-0"></span>
+            <span className="w-1.5 h-1.5 bg-[#f0da11] rounded-full mr-2 flex-shrink-0"></span>
             {feature}
           </li>
         ))}
       </ul>
       
       {/* CTA */}
-      <div className={`flex items-center justify-center w-full ${option.textColor} font-bold text-lg group-hover:translate-x-2 transition-all duration-300`}>
+      <div className={`flex items-center justify-center w-full ${option.textColor} font-bold text-base group-hover:translate-x-2 transition-all duration-300`}>
         <span className="mr-2">Get Started</span>
-        <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
         </svg>
       </div>

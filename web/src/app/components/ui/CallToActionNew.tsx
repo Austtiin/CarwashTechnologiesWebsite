@@ -3,6 +3,7 @@
 // Clean Tech Call to Action Section
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface CTAButton {
   text: string;
@@ -23,15 +24,14 @@ interface CallToActionProps {
 
 export default function CallToActionNew({
   title,
-  description,
   buttons,
   contactInfo
 }: CallToActionProps) {
   return (
-    <section className="relative bg-gradient-to-b from-[#f6f6f6] via-white to-gray-50 py-20 overflow-hidden">
+    <section className="relative bg-gradient-to-b from-[#f6f6f6] via-white to-gray-50 py-12 overflow-hidden">
       {/* Subtle Grid Pattern */}
       <div 
-        className="absolute inset-0 opacity-[0.04]"
+        className="absolute inset-0 opacity-[0.15]"
         style={{
           backgroundImage: `
             linear-gradient(to right, #1f2937 1px, transparent 1px),
@@ -41,29 +41,63 @@ export default function CallToActionNew({
         }}
       />
 
+      {/* Background Equipment Image - Left Side */}
+      <div className="absolute left-0 top-0 bottom-0 w-1/2 pointer-events-none overflow-hidden">
+        <div className="relative w-full h-full">
+          <Image
+            src="/imgs/slow-sppin.jpg"
+            alt="Car Wash Equipment"
+            fill
+            className="object-cover opacity-60"
+          />
+          <div className="absolute inset-0 bg-gradient-to-l from-white via-white/80 to-transparent"></div>
+        </div>
+      </div>
+
+      {/* Background Equipment Image - Right Side */}
+      <div className="absolute right-0 top-0 bottom-0 w-1/2 pointer-events-none overflow-hidden">
+        <div className="relative w-full h-full">
+          <Image
+            src="/imgs/PDQ.jpg"
+            alt="Car Wash Equipment"
+            fill
+            className="object-cover opacity-60"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent"></div>
+        </div>
+      </div>
+
       {/* Yellow Accent Lines */}
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#f0da11] to-transparent opacity-30"></div>
       <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#f0da11] to-transparent opacity-30"></div>
 
       <div className="container mx-auto px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-12 max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-3 mb-4">
+        <div className="text-center mb-8 max-w-3xl mx-auto">
+          <div className="inline-flex items-center gap-3 mb-3">
             <div className="w-8 h-px bg-[#f0da11]"></div>
             <span className="text-sm font-semibold text-gray-600 uppercase tracking-wider">Get In Touch</span>
             <div className="w-8 h-px bg-[#f0da11]"></div>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Let's Build Something <span className="text-[#f0da11]">Great</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
+            {title.includes('Great') ? (
+              <>
+                {title.split('Great')[0]}
+                <span className="text-[#f0da11]">Great</span>
+                {title.split('Great')[1]}
+              </>
+            ) : (
+              title
+            )}
           </h2>
-          <p className="text-lg text-gray-600 leading-relaxed">
-            Whether you're planning a new installation or need expert service, we're here to help every step of the way.
+          <p className="text-base text-gray-600 leading-relaxed">
+            Whether you&apos;re planning a new installation or need expert service, we&apos;re here to help every step of the way.
           </p>
         </div>
 
         {/* Contact Cards */}
         {contactInfo?.showContactCard && (
-          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12">
+          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-8">
             
             {/* Phone Card */}
             {contactInfo.phone && (

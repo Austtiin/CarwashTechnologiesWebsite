@@ -44,8 +44,8 @@ export default function ServiceMaintenanceHero() {
           {/* Additional service highlights */}
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mt-12">
             <div className="border-2 border-gray-700 bg-gray-800/50 p-6 text-center">
-              <div className="text-3xl font-bold text-[#f0da11] mb-2">24/7</div>
-              <div className="text-sm text-gray-300 uppercase tracking-wide">Emergency Service</div>
+              <div className="text-3xl font-bold text-[#f0da11] mb-2">Rapid</div>
+              <div className="text-sm text-gray-300 uppercase tracking-wide">Response</div>
             </div>
             <div className="border-2 border-gray-700 bg-gray-800/50 p-6 text-center">
               <div className="text-3xl font-bold text-[#f0da11] mb-2">Certified</div>

@@ -19,7 +19,7 @@ export default function ContactInfo() {
               </div>
               <h3 className="text-xl font-semibold mb-2">Call Us</h3>
               <p className="text-gray-300 mb-2">(612) 408-9010</p>
-              <p className="text-sm text-gray-400">24/7 Emergency Service</p>
+              <p className="text-sm text-gray-400">Emergency Service Available</p>
             </div>
 
             <div className="text-center">

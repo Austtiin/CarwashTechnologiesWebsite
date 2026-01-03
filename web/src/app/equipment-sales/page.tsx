@@ -20,11 +20,11 @@ export const metadata: Metadata = {
 async function getEquipmentData() {
   return {
     manufacturers: [
-      { name: 'PECO', logo: '/peco-logo.webp', alt: 'PECO' },
-      { name: 'Sonnys', logo: '/logoSonnys.webp', alt: "Sonny's" },
-      { name: 'PDQ', logo: '/logoPDQ.webp', alt: 'PDQ' },
-      { name: 'Belanger', logo: '/logoBelanger.webp', alt: 'Belanger' },
-      { name: 'AVW', logo: '/AVW-logo.webp', alt: 'AVW' },
+      { name: 'PECO', logo: '/logos/peco-logo.webp', alt: 'PECO' },
+      { name: 'Sonnys', logo: '/logos/logoSonnys.webp', alt: "Sonny's" },
+      { name: 'PDQ', logo: '/logos/logoPDQ.webp', alt: 'PDQ' },
+      { name: 'Belanger', logo: '/logos/logoBelanger.webp', alt: 'Belanger' },
+      { name: 'AVW', logo: '/logos/AVW-logo.webp', alt: 'AVW' },
     ],
     categories: [
       {
@@ -77,23 +77,13 @@ async function getEquipmentData() {
       }
     ],
     stats: {
-      experience: '25+',
+      experience: '50+',
       installations: '500+',
-      support: '24/7',
+      support: 'Comprehensive',
       states: '4'
     }
   };
 }
-
-// Professional color mapping for categories
-const colorMap = {
-  blue: { bg: 'from-gray-700 to-gray-800', dot: 'bg-[#f0da11]', border: 'border-gray-600' },
-  green: { bg: 'from-gray-700 to-gray-800', dot: 'bg-[#f0da11]', border: 'border-gray-600' },
-  purple: { bg: 'from-gray-700 to-gray-800', dot: 'bg-[#f0da11]', border: 'border-gray-600' },
-  orange: { bg: 'from-gray-700 to-gray-800', dot: 'bg-[#f0da11]', border: 'border-gray-600' },
-  red: { bg: 'from-gray-700 to-gray-800', dot: 'bg-[#f0da11]', border: 'border-gray-600' },
-  teal: { bg: 'from-gray-700 to-gray-800', dot: 'bg-[#f0da11]', border: 'border-gray-600' },
-};
 
 export default async function EquipmentSales() {
   const data = await getEquipmentData();
@@ -119,7 +109,7 @@ export default async function EquipmentSales() {
         subtitle="Industry-Leading Solutions"
         description="Premium car wash equipment from trusted manufacturers. Complete systems for tunnel, automatic, self-serve operations, and everything in between."
         stats={[
-          { value: data.stats.experience, label: 'Years Experience' },
+          { value: data.stats.experience, label: 'Years Combined Experience' },
           { value: data.stats.installations, label: 'Installations' },
           { value: data.stats.support, label: 'Support' },
           { value: data.stats.states, label: 'States Served' }
@@ -138,6 +128,8 @@ export default async function EquipmentSales() {
         ]}
         backgroundVariant="white"
         showPattern={true}
+        leftImage="/imgs/BelangerTunnel.jpg"
+        rightImage="/imgs/SpinLite.jpg"
       />
 
       {/* Trusted Partners Section */}
