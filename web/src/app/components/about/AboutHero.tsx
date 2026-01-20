@@ -2,7 +2,6 @@
 'use client';
 
 import React from 'react';
-import BlurText from '../animations/BlurText';
 
 export default function AboutHero() {
   return (
@@ -26,20 +25,14 @@ export default function AboutHero() {
             <span className="text-gray-900 font-bold uppercase tracking-wider text-sm">About Our Company</span>
           </div>
 
-          <BlurText
-            text="Carwash Technologies"
-            delay={0.1}
-            duration={0.8}
-            className="text-4xl md:text-5xl font-extrabold mb-6 text-gray-900"
-          />
+          <h1 className="text-4xl md:text-5xl font-extrabold mb-6 text-gray-900">
+            Carwash Technologies
+          </h1>
 
           <div className="flex justify-center">
-            <BlurText
-              text="50+ years of combined expertise in wash solutions across the Midwest"
-              delay={0.2}
-              duration={0.8}
-              className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-light"
-            />
+            <h2 className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-light">
+              50+ years of combined expertise in wash solutions across the Midwest
+            </h2>
           </div>
 
           {/* Stats or highlights */}

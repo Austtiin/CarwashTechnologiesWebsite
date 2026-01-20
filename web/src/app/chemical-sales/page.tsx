@@ -112,7 +112,17 @@ export default async function ChemicalSales() {
       </svg>
     ),
     title: category.title,
-    description: category.description
+    description: category.description,
+    backgroundImage:
+      category.id === 'pre-treatment'
+        ? '/imgs/chems/MixStir.jpg'
+        : category.id === 'wash-solutions'
+          ? '/imgs/chems/VLabs-Tubs.jpg'
+          : category.id === 'finishing'
+            ? '/imgs/SudzFL/IMG_20260101_213851.jpg'
+            : category.id === 'specialty'
+              ? '/imgs/chems/THU100.webp'
+              : undefined
   }));
 
   // Transform benefits into service items
@@ -123,7 +133,8 @@ export default async function ChemicalSales() {
       </svg>
     ),
     title: benefit,
-    description: "Expert chemical programs designed for your success"
+    description: "Expert chemical programs designed for your success",
+    backgroundImage: '/imgs/chems/MixStir.jpg'
   }));
 
   return (

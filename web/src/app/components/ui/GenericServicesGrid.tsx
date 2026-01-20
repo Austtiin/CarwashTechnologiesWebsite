@@ -1,12 +1,14 @@
-'use client';
+"use client";
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface ServiceItem {
   icon: React.ReactNode;
   title: string;
   description: string;
+  backgroundImage?: string;
   link?: string;
 }
 
@@ -33,7 +35,7 @@ export default function GenericServicesGrid({
   backgroundVariant = 'light-grey',
   showCTA = true,
   ctaText = 'Learn More',
-  ctaLink = '#'
+  ctaLink = '/contact'
 }: GenericServicesGridProps) {
   const bgClass = backgroundVariant === 'light-grey' ? 'bg-[#f6f6f6]' : 'bg-white';
   const colClass = {
@@ -91,7 +93,7 @@ export default function GenericServicesGrid({
           {items.map((item, index) => {
             const CardContent = (
               <div
-                className={`group bg-white p-8 hover:shadow-lg transition-all duration-200 hover:-translate-y-1 border-l-4 border-transparent hover:border-[#f0da11] h-full ${
+                className={`relative group bg-white p-8 hover:shadow-lg transition-all duration-200 hover:-translate-y-1 border-l-4 border-transparent hover:border-[#f0da11] h-full ${
                   item.link ? 'cursor-pointer' : ''
                 }`}
                 style={{
@@ -99,27 +101,42 @@ export default function GenericServicesGrid({
                   opacity: 0
                 }}
               >
-                {/* Icon */}
-                <div className="w-12 h-12 bg-gray-100 text-gray-900 flex items-center justify-center mb-6 group-hover:bg-[#f0da11] group-hover:text-black transition-all duration-200">
-                  {item.icon}
-                </div>
-
-                {/* Content */}
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#f0da11] transition-colors">
-                  {item.title}
-                </h3>
-                <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                  {item.description}
-                </p>
-
-                {item.link && (
-                  <div className="flex items-center text-sm font-semibold text-gray-900 group-hover:text-[#f0da11]">
-                    <span>Learn more</span>
-                    <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
+                {item.backgroundImage && (
+                  <div className="absolute inset-0 z-0">
+                    <Image
+                      src={item.backgroundImage}
+                      alt=""
+                      fill
+                      className="object-cover"
+                      style={{ opacity: 0.5 }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-white/60" />
                   </div>
                 )}
+
+                <div className="relative z-10">
+                  {/* Icon */}
+                  <div className="w-12 h-12 bg-gray-100 text-gray-900 flex items-center justify-center mb-6 group-hover:bg-[#f0da11] group-hover:text-black transition-all duration-200">
+                    {item.icon}
+                  </div>
+
+                  {/* Content */}
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#f0da11] transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                    {item.description}
+                  </p>
+
+                  {item.link && (
+                    <div className="flex items-center text-sm font-semibold text-gray-900 group-hover:text-[#f0da11]">
+                      <span>Learn more</span>
+                      <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
+                  )}
+                </div>
               </div>
             );
 

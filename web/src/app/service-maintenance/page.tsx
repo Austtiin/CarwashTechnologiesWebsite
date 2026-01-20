@@ -138,7 +138,21 @@ export default async function ServiceMaintenance() {
       </svg>
     ),
     title: category.title,
-    description: category.description + ' ' + category.features.join(', ')
+    description: category.description + ' ' + category.features.join(', '),
+    backgroundImage:
+      category.id === 'preventive'
+        ? '/imgs/car-wash.jpg'
+        : category.id === 'emergency'
+          ? '/imgs/Carwash1.jpg'
+          : category.id === 'electrical'
+            ? '/imgs/CarWash Controller.jpg'
+            : category.id === 'chemical'
+              ? '/imgs/chems/MixStir.jpg'
+              : category.id === 'water'
+                ? '/imgs/Insta-KLEEN-Fleet-Wash-Rendering-Belanger (1).webp'
+                : category.id === 'training'
+                  ? '/imgs/AirCannon.jpg'
+                  : undefined
   }));
 
   // Transform equipment types for GenericServicesGrid
@@ -149,7 +163,21 @@ export default async function ServiceMaintenance() {
       </svg>
     ),
     title: equipment.title,
-    description: equipment.description + ' ' + equipment.services.join(', ')
+    description: equipment.description + ' ' + equipment.services.join(', '),
+    backgroundImage:
+      equipment.id === 'tunnel'
+        ? '/imgs/BelangerTunnel.jpg'
+        : equipment.id === 'self-serve'
+          ? '/imgs/car-wash.jpg'
+          : equipment.id === 'chemical-equip'
+            ? '/imgs/chems/VLabs-Tubs.jpg'
+            : equipment.id === 'water-treatment'
+              ? '/imgs/Insta-KLEEN-fleet.webp'
+              : equipment.id === 'electrical-equip'
+                ? '/imgs/CarWash Controller.jpg'
+                : equipment.id === 'dryer'
+                  ? '/imgs/SpinLite.jpg'
+                  : undefined
   }));
 
   return (

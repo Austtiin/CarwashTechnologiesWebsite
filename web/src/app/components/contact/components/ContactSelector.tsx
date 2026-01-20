@@ -33,8 +33,10 @@ export default function ContactSelector({ contactOptions }: ContactSelectorProps
     setSelectedContact(null);
   };
 
+  const sectionPadding = selectedContact ? 'py-10 md:py-12' : 'py-16';
+
   return (
-    <section className="relative py-16 bg-gradient-to-b from-gray-50 via-white to-gray-50 overflow-hidden">
+    <section className={`relative ${sectionPadding} bg-gradient-to-b from-gray-50 via-white to-gray-50 overflow-hidden`}>
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-[0.03]">
         <div className="absolute inset-0" style={{
@@ -94,17 +96,17 @@ export default function ContactSelector({ contactOptions }: ContactSelectorProps
               </div>
 
               {/* Selected Service Header */}
-              <div className="text-center mb-8" style={{ animation: 'slideInFromRight 0.5s ease-out forwards' }}>
+              <div className="text-center mb-6" style={{ animation: 'slideInFromRight 0.5s ease-out forwards' }}>
                 <div className={`inline-flex items-center bg-gradient-to-br ${selectedOption?.bgColor} border-2 ${selectedOption?.borderColor} px-6 py-3 mb-6 shadow-sm`}>
                   <span className="font-bold text-gray-900 text-base uppercase tracking-wide">
                     {selectedOption?.title}
                   </span>
                 </div>
 
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3">
                   Inquire about <span className="text-[#f0da11]">{selectedOption?.title}</span>
                 </h2>
-                <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
+                <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
                   {selectedOption?.details}
                 </p>
               </div>

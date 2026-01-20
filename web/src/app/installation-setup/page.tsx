@@ -114,7 +114,21 @@ export default async function InstallationSetup() {
       </svg>
     ),
     title: service.title,
-    description: service.description + ' ' + service.features.join(', ')
+    description: service.description + ' ' + service.features.join(', '),
+    backgroundImage:
+      service.id === 'tunnel'
+        ? '/imgs/BelangerTunnel.jpg'
+        : service.id === 'electrical'
+          ? '/imgs/CarWash Controller.jpg'
+          : service.id === 'chemical'
+            ? '/imgs/chems/MixStir.jpg'
+            : service.id === 'payment'
+              ? '/imgs/CarWash Controller.jpg'
+              : service.id === 'water-reclaim'
+                ? '/imgs/Insta-KLEEN-Fleet-Wash-Rendering-Belanger (1).webp'
+                : service.id === 'training'
+                  ? '/imgs/AirCannon.jpg'
+                  : undefined
   }));
 
   // Transform timeline into service items
@@ -125,7 +139,8 @@ export default async function InstallationSetup() {
       </svg>
     ),
     title: `Week ${phase.week}: ${phase.title}`,
-    description: `${phase.description} (${phase.duration})`
+    description: `${phase.description} (${phase.duration})`,
+    backgroundImage: '/imgs/Existing.jpg'
   }));
 
   return (

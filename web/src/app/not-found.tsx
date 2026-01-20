@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import BlurText from './components/animations/BlurText';
+
 
 export default function NotFound() {
   return (
@@ -37,22 +37,16 @@ export default function NotFound() {
 
             {/* Error Message */}
             <div className="mb-8">
-              <BlurText
-                text="Oops! This page went through the wash cycle and didn't come out."
-                delay={0.1}
-                duration={0.8}
-                className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6"
-              />
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
+              Oops! This page went through the wash cycle and didn&apos;t come out.
+              </h1>
             </div>
 
             {/* Subtitle */}
             <div className="flex justify-center mb-12">
-              <BlurText
-                text="The page you're looking for doesn't exist, but don't worry - we'll help you get back on track!"
-                delay={0.3}
-                duration={1.0}
-                className="text-xl md:text-2xl text-[#f0da11] max-w-3xl mx-auto leading-relaxed font-light"
-              />
+              <p className="text-xl md:text-2xl text-[#f0da11] max-w-3xl mx-auto leading-relaxed font-light">
+              The page you&apos;re looking for doesn&apos;t exist, but don&apos;t worry - we&apos;ll help you get back on track!
+              </p>
             </div>
 
             {/* Car Wash Themed Icon */}

@@ -16,7 +16,8 @@ export default function AboutPage() {
         </svg>
       ),
       title: 'Our Mission',
-      description: 'To provide innovative, reliable wash solutions that empower our customers to build successful, profitable businesses while delivering exceptional value and service that exceeds expectations.'
+      description: 'To provide innovative, reliable wash solutions that empower our customers to build successful, profitable businesses while delivering exceptional value and service that exceeds expectations.',
+      backgroundImage: '/imgs/Carwash1.jpg'
     },
     {
       icon: (
@@ -26,7 +27,8 @@ export default function AboutPage() {
         </svg>
       ),
       title: 'Our Vision',
-      description: 'To be the most trusted partner in the Midwest wash industry, known for our expertise, innovation, and unwavering commitment to customer success.'
+      description: 'To be the most trusted partner in the Midwest wash industry, known for our expertise, innovation, and unwavering commitment to customer success.',
+      backgroundImage: '/imgs/Insta-KLEEN-fleet.webp'
     },
     {
       icon: (
@@ -36,7 +38,8 @@ export default function AboutPage() {
         </svg>
       ),
       title: 'Local Expertise',
-      description: 'Deep understanding of Midwest markets, weather conditions, and local business needs. We know what works in our region.'
+      description: 'Deep understanding of Midwest markets, weather conditions, and local business needs. We know what works in our region.',
+      backgroundImage: '/imgs/Existing.jpg'
     },
     {
       icon: (
@@ -45,7 +48,8 @@ export default function AboutPage() {
         </svg>
       ),
       title: 'Complete Solutions',
-      description: 'From initial consultation to ongoing support, we provide everything you need for a successful wash operation.'
+      description: 'From initial consultation to ongoing support, we provide everything you need for a successful wash operation.',
+      backgroundImage: '/imgs/COnvayer.jpg'
     }
   ];
 
@@ -73,8 +77,8 @@ export default function AboutPage() {
           ]}
           backgroundVariant="white"
           showPattern={true}
-          leftImage="/imgs/BelangerTunnel.jpg"
-          rightImage="/imgs/SpinLite.jpg"
+          leftImage="/imgs/AirCannon.jpg"
+          rightImage="/imgs/Kondor_Flight.jpg"
         />
 
         <GenericServicesGrid

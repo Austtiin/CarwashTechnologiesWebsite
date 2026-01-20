@@ -96,7 +96,21 @@ export default async function EquipmentSales() {
       </svg>
     ),
     title: category.title,
-    description: category.description + ' ' + category.features.join(', ')
+    description: category.description + ' ' + category.features.join(', '),
+    backgroundImage:
+      category.id === 'tunnel'
+        ? '/imgs/BelangerTunnel.jpg'
+        : category.id === 'self-serve'
+          ? '/imgs/car-wash.jpg'
+          : category.id === 'automatic'
+            ? '/imgs/PDQ.jpg'
+            : category.id === 'water-recovery'
+              ? '/imgs/Insta-KLEEN-fleet.webp'
+              : category.id === 'dryer'
+                ? '/imgs/SpinLite.jpg'
+                : category.id === 'payment'
+                  ? '/imgs/CarWash Controller.jpg'
+                  : undefined
   }));
 
   return (

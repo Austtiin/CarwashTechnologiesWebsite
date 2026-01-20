@@ -113,8 +113,8 @@ export default function HeroSectionNew() {
 
             {/* Hero Headline */}
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
-              Helping Owners Build <br />
-              <span className="text-[#f0da11]">Better  </span>Car Washes
+              Better Car Washes <br />
+              <span className="text-[#f0da11]">Built for</span> Owners
             </h1>
 
             {/* Subheadline */}

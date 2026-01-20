@@ -12,7 +12,8 @@ const ProjectsPage = () => {
         </svg>
       ),
       title: 'SuperWash Express',
-      description: '"Carwash Technologies transformed our outdated facility into a modern, efficient operation. Our customer satisfaction and revenue have both increased significantly since the upgrade." - Mike Johnson'
+      description: '"Carwash Technologies transformed our outdated facility into a modern, efficient operation. Our customer satisfaction and revenue have both increased significantly since the upgrade." - Mike Johnson',
+      backgroundImage: '/imgs/Carwash1.jpg'
     },
     {
       icon: (
@@ -21,7 +22,8 @@ const ProjectsPage = () => {
         </svg>
       ),
       title: 'Quick Clean Car Wash',
-      description: '"The team\'s expertise and attention to detail were outstanding. They delivered on time and within budget, and the results exceeded our expectations." - Sarah Chen'
+      description: '"The team\'s expertise and attention to detail were outstanding. They delivered on time and within budget, and the results exceeded our expectations." - Sarah Chen',
+      backgroundImage: '/imgs/Existing.jpg'
     }
   ];
 

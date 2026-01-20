@@ -13,7 +13,8 @@ export default function Services() {
       ),
       title: 'Equipment Sales',
       description: 'Premium wash equipment from leading manufacturers. We help you choose the right equipment for your specific needs and budget.',
-      link: '/equipment-sales'
+      link: '/equipment-sales',
+      backgroundImage: '/imgs/Carwash1.jpg'
     },
     {
       icon: (
@@ -23,7 +24,8 @@ export default function Services() {
       ),
       title: 'Installation & Setup',
       description: 'Professional installation services ensuring your equipment is properly configured and optimized for maximum performance.',
-      link: '/installation-setup'
+      link: '/installation-setup',
+      backgroundImage: '/imgs/BelangerTunnel.jpg'
     },
     {
       icon: (
@@ -33,7 +35,8 @@ export default function Services() {
       ),
       title: 'Chemical Sales',
       description: 'High-performance wash chemicals for superior cleaning results. We offer flexible chemical programs and delivery options.',
-      link: '/chemical-sales'
+      link: '/chemical-sales',
+      backgroundImage: '/imgs/chems/MixStir.jpg'
     },
     {
       icon: (
@@ -43,7 +46,8 @@ export default function Services() {
       ),
       title: 'Service & Maintenance',
       description: 'Expert service and maintenance to keep your equipment running smoothly. Emergency service available.',
-      link: '/service-maintenance'
+      link: '/service-maintenance',
+      backgroundImage: '/imgs/car-wash.jpg'
     },
     {
       icon: (
@@ -53,7 +57,8 @@ export default function Services() {
       ),
       title: 'Consulting Services',
       description: 'Expert guidance for site development, operational optimization, and business strategy to help you succeed.',
-      link: '/consulting'
+      link: '/consulting',
+      backgroundImage: '/imgs/Insta-KLEEN-fleet.webp'
     },
     {
       icon: (
@@ -63,7 +68,8 @@ export default function Services() {
       ),
       title: 'Training & Support',
       description: 'Comprehensive training programs and ongoing support to ensure your team operates equipment safely and efficiently.',
-      link: '/contact'
+      link: '/contact',
+      backgroundImage: '/imgs/AirCannon.jpg'
     }
   ];
 

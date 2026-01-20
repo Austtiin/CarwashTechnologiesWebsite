@@ -25,7 +25,8 @@ export default function ConsultingPage() {
         </svg>
       ),
       title: 'Site Development',
-      description: 'Expert site analysis, planning, and development for new wash locations. We help identify optimal locations and design efficient layouts.'
+      description: 'Expert site analysis, planning, and development for new wash locations. We help identify optimal locations and design efficient layouts.',
+      backgroundImage: '/imgs/Existing.jpg'
     },
     {
       icon: (
@@ -34,7 +35,8 @@ export default function ConsultingPage() {
         </svg>
       ),
       title: 'Operational Optimization',
-      description: 'Improve efficiency, reduce costs, and maximize profitability through process optimization and best practices implementation.'
+      description: 'Improve efficiency, reduce costs, and maximize profitability through process optimization and best practices implementation.',
+      backgroundImage: '/imgs/car-wash.jpg'
     },
     {
       icon: (
@@ -43,7 +45,8 @@ export default function ConsultingPage() {
         </svg>
       ),
       title: 'Equipment Selection',
-      description: 'Unbiased equipment recommendations tailored to your specific needs, budget, and business goals for optimal ROI.'
+      description: 'Unbiased equipment recommendations tailored to your specific needs, budget, and business goals for optimal ROI.',
+      backgroundImage: '/imgs/BelangerTunnel.jpg'
     },
     {
       icon: (
@@ -52,7 +55,8 @@ export default function ConsultingPage() {
         </svg>
       ),
       title: 'Business Strategy',
-      description: 'Strategic planning and financial analysis to help you make informed decisions and achieve long-term success.'
+      description: 'Strategic planning and financial analysis to help you make informed decisions and achieve long-term success.',
+      backgroundImage: '/imgs/Insta-KLEEN-fleet.webp'
     },
     {
       icon: (
@@ -61,7 +65,8 @@ export default function ConsultingPage() {
         </svg>
       ),
       title: 'Training Programs',
-      description: 'Comprehensive staff training programs covering operations, maintenance, customer service, and safety protocols.'
+      description: 'Comprehensive staff training programs covering operations, maintenance, customer service, and safety protocols.',
+      backgroundImage: '/imgs/AirCannon.jpg'
     },
     {
       icon: (
@@ -70,7 +75,8 @@ export default function ConsultingPage() {
         </svg>
       ),
       title: 'Efficiency Audits',
-      description: 'Detailed assessments of your current operations with actionable recommendations for improvement and cost savings.'
+      description: 'Detailed assessments of your current operations with actionable recommendations for improvement and cost savings.',
+      backgroundImage: '/imgs/CarWash Controller.jpg'
     }
   ];
 
@@ -82,7 +88,8 @@ export default function ConsultingPage() {
         </svg>
       ),
       title: '50+ Years Combined Experience',
-      description: 'Deep industry knowledge and proven track record of successful projects'
+      description: 'Deep industry knowledge and proven track record of successful projects',
+      backgroundImage: '/imgs/Carwash1.jpg'
     },
     {
       icon: (
@@ -91,7 +98,8 @@ export default function ConsultingPage() {
         </svg>
       ),
       title: 'Personalized Approach',
-      description: 'Custom solutions designed specifically for your unique business needs'
+      description: 'Custom solutions designed specifically for your unique business needs',
+      backgroundImage: '/imgs/Existing.jpg'
     },
     {
       icon: (
@@ -100,7 +108,8 @@ export default function ConsultingPage() {
         </svg>
       ),
       title: 'Proven Results',
-      description: 'Measurable improvements in efficiency, profitability, and customer satisfaction'
+      description: 'Measurable improvements in efficiency, profitability, and customer satisfaction',
+      backgroundImage: '/imgs/Insta-KLEEN-fleet.webp'
     }
   ];
 
