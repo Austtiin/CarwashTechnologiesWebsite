@@ -155,7 +155,7 @@ export default async function ChemicalSales() {
         buttons={[
           {
             text: "Get Chemical Quote",
-            href: "/contact",
+            href: "/contact#contact-inquiry",
             variant: "primary"
           },
           {
@@ -202,7 +202,7 @@ export default async function ChemicalSales() {
         buttons={[
           {
             text: "Get Started Today",
-            href: "/contact",
+             href: "/contact#contact-inquiry",
             variant: "primary"
           },
           {

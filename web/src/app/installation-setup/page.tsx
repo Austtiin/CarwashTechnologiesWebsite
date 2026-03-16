@@ -6,8 +6,8 @@ import CallToActionNew from '../components/ui/CallToActionNew';
 
 export const metadata: Metadata = {
   title: 'Installation & Setup | Carwash Technologies',
-  description: 'Professional car wash equipment installation and setup services. Expert technicians, certified installation, comprehensive training, and ongoing support across the Midwest.',
-  keywords: 'car wash installation, equipment setup, professional installation, wash system setup, installation services',
+  description: 'Professional carwash installation services for new wash systems and equipment. Expert technicians, certified installation, comprehensive training, and ongoing support across the Midwest.',
+  keywords: 'carwash installation services, new wash systems, new car wash installation, equipment setup, professional installation, wash system setup, installation services',
   openGraph: {
     title: 'Installation & Setup | Carwash Technologies',
     description: 'Professional car wash equipment installation and setup services',
@@ -161,7 +161,7 @@ export default async function InstallationSetup() {
         buttons={[
           {
             text: "Plan Installation",
-            href: "/contact",
+            href: "/contact#contact-inquiry",
             variant: "primary"
           },
           {
@@ -205,7 +205,7 @@ export default async function InstallationSetup() {
         buttons={[
           {
             text: "Get Started Today",
-            href: "/contact",
+             href: "/contact#contact-inquiry",
             variant: "primary"
           },
           {

@@ -10,7 +10,7 @@ const HeroSection = () => {
         <p className="text-lg mb-8">
           Your one-stop solution for Vehicle Wash, Sales, Service, and Consulting in Minnesota, North Dakota, South Dakota, and Wisconsin.
         </p>
-        <a href="/contact" className="btn-primary">
+        <a href="/contact#contact-inquiry" className="btn-primary">
           Contact Us
         </a>
       </div>

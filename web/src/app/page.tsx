@@ -1,7 +1,6 @@
 import SEOHead from './components/ui/SEOHead';
 import HeroSectionNew from './components/home/sections/HeroSectionNew';
 import ServicesSectionNew from './components/home/sections/ServicesSectionNew';
-import ProjectsSectionNew from './components/home/sections/ProjectsSectionNew';
 import WhoWeServeSectionNew from './components/home/sections/WhoWeServeSectionNew';
 import ChemicalsSectionNew from './components/home/sections/ChemicalsSectionNew';
 import CallToActionNew from './components/ui/CallToActionNew';
@@ -23,9 +22,6 @@ export default function Home() {
         {/* Core Service Offerings */}
         <ServicesSectionNew />
 
-        {/* Recent Projects Showcase */}
-        <ProjectsSectionNew />
-
         {/* Customer Segments */}
         <WhoWeServeSectionNew />
 
@@ -39,7 +35,7 @@ export default function Home() {
           buttons={[
             {
               text: "Get Started Today",
-              href: "/contact",
+              href: "/contact#contact-inquiry",
               variant: "primary"
             },
             {

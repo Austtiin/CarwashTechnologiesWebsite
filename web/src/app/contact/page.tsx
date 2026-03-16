@@ -7,8 +7,8 @@ import { contactOptions } from './data/contactOptions';
 
 export const metadata: Metadata = {
   title: 'Contact Us | Carwash Technologies',
-  description: 'Get in touch with our experts for chemical sales, service & maintenance, or equipment sales. Quick response guaranteed.',
-  keywords: 'contact, carwash, chemicals, service, equipment, sales, maintenance',
+  description: 'Get in touch with our experts about new wash systems, new car wash projects, automatic vehicle washes, installation services, and vehicle wash consulting. Quick response guaranteed.',
+  keywords: 'contact, carwash, new wash systems, new car wash, new vehicle washes, automatic vehicle washes, carwash installation services, vehicle wash consulting, chemicals, service, equipment, sales, maintenance',
   openGraph: {
     title: 'Contact Us | Carwash Technologies',
     description: 'Connect with our specialists for all your carwash needs',
@@ -26,12 +26,6 @@ export default function ContactPage() {
         highlightedWord="Contact"
         subtitle="Expert Support for Your Wash Business"
         description="Ready to transform your wash operation? Let's discuss your specific needs and create a customized solution that drives results. Our team is here to help with equipment, chemicals, service, and expert guidance."
-        stats={[
-          { value: 'Fast', label: 'Response Time' },
-          { value: '50+', label: 'Years Combined Experience' },
-          { value: '500+', label: 'Installations' },
-          { value: '4', label: 'States Served' }
-        ]}
         buttons={[
           {
             text: 'Call Us Now',
@@ -59,7 +53,7 @@ export default function ContactPage() {
         buttons={[
           {
             text: "Get Started Today",
-            href: "/contact",
+            href: "#contact-inquiry",
             variant: "primary"
           },
           {

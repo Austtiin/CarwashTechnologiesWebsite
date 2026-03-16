@@ -29,7 +29,7 @@ const customFont = localFont({
 
 export const metadata: Metadata = {
   title: "Carwash Technologies - Professional Car Wash Solutions",
-  description: "Expert car wash construction, maintenance, and chemical supply services.",
+  description: "Expert new car wash and vehicle wash systems, construction, installation services, maintenance, chemical supply, and consulting across the Midwest.",
 };
 
 export default function RootLayout({

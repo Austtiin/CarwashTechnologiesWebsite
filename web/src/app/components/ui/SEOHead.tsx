@@ -20,8 +20,8 @@ interface SEOProps {
 
 const SEOHead: React.FC<SEOProps> = ({
   title = "Carwash Technologies - Wash Equipment Sales, Service & Consulting | Minnesota, North Dakota, South Dakota, Wisconsin",
-  description = "Carwash Technologies provides premium wash equipment sales, professional service & maintenance, and expert consulting across Minnesota, North Dakota, South Dakota, and Wisconsin. Over 50 years combined experience.",
-  keywords = "Wash equipment, wash service, wash consulting, Minnesota wash, North Dakota wash, South Dakota wash, Wisconsin wash, wash chemicals, tunnel wash equipment, self-serve wash, auto dealership wash systems",
+  description = "Carwash Technologies provides premium new wash systems, auto and vehicle washes, professional installation services, and expert consulting across Minnesota, North Dakota, South Dakota, and Wisconsin. Over 50 years combined experience.",
+  keywords = "wash equipment, wash service, wash consulting, Minnesota wash, North Dakota wash, South Dakota wash, Wisconsin wash, wash chemicals, tunnel wash equipment, self-serve wash, auto dealership wash systems, new wash systems, new car wash, new vehicle washes, automatic vehicle washes, carwash installation services, vehicle wash consulting",
   canonical = "https://carwashtechnologies.com/",
   ogImage = "https://carwashtechnologies.com/logos/logoCWT.webp",
   ogType = "website",

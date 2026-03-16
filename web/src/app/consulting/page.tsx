@@ -6,8 +6,8 @@ import CallToActionNew from '@/app/components/ui/CallToActionNew';
 
 export const metadata: Metadata = {
   title: 'Consulting Services | Carwash Technologies',
-  description: 'Expert carwash consulting services for site development, operational optimization, equipment selection, and business strategy. 50+ years of combined industry experience helping wash businesses succeed.',
-  keywords: 'carwash consulting, wash business consulting, site development, operational optimization, equipment consulting, wash business strategy',
+  description: 'Expert vehicle wash consulting for new car wash projects, site development, operational optimization, equipment selection, and business strategy. 50+ years of combined industry experience helping wash businesses succeed.',
+  keywords: 'vehicle wash consulting, carwash consulting, new wash projects, new car wash planning, wash business consulting, site development, operational optimization, equipment consulting, wash business strategy',
   openGraph: {
     title: 'Consulting Services | Carwash Technologies',
     description: 'Expert carwash consulting services with 50+ years of combined industry experience',
@@ -130,7 +130,7 @@ export default function ConsultingPage() {
         buttons={[
           {
             text: "Schedule Consultation",
-            href: "/contact",
+            href: "/contact#contact-inquiry",
             variant: "primary"
           },
           {
@@ -171,7 +171,7 @@ export default function ConsultingPage() {
         buttons={[
           {
             text: "Schedule Consultation",
-            href: "/contact",
+            href: "/contact#contact-inquiry",
             variant: "primary"
           },
           {

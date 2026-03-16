@@ -198,7 +198,7 @@ export default async function ServiceMaintenance() {
         buttons={[
           {
             text: "Schedule Service",
-            href: "/contact",
+            href: "/contact#contact-inquiry",
             variant: "primary"
           },
           {
@@ -241,7 +241,7 @@ export default async function ServiceMaintenance() {
         buttons={[
           {
             text: "Get Started Today",
-            href: "/contact",
+             href: "/contact#contact-inquiry",
             variant: "primary"
           },
           {

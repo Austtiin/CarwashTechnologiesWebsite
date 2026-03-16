@@ -67,14 +67,8 @@ export default function AboutPage() {
           eyebrow="About Our Company"
           title="Carwash Technologies"
           highlightedWord="Technologies"
-          subtitle="50+ Years of Combined Excellence"
+          subtitle="Serving the Upper Midwest Wash Industry"
           description="Built on a foundation of expertise, innovation, and unwavering commitment to customer success across Minnesota, North Dakota, South Dakota, and Wisconsin."
-          stats={[
-            { value: '50+', label: 'Years Combined Experience' },
-            { value: '500+', label: 'Installations' },
-            { value: '4', label: 'States Served' },
-            { value: '98%', label: 'Satisfaction' }
-          ]}
           backgroundVariant="white"
           showPattern={true}
           leftImage="/imgs/AirCannon.jpg"
@@ -97,7 +91,7 @@ export default function AboutPage() {
           buttons={[
         {
           text: "Get Started Today",
-          href: "/contact",
+               href: "/contact#contact-inquiry",
           variant: "primary"
         },
         {

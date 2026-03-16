@@ -81,16 +81,10 @@ export default function Services() {
         highlightedWord="Services"
         subtitle="Complete Solutions for Your Wash Business"
         description="From initial consultation to ongoing support, we provide comprehensive solutions for your wash business. Equipment sales, installation, chemicals, service, and consulting."
-        stats={[
-          { value: '50+', label: 'Years Combined Experience' },
-          { value: '500+', label: 'Installations' },
-          { value: '4', label: 'States Served' },
-          { value: 'Fast Response', label: 'Support Available' }
-        ]}
         buttons={[
           {
             text: "Get Started",
-            href: "/contact",
+            href: "/contact#contact-inquiry",
             variant: "primary"
           },
           {
@@ -121,7 +115,7 @@ export default function Services() {
         buttons={[
           {
             text: "Get Started Today",
-            href: "/contact",
+              href: "/contact#contact-inquiry",
             variant: "primary"
           },
           {

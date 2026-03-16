@@ -24,6 +24,7 @@ interface CallToActionProps {
 
 export default function CallToActionNew({
   title,
+  description,
   buttons,
   contactInfo
 }: CallToActionProps) {
@@ -91,7 +92,7 @@ export default function CallToActionNew({
             )}
           </h2>
           <p className="text-base text-gray-600 leading-relaxed">
-            Whether you&apos;re planning a new installation or need expert service, we&apos;re here to help every step of the way.
+            {description || "Whether you're planning a new installation or need expert service, we're here to help every step of the way."}
           </p>
         </div>
 

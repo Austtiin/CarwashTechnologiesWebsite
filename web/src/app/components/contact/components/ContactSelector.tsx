@@ -36,7 +36,10 @@ export default function ContactSelector({ contactOptions }: ContactSelectorProps
   const sectionPadding = selectedContact ? 'py-10 md:py-12' : 'py-16';
 
   return (
-    <section className={`relative ${sectionPadding} bg-gradient-to-b from-gray-50 via-white to-gray-50 overflow-hidden`}>
+    <section
+      id="contact-inquiry"
+      className={`relative scroll-mt-32 ${sectionPadding} bg-gradient-to-b from-gray-50 via-white to-gray-50 overflow-hidden`}
+    >
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-[0.03]">
         <div className="absolute inset-0" style={{

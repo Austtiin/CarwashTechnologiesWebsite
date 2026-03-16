@@ -7,8 +7,8 @@ import CallToActionNew from '../components/ui/CallToActionNew';
 
 export const metadata: Metadata = {
   title: 'Equipment Sales | Carwash Technologies',
-  description: 'Premium car wash equipment from industry-leading manufacturers. Tunnel systems, automatic systems, self-serve bays, and more. Serving Minnesota, North Dakota, South Dakota, and Wisconsin.',
-  keywords: 'car wash equipment, tunnel systems, automatic wash, self-serve equipment, wash equipment sales',
+  description: 'Premium new car wash and vehicle wash equipment from industry-leading manufacturers. Tunnel systems, automatic vehicle washes, self-serve bays, and more. Serving Minnesota, North Dakota, South Dakota, and Wisconsin.',
+  keywords: 'car wash equipment, new wash systems, new car wash equipment, automatic vehicle washes, tunnel systems, automatic wash, self-serve equipment, wash equipment sales',
   openGraph: {
     title: 'Equipment Sales | Carwash Technologies',
     description: 'Premium car wash equipment from industry-leading manufacturers',
@@ -131,7 +131,7 @@ export default async function EquipmentSales() {
         buttons={[
           {
             text: "Get Equipment Quote",
-            href: "/contact",
+            href: "/contact#contact-inquiry",
             variant: "primary"
           },
           {
@@ -193,7 +193,7 @@ export default async function EquipmentSales() {
         buttons={[
           {
             text: "Get Started Today",
-            href: "/contact",
+              href: "/contact#contact-inquiry",
             variant: "primary"
           },
           {

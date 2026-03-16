@@ -120,6 +120,9 @@ const Navbar = () => {
             <Link href="/about" className="font-medium text-gray-700 hover:text-[#d0b211] transition-colors">
               About
             </Link>
+            <Link href="/wash-types" className="font-medium text-gray-700 hover:text-[#d0b211] transition-colors">
+              Types of Washes
+            </Link>
             
             {/* Services Dropdown */}
             <div className="relative group">
@@ -173,10 +176,7 @@ const Navbar = () => {
               </div>
             </div>
             
-            <Link href="/projects" className="font-medium text-gray-700 hover:text-[#d0b211] transition-colors">
-              Projects
-            </Link>
-            <Link href="/contact" className="font-medium text-gray-700 hover:text-[#d0b211] transition-colors">
+            <Link href="/contact#contact-inquiry" className="font-medium text-gray-700 hover:text-[#d0b211] transition-colors">
               Contact
             </Link>
           </nav>
@@ -218,14 +218,18 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* FIXED: Mobile Navigation with fixed positioning when open */}
+        {/* Mobile Navigation - full-screen slide-out panel */}
         {isMenuOpen && (
-          <div 
-            className="md:hidden fixed inset-x-0 top-16 sm:top-20 bg-white border-b border-gray-200 shadow-lg z-40"
-            style={{ maxHeight: 'calc(100vh - 4rem)' }} // Adjust based on header height
-          >
-            <div className="max-h-96 overflow-y-auto py-4">
-              <nav className="flex flex-col space-y-4">
+          <div className="md:hidden fixed inset-0 z-40">
+            {/* Dimmed background overlay */}
+            <div
+              className="absolute inset-0 bg-black/40"
+              onClick={closeAllMenus}
+            />
+
+            {/* Slide-out panel */}
+            <div className="absolute inset-y-0 right-0 w-full max-w-xs bg-white shadow-xl transform transition-transform duration-300">
+              <nav className="flex flex-col h-full overflow-y-auto py-6 space-y-4">
                 <Link 
                   href="/" 
                   className="font-medium text-gray-600 hover:text-yellow-500 transition-colors px-4 py-2"
@@ -239,6 +243,13 @@ const Navbar = () => {
                   onClick={handleMobileNavClick}
                 >
                   About
+                </Link>
+                <Link 
+                  href="/wash-types" 
+                  className="font-medium text-gray-600 hover:text-yellow-500 transition-colors px-4 py-2"
+                  onClick={handleMobileNavClick}
+                >
+                  Types of Washes
                 </Link>
                 
                 {/* Mobile Services Section */}
@@ -274,14 +285,7 @@ const Navbar = () => {
                 </div>
                 
                 <Link 
-                  href="/projects" 
-                  className="font-medium text-gray-600 hover:text-yellow-500 transition-colors px-4 py-2"
-                  onClick={handleMobileNavClick}
-                >
-                  Projects
-                </Link>
-                <Link 
-                  href="/contact" 
+                  href="/contact#contact-inquiry" 
                   className="font-medium text-gray-600 hover:text-yellow-500 transition-colors px-4 py-2"
                   onClick={handleMobileNavClick}
                 >
