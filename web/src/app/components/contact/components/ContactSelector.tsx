@@ -85,19 +85,6 @@ export default function ContactSelector({ contactOptions }: ContactSelectorProps
             </>
           ) : (
             <>
-              {/* Back Button */}
-              <div className="mb-8">
-                <button
-                  onClick={resetSelection}
-                  className="inline-flex items-center text-gray-700 hover:text-[#f0da11] group transition-colors duration-300 border-2 border-gray-300 px-6 py-3 bg-white hover:bg-gray-50 shadow-sm cursor-pointer"
-                >
-                  <svg className="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                  </svg>
-                  Back to options
-                </button>
-              </div>
-
               {/* Selected Service Header */}
               <div className="text-center mb-6" style={{ animation: 'slideInFromRight 0.5s ease-out forwards' }}>
                 <div className={`inline-flex items-center bg-gradient-to-br ${selectedOption?.bgColor} border-2 ${selectedOption?.borderColor} px-6 py-3 mb-6 shadow-sm`}>
@@ -106,9 +93,22 @@ export default function ContactSelector({ contactOptions }: ContactSelectorProps
                   </span>
                 </div>
 
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3">
-                  Inquire about <span className="text-[#f0da11]">{selectedOption?.title}</span>
-                </h2>
+                <div className="relative mb-3">
+                  <button
+                    onClick={resetSelection}
+                    className="inline-flex items-center text-gray-700 hover:text-[#f0da11] group transition-colors duration-300 border-2 border-gray-300 px-5 py-2.5 bg-white hover:bg-gray-50 shadow-sm cursor-pointer mb-3 md:mb-0 md:absolute md:left-0 md:top-1/2 md:-translate-y-1/2"
+                  >
+                    <svg className="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                    </svg>
+                    Back to options
+                  </button>
+
+                  <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 text-center">
+                    Inquire about <span className="text-[#f0da11]">{selectedOption?.title}</span>
+                  </h2>
+                </div>
+
                 <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
                   {selectedOption?.details}
                 </p>

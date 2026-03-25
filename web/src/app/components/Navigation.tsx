@@ -94,26 +94,26 @@ const Navbar = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md" ref={menuRef}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 sm:h-20 items-center justify-center relative">
+        <div className="flex h-14 sm:h-16 lg:h-[4.25rem] items-center justify-center relative">
           
           {/* Logo / Business Name - positioned absolutely to left */}
-          <div className="absolute left-0 flex items-center space-x-2 sm:space-x-3">
+          <div className="absolute left-0 flex items-center space-x-2 sm:space-x-2.5">
             <Image
               src="/logos/logoCWT.webp"
               alt="Carwash Technologies Logo"
               width={48}
               height={48}
-              className="w-12 h-auto sm:w-12"
+              className="w-10 h-auto sm:w-11"
               priority
             />
-            <Link href="/" className="text-lg sm:text-2xl font-bold text-gray-900" onClick={closeAllMenus}>
+            <Link href="/" className="text-sm sm:text-lg font-bold text-gray-900" onClick={closeAllMenus}>
               <span className="font-friz hidden sm:inline">Carwash Technologies</span>
               <span className="font-friz sm:hidden">CWT</span>
             </Link>
           </div>
           
           {/* Desktop Navigation Links - now centered */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-6 lg:space-x-7">
             <Link href="/" className="font-medium text-gray-700 hover:text-[#d0b211] transition-colors">
               Home
             </Link>
@@ -182,13 +182,13 @@ const Navbar = () => {
           </nav>
           
           {/* Phone & CTA - positioned absolutely to right */}
-          <div className="absolute right-0 flex items-center gap-2 sm:gap-4">
+          <div className="absolute right-0 flex items-center gap-2 sm:gap-3">
             <a href="tel:612-408-9010" className="hidden lg:block font-semibold text-gray-800 hover:text-[#d0b211] transition-colors">
               612-408-9010
             </a>
             <Link 
               href="/contact" 
-              className="bg-[#f0da11] text-black px-3 py-2 sm:px-6 text-sm sm:text-base rounded-lg font-semibold hover:bg-[#d0b211] transition-colors duration-200 shadow-md hover:shadow-lg"
+              className="bg-[#f0da11] text-black px-3 py-1.5 sm:px-5 text-xs sm:text-sm rounded-lg font-semibold hover:bg-[#d0b211] transition-colors duration-200 shadow-md hover:shadow-lg"
               onClick={closeAllMenus}
             >
               <span className="hidden sm:inline">Get Quote</span>

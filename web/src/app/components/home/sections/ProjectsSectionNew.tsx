@@ -36,7 +36,7 @@ export default function ProjectsSectionNew() {
       location: 'Forest Lake, MN',
       type: 'Self-Serve & Automatic',
       description: 'Five Bay, featuring three car washes and two self service systems with exterior vacuums.',
-      image: '/imgs/SudzFL/IMG_20260101_213851.jpg',
+      image: '/imgs/SudzFL/IMG_20260101_213851.webp',
       stats: [
         { label: 'Bays', value: '5 Total (3 Wash + 2 Self Serve)' },
         { label: 'Timeline', value: '6 weeks' },
@@ -46,7 +46,7 @@ export default function ProjectsSectionNew() {
   ];
 
   return (
-    <section className="relative bg-gradient-to-br from-white via-yellow-50/30 to-white py-24 overflow-hidden">
+    <section className="relative bg-gradient-to-br from-white via-yellow-50/30 to-white py-16 sm:py-20 overflow-hidden">
       {/* Animated Diagonal Grid */}
       <div className="absolute inset-0 opacity-[0.08]">
         <div
@@ -65,24 +65,24 @@ export default function ProjectsSectionNew() {
       <div className="absolute top-0 right-0 w-40 h-40 border-r-2 border-t-2 border-[#f0da11]/10" />
       <div className="absolute bottom-0 left-0 w-40 h-40 border-l-2 border-b-2 border-[#f0da11]/10" />
 
-      <div className="container mx-auto px-6 lg:px-8 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16 max-w-3xl mx-auto">
+        <div className="text-center mb-12 sm:mb-14 max-w-3xl mx-auto">
           <div className="inline-flex items-center gap-3 mb-4">
             <div className="w-8 h-px bg-[#f0da11]"></div>
             <span className="text-sm font-semibold text-gray-600 uppercase tracking-wider">Recent Work</span>
             <div className="w-8 h-px bg-[#f0da11]"></div>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
             Projects That Define <span className="text-[#f0da11]">Excellence</span>
           </h2>
-          <p className="text-lg text-gray-600 leading-relaxed">
+          <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
             From concept to completion, we deliver car wash solutions that exceed expectations
           </p>
         </div>
 
         {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-10 sm:mb-12">
           {projects.map((project, index) => (
             <div
               key={index}
@@ -93,7 +93,7 @@ export default function ProjectsSectionNew() {
               }}
             >
               {/* Image Container */}
-              <div className="relative h-56 bg-gray-200 overflow-hidden">
+              <div className="relative h-52 sm:h-56 bg-gray-200 overflow-hidden">
                 {/* Actual Image */}
                 <Image
                   src={project.image} 

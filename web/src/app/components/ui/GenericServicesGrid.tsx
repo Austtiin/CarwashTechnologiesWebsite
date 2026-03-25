@@ -45,7 +45,7 @@ export default function GenericServicesGrid({
   }[columns];
 
   return (
-    <section className={`relative ${bgClass} py-24 overflow-hidden`}>
+    <section className={`relative ${bgClass} py-16 sm:py-20 overflow-hidden`}>
       {/* Subtle Wave Pattern */}
       <div className="absolute inset-0 opacity-[0.02]">
         <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
@@ -58,9 +58,9 @@ export default function GenericServicesGrid({
         </svg>
       </div>
 
-      <div className="container mx-auto px-6 lg:px-8 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16 max-w-3xl mx-auto">
+        <div className="text-center mb-12 sm:mb-14 max-w-3xl mx-auto">
           {eyebrow && (
             <div className="inline-block mb-4">
               <span className="text-sm font-semibold text-gray-600 uppercase tracking-wider">
@@ -69,7 +69,7 @@ export default function GenericServicesGrid({
             </div>
           )}
           
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
             {highlightedWord ? (
               <>
                 {title.split(highlightedWord)[0]}
@@ -82,18 +82,18 @@ export default function GenericServicesGrid({
           </h2>
           
           {description && (
-            <p className="text-lg text-gray-600">
+            <p className="text-base sm:text-lg text-gray-600">
               {description}
             </p>
           )}
         </div>
 
         {/* Services Grid */}
-        <div className={`grid ${colClass} gap-6 mb-12`}>
+        <div className={`grid ${colClass} gap-5 sm:gap-6 mb-10 sm:mb-12`}>
           {items.map((item, index) => {
             const CardContent = (
               <div
-                className={`relative group bg-white p-8 hover:shadow-lg transition-all duration-200 hover:-translate-y-1 border-l-4 border-transparent hover:border-[#f0da11] h-full ${
+                className={`relative group bg-white p-6 sm:p-7 hover:shadow-lg transition-all duration-200 hover:-translate-y-1 border-l-4 border-transparent hover:border-[#f0da11] h-full ${
                   item.link ? 'cursor-pointer' : ''
                 }`}
                 style={{

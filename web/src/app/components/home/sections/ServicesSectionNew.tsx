@@ -51,7 +51,7 @@ export default function ServicesSectionNew() {
   ];
 
   return (
-    <section className="relative bg-gradient-to-b from-[#f6f6f6] via-gray-100 to-[#f6f6f6] py-24 overflow-hidden">
+    <section className="relative bg-gradient-to-b from-[#f6f6f6] via-gray-100 to-[#f6f6f6] py-16 sm:py-20 overflow-hidden">
       {/* Subtle Dot Grid Pattern */}
       <div className="absolute inset-0 opacity-[0.05]">
         <div
@@ -79,29 +79,29 @@ export default function ServicesSectionNew() {
       <div className="absolute top-20 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#f0da11]/20 to-transparent" />
       <div className="absolute bottom-20 right-0 w-full h-px bg-gradient-to-r from-transparent via-[#f0da11]/20 to-transparent" />
 
-      <div className="container mx-auto px-6 lg:px-8 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16 max-w-3xl mx-auto">
+        <div className="text-center mb-12 sm:mb-14 max-w-3xl mx-auto">
           <div className="inline-flex items-center gap-3 mb-4">
             <div className="w-8 h-px bg-[#f0da11]"></div>
             <span className="text-sm font-semibold text-gray-600 uppercase tracking-wider">What We Offer</span>
             <div className="w-8 h-px bg-[#f0da11]"></div>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
             Complete Solutions for <span className="text-[#f0da11]">Modern</span> Wash Operations
           </h2>
-          <p className="text-lg text-gray-600 leading-relaxed">
+          <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
             From initial installation to ongoing support, we provide everything you need to succeed
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 mb-10 sm:mb-12">
           {services.map((service, index) => (
             <Link 
               href={service.link}
               key={index}
-              className="group relative bg-white p-8 shadow-2xl hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] transition-all duration-300 hover:-translate-y-2 border-l-4 border-transparent hover:border-[#f0da11] overflow-hidden ring-2 ring-white/80"
+              className="group relative bg-white p-6 sm:p-7 shadow-2xl hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] transition-all duration-300 hover:-translate-y-2 border-l-4 border-transparent hover:border-[#f0da11] overflow-hidden ring-2 ring-white/80"
               style={{
                 animation: `fadeInUp 0.6s ease-out ${index * 0.1}s forwards`,
                 opacity: 0,
@@ -116,34 +116,36 @@ export default function ServicesSectionNew() {
                     alt=""
                     fill
                     className="object-cover"
-                    style={{ opacity: 0.5 }}
+                    style={{ opacity: 0.72 }}
                   />
-                  {/* Gradient from solid white on left to transparent on right */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-white/60"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/96 via-white/74 to-amber-200/16" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-amber-300/25 via-transparent to-cyan-200/20" />
                 </div>
               )}
               {index === 1 && (
                 <div className="absolute inset-0 z-0">
                   <Image
-                    src="/imgs/Track.png"
+                    src="/imgs/Track.webp"
                     alt=""
                     fill
                     className="object-cover"
-                    style={{ opacity: 0.5 }}
+                    style={{ opacity: 0.7 }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-white/60"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/96 via-white/74 to-sky-200/16" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-300/20 via-transparent to-cyan-200/22" />
                 </div>
               )}
               {index === 2 && (
                 <div className="absolute inset-0 z-0">
                   <Image
-                    src="/imgs/chems/MixStir.jpg"
+                    src="/imgs/chems/MixStir.webp"
                     alt=""
                     fill
                     className="object-cover"
-                    style={{ opacity: 0.5 }}
+                    style={{ opacity: 0.73 }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-white/60"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/72 to-lime-200/16" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-200/20 via-transparent to-amber-200/20" />
                 </div>
               )}
               {index === 3 && (
@@ -153,17 +155,18 @@ export default function ServicesSectionNew() {
                     alt=""
                     fill
                     className="object-cover"
-                    style={{ opacity: 0.5 }}
+                    style={{ opacity: 0.7 }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-white/60"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/96 via-white/74 to-orange-200/16" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-rose-200/20 via-transparent to-amber-200/20" />
                 </div>
               )}
               
               {/* Colored accent bar that grows on hover */}
               <div className="absolute left-0 top-0 w-1 h-0 bg-[#f0da11] group-hover:h-full transition-all duration-300" />
               
-              {/* Content - positioned on left with white background */}
-              <div className="relative z-10">
+              {/* Frosted content panel keeps text readable while preserving colorful imagery */}
+              <div className="relative z-10 rounded-xl bg-gradient-to-r from-white/90 via-white/74 to-white/25 backdrop-blur-[2px] border border-white/65 shadow-[0_8px_24px_-16px_rgba(15,23,42,0.45)] p-4">
                 {/* Icon */}
                 <div className="w-12 h-12 bg-gray-100 text-gray-900 flex items-center justify-center mb-6 group-hover:bg-[#f0da11] group-hover:text-black group-hover:scale-110 transition-all duration-200">
                   {service.icon}

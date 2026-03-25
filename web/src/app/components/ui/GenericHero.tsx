@@ -27,6 +27,9 @@ interface GenericHeroProps {
   showPattern?: boolean;
   leftImage?: string;
   rightImage?: string;
+  compact?: boolean;
+  centerLane?: 'normal' | 'strong';
+  textSurface?: boolean;
 }
 
 export default function GenericHero({
@@ -40,12 +43,26 @@ export default function GenericHero({
   backgroundVariant = 'white',
   showPattern = true,
   leftImage,
-  rightImage
+  rightImage,
+  compact = false,
+  centerLane = 'normal',
+  textSurface = false
 }: GenericHeroProps) {
   const bgClass = backgroundVariant === 'light-grey' ? 'bg-[#f6f6f6]' : 'bg-white';
+  const sectionSpacing = compact ? 'pt-20 sm:pt-24 lg:pt-28 pb-10 sm:pb-12 lg:pb-14' : 'pt-24 sm:pt-28 lg:pt-32 pb-12 sm:pb-16 lg:pb-20';
+  const titleSize = compact ? 'text-3xl sm:text-4xl md:text-5xl lg:text-5xl' : 'text-3xl sm:text-4xl md:text-5xl lg:text-6xl';
+
+  const centerLaneClass =
+    centerLane === 'strong'
+      ? 'w-[66%] sm:w-[60%] bg-gradient-to-r from-transparent via-white/94 to-transparent'
+      : 'w-[54%] sm:w-[48%] bg-gradient-to-r from-transparent via-white/92 to-transparent';
+
+  const textSurfaceClass = textSurface
+    ? 'bg-white/92 backdrop-blur-md rounded-2xl px-4 sm:px-8 py-6 sm:py-8 shadow-xl border border-white/95 ring-1 ring-slate-200/60'
+    : '';
 
   return (
-    <section className={`relative ${bgClass} pt-32 pb-20 overflow-hidden`}>
+    <section className={`relative ${bgClass} ${sectionSpacing} overflow-hidden`}>
       {/* Background Equipment Image - Left Side */}
       {leftImage && (
         <div className="absolute left-0 top-0 bottom-0 w-1/2 pointer-events-none overflow-hidden">
@@ -54,9 +71,9 @@ export default function GenericHero({
               src={leftImage}
               alt=""
               fill
-              className="object-cover opacity-50"
+              className="object-cover opacity-75"
             />
-            <div className="absolute inset-0 bg-gradient-to-l from-white via-white/80 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-white/88"></div>
           </div>
         </div>
       )}
@@ -69,12 +86,23 @@ export default function GenericHero({
               src={rightImage}
               alt=""
               fill
-              className="object-cover opacity-50"
+              className="object-cover opacity-78"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-l from-transparent via-white/26 to-white/84"></div>
           </div>
         </div>
       )}
+
+      {(leftImage || rightImage) && (
+        <>
+          <div className={`absolute inset-y-0 left-1/2 -translate-x-1/2 ${centerLaneClass} pointer-events-none`}></div>
+          <div className="absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-blue-100/14 to-transparent pointer-events-none"></div>
+        </>
+      )}
+
+      {/* Framing Rails */}
+      <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-cyan-300/60 via-[#f0da11]/80 to-blue-300/60 pointer-events-none"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-gradient-to-r from-blue-300/55 via-[#f0da11]/75 to-cyan-300/55 pointer-events-none"></div>
 
       {/* Animated Grid Background */}
       {showPattern && (
@@ -100,6 +128,16 @@ export default function GenericHero({
         <div className="absolute top-32 right-0 w-full h-1 bg-[#f0da11] transform -rotate-12 translate-x-20"></div>
         <div className="absolute top-52 right-0 w-full h-2 bg-[#f0da11] transform -rotate-12 translate-x-20"></div>
         <div className="absolute top-72 right-0 w-full h-1 bg-[#f0da11] transform -rotate-12 translate-x-20"></div>
+      </div>
+
+      {/* Decorative Color Lines */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute -left-24 top-14 w-96 h-[3px] bg-gradient-to-r from-transparent via-cyan-400/70 to-transparent rotate-[8deg]"></div>
+        <div className="absolute -right-24 top-24 w-[30rem] h-[3px] bg-gradient-to-r from-transparent via-[#f0da11]/85 to-transparent -rotate-[7deg]"></div>
+        <div className="absolute -left-20 bottom-24 w-80 h-[3px] bg-gradient-to-r from-transparent via-blue-400/65 to-transparent -rotate-[10deg]"></div>
+        <div className="absolute -right-20 bottom-14 w-72 h-[3px] bg-gradient-to-r from-transparent via-amber-300/70 to-transparent rotate-[10deg]"></div>
+        <div className="absolute left-8 top-1/3 h-40 w-[2px] bg-gradient-to-b from-transparent via-[#f0da11]/45 to-transparent"></div>
+        <div className="absolute right-8 top-1/2 h-44 w-[2px] bg-gradient-to-b from-transparent via-cyan-300/40 to-transparent"></div>
       </div>
 
       {/* Water Droplets - Animated */}
@@ -140,18 +178,18 @@ export default function GenericHero({
       <div className="absolute top-1/2 right-16 w-12 h-12 border-2 border-[#f0da11]/5 transform -rotate-12 hidden lg:block"
            style={{ animation: 'float 7s ease-in-out infinite 1s' }} />
 
-      <div className="container mx-auto px-6 lg:px-8 relative z-10">
-        <div className="max-w-4xl mx-auto text-center" style={{ animation: 'fadeInUp 0.8s ease-out forwards', opacity: 0 }}>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className={`max-w-4xl mx-auto text-center ${textSurfaceClass}`} style={{ animation: 'fadeInUp 0.8s ease-out forwards', opacity: 0 }}>
           
           {eyebrow && (
             <div className="inline-block mb-6">
-              <span className="text-sm font-semibold text-gray-600 uppercase tracking-wider">
+              <span className="text-sm font-semibold text-gray-700 uppercase tracking-wider">
                 {eyebrow}
               </span>
             </div>
           )}
 
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
+          <h1 className={`${titleSize} font-bold text-gray-900 mb-5 sm:mb-6 leading-tight`}>
             {highlightedWord ? (
               <>
                 {title.split(highlightedWord)[0]}
@@ -163,24 +201,24 @@ export default function GenericHero({
             )}
           </h1>
 
-          <p className="text-2xl md:text-3xl font-semibold text-gray-700 mb-4">
+          <p className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-800 mb-4">
             {subtitle}
           </p>
 
-          <p className="text-lg text-gray-600 mb-10 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-gray-700 mb-8 sm:mb-10 leading-relaxed max-w-2xl mx-auto">
             {description}
           </p>
 
           {buttons.length > 0 && (
-            <div className="flex flex-wrap items-center justify-center gap-4 mb-16">
+            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-10 sm:mb-12">
               {buttons.map((button, index) => (
                 <Link
                   key={index}
                   href={button.href}
                   className={
                     button.variant === 'primary'
-                      ? 'bg-[#f0da11] text-black font-semibold px-8 py-4 hover:-translate-y-1 transition-all duration-200 shadow-md hover:shadow-lg text-lg'
-                      : 'border-2 border-gray-900 text-gray-900 font-semibold px-8 py-4 hover:bg-gray-900 hover:text-white transition-all duration-200 text-lg'
+                      ? 'bg-[#f0da11] text-black font-semibold px-5 sm:px-7 py-3 sm:py-3.5 hover:-translate-y-1 transition-all duration-200 shadow-md hover:shadow-lg text-sm sm:text-base'
+                      : 'border-2 border-gray-900 text-gray-900 font-semibold px-5 sm:px-7 py-3 sm:py-3.5 hover:bg-gray-900 hover:text-white transition-all duration-200 text-sm sm:text-base'
                   }
                 >
                   {button.text}
@@ -196,7 +234,7 @@ export default function GenericHero({
               <div className="grid grid-cols-2 md:grid-cols-4 gap-8" style={{ animation: 'fadeInUp 0.8s ease-out 0.2s forwards', opacity: 0 }}>
                 {stats.map((stat, index) => (
                   <div key={index} className="text-center">
-                    <div className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
+                    <div className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
                       {stat.value}
                     </div>
                     <div className="text-sm text-gray-600 uppercase tracking-wider">

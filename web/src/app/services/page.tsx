@@ -14,7 +14,7 @@ export default function Services() {
       title: 'Equipment Sales',
       description: 'Premium wash equipment from leading manufacturers. We help you choose the right equipment for your specific needs and budget.',
       link: '/equipment-sales',
-      backgroundImage: '/imgs/Carwash1.jpg'
+      backgroundImage: '/imgs/Carwash1.webp'
     },
     {
       icon: (
@@ -25,7 +25,7 @@ export default function Services() {
       title: 'Installation & Setup',
       description: 'Professional installation services ensuring your equipment is properly configured and optimized for maximum performance.',
       link: '/installation-setup',
-      backgroundImage: '/imgs/BelangerTunnel.jpg'
+      backgroundImage: '/imgs/BelangerTunnel.webp'
     },
     {
       icon: (
@@ -36,7 +36,7 @@ export default function Services() {
       title: 'Chemical Sales',
       description: 'High-performance wash chemicals for superior cleaning results. We offer flexible chemical programs and delivery options.',
       link: '/chemical-sales',
-      backgroundImage: '/imgs/chems/MixStir.jpg'
+      backgroundImage: '/imgs/chems/MixStir.webp'
     },
     {
       icon: (
@@ -47,7 +47,7 @@ export default function Services() {
       title: 'Service & Maintenance',
       description: 'Expert service and maintenance to keep your equipment running smoothly. Emergency service available.',
       link: '/service-maintenance',
-      backgroundImage: '/imgs/car-wash.jpg'
+      backgroundImage: '/imgs/car-wash.webp'
     },
     {
       icon: (
@@ -69,7 +69,7 @@ export default function Services() {
       title: 'Training & Support',
       description: 'Comprehensive training programs and ongoing support to ensure your team operates equipment safely and efficiently.',
       link: '/contact',
-      backgroundImage: '/imgs/AirCannon.jpg'
+      backgroundImage: '/imgs/AirCannon.webp'
     }
   ];
 
@@ -95,8 +95,10 @@ export default function Services() {
         ]}
         backgroundVariant="white"
         showPattern={true}
-        leftImage="/imgs/BelangerTunnel.jpg"
-        rightImage="/imgs/SpinLite.jpg"
+        leftImage="/imgs/BelangerTunnel.webp"
+        rightImage="/imgs/SpinLite.webp"
+        centerLane="strong"
+        textSurface={true}
       />
 
       <GenericServicesGrid

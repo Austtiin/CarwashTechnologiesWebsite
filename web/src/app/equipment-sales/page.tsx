@@ -99,15 +99,15 @@ export default async function EquipmentSales() {
     description: category.description + ' ' + category.features.join(', '),
     backgroundImage:
       category.id === 'tunnel'
-        ? '/imgs/BelangerTunnel.jpg'
+        ? '/imgs/BelangerTunnel.webp'
         : category.id === 'self-serve'
-          ? '/imgs/car-wash.jpg'
+          ? '/imgs/car-wash.webp'
           : category.id === 'automatic'
-            ? '/imgs/PDQ.jpg'
+            ? '/imgs/PDQ.webp'
             : category.id === 'water-recovery'
               ? '/imgs/Insta-KLEEN-fleet.webp'
               : category.id === 'dryer'
-                ? '/imgs/SpinLite.jpg'
+                ? '/imgs/SpinLite.webp'
                 : category.id === 'payment'
                   ? '/imgs/CarWash Controller.jpg'
                   : undefined
@@ -122,12 +122,6 @@ export default async function EquipmentSales() {
         highlightedWord="Equipment"
         subtitle="Industry-Leading Solutions"
         description="Premium car wash equipment from trusted manufacturers. Complete systems for tunnel, automatic, self-serve operations, and everything in between."
-        stats={[
-          { value: data.stats.experience, label: 'Years Combined Experience' },
-          { value: data.stats.installations, label: 'Installations' },
-          { value: data.stats.support, label: 'Support' },
-          { value: data.stats.states, label: 'States Served' }
-        ]}
         buttons={[
           {
             text: "Get Equipment Quote",
@@ -142,8 +136,10 @@ export default async function EquipmentSales() {
         ]}
         backgroundVariant="white"
         showPattern={true}
-        leftImage="/imgs/BelangerTunnel.jpg"
-        rightImage="/imgs/SpinLite.jpg"
+        leftImage="/imgs/IMG_5386.webp"
+        rightImage="/imgs/IMG_5380.webp"
+        centerLane="strong"
+        textSurface={true}
       />
 
       {/* Trusted Partners Section */}

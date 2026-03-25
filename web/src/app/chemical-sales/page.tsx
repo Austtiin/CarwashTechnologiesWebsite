@@ -115,11 +115,11 @@ export default async function ChemicalSales() {
     description: category.description,
     backgroundImage:
       category.id === 'pre-treatment'
-        ? '/imgs/chems/MixStir.jpg'
+        ? '/imgs/chems/MixStir.webp'
         : category.id === 'wash-solutions'
-          ? '/imgs/chems/VLabs-Tubs.jpg'
+          ? '/imgs/chems/VLabs-Tubs.webp'
           : category.id === 'finishing'
-            ? '/imgs/SudzFL/IMG_20260101_213851.jpg'
+            ? '/imgs/SudzFL/IMG_20260101_213851.webp'
             : category.id === 'specialty'
               ? '/imgs/chems/THU100.webp'
               : undefined
@@ -134,7 +134,7 @@ export default async function ChemicalSales() {
     ),
     title: benefit,
     description: "Expert chemical programs designed for your success",
-    backgroundImage: '/imgs/chems/MixStir.jpg'
+    backgroundImage: '/imgs/chems/MixStir.webp'
   }));
 
   return (
@@ -146,12 +146,6 @@ export default async function ChemicalSales() {
         highlightedWord="Chemical"
         subtitle="Superior Cleaning Results"
         description="Professional-grade wash chemicals from trusted manufacturers. Complete chemical programs for pre-treatment, wash solutions, finishing products, and specialty applications."
-        stats={[
-          { value: data.stats.satisfaction, label: 'Satisfaction' },
-          { value: data.stats.support, label: 'Support' },
-          { value: data.stats.delivery, label: 'Delivery' },
-          { value: data.stats.coverage, label: data.stats.coverage }
-        ]}
         buttons={[
           {
             text: "Get Chemical Quote",
@@ -166,8 +160,10 @@ export default async function ChemicalSales() {
         ]}
         backgroundVariant="white"
         showPattern={true}
-        leftImage="/imgs/BelangerTunnel.jpg"
-        rightImage="/imgs/SpinLite.jpg"
+        leftImage="/imgs/IMG_5384.webp"
+        rightImage="/imgs/IMG_20260313_101859.webp"
+        centerLane="strong"
+        textSurface={true}
       />
 
       {/* Trusted Chemical Manufacturers */}

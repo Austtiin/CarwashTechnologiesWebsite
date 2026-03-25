@@ -141,17 +141,17 @@ export default async function ServiceMaintenance() {
     description: category.description + ' ' + category.features.join(', '),
     backgroundImage:
       category.id === 'preventive'
-        ? '/imgs/car-wash.jpg'
+        ? '/imgs/car-wash.webp'
         : category.id === 'emergency'
-          ? '/imgs/Carwash1.jpg'
+          ? '/imgs/Carwash1.webp'
           : category.id === 'electrical'
             ? '/imgs/CarWash Controller.jpg'
             : category.id === 'chemical'
-              ? '/imgs/chems/MixStir.jpg'
+              ? '/imgs/chems/MixStir.webp'
               : category.id === 'water'
                 ? '/imgs/Insta-KLEEN-Fleet-Wash-Rendering-Belanger (1).webp'
                 : category.id === 'training'
-                  ? '/imgs/AirCannon.jpg'
+                  ? '/imgs/AirCannon.webp'
                   : undefined
   }));
 
@@ -166,17 +166,17 @@ export default async function ServiceMaintenance() {
     description: equipment.description + ' ' + equipment.services.join(', '),
     backgroundImage:
       equipment.id === 'tunnel'
-        ? '/imgs/BelangerTunnel.jpg'
+        ? '/imgs/BelangerTunnel.webp'
         : equipment.id === 'self-serve'
-          ? '/imgs/car-wash.jpg'
+          ? '/imgs/car-wash.webp'
           : equipment.id === 'chemical-equip'
-            ? '/imgs/chems/VLabs-Tubs.jpg'
+            ? '/imgs/chems/VLabs-Tubs.webp'
             : equipment.id === 'water-treatment'
               ? '/imgs/Insta-KLEEN-fleet.webp'
               : equipment.id === 'electrical-equip'
                 ? '/imgs/CarWash Controller.jpg'
                 : equipment.id === 'dryer'
-                  ? '/imgs/SpinLite.jpg'
+                  ? '/imgs/SpinLite.webp'
                   : undefined
   }));
 
@@ -189,12 +189,6 @@ export default async function ServiceMaintenance() {
         highlightedWord="Service"
         subtitle="Keeping Your Wash Running Smoothly"
         description="Expert service and maintenance for all car wash equipment. Emergency service available, preventive maintenance, and certified technicians across the Midwest."
-        stats={[
-          { value: data.stats.serviceCalls, label: 'Service Calls' },
-          { value: data.stats.satisfaction, label: 'Satisfaction' },
-          { value: data.stats.responseTime, label: 'Response Time' },
-          { value: data.stats.coverage, label: data.stats.coverage }
-        ]}
         buttons={[
           {
             text: "Schedule Service",
@@ -209,8 +203,10 @@ export default async function ServiceMaintenance() {
         ]}
         backgroundVariant="white"
         showPattern={true}
-        leftImage="/imgs/BelangerTunnel.jpg"
-        rightImage="/imgs/SpinLite.jpg"
+        leftImage="/imgs/IMG_5380.webp"
+        rightImage="/imgs/IMG_20260313_124500.webp"
+        centerLane="strong"
+        textSurface={true}
       />
 
       {/* Service Categories */}

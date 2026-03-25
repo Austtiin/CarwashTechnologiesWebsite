@@ -26,7 +26,7 @@ export default function ConsultingPage() {
       ),
       title: 'Site Development',
       description: 'Expert site analysis, planning, and development for new wash locations. We help identify optimal locations and design efficient layouts.',
-      backgroundImage: '/imgs/Existing.jpg'
+      backgroundImage: '/imgs/Existing.webp'
     },
     {
       icon: (
@@ -36,7 +36,7 @@ export default function ConsultingPage() {
       ),
       title: 'Operational Optimization',
       description: 'Improve efficiency, reduce costs, and maximize profitability through process optimization and best practices implementation.',
-      backgroundImage: '/imgs/car-wash.jpg'
+      backgroundImage: '/imgs/car-wash.webp'
     },
     {
       icon: (
@@ -46,7 +46,7 @@ export default function ConsultingPage() {
       ),
       title: 'Equipment Selection',
       description: 'Unbiased equipment recommendations tailored to your specific needs, budget, and business goals for optimal ROI.',
-      backgroundImage: '/imgs/BelangerTunnel.jpg'
+      backgroundImage: '/imgs/BelangerTunnel.webp'
     },
     {
       icon: (
@@ -66,7 +66,7 @@ export default function ConsultingPage() {
       ),
       title: 'Training Programs',
       description: 'Comprehensive staff training programs covering operations, maintenance, customer service, and safety protocols.',
-      backgroundImage: '/imgs/AirCannon.jpg'
+      backgroundImage: '/imgs/AirCannon.webp'
     },
     {
       icon: (
@@ -89,7 +89,7 @@ export default function ConsultingPage() {
       ),
       title: '50+ Years Combined Experience',
       description: 'Deep industry knowledge and proven track record of successful projects',
-      backgroundImage: '/imgs/Carwash1.jpg'
+      backgroundImage: '/imgs/Carwash1.webp'
     },
     {
       icon: (
@@ -99,7 +99,7 @@ export default function ConsultingPage() {
       ),
       title: 'Personalized Approach',
       description: 'Custom solutions designed specifically for your unique business needs',
-      backgroundImage: '/imgs/Existing.jpg'
+      backgroundImage: '/imgs/Existing.webp'
     },
     {
       icon: (
@@ -121,12 +121,6 @@ export default function ConsultingPage() {
         highlightedWord="Consulting"
         subtitle="Strategic Guidance & Expertise"
         description="Transform your car wash business with expert consulting services. From site development to operational optimization, we provide the strategic guidance you need to succeed."
-        stats={[
-          { value: '50+', label: 'Years Combined Experience' },
-          { value: '500+', label: 'Projects Completed' },
-          { value: '95%', label: 'Client Satisfaction' },
-          { value: '4', label: 'States Served' }
-        ]}
         buttons={[
           {
             text: "Schedule Consultation",
@@ -141,8 +135,10 @@ export default function ConsultingPage() {
         ]}
         backgroundVariant="white"
         showPattern={true}
-        leftImage="/imgs/BelangerTunnel.jpg"
-        rightImage="/imgs/SpinLite.jpg"
+        leftImage="/imgs/IMG_0070.webp"
+        rightImage="/imgs/IMG_5379.webp"
+        centerLane="strong"
+        textSurface={true}
       />
 
       <GenericServicesGrid

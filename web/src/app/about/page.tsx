@@ -17,7 +17,7 @@ export default function AboutPage() {
       ),
       title: 'Our Mission',
       description: 'To provide innovative, reliable wash solutions that empower our customers to build successful, profitable businesses while delivering exceptional value and service that exceeds expectations.',
-      backgroundImage: '/imgs/Carwash1.jpg'
+      backgroundImage: '/imgs/Carwash1.webp'
     },
     {
       icon: (
@@ -39,7 +39,7 @@ export default function AboutPage() {
       ),
       title: 'Local Expertise',
       description: 'Deep understanding of Midwest markets, weather conditions, and local business needs. We know what works in our region.',
-      backgroundImage: '/imgs/Existing.jpg'
+      backgroundImage: '/imgs/Existing.webp'
     },
     {
       icon: (
@@ -49,7 +49,7 @@ export default function AboutPage() {
       ),
       title: 'Complete Solutions',
       description: 'From initial consultation to ongoing support, we provide everything you need for a successful wash operation.',
-      backgroundImage: '/imgs/COnvayer.jpg'
+      backgroundImage: '/imgs/COnvayer.webp'
     }
   ];
 
@@ -71,8 +71,11 @@ export default function AboutPage() {
           description="Built on a foundation of expertise, innovation, and unwavering commitment to customer success across Minnesota, North Dakota, South Dakota, and Wisconsin."
           backgroundVariant="white"
           showPattern={true}
-          leftImage="/imgs/AirCannon.jpg"
-          rightImage="/imgs/Kondor_Flight.jpg"
+          leftImage="/imgs/AirCannon.webp"
+          rightImage="/imgs/Kondor_Flight.webp"
+          compact={true}
+          centerLane="strong"
+          textSurface={true}
         />
 
         <GenericServicesGrid

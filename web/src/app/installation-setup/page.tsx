@@ -117,17 +117,17 @@ export default async function InstallationSetup() {
     description: service.description + ' ' + service.features.join(', '),
     backgroundImage:
       service.id === 'tunnel'
-        ? '/imgs/BelangerTunnel.jpg'
+        ? '/imgs/BelangerTunnel.webp'
         : service.id === 'electrical'
           ? '/imgs/CarWash Controller.jpg'
           : service.id === 'chemical'
-            ? '/imgs/chems/MixStir.jpg'
+            ? '/imgs/chems/MixStir.webp'
             : service.id === 'payment'
               ? '/imgs/CarWash Controller.jpg'
               : service.id === 'water-reclaim'
                 ? '/imgs/Insta-KLEEN-Fleet-Wash-Rendering-Belanger (1).webp'
                 : service.id === 'training'
-                  ? '/imgs/AirCannon.jpg'
+                  ? '/imgs/AirCannon.webp'
                   : undefined
   }));
 
@@ -140,7 +140,7 @@ export default async function InstallationSetup() {
     ),
     title: `Week ${phase.week}: ${phase.title}`,
     description: `${phase.description} (${phase.duration})`,
-    backgroundImage: '/imgs/Existing.jpg'
+    backgroundImage: '/imgs/Existing.webp'
   }));
 
   return (
@@ -152,12 +152,6 @@ export default async function InstallationSetup() {
         highlightedWord="Installation"
         subtitle="Expert Equipment Installation"
         description="Professional car wash equipment installation and setup services. Expert technicians, certified installation, comprehensive training, and ongoing support across the Midwest."
-        stats={[
-          { value: data.stats.installations, label: 'Installations' },
-          { value: data.stats.experience, label: 'Years Combined Experience' },
-          { value: data.stats.satisfaction, label: 'Satisfaction' },
-          { value: data.stats.support, label: 'Support' }
-        ]}
         buttons={[
           {
             text: "Plan Installation",
@@ -172,8 +166,10 @@ export default async function InstallationSetup() {
         ]}
         backgroundVariant="white"
         showPattern={true}
-        leftImage="/imgs/BelangerTunnel.jpg"
-        rightImage="/imgs/SpinLite.jpg"
+        leftImage="/imgs/IMG_5389.webp"
+        rightImage="/imgs/IMG_5393.webp"
+        centerLane="strong"
+        textSurface={true}
       />
 
       {/* Installation Services */}

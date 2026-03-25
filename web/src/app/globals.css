@@ -187,6 +187,29 @@ body {
   color: #0f172a;
 }
 
+/* Global responsive scale pass: slightly reduce desktop UI size, keep mobile legible */
+html {
+  font-size: 16px;
+}
+
+@media (max-width: 420px) {
+  html {
+    font-size: 15.5px;
+  }
+}
+
+@media (min-width: 1280px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 1536px) {
+  html {
+    font-size: 14.5px;
+  }
+}
+
 @layer utilities {
   /* Mobile-first spacing utilities */
   .container-mobile {

@@ -13,7 +13,7 @@ const ProjectsPage = () => {
       ),
       title: 'SuperWash Express',
       description: '"Carwash Technologies transformed our outdated facility into a modern, efficient operation. Our customer satisfaction and revenue have both increased significantly since the upgrade." - Mike Johnson',
-      backgroundImage: '/imgs/Carwash1.jpg'
+      backgroundImage: '/imgs/Carwash1.webp'
     },
     {
       icon: (
@@ -23,7 +23,7 @@ const ProjectsPage = () => {
       ),
       title: 'Quick Clean Car Wash',
       description: '"The team\'s expertise and attention to detail were outstanding. They delivered on time and within budget, and the results exceeded our expectations." - Sarah Chen',
-      backgroundImage: '/imgs/Existing.jpg'
+      backgroundImage: '/imgs/Existing.webp'
     }
   ];
 
@@ -35,12 +35,6 @@ const ProjectsPage = () => {
         highlightedWord="Projects"
         subtitle="Excellence in Every Installation"
         description="Transforming wash operations across the Midwest with proven expertise and quality installations. Our track record speaks for itself."
-        stats={[
-          { value: '500+', label: 'Installations' },
-          { value: '50+', label: 'Years Combined Experience' },
-          { value: '98%', label: 'Satisfaction Rate' },
-          { value: '4', label: 'States Served' }
-        ]}
         buttons={[
           {
             text: 'Start Your Project',
@@ -55,8 +49,10 @@ const ProjectsPage = () => {
         ]}
         backgroundVariant="white"
         showPattern={true}
-        leftImage="/imgs/BelangerTunnel.jpg"
-        rightImage="/imgs/SpinLite.jpg"
+        leftImage="/imgs/BelangerTunnel.webp"
+        rightImage="/imgs/SpinLite.webp"
+        centerLane="strong"
+        textSurface={true}
       />
 
       <GenericServicesGrid

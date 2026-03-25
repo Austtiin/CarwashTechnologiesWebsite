@@ -65,8 +65,8 @@ const ChemicalsSection = () => {
                     className="object-contain"
                   />
                   <Image 
-                    src="/logos/logoCWT.webp" 
-                    alt="Carwash Technologies Logo" 
+                    src="/logos/ChemQuest-960w.webp" 
+                    alt="ChemQuest Logo" 
                     width={100} 
                     height={100} 
                     className="object-contain"

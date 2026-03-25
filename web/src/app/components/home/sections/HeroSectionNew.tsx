@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 export default function HeroSectionNew() {
   return (
-    <section className="relative bg-gradient-to-br from-white via-gray-50 to-white pt-20 pb-24 overflow-hidden">
+    <section className="relative bg-gradient-to-br from-white via-gray-50 to-white pt-16 sm:pt-20 lg:pt-20 pb-14 sm:pb-16 lg:pb-20 overflow-hidden">
       {/* Animated Grid Background */}
       <div className="absolute inset-0 opacity-[0.12] overflow-hidden">
         <div
@@ -32,7 +32,7 @@ export default function HeroSectionNew() {
       <div className="absolute left-0 top-0 bottom-0 w-1/2 pointer-events-none overflow-hidden">
         <div className="relative w-full h-full">
           <Image
-            src="/imgs/BelangerTunnel.jpg"
+            src="/imgs/BelangerTunnel.webp"
             alt="Car Wash Tunnel Equipment"
             fill
             className="object-cover opacity-50"
@@ -45,7 +45,7 @@ export default function HeroSectionNew() {
       <div className="absolute right-0 top-0 bottom-0 w-1/2 pointer-events-none overflow-hidden">
         <div className="relative w-full h-full">
           <Image
-            src="/imgs/SpinLite.jpg"
+            src="/imgs/SpinLite.webp"
             alt="Car Wash Equipment"
             fill
             className="object-cover opacity-50"
@@ -100,10 +100,10 @@ export default function HeroSectionNew() {
       <div className="absolute top-1/2 right-16 w-12 h-12 border-2 border-[#f0da11]/5 transform -rotate-12 hidden lg:block"
            style={{ animation: 'float 7s ease-in-out infinite 1s' }} />
 
-      <div className="container mx-auto px-6 lg:px-8 relative">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="max-w-6xl mx-auto">
           {/* Main Content */}
-          <div className="text-center mb-16 fade-in-up">
+          <div className="text-center mb-12 sm:mb-14 fade-in-up">
             {/* Small eyebrow text */}
             <div className="inline-flex items-center gap-2 mb-6 text-sm font-medium text-gray-600">
               <div className="w-8 h-[2px] bg-[#f0da11]" />
@@ -112,13 +112,13 @@ export default function HeroSectionNew() {
             </div>
 
             {/* Hero Headline */}
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] font-bold text-gray-900 mb-5 sm:mb-6 leading-tight">
               Better Washes <br />
               <span className="text-[#f0da11]">Built for</span> Owners
             </h1>
 
             {/* Subheadline */}
-            <p className="text-xl md:text-2xl text-slate-900 mb-12 max-w-3xl mx-auto font-light">
+            <p className="text-lg sm:text-xl md:text-2xl text-slate-900 mb-9 sm:mb-10 max-w-3xl mx-auto font-light">
               Premium equipment, expert service, and proven strategies for wash businesses across the Midwest
             </p>
 
@@ -126,7 +126,7 @@ export default function HeroSectionNew() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link 
                 href="/contact"
-                className="group inline-flex items-center gap-2 bg-[#f0da11] text-black px-8 py-4 font-semibold text-lg hover:bg-[#d0ba11] transition-all duration-200 hover:-translate-y-0.5 shadow-sm hover:shadow-md"
+                className="group inline-flex items-center gap-2 bg-[#f0da11] text-black px-6 sm:px-8 py-3 sm:py-3.5 font-semibold text-sm sm:text-base hover:bg-[#d0ba11] transition-all duration-200 hover:-translate-y-0.5 shadow-sm hover:shadow-md"
               >
                 Get Started Today
                 <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -136,7 +136,7 @@ export default function HeroSectionNew() {
               
               <Link 
                 href="/about"
-                className="group inline-flex items-center gap-2 bg-transparent border-2 border-gray-900 text-gray-900 px-8 py-4 font-semibold text-lg hover:bg-gray-900 hover:text-white transition-all duration-200"
+                className="group inline-flex items-center gap-2 bg-transparent border-2 border-gray-900 text-gray-900 px-6 sm:px-8 py-3 sm:py-3.5 font-semibold text-sm sm:text-base hover:bg-gray-900 hover:text-white transition-all duration-200"
               >
                 Learn More
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -147,21 +147,21 @@ export default function HeroSectionNew() {
           </div>
 
           {/* Stats Bar */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto fade-in-up" style={{animationDelay: '0.2s'}}>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-5 sm:gap-6 max-w-4xl mx-auto fade-in-up" style={{animationDelay: '0.2s'}}>
             <div className="text-center">
-              <div className="text-4xl font-bold text-gray-900 mb-2">50<span className="text-[#f0da11]">+</span></div>
+              <div className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">50<span className="text-[#f0da11]">+</span></div>
               <div className="text-sm font-medium text-gray-600 uppercase tracking-wide">Years Combined Experience</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-gray-900 mb-2">500<span className="text-[#f0da11]">+</span></div>
+              <div className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">500<span className="text-[#f0da11]">+</span></div>
               <div className="text-sm font-medium text-gray-600 uppercase tracking-wide">Installations</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-[#f0da11] mb-2">100%</div>
-              <div className="text-sm font-medium text-gray-600 uppercase tracking-wide">Success Rate</div>
+              <div className="text-3xl sm:text-4xl font-bold text-[#f0da11] mb-2">24/7</div>
+              <div className="text-sm font-medium text-gray-600 uppercase tracking-wide">Support Access</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-[#f0da11] mb-2">4</div>
+              <div className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">4</div>
               <div className="text-sm font-medium text-gray-600 uppercase tracking-wide">States Served</div>
             </div>
           </div>

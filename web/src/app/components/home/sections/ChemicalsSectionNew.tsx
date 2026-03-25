@@ -15,12 +15,12 @@ export default function ChemicalsSectionNew() {
 
   const partners = [
     { src: '/logos/logoSimo.webp', alt: 'Simoniz', width: 100, height: 100 },
-    { src: '/logos/logoCWT.webp', alt: 'Carwash Technologies', width: 100, height: 100 },
+    { src: '/logos/ChemQuest-960w.webp', alt: 'ChemQuest', width: 100, height: 100 },
     { src: '/logos/logoVertech.webp', alt: 'Vertech', width: 100, height: 100 }
   ];
 
   return (
-    <section className="relative bg-gradient-to-tr from-white via-blue-50/20 to-white py-24 overflow-hidden">
+    <section className="relative bg-gradient-to-tr from-white via-blue-50/20 to-white py-16 sm:py-20 overflow-hidden">
       {/* Circular Wave Pattern */}
       <div className="absolute inset-0 opacity-[0.07]">
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
@@ -50,8 +50,8 @@ export default function ChemicalsSectionNew() {
         <div className="h-full bg-gradient-to-r from-transparent via-[#f0da11]/20 to-transparent" />
       </div>
 
-      <div className="container mx-auto px-6 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-14 items-center">
           
           {/* Left Column - Content */}
           <div style={{ animation: 'fadeInUp 0.6s ease-out forwards', opacity: 0 }}>
@@ -59,10 +59,10 @@ export default function ChemicalsSectionNew() {
               <div className="w-8 h-px bg-[#f0da11]"></div>
               <span className="text-sm font-semibold text-gray-600 uppercase tracking-wider">Chemistry</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-5 sm:mb-6">
               Premium Wash <span className="text-[#f0da11]">Chemicals</span>
             </h2>
-            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+            <p className="text-base sm:text-lg text-gray-600 mb-7 sm:mb-8 leading-relaxed">
               High-quality wash chemicals that deliver superior cleaning results while being 
               environmentally responsible. Our chemical programs are designed to maximize 
               efficiency and minimize waste.
@@ -91,7 +91,7 @@ export default function ChemicalsSectionNew() {
           
           {/* Right Column - Partners Card */}
           <div 
-            className="bg-white p-12 shadow-md border border-gray-100"
+            className="bg-white p-7 sm:p-10 lg:p-12 shadow-md border border-gray-100"
             style={{ animation: 'fadeInUp 0.6s ease-out 0.2s forwards', opacity: 0 }}
           >
             {/* Partners Logos */}

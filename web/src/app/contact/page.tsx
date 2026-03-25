@@ -40,8 +40,10 @@ export default function ContactPage() {
         ]}
         backgroundVariant="white"
         showPattern={true}
-        leftImage="/imgs/BelangerTunnel.jpg"
-        rightImage="/imgs/SpinLite.jpg"
+        leftImage="/imgs/COnvayer.webp"
+        rightImage="/imgs/IMG_5386.webp"
+        centerLane="strong"
+        textSurface={true}
       />
 
       {/* Interactive Contact Selection & Form */}

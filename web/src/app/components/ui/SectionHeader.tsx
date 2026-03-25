@@ -50,10 +50,10 @@ export default function SectionHeader(props: SectionHeaderProps) {
       case 'transparent':
         return 'bg-transparent';
       case 'solid':
-        return 'bg-white rounded-xl p-8 border border-gray-200 shadow-md';
+        return 'bg-white rounded-xl p-6 sm:p-8 border border-gray-200 shadow-md';
       case 'default':
       default:
-        return 'bg-white/75 backdrop-blur-sm rounded-xl p-8 border border-gray-200/40 shadow-md';
+        return 'bg-white/75 backdrop-blur-sm rounded-xl p-6 sm:p-8 border border-gray-200/40 shadow-md';
     }
   };
 
@@ -73,18 +73,18 @@ export default function SectionHeader(props: SectionHeaderProps) {
     <div className={`w-full flex justify-center ${className}`}>
       <div className={`${maxWidth} w-full ${getBackgroundClasses()}`}>
         <div className={`flex flex-col ${getTextAlignClasses()}`}>
-          <h2 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6 ${titleClassName}`}>
+          <h2 className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-5 ${titleClassName}`}>
             {title}
           </h2>
           
           {description && (
-            <p className={`text-lg md:text-xl text-gray-700 ${description && !subtitle ? 'mb-0' : 'mb-4'} ${descriptionClassName}`}>
+            <p className={`text-base sm:text-lg md:text-xl text-gray-700 ${description && !subtitle ? 'mb-0' : 'mb-4'} ${descriptionClassName}`}>
               {description}
             </p>
           )}
 
           {subtitle && (
-            <p className={`text-lg md:text-xl text-gray-700 ${subtitleClassName}`}>
+            <p className={`text-base sm:text-lg md:text-xl text-gray-700 ${subtitleClassName}`}>
               {subtitle}
             </p>
           )}

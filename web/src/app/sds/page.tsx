@@ -159,12 +159,6 @@ export default async function SafetyDataSheets() {
         highlightedWord="Safety"
         subtitle="Comprehensive Product Safety Information"
         description="Access complete safety data sheets for all our chemical products. Download detailed information about proper handling, storage, and emergency procedures to ensure workplace safety and regulatory compliance."
-        stats={[
-          { value: data.stats.totalSheets.toString(), label: 'SDS Documents' },
-          { value: data.stats.manufacturers.toString(), label: 'Manufacturers' },
-          { value: data.stats.access, label: 'Access' },
-          { value: data.stats.compliance, label: 'Compliance' }
-        ]}
         buttons={[
           {
             text: 'Browse All Documents',
@@ -179,8 +173,10 @@ export default async function SafetyDataSheets() {
         ]}
         backgroundVariant="white"
         showPattern={true}
-        leftImage="/imgs/BelangerTunnel.jpg"
-        rightImage="/imgs/SpinLite.jpg"
+        leftImage="/imgs/PDQ.webp"
+        rightImage="/imgs/Kondor_Flight.webp"
+        centerLane="strong"
+        textSurface={true}
       />
 
       {/* Document browsing functionality */}
