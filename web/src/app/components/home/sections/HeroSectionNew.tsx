@@ -139,6 +139,7 @@ export default function HeroSectionNew() {
                 className="group inline-flex items-center gap-2 bg-transparent border-2 border-gray-900 text-gray-900 px-6 sm:px-8 py-3 sm:py-3.5 font-semibold text-sm sm:text-base hover:bg-gray-900 hover:text-white transition-all duration-200"
               >
                 Learn More
+                
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
