@@ -40,14 +40,6 @@ export default function ContactSelector({ contactOptions }: ContactSelectorProps
       id="contact-inquiry"
       className={`relative scroll-mt-32 ${sectionPadding} bg-gradient-to-b from-gray-50 via-white to-gray-50 overflow-hidden`}
     >
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-[0.03]">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 2px 2px, #1f2937 2px, transparent 2px)`,
-          backgroundSize: '50px 50px'
-        }}></div>
-      </div>
-
       {/* Subtle Accent Lines */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#f0da11]/30 to-transparent"></div>
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#f0da11]/30 to-transparent"></div>

@@ -15,11 +15,6 @@ export default function AboutDifferentiators() {
       <section className="py-20 bg-gradient-to-b from-white via-gray-50 to-white relative">
         <div className="absolute left-0 top-1/3 w-2 h-40 bg-[#f0da11]"></div>
         <div className="absolute right-0 bottom-1/4 w-2 h-40 bg-[#f0da11]/50"></div>
-        {/* Pattern Background */}
-        <div className="absolute inset-0 opacity-[0.04]" style={{
-          backgroundImage: `radial-gradient(circle at 2px 2px, #1f2937 2px, transparent 2px)`,
-          backgroundSize: '50px 50px'
-        }}></div>
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">

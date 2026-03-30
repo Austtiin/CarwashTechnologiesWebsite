@@ -15,13 +15,6 @@ export default function NotFound() {
           <div className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-tl from-[#d0b211]/30 to-transparent rounded-full opacity-50 translate-x-32 translate-y-32 animate-pulse" style={{ animationDelay: '1s' }}></div>
           <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-gradient-to-br from-[#bfb986]/15 to-transparent rounded-full opacity-40 animate-pulse" style={{ animationDelay: '2s' }}></div>
           <div className="absolute top-1/2 left-1/4 w-48 h-48 bg-gradient-to-br from-[#f0da11]/10 to-transparent rounded-full opacity-30 animate-pulse" style={{ animationDelay: '3s' }}></div>
-          
-          <div className="absolute inset-0 opacity-5">
-            <div className="h-full w-full" style={{
-              backgroundImage: `radial-gradient(circle at 1px 1px, #cecece 1px, transparent 1px)`,
-              backgroundSize: '20px 20px'
-            }}></div>
-          </div>
         </div>
 
         <div className="container mx-auto px-4 text-center relative z-10">

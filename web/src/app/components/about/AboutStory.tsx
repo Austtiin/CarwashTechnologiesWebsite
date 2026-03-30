@@ -11,11 +11,6 @@ export default function AboutStory() {
 
       <section className="py-20 bg-gradient-to-br from-[#f6f6f6] via-gray-100 to-[#f6f6f6] relative">
         <div className="absolute top-0 left-0 w-1 h-full bg-[#f0da11]"></div>
-        {/* Subtle Pattern */}
-        <div className="absolute inset-0 opacity-[0.04]" style={{
-          backgroundImage: `radial-gradient(circle at 2px 2px, #1f2937 2px, transparent 2px)`,
-          backgroundSize: '50px 50px'
-        }}></div>
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">        

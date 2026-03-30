@@ -7,139 +7,70 @@ import Image from 'next/image';
 
 export default function HeroSectionNew() {
   return (
-    <section className="relative bg-gradient-to-br from-white via-gray-50 to-white pt-16 sm:pt-20 lg:pt-20 pb-14 sm:pb-16 lg:pb-20 overflow-hidden">
-      {/* Animated Grid Background */}
-      <div className="absolute inset-0 opacity-[0.12] overflow-hidden">
-        <div
-          className="h-full w-full"
-          style={{
-            backgroundImage: `
-              linear-gradient(to right, #1f2937 1px, transparent 1px),
-              linear-gradient(to bottom, #1f2937 1px, transparent 1px)
-            `,
-            backgroundSize: '60px 60px',
-            animation: 'gridMove 20s linear infinite',
-            position: 'absolute',
-            top: '-60px',
-            left: 0,
-            right: 0,
-            bottom: 0
-          }}
-        />
-      </div>
+    <section className="relative overflow-hidden bg-white py-16 sm:py-20 lg:py-24">
 
-      {/* Background Equipment Image - Left Side - Faded and Animated */}
-      <div className="absolute left-0 top-0 bottom-0 w-1/2 pointer-events-none overflow-hidden">
-        <div className="relative w-full h-full">
-          <Image
-            src="/imgs/BelangerTunnel.webp"
-            alt="Car Wash Tunnel Equipment"
-            fill
-            className="object-cover opacity-50"
-          />
-          <div className="absolute inset-0 bg-gradient-to-l from-white via-white/80 to-transparent"></div>
-        </div>
-      </div>
+      {/* White-to-dark base gradient across entire hero */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute inset-0 bg-gradient-to-r from-white from-35% via-white/70 via-50% to-slate-900/95" />
 
-      {/* Background Equipment Image - Right Side - Faded and Animated */}
-      <div className="absolute right-0 top-0 bottom-0 w-1/2 pointer-events-none overflow-hidden">
-        <div className="relative w-full h-full">
-          <Image
-            src="/imgs/SpinLite.webp"
-            alt="Car Wash Equipment"
-            fill
-            className="object-cover opacity-50"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent"></div>
+        {/* Background Equipment Image - anchored on right side */}
+        <div className="absolute inset-y-0 right-0 w-full md:w-1/2 overflow-hidden">
+          <div className="relative w-full h-full">
+            <Image
+              src="/imgs/BelangerTunnel.webp"
+              alt="Professional wash system tunnel"
+              fill
+              className="object-cover"
+            />
+            {/* Strong gradient to completely hide the left edge of the image */}
+            <div className="absolute inset-0 bg-gradient-to-l from-slate-950/60 from-30% via-slate-900/85 via-60% to-white" />
+          </div>
         </div>
       </div>
 
       {/* Diagonal Water Flow Lines */}
-      <div className="absolute top-0 right-0 w-1/2 h-full opacity-[0.06] overflow-hidden pointer-events-none">
-        <div className="absolute top-10 right-0 w-full h-2 bg-[#f0da11] transform -rotate-12 translate-x-20"></div>
-        <div className="absolute top-32 right-0 w-full h-1 bg-[#f0da11] transform -rotate-12 translate-x-20"></div>
-        <div className="absolute top-52 right-0 w-full h-2 bg-[#f0da11] transform -rotate-12 translate-x-20"></div>
-        <div className="absolute top-72 right-0 w-full h-1 bg-[#f0da11] transform -rotate-12 translate-x-20"></div>
-      </div>
+       {/* decorative elements removed for a cleaner hero */}
 
-      {/* Water Droplets - Animated */}
-      <div className="absolute top-20 left-1/4 w-2 h-2 bg-blue-400/20 rounded-full hidden lg:block"
-           style={{ animation: 'dropFall 3s ease-in infinite' }} />
-      <div className="absolute top-10 left-1/3 w-3 h-3 bg-blue-400/15 rounded-full hidden lg:block"
-           style={{ animation: 'dropFall 4s ease-in infinite 1s' }} />
-      <div className="absolute top-32 right-1/4 w-2 h-2 bg-blue-400/20 rounded-full hidden lg:block"
-           style={{ animation: 'dropFall 3.5s ease-in infinite 2s' }} />
-      <div className="absolute top-16 right-1/3 w-3 h-3 bg-blue-400/15 rounded-full hidden lg:block"
-           style={{ animation: 'dropFall 4.5s ease-in infinite 0.5s' }} />
-
-      {/* Soap Bubbles - Rising */}
-      <div className="absolute bottom-20 left-16 w-8 h-8 rounded-full border-2 border-blue-300/20 hidden lg:block"
-           style={{ animation: 'bubbleRise 6s ease-in-out infinite' }} />
-      <div className="absolute bottom-32 left-32 w-6 h-6 rounded-full border-2 border-blue-300/15 hidden lg:block"
-           style={{ animation: 'bubbleRise 7s ease-in-out infinite 2s' }} />
-      <div className="absolute bottom-40 right-24 w-10 h-10 rounded-full border-2 border-blue-300/10 hidden lg:block"
-           style={{ animation: 'bubbleRise 8s ease-in-out infinite 1s' }} />
-      <div className="absolute bottom-24 right-40 w-5 h-5 rounded-full border-2 border-blue-300/20 hidden lg:block"
-           style={{ animation: 'bubbleRise 6.5s ease-in-out infinite 3s' }} />
-
-      {/* Sparkle/Shine Effects */}
-      <div className="absolute top-1/4 left-20 w-1 h-1 bg-[#f0da11] rounded-full hidden lg:block"
-           style={{ animation: 'sparkle 2s ease-in-out infinite' }} />
-      <div className="absolute top-1/3 right-20 w-1 h-1 bg-[#f0da11] rounded-full hidden lg:block"
-           style={{ animation: 'sparkle 2s ease-in-out infinite 0.5s' }} />
-      <div className="absolute top-2/3 left-32 w-1 h-1 bg-[#f0da11] rounded-full hidden lg:block"
-           style={{ animation: 'sparkle 2s ease-in-out infinite 1s' }} />
-      <div className="absolute top-1/2 right-28 w-1 h-1 bg-[#f0da11] rounded-full hidden lg:block"
-           style={{ animation: 'sparkle 2s ease-in-out infinite 1.5s' }} />
-
-      {/* Floating Geometric Elements */}
-      <div className="absolute top-32 left-16 w-16 h-16 border-2 border-[#f0da11]/10 transform rotate-45 hidden lg:block"
-           style={{ animation: 'float 6s ease-in-out infinite' }} />
-      <div className="absolute bottom-32 right-32 w-20 h-20 border-2 border-gray-900/5 hidden lg:block"
-           style={{ animation: 'float 8s ease-in-out infinite 2s' }} />
-      <div className="absolute top-1/2 right-16 w-12 h-12 border-2 border-[#f0da11]/5 transform -rotate-12 hidden lg:block"
-           style={{ animation: 'float 7s ease-in-out infinite 1s' }} />
-
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="max-w-6xl mx-auto">
-          {/* Main Content */}
-          <div className="text-center mb-12 sm:mb-14 fade-in-up">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative flex items-center">
+        <div className="max-w-7xl w-full flex flex-col md:flex-row items-center md:items-center gap-10 md:gap-12">
+          {/* Main Content - Left Aligned */}
+          <div className="relative z-10 w-full md:w-5/12 lg:w-1/2 text-left mb-10 md:mb-0 text-gray-900 bg-white/95 md:bg-transparent p-4 sm:p-6 rounded-2xl md:rounded-none md:p-0 md:pr-8">
             {/* Small eyebrow text */}
-            <div className="inline-flex items-center gap-2 mb-6 text-sm font-medium text-gray-600">
+            <div className="inline-flex items-center gap-2 mb-5 text-xs sm:text-sm font-medium text-gray-600">
               <div className="w-8 h-[2px] bg-[#f0da11]" />
-              <span>Professional Car Wash Solutions</span>
-              <div className="w-8 h-[2px] bg-[#f0da11]" />
+              <span>Professional Wash Systems</span>
             </div>
 
             {/* Hero Headline */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] font-bold text-gray-900 mb-5 sm:mb-6 leading-tight">
-              Better Washes <br />
-              <span className="text-[#f0da11]">Built for</span> Owners
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold text-gray-900 mb-2 leading-tight">
+              Smart Car Wash Systems
             </h1>
+            <p className="text-2xl sm:text-3xl font-bold text-[#f0da11] mb-4 leading-tight">
+              Built for Growth
+            </p>
 
             {/* Subheadline */}
-            <p className="text-lg sm:text-xl md:text-2xl text-slate-900 mb-9 sm:mb-10 max-w-3xl mx-auto font-light">
-              Premium equipment, expert service, and proven strategies for wash businesses across the Midwest
+            <p className="text-base sm:text-lg md:text-xl text-slate-900 mb-6 max-w-xl font-normal">
+              Increase uptime, improve wash quality, and scale your operation with confidence.
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-start">
               <Link 
                 href="/contact"
                 className="group inline-flex items-center gap-2 bg-[#f0da11] text-black px-6 sm:px-8 py-3 sm:py-3.5 font-semibold text-sm sm:text-base hover:bg-[#d0ba11] transition-all duration-200 hover:-translate-y-0.5 shadow-sm hover:shadow-md"
               >
-                Get Started Today
+                Get a Quote
                 <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </Link>
-              
+
               <Link 
-                href="/about"
-                className="group inline-flex items-center gap-2 bg-transparent border-2 border-gray-900 text-gray-900 px-6 sm:px-8 py-3 sm:py-3.5 font-semibold text-sm sm:text-base hover:bg-gray-900 hover:text-white transition-all duration-200"
+                href="/services"
+                className="group inline-flex items-center gap-2 bg-transparent border-2 border-gray-900 text-gray-900 px-6 sm:px-7 py-3 sm:py-3.5 font-semibold text-sm sm:text-base hover:bg-gray-900 hover:text-white transition-all duration-200"
               >
-                Learn More
-                
+                View Solutions
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
@@ -147,111 +78,14 @@ export default function HeroSectionNew() {
             </div>
           </div>
 
-          {/* Stats Bar */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-5 sm:gap-6 max-w-4xl mx-auto fade-in-up" style={{animationDelay: '0.2s'}}>
-            <div className="text-center">
-              <div className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">50<span className="text-[#f0da11]">+</span></div>
-              <div className="text-sm font-medium text-gray-600 uppercase tracking-wide">Years Combined Experience</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">500<span className="text-[#f0da11]">+</span></div>
-              <div className="text-sm font-medium text-gray-600 uppercase tracking-wide">Installations</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl sm:text-4xl font-bold text-[#f0da11] mb-2">24/7</div>
-              <div className="text-sm font-medium text-gray-600 uppercase tracking-wide">Support Access</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">4</div>
-              <div className="text-sm font-medium text-gray-600 uppercase tracking-wide">States Served</div>
-            </div>
-          </div>
+          {/* Right column left empty since background image covers this area */}
         </div>
+
       </div>
+      
 
       {/* Subtle moving gradient accent */}
       <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#f0da11] to-transparent" />
-
-      <style jsx>{`
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        @keyframes float {
-          0%, 100% {
-            transform: translateY(0) rotate(45deg);
-          }
-          50% {
-            transform: translateY(-20px) rotate(45deg);
-          }
-        }
-
-        @keyframes gridMove {
-          0% {
-            transform: translate(0, 0);
-          }
-          100% {
-            transform: translate(60px, 60px);
-          }
-        }
-
-        @keyframes dropFall {
-          0% {
-            transform: translateY(0) scale(1);
-            opacity: 0;
-          }
-          10% {
-            opacity: 0.6;
-          }
-          80% {
-            opacity: 0.6;
-          }
-          100% {
-            transform: translateY(400px) scale(0.8);
-            opacity: 0;
-          }
-        }
-
-        @keyframes bubbleRise {
-          0% {
-            transform: translateY(0) translateX(0) scale(1);
-            opacity: 0;
-          }
-          10% {
-            opacity: 0.5;
-          }
-          50% {
-            transform: translateY(-200px) translateX(20px) scale(1.2);
-            opacity: 0.5;
-          }
-          100% {
-            transform: translateY(-400px) translateX(-10px) scale(0.8);
-            opacity: 0;
-          }
-        }
-
-        @keyframes sparkle {
-          0%, 100% {
-            opacity: 0;
-            transform: scale(0);
-          }
-          50% {
-            opacity: 1;
-            transform: scale(1.5);
-          }
-        }
-
-        .fade-in-up {
-          animation: fadeInUp 0.6s ease-out forwards;
-        }
-      `}</style>
     </section>
   );
 }

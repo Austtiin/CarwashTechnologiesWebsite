@@ -69,147 +69,46 @@ export default function WhoWeServeSectionNew() {
   ];
 
   return (
-    <section className="relative bg-gradient-to-br from-gray-50 via-gray-100 to-gray-50 py-16 sm:py-20 overflow-hidden">
-      {/* Hexagonal Pattern Background */}
-      <div className="absolute inset-0 opacity-[0.06]">
-        <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <pattern id="hexagons" x="0" y="0" width="100" height="86.6" patternUnits="userSpaceOnUse">
-              <polygon points="50,0 100,25 100,75 50,100 0,75 0,25" fill="none" stroke="#1f2937" strokeWidth="1"/>
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#hexagons)" />
-        </svg>
-      </div>
-
-      {/* Subtle Geometric Accent */}
-      <div className="absolute top-1/4 right-10 w-24 h-24 border border-[#f0da11]/10 transform rotate-45 hidden lg:block" />
-
+    <section className="relative bg-gradient-to-br from-gray-50 via-gray-100 to-gray-50 py-12 sm:py-14 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-12 sm:mb-14 max-w-3xl mx-auto">
+        <div className="text-center mb-8 sm:mb-10 max-w-3xl mx-auto">
           <div className="inline-flex items-center gap-3 mb-4">
             <div className="w-8 h-px bg-[#f0da11]"></div>
             <span className="text-sm font-semibold text-gray-600 uppercase tracking-wider">Our Customers</span>
             <div className="w-8 h-px bg-[#f0da11]"></div>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3">
             Solutions for <span className="text-[#f0da11]">Every</span> Operation
           </h2>
-          <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
+          <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
             Whether you&apos;re starting fresh or scaling up, we have the expertise to help you succeed
           </p>
         </div>
 
-        {/* Segments Grid */}
-        <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
+        {/* Segments Grid - More compact */}
+        <div className="grid md:grid-cols-2 gap-5 sm:gap-6">
           {segments.map((segment, index) => (
             <div
               key={index}
-              className="group relative bg-white p-6 sm:p-7 hover:shadow-lg transition-all duration-500 border-l-4 border-transparent hover:border-[#f0da11] overflow-hidden"
-              style={{
-                animation: `fadeInUp 0.6s ease-out ${index * 0.1}s forwards`,
-                opacity: 0
-              }}
+              className="group relative bg-white p-4 sm:p-5 hover:shadow-lg transition-all duration-300 border-l-4 border-transparent hover:border-[#f0da11] overflow-hidden"
             >
-              {/* Background Image Transitions - Slides in on Load */}
-              {index === 0 && (
-                <>
-                  <div 
-                    className="absolute right-0 top-0 bottom-0 w-1/2 bg-cover bg-center transition-transform duration-700 ease-out"
-                    style={{ 
-                      backgroundImage: 'url(/imgs/PDQ.webp)', 
-                      opacity: 0.58,
-                      animation: `slideInFromRight 0.8s ease-out ${index * 0.1 + 0.3}s forwards`,
-                      transform: 'translateX(100%)'
-                    }}
-                  />
-                  <div 
-                    className="absolute right-0 top-0 bottom-0 w-1/2 bg-gradient-to-r from-white/96 via-white/76 to-white/30 transition-transform duration-700 ease-out" 
-                    style={{
-                      animation: `slideInFromRight 0.8s ease-out ${index * 0.1 + 0.3}s forwards`,
-                      transform: 'translateX(100%)'
-                    }}
-                  />
-                </>
-              )}
-              {index === 1 && (
-                <>
-                  <div 
-                    className="absolute right-0 top-0 bottom-0 w-1/2 bg-cover bg-center transition-transform duration-700 ease-out"
-                    style={{ 
-                      backgroundImage: 'url(/imgs/Existing.webp)', 
-                      opacity: 0.58,
-                      animation: `slideInFromRight 0.8s ease-out ${index * 0.1 + 0.3}s forwards`,
-                      transform: 'translateX(100%)'
-                    }}
-                  />
-                  <div 
-                    className="absolute right-0 top-0 bottom-0 w-1/2 bg-gradient-to-r from-white/96 via-white/76 to-white/30 transition-transform duration-700 ease-out" 
-                    style={{
-                      animation: `slideInFromRight 0.8s ease-out ${index * 0.1 + 0.3}s forwards`,
-                      transform: 'translateX(100%)'
-                    }}
-                  />
-                </>
-              )}
-              {index === 2 && (
-                <>
-                  <div 
-                    className="absolute right-0 top-0 bottom-0 w-1/2 bg-cover bg-center transition-transform duration-700 ease-out"
-                    style={{ 
-                      backgroundImage: 'url(/imgs/car-wash.webp)', 
-                      opacity: 0.58,
-                      animation: `slideInFromRight 0.8s ease-out ${index * 0.1 + 0.3}s forwards`,
-                      transform: 'translateX(100%)'
-                    }}
-                  />
-                  <div 
-                    className="absolute right-0 top-0 bottom-0 w-1/2 bg-gradient-to-r from-white/96 via-white/76 to-white/30 transition-transform duration-700 ease-out" 
-                    style={{
-                      animation: `slideInFromRight 0.8s ease-out ${index * 0.1 + 0.3}s forwards`,
-                      transform: 'translateX(100%)'
-                    }}
-                  />
-                </>
-              )}
-              {index === 3 && (
-                <>
-                  <div 
-                    className="absolute right-0 top-0 bottom-0 w-1/2 bg-cover bg-center transition-transform duration-700 ease-out"
-                    style={{ 
-                      backgroundImage: 'url(/imgs/Carwash1.webp)', 
-                      opacity: 0.58,
-                      animation: `slideInFromRight 0.8s ease-out ${index * 0.1 + 0.3}s forwards`,
-                      transform: 'translateX(100%)'
-                    }}
-                  />
-                  <div 
-                    className="absolute right-0 top-0 bottom-0 w-1/2 bg-gradient-to-r from-white/96 via-white/76 to-white/30 transition-transform duration-700 ease-out" 
-                    style={{
-                      animation: `slideInFromRight 0.8s ease-out ${index * 0.1 + 0.3}s forwards`,
-                      transform: 'translateX(100%)'
-                    }}
-                  />
-                </>
-              )}
-
-              <div className="relative z-10 rounded-xl bg-gradient-to-r from-white/90 via-white/76 to-white/28 backdrop-blur-[2px] border border-white/70 shadow-[0_10px_30px_-18px_rgba(15,23,42,0.5)] p-5">
+              <div className="relative z-10">
                 {/* Icon */}
-                <div className="w-16 h-16 bg-gray-100 text-gray-900 flex items-center justify-center mb-6 group-hover:bg-[#f0da11] group-hover:text-black transition-all duration-200">
+                <div className="w-12 h-12 bg-gray-100 text-gray-900 flex items-center justify-center mb-4 group-hover:bg-[#f0da11] group-hover:text-black transition-all duration-200">
                   {segment.icon}
                 </div>
 
                 {/* Content */}
-                <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-[#f0da11] transition-colors">
+                <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-[#f0da11] transition-colors">
                   {segment.title}
                 </h3>
-                <p className="text-gray-700 leading-relaxed mb-6">
+                <p className="text-sm text-gray-700 leading-relaxed mb-4">
                   {segment.description}
                 </p>
 
                 {/* Features List */}
-                <ul className="space-y-2">
+                <ul className="space-y-1.5">
                   {segment.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-start text-sm text-gray-700 group-hover:text-gray-900 transition-colors">
                       <svg className="w-5 h-5 text-[#f0da11] mr-2 flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -225,40 +124,18 @@ export default function WhoWeServeSectionNew() {
         </div>
 
         {/* CTA */}
-        <div className="text-center mt-12">
-          <p className="text-gray-600 mb-6">
+        <div className="text-center mt-8">
+          <p className="text-sm text-gray-600 mb-4">
             Not sure which solution fits your needs? Let&apos;s talk.
           </p>
           <Link 
             href="/contact"
-            className="inline-block border-2 border-black text-black font-semibold px-8 py-3.5 hover:bg-[#f0da11] hover:border-[#f0da11] transition-all duration-200"
+            className="inline-block border-2 border-black text-black font-semibold px-6 py-2.5 text-sm hover:bg-[#f0da11] hover:border-[#f0da11] transition-all duration-200"
           >
             Schedule a Consultation
           </Link>
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        @keyframes slideInFromRight {
-          from {
-            transform: translateX(100%);
-          }
-          to {
-            transform: translateX(0);
-          }
-        }
-      `}</style>
     </section>
   );
 }

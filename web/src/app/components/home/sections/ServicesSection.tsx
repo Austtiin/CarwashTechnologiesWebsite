@@ -22,17 +22,6 @@ export default function ServicesSection() {
         <div className="absolute bottom-12 left-1/4 sm:bottom-20 w-12 h-12 sm:w-20 sm:h-20 border-2 border-yellow-600/20 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '10s', animationDelay: '2s' }} />
         <div className="absolute bottom-1/3 right-6 sm:right-16 w-10 h-10 sm:w-14 sm:h-14 border-2 border-yellow-400/35 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '7s', animationDelay: '1.5s' }} />
         <div className="absolute top-1/2 left-1/3 w-8 h-8 sm:w-10 sm:h-10 border-2 border-yellow-500/25 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '9s', animationDelay: '0.5s' }} />
-        
-        {/* Yellow dot grid pattern - Responsive size */}
-        <div className="absolute inset-0 opacity-10 sm:opacity-20 pointer-events-none z-10">
-          <div
-            className="h-full w-full"
-            style={{
-              backgroundImage: `radial-gradient(circle at 1px, #9b9000 1px, transparent 1px)`,
-              backgroundSize: '16px 16px'
-            }}
-          ></div>
-        </div>
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

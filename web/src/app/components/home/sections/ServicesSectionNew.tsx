@@ -13,9 +13,9 @@ export default function ServicesSectionNew() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 7.172V5L8 4z" />
         </svg>
       ),
-      title: 'Equipment Sales',
-      description: 'Premium wash equipment from industry-leading manufacturers. Tunnel systems, automatics, and self-serve solutions.',
-      link: '/equipment-sales'
+      title: 'Express Tunnel Systems',
+      description: 'High-throughput tunnel designs that maximize cars per hour while delivering a consistent, premium finish.',
+      link: '/wash-types'
     },
     {
       icon: (
@@ -24,9 +24,9 @@ export default function ServicesSectionNew() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
         </svg>
       ),
-      title: 'Service & Maintenance',
-      description: 'Preventive maintenance & repair services to keep your operation running smoothly.',
-      link: '/service-maintenance'
+      title: 'Self-Serve & In-Bay',
+      description: 'Flexible self-serve and in-bay automatic solutions built for neighborhoods, fleets, and rural markets.',
+      link: '/wash-types'
     },
     {
       icon: (
@@ -34,8 +34,8 @@ export default function ServicesSectionNew() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
         </svg>
       ),
-      title: 'Chemical Programs',
-      description: 'High-performance chemical solutions with flexible purchasing options. No contracts required.',
+      title: 'Chemicals & Equipment Supply',
+      description: 'Premium wash chemistry, parts, and equipment supply programs that keep your site stocked and performing.',
       link: '/chemical-sales'
     },
     {
@@ -44,24 +44,15 @@ export default function ServicesSectionNew() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
         </svg>
       ),
-      title: 'Consulting Services',
-      description: 'Expert guidance for new sites, operational optimization, and strategic planning.',
+      title: 'Maintenance & Repairs',
+      description: 'Responsive field service, scheduled maintenance, and emergency repairs to protect uptime and revenue.',
       link: '/consulting'
     }
   ];
 
   return (
     <section className="relative bg-gradient-to-b from-[#f6f6f6] via-gray-100 to-[#f6f6f6] py-16 sm:py-20 overflow-hidden">
-      {/* Subtle Dot Grid Pattern */}
-      <div className="absolute inset-0 opacity-[0.05]">
-        <div
-          className="h-full w-full"
-          style={{
-            backgroundImage: `radial-gradient(circle at 2px 2px, #1f2937 2px, transparent 2px)`,
-            backgroundSize: '50px 50px'
-          }}
-        />
-      </div>
+      {/* Background Elements - grid pattern removed */}
 
       {/* Water Droplets */}
       <div className="absolute top-12 left-1/4 w-2 h-2 bg-blue-400/15 rounded-full hidden md:block"
@@ -81,112 +72,91 @@ export default function ServicesSectionNew() {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-12 sm:mb-14 max-w-3xl mx-auto">
+        <div className="text-center mb-10 sm:mb-12 max-w-3xl mx-auto">
           <div className="inline-flex items-center gap-3 mb-4">
             <div className="w-8 h-px bg-[#f0da11]"></div>
             <span className="text-sm font-semibold text-gray-600 uppercase tracking-wider">What We Offer</span>
             <div className="w-8 h-px bg-[#f0da11]"></div>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3">
             Complete Solutions for <span className="text-[#f0da11]">Modern</span> Wash Operations
           </h2>
           <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
-            From initial installation to ongoing support, we provide everything you need to succeed
+            From express tunnels to self-serve sites, we provide everything you need to run a modern, profitable wash.
           </p>
         </div>
 
-        {/* Services Grid */}
+        {/* Services Grid - four columns with tall cards, image on top, then text and Learn More */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 mb-10 sm:mb-12">
           {services.map((service, index) => (
             <Link 
               href={service.link}
               key={index}
-              className="group relative bg-white p-6 sm:p-7 shadow-2xl hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] transition-all duration-300 hover:-translate-y-2 border-l-4 border-transparent hover:border-[#f0da11] overflow-hidden ring-2 ring-white/80"
+              className="group relative bg-white rounded-2xl shadow-[0_18px_50px_-18px_rgba(15,23,42,0.35)] hover:shadow-[0_24px_70px_-20px_rgba(15,23,42,0.55)] transition-all duration-300 hover:-translate-y-2 border border-gray-200/80 overflow-hidden flex flex-col min-h-[320px]"
               style={{
                 animation: `fadeInUp 0.6s ease-out ${index * 0.1}s forwards`,
-                opacity: 0,
-                boxShadow: '0 20px 40px -10px rgba(0, 0, 0, 0.15), 0 0 0 2px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.5)'
+                opacity: 0
               }}
             >
-              {/* Background Images for different services - visible on right side */}
+              {/* Image area */}
               {index === 0 && (
-                <div className="absolute inset-0 z-0">
+                <div className="relative h-32 sm:h-40 w-full overflow-hidden">
                   <Image
                     src="/imgs/CarWash Controller.jpg"
-                    alt=""
+                    alt="Express tunnel systems"
                     fill
                     className="object-cover"
-                    style={{ opacity: 0.72 }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-r from-white/96 via-white/74 to-amber-200/16" />
-                  <div className="absolute inset-0 bg-gradient-to-br from-amber-300/25 via-transparent to-cyan-200/20" />
                 </div>
               )}
               {index === 1 && (
-                <div className="absolute inset-0 z-0">
+                <div className="relative h-32 sm:h-40 w-full overflow-hidden">
                   <Image
                     src="/imgs/Track.webp"
-                    alt=""
+                    alt="Self-serve and in-bay systems"
                     fill
                     className="object-cover"
-                    style={{ opacity: 0.7 }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-r from-white/96 via-white/74 to-sky-200/16" />
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-300/20 via-transparent to-cyan-200/22" />
                 </div>
               )}
               {index === 2 && (
-                <div className="absolute inset-0 z-0">
+                <div className="relative h-32 sm:h-40 w-full overflow-hidden">
                   <Image
                     src="/imgs/chems/MixStir.webp"
-                    alt=""
+                    alt="Chemicals and equipment supply"
                     fill
                     className="object-cover"
-                    style={{ opacity: 0.73 }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/72 to-lime-200/16" />
-                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-200/20 via-transparent to-amber-200/20" />
                 </div>
               )}
               {index === 3 && (
-                <div className="absolute inset-0 z-0">
+                <div className="relative h-32 sm:h-40 w-full overflow-hidden">
                   <Image
                     src="/imgs/Insta-KLEEN-fleet.webp"
-                    alt=""
+                    alt="Maintenance and repairs"
                     fill
                     className="object-cover"
-                    style={{ opacity: 0.7 }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-r from-white/96 via-white/74 to-orange-200/16" />
-                  <div className="absolute inset-0 bg-gradient-to-br from-rose-200/20 via-transparent to-amber-200/20" />
                 </div>
               )}
-              
-              {/* Colored accent bar that grows on hover */}
-              <div className="absolute left-0 top-0 w-1 h-0 bg-[#f0da11] group-hover:h-full transition-all duration-300" />
-              
-              {/* Frosted content panel keeps text readable while preserving colorful imagery */}
-              <div className="relative z-10 rounded-xl bg-gradient-to-r from-white/90 via-white/74 to-white/25 backdrop-blur-[2px] border border-white/65 shadow-[0_8px_24px_-16px_rgba(15,23,42,0.45)] p-4">
-                {/* Icon */}
-                <div className="w-12 h-12 bg-gray-100 text-gray-900 flex items-center justify-center mb-6 group-hover:bg-[#f0da11] group-hover:text-black group-hover:scale-110 transition-all duration-200">
+
+              {/* Content */}
+              <div className="flex-1 flex flex-col p-5">
+                <div className="w-10 h-10 bg-gray-100 text-gray-900 flex items-center justify-center mb-4 group-hover:bg-[#f0da11] group-hover:text-black group-hover:scale-110 transition-all duration-200">
                   {service.icon}
                 </div>
-
-                {/* Content */}
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#f0da11] transition-colors">
+                <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-[#f0da11] transition-colors">
                   {service.title}
                 </h3>
-                <p className="text-gray-700 text-sm leading-relaxed mb-4 font-medium">
+                <p className="text-gray-700 text-sm leading-relaxed mb-4">
                   {service.description}
                 </p>
-
-                {/* Arrow */}
-                <div className="flex items-center text-sm font-semibold text-gray-900 group-hover:text-[#f0da11]">
-                  <span>Learn more</span>
-                  <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <button className="mt-auto inline-flex items-center text-sm font-semibold text-[#f0da11] group-hover:text-[#d0ba11]">
+                  <span>Learn More</span>
+                  <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
-                </div>
+                </button>
               </div>
             </Link>
           ))}

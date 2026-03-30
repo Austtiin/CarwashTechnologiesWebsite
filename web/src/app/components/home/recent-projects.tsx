@@ -18,17 +18,6 @@ const ProjectsSection = () => {
         <div className="absolute top-1/4 right-8 sm:right-20 w-6 sm:w-10 lg:w-12 h-6 sm:h-10 lg:h-12 border-2 border-[#bfb986]/30 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '6s', animationDelay: '1s' }}></div>
         <div className="absolute bottom-12 sm:bottom-20 left-1/4 w-10 sm:w-16 lg:w-20 h-10 sm:h-16 lg:h-20 border-2 border-[#d0b211]/20 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '10s', animationDelay: '2s' }}></div>
         <div className="absolute bottom-1/3 right-6 sm:right-16 w-8 sm:w-12 lg:w-14 h-8 sm:h-12 lg:h-14 border-2 border-[#f0da11]/35 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '7s', animationDelay: '1.5s' }}></div>
-        
-        {/* Yellow dot grid pattern - Responsive size */}
-        <div className="absolute inset-0 opacity-10 sm:opacity-20 pointer-events-none z-10">
-          <div
-            className="h-full w-full"
-            style={{
-              backgroundImage: `radial-gradient(circle at 1px, #9b9000 1px, transparent 1px)`,
-              backgroundSize: '16px 16px'
-            }}
-          ></div>
-        </div>
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

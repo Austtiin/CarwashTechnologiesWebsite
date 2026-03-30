@@ -2,6 +2,7 @@ import React from 'react';
 import { Metadata } from 'next';
 import GenericHero from '../components/ui/GenericHero';
 import CallToActionNew from '../components/ui/CallToActionNew';
+import WhoWeServeSectionNew from '../components/home/sections/WhoWeServeSectionNew';
 
 export const metadata: Metadata = {
   title: 'Types of Vehicle Washes | Carwash Technologies',
@@ -75,10 +76,6 @@ export default function WashTypesPage() {
       />
 
       <section className="relative bg-[#f6f6f6] py-16 sm:py-20 overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.06]" style={{
-          backgroundImage: 'radial-gradient(circle at 1.5px 1.5px, #1f2937 1.5px, transparent 0)',
-          backgroundSize: '28px 28px'
-        }}></div>
         <div className="absolute -top-16 -left-10 w-48 h-48 rounded-full bg-[#f0da11]/20 blur-3xl"></div>
         <div className="absolute -bottom-20 -right-12 w-56 h-56 rounded-full bg-blue-200/30 blur-3xl"></div>
 
@@ -133,13 +130,16 @@ export default function WashTypesPage() {
         </div>
       </section>
 
+      {/* Solutions for Every Operation */}
+      <WhoWeServeSectionNew />
+
       <CallToActionNew
         title="Ready to Plan Your Next Wash?"
         description="Whether you are planning a new car wash, fleet wash, or parts wash, our team can help you evaluate wash types, site constraints, and ROI before you break ground."
         buttons={[
           {
             text: 'Discuss Wash Types',
-            href: '/contact#contact-inquiry',
+            href: '/contact',
             variant: 'primary',
           },
           {

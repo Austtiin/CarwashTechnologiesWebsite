@@ -94,7 +94,7 @@ const Navbar = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md" ref={menuRef}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-14 sm:h-16 lg:h-[4.25rem] items-center justify-center relative">
+        <div className="flex h-14 sm:h-16 lg:h-[4.25rem] items-center justify-between relative">
           
           {/* Logo / Business Name - positioned absolutely to left */}
           <div className="absolute left-0 flex items-center space-x-2 sm:space-x-2.5">
@@ -112,8 +112,8 @@ const Navbar = () => {
             </Link>
           </div>
           
-          {/* Desktop Navigation Links - now centered */}
-          <nav className="hidden md:flex items-center space-x-6 lg:space-x-7">
+          {/* Desktop Navigation Links - right aligned with enough space for CTA button */}
+          <nav className="hidden md:flex items-center space-x-4 lg:space-x-6 ml-auto mr-40 xl:mr-48">
             <Link href="/" className="font-medium text-gray-700 hover:text-[#d0b211] transition-colors">
               Home
             </Link>
@@ -181,19 +181,15 @@ const Navbar = () => {
             </Link>
           </nav>
           
-          {/* Phone & CTA - positioned absolutely to right */}
+          {/* Phone & CTA - positioned to the right */}
           <div className="absolute right-0 flex items-center gap-2 sm:gap-3">
-            <a href="tel:612-408-9010" className="hidden lg:block font-semibold text-gray-800 hover:text-[#d0b211] transition-colors">
-              612-408-9010
-            </a>
-            <Link 
-              href="/contact" 
-              className="bg-[#f0da11] text-black px-3 py-1.5 sm:px-5 text-xs sm:text-sm rounded-lg font-semibold hover:bg-[#d0b211] transition-colors duration-200 shadow-md hover:shadow-lg"
-              onClick={closeAllMenus}
+            <a
+              href="tel:612-408-9010"
+              className="bg-[#f0da11] text-black px-3 py-1.5 sm:px-5 text-xs sm:text-sm rounded-lg font-semibold hover:bg-[#d0b211] transition-colors duration-200 shadow-md hover:shadow-lg whitespace-nowrap"
             >
-              <span className="hidden sm:inline">Get Quote</span>
-              <span className="sm:hidden">Quote</span>
-            </Link>
+              <span className="hidden sm:inline">Call (612) 408-9010</span>
+              <span className="sm:hidden">Call Now</span>
+            </a>
             
             {/* Mobile menu button */}
             <button
