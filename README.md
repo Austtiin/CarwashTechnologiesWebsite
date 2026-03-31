@@ -61,7 +61,33 @@ CarwashTechnologiesWebsite/
 - **Validation**: Comprehensive form validation with Zod schemas
 - **Content Security**: Sanitized className and text rendering
 
-## 🚀 Getting Started
+## � API Integration
+
+The website includes Next.js API routes for handling contact forms and other backend operations.
+
+### Contact Form API
+- **Endpoint**: `POST /api/contact`
+- **Integration**: Azure Queue Storage for asynchronous processing
+- **Features**: Validation, error handling, health checks
+
+### Setup
+For detailed API setup instructions, see [API_SETUP.md](API_SETUP.md).
+
+Quick start:
+```bash
+cd web
+cp .env.example .env.local
+# Edit .env.local with your Azure credentials
+npm install
+npm run dev
+```
+
+### Documentation
+- **API Documentation**: [web/src/app/api/README.md](web/src/app/api/README.md)
+- **Integration Guide**: [web/src/app/contact/INTEGRATION_GUIDE.md](web/src/app/contact/INTEGRATION_GUIDE.md)
+- **Setup Guide**: [API_SETUP.md](API_SETUP.md)
+
+## �🚀 Getting Started
 
 ### Prerequisites
 

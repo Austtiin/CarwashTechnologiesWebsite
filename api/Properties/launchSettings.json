@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "ContactFormProcessor": {
+      "commandName": "Project",
+      "commandLineArgs": "start --verbose",
+      "workingDirectory": "$(ProjectDir)"
+    }
+  }
+}

@@ -3,10 +3,10 @@ import React from 'react';
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import localFont from 'next/font/local'
-import Script from 'next/script';
 import "./globals.css";
 import Navbar from "@/app/components/Navigation";
 import Footer from "@/app/components/Footer";
+import CookieConsent from "@/app/components/CookieConsent";import ConditionalAnalytics from "@/app/components/ConditionalAnalytics";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -48,29 +48,17 @@ export default function RootLayout({
         <meta httpEquiv="Expires" content="0" />
       </head>
       <body className={`${inter.className} flex min-h-screen flex-col overflow-x-hidden`}>
-        {/* Google Analytics */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-JX2XMFTMJR"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-JX2XMFTMJR');
-          `}
-        </Script>
+        {/* Conditional Google Analytics - only loads with consent */}
+        <ConditionalAnalytics />
         
-        <React.StrictMode>
-          <Navbar />
-          <main className="flex-grow w-full pt-14 sm:pt-16 lg:pt-[4.25rem]">
-            <div className="w-full max-w-none">
-              {children}
-            </div>
-          </main>
-          <Footer />
-        </React.StrictMode>
+        <Navbar />
+        <main className="flex-grow w-full pt-14 sm:pt-16 lg:pt-[4.25rem]">
+          <div className="w-full max-w-none">
+            {children}
+          </div>
+        </main>
+        <Footer />
+        <CookieConsent />
       </body>
     </html>
   );

@@ -18,7 +18,7 @@ const Footer = () => {
                 className="w-32 h-auto"
               />
             </div>
-            <p className="text-sm text-white font-normal mb-4 opacity-100">
+            <p className="text-sm text-gray-300 font-normal mb-4 leading-relaxed">
               Providing quality car wash equipment, chemicals, and service across the Midwest since 1999.
             </p>
             <div className="space-y-2 text-sm text-white">
@@ -153,12 +153,15 @@ const Footer = () => {
             <p className="text-sm text-white">
               &copy; {new Date().getFullYear()} Carwash Technologies, Inc. All rights reserved.
             </p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
-              <Link href="/about" className="text-sm text-white hover:text-[#f0da11] transition-colors">
+            <div className="flex flex-wrap gap-4 md:gap-6 mt-4 md:mt-0 justify-center md:justify-end">
+              <Link href="/privacy-policy" className="text-sm text-white hover:text-[#f0da11] transition-colors">
                 Privacy Policy
               </Link>
-              <Link href="/about" className="text-sm text-white hover:text-[#f0da11] transition-colors">
-                Terms of Service
+              <Link href="/terms-of-use" className="text-sm text-white hover:text-[#f0da11] transition-colors">
+                Terms of Use
+              </Link>
+              <Link href="/sitemap.xml" className="text-sm text-white hover:text-[#f0da11] transition-colors">
+                Sitemap
               </Link>
             </div>
           </div>

@@ -35,7 +35,7 @@ export default function WhyChooseUsSection() {
             <h2 className="text-3xl sm:text-4xl lg:text-[2.4rem] font-bold text-white mb-3 leading-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]">
               Why Choose Us<span className="text-[#f0da11]">?</span>
             </h2>
-            <p className="text-sm sm:text-base text-white font-medium mb-6 max-w-xl drop-shadow-[0_3px_6px_rgba(0,0,0,0.95)] [text-shadow:_0_2px_8px_rgb(0_0_0_/_90%)]">
+            <p className="text-sm sm:text-base lg:text-lg text-gray-100 font-normal mb-6 max-w-xl drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
               Partner with a team that understands modern wash operations—equipment, chemistry, and service working together to keep
               your site running strong.
             </p>
