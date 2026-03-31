@@ -27,7 +27,7 @@ async function getChemicalData() {
     },
     manufacturers: [
       { name: 'Vertech', logo: '/logos/logoVertech.webp', alt: 'Vertech' },
-      { name: 'CWT', logo: '/logos/logoCWT.webp', alt: 'CWT' },
+      { name: 'ChemQuest', logo: '/logos/ChemQuest-960w.webp', alt: 'ChemQuest' },
       { name: 'Simoniz', logo: '/logos/logoSimo.webp', alt: 'Simoniz' }
     ],
     categories: [
@@ -149,7 +149,7 @@ export default async function ChemicalSales() {
         buttons={[
           {
             text: "Get Chemical Quote",
-            href: "/contact#contact-inquiry",
+            href: "/contact",
             variant: "primary"
           },
           {
@@ -163,7 +163,7 @@ export default async function ChemicalSales() {
         leftImage="/imgs/IMG_5384.webp"
         rightImage="/imgs/IMG_20260313_101859.webp"
         centerLane="strong"
-        textSurface={true}
+        compact={true}
       />
 
       {/* Trusted Chemical Manufacturers */}

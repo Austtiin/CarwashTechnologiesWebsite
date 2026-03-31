@@ -45,7 +45,7 @@ export default function GenericServicesGrid({
   }[columns];
 
   return (
-    <section className={`relative ${bgClass} py-16 sm:py-20 overflow-hidden`}>
+    <section className={`relative ${bgClass} py-12 sm:py-16 overflow-hidden`}>
       {/* Subtle Wave Pattern */}
       <div className="absolute inset-0 opacity-[0.02]">
         <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
@@ -60,7 +60,7 @@ export default function GenericServicesGrid({
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-12 sm:mb-14 max-w-3xl mx-auto">
+        <div className="text-center mb-8 sm:mb-10 max-w-3xl mx-auto">
           {eyebrow && (
             <div className="inline-block mb-4">
               <span className="text-sm font-semibold text-gray-600 uppercase tracking-wider">
@@ -69,7 +69,7 @@ export default function GenericServicesGrid({
             </div>
           )}
           
-          <h2 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3">
             {highlightedWord ? (
               <>
                 {title.split(highlightedWord)[0]}
@@ -82,18 +82,18 @@ export default function GenericServicesGrid({
           </h2>
           
           {description && (
-            <p className="text-base sm:text-lg text-gray-600">
+            <p className="text-sm sm:text-base text-gray-600">
               {description}
             </p>
           )}
         </div>
 
         {/* Services Grid */}
-        <div className={`grid ${colClass} gap-5 sm:gap-6 mb-10 sm:mb-12`}>
+        <div className={`grid ${colClass} gap-4 sm:gap-5 mb-8 sm:mb-10`}>
           {items.map((item, index) => {
             const CardContent = (
               <div
-                className={`relative group bg-white p-6 sm:p-7 hover:shadow-lg transition-all duration-200 hover:-translate-y-1 border-l-4 border-transparent hover:border-[#f0da11] h-full ${
+                className={`relative group bg-white p-5 sm:p-6 hover:shadow-lg transition-all duration-200 hover:-translate-y-1 border-l-4 border-transparent hover:border-[#f0da11] h-full ${
                   item.link ? 'cursor-pointer' : ''
                 }`}
                 style={{
@@ -116,15 +116,15 @@ export default function GenericServicesGrid({
 
                 <div className="relative z-10">
                   {/* Icon */}
-                  <div className="w-12 h-12 bg-gray-100 text-gray-900 flex items-center justify-center mb-6 group-hover:bg-[#f0da11] group-hover:text-black transition-all duration-200">
+                  <div className="w-10 h-10 bg-gray-100 text-gray-900 flex items-center justify-center mb-4 group-hover:bg-[#f0da11] group-hover:text-black transition-all duration-200">
                     {item.icon}
                   </div>
 
                   {/* Content */}
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#f0da11] transition-colors">
+                  <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-[#f0da11] transition-colors">
                     {item.title}
                   </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                  <p className="text-gray-600 text-sm leading-relaxed mb-3">
                     {item.description}
                   </p>
 

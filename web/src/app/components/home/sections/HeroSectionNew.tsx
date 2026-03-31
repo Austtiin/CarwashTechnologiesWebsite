@@ -7,25 +7,20 @@ import Image from 'next/image';
 
 export default function HeroSectionNew() {
   return (
-    <section className="relative overflow-hidden bg-white py-16 sm:py-20 lg:py-24">
+    <section className="relative overflow-hidden py-16 sm:py-20 lg:py-24">
 
-      {/* White-to-dark base gradient across entire hero */}
+      {/* HomeHero Background Image - full section */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-r from-white from-35% via-white/70 via-50% to-slate-900/95" />
-
-        {/* Background Equipment Image - anchored on right side */}
-        <div className="absolute inset-y-0 right-0 w-full md:w-1/2 overflow-hidden">
-          <div className="relative w-full h-full">
-            <Image
-              src="/imgs/BelangerTunnel.webp"
-              alt="Professional wash system tunnel"
-              fill
-              className="object-cover"
-            />
-            {/* Strong gradient to completely hide the left edge of the image */}
-            <div className="absolute inset-0 bg-gradient-to-l from-slate-950/60 from-30% via-slate-900/85 via-60% to-white" />
-          </div>
-        </div>
+        <Image
+          src="/imgs/HomeHero.png"
+          alt="Professional car wash facility"
+          fill
+          priority
+          className="object-cover"
+          style={{ opacity: 0.85 }}
+        />
+        {/* Strong gradient overlay on left for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/75 to-transparent" />
       </div>
 
       {/* Diagonal Water Flow Lines */}
@@ -58,7 +53,7 @@ export default function HeroSectionNew() {
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-start">
               <Link 
                 href="/contact"
-                className="group inline-flex items-center gap-2 bg-[#f0da11] text-black px-6 sm:px-8 py-3 sm:py-3.5 font-semibold text-sm sm:text-base hover:bg-[#d0ba11] transition-all duration-200 hover:-translate-y-0.5 shadow-sm hover:shadow-md"
+                className="group inline-flex items-center gap-2 bg-[#f0da11] text-black px-6 py-3 font-semibold text-sm sm:text-base rounded-md hover:bg-[#d0b211] transition-all duration-200 hover:-translate-y-0.5 shadow-md hover:shadow-lg"
               >
                 Get a Quote
                 <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">

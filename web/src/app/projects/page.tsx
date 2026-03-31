@@ -52,7 +52,7 @@ const ProjectsPage = () => {
         leftImage="/imgs/BelangerTunnel.webp"
         rightImage="/imgs/SpinLite.webp"
         centerLane="strong"
-        textSurface={true}
+        compact={true}
       />
 
       <GenericServicesGrid

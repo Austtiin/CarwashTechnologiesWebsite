@@ -176,7 +176,7 @@ const Navbar = () => {
               </div>
             </div>
             
-            <Link href="/contact#contact-inquiry" className="font-medium text-gray-700 hover:text-[#d0b211] transition-colors">
+            <Link href="/contact" className="font-medium text-gray-700 hover:text-[#d0b211] transition-colors">
               Contact
             </Link>
           </nav>
@@ -185,7 +185,7 @@ const Navbar = () => {
           <div className="absolute right-0 flex items-center gap-2 sm:gap-3">
             <a
               href="tel:612-408-9010"
-              className="bg-[#f0da11] text-black px-3 py-1.5 sm:px-5 text-xs sm:text-sm rounded-lg font-semibold hover:bg-[#d0b211] transition-colors duration-200 shadow-md hover:shadow-lg whitespace-nowrap"
+              className="bg-[#f0da11] text-black px-4 py-2 rounded-md font-semibold hover:bg-[#d0b211] transition-colors duration-200 shadow-md hover:shadow-lg whitespace-nowrap text-sm"
             >
               <span className="hidden sm:inline">Call (612) 408-9010</span>
               <span className="sm:hidden">Call Now</span>
@@ -281,7 +281,7 @@ const Navbar = () => {
                 </div>
                 
                 <Link 
-                  href="/contact#contact-inquiry" 
+                  href="/contact" 
                   className="font-medium text-gray-600 hover:text-yellow-500 transition-colors px-4 py-2"
                   onClick={handleMobileNavClick}
                 >

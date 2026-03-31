@@ -152,7 +152,7 @@ export default function ConsultingBenefits() {
                 </p>
                 <a
                   href="/contact"
-                  className="inline-flex items-center bg-[#f0da11] text-black px-8 py-4 font-bold uppercase text-sm tracking-wide hover:bg-black hover:text-[#f0da11] transition-colors border-2 border-black"
+                  className="inline-flex items-center bg-[#f0da11] text-black px-8 py-4 font-bold uppercase text-sm tracking-wide rounded-md hover:bg-[#d0b211] transition-all duration-200 border-2 border-[#f0da11] shadow-md hover:shadow-lg"
                 >
                   Get Started Today
                   <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

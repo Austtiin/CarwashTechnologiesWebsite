@@ -155,7 +155,7 @@ export default async function InstallationSetup() {
         buttons={[
           {
             text: "Plan Installation",
-            href: "/contact#contact-inquiry",
+            href: "/contact",
             variant: "primary"
           },
           {
@@ -169,7 +169,7 @@ export default async function InstallationSetup() {
         leftImage="/imgs/IMG_5389.webp"
         rightImage="/imgs/IMG_5393.webp"
         centerLane="strong"
-        textSurface={true}
+        compact={true}
       />
 
       {/* Installation Services */}

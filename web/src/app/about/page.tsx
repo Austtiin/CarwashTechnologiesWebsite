@@ -1,11 +1,19 @@
 // AboutPage.tsx
-'use client';
-
-import React from 'react';
-import SEOHead from '../components/ui/SEOHead';
+import { Metadata } from 'next';
 import GenericHero from '../components/ui/GenericHero';
 import GenericServicesGrid from '../components/ui/GenericServicesGrid';
 import CallToActionNew from '../components/ui/CallToActionNew';
+
+export const metadata: Metadata = {
+  title: 'About Carwash Technologies - 50+ Years of Midwest Wash Solutions',
+  description: "Learn about Carwash Technologies' 50+ years of combined expertise serving Minnesota, North Dakota, South Dakota, and Wisconsin with professional wash equipment, service, and consulting.",
+  openGraph: {
+    title: 'About Carwash Technologies - 50+ Years of Midwest Wash Solutions',
+    description: "Learn about Carwash Technologies' expertise serving the Midwest.",
+    type: 'website',
+    url: 'https://carwashtechnologies.com/about',
+  },
+};
 
 export default function AboutPage() {
   const services = [
@@ -54,15 +62,7 @@ export default function AboutPage() {
   ];
 
   return (
-    <>
-      <SEOHead
-        title="About Carwash Technologies - 50+ Years of Midwest Wash Solutions"
-        description="Learn about Carwash Technologies' 50+ years of combined expertise serving Minnesota, North Dakota, South Dakota, and Wisconsin with professional wash equipment, service, and consulting."
-        canonical="https://carwashtechnologies.com/about"
-        ogType="website"
-      />
-
-      <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white">
         <GenericHero
           eyebrow="About Our Company"
           title="Carwash Technologies"
@@ -75,7 +75,6 @@ export default function AboutPage() {
           rightImage="/imgs/Kondor_Flight.webp"
           compact={true}
           centerLane="strong"
-          textSurface={true}
         />
 
         <GenericServicesGrid
@@ -94,7 +93,7 @@ export default function AboutPage() {
           buttons={[
         {
           text: "Get Started Today",
-               href: "/contact#contact-inquiry",
+               href: "/contact",
           variant: "primary"
         },
         {
@@ -110,7 +109,6 @@ export default function AboutPage() {
           }}
         />
       </div>
-    </>
   );
 }
 

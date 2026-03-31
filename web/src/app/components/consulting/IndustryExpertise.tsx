@@ -136,7 +136,7 @@ export default function IndustryExpertise() {
                 </div>
                 <a
                   href="/contact"
-                  className="bg-[#f0da11] text-black px-8 py-4 font-bold uppercase text-sm tracking-wide hover:bg-black hover:text-[#f0da11] transition-colors border-2 border-black whitespace-nowrap"
+                  className="bg-[#f0da11] text-black px-8 py-4 font-bold uppercase text-sm tracking-wide rounded-md hover:bg-[#d0b211] transition-all duration-200 border-2 border-[#f0da11] shadow-md hover:shadow-lg whitespace-nowrap"
                 >
                   Start Your Project
                 </a>

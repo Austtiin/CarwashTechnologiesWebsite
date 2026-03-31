@@ -54,7 +54,7 @@ export default function ChemicalsSectionNew() {
             {/* CTA Button */}
             <Link 
               href="/chemical-sales"
-              className="inline-block bg-[#f0da11] text-black font-semibold px-6 py-2.5 text-sm hover:-translate-y-0.5 transition-transform duration-200 shadow-sm hover:shadow-md"
+              className="inline-block bg-[#f0da11] text-black font-semibold px-6 py-3 text-sm rounded-md hover:bg-[#d0b211] hover:-translate-y-0.5 transition-all duration-200 shadow-md hover:shadow-lg"
             >
               Explore Chemical Programs
             </Link>

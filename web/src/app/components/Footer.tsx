@@ -13,15 +13,15 @@ const Footer = () => {
               <Image
                 src="/logos/logoCWT.webp"
                 alt="Carwash Technologies Logo"
-                width={80}
-                height={80}
-                className="w-20 h-auto"
+                width={140}
+                height={140}
+                className="w-32 h-auto"
               />
             </div>
-            <p className="text-sm text-slate-300 mb-4">
+            <p className="text-sm text-white font-normal mb-4 opacity-100">
               Providing quality car wash equipment, chemicals, and service across the Midwest since 1999.
             </p>
-            <div className="space-y-2 text-sm text-slate-300">
+            <div className="space-y-2 text-sm text-white">
               <p className="font-semibold text-white">Contact Us</p>
               <a href="tel:612-408-9010" className="flex items-center gap-2 hover:text-[#f0da11] transition-colors">
                 <svg className="w-4 h-4 text-[#f0da11]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -44,32 +44,32 @@ const Footer = () => {
             <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Services</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/equipment-sales" className="text-sm text-slate-300 hover:text-[#f0da11] transition-colors">
+                <Link href="/equipment-sales" className="text-sm text-white hover:text-[#f0da11] transition-colors">
                   Equipment Sales
                 </Link>
               </li>
               <li>
-                <Link href="/installation-setup" className="text-sm text-slate-300 hover:text-[#f0da11] transition-colors">
+                <Link href="/installation-setup" className="text-sm text-white hover:text-[#f0da11] transition-colors">
                   Installation & Setup
                 </Link>
               </li>
               <li>
-                <Link href="/service-maintenance" className="text-sm text-slate-300 hover:text-[#f0da11] transition-colors">
+                <Link href="/service-maintenance" className="text-sm text-white hover:text-[#f0da11] transition-colors">
                   Service & Maintenance
                 </Link>
               </li>
               <li>
-                <Link href="/chemical-sales" className="text-sm text-slate-300 hover:text-[#f0da11] transition-colors">
+                <Link href="/chemical-sales" className="text-sm text-white hover:text-[#f0da11] transition-colors">
                   Chemical Sales
                 </Link>
               </li>
               <li>
-                <Link href="/consulting" className="text-sm text-slate-300 hover:text-[#f0da11] transition-colors">
+                <Link href="/consulting" className="text-sm text-white hover:text-[#f0da11] transition-colors">
                   Consulting Services
                 </Link>
               </li>
               <li>
-                <Link href="/sds" className="text-sm text-slate-300 hover:text-[#f0da11] transition-colors">
+                <Link href="/sds" className="text-sm text-white hover:text-[#f0da11] transition-colors">
                   Safety Data Sheets
                 </Link>
               </li>
@@ -81,22 +81,22 @@ const Footer = () => {
             <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Company</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/about" className="text-sm text-slate-300 hover:text-[#f0da11] transition-colors">
+                <Link href="/about" className="text-sm text-white hover:text-[#f0da11] transition-colors">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="/projects" className="text-sm text-slate-300 hover:text-[#f0da11] transition-colors">
+                <Link href="/projects" className="text-sm text-white hover:text-[#f0da11] transition-colors">
                   Our Projects
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-sm text-slate-300 hover:text-[#f0da11] transition-colors">
+                <Link href="/contact" className="text-sm text-white hover:text-[#f0da11] transition-colors">
                   Contact
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-sm text-slate-300 hover:text-[#f0da11] transition-colors">
+                <Link href="/services" className="text-sm text-white hover:text-[#f0da11] transition-colors">
                   All Services
                 </Link>
               </li>
@@ -106,7 +106,7 @@ const Footer = () => {
           {/* Service Areas */}
           <div>
             <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Service Areas</h3>
-            <ul className="space-y-2 text-sm text-slate-300">
+            <ul className="space-y-2 text-sm text-white">
               <li className="flex items-center gap-2">
                 <svg className="w-4 h-4 text-[#f0da11]" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
@@ -139,7 +139,7 @@ const Footer = () => {
                 </svg>
                 Business Hours
               </p>
-              <p className="text-sm text-slate-300">
+              <p className="text-sm text-white">
                 Mon-Fri: 8:00 AM - 5:00 PM<br />
                 Emergency Service Available
               </p>
@@ -150,14 +150,14 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-white/10">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-sm text-slate-400">
+            <p className="text-sm text-white">
               &copy; {new Date().getFullYear()} Carwash Technologies, Inc. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <Link href="/about" className="text-sm text-slate-400 hover:text-[#f0da11] transition-colors">
+              <Link href="/about" className="text-sm text-white hover:text-[#f0da11] transition-colors">
                 Privacy Policy
               </Link>
-              <Link href="/about" className="text-sm text-slate-400 hover:text-[#f0da11] transition-colors">
+              <Link href="/about" className="text-sm text-white hover:text-[#f0da11] transition-colors">
                 Terms of Service
               </Link>
             </div>

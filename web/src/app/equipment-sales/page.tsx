@@ -125,7 +125,7 @@ export default async function EquipmentSales() {
         buttons={[
           {
             text: "Get Equipment Quote",
-            href: "/contact#contact-inquiry",
+            href: "/contact",
             variant: "primary"
           },
           {
@@ -139,7 +139,7 @@ export default async function EquipmentSales() {
         leftImage="/imgs/IMG_5386.webp"
         rightImage="/imgs/IMG_5380.webp"
         centerLane="strong"
-        textSurface={true}
+        compact={true}
       />
 
       {/* Trusted Partners Section */}

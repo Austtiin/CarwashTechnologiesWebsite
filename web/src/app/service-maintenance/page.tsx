@@ -192,7 +192,7 @@ export default async function ServiceMaintenance() {
         buttons={[
           {
             text: "Schedule Service",
-            href: "/contact#contact-inquiry",
+            href: "/contact",
             variant: "primary"
           },
           {
@@ -206,7 +206,7 @@ export default async function ServiceMaintenance() {
         leftImage="/imgs/IMG_5380.webp"
         rightImage="/imgs/IMG_20260313_124500.webp"
         centerLane="strong"
-        textSurface={true}
+        compact={true}
       />
 
       {/* Service Categories */}

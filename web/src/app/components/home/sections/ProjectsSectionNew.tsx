@@ -138,7 +138,7 @@ export default function ProjectsSectionNew() {
         <div className="text-center">
           <Link 
             href="/projects"
-            className="inline-block bg-[#f0da11] text-black font-semibold px-8 py-3.5 hover:-translate-y-0.5 transition-transform duration-200 shadow-sm hover:shadow-md"
+            className="inline-block bg-[#f0da11] text-black font-semibold px-6 py-3 rounded-md hover:bg-[#d0b211] hover:-translate-y-0.5 transition-all duration-200 shadow-md hover:shadow-lg"
           >
             View All Projects
           </Link>

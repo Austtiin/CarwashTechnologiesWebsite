@@ -49,16 +49,16 @@ export default function GenericHero({
   textSurface = false
 }: GenericHeroProps) {
   const bgClass = backgroundVariant === 'light-grey' ? 'bg-[#f6f6f6]' : 'bg-white';
-  const sectionSpacing = compact ? 'pt-20 sm:pt-24 lg:pt-28 pb-10 sm:pb-12 lg:pb-14' : 'pt-24 sm:pt-28 lg:pt-32 pb-12 sm:pb-16 lg:pb-20';
-  const titleSize = compact ? 'text-3xl sm:text-4xl md:text-5xl lg:text-5xl' : 'text-3xl sm:text-4xl md:text-5xl lg:text-6xl';
+  const sectionSpacing = compact ? 'pt-20 sm:pt-22 lg:pt-24 pb-8 sm:pb-10 lg:pb-12' : 'pt-22 sm:pt-24 lg:pt-28 pb-10 sm:pb-12 lg:pb-14';
+  const titleSize = compact ? 'text-2xl sm:text-3xl md:text-4xl lg:text-4xl' : 'text-3xl sm:text-4xl md:text-4xl lg:text-5xl';
 
   const centerLaneClass =
     centerLane === 'strong'
-      ? 'w-[66%] sm:w-[60%] bg-gradient-to-r from-transparent via-white/94 to-transparent'
-      : 'w-[54%] sm:w-[48%] bg-gradient-to-r from-transparent via-white/92 to-transparent';
+      ? 'w-[70%] sm:w-[65%] bg-gradient-to-r from-transparent via-white/98 to-transparent'
+      : 'w-[60%] sm:w-[55%] bg-gradient-to-r from-transparent via-white/97 to-transparent';
 
   const textSurfaceClass = textSurface
-    ? 'bg-white/92 backdrop-blur-md rounded-2xl px-4 sm:px-8 py-6 sm:py-8 shadow-xl border border-white/95 ring-1 ring-slate-200/60'
+    ? 'bg-white/92 backdrop-blur-md rounded-2xl px-4 sm:px-6 py-5 sm:py-6 shadow-xl border border-white/95 ring-1 ring-slate-200/60'
     : '';
 
   return (
@@ -73,7 +73,7 @@ export default function GenericHero({
               fill
               className="object-cover opacity-75"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-white/88"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/70 to-white/95"></div>
           </div>
         </div>
       )}
@@ -88,7 +88,7 @@ export default function GenericHero({
               fill
               className="object-cover opacity-78"
             />
-            <div className="absolute inset-0 bg-gradient-to-l from-transparent via-white/26 to-white/84"></div>
+            <div className="absolute inset-0 bg-gradient-to-l from-transparent via-white/70 to-white/95"></div>
           </div>
         </div>
       )}
@@ -179,17 +179,17 @@ export default function GenericHero({
            style={{ animation: 'float 7s ease-in-out infinite 1s' }} />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className={`max-w-4xl mx-auto text-center ${textSurfaceClass}`} style={{ animation: 'fadeInUp 0.8s ease-out forwards', opacity: 0 }}>
+        <div className={`max-w-3xl mx-auto text-center ${textSurfaceClass}`} style={{ animation: 'fadeInUp 0.8s ease-out forwards', opacity: 0 }}>
           
           {eyebrow && (
-            <div className="inline-block mb-6">
-              <span className="text-sm font-semibold text-gray-700 uppercase tracking-wider">
+            <div className="inline-block mb-4">
+              <span className="text-xs sm:text-sm font-semibold text-gray-700 uppercase tracking-wider">
                 {eyebrow}
               </span>
             </div>
           )}
 
-          <h1 className={`${titleSize} font-bold text-gray-900 mb-5 sm:mb-6 leading-tight`}>
+          <h1 className={`${titleSize} font-bold text-gray-900 mb-3 sm:mb-4 leading-tight`}>
             {highlightedWord ? (
               <>
                 {title.split(highlightedWord)[0]}
@@ -201,24 +201,24 @@ export default function GenericHero({
             )}
           </h1>
 
-          <p className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-800 mb-4">
+          <p className="text-base sm:text-lg md:text-xl font-semibold text-gray-800 mb-3">
             {subtitle}
           </p>
 
-          <p className="text-base sm:text-lg text-gray-700 mb-8 sm:mb-10 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base text-gray-700 mb-6 sm:mb-8 leading-relaxed max-w-2xl mx-auto">
             {description}
           </p>
 
           {buttons.length > 0 && (
-            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-10 sm:mb-12">
+            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-8 sm:mb-10">
               {buttons.map((button, index) => (
                 <Link
                   key={index}
                   href={button.href}
                   className={
                     button.variant === 'primary'
-                      ? 'bg-[#f0da11] text-black font-semibold px-5 sm:px-7 py-3 sm:py-3.5 hover:-translate-y-1 transition-all duration-200 shadow-md hover:shadow-lg text-sm sm:text-base'
-                      : 'border-2 border-gray-900 text-gray-900 font-semibold px-5 sm:px-7 py-3 sm:py-3.5 hover:bg-gray-900 hover:text-white transition-all duration-200 text-sm sm:text-base'
+                      ? 'bg-[#f0da11] text-black font-semibold px-6 py-3 rounded-md hover:bg-[#d0b211] transition-all duration-200 shadow-md hover:shadow-lg text-sm sm:text-base hover:-translate-y-0.5'
+                      : 'border-2 border-gray-900 text-gray-900 font-semibold px-6 py-3 rounded-md hover:bg-gray-900 hover:text-white transition-all duration-200 text-sm sm:text-base'
                   }
                 >
                   {button.text}

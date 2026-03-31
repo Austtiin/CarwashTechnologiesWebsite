@@ -84,7 +84,7 @@ export default function Services() {
         buttons={[
           {
             text: "Get Started",
-            href: "/contact#contact-inquiry",
+            href: "/contact",
             variant: "primary"
           },
           {
@@ -98,7 +98,7 @@ export default function Services() {
         leftImage="/imgs/BelangerTunnel.webp"
         rightImage="/imgs/SpinLite.webp"
         centerLane="strong"
-        textSurface={true}
+        compact={true}
       />
 
       <GenericServicesGrid
@@ -117,7 +117,7 @@ export default function Services() {
         buttons={[
           {
             text: "Get Started Today",
-              href: "/contact#contact-inquiry",
+              href: "/contact",
             variant: "primary"
           },
           {

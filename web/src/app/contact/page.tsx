@@ -43,7 +43,7 @@ export default function ContactPage() {
         leftImage="/imgs/COnvayer.webp"
         rightImage="/imgs/IMG_5386.webp"
         centerLane="strong"
-        textSurface={true}
+        compact={true}
       />
 
       {/* Interactive Contact Selection & Form */}

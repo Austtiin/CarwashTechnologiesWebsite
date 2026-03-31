@@ -100,9 +100,9 @@ export default function ServicesSectionNew() {
             >
               {/* Image area */}
               {index === 0 && (
-                <div className="relative h-32 sm:h-40 w-full overflow-hidden">
+                <div className="relative h-48 sm:h-56 w-full overflow-hidden">
                   <Image
-                    src="/imgs/CarWash Controller.jpg"
+                    src="/imgs/IMG_0070.webp"
                     alt="Express tunnel systems"
                     fill
                     className="object-cover"
@@ -110,7 +110,7 @@ export default function ServicesSectionNew() {
                 </div>
               )}
               {index === 1 && (
-                <div className="relative h-32 sm:h-40 w-full overflow-hidden">
+                <div className="relative h-48 sm:h-56 w-full overflow-hidden">
                   <Image
                     src="/imgs/Track.webp"
                     alt="Self-serve and in-bay systems"
@@ -120,9 +120,9 @@ export default function ServicesSectionNew() {
                 </div>
               )}
               {index === 2 && (
-                <div className="relative h-32 sm:h-40 w-full overflow-hidden">
+                <div className="relative h-48 sm:h-56 w-full overflow-hidden">
                   <Image
-                    src="/imgs/chems/MixStir.webp"
+                    src="/imgs/chems/MixStir.jpg"
                     alt="Chemicals and equipment supply"
                     fill
                     className="object-cover"
@@ -130,9 +130,9 @@ export default function ServicesSectionNew() {
                 </div>
               )}
               {index === 3 && (
-                <div className="relative h-32 sm:h-40 w-full overflow-hidden">
+                <div className="relative h-48 sm:h-56 w-full overflow-hidden">
                   <Image
-                    src="/imgs/Insta-KLEEN-fleet.webp"
+                    src="/imgs/IMG_5386.webp"
                     alt="Maintenance and repairs"
                     fill
                     className="object-cover"

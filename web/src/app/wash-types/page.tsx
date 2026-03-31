@@ -72,7 +72,7 @@ export default function WashTypesPage() {
         leftImage="/imgs/IMG_5387.webp"
         rightImage="/imgs/AirCannon.webp"
         centerLane="strong"
-        textSurface={true}
+        compact={true}
       />
 
       <section className="relative bg-[#f6f6f6] py-16 sm:py-20 overflow-hidden">

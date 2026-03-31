@@ -42,7 +42,7 @@ export default function ConsultingHero() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a
               href="/contact"
-              className="bg-[#f0da11] text-black px-8 py-4 font-bold uppercase text-sm tracking-wide hover:bg-[#d0b211] transition-colors inline-flex items-center border-2 border-[#f0da11]"
+              className="bg-[#f0da11] text-black px-8 py-4 font-bold uppercase text-sm tracking-wide rounded-md hover:bg-[#d0b211] transition-all duration-200 inline-flex items-center border-2 border-[#f0da11] shadow-md hover:shadow-lg"
             >
               Schedule Consultation
               <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -51,7 +51,7 @@ export default function ConsultingHero() {
             </a>
             <a
               href="#services"
-              className="border-2 border-white text-white px-8 py-4 font-bold uppercase text-sm tracking-wide hover:bg-white hover:text-black transition-colors inline-flex items-center"
+              className="border-2 border-white text-white px-8 py-4 font-bold uppercase text-sm tracking-wide rounded-md hover:bg-white hover:text-black transition-all duration-200 inline-flex items-center"
             >
               Our Expertise
             </a>

@@ -124,7 +124,7 @@ export default function ConsultingPage() {
         buttons={[
           {
             text: "Schedule Consultation",
-            href: "/contact#contact-inquiry",
+            href: "/contact",
             variant: "primary"
           },
           {
@@ -138,7 +138,7 @@ export default function ConsultingPage() {
         leftImage="/imgs/IMG_0070.webp"
         rightImage="/imgs/IMG_5379.webp"
         centerLane="strong"
-        textSurface={true}
+        compact={true}
       />
 
       <GenericServicesGrid

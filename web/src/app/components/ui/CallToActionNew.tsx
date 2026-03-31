@@ -30,7 +30,16 @@ export default function CallToActionNew({
 }: CallToActionProps) {
   return (
     <section className="relative py-16 sm:py-20 bg-gradient-to-b from-white via-gray-50 to-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/imgs/PDQ.webp"
+          alt="Car wash equipment"
+          fill
+          className="object-cover opacity-10"
+        />
+      </div>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto text-center mb-8">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
             {title}
@@ -47,8 +56,8 @@ export default function CallToActionNew({
               href={button.href}
               className={
                 button.variant === 'primary'
-                  ? 'flex-1 inline-flex items-center justify-center gap-2 bg-[#f0da11] text-black px-7 py-3.5 font-semibold text-sm sm:text-base hover:bg-[#d0ba11] transition-all duration-200 shadow-sm hover:shadow-md rounded-full'
-                  : 'flex-1 inline-flex items-center justify-center gap-2 bg-gray-900 text-white px-7 py-3.5 font-semibold text-sm sm:text-base hover:bg-black transition-all duration-200 rounded-full'
+                  ? 'flex-1 inline-flex items-center justify-center gap-2 bg-[#f0da11] text-black px-6 py-3 font-semibold text-sm sm:text-base rounded-md hover:bg-[#d0b211] transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5'
+                  : 'flex-1 inline-flex items-center justify-center gap-2 border-2 border-gray-900 text-gray-900 px-6 py-3 font-semibold text-sm sm:text-base rounded-md hover:bg-gray-900 hover:text-white transition-all duration-200'
               }
             >
               {button.text}

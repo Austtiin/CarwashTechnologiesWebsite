@@ -176,7 +176,7 @@ export default async function SafetyDataSheets() {
         leftImage="/imgs/PDQ.webp"
         rightImage="/imgs/Kondor_Flight.webp"
         centerLane="strong"
-        textSurface={true}
+        compact={true}
       />
 
       {/* Document browsing functionality */}
