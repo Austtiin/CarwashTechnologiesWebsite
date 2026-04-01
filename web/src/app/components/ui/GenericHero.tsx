@@ -23,7 +23,7 @@ interface GenericHeroProps {
   description: string;
   buttons?: HeroButton[];
   stats?: HeroStat[];
-  backgroundVariant?: 'white' | 'light-grey' | 'gradient';
+  backgroundVariant?: 'white' | 'light-grey' | 'gradient' | 'dark';
   showPattern?: boolean;
   leftImage?: string;
   rightImage?: string;
@@ -48,13 +48,22 @@ export default function GenericHero({
   centerLane = 'normal',
   textSurface = false
 }: GenericHeroProps) {
-  const bgClass = backgroundVariant === 'light-grey' ? 'bg-[#f6f6f6]' : 'bg-white';
+  const isDark = backgroundVariant === 'dark';
+  const bgClass = backgroundVariant === 'light-grey'
+    ? 'bg-[#f6f6f6]'
+    : backgroundVariant === 'dark'
+    ? 'bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950'
+    : 'bg-white';
   const sectionSpacing = compact ? 'pt-20 sm:pt-22 lg:pt-24 pb-8 sm:pb-10 lg:pb-12' : 'pt-22 sm:pt-24 lg:pt-28 pb-10 sm:pb-12 lg:pb-14';
   const titleSize = compact ? 'text-2xl sm:text-3xl md:text-4xl lg:text-4xl' : 'text-3xl sm:text-4xl md:text-4xl lg:text-5xl';
 
   const centerLaneClass =
     centerLane === 'strong'
-      ? 'w-[70%] sm:w-[65%] bg-gradient-to-r from-transparent via-white/98 to-transparent'
+      ? isDark
+        ? 'w-[70%] sm:w-[65%] bg-gradient-to-r from-transparent via-slate-900/98 to-transparent'
+        : 'w-[70%] sm:w-[65%] bg-gradient-to-r from-transparent via-white/98 to-transparent'
+      : isDark
+      ? 'w-[60%] sm:w-[55%] bg-gradient-to-r from-transparent via-slate-900/97 to-transparent'
       : 'w-[60%] sm:w-[55%] bg-gradient-to-r from-transparent via-white/97 to-transparent';
 
   const textSurfaceClass = textSurface
@@ -63,6 +72,8 @@ export default function GenericHero({
 
   return (
     <section className={`relative ${bgClass} ${sectionSpacing} overflow-hidden`}>
+      {/* Yellow top separator for dark variant */}
+      {isDark && <div className="absolute inset-x-0 top-0 h-1 bg-[#f0da11] z-20" />}
       {/* Background Equipment Image - Left Side */}
       {leftImage && (
         <div className="absolute left-0 top-0 bottom-0 w-1/2 pointer-events-none overflow-hidden">
@@ -73,7 +84,11 @@ export default function GenericHero({
               fill
               className="object-cover opacity-75"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/70 to-white/95"></div>
+            <div className={`absolute inset-0 ${
+                isDark
+                  ? 'bg-gradient-to-r from-transparent via-slate-900/70 to-slate-900/95'
+                  : 'bg-gradient-to-r from-transparent via-white/70 to-white/95'
+              }`}></div>
           </div>
         </div>
       )}
@@ -88,7 +103,11 @@ export default function GenericHero({
               fill
               className="object-cover opacity-78"
             />
-            <div className="absolute inset-0 bg-gradient-to-l from-transparent via-white/70 to-white/95"></div>
+            <div className={`absolute inset-0 ${
+                isDark
+                  ? 'bg-gradient-to-l from-transparent via-slate-900/70 to-slate-900/95'
+                  : 'bg-gradient-to-l from-transparent via-white/70 to-white/95'
+              }`}></div>
           </div>
         </div>
       )}
@@ -183,13 +202,17 @@ export default function GenericHero({
           
           {eyebrow && (
             <div className="inline-block mb-4">
-              <span className="text-xs sm:text-sm font-semibold text-gray-700 uppercase tracking-wider">
+              <span className={`text-xs sm:text-sm font-semibold uppercase tracking-wider ${
+                isDark ? 'text-[#f0da11]' : 'text-gray-700'
+              }`}>
                 {eyebrow}
               </span>
             </div>
           )}
 
-          <h1 className={`${titleSize} font-bold text-gray-900 mb-3 sm:mb-4 leading-tight`}>
+          <h1 className={`${titleSize} font-bold mb-3 sm:mb-4 leading-tight ${
+            isDark ? 'text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]' : 'text-gray-900'
+          }`}>
             {highlightedWord ? (
               <>
                 {title.split(highlightedWord)[0]}
@@ -201,11 +224,15 @@ export default function GenericHero({
             )}
           </h1>
 
-          <p className="text-base sm:text-lg md:text-xl font-semibold text-gray-800 mb-3">
+          <p className={`text-base sm:text-lg md:text-xl font-semibold mb-3 ${
+            isDark ? 'text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]' : 'text-gray-800'
+          }`}>
             {subtitle}
           </p>
 
-          <p className="text-sm sm:text-base text-gray-700 mb-6 sm:mb-8 leading-relaxed max-w-2xl mx-auto">
+          <p className={`text-sm sm:text-base mb-6 sm:mb-8 leading-relaxed max-w-2xl mx-auto ${
+            isDark ? 'text-white/80' : 'text-gray-700'
+          }`}>
             {description}
           </p>
 
@@ -218,6 +245,8 @@ export default function GenericHero({
                   className={
                     button.variant === 'primary'
                       ? 'bg-[#f0da11] text-black font-semibold px-6 py-3 rounded-md hover:bg-[#d0b211] transition-all duration-200 shadow-md hover:shadow-lg text-sm sm:text-base hover:-translate-y-0.5'
+                      : isDark
+                      ? 'border-2 border-white text-white font-semibold px-6 py-3 rounded-md hover:bg-white hover:text-slate-900 transition-all duration-200 text-sm sm:text-base'
                       : 'border-2 border-gray-900 text-gray-900 font-semibold px-6 py-3 rounded-md hover:bg-gray-900 hover:text-white transition-all duration-200 text-sm sm:text-base'
                   }
                 >
@@ -234,10 +263,14 @@ export default function GenericHero({
               <div className="grid grid-cols-2 md:grid-cols-4 gap-8" style={{ animation: 'fadeInUp 0.8s ease-out 0.2s forwards', opacity: 0 }}>
                 {stats.map((stat, index) => (
                   <div key={index} className="text-center">
-                    <div className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+                    <div className={`text-2xl md:text-3xl font-bold mb-2 ${
+                      isDark ? 'text-white' : 'text-gray-900'
+                    }`}>
                       {stat.value}
                     </div>
-                    <div className="text-sm text-gray-600 uppercase tracking-wider">
+                    <div className={`text-sm uppercase tracking-wider ${
+                      isDark ? 'text-white/60' : 'text-gray-600'
+                    }`}>
                       {stat.label}
                     </div>
                   </div>

@@ -171,7 +171,7 @@ export default async function SafetyDataSheets() {
             variant: 'secondary'
           }
         ]}
-        backgroundVariant="white"
+        backgroundVariant="dark"
         showPattern={true}
         leftImage="/imgs/PDQ.webp"
         rightImage="/imgs/Kondor_Flight.webp"

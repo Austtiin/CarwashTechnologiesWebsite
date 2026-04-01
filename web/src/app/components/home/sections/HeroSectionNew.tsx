@@ -12,7 +12,7 @@ export default function HeroSectionNew() {
       {/* HomeHero Background Image - full section */}
       <div className="pointer-events-none absolute inset-0">
         <Image
-          src="/imgs/HomeHero.png"
+          src="/imgs/HomeHero.webp"
           alt="Professional car wash facility"
           fill
           priority

@@ -47,7 +47,7 @@ const ProjectsPage = () => {
             variant: 'secondary'
           }
         ]}
-        backgroundVariant="white"
+        backgroundVariant="dark"
         showPattern={true}
         leftImage="/imgs/BelangerTunnel.webp"
         rightImage="/imgs/SpinLite.webp"

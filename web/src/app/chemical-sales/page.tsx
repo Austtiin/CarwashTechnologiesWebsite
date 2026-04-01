@@ -158,7 +158,7 @@ export default async function ChemicalSales() {
             variant: "secondary"
           }
         ]}
-        backgroundVariant="white"
+        backgroundVariant="dark"
         showPattern={true}
         leftImage="/imgs/IMG_5384.webp"
         rightImage="/imgs/IMG_20260313_101859.webp"

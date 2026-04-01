@@ -20,7 +20,18 @@ export default function ChemicalsSectionNew() {
   ];
 
   return (
-    <section className="relative bg-white py-12 sm:py-14 overflow-hidden">
+    <section className="relative bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 py-12 sm:py-14 overflow-hidden">
+      {/* Yellow top separator */}
+      <div className="absolute inset-x-0 top-0 h-1 bg-[#f0da11] z-20" />
+      {/* Subtle background image overlay */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/imgs/chems/MixStir.jpg"
+          alt=""
+          fill
+          className="object-cover opacity-5"
+        />
+      </div>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 items-center">
           
@@ -28,12 +39,12 @@ export default function ChemicalsSectionNew() {
           <div>
             <div className="inline-flex items-center gap-3 mb-3">
               <div className="w-8 h-px bg-[#f0da11]"></div>
-              <span className="text-xs font-semibold text-gray-600 uppercase tracking-wider">Chemistry</span>
+              <span className="text-xs font-semibold text-[#f0da11] uppercase tracking-wider">Chemistry</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
               Premium Wash <span className="text-[#f0da11]">Chemicals</span>
             </h2>
-            <p className="text-sm sm:text-base text-gray-600 mb-5 leading-relaxed">
+            <p className="text-sm sm:text-base text-white mb-5 leading-relaxed">
               High-quality wash chemicals that deliver superior cleaning results while being 
               environmentally responsible. Our chemical programs are designed to maximize 
               efficiency and minimize waste.
@@ -42,7 +53,7 @@ export default function ChemicalsSectionNew() {
             {/* Feature List */}
             <ul className="space-y-2 mb-6">
               {features.map((feature, index) => (
-                <li key={index} className="flex items-center text-gray-700">
+                <li key={index} className="flex items-center text-white">
                   <svg className="w-5 h-5 text-[#f0da11] mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
@@ -61,21 +72,22 @@ export default function ChemicalsSectionNew() {
           </div>
           
           {/* Right Column - Partners Card */}
-          <div className="bg-white p-6 sm:p-7 lg:p-8 shadow-md border border-gray-100">
+          <div className="bg-slate-800/70 backdrop-blur-sm p-6 sm:p-7 lg:p-8 shadow-md border border-white/10 rounded-sm">
             {/* Partners Logos */}
             <div className="mb-6">
-              <p className="text-xs font-semibold text-gray-600 uppercase tracking-wider text-center mb-5">
+              <p className="text-xs font-semibold text-[#f0da11] uppercase tracking-wider text-center mb-5">
                 Trusted Chemicals from Leading Brands
               </p>
               <div className="flex items-center justify-center gap-8 flex-wrap">
                 {partners.map((partner, index) => (
-                  <div key={index} className="hover:scale-110 transition-all duration-300">
+                  <div key={index} className="bg-white/90 rounded p-2 hover:scale-110 transition-all duration-300">
                     <Image 
                       src={partner.src} 
                       alt={partner.alt} 
                       width={partner.width} 
                       height={partner.height} 
                       className="object-contain"
+                      style={{ height: 'auto' }}
                     />
                   </div>
                 ))}
@@ -83,14 +95,14 @@ export default function ChemicalsSectionNew() {
             </div>
             
             {/* Guarantee Content */}
-            <div className="text-center pt-6 border-t border-gray-100">
-              <div className="w-10 h-10 bg-gray-100 text-gray-900 flex items-center justify-center mx-auto mb-3">
+            <div className="text-center pt-6 border-t border-white/10">
+              <div className="w-10 h-10 bg-[#f0da11]/10 text-[#f0da11] flex items-center justify-center mx-auto mb-3">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">Quality Guarantee</h3>
-              <p className="text-sm text-gray-600">
+              <h3 className="text-lg font-bold text-white mb-2">Quality Guarantee</h3>
+              <p className="text-sm text-white/70">
                 All of our chemicals meet the highest industry standards for performance 
                 and environmental safety.
               </p>

@@ -29,22 +29,24 @@ export default function CallToActionNew({
   contactInfo
 }: CallToActionProps) {
   return (
-    <section className="relative py-16 sm:py-20 bg-gradient-to-b from-white via-gray-50 to-white">
+    <section className="relative py-16 sm:py-20 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
+      {/* Yellow top separator */}
+      <div className="absolute inset-x-0 top-0 h-1 bg-[#f0da11] z-20" />
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
           src="/imgs/PDQ.webp"
           alt="Car wash equipment"
           fill
-          className="object-cover opacity-10"
+          className="object-cover opacity-5"
         />
       </div>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto text-center mb-8">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3">
             {title}
           </h2>
-          <p className="text-base sm:text-lg text-gray-600">
+          <p className="text-base sm:text-lg text-white/80">
             {description}
           </p>
         </div>
@@ -57,7 +59,7 @@ export default function CallToActionNew({
               className={
                 button.variant === 'primary'
                   ? 'flex-1 inline-flex items-center justify-center gap-2 bg-[#f0da11] text-black px-6 py-3 font-semibold text-sm sm:text-base rounded-md hover:bg-[#d0b211] transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5'
-                  : 'flex-1 inline-flex items-center justify-center gap-2 border-2 border-gray-900 text-gray-900 px-6 py-3 font-semibold text-sm sm:text-base rounded-md hover:bg-gray-900 hover:text-white transition-all duration-200'
+                  : 'flex-1 inline-flex items-center justify-center gap-2 border-2 border-white text-white px-6 py-3 font-semibold text-sm sm:text-base rounded-md hover:bg-white hover:text-slate-900 transition-all duration-200'
               }
             >
               {button.text}
@@ -69,11 +71,11 @@ export default function CallToActionNew({
         </div>
 
         {contactInfo?.phone && contactInfo.showContactCard && (
-          <div className="mt-6 max-w-3xl mx-auto text-center text-sm text-gray-600">
+          <div className="mt-6 max-w-3xl mx-auto text-center text-sm text-white/70">
             <span className="font-semibold mr-1">Prefer to talk now?</span>
             <a
               href={`tel:${contactInfo.phone.replace(/[^0-9]/g, '')}`}
-              className="font-semibold text-gray-900 hover:text-[#f0da11]"
+              className="font-semibold text-white hover:text-[#f0da11] transition-colors"
             >
               Call {contactInfo.phone}
             </a>

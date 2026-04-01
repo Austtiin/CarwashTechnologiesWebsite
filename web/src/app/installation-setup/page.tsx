@@ -164,7 +164,7 @@ export default async function InstallationSetup() {
             variant: "secondary"
           }
         ]}
-        backgroundVariant="white"
+        backgroundVariant="dark"
         showPattern={true}
         leftImage="/imgs/IMG_5389.webp"
         rightImage="/imgs/IMG_5393.webp"

@@ -69,7 +69,7 @@ export default function AboutPage() {
           highlightedWord="Technologies"
           subtitle="Serving the Upper Midwest Wash Industry"
           description="Built on a foundation of expertise, innovation, and unwavering commitment to customer success across Minnesota, North Dakota, South Dakota, and Wisconsin."
-          backgroundVariant="white"
+          backgroundVariant="dark"
           showPattern={true}
           leftImage="/imgs/AirCannon.webp"
           rightImage="/imgs/Kondor_Flight.webp"

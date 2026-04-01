@@ -134,7 +134,7 @@ export default async function EquipmentSales() {
             variant: "secondary"
           }
         ]}
-        backgroundVariant="white"
+        backgroundVariant="dark"
         showPattern={true}
         leftImage="/imgs/IMG_5386.webp"
         rightImage="/imgs/IMG_5380.webp"

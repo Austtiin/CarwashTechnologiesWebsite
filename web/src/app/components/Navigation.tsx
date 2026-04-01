@@ -3,11 +3,15 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect, useRef } from 'react';
+import { usePathname } from 'next/navigation';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
+  const pathname = usePathname();
+
+  const isActive = (href: string) => href === '/' ? pathname === '/' : pathname.startsWith(href);
 
   const serviceLinks = [
     { name: 'Equipment Sales', href: '/equipment-sales', description: 'Premium car wash equipment' },
@@ -114,20 +118,28 @@ const Navbar = () => {
           
           {/* Desktop Navigation Links - right aligned with enough space for CTA button */}
           <nav className="hidden md:flex items-center space-x-4 lg:space-x-6 ml-auto mr-40 xl:mr-48">
-            <Link href="/" className="font-medium text-gray-700 hover:text-[#d0b211] transition-colors">
+            <Link href="/" className={`font-medium transition-colors pb-0.5 ${
+              isActive('/') ? 'text-[#d0b211] border-b-2 border-[#f0da11]' : 'text-gray-700 hover:text-[#d0b211]'
+            }`}>
               Home
             </Link>
-            <Link href="/about" className="font-medium text-gray-700 hover:text-[#d0b211] transition-colors">
+            <Link href="/about" className={`font-medium transition-colors pb-0.5 ${
+              isActive('/about') ? 'text-[#d0b211] border-b-2 border-[#f0da11]' : 'text-gray-700 hover:text-[#d0b211]'
+            }`}>
               About
             </Link>
-            <Link href="/wash-types" className="font-medium text-gray-700 hover:text-[#d0b211] transition-colors">
+            <Link href="/wash-types" className={`font-medium transition-colors pb-0.5 ${
+              isActive('/wash-types') ? 'text-[#d0b211] border-b-2 border-[#f0da11]' : 'text-gray-700 hover:text-[#d0b211]'
+            }`}>
               Types of Washes
             </Link>
             
             {/* Services Dropdown */}
             <div className="relative group">
               <button 
-                className="font-medium text-gray-700 hover:text-[#d0b211] transition-colors flex items-center focus:outline-none"
+                className={`font-medium transition-colors flex items-center focus:outline-none pb-0.5 ${
+                  serviceLinks.some(l => isActive(l.href)) ? 'text-[#d0b211] border-b-2 border-[#f0da11]' : 'text-gray-700 hover:text-[#d0b211]'
+                }`}
                 onMouseEnter={() => setIsServicesOpen(true)}
                 onMouseLeave={() => setIsServicesOpen(false)}
                 onClick={() => setIsServicesOpen(!isServicesOpen)}
@@ -176,7 +188,9 @@ const Navbar = () => {
               </div>
             </div>
             
-            <Link href="/contact" className="font-medium text-gray-700 hover:text-[#d0b211] transition-colors">
+            <Link href="/contact" className={`font-medium transition-colors pb-0.5 ${
+              isActive('/contact') ? 'text-[#d0b211] border-b-2 border-[#f0da11]' : 'text-gray-700 hover:text-[#d0b211]'
+            }`}>
               Contact
             </Link>
           </nav>

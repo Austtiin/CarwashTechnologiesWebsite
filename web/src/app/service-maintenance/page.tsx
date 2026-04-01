@@ -201,7 +201,7 @@ export default async function ServiceMaintenance() {
             variant: "secondary"
           }
         ]}
-        backgroundVariant="white"
+        backgroundVariant="dark"
         showPattern={true}
         leftImage="/imgs/IMG_5380.webp"
         rightImage="/imgs/IMG_20260313_124500.webp"

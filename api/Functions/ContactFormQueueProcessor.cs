@@ -1,3 +1,4 @@
+using System.Net;
 using System.Text.Json;
 using Azure.Communication.Email;
 using ContactFormProcessor.Models;
@@ -94,7 +95,7 @@ public class ContactFormQueueProcessor
 
             var emailMessage = new EmailMessage(fromAddress, recipients, emailContent);
 
-            var operation = await emailClient.SendAsync(Azure.WaitUntil.Started, emailMessage);
+            var operation = await emailClient.SendAsync(Azure.WaitUntil.Completed, emailMessage);
 
             _logger.LogInformation("Email sent successfully. Message ID: {MessageId}", operation.Id);
         }
@@ -164,35 +165,35 @@ public class ContactFormQueueProcessor
         <div class='content'>
             <div class='field'>
                 <span class='label'>Urgency:</span>
-                <span class='urgency'>{formData.Urgency.ToUpper()}</span>
+                <span class='urgency'>{WebUtility.HtmlEncode(formData.Urgency.ToUpper())}</span>
             </div>
             <div class='field'>
                 <span class='label'>Name:</span>
-                <span class='value'>{formData.Name}</span>
+                <span class='value'>{WebUtility.HtmlEncode(formData.Name)}</span>
             </div>
             <div class='field'>
                 <span class='label'>Email:</span>
-                <span class='value'><a href='mailto:{formData.Email}'>{formData.Email}</a></span>
+                <span class='value'><a href='mailto:{WebUtility.HtmlEncode(formData.Email)}'>{WebUtility.HtmlEncode(formData.Email)}</a>
             </div>
             {(!string.IsNullOrEmpty(formData.Phone) ? $@"
             <div class='field'>
                 <span class='label'>Phone:</span>
-                <span class='value'>{formData.Phone}</span>
+                <span class='value'>{WebUtility.HtmlEncode(formData.Phone)}</span>
             </div>" : "")}
             {(!string.IsNullOrEmpty(formData.Company) ? $@"
             <div class='field'>
                 <span class='label'>Company:</span>
-                <span class='value'>{formData.Company}</span>
+                <span class='value'>{WebUtility.HtmlEncode(formData.Company)}</span>
             </div>" : "")}
             {(!string.IsNullOrEmpty(formData.BestTime) ? $@"
             <div class='field'>
                 <span class='label'>Best Time to Contact:</span>
-                <span class='value'>{formData.BestTime}</span>
+                <span class='value'>{WebUtility.HtmlEncode(formData.BestTime)}</span>
             </div>" : "")}
             <div class='field'>
                 <span class='label'>Inquiry:</span>
                 <div class='value' style='white-space: pre-wrap; background-color: white; padding: 15px; border-left: 3px solid #1e40af; margin-top: 5px;'>
-{formData.Inquiry}
+{WebUtility.HtmlEncode(formData.Inquiry)}
                 </div>
             </div>
         </div>

@@ -38,7 +38,7 @@ export default function ContactPage() {
             variant: 'secondary'
           }
         ]}
-        backgroundVariant="white"
+        backgroundVariant="dark"
         showPattern={true}
         leftImage="/imgs/COnvayer.webp"
         rightImage="/imgs/IMG_5386.webp"

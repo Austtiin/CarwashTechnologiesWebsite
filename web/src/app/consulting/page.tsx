@@ -133,7 +133,7 @@ export default function ConsultingPage() {
             variant: "secondary"
           }
         ]}
-        backgroundVariant="white"
+        backgroundVariant="dark"
         showPattern={true}
         leftImage="/imgs/IMG_0070.webp"
         rightImage="/imgs/IMG_5379.webp"

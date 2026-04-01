@@ -52,7 +52,8 @@ export default function ServicesSectionNew() {
 
   return (
     <section className="relative bg-gradient-to-b from-[#f6f6f6] via-gray-100 to-[#f6f6f6] py-16 sm:py-20 overflow-hidden">
-      {/* Background Elements - grid pattern removed */}
+      {/* Yellow top border to anchor against the dark hero above */}
+      <div className="absolute inset-x-0 top-0 h-1 bg-[#f0da11] z-10" />
 
       {/* Water Droplets */}
       <div className="absolute top-12 left-1/4 w-2 h-2 bg-blue-400/15 rounded-full hidden md:block"

@@ -67,7 +67,7 @@ export default function WashTypesPage() {
             variant: 'secondary',
           },
         ]}
-        backgroundVariant="white"
+        backgroundVariant="dark"
         showPattern={true}
         leftImage="/imgs/IMG_5387.webp"
         rightImage="/imgs/AirCannon.webp"

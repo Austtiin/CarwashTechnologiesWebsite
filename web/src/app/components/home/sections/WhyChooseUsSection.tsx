@@ -26,7 +26,7 @@ export default function WhyChooseUsSection() {
       <div className="absolute inset-x-0 top-0 h-1 bg-[#f0da11] z-20" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-10 lg:gap-14">
+        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-stretch gap-10 lg:gap-14">
           {/* Text Column */}
           <div className="w-full lg:w-1/2 text-left">
             <p className="text-xs sm:text-sm font-semibold tracking-[0.22em] uppercase text-[#f0da11] mb-3 drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">
@@ -35,7 +35,7 @@ export default function WhyChooseUsSection() {
             <h2 className="text-3xl sm:text-4xl lg:text-[2.4rem] font-bold text-white mb-3 leading-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]">
               Why Choose Us<span className="text-[#f0da11]">?</span>
             </h2>
-            <p className="text-sm sm:text-base lg:text-lg text-gray-100 font-normal mb-6 max-w-xl drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+            <p className="text-sm sm:text-base lg:text-lg text-white font-normal mb-6 max-w-xl drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
               Partner with a team that understands modern wash operations—equipment, chemistry, and service working together to keep
               your site running strong.
             </p>
@@ -51,8 +51,8 @@ export default function WhyChooseUsSection() {
           </div>
 
           {/* Image Column */}
-          <div className="w-full lg:w-1/2 self-stretch">
-            <div className="grid grid-cols-3 gap-0 h-full">
+          <div className="w-full lg:w-3/4 h-80 sm:h-96 lg:h-auto">
+            <div className="grid grid-cols-3 gap-2 h-full">
               <div className="relative overflow-hidden bg-white/5 shadow-lg h-full">
                 <Image
                   src="/imgs/Kondor_Flight.webp"
