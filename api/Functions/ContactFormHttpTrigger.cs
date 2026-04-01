@@ -38,6 +38,9 @@ public class ContactFormHttpTrigger
     public async Task<Output> Run(
         [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "contact")] HttpRequestData req)
     {
+        _logger.LogInformation("========================================");
+        _logger.LogInformation(">>> ContactFormSubmit triggered - incoming POST /api/contact");
+        _logger.LogInformation("========================================");
         var httpResponse = req.CreateResponse();
 
         try
@@ -63,6 +66,7 @@ public class ContactFormHttpTrigger
                 || formData.Email.Length > 254
                 || formData.Inquiry.Length > 1000)
             {
+                _logger.LogWarning(">>> Validation failed - missing or invalid fields. Returning 400.");
                 httpResponse.StatusCode = HttpStatusCode.BadRequest;
                 await httpResponse.WriteAsJsonAsync(new { success = false, error = "Missing or invalid required fields." });
                 return new Output { HttpResponse = httpResponse };
@@ -78,8 +82,11 @@ public class ContactFormHttpTrigger
 
             var queueJson = JsonSerializer.Serialize(message);
 
-            _logger.LogInformation("Contact form queued for: {Name} ({Email}), Type: {ContactType}",
-                formData.Name, formData.Email, formData.ContactType);
+            _logger.LogInformation(">>> Validated form data. Enqueueing message to Azure Storage Queue 'webjobqueue'...");
+            _logger.LogInformation("    Name:        {Name}", formData.Name);
+            _logger.LogInformation("    Email:       {Email}", formData.Email);
+            _logger.LogInformation("    ContactType: {ContactType}", formData.ContactType);
+            _logger.LogInformation("    Urgency:     {Urgency}", formData.Urgency);
 
             httpResponse.StatusCode = HttpStatusCode.OK;
             await httpResponse.WriteAsJsonAsync(new
@@ -87,6 +94,9 @@ public class ContactFormHttpTrigger
                 success = true,
                 message = "Your message has been received. We will be in touch shortly."
             });
+
+            _logger.LogInformation(">>> Message enqueued successfully. Returning 200 OK to client.");
+            _logger.LogInformation("========================================");
 
             return new Output
             {

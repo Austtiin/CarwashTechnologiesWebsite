@@ -35,8 +35,10 @@ class ApiClient {
   async submitContactForm(
     data: ContactFormData
   ): Promise<ApiResponse<ContactFormResponse>> {
+    const url = `${API_BASE_URL}/api/contact`;
+    console.log('[ApiClient] POST', url, data);
     try {
-      const response = await this.fetchWithTimeout(`${API_BASE_URL}/api/contact`, {
+      const response = await this.fetchWithTimeout(url, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -45,10 +47,12 @@ class ApiClient {
         timeout: 15000 // 15 second timeout
       });
 
+      console.log('[ApiClient] Response status:', response.status, response.statusText);
       const result = await response.json();
+      console.log('[ApiClient] Response body:', result);
       return result;
     } catch (error) {
-      console.error('Contact form submission error:', error);
+      console.error('[ApiClient] ❌ Fetch error:', error);
 
       // Network error or timeout
       if (error instanceof Error) {

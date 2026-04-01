@@ -29,21 +29,28 @@ export function useContactForm(): UseContactFormReturn {
     setIsPending(false);
     setRetryCount(0);
 
+    console.log('[ContactForm] Submitting form...', { contactType: data.contactType, name: data.name, email: data.email });
+
     let lastError: string | null = null;
 
     // Try up to MAX_RETRIES times
     for (let attempt = 0; attempt < MAX_RETRIES; attempt++) {
       try {
         setRetryCount(attempt + 1);
+        if (attempt > 0) {
+          console.log(`[ContactForm] Retry attempt ${attempt + 1}/${MAX_RETRIES}...`);
+        }
         
         const response = await submitContactForm(data);
 
         if (response.success) {
+          console.log('[ContactForm] ✅ Successfully queued in Azure Storage Queue.', response);
           setIsSuccess(true);
           setIsSubmitting(false);
           return true;
         } else {
           lastError = response.message || response.error || 'Failed to submit form';
+          console.warn('[ContactForm] ⚠️ Submission failed (non-success response):', lastError);
           
           // If this isn't the last attempt, wait before retrying
           if (attempt < MAX_RETRIES - 1) {
@@ -52,6 +59,7 @@ export function useContactForm(): UseContactFormReturn {
         }
       } catch (err) {
         lastError = err instanceof Error ? err.message : 'An unexpected error occurred';
+        console.error(`[ContactForm] ❌ Attempt ${attempt + 1} threw an error:`, err);
         
         // If this isn't the last attempt, wait before retrying
         if (attempt < MAX_RETRIES - 1) {
@@ -61,6 +69,7 @@ export function useContactForm(): UseContactFormReturn {
     }
 
     // All retries failed
+    console.error('[ContactForm] ❌ All attempts failed. Last error:', lastError);
     setIsSubmitting(false);
     
     // Mark as pending if it's a network or service error (not validation)

@@ -60,13 +60,26 @@ public class ContactFormQueueProcessor
     {
         try
         {
-            // Get environment variables
+            // Prefer a full ACS connection string; fall back to endpoint-only (managed identity)
             var connectionString = Environment.GetEnvironmentVariable("AZURE_COMMUNICATION_CONNECTION_STRING");
+            var endpoint = Environment.GetEnvironmentVariable("AZURE_COMMUNICATION_ENDPOINT");
             var fromAddress = Environment.GetEnvironmentVariable("EMAIL_FROM_ADDRESS") ?? "noreply@carwashtechnologies.com";
 
-            if (string.IsNullOrEmpty(connectionString))
+            EmailClient emailClient;
+
+            if (!string.IsNullOrEmpty(connectionString) && connectionString.TrimStart().StartsWith("endpoint=", StringComparison.OrdinalIgnoreCase))
             {
-                _logger.LogWarning("Azure Communication Services connection string not configured. Email not sent.");
+                // Proper ACS connection string (starts with "endpoint=https://...")
+                emailClient = new EmailClient(connectionString);
+            }
+            else if (!string.IsNullOrEmpty(endpoint))
+            {
+                // Endpoint-only — requires managed identity (production best practice)
+                emailClient = new EmailClient(new Uri(endpoint), new Azure.Identity.DefaultAzureCredential());
+            }
+            else
+            {
+                _logger.LogWarning("Azure Communication Services is not configured. Set AZURE_COMMUNICATION_CONNECTION_STRING (ACS connection string starting with 'endpoint=') or AZURE_COMMUNICATION_ENDPOINT. Email not sent.");
                 _logger.LogInformation("SIMULATION: Would send email for {ContactType} to {Name} at {Email}",
                     formData.ContactType, formData.Name, formData.Email);
                 return;
@@ -74,11 +87,6 @@ public class ContactFormQueueProcessor
 
             // Determine recipient based on contact type
             var toAddress = GetRecipientEmail(formData.ContactType);
-
-            // Create email client
-            var emailClient = new EmailClient(connectionString);
-
-            // Build email subject and body
             var subject = $"New {GetContactTypeDisplay(formData.ContactType)} Inquiry - {formData.Urgency.ToUpper()}";
             var htmlBody = BuildEmailBody(formData);
 
