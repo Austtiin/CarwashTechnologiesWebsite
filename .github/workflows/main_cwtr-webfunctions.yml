@@ -29,13 +29,19 @@ jobs:
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }}
 
-      - name: 'Resolve Project Dependencies Using Dotnet'
+      - name: 'Publish Project'
         shell: bash
         run: |
-          pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
-          dotnet publish --configuration Release --output ./output
-          popd
-      
+          dotnet publish '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}' \
+            --configuration Release \
+            --output '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/output'
+
+      - name: 'Create Deployment Zip'
+        shell: bash
+        run: |
+          cd '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/output'
+          zip -r ${{ github.workspace }}/functions-deploy.zip .
+
       - name: Login to Azure
         uses: azure/login@v2
         with:
@@ -49,5 +55,6 @@ jobs:
         with:
           app-name: 'cwtr-webfunctions'
           slot-name: 'Production'
-          package: '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/output'
+          package: '${{ github.workspace }}/functions-deploy.zip'
+          scm-do-build-during-deployment: false
           
