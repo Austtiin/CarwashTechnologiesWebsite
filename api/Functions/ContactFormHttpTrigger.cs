@@ -1,3 +1,4 @@
+using System.Collections.Concurrent;
 using System.Net;
 using System.Text.Json;
 using ContactFormProcessor.Models;
@@ -19,6 +20,45 @@ public class ContactFormHttpTrigger
     {
         PropertyNameCaseInsensitive = true
     };
+
+    // ── Rate limiting ────────────────────────────────────────────────────────
+    private const int MaxRequestsPerHour = 7;
+    private static readonly ConcurrentDictionary<string, RateLimitEntry> RateLimitCache = new();
+
+    private sealed class RateLimitEntry
+    {
+        public DateTime WindowStart { get; set; }
+        public int Count { get; set; }
+    }
+
+    private static string GetClientIp(HttpRequestData req)
+    {
+        if (req.Headers.TryGetValues("X-Forwarded-For", out var values))
+        {
+            var forwarded = values.FirstOrDefault();
+            if (!string.IsNullOrEmpty(forwarded))
+                return forwarded.Split(',')[0].Trim();
+        }
+        return "unknown";
+    }
+
+    private static bool IsRateLimited(string ip)
+    {
+        var now = DateTime.UtcNow;
+        var entry = RateLimitCache.GetOrAdd(ip, _ => new RateLimitEntry { WindowStart = now, Count = 0 });
+
+        lock (entry)
+        {
+            if ((now - entry.WindowStart).TotalHours >= 1)
+            {
+                entry.WindowStart = now;
+                entry.Count = 0;
+            }
+            entry.Count++;
+            return entry.Count > MaxRequestsPerHour;
+        }
+    }
+    // ────────────────────────────────────────────────────────────────────────
 
     public ContactFormHttpTrigger(ILogger<ContactFormHttpTrigger> logger)
     {
@@ -45,6 +85,18 @@ public class ContactFormHttpTrigger
 
         try
         {
+            // ── Rate limit check ─────────────────────────────────────────────
+            var clientIp = GetClientIp(req);
+            if (IsRateLimited(clientIp))
+            {
+                _logger.LogWarning(">>> Rate limit exceeded for IP: {IP}", clientIp);
+                httpResponse.StatusCode = (HttpStatusCode)429;
+                httpResponse.Headers.Add("Retry-After", "3600");
+                await httpResponse.WriteAsJsonAsync(new { success = false, error = "Too many requests. Please try again later." });
+                return new Output { HttpResponse = httpResponse };
+            }
+            // ─────────────────────────────────────────────────────────────────
+
             ContactFormData? formData;
             try
             {
@@ -82,20 +134,21 @@ public class ContactFormHttpTrigger
 
             var queueJson = JsonSerializer.Serialize(message);
 
-            _logger.LogInformation(">>> Validated form data. Enqueueing message to Azure Storage Queue 'webjobqueue'...");
+            _logger.LogInformation(">>> Validated form data. Enqueueing message to Azure Storage Queue...");
             _logger.LogInformation("    Name:        {Name}", formData.Name);
             _logger.LogInformation("    Email:       {Email}", formData.Email);
             _logger.LogInformation("    ContactType: {ContactType}", formData.ContactType);
             _logger.LogInformation("    Urgency:     {Urgency}", formData.Urgency);
 
-            httpResponse.StatusCode = HttpStatusCode.OK;
+            // 202 Accepted — message received and queued for async processing
+            httpResponse.StatusCode = HttpStatusCode.Accepted;
             await httpResponse.WriteAsJsonAsync(new
             {
                 success = true,
                 message = "Your message has been received. We will be in touch shortly."
             });
 
-            _logger.LogInformation(">>> Message enqueued successfully. Returning 200 OK to client.");
+            _logger.LogInformation(">>> Message enqueued successfully. Returning 202 Accepted to client.");
             _logger.LogInformation("========================================");
 
             return new Output

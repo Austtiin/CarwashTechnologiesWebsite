@@ -36,7 +36,6 @@ class ApiClient {
     data: ContactFormData
   ): Promise<ApiResponse<ContactFormResponse>> {
     const url = `${API_BASE_URL}/api/contact`;
-    console.log('[ApiClient] POST', url, data);
     try {
       const response = await this.fetchWithTimeout(url, {
         method: 'POST',
@@ -44,17 +43,42 @@ class ApiClient {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(data),
-        timeout: 15000 // 15 second timeout
+        timeout: 15000
       });
 
-      console.log('[ApiClient] Response status:', response.status, response.statusText);
-      const result = await response.json();
-      console.log('[ApiClient] Response body:', result);
-      return result;
-    } catch (error) {
-      console.error('[ApiClient] ❌ Fetch error:', error);
+      // Rate limited
+      if (response.status === 429) {
+        return {
+          success: false,
+          error: 'Too many requests',
+          message: 'You have submitted too many requests. Please wait a while before trying again.'
+        };
+      }
 
-      // Network error or timeout
+      // Parse JSON body for all other responses
+      let result: ApiResponse<ContactFormResponse>;
+      try {
+        result = await response.json();
+      } catch {
+        return {
+          success: false,
+          error: 'Invalid response',
+          message: 'The server returned an unexpected response. Please try again.'
+        };
+      }
+
+      // 202 Accepted or any 2xx with success:true in body = success
+      if (response.ok && result.success) {
+        return result;
+      }
+
+      // Server returned a non-2xx or success:false — surface the server's message
+      return {
+        success: false,
+        error: result.error ?? 'Request failed',
+        message: result.message ?? 'Something went wrong. Please try again.'
+      };
+    } catch (error) {
       if (error instanceof Error) {
         if (error.name === 'AbortError') {
           return {
@@ -63,14 +87,12 @@ class ApiClient {
             message: 'The request took too long. Please try again.'
           };
         }
-
         return {
           success: false,
           error: 'Network error',
           message: 'Unable to connect to the server. Please check your internet connection.'
         };
       }
-
       return {
         success: false,
         error: 'Unknown error',

@@ -40,7 +40,7 @@ export default function ContactForm({ selectedOption, onReset }: ContactFormProp
     urgency: 'normal'
   });
   
-  const { isSubmitting, isSuccess, isPending, error, retryCount, submitForm, reset } = useContactForm();
+  const { isSubmitting, isSuccess, isPending, error, submitForm, reset } = useContactForm();
 
   // List of blocked email domains
   const BLOCKED_EMAIL_DOMAINS = [
@@ -288,16 +288,6 @@ export default function ContactForm({ selectedOption, onReset }: ContactFormProp
       onSubmit={handleSubmit}
       className="max-w-4xl mx-auto bg-white border border-gray-200 p-4 sm:p-5 md:p-6 shadow-xl rounded-2xl lg:rounded-3xl"
     >
-      {/* Retry indicator */}
-      {isSubmitting && retryCount > 1 && (
-        <div className="mb-4 p-3 bg-blue-50 border border-blue-200 rounded-lg">
-          <p className="text-sm text-blue-800 text-center">
-            <span className="font-semibold">Retry attempt {retryCount} of 3...</span>
-            <span className="ml-2">Ensuring your message gets through.</span>
-          </p>
-        </div>
-      )}
-
       <div className="grid gap-4 md:gap-5 lg:gap-6 lg:grid-cols-3 items-start">
         {/* Main Form Fields */}
         <div className="lg:col-span-2 space-y-4">
@@ -478,8 +468,8 @@ export default function ContactForm({ selectedOption, onReset }: ContactFormProp
             >
               {isSubmitting ? (
                 <span className="flex items-center justify-center">
-                  <div className="w-6 h-6 border-4 border-gray-900 border-t-transparent rounded-full animate-spin mr-4"></div>
-                  {retryCount > 0 ? `Sending (Attempt ${retryCount}/3)...` : 'Sending...'}
+                  <div className="w-6 h-6 border-4 border-gray-900 border-t-transparent rounded-full animate-spin mr-3"></div>
+                  Sending...
                 </span>
               ) : (
                 <span className="flex items-center justify-center">
