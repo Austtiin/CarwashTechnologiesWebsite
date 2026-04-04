@@ -57,9 +57,9 @@ jobs:
             --resource-type Microsoft.Web/sites \
             --query "[0].resourceGroup" \
             --output tsv)
-          az functionapp deployment source config-zip \
+          az functionapp deploy \
             --name cwtr-webfunctions \
             --resource-group "$RG" \
-            --src '${{ github.workspace }}/functions-deploy.zip' \
-            --build-remote false
+            --src-path '${{ github.workspace }}/functions-deploy.zip' \
+            --type zip
           

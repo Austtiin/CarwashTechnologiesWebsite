@@ -147,8 +147,21 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* Microsoft Clarity Disclosure */}
+        <div className="mt-8 pt-6 border-t border-white/10">
+          <p className="text-xs text-gray-400 text-center leading-relaxed">
+            We improve our products and advertising by using Microsoft Clarity to see how you use our website.
+            By using our site, you agree that we and Microsoft can collect and use this data.
+            Our{' '}
+            <a href="/privacy-policy" className="underline hover:text-[#f0da11] transition-colors">
+              privacy statement
+            </a>
+            {' '}has more details.
+          </p>
+        </div>
+
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-white/10">
+        <div className="mt-6 pt-6 border-t border-white/10">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-sm text-white">
               &copy; {new Date().getFullYear()} Carwash Technologies, Inc. All rights reserved.

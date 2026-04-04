@@ -1,7 +1,10 @@
 'use client';
 
 import Script from 'next/script';
+import Clarity from '@microsoft/clarity';
 import { useEffect, useState } from 'react';
+
+const CLARITY_PROJECT_ID = 'w6lf72rvyq';
 
 export default function ConditionalAnalytics() {
   const [analyticsConsent, setAnalyticsConsent] = useState(false);
@@ -26,6 +29,12 @@ export default function ConditionalAnalytics() {
       window.removeEventListener('storage', handleStorageChange);
     };
   }, []);
+
+  useEffect(() => {
+    if (analyticsConsent) {
+      Clarity.init(CLARITY_PROJECT_ID);
+    }
+  }, [analyticsConsent]);
 
   if (!analyticsConsent) {
     return null;

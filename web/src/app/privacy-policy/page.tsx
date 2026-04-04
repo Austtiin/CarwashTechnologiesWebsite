@@ -19,7 +19,7 @@ export default function PrivacyPolicyPage() {
             <strong>Effective Date:</strong> March 30, 2026
           </p>
           <p className="text-gray-600 mt-2">
-            <strong>Last Updated:</strong> March 30, 2026
+            <strong>Last Updated:</strong> April 4, 2026
           </p>
         </div>
 
@@ -105,6 +105,51 @@ export default function PrivacyPolicyPage() {
             <p className="text-gray-700 mb-4">
               <strong>Your Control:</strong> You can control cookie preferences through our cookie consent banner. 
               You can also manage cookies through your browser settings, but disabling cookies may affect website functionality.
+            </p>
+
+            <h3 className="text-xl font-semibold text-gray-800 mb-3 mt-6">Microsoft Clarity</h3>
+            <p className="text-gray-700 mb-4">
+              We partner with Microsoft Clarity and Microsoft Advertising to capture how you use and interact with our 
+              website through behavioral metrics, heatmaps, and session replay to improve and market our products and 
+              services. Website usage data is captured using first and third-party cookies and other tracking technologies 
+              to determine the popularity of products/services and online activity. Additionally, we use this information 
+              for site optimization, fraud/security purposes, and advertising. For more information about how Microsoft 
+              collects and uses your data, visit the{' '}
+              <a
+                href="https://privacy.microsoft.com/en-us/privacystatement"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:underline"
+              >
+                Microsoft Privacy Statement
+              </a>.
+            </p>
+            <p className="text-gray-700 mb-4">
+              Microsoft Clarity is only activated after you accept cookies via our consent banner. You may opt out at 
+              any time by declining or withdrawing cookie consent, or by visiting{' '}
+              <a
+                href="https://choice.microsoft.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:underline"
+              >
+                choice.microsoft.com
+              </a>.
+            </p>
+
+            <h3 className="text-xl font-semibold text-gray-800 mb-3 mt-6">Google Analytics</h3>
+            <p className="text-gray-700 mb-4">
+              We use Google Analytics to analyze website traffic and usage patterns. This service uses cookies to 
+              collect anonymized data about how visitors interact with our site. Google Analytics is only activated 
+              after you accept cookies via our consent banner. For more information, visit the{' '}
+              <a
+                href="https://policies.google.com/privacy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:underline"
+              >
+                Google Privacy Policy
+              </a>.
             </p>
           </section>
 
