@@ -4,7 +4,7 @@ import Script from 'next/script';
 import Clarity from '@microsoft/clarity';
 import { useEffect, useState } from 'react';
 
-const CLARITY_PROJECT_ID = 'w6lf72rvyq';
+const CLARITY_PROJECT_ID = process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID ?? '';
 
 export default function ConditionalAnalytics() {
   const [analyticsConsent, setAnalyticsConsent] = useState(false);
