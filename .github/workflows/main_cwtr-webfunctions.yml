@@ -7,7 +7,6 @@ on:
   workflow_dispatch:
 
 env:
-  AZURE_FUNCTIONAPP_PACKAGE_PATH: '.'   # change if your .csproj is in a subfolder
   DOTNET_VERSION: '8.0.x'
 
 jobs:
@@ -26,10 +25,16 @@ jobs:
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }}
 
-      # ✅ KEY FIX: use publish instead of build
+      # 🔍 (Optional but helpful first run)
+      - name: Debug - list files
+        run: ls -R
+
+      # ✅ Auto-find and publish project
       - name: Publish Azure Function
         run: |
-          dotnet publish ./cwtr-webfunctions.csproj \
+          PROJECT=$(find . -name "*.csproj" | head -n 1)
+          echo "Using project: $PROJECT"
+          dotnet publish "$PROJECT" \
             --configuration Release \
             --output ./publish
 
