@@ -50,16 +50,9 @@ jobs:
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_C46C4064F5934A81A3920BD0FE743FF7 }}
 
       - name: 'Deploy to Azure Function App'
-        shell: bash
-        run: |
-          RG=$(az resource list \
-            --name cwtr-webfunctions \
-            --resource-type Microsoft.Web/sites \
-            --query "[0].resourceGroup" \
-            --output tsv)
-          az functionapp deploy \
-            --name cwtr-webfunctions \
-            --resource-group "$RG" \
-            --src-path '${{ github.workspace }}/functions-deploy.zip' \
-            --type zip
+        uses: Azure/functions-action@v2
+        with:
+          app-name: 'cwtr-webfunctions'
+          package: '${{ github.workspace }}/functions-deploy.zip'
+          scm-do-build-during-deployment: false
           
