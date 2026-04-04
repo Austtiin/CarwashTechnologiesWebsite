@@ -49,12 +49,12 @@ jobs:
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_FE4F3284FB074C0E80A185DBE9955DE3 }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_C46C4064F5934A81A3920BD0FE743FF7 }}
 
-      - name: 'Run Azure Functions Action'
-        uses: Azure/functions-action@v1
-        id: fa
-        with:
-          app-name: 'cwtr-webfunctions'
-          slot-name: 'Production'
-          package: '${{ github.workspace }}/functions-deploy.zip'
-          scm-do-build-during-deployment: false
+      - name: 'Deploy to Azure Function App'
+        shell: bash
+        run: |
+          az functionapp deployment source config-zip \
+            --name cwtr-webfunctions \
+            --resource-group $(az functionapp show --name cwtr-webfunctions --query resourceGroup --output tsv) \
+            --src '${{ github.workspace }}/functions-deploy.zip' \
+            --build-remote false
           
