@@ -1,3 +1,6 @@
+# Docs for the Azure Web Apps Deploy action: https://github.com/azure/functions-action
+# More GitHub Actions for Azure: https://github.com/Azure/actions
+
 name: Build and deploy dotnet core project to Azure Function App - cwtr-webfunctions
 
 on:
@@ -7,6 +10,7 @@ on:
   workflow_dispatch:
 
 env:
+  AZURE_FUNCTIONAPP_PACKAGE_PATH: '.' # path to your Function App project
   DOTNET_VERSION: '8.0.x'
 
 jobs:
@@ -17,37 +21,32 @@ jobs:
       contents: read
 
     steps:
-      - name: Checkout repo
+      - name: Checkout GitHub Action
         uses: actions/checkout@v4
 
-      - name: Setup .NET
+      - name: Setup DotNet ${{ env.DOTNET_VERSION }} Environment
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }}
 
-      # 🔍 (Optional but helpful first run)
-      - name: Debug - list files
-        run: ls -R
-
-      # ✅ Auto-find and publish project
-      - name: Publish Azure Function
+      - name: Build and publish project
+        shell: bash
         run: |
-          PROJECT=$(find . -name "*.csproj" | head -n 1)
-          echo "Using project: $PROJECT"
-          dotnet publish "$PROJECT" \
-            --configuration Release \
-            --output ./publish
+          pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
+          dotnet publish --configuration Release --output ./output
+          popd
 
-      - name: Azure Login
+      - name: Login to Azure
         uses: azure/login@v2
         with:
           client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_0ED06285A01B4AD59A18A354B7FCF70B }}
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_FE4F3284FB074C0E80A185DBE9955DE3 }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_C46C4064F5934A81A3920BD0FE743FF7 }}
 
-      - name: Deploy to Azure Functions
+      - name: Run Azure Functions Action
         uses: Azure/functions-action@v1
+        id: fa
         with:
           app-name: 'cwtr-webfunctions'
           slot-name: 'Production'
-          package: './publish'
+          package: '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/output'
