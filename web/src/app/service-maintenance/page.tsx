@@ -5,12 +5,12 @@ import GenericServicesGrid from '../components/ui/GenericServicesGrid';
 import CallToActionNew from '../components/ui/CallToActionNew';
 
 export const metadata: Metadata = {
-  title: 'Service & Maintenance | Carwash Technologies',
-  description: 'Professional car wash equipment service and maintenance. Emergency service available, preventive maintenance, certified technicians across Minnesota, North Dakota, South Dakota, and Wisconsin.',
-  keywords: 'car wash service, equipment maintenance, emergency repair, preventive maintenance, wash equipment service',
+  title: 'Car Wash Service & Maintenance Minnesota | Carwash Technologies',
+  description: 'Professional car wash equipment service and maintenance in Minnesota, North Dakota, South Dakota, and Wisconsin. Emergency repair, preventive maintenance, certified technicians for tunnel systems, automatic washes, semi truck wash systems, and fleet wash equipment.',
+  keywords: 'car wash service Minnesota, carwash maintenance MN, car wash equipment repair Minnesota, semi truck wash service, fleet wash maintenance, tunnel wash service MN, automatic vehicle wash maintenance, emergency car wash repair Minnesota, car wash technician MN, preventive maintenance carwash, car wash service North Dakota, car wash service Wisconsin, Cat Pumps repair Minnesota, Cat Pumps service MN, Cat Pumps mechanics Minnesota, General Pump repair MN, General Pump service Minnesota, Belanger service MN, PDQ service Minnesota, PECO service MN, Sonny\'s service Minnesota, car wash pump repair Minnesota',
   openGraph: {
-    title: 'Service & Maintenance | Carwash Technologies',
-    description: 'Professional car wash equipment service and maintenance with emergency support available',
+    title: 'Car Wash Service & Maintenance Minnesota | Carwash Technologies',
+    description: 'Professional car wash equipment service and maintenance with emergency support in MN, ND, SD, WI.',
     type: 'website',
   },
 };

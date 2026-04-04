@@ -28,8 +28,9 @@ const customFont = localFont({
 })
 
 export const metadata: Metadata = {
-  title: "Carwash Technologies - Professional Car Wash Solutions",
-  description: "Expert new car wash and vehicle wash systems, construction, installation services, maintenance, chemical supply, and consulting across the Midwest.",
+  title: "Carwash Technologies - Car Wash Equipment, Chemicals & Installation | Minnesota",
+  description: "Carwash Technologies serves Minnesota, North Dakota, South Dakota, and Wisconsin with car wash equipment sales, installation, service, chemical supply, and consulting. New tunnel systems, automatic vehicle washes, semi truck washes, fleet wash systems, and carwash construction.",
+  keywords: "car wash equipment Minnesota, carwash chemicals MN, carwash builder Minnesota, vehicle washing equipment, car wash installation MN, fleet wash systems, semi truck wash, tunnel wash systems, track wash, auto vehicle washing, car wash construction Minnesota, carwash equipment MN, Belanger dealer Minnesota, PECO car wash MN, PDQ car wash equipment, Sonny's car wash equipment, Vertech Labs chemicals, ChemQuest car wash, Simoniz car wash chemicals, Cat Pumps repair MN, General Pump service Minnesota, carwash chemicals Midwest, carwash equipment Midwest",
 };
 
 export default function RootLayout({

@@ -6,12 +6,12 @@ import GenericServicesGrid from '../components/ui/GenericServicesGrid';
 import CallToActionNew from '../components/ui/CallToActionNew';
 
 export const metadata: Metadata = {
-  title: 'Equipment Sales | Carwash Technologies',
-  description: 'Premium new car wash and vehicle wash equipment from industry-leading manufacturers. Tunnel systems, automatic vehicle washes, self-serve bays, and more. Serving Minnesota, North Dakota, South Dakota, and Wisconsin.',
-  keywords: 'car wash equipment, new wash systems, new car wash equipment, automatic vehicle washes, tunnel systems, automatic wash, self-serve equipment, wash equipment sales',
+  title: 'Car Wash Equipment Sales Minnesota | Carwash Technologies',
+  description: 'Car wash and vehicle washing equipment sales in Minnesota, North Dakota, South Dakota, and Wisconsin. Tunnel systems, automatic vehicle washes, in-bay automatics, self-serve bays, semi truck wash systems, fleet wash equipment, and track wash conveyors from industry-leading manufacturers.',
+  keywords: 'car wash equipment Minnesota, carwash equipment MN, vehicle washing equipment, auto vehicle washing equipment, tunnel wash systems Minnesota, track wash systems, semi truck wash equipment, fleet wash equipment MN, automatic vehicle washes Minnesota, in-bay automatic wash, self-serve car wash equipment, carwash equipment North Dakota, carwash equipment South Dakota, best carwash equipment, new car wash equipment, Belanger car wash equipment, Belanger dealer Minnesota, PECO car wash systems, PECO dealer MN, PDQ car wash equipment, PDQ dealer Minnesota, Sonny\'s car wash equipment, Sonny\'s dealer MN, AVW automatic vehicle wash, Cat Pumps car wash, Cat Pumps dealer Minnesota, General Pump car wash equipment, General Pump dealer MN, carwash equipment Midwest',
   openGraph: {
-    title: 'Equipment Sales | Carwash Technologies',
-    description: 'Premium car wash equipment from industry-leading manufacturers',
+    title: 'Car Wash Equipment Sales Minnesota | Carwash Technologies',
+    description: 'Vehicle washing equipment sales in MN, ND, SD, and WI — tunnel systems, automatic washes, semi truck wash, fleet wash, and more.',
     type: 'website',
   },
 };
@@ -121,7 +121,7 @@ export default async function EquipmentSales() {
         title="Equipment Sales"
         highlightedWord="Equipment"
         subtitle="Industry-Leading Solutions"
-        description="Premium car wash equipment from trusted manufacturers. Complete systems for tunnel, automatic, self-serve operations, and everything in between."
+        description="Authorized dealer for Belanger, PECO, PDQ, Sonny's, and AVW car wash systems. Complete tunnel wash, automatic vehicle wash, self-serve, fleet wash, and semi truck wash equipment serving Minnesota, North Dakota, South Dakota, and Wisconsin."
         buttons={[
           {
             text: "Get Equipment Quote",
@@ -150,7 +150,7 @@ export default async function EquipmentSales() {
               Trusted Equipment <span className="text-[#f0da11]">Partners</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We partner with industry-leading manufacturers to provide you with the highest quality wash equipment
+              Authorized dealer for Belanger, PECO, PDQ, Sonny&apos;s, and AVW &mdash; industry-leading car wash equipment manufacturers trusted across the Midwest. We also supply Cat Pumps and General Pump systems for self-serve and fleet wash operations.
             </p>
           </div>
 

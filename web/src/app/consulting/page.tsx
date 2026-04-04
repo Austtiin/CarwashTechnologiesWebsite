@@ -5,12 +5,12 @@ import GenericServicesGrid from '@/app/components/ui/GenericServicesGrid';
 import CallToActionNew from '@/app/components/ui/CallToActionNew';
 
 export const metadata: Metadata = {
-  title: 'Consulting Services | Carwash Technologies',
-  description: 'Expert vehicle wash consulting for new car wash projects, site development, operational optimization, equipment selection, and business strategy. 50+ years of combined industry experience helping wash businesses succeed.',
-  keywords: 'vehicle wash consulting, carwash consulting, new wash projects, new car wash planning, wash business consulting, site development, operational optimization, equipment consulting, wash business strategy',
+  title: 'Car Wash Consulting Services Minnesota | Carwash Technologies',
+  description: 'Expert carwash consulting in Minnesota, North Dakota, South Dakota, and Wisconsin. New car wash planning, site development, carwash builder guidance, semi truck wash design, fleet wash planning, equipment selection, operational optimization, and business strategy. 50+ years combined industry experience.',
+  keywords: 'car wash consulting Minnesota, carwash consultant MN, carwash builder consulting, new car wash planning MN, semi truck wash design, fleet wash planning Minnesota, car wash site development, car wash business strategy, vehicle wash consulting Minnesota, carwash construction consulting, tunnel wash planning, car wash consulting North Dakota, car wash consulting Wisconsin',
   openGraph: {
-    title: 'Consulting Services | Carwash Technologies',
-    description: 'Expert carwash consulting services with 50+ years of combined industry experience',
+    title: 'Car Wash Consulting Services Minnesota | Carwash Technologies',
+    description: 'Expert carwash consulting in MN, ND, SD, WI — new wash planning, carwash builder guidance, and semi truck wash design with 50+ years of experience.',
     type: 'website',
   },
 };

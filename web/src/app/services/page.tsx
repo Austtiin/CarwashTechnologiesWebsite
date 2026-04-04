@@ -1,7 +1,19 @@
 import React from 'react';
+import { Metadata } from 'next';
 import GenericHero from '../components/ui/GenericHero';
 import GenericServicesGrid from '../components/ui/GenericServicesGrid';
 import CallToActionNew from '../components/ui/CallToActionNew';
+
+export const metadata: Metadata = {
+  title: 'Car Wash Services Minnesota | Equipment, Chemicals, Installation & Consulting',
+  description: 'Full-service carwash company in Minnesota — equipment sales, chemical supply, installation and construction, service and maintenance, and consulting. Serving MN, ND, SD, and WI for all vehicle wash needs including tunnel systems, semi truck washes, and fleet wash solutions.',
+  keywords: 'car wash services Minnesota, carwash company MN, vehicle wash services, car wash equipment sales MN, carwash chemicals Minnesota, car wash installation MN, carwash builder, car wash maintenance Minnesota, fleet wash services, semi truck wash services, car wash consulting MN, full service carwash company, Belanger PECO PDQ Sonny\'s dealer Minnesota, Vertech Labs ChemQuest Simoniz chemicals MN, Cat Pumps General Pump service Minnesota, carwash equipment Midwest, carwash chemicals Midwest',
+  openGraph: {
+    title: 'Car Wash Services Minnesota | Equipment, Chemicals, Installation & Consulting',
+    description: 'Full-service carwash company in MN — equipment, chemicals, installation, maintenance, and consulting for all vehicle wash types.',
+    type: 'website',
+  },
+};
 
 export default function Services() {
   const coreServices = [

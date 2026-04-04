@@ -5,11 +5,12 @@ import GenericServicesGrid from '../components/ui/GenericServicesGrid';
 import CallToActionNew from '../components/ui/CallToActionNew';
 
 export const metadata: Metadata = {
-  title: 'About Carwash Technologies - 50+ Years of Midwest Wash Solutions',
-  description: "Learn about Carwash Technologies' 50+ years of combined expertise serving Minnesota, North Dakota, South Dakota, and Wisconsin with professional wash equipment, service, and consulting.",
+  title: 'About Carwash Technologies - Carwash Builder & Equipment Dealer | Minnesota',
+  description: "Learn about Carwash Technologies \u2014 Minnesota's trusted carwash builder, equipment dealer, and chemical supplier with 50+ years of combined expertise serving MN, ND, SD, and WI.",
+  keywords: 'about Carwash Technologies, carwash builder Minnesota, car wash equipment dealer MN, carwash company Minnesota, Midwest car wash company, car wash experts Minnesota, vehicle washing company MN, authorized Belanger dealer, authorized PECO dealer, PDQ dealer Minnesota, Sonny\'s dealer MN, Vertech Labs partner, ChemQuest partner, Simoniz authorized dealer, Cat Pumps partner MN, General Pump dealer Minnesota',
   openGraph: {
-    title: 'About Carwash Technologies - 50+ Years of Midwest Wash Solutions',
-    description: "Learn about Carwash Technologies' expertise serving the Midwest.",
+    title: 'About Carwash Technologies - Carwash Builder & Equipment Dealer | Minnesota',
+    description: "Minnesota's trusted carwash builder and equipment dealer with 50+ years of combined expertise serving MN, ND, SD, and WI.",
     type: 'website',
     url: 'https://carwashtechnologies.com/about',
   },
@@ -68,7 +69,7 @@ export default function AboutPage() {
           title="Carwash Technologies"
           highlightedWord="Technologies"
           subtitle="Serving the Upper Midwest Wash Industry"
-          description="Built on a foundation of expertise, innovation, and unwavering commitment to customer success across Minnesota, North Dakota, South Dakota, and Wisconsin."
+          description="Built on a foundation of expertise, innovation, and unwavering commitment to customer success across Minnesota, North Dakota, South Dakota, and Wisconsin. We are an authorized dealer for Belanger, PECO, PDQ, and Sonny's car wash equipment, and a trusted supplier of Vertech Labs, ChemQuest, and Simoniz chemicals."
           backgroundVariant="dark"
           showPattern={true}
           leftImage="/imgs/AirCannon.webp"

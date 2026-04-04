@@ -18,7 +18,7 @@ public class ContactFormQueueProcessor
 
     [Function("ContactFormQueueProcessor")]
     public async Task Run(
-        [QueueTrigger("webjobqueue", Connection = "AZURE_STORAGE_CONNECTION_STRING")] string queueMessage)
+        [QueueTrigger("%AZURE_QUEUE_NAME%", Connection = "AzureWebJobsStorage")] string queueMessage)
     {
         try
         {

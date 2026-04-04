@@ -1,3 +1,8 @@
 {
-    "codeQL.createQuery.qlPackLocation": "c:\\Users\\AUSTIN01\\OneDrive - Fuhr Enterprises Inc\\Documents\\Desktop\\Repository - School\\CarwashTechnologiesWebsite"
+    "codeQL.createQuery.qlPackLocation": "c:\\Users\\AUSTIN01\\OneDrive - Fuhr Enterprises Inc\\Documents\\Desktop\\Repository - School\\CarwashTechnologiesWebsite",
+    "azureFunctions.deploySubpath": "api/bin/Release/net8.0/publish",
+    "azureFunctions.projectLanguage": "C#",
+    "azureFunctions.projectRuntime": "~4",
+    "debug.internalConsoleOptions": "neverOpen",
+    "azureFunctions.preDeployTask": "publish (functions)"
 }

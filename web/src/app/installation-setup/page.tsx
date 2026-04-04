@@ -5,12 +5,12 @@ import GenericServicesGrid from '../components/ui/GenericServicesGrid';
 import CallToActionNew from '../components/ui/CallToActionNew';
 
 export const metadata: Metadata = {
-  title: 'Installation & Setup | Carwash Technologies',
-  description: 'Professional carwash installation services for new wash systems and equipment. Expert technicians, certified installation, comprehensive training, and ongoing support across the Midwest.',
-  keywords: 'carwash installation services, new wash systems, new car wash installation, equipment setup, professional installation, wash system setup, installation services',
+  title: 'Car Wash Installation & Construction Minnesota | Carwash Technologies',
+  description: 'Expert carwash builder and installation contractor serving Minnesota, North Dakota, South Dakota, and Wisconsin. New car wash construction, tunnel system installation, automatic vehicle wash setup, semi truck wash builders, fleet wash installation, and full project management.',
+  keywords: 'carwash builder Minnesota, car wash construction MN, car wash installation Minnesota, carwash contractor MN, semi truck wash builder, fleet wash installation, tunnel wash construction, automatic vehicle wash installation, new car wash construction North Dakota, car wash builder Wisconsin, carwash installation services, car wash setup Minnesota',
   openGraph: {
-    title: 'Installation & Setup | Carwash Technologies',
-    description: 'Professional car wash equipment installation and setup services',
+    title: 'Car Wash Installation & Construction Minnesota | Carwash Technologies',
+    description: 'Carwash builder and installation contractor in MN, ND, SD, WI — new construction, tunnel, truck wash, and fleet wash installation.',
     type: 'website',
   },
 };

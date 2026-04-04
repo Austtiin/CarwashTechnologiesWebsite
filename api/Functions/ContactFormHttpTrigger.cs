@@ -28,7 +28,7 @@ public class ContactFormHttpTrigger
     // Multi-output binding: HTTP response + queue message in one return
     public class Output
     {
-        [QueueOutput("webjobqueue", Connection = "AZURE_STORAGE_CONNECTION_STRING")]
+        [QueueOutput("%AZURE_QUEUE_NAME%", Connection = "AzureWebJobsStorage")]
         public string? QueueMessage { get; set; }
 
         public HttpResponseData HttpResponse { get; set; } = null!;
