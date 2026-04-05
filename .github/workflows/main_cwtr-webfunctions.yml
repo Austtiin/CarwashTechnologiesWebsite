@@ -46,6 +46,6 @@ jobs:
         uses: Azure/functions-action@v1
         id: fa
         with:
-          app-name: 'flatt-functions-forestlakeauto'
+          app-name: 'cwtr-webfunctions'
           slot-name: 'Production'
           package: '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/output'
