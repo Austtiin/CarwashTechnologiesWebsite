@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/azure/functions-action
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy dotnet core project to Azure Function App - cwtr-webfunctions
+name: Build and deploy dotnet core project to Azure Function App - flatt-functions-forestlakeauto
 
 on:
   push:
@@ -10,58 +10,42 @@ on:
   workflow_dispatch:
 
 env:
-  AZURE_FUNCTIONAPP_PACKAGE_PATH: './api'
-  DOTNET_VERSION: '8.0.x'
+  AZURE_FUNCTIONAPP_PACKAGE_PATH: 'api' # set this to the path to your web app project, defaults to the repository root
+  DOTNET_VERSION: '8.0.x' # set this to the dotnet version to use
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     permissions:
-      id-token: write
-      contents: read
+      id-token: write #This is required for requesting the JWT
+      contents: read #This is required for actions/checkout
 
     steps:
-      - name: Checkout GitHub Action
+      - name: 'Checkout GitHub Action'
         uses: actions/checkout@v4
 
       - name: Setup DotNet ${{ env.DOTNET_VERSION }} Environment
-        uses: actions/setup-dotnet@v4
+        uses: actions/setup-dotnet@v1
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }}
 
-      - name: Publish project
+      - name: 'Resolve Project Dependencies Using Dotnet'
         shell: bash
         run: |
           pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
-          dotnet publish --configuration Release --output ./output
+          dotnet build --configuration Release --output ./output
           popd
-
-      - name: List publish output
-        shell: bash
-        run: ls -Rla './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/output'
-
+      
       - name: Login to Azure
         uses: azure/login@v2
         with:
           client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_0ED06285A01B4AD59A18A354B7FCF70B }}
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_FE4F3284FB074C0E80A185DBE9955DE3 }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_C46C4064F5934A81A3920BD0FE743FF7 }}
-
-      - name: Ensure function app runtime settings
-        shell: bash
-        run: |
-          RG=$(az functionapp show --name cwtr-webfunctions --query resourceGroup -o tsv)
-          az functionapp config appsettings set \
-            --name cwtr-webfunctions \
-            --resource-group "$RG" \
-            --settings FUNCTIONS_WORKER_RUNTIME=dotnet-isolated FUNCTIONS_EXTENSION_VERSION=~4
-
-      - name: Deploy to Azure Function App
+      - name: 'Run Azure Functions Action'
         uses: Azure/functions-action@v1
         id: fa
         with:
-          app-name: 'cwtr-webfunctions'
+          app-name: 'flatt-functions-forestlakeauto'
           slot-name: 'Production'
           package: '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/output'
-          
-          
