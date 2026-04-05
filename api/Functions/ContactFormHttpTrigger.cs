@@ -71,6 +71,7 @@ public class ContactFormHttpTrigger
         [QueueOutput("%AZURE_QUEUE_NAME%", Connection = "AzureWebJobsStorage")]
         public string? QueueMessage { get; set; }
 
+        [HttpResult]
         public HttpResponseData HttpResponse { get; set; } = null!;
     }
 

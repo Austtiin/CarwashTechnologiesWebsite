@@ -6,7 +6,8 @@
         "isEnabled": true,
         "maxTelemetryItemsPerSecond": 20,
         "excludedTypes": "Request"
-      }
+      },
+      "enableLiveMetricsFilters": true
     },
     "logLevel": {
       "default": "Information",
