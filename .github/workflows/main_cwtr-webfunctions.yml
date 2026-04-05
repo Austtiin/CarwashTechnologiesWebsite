@@ -36,6 +36,10 @@ jobs:
           dotnet publish --configuration Release --output ./output
           popd
 
+      - name: List publish output
+        shell: bash
+        run: ls -Rla './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/output'
+
       - name: Login to Azure
         uses: azure/login@v2
         with:
@@ -44,7 +48,7 @@ jobs:
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_C46C4064F5934A81A3920BD0FE743FF7 }}
 
       - name: Deploy to Azure Function App
-        uses: Azure/functions-action@v1
+        uses: Azure/functions-action@v2
         id: fa
         with:
           app-name: 'cwtr-webfunctions'
