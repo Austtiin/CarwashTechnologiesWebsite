@@ -6,12 +6,12 @@ import CallToActionNew from '../components/ui/CallToActionNew';
 import pdfFileList from '../../data/pdf-list.json';
 
 export const metadata = {
-  title: 'Safety Data Sheets | Carwash Technologies',
+  title: 'Safety Data Sheets | ChemQuest',
   description:
     'Access comprehensive safety data sheets for all our chemical products. Download and view SDS documents for proper handling and safety compliance.',
   keywords: 'safety data sheets, SDS, chemical safety, MSDS, product safety, chemical handling, safety compliance',
   openGraph: {
-    title: 'Safety Data Sheets | Carwash Technologies',
+    title: 'Safety Data Sheets | ChemQuest',
     description: 'Access comprehensive safety data sheets for all our chemical products',
     type: 'website',
   },
@@ -49,7 +49,7 @@ async function getSDSData(): Promise<{
 }> {
   const manufacturers: Manufacturer[] = [
     { id: 'vertech', name: 'Vertech', color: 'from-green-400 to-green-600' },
-    { id: 'cwt', name: 'Carwash Technologies', color: 'from-yellow-400 to-yellow-600' },
+    { id: 'chemquest', name: 'ChemQuest', color: 'from-yellow-400 to-yellow-600' },
     { id: 'simoniz', name: 'Simoniz', color: 'from-red-400 to-red-600' },
   ];
 
@@ -69,11 +69,11 @@ async function getSDSData(): Promise<{
       case 'V':
         return 'vertech';
       case 'C':
-        return 'cwt';
+        return 'chemquest';
       case 'S':
         return 'simoniz';
       default:
-        return 'cwt';
+        return 'chemquest';
     }
   };
 
