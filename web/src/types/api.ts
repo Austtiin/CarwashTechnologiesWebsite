@@ -16,6 +16,8 @@ export interface ContactFormData {
   bestTime: '' | 'morning' | 'afternoon' | 'evening' | 'anytime';
   urgency: 'normal' | 'soon' | 'urgent';
   contactType: string;
+  /** Honeypot — should always be empty; bots fill it in */
+  website?: string;
 }
 
 export interface ContactFormResponse {

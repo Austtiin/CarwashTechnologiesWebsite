@@ -34,6 +34,8 @@ export default function CookieConsent() {
 
   const handleAccept = () => {
     localStorage.setItem('cookie-consent', 'accepted');
+    // Dispatch custom event so ConditionalAnalytics in the same tab is notified
+    window.dispatchEvent(new CustomEvent('cookie-consent-change', { detail: { accepted: true } }));
     setShowBanner(false);
     setAnalyticsEnabled(true);
     enableAnalytics();
@@ -41,6 +43,7 @@ export default function CookieConsent() {
 
   const handleDecline = () => {
     localStorage.setItem('cookie-consent', 'declined');
+    window.dispatchEvent(new CustomEvent('cookie-consent-change', { detail: { accepted: false } }));
     setShowBanner(false);
     setAnalyticsEnabled(false);
     disableAnalytics();

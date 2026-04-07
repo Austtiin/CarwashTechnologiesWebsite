@@ -110,14 +110,34 @@ public class ContactFormHttpTrigger
                 return new Output { HttpResponse = httpResponse };
             }
 
-            // Basic server-side validation
-            if (formData == null
-                || string.IsNullOrWhiteSpace(formData.Name)
+    // Basic server-side null check first
+            if (formData == null)
+            {
+                _logger.LogWarning(">>> Validation failed - null body. Returning 400.");
+                httpResponse.StatusCode = HttpStatusCode.BadRequest;
+                await httpResponse.WriteAsJsonAsync(new { success = false, error = "Missing or invalid required fields." });
+                return new Output { HttpResponse = httpResponse };
+            }
+
+            // Honeypot check — bots populate this field, real users never see it
+            if (!string.IsNullOrEmpty(formData.Website))
+            {
+                _logger.LogWarning(">>> Honeypot triggered — silently discarding submission.");
+                httpResponse.StatusCode = HttpStatusCode.Accepted;
+                await httpResponse.WriteAsJsonAsync(new { success = true, message = "Your message has been received. We will be in touch shortly." });
+                return new Output { HttpResponse = httpResponse };
+            }
+
+            if (string.IsNullOrWhiteSpace(formData.Name)
                 || string.IsNullOrWhiteSpace(formData.Email)
                 || string.IsNullOrWhiteSpace(formData.Inquiry)
                 || formData.Name.Length > 100
                 || formData.Email.Length > 254
-                || formData.Inquiry.Length > 1000)
+                || formData.Inquiry.Length > 1000
+                || !System.Text.RegularExpressions.Regex.IsMatch(
+                       formData.Email,
+                       @"^[^\s@]+@[^\s@]+\.[^\s@]{2,}$",
+                       System.Text.RegularExpressions.RegexOptions.IgnoreCase))
             {
                 _logger.LogWarning(">>> Validation failed - missing or invalid fields. Returning 400.");
                 httpResponse.StatusCode = HttpStatusCode.BadRequest;

@@ -17,15 +17,22 @@ export default function ConditionalAnalytics() {
       setAnalyticsConsent(true);
     }
 
-    // Listen for consent changes
+    // Listen for same-tab consent changes (custom event from CookieConsent)
+    const handleConsentChange = (e: Event) => {
+      const accepted = (e as CustomEvent<{ accepted: boolean }>).detail.accepted;
+      setAnalyticsConsent(accepted);
+    };
+    window.addEventListener('cookie-consent-change', handleConsentChange);
+
+    // Also listen for cross-tab changes via storage event
     const handleStorageChange = () => {
       const newConsent = localStorage.getItem('cookie-consent');
       setAnalyticsConsent(newConsent === 'accepted');
     };
-
     window.addEventListener('storage', handleStorageChange);
-    
+
     return () => {
+      window.removeEventListener('cookie-consent-change', handleConsentChange);
       window.removeEventListener('storage', handleStorageChange);
     };
   }, []);

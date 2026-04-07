@@ -26,6 +26,8 @@ interface FormData {
   inquiry: string;
   bestTime: string;
   urgency: string;
+  /** Honeypot — should always be empty */
+  website: string;
 }
 
 // Client Component - Handles form state and submission
@@ -37,7 +39,8 @@ export default function ContactForm({ selectedOption, onReset }: ContactFormProp
     company: '',
     inquiry: '',
     bestTime: '',
-    urgency: 'normal'
+    urgency: 'normal',
+    website: ''
   });
   
   const { isSubmitting, isSuccess, isPending, error, submitForm, reset } = useContactForm();
@@ -103,7 +106,7 @@ export default function ContactForm({ selectedOption, onReset }: ContactFormProp
     const { name, value } = e.target;
     
     // Validate input name
-    const allowedFields = ['name', 'email', 'phone', 'company', 'inquiry', 'bestTime', 'urgency'];
+    const allowedFields = ['name', 'email', 'phone', 'company', 'inquiry', 'bestTime', 'urgency', 'website'];
     if (!allowedFields.includes(name)) return;
 
     setFormData(prev => ({
@@ -114,6 +117,12 @@ export default function ContactForm({ selectedOption, onReset }: ContactFormProp
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Honeypot check — bots fill in this hidden field, humans never see it
+    if (formData.website !== '') {
+      // Silently succeed so bots don't know they were rejected
+      return;
+    }
 
     // Clear previous validation errors
     setValidationErrors({
@@ -143,7 +152,8 @@ export default function ContactForm({ selectedOption, onReset }: ContactFormProp
       ...formData,
       bestTime: formData.bestTime as ContactFormData['bestTime'],
       urgency: formData.urgency as ContactFormData['urgency'],
-      contactType: selectedOption?.id || 'general'
+      contactType: selectedOption?.id || 'general',
+      website: formData.website
     };
 
     const success = await submitForm(contactFormData);
@@ -157,7 +167,8 @@ export default function ContactForm({ selectedOption, onReset }: ContactFormProp
         company: '',
         inquiry: '',
         bestTime: '',
-        urgency: 'normal'
+        urgency: 'normal',
+        website: ''
       });
     }
   };
@@ -171,7 +182,8 @@ export default function ContactForm({ selectedOption, onReset }: ContactFormProp
       company: '',
       inquiry: '',
       bestTime: '',
-      urgency: 'normal'
+      urgency: 'normal',
+      website: ''
     });
     onReset();
   };
@@ -288,6 +300,19 @@ export default function ContactForm({ selectedOption, onReset }: ContactFormProp
       onSubmit={handleSubmit}
       className="max-w-4xl mx-auto bg-white border border-gray-200 p-4 sm:p-5 md:p-6 shadow-xl rounded-2xl lg:rounded-3xl"
     >
+      {/* Honeypot field — visually hidden, bots fill it in, humans never see it */}
+      <div style={{ position: 'absolute', left: '-9999px', top: 0, height: 0, overflow: 'hidden' }} aria-hidden="true">
+        <label htmlFor="website">Website</label>
+        <input
+          type="text"
+          id="website"
+          name="website"
+          value={formData.website}
+          onChange={handleInputChange}
+          tabIndex={-1}
+          autoComplete="off"
+        />
+      </div>
       <div className="grid gap-4 md:gap-5 lg:gap-6 lg:grid-cols-3 items-start">
         {/* Main Form Fields */}
         <div className="lg:col-span-2 space-y-4">

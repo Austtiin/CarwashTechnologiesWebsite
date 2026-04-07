@@ -27,4 +27,8 @@ public class ContactFormData
 
     [JsonPropertyName("contactType")]
     public string ContactType { get; set; } = "general";
+
+    /// <summary>Honeypot — must be empty on legitimate submissions.</summary>
+    [JsonPropertyName("website")]
+    public string? Website { get; set; }
 }
