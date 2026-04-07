@@ -100,8 +100,9 @@ public class EmailService
         try
         {
             _logger.LogInformation("Dispatching email: {Desc}", description);
-            var operation = await _emailClient.SendAsync(WaitUntil.Started, message);
-            _logger.LogInformation("Email queued. OperationId: {Id} | {Desc}", operation.Id, description);
+            var operation = await _emailClient.SendAsync(WaitUntil.Completed, message);
+            _logger.LogInformation("Email sent. OperationId: {Id} | Status: {Status} | {Desc}",
+                operation.Id, operation.Value?.Status, description);
         }
         catch (RequestFailedException ex)
         {
