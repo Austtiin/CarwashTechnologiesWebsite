@@ -48,27 +48,19 @@ public static class EmailTemplates
     private static string Header(string subtitle) => $@"
   <!-- Header -->
   <tr>
-    <td style=""background-color:{BrandDark};padding:32px 40px;border-radius:12px 12px 0 0;"">
-      <table role=""presentation"" width=""100%"" cellpadding=""0"" cellspacing=""0"">
-        <tr>
-          <td>
-            <a href=""{SiteUrl}"" style=""text-decoration:none;"">
-              <span style=""font-size:22px;font-weight:700;color:{BrandYellow};letter-spacing:0.5px;"">{CompanyName}</span>
-            </a>
-            <p style=""margin:6px 0 0;font-size:13px;color:#94a3b8;"">{subtitle}</p>
-          </td>
-          <td align=""right"" style=""vertical-align:middle;"">
-            <span style=""display:inline-block;background-color:{BrandYellow};color:{BrandDark};font-size:11px;font-weight:700;padding:4px 12px;border-radius:999px;letter-spacing:0.5px;text-transform:uppercase;"">MN · ND · SD · WI</span>
-          </td>
-        </tr>
-      </table>
+    <td style=""background-color:{BrandDark};padding:24px 20px;border-radius:12px 12px 0 0;"">
+      <a href=""{SiteUrl}"" style=""text-decoration:none;"">
+        <span style=""font-size:22px;font-weight:700;color:{BrandYellow};letter-spacing:0.5px;"">{CompanyName}</span>
+      </a>
+      <p style=""margin:6px 0 8px;font-size:13px;color:#94a3b8;"">{subtitle}</p>
+      <span style=""display:inline-block;background-color:{BrandYellow};color:{BrandDark};font-size:11px;font-weight:700;padding:4px 12px;border-radius:999px;letter-spacing:0.5px;text-transform:uppercase;"">MN · ND · SD · WI</span>
     </td>
   </tr>";
 
     private static string Footer() => $@"
   <!-- Footer -->
   <tr>
-    <td style=""background-color:{BrandMid};padding:28px 40px;border-radius:0 0 12px 12px;"">
+    <td style=""background-color:{BrandMid};padding:24px 20px;border-radius:0 0 12px 12px;"">
       <table role=""presentation"" width=""100%"" cellpadding=""0"" cellspacing=""0"">
         <tr>
           <td>
@@ -148,7 +140,7 @@ public static class EmailTemplates
 
   <!-- Hero band -->
   <tr>
-    <td style=""background-color:{BrandYellow};padding:24px 40px;"">
+    <td style=""background-color:{BrandYellow};padding:20px 20px;"">
       <p style=""margin:0;font-size:24px;font-weight:700;color:{BrandDark};"">Thank you, {name}!</p>
       <p style=""margin:8px 0 0;font-size:15px;color:{BrandDark};"">We've received your inquiry and will be in touch shortly.</p>
     </td>
@@ -156,7 +148,7 @@ public static class EmailTemplates
 
   <!-- Body card -->
   <tr>
-    <td style=""background-color:{WhiteBg};padding:32px 40px;"">
+    <td style=""background-color:{WhiteBg};padding:24px 20px;"">
       <p style=""margin:0 0 8px;font-size:15px;color:{TextDark};line-height:1.6;"">
         Hi <strong>{name}</strong>,
       </p>
@@ -241,36 +233,24 @@ public static class EmailTemplates
 
   <!-- Alert band -->
   <tr>
-    <td style=""background-color:{BrandDark};border-top:4px solid {BrandYellow};padding:20px 40px;"">
-      <table role=""presentation"" width=""100%"" cellpadding=""0"" cellspacing=""0"">
-        <tr>
-          <td>
-            <p style=""margin:0 0 8px;font-size:18px;font-weight:700;color:#f1f5f9;"">New Inquiry Received</p>
-            <p style=""margin:0;font-size:13px;color:#94a3b8;"">Submitted: {submittedAt}</p>
-          </td>
-          <td align=""right"" style=""vertical-align:top;"">
-            {contactTypeBadge}
-          </td>
-        </tr>
-      </table>
+    <td style=""background-color:{BrandDark};border-top:4px solid {BrandYellow};padding:20px 20px;"">
+      <p style=""margin:0 0 8px;font-size:18px;font-weight:700;color:#f1f5f9;"">New Inquiry Received</p>
+      <p style=""margin:0 0 10px;font-size:13px;color:#94a3b8;"">Submitted: {submittedAt}</p>
+      {contactTypeBadge}
     </td>
   </tr>
 
   <!-- Urgency callout -->
   <tr>
-    <td style=""background-color:{BrandMid};padding:12px 40px;"">
-      <table role=""presentation"" cellpadding=""0"" cellspacing=""0"">
-        <tr>
-          <td style=""padding-right:12px;font-size:13px;color:#94a3b8;"">Response priority:</td>
-          <td>{urgencyBadge}</td>
-        </tr>
-      </table>
+    <td style=""background-color:{BrandMid};padding:12px 20px;"">
+      <p style=""margin:0 0 6px;font-size:13px;color:#94a3b8;"">Response priority:</p>
+      {urgencyBadge}
     </td>
   </tr>
 
   <!-- Body card -->
   <tr>
-    <td style=""background-color:{WhiteBg};padding:32px 40px;"">
+    <td style=""background-color:{WhiteBg};padding:24px 20px;"">
 
       <!-- Submitter details table -->
       <p style=""margin:0 0 16px;font-size:14px;font-weight:600;color:{TextDark};text-transform:uppercase;letter-spacing:0.5px;"">Submission Details</p>

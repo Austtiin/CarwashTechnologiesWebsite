@@ -103,6 +103,12 @@ public class EmailService
             var operation = await _emailClient.SendAsync(WaitUntil.Completed, message);
             _logger.LogInformation("Email sent. OperationId: {Id} | Status: {Status} | {Desc}",
                 operation.Id, operation.Value?.Status, description);
+
+            if (operation.Value?.Status == EmailSendStatus.Failed)
+            {
+                throw new InvalidOperationException(
+                    $"ACS returned Failed status for email: {description}. OperationId: {operation.Id}");
+            }
         }
         catch (RequestFailedException ex)
         {
