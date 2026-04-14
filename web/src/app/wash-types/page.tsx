@@ -8,10 +8,17 @@ export const metadata: Metadata = {
   title: 'Types of Vehicle Washes Minnesota | Tunnel, Truck & Fleet Wash Systems',
   description: 'Explore tunnel washes, track wash conveyors, automatic vehicle washes, semi truck wash systems, fleet wash, parts washers, and large commercial washes. Carwash Technologies serves MN, ND, SD, and WI with the right wash system for your operation.',
   keywords: 'types of car washes, tunnel wash systems Minnesota, track wash MN, conveyor car wash, semi truck wash systems, fleet wash Minnesota, automatic vehicle washes, commercial vehicle wash MN, parts washer systems, high throughput tunnel wash, auto dealership car wash, large vehicle wash, fleet washing equipment',
+  alternates: { canonical: '/wash-types' },
   openGraph: {
     title: 'Types of Vehicle Washes Minnesota | Tunnel, Truck & Fleet Wash Systems',
     description: 'Compare tunnel, track wash, automatic, fleet, semi truck, and parts wash systems in MN, ND, SD, and WI.',
     type: 'website',
+    url: 'https://www.carwashtechnologies.com/wash-types',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Types of Vehicle Washes Minnesota | Tunnel, Truck & Fleet Wash Systems',
+    description: 'Compare tunnel, track wash, automatic, fleet, semi truck, and parts wash systems in MN, ND, SD, and WI.',
   },
 };
 

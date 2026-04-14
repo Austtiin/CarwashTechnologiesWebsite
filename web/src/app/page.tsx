@@ -9,11 +9,17 @@ export const metadata: Metadata = {
   title: 'Carwash Technologies - Car Wash Equipment, Chemicals & Installation | MN, ND, SD, WI',
   description: 'Carwash Technologies — Minnesota\'s trusted carwash builder and equipment dealer. New tunnel systems, automatic vehicle washes, semi truck washes, fleet wash systems, carwash chemicals, and full installation across MN, ND, SD, and WI. 50+ years combined experience.',
   keywords: 'carwash equipment MN, carwash chemicals Minnesota, carwash builder MN, vehicle washing equipment, semi truck wash Minnesota, fleet wash systems, tunnel wash Minnesota, track wash, auto vehicle washing, car wash installation MN, car wash construction Minnesota, carwash equipment North Dakota, carwash equipment South Dakota, Belanger car wash dealer, PECO car wash systems, PDQ car wash equipment, Sonny\'s car wash Minnesota, Vertech Labs chemicals, ChemQuest car wash chemicals, Simoniz car wash, Cat Pumps dealer MN, General Pump Minnesota, carwash equipment Midwest, carwash chemicals Midwest',
+  alternates: { canonical: '/' },
   openGraph: {
     title: 'Carwash Technologies - Car Wash Equipment, Chemicals & Installation | Minnesota',
     description: 'Minnesota\'s trusted carwash builder and equipment dealer. Tunnel systems, automatic vehicle washes, semi truck washes, fleet wash, and carwash chemicals across MN, ND, SD, WI.',
     type: 'website',
-    url: 'https://carwashtechnologies.com/',
+    url: 'https://www.carwashtechnologies.com/',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Carwash Technologies - Car Wash Equipment, Chemicals & Installation | MN',
+    description: 'Minnesota\'s trusted carwash builder and equipment dealer serving MN, ND, SD, and WI. Tunnel systems, truck washes, fleet wash, and chemicals.',
   },
 };
 

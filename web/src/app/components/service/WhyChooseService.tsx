@@ -35,8 +35,8 @@ export default function WhyChooseService({ stats }: WhyChooseServiceProps) {
   ];
 
   const guarantees = [
-    '90-Day Service Warranty',
-    '2-Hour Emergency Response',
+    'Service Workmanship Warranty',
+    'Priority Emergency Response',
     'Certified Factory Technicians',
     'Genuine OEM Parts',
     'Detailed Service Reports',

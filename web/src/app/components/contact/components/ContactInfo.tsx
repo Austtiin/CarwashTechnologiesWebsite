@@ -30,7 +30,7 @@ export default function ContactInfo() {
               </div>
               <h3 className="text-xl font-semibold mb-2">Email Us</h3>
               <p className="text-gray-300 mb-2">info@carwashtechnologies.com</p>
-              <p className="text-sm text-gray-400">Response within 24 hours</p>
+              <p className="text-sm text-gray-400">Prompt response time</p>
             </div>
 
             <div className="text-center">

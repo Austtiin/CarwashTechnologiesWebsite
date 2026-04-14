@@ -9,10 +9,17 @@ export const metadata: Metadata = {
   title: 'Contact Us | Carwash Technologies - MN, ND, SD, WI',
   description: 'Contact Carwash Technologies in Minnesota for car wash equipment, chemicals, installation, and consulting. Reach us for new wash systems, carwash construction, semi truck wash projects, fleet wash solutions, and vehicle wash service across MN, ND, SD, and WI.',
   keywords: 'contact Carwash Technologies, carwash company Minnesota, car wash equipment quote MN, carwash builder contact, car wash installation Minnesota, carwash chemicals MN quote, semi truck wash quote, fleet wash contact, vehicle wash consulting Minnesota, car wash service request MN',
+  alternates: { canonical: '/contact' },
   openGraph: {
     title: 'Contact Us | Carwash Technologies - MN, ND, SD, WI',
     description: 'Contact our specialists in MN for car wash equipment, chemicals, construction, and consulting.',
     type: 'website',
+    url: 'https://www.carwashtechnologies.com/contact',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Contact Us | Carwash Technologies - MN, ND, SD, WI',
+    description: 'Contact our specialists in MN for car wash equipment, chemicals, construction, and consulting.',
   },
 };
 

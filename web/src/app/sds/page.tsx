@@ -1,19 +1,26 @@
 import React from 'react';
+import { Metadata } from 'next';
 import GenericHero from '../components/ui/GenericHero';
 import SDSDocumentGrid from '../components/sds/SDSDocumentGrid';
 import CallToActionNew from '../components/ui/CallToActionNew';
 // Import your PDF list from the JSON file
 import pdfFileList from '../../data/pdf-list.json';
-
-export const metadata = {
-  title: 'Safety Data Sheets | ChemQuest',
+export const metadata: Metadata = {
+  title: 'Safety Data Sheets (SDS) | Carwash Technologies',
   description:
-    'Access comprehensive safety data sheets for all our chemical products. Download and view SDS documents for proper handling and safety compliance.',
-  keywords: 'safety data sheets, SDS, chemical safety, MSDS, product safety, chemical handling, safety compliance',
+    'Download Safety Data Sheets for carwash chemicals supplied by Carwash Technologies in Minnesota — ChemQuest, Vertech Labs, and Simoniz products. Proper handling, safety compliance, and OSHA-required SDS documentation.',
+  keywords: 'safety data sheets, SDS Minnesota, carwash chemical SDS, ChemQuest SDS, Vertech Labs SDS, Simoniz SDS, MSDS car wash chemicals, chemical safety Minnesota, car wash product safety, OSHA SDS carwash',
+  alternates: { canonical: '/sds' },
   openGraph: {
-    title: 'Safety Data Sheets | ChemQuest',
-    description: 'Access comprehensive safety data sheets for all our chemical products',
+    title: 'Safety Data Sheets (SDS) | Carwash Technologies',
+    description: 'Download SDS documents for ChemQuest, Vertech Labs, and Simoniz carwash chemicals served across MN, ND, SD, and WI.',
     type: 'website',
+    url: 'https://www.carwashtechnologies.com/sds',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Safety Data Sheets (SDS) | Carwash Technologies',
+    description: 'Download SDS documents for carwash chemicals supplied by Carwash Technologies across the Midwest.',
   },
 };
 

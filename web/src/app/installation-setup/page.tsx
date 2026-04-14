@@ -8,10 +8,17 @@ export const metadata: Metadata = {
   title: 'Car Wash Installation & Construction Minnesota | Carwash Technologies',
   description: 'Expert carwash builder and installation contractor serving Minnesota, North Dakota, South Dakota, and Wisconsin. New car wash construction, tunnel system installation, automatic vehicle wash setup, semi truck wash builders, fleet wash installation, and full project management.',
   keywords: 'carwash builder Minnesota, car wash construction MN, car wash installation Minnesota, carwash contractor MN, semi truck wash builder, fleet wash installation, tunnel wash construction, automatic vehicle wash installation, new car wash construction North Dakota, car wash builder Wisconsin, carwash installation services, car wash setup Minnesota',
+  alternates: { canonical: '/installation-setup' },
   openGraph: {
     title: 'Car Wash Installation & Construction Minnesota | Carwash Technologies',
     description: 'Carwash builder and installation contractor in MN, ND, SD, WI — new construction, tunnel, truck wash, and fleet wash installation.',
     type: 'website',
+    url: 'https://www.carwashtechnologies.com/installation-setup',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Car Wash Installation & Construction Minnesota | Carwash Technologies',
+    description: 'Carwash builder and installation contractor in MN, ND, SD, WI — new construction, tunnel, truck wash, and fleet wash installation.',
   },
 };
 

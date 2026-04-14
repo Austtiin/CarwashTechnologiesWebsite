@@ -9,10 +9,17 @@ export const metadata: Metadata = {
   title: 'Car Wash Chemical Sales Minnesota | Carwash Technologies',
   description: 'Professional car wash chemicals serving Minnesota, North Dakota, South Dakota, and Wisconsin. High-performance pre-treatment, wash solutions, rinse aids, tire shine, and specialty chemicals from trusted manufacturers. Carwash chemical programs tailored to your operation.',
   keywords: 'carwash chemicals Minnesota, car wash chemicals MN, carwash chemical supplier Minnesota, vehicle wash chemicals, car wash detergents MN, pre-treatment chemicals, wash solutions Minnesota, carwash chemical programs, car wash soap North Dakota, carwash chemicals South Dakota, car wash chemicals Wisconsin, professional car wash chemicals Midwest, carwash chemicals Midwest, Vertech Labs dealer Minnesota, Vertech Labs car wash chemicals, ChemQuest car wash chemicals, ChemQuest dealer MN, Simoniz car wash chemicals, Simoniz dealer Minnesota, Simoniz authorized dealer',
+  alternates: { canonical: '/chemical-sales' },
   openGraph: {
     title: 'Car Wash Chemical Sales Minnesota | Carwash Technologies',
     description: 'Professional-grade carwash chemicals and programs serving MN, ND, SD, and WI.',
     type: 'website',
+    url: 'https://www.carwashtechnologies.com/chemical-sales',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Car Wash Chemical Sales Minnesota | Carwash Technologies',
+    description: 'Professional-grade carwash chemicals and programs serving MN, ND, SD, and WI.',
   },
 };
 

@@ -22,8 +22,8 @@ export default function WhyChooseInstallation({ stats }: WhyChooseInstallationPr
       color: 'from-yellow-400 to-yellow-600'
     },
     {
-      title: 'On-Time Completion',
-      description: 'We stick to our installation schedules and timelines to get your wash operational as quickly as possible.',
+      title: 'Efficient Project Completion',
+      description: 'We work diligently to get your wash operational as efficiently as possible, keeping you informed every step of the way.',
       icon: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z',
       color: 'from-green-400 to-green-600'
     },
@@ -89,8 +89,8 @@ export default function WhyChooseInstallation({ stats }: WhyChooseInstallationPr
           {/* Right Column - Installation Guarantee Card */}
           <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-8 rounded-2xl border border-gray-200">
             <div className="text-center mb-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Installation Guarantee</h3>
-              <p className="text-gray-600">We stand behind our work with comprehensive warranties and support</p>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Installation Commitment</h3>
+              <p className="text-gray-600">We stand behind our work with quality craftsmanship and ongoing support</p>
             </div>
             
             <div className="grid grid-cols-2 gap-6 mb-8">
@@ -117,13 +117,13 @@ export default function WhyChooseInstallation({ stats }: WhyChooseInstallationPr
                 <svg className="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
                 </svg>
-                1-Year Installation Warranty
+                Installation Workmanship Warranty
               </div>
               <div className="flex items-center text-sm text-gray-600">
                 <svg className="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
                 </svg>
-                Free 30-Day Follow-up Service
+                Post-Installation Follow-up Support
               </div>
               <div className="flex items-center text-sm text-gray-600">
                 <svg className="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">

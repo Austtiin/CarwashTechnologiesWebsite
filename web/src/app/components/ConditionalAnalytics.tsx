@@ -1,10 +1,9 @@
 'use client';
 
 import Script from 'next/script';
-import Clarity from '@microsoft/clarity';
 import { useEffect, useState } from 'react';
 
-const CLARITY_PROJECT_ID = process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID ?? '';
+const CLARITY_PROJECT_ID = process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID || 'w6lf72rvyq';
 
 export default function ConditionalAnalytics() {
   const [analyticsConsent, setAnalyticsConsent] = useState(false);
@@ -37,18 +36,22 @@ export default function ConditionalAnalytics() {
     };
   }, []);
 
-  useEffect(() => {
-    if (analyticsConsent) {
-      Clarity.init(CLARITY_PROJECT_ID);
-    }
-  }, [analyticsConsent]);
-
   if (!analyticsConsent) {
     return null;
   }
 
   return (
     <>
+      {/* Microsoft Clarity - session recording and heatmaps */}
+      <Script id="clarity-analytics" strategy="afterInteractive">
+        {`(function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "${CLARITY_PROJECT_ID}");`}
+      </Script>
+
+      {/* Google Analytics */}
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-JX2XMFTMJR"
         strategy="afterInteractive"

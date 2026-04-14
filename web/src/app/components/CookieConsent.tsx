@@ -63,10 +63,10 @@ export default function CookieConsent() {
               🍪 Cookie Consent
             </h3>
             <p className="text-sm text-gray-300 leading-relaxed">
-              We use cookies to enhance your browsing experience and analyze site traffic. 
-              By clicking &quot;Accept&quot;, you consent to our use of cookies for analytics purposes.{' '}
+              We use cookies, analytics (Google Analytics), and session recording tools (Microsoft Clarity) to understand how visitors use our site and improve your experience.
+              Accepting enables these tools. You can decline and browse without tracking.{' '}
               <Link href="/privacy-policy" className="text-[#f0da11] hover:underline">
-                Learn more in our Privacy Policy
+                Learn more
               </Link>
             </p>
           </div>

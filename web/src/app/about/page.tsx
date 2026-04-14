@@ -8,11 +8,17 @@ export const metadata: Metadata = {
   title: 'About Carwash Technologies - Carwash Builder & Equipment Dealer | Minnesota',
   description: "Learn about Carwash Technologies \u2014 Minnesota's trusted carwash builder, equipment dealer, and chemical supplier with 50+ years of combined expertise serving MN, ND, SD, and WI.",
   keywords: 'about Carwash Technologies, carwash builder Minnesota, car wash equipment dealer MN, carwash company Minnesota, Midwest car wash company, car wash experts Minnesota, vehicle washing company MN, authorized Belanger dealer, authorized PECO dealer, PDQ dealer Minnesota, Sonny\'s dealer MN, Vertech Labs partner, ChemQuest partner, Simoniz authorized dealer, Cat Pumps partner MN, General Pump dealer Minnesota',
+  alternates: { canonical: '/about' },
   openGraph: {
     title: 'About Carwash Technologies - Carwash Builder & Equipment Dealer | Minnesota',
     description: "Minnesota's trusted carwash builder and equipment dealer with 50+ years of combined expertise serving MN, ND, SD, and WI.",
     type: 'website',
-    url: 'https://carwashtechnologies.com/about',
+    url: 'https://www.carwashtechnologies.com/about',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About Carwash Technologies - Carwash Builder & Equipment Dealer | Minnesota',
+    description: "Minnesota's trusted carwash builder and equipment dealer with 50+ years of combined expertise serving MN, ND, SD, and WI.",
   },
 };
 

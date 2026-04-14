@@ -82,7 +82,7 @@ const ChemicalsSection = () => {
               </div>
               
               {/* Guarantee Content */}
-              <h3 className="text-xl font-semibold mb-2 text-gray-900">Quality Guarantee</h3>
+              <h3 className="text-xl font-semibold mb-2 text-gray-900">Quality Assurance</h3>
               <p className="text-gray-600">
                 All of our chemicals meet the highest industry standards for performance and environmental safety.
               </p>

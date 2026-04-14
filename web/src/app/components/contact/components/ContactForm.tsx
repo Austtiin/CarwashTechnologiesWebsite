@@ -205,7 +205,7 @@ export default function ContactForm({ selectedOption, onReset }: ContactFormProp
             Thank you for contacting us about <span className="font-bold text-[#f0da11]">{selectedOption?.title}</span>.
           </p>
           <p className="text-gray-300 mb-6">
-            We&#39;ve received your inquiry and will get back to you within 24 hours.
+            We&#39;ve received your inquiry and will be in touch as soon as possible.
           </p>
           <button
             onClick={handleReset}
@@ -474,8 +474,8 @@ export default function ContactForm({ selectedOption, onReset }: ContactFormProp
                 >
                   <option value="">Select urgency level</option>
                   <option value="normal">Normal - Within a few days</option>
-                  <option value="soon">Soon - Within 24 hours</option>
-                  <option value="urgent">Urgent - Same day if possible</option>
+                  <option value="soon">Soon - High priority</option>
+                  <option value="urgent">Urgent - Top priority</option>
                 </select>
                 {validationErrors.urgency && (
                   <p className="mt-1 text-sm text-red-600">{validationErrors.urgency}</p>

@@ -9,10 +9,17 @@ export const metadata: Metadata = {
   title: 'Car Wash Equipment Sales Minnesota | Carwash Technologies',
   description: 'Car wash and vehicle washing equipment sales in Minnesota, North Dakota, South Dakota, and Wisconsin. Tunnel systems, automatic vehicle washes, in-bay automatics, self-serve bays, semi truck wash systems, fleet wash equipment, and track wash conveyors from industry-leading manufacturers.',
   keywords: 'car wash equipment Minnesota, carwash equipment MN, vehicle washing equipment, auto vehicle washing equipment, tunnel wash systems Minnesota, track wash systems, semi truck wash equipment, fleet wash equipment MN, automatic vehicle washes Minnesota, in-bay automatic wash, self-serve car wash equipment, carwash equipment North Dakota, carwash equipment South Dakota, best carwash equipment, new car wash equipment, Belanger car wash equipment, Belanger dealer Minnesota, PECO car wash systems, PECO dealer MN, PDQ car wash equipment, PDQ dealer Minnesota, Sonny\'s car wash equipment, Sonny\'s dealer MN, AVW automatic vehicle wash, Cat Pumps car wash, Cat Pumps dealer Minnesota, General Pump car wash equipment, General Pump dealer MN, carwash equipment Midwest',
+  alternates: { canonical: '/equipment-sales' },
   openGraph: {
     title: 'Car Wash Equipment Sales Minnesota | Carwash Technologies',
     description: 'Vehicle washing equipment sales in MN, ND, SD, and WI — tunnel systems, automatic washes, semi truck wash, fleet wash, and more.',
     type: 'website',
+    url: 'https://www.carwashtechnologies.com/equipment-sales',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Car Wash Equipment Sales Minnesota | Carwash Technologies',
+    description: 'Vehicle washing equipment sales in MN, ND, SD, and WI — tunnel systems, automatic washes, semi truck wash, fleet wash, and more.',
   },
 };
 

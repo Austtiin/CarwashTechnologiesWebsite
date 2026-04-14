@@ -8,10 +8,17 @@ export const metadata: Metadata = {
   title: 'Car Wash Consulting Services Minnesota | Carwash Technologies',
   description: 'Expert carwash consulting in Minnesota, North Dakota, South Dakota, and Wisconsin. New car wash planning, site development, carwash builder guidance, semi truck wash design, fleet wash planning, equipment selection, operational optimization, and business strategy. 50+ years combined industry experience.',
   keywords: 'car wash consulting Minnesota, carwash consultant MN, carwash builder consulting, new car wash planning MN, semi truck wash design, fleet wash planning Minnesota, car wash site development, car wash business strategy, vehicle wash consulting Minnesota, carwash construction consulting, tunnel wash planning, car wash consulting North Dakota, car wash consulting Wisconsin',
+  alternates: { canonical: '/consulting' },
   openGraph: {
     title: 'Car Wash Consulting Services Minnesota | Carwash Technologies',
     description: 'Expert carwash consulting in MN, ND, SD, WI — new wash planning, carwash builder guidance, and semi truck wash design with 50+ years of experience.',
     type: 'website',
+    url: 'https://www.carwashtechnologies.com/consulting',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Car Wash Consulting Services Minnesota | Carwash Technologies',
+    description: 'Expert carwash consulting in MN, ND, SD, WI — new wash planning, carwash builder guidance, and semi truck wash design with 50+ years of experience.',
   },
 };
 
