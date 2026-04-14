@@ -21,6 +21,7 @@ public class EmailService
     private readonly string _toService;
     private readonly string _toSales;
     private readonly string _toDefault;
+    private readonly IReadOnlyList<EmailAddress> _ccAddresses;
 
     public EmailService(ILogger<EmailService> logger)
     {
@@ -41,6 +42,14 @@ public class EmailService
         _toService     = Environment.GetEnvironmentVariable("EMAIL_TO_SERVICE")      ?? string.Empty;
         _toSales       = Environment.GetEnvironmentVariable("EMAIL_TO_SALES")        ?? string.Empty;
         _toDefault     = Environment.GetEnvironmentVariable("EMAIL_TO_DEFAULT")      ?? _toSales;
+
+        // Parse comma-separated CC addresses, e.g. "Mark@Fuhrent.com, Austin@Fuhrent.com"
+        var ccRaw = Environment.GetEnvironmentVariable("EMAIL_CC_ADDRESSES") ?? string.Empty;
+        _ccAddresses = ccRaw
+            .Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries)
+            .Where(addr => !string.IsNullOrWhiteSpace(addr))
+            .Select(addr => new EmailAddress(addr))
+            .ToList();
     }
 
     // ── Public methods ───────────────────────────────────────────────────────
@@ -89,6 +98,10 @@ public class EmailService
 
         // Allow recipient to reply directly to the submitter
         message.ReplyTo.Add(new EmailAddress(form.Email, form.Name));
+
+        // Add any configured CC addresses
+        foreach (var cc in _ccAddresses)
+            message.Recipients.CC.Add(cc);
 
         await SendWithLoggingAsync(message, $"business notification → {toAddress}");
     }
