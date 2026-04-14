@@ -94,9 +94,9 @@ public static class EmailTemplates
 
     private static string UrgencyBadge(string urgency) => urgency?.ToLower() switch
     {
-        "urgent" => $@"<span style=""display:inline-block;background-color:#dc2626;color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:999px;letter-spacing:0.5px;text-transform:uppercase;"">URGENT — Same Day</span>",
-        "soon"   => $@"<span style=""display:inline-block;background-color:#d97706;color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:999px;letter-spacing:0.5px;text-transform:uppercase;"">SOON — Within 24 hrs</span>",
-        _        => $@"<span style=""display:inline-block;background-color:#16a34a;color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:999px;letter-spacing:0.5px;text-transform:uppercase;"">Normal — A Few Days</span>",
+        "urgent" => $@"<span style=""display:inline-block;background-color:#dc2626;color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:999px;letter-spacing:0.5px;text-transform:uppercase;"">URGENT — High Priority</span>",
+        "soon"   => $@"<span style=""display:inline-block;background-color:#d97706;color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:999px;letter-spacing:0.5px;text-transform:uppercase;"">SOON — Elevated Priority</span>",
+        _        => $@"<span style=""display:inline-block;background-color:#16a34a;color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:999px;letter-spacing:0.5px;text-transform:uppercase;"">Normal Priority</span>",
     };
 
     private static string ContactTypeBadge(string contactType) => $@"
@@ -154,7 +154,7 @@ public static class EmailTemplates
       </p>
       <p style=""margin:0 0 24px;font-size:15px;color:{TextDark};line-height:1.6;"">
         Thank you for reaching out to <strong>{CompanyName}</strong>. One of our specialists will
-        follow up with you within <strong>24 hours</strong> during normal business hours
+        follow up with you as soon as possible during normal business hours
         (Mon–Fri, 8AM–5PM CST).
       </p>
       <p style=""margin:0 0 16px;font-size:14px;font-weight:600;color:{TextDark};text-transform:uppercase;letter-spacing:0.5px;"">Your Submission Summary</p>

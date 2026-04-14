@@ -99,9 +99,12 @@ public class EmailService
         // Allow recipient to reply directly to the submitter
         message.ReplyTo.Add(new EmailAddress(form.Email, form.Name));
 
-        // Add any configured CC addresses
+        // Add CC addresses, skipping any that duplicate the primary recipient
         foreach (var cc in _ccAddresses)
-            message.Recipients.CC.Add(cc);
+        {
+            if (!cc.Address.Equals(toAddress, StringComparison.OrdinalIgnoreCase))
+                message.Recipients.CC.Add(cc);
+        }
 
         await SendWithLoggingAsync(message, $"business notification → {toAddress}");
     }

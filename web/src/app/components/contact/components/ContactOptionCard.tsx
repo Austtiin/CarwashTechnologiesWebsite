@@ -53,7 +53,7 @@ export default function ContactOptionCard({ option, onSelect }: ContactOptionCar
   return (
     <div
       onClick={onSelect}
-      className={`group cursor-pointer bg-gradient-to-br ${option.bgColor} p-6 rounded-2xl border-2 ${option.borderColor} hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 relative overflow-hidden`}
+      className={`group cursor-pointer flex flex-col bg-gradient-to-br ${option.bgColor} p-6 rounded-2xl border-2 ${option.borderColor} hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 relative overflow-hidden`}
     >
       {/* Card background glow effect */}
       <div className="absolute inset-0 bg-gradient-to-br from-white/50 to-transparent opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
@@ -86,7 +86,7 @@ export default function ContactOptionCard({ option, onSelect }: ContactOptionCar
       </ul>
       
       {/* CTA */}
-      <div className={`flex items-center justify-center w-full ${option.textColor} font-bold text-base group-hover:translate-x-2 transition-all duration-300`}>
+      <div className={`mt-auto flex items-center justify-center w-full ${option.textColor} font-bold text-base group-hover:translate-x-2 transition-all duration-300`}>
         <span className="mr-2">Get Started</span>
         <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
