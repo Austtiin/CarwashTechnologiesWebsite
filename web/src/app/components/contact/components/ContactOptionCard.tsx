@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React from 'react';
 
@@ -53,15 +53,15 @@ export default function ContactOptionCard({ option, onSelect }: ContactOptionCar
   return (
     <div
       onClick={onSelect}
-      className={`group cursor-pointer flex flex-col bg-gradient-to-br ${option.bgColor} p-6 rounded-2xl border-2 ${option.borderColor} hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 relative overflow-hidden`}
+      className={`group cursor-pointer flex flex-col bg-linear-to-br ${option.bgColor} p-6 rounded-2xl border-2 ${option.borderColor} hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 relative overflow-hidden`}
     >
       {/* Card background glow effect */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white/50 to-transparent opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
+      <div className="absolute inset-0 bg-linear-to-br from-white/50 to-transparent opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
       
       {/* Icon */}
-      <div className={`relative w-12 h-12 bg-gradient-to-br ${option.color} rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg`}>
+      <div className={`relative w-12 h-12 bg-linear-to-br ${option.color} rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg`}>
         {renderIcon()}
-        <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-xl"></div>
+        <div className="absolute inset-0 bg-linear-to-br from-white/20 to-transparent rounded-xl"></div>
       </div>
       
       {/* Content */}
@@ -79,7 +79,7 @@ export default function ContactOptionCard({ option, onSelect }: ContactOptionCar
       <ul className="text-xs text-gray-600 mb-4 space-y-1.5">
         {option.features.map((feature, index) => (
           <li key={index} className="flex items-center">
-            <span className="w-1.5 h-1.5 bg-[#f0da11] rounded-full mr-2 flex-shrink-0"></span>
+            <span className="w-1.5 h-1.5 bg-[#f0da11] rounded-full mr-2 shrink-0"></span>
             {feature}
           </li>
         ))}

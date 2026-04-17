@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 // Clean Tech Chemicals Section
 import React from 'react';
@@ -20,7 +20,7 @@ export default function ChemicalsSectionNew() {
   ];
 
   return (
-    <section className="relative bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 py-12 sm:py-14 overflow-hidden">
+    <section className="relative bg-linear-to-br from-slate-950 via-slate-900 to-slate-950 py-12 sm:py-14 overflow-hidden">
       {/* Yellow top separator */}
       <div className="absolute inset-x-0 top-0 h-1 bg-[#f0da11] z-20" />
       {/* Subtle background image overlay */}
@@ -54,7 +54,7 @@ export default function ChemicalsSectionNew() {
             <ul className="space-y-2 mb-6">
               {features.map((feature, index) => (
                 <li key={index} className="flex items-center text-white">
-                  <svg className="w-5 h-5 text-[#f0da11] mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 text-[#f0da11] mr-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                   {feature}
@@ -116,3 +116,4 @@ export default function ChemicalsSectionNew() {
     </section>
   );
 }
+

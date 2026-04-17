@@ -1,23 +1,23 @@
-import React from 'react';
+﻿import React from 'react';
 import SectionHeader from '../ui/SectionHeader';
 
 export default function EmergencyService() {
   const emergencySteps = [
     {
-      title: 'Immediate Response',
-      description: 'Call our emergency hotline and speak directly with a technician within minutes.',
+      title: 'Priority Support',
+      description: 'Call our emergency hotline and connect directly with a technician.',
       icon: 'M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z',
       color: 'from-red-400 to-red-600'
     },
     {
       title: 'Fast Dispatch',
-      description: 'Our technicians are dispatched within 2 hours for critical equipment failures.',
+      description: 'Our technicians prioritize dispatch for critical equipment failures.',
       icon: 'M13 10V3L4 14h7v7l9-11h-7z',
       color: 'from-orange-400 to-orange-600'
     },
     {
       title: 'Quick Resolution',
-      description: 'Most emergency repairs are completed on-site with parts from our mobile inventory.',
+      description: 'Many emergency repairs can be completed on-site with parts from our mobile inventory.',
       icon: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z',
       color: 'from-green-400 to-green-600'
     }
@@ -37,14 +37,14 @@ export default function EmergencyService() {
         <div className="text-center mb-16">
           <SectionHeader
             title="Emergency Service Available"
-            description="When your wash goes down, every minute counts"
+            description="We understand downtime impacts your business"
             titleDelay={50}
             descriptionDelay={100}
           />
         </div>
 
         <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden">
-          <div className="bg-gradient-to-r from-red-500 to-red-600 p-6">
+          <div className="bg-linear-to-r from-red-500 to-red-600 p-6">
             <div className="flex items-center justify-center text-white">
               <svg className="w-8 h-8 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -57,7 +57,7 @@ export default function EmergencyService() {
             <div className="grid md:grid-cols-3 gap-8">
               {emergencySteps.map((step, index) => (
                 <div key={index} className="text-center">
-                  <div className={`w-16 h-16 bg-gradient-to-br ${step.color} rounded-full flex items-center justify-center mx-auto mb-4`}>
+                  <div className={`w-16 h-16 bg-linear-to-br ${step.color} rounded-full flex items-center justify-center mx-auto mb-4`}>
                     <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={step.icon} />
                     </svg>

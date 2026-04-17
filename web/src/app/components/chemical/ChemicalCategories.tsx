@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import SectionHeader from '../ui/SectionHeader';
 
 // Professional color mapping for category cards
@@ -28,7 +28,7 @@ export default function ChemicalCategories({ categories }: ChemicalCategoriesPro
   return (
     <>
       {/* Bold Divider */}
-      <div className="h-2 bg-gradient-to-r from-slate-900 via-[#f0da11] to-slate-900"></div>
+      <div className="h-2 bg-linear-to-r from-slate-900 via-[#f0da11] to-slate-900"></div>
 
       <section className="py-20 bg-gray-50 relative">
         {/* Corner accent */}
@@ -51,7 +51,7 @@ export default function ChemicalCategories({ categories }: ChemicalCategoriesPro
             return (
               <div key={category.id} className="bg-white border-2 border-gray-300 hover:border-gray-400 transition-colors duration-200">
                 <div className="border-b-2 border-gray-300 bg-gray-50 p-3 flex items-center justify-center">
-                  <div className={`w-8 h-8 bg-gradient-to-br ${colors.bg} flex items-center justify-center mr-2`}>
+                  <div className={`w-8 h-8 bg-linear-to-br ${colors.bg} flex items-center justify-center mr-2`}>
                     <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={category.icon} />
                     </svg>
@@ -63,7 +63,7 @@ export default function ChemicalCategories({ categories }: ChemicalCategoriesPro
                   <ul className="space-y-1.5 text-xs text-gray-600">
                     {category.features.map((feature, index) => (
                       <li key={index} className="flex items-start">
-                        <span className={`w-1 h-1 ${colors.dot} mt-1.5 mr-2 flex-shrink-0`}></span>
+                        <span className={`w-1 h-1 ${colors.dot} mt-1.5 mr-2 shrink-0`}></span>
                         <span>{feature}</span>
                       </li>
                     ))}
@@ -78,4 +78,5 @@ export default function ChemicalCategories({ categories }: ChemicalCategoriesPro
     </>
   );
 }
+
 

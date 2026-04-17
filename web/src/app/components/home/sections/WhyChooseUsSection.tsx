@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React from 'react';
 import Image from 'next/image';
@@ -12,7 +12,7 @@ export default function WhyChooseUsSection() {
   ];
 
   return (
-    <section className="relative py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
+    <section className="relative py-16 sm:py-20 lg:py-24 bg-linear-to-br from-slate-950 via-slate-900 to-slate-950">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -36,7 +36,7 @@ export default function WhyChooseUsSection() {
               Why Choose Us<span className="text-[#f0da11]">?</span>
             </h2>
             <p className="text-sm sm:text-base lg:text-lg text-white font-normal mb-6 max-w-xl drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
-              Partner with a team that understands modern wash operations—equipment, chemistry, and service working together to keep
+              Partner with a team that understands modern wash operations - equipment, chemistry, and service working together to keep
               your site running strong.
             </p>
 
@@ -84,3 +84,4 @@ export default function WhyChooseUsSection() {
     </section>
   );
 }
+

@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React, { useState } from 'react';
 import ContactOptionCard from './ContactOptionCard';
@@ -41,8 +41,8 @@ export default function ContactSelector({ contactOptions }: ContactSelectorProps
       className={`relative scroll-mt-32 ${sectionPadding} bg-gradient-to-b from-gray-50 via-white to-gray-50 overflow-hidden`}
     >
       {/* Subtle Accent Lines */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#f0da11]/30 to-transparent"></div>
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#f0da11]/30 to-transparent"></div>
+      <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-[#f0da11]/30 to-transparent"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-[#f0da11]/30 to-transparent"></div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-6xl mx-auto">
@@ -79,7 +79,7 @@ export default function ContactSelector({ contactOptions }: ContactSelectorProps
             <>
               {/* Selected Service Header */}
               <div className="text-center mb-6" style={{ animation: 'slideInFromRight 0.5s ease-out forwards' }}>
-                <div className={`inline-flex items-center bg-gradient-to-br ${selectedOption?.bgColor} border-2 ${selectedOption?.borderColor} px-6 py-3 mb-6 shadow-sm`}>
+                <div className={`inline-flex items-center bg-linear-to-br ${selectedOption?.bgColor} border-2 ${selectedOption?.borderColor} px-6 py-3 mb-6 shadow-sm`}>
                   <span className="font-bold text-gray-900 text-base uppercase tracking-wide">
                     {selectedOption?.title}
                   </span>

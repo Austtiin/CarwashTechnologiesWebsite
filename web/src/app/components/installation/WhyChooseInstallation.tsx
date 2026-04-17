@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import SectionHeader from '../ui/SectionHeader';
 import SafeLink from '../ui/SafeLink';
 
@@ -72,7 +72,7 @@ export default function WhyChooseInstallation({ stats }: WhyChooseInstallationPr
             <div className="space-y-6">
               {benefits.map((benefit, index) => (
                 <div key={index} className="flex items-start">
-                  <div className={`w-12 h-12 bg-gradient-to-br ${benefit.color} rounded-lg flex items-center justify-center mr-4 flex-shrink-0`}>
+                  <div className={`w-12 h-12 bg-linear-to-br ${benefit.color} rounded-lg flex items-center justify-center mr-4 shrink-0`}>
                     <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={benefit.icon} />
                     </svg>
@@ -87,7 +87,7 @@ export default function WhyChooseInstallation({ stats }: WhyChooseInstallationPr
           </div>
           
           {/* Right Column - Installation Guarantee Card */}
-          <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-8 rounded-2xl border border-gray-200">
+          <div className="bg-linear-to-br from-gray-50 to-gray-100 p-8 rounded-2xl border border-gray-200">
             <div className="text-center mb-8">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Installation Commitment</h3>
               <p className="text-gray-600">We stand behind our work with quality craftsmanship and ongoing support</p>
@@ -151,4 +151,5 @@ export default function WhyChooseInstallation({ stats }: WhyChooseInstallationPr
     </>
   );
 }
+
 

@@ -1,4 +1,4 @@
-// shared SDS types
+﻿// shared SDS types
 export interface SDSDocument {
   id: string;
   name: string;
@@ -13,7 +13,7 @@ export interface SDSDocument {
 export interface Manufacturer {
   id: string;
   name: string;
-  // store the tailwind gradient classes (without 'bg-gradient-to-r')
+  // store the tailwind gradient classes (without 'bg-linear-to-r')
   // example: "from-yellow-400 to-yellow-600"
   color: string;
 }
@@ -24,3 +24,4 @@ export interface SDSStats {
   access: string;
   compliance: string;
 }
+

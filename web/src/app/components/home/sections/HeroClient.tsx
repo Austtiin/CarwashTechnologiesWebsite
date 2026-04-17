@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React, { useState, useEffect } from 'react';
 import RotatingText from '../../animations/RotatingText';
@@ -16,7 +16,7 @@ export default function HeroClient() {
   if (!isLoaded) {
     return (
       <div className="flex items-center justify-center lg:justify-start">
-        <span className="px-4 py-3 text-lg lg:text-xl text-white font-semibold bg-gradient-to-r from-black/20 to-slate-400/30">
+        <span className="px-4 py-3 text-lg lg:text-xl text-white font-semibold bg-linear-to-r from-black/20 to-slate-400/30">
           Vehicle Wash
         </span>
         <div className="px-4 py-3 bg-yellow-300 min-w-40 justify-center">

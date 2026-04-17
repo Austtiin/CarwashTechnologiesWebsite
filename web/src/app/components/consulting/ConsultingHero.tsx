@@ -1,11 +1,11 @@
-'use client';
+﻿'use client';
 
 import React from 'react';
 import BlurText from '../animations/BlurText';
 
 export default function ConsultingHero() {
   return (
-    <section className="relative bg-gradient-to-br from-black via-gray-900 to-black text-white py-24 overflow-hidden">
+    <section className="relative bg-linear-to-br from-black via-gray-900 to-black text-white py-24 overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{
@@ -88,3 +88,4 @@ export default function ConsultingHero() {
     </section>
   );
 }
+

@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPolicyPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-gray-100 py-12">
+    <div className="min-h-screen bg-linear-to-br from-slate-50 to-gray-100 py-12">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
@@ -224,7 +224,7 @@ export default function PrivacyPolicyPage() {
             <h2 className="text-2xl font-bold text-gray-900 mb-4">10. Children&apos;s Privacy</h2>
             <p className="text-gray-700">
               Our services are not directed to children under 13. We do not knowingly collect personal information 
-              from children. If you believe we have collected information from a child, please contact us immediately.
+              from children. If you believe we have collected information from a child, please contact us promptly.
             </p>
           </section>
 
@@ -263,10 +263,11 @@ export default function PrivacyPolicyPage() {
             href="/"
             className="inline-block px-6 py-3 bg-[#f0da11] text-gray-900 font-semibold rounded-lg hover:bg-[#d0b211] transition-colors duration-200"
           >
-            ← Back to Home
+            Back to Home
           </Link>
         </div>
       </div>
     </div>
   );
 }
+

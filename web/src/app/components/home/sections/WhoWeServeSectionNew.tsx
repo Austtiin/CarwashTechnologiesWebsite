@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 // Clean Tech Who We Serve Section
 import React from 'react';
@@ -69,7 +69,7 @@ export default function WhoWeServeSectionNew() {
   ];
 
   return (
-    <section className="relative bg-gradient-to-br from-gray-50 via-gray-100 to-gray-50 py-12 sm:py-14 overflow-hidden">
+    <section className="relative bg-linear-to-br from-gray-50 via-gray-100 to-gray-50 py-12 sm:py-14 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-8 sm:mb-10 max-w-3xl mx-auto">
@@ -111,7 +111,7 @@ export default function WhoWeServeSectionNew() {
                 <ul className="space-y-1.5">
                   {segment.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-start text-sm text-gray-700 group-hover:text-gray-900 transition-colors">
-                      <svg className="w-5 h-5 text-[#f0da11] mr-2 flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-5 h-5 text-[#f0da11] mr-2 shrink-0 mt-0.5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                       {feature}
@@ -139,3 +139,4 @@ export default function WhoWeServeSectionNew() {
     </section>
   );
 }
+

@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React, { useEffect, useMemo, useState } from 'react';
 import type { SDSDocument, Manufacturer } from '@/app/types/sds';
@@ -115,7 +115,7 @@ export default function SDSDocumentGrid({ documents, manufacturers, categories }
                 >
                   <div className="p-6">
                     <div className="flex items-start justify-between mb-4">
-                      <div className={`px-3 py-1 rounded-full text-xs font-medium bg-gradient-to-r ${gradient} text-white`}>
+                      <div className={`px-3 py-1 rounded-full text-xs font-medium bg-linear-to-r ${gradient} text-white`}>
                         {manufacturer?.name ?? 'Unknown'}
                       </div>
                       <span className="text-xs text-gray-500">Updated: {updatedText}</span>
@@ -176,3 +176,4 @@ export default function SDSDocumentGrid({ documents, manufacturers, categories }
     </>
   );
 }
+

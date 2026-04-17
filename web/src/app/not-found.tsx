@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React from 'react';
 import Link from 'next/link';
@@ -8,13 +8,13 @@ export default function NotFound() {
   return (
     <div className="min-h-screen">
       {/* 404 Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#26231d] via-[#595646] to-[#4c6461] text-white py-24 min-h-screen flex items-center overflow-hidden">
+      <section className="relative bg-linear-to-br from-[#26231d] via-[#595646] to-[#4c6461] text-white py-24 min-h-screen flex items-center overflow-hidden">
         {/* Enhanced Background Elements */}
         <div className="absolute inset-0">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-[#f0da11]/20 to-transparent rounded-full opacity-60 -translate-x-48 -translate-y-48 animate-pulse"></div>
+          <div className="absolute top-0 left-0 w-96 h-96 bg-linear-to-br from-[#f0da11]/20 to-transparent rounded-full opacity-60 -translate-x-48 -translate-y-48 animate-pulse"></div>
           <div className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-tl from-[#d0b211]/30 to-transparent rounded-full opacity-50 translate-x-32 translate-y-32 animate-pulse" style={{ animationDelay: '1s' }}></div>
-          <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-gradient-to-br from-[#bfb986]/15 to-transparent rounded-full opacity-40 animate-pulse" style={{ animationDelay: '2s' }}></div>
-          <div className="absolute top-1/2 left-1/4 w-48 h-48 bg-gradient-to-br from-[#f0da11]/10 to-transparent rounded-full opacity-30 animate-pulse" style={{ animationDelay: '3s' }}></div>
+          <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-linear-to-br from-[#bfb986]/15 to-transparent rounded-full opacity-40 animate-pulse" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute top-1/2 left-1/4 w-48 h-48 bg-linear-to-br from-[#f0da11]/10 to-transparent rounded-full opacity-30 animate-pulse" style={{ animationDelay: '3s' }}></div>
         </div>
 
         <div className="container mx-auto px-4 text-center relative z-10">
@@ -22,7 +22,7 @@ export default function NotFound() {
             {/* 404 Number with Animation */}
             <div className="mb-8">
               <div className="text-9xl md:text-[12rem] lg:text-[15rem] font-black mb-4 leading-none">
-                <span className="bg-gradient-to-r from-[#cecece] via-[#f0da11] to-[#bfb986] bg-clip-text text-transparent animate-pulse">
+                <span className="bg-linear-to-r from-[#cecece] via-[#f0da11] to-[#bfb986] bg-clip-text text-transparent animate-pulse">
                   404
                 </span>
               </div>
@@ -44,7 +44,7 @@ export default function NotFound() {
 
             {/* Car Wash Themed Icon */}
             <div className="mb-12">
-              <div className="w-32 h-32 bg-gradient-to-br from-[#f0da11]/20 to-[#bfb986]/20 rounded-full flex items-center justify-center mx-auto mb-6 backdrop-blur-sm border border-[#f0da11]/30">
+              <div className="w-32 h-32 bg-linear-to-br from-[#f0da11]/20 to-[#bfb986]/20 rounded-full flex items-center justify-center mx-auto mb-6 backdrop-blur-sm border border-[#f0da11]/30">
                 <svg className="w-16 h-16 text-[#f0da11]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                 </svg>
@@ -93,7 +93,7 @@ export default function NotFound() {
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-2xl mx-auto">
             <div className="bg-white rounded-2xl shadow-xl border border-gray-200 p-8">
-              <div className="w-20 h-20 bg-gradient-to-br from-[#f0da11] to-[#bfb986] rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="w-20 h-20 bg-linear-to-br from-[#f0da11] to-[#bfb986] rounded-full flex items-center justify-center mx-auto mb-6">
                 <svg className="w-10 h-10 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>

@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React from 'react';
 import BlurText from '../animations/BlurText';
@@ -16,7 +16,7 @@ interface SDSHeroProps {
 
 export default function SDSHero({ stats }: SDSHeroProps) {
   return (
-    <section className="relative bg-gradient-to-br from-black via-gray-900 to-black text-white py-20 overflow-hidden">
+    <section className="relative bg-linear-to-br from-black via-gray-900 to-black text-white py-20 overflow-hidden">
       {/* Subtle background accents */}
       <div className="absolute inset-0 pointer-events-none opacity-20">
         <div
@@ -40,7 +40,7 @@ export default function SDSHero({ stats }: SDSHeroProps) {
           
           <div className="mb-8">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-              <span className="bg-gradient-to-r from-[#cecece] via-[#f0da11] to-[#bfb986] bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-[#cecece] via-[#f0da11] to-[#bfb986] bg-clip-text text-transparent">
                 Safety Data Sheets
               </span>
             </h1>

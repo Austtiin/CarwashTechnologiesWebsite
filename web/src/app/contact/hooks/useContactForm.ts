@@ -80,7 +80,7 @@ export function useContactForm(): UseContactFormReturn {
       lastError.includes('unavailable')
     )) {
       setIsPending(true);
-      setError('Your message is pending. We will process it as soon as possible. You can also call us at (612) 408-9010.');
+      setError('Your message is pending. We will review it and follow up. You can also call us at (612) 408-9010.');
     } else {
       // Hard failure for validation or other errors
       setError(lastError || 'Failed to submit form after multiple attempts. Please try again or call us at (612) 408-9010.');

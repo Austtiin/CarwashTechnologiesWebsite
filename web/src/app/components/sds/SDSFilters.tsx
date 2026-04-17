@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React from 'react';
 import { Manufacturer } from '@/app/types/sds';
@@ -51,7 +51,7 @@ export default function SDSFilters({
                 onClick={() => onManufacturerChange(manufacturer.id)}
                 className={`px-6 py-3 rounded-xl font-medium transition-all duration-300 cursor-pointer ${
                   selectedManufacturer === manufacturer.id
-                    ? `bg-gradient-to-r ${manufacturer.color} text-white shadow-lg`
+                    ? `bg-linear-to-r ${manufacturer.color} text-white shadow-lg`
                     : 'bg-white text-gray-700 border border-gray-300 hover:border-gray-400'
                 }`}
               >
@@ -108,3 +108,4 @@ export default function SDSFilters({
     </section>
   );
 }
+

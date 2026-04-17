@@ -142,7 +142,7 @@ public static class EmailTemplates
   <tr>
     <td style=""background-color:{BrandYellow};padding:20px 20px;"">
       <p style=""margin:0;font-size:24px;font-weight:700;color:{BrandDark};"">Thank you, {name}!</p>
-      <p style=""margin:8px 0 0;font-size:15px;color:{BrandDark};"">We've received your inquiry and will be in touch shortly.</p>
+      <p style=""margin:8px 0 0;font-size:15px;color:{BrandDark};"">We've received your inquiry and our team will follow up.</p>
     </td>
   </tr>
 
@@ -154,7 +154,7 @@ public static class EmailTemplates
       </p>
       <p style=""margin:0 0 24px;font-size:15px;color:{TextDark};line-height:1.6;"">
         Thank you for reaching out to <strong>{CompanyName}</strong>. One of our specialists will
-        follow up with you as soon as possible during normal business hours
+        follow up with you during normal business hours
         (Mon–Fri, 8AM–5PM CST).
       </p>
       <p style=""margin:0 0 16px;font-size:14px;font-weight:600;color:{TextDark};text-transform:uppercase;letter-spacing:0.5px;"">Your Submission Summary</p>

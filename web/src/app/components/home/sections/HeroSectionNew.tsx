@@ -1,4 +1,4 @@
-// Server Component - Clean Tech in Motion Hero
+﻿// Server Component - Clean Tech in Motion Hero
 'use client';
 
 import React from 'react';
@@ -20,7 +20,7 @@ export default function HeroSectionNew() {
           style={{ opacity: 0.85 }}
         />
         {/* Strong gradient overlay on left for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/75 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-r from-white/95 via-white/75 to-transparent" />
       </div>
 
       {/* Diagonal Water Flow Lines */}
@@ -80,7 +80,8 @@ export default function HeroSectionNew() {
       
 
       {/* Subtle moving gradient accent */}
-      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#f0da11] to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-1 bg-linear-to-r from-transparent via-[#f0da11] to-transparent" />
     </section>
   );
 }
+

@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React from 'react';
 import Link from 'next/link';
@@ -52,7 +52,7 @@ export default function GenericHero({
   const bgClass = backgroundVariant === 'light-grey'
     ? 'bg-[#f6f6f6]'
     : backgroundVariant === 'dark'
-    ? 'bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950'
+    ? 'bg-linear-to-br from-slate-950 via-slate-900 to-slate-950'
     : 'bg-white';
   const sectionSpacing = compact ? 'pt-20 sm:pt-22 lg:pt-24 pb-8 sm:pb-10 lg:pb-12' : 'pt-22 sm:pt-24 lg:pt-28 pb-10 sm:pb-12 lg:pb-14';
   const titleSize = compact ? 'text-2xl sm:text-3xl md:text-4xl lg:text-4xl' : 'text-3xl sm:text-4xl md:text-4xl lg:text-5xl';
@@ -60,11 +60,11 @@ export default function GenericHero({
   const centerLaneClass =
     centerLane === 'strong'
       ? isDark
-        ? 'w-[70%] sm:w-[65%] bg-gradient-to-r from-transparent via-slate-900/98 to-transparent'
-        : 'w-[70%] sm:w-[65%] bg-gradient-to-r from-transparent via-white/98 to-transparent'
+        ? 'w-[70%] sm:w-[65%] bg-linear-to-r from-transparent via-slate-900/98 to-transparent'
+        : 'w-[70%] sm:w-[65%] bg-linear-to-r from-transparent via-white/98 to-transparent'
       : isDark
-      ? 'w-[60%] sm:w-[55%] bg-gradient-to-r from-transparent via-slate-900/97 to-transparent'
-      : 'w-[60%] sm:w-[55%] bg-gradient-to-r from-transparent via-white/97 to-transparent';
+      ? 'w-[60%] sm:w-[55%] bg-linear-to-r from-transparent via-slate-900/97 to-transparent'
+      : 'w-[60%] sm:w-[55%] bg-linear-to-r from-transparent via-white/97 to-transparent';
 
   const textSurfaceClass = textSurface
     ? 'bg-white/92 backdrop-blur-md rounded-2xl px-4 sm:px-6 py-5 sm:py-6 shadow-xl border border-white/95 ring-1 ring-slate-200/60'
@@ -86,8 +86,8 @@ export default function GenericHero({
             />
             <div className={`absolute inset-0 ${
                 isDark
-                  ? 'bg-gradient-to-r from-transparent via-slate-900/70 to-slate-900/95'
-                  : 'bg-gradient-to-r from-transparent via-white/70 to-white/95'
+                  ? 'bg-linear-to-r from-transparent via-slate-900/70 to-slate-900/95'
+                  : 'bg-linear-to-r from-transparent via-white/70 to-white/95'
               }`}></div>
           </div>
         </div>
@@ -120,8 +120,8 @@ export default function GenericHero({
       )}
 
       {/* Framing Rails */}
-      <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-cyan-300/60 via-[#f0da11]/80 to-blue-300/60 pointer-events-none"></div>
-      <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-gradient-to-r from-blue-300/55 via-[#f0da11]/75 to-cyan-300/55 pointer-events-none"></div>
+      <div className="absolute top-0 left-0 right-0 h-[3px] bg-linear-to-r from-cyan-300/60 via-[#f0da11]/80 to-blue-300/60 pointer-events-none"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-linear-to-r from-blue-300/55 via-[#f0da11]/75 to-cyan-300/55 pointer-events-none"></div>
 
       {/* Animated Grid Background */}
       {showPattern && (
@@ -151,10 +151,10 @@ export default function GenericHero({
 
       {/* Decorative Color Lines */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute -left-24 top-14 w-96 h-[3px] bg-gradient-to-r from-transparent via-cyan-400/70 to-transparent rotate-[8deg]"></div>
-        <div className="absolute -right-24 top-24 w-[30rem] h-[3px] bg-gradient-to-r from-transparent via-[#f0da11]/85 to-transparent -rotate-[7deg]"></div>
-        <div className="absolute -left-20 bottom-24 w-80 h-[3px] bg-gradient-to-r from-transparent via-blue-400/65 to-transparent -rotate-[10deg]"></div>
-        <div className="absolute -right-20 bottom-14 w-72 h-[3px] bg-gradient-to-r from-transparent via-amber-300/70 to-transparent rotate-[10deg]"></div>
+        <div className="absolute -left-24 top-14 w-96 h-[3px] bg-linear-to-r from-transparent via-cyan-400/70 to-transparent rotate-[8deg]"></div>
+        <div className="absolute -right-24 top-24 w-[30rem] h-[3px] bg-linear-to-r from-transparent via-[#f0da11]/85 to-transparent -rotate-[7deg]"></div>
+        <div className="absolute -left-20 bottom-24 w-80 h-[3px] bg-linear-to-r from-transparent via-blue-400/65 to-transparent -rotate-[10deg]"></div>
+        <div className="absolute -right-20 bottom-14 w-72 h-[3px] bg-linear-to-r from-transparent via-amber-300/70 to-transparent rotate-[10deg]"></div>
         <div className="absolute left-8 top-1/3 h-40 w-[2px] bg-gradient-to-b from-transparent via-[#f0da11]/45 to-transparent"></div>
         <div className="absolute right-8 top-1/2 h-44 w-[2px] bg-gradient-to-b from-transparent via-cyan-300/40 to-transparent"></div>
       </div>
@@ -258,7 +258,7 @@ export default function GenericHero({
 
           {stats.length > 0 && (
             <>
-              <div className="w-16 h-0.5 bg-gradient-to-r from-transparent via-[#f0da11] to-transparent mx-auto mb-12"></div>
+              <div className="w-16 h-0.5 bg-linear-to-r from-transparent via-[#f0da11] to-transparent mx-auto mb-12"></div>
               
               <div className="grid grid-cols-2 md:grid-cols-4 gap-8" style={{ animation: 'fadeInUp 0.8s ease-out 0.2s forwards', opacity: 0 }}>
                 {stats.map((stat, index) => (
@@ -353,3 +353,4 @@ export default function GenericHero({
     </section>
   );
 }
+

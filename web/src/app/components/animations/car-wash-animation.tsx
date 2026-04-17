@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState } from 'react';
 
@@ -21,7 +21,7 @@ const CarWashAnimation: React.FC = () => {
   };
 
   return (
-    <div className="relative w-full h-64 bg-gradient-to-r from-blue-100 to-blue-200 rounded-lg overflow-hidden">
+    <div className="relative w-full h-64 bg-linear-to-r from-blue-100 to-blue-200 rounded-lg overflow-hidden">
       {/* CSS keyframes for the car movement and roller animation */}
       <style jsx>{`
         @keyframes driveThrough {

@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 // Clean Tech Call to Action Section
 import React from 'react';
@@ -29,7 +29,7 @@ export default function CallToActionNew({
   contactInfo
 }: CallToActionProps) {
   return (
-    <section className="relative py-16 sm:py-20 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
+    <section className="relative py-16 sm:py-20 bg-linear-to-br from-slate-950 via-slate-900 to-slate-950">
       {/* Yellow top separator */}
       <div className="absolute inset-x-0 top-0 h-1 bg-[#f0da11] z-20" />
       {/* Background Image */}
@@ -85,3 +85,4 @@ export default function CallToActionNew({
     </section>
   );
 }
+

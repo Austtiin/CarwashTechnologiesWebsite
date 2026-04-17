@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import SectionHeader from '../ui/SectionHeader';
 
 // Professional color mapping for equipment cards
@@ -51,7 +51,7 @@ export default function EquipmentWeService({ equipment }: EquipmentWeServiceProp
             return (
               <div key={item.id} className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
                 <div className="text-center mb-6">
-                  <div className={`w-16 h-16 bg-gradient-to-br ${colors.bg} rounded-xl flex items-center justify-center mx-auto mb-4`}>
+                  <div className={`w-16 h-16 bg-linear-to-br ${colors.bg} rounded-xl flex items-center justify-center mx-auto mb-4`}>
                     <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={item.icon} />
                     </svg>

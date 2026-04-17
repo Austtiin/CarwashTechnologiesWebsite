@@ -1,4 +1,4 @@
-// Server Component
+﻿// Server Component
 import React from 'react';
 import Image from 'next/image';
 import SafeLink from '../../ui/SafeLink';
@@ -54,9 +54,9 @@ export default function ServicesSection() {
           {/* Equipment Sales Card */}
           <div className="sm:col-span-2 lg:col-span-1 bg-white/80 backdrop-blur-sm rounded-xl p-6 sm:p-8 border border-gray-200/50 hover:bg-white/95 hover:shadow-2xl hover:border-yellow-400/30 transition-all duration-500 transform hover:-translate-y-1 sm:hover:-translate-y-3 hover:scale-105 group h-full flex flex-col relative overflow-hidden">
             {/* Subtle glow effect on hover */}
-            <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/10 via-transparent to-yellow-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl"></div>
+            <div className="absolute inset-0 bg-linear-to-br from-yellow-400/10 via-transparent to-yellow-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl"></div>
             
-            <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-xl flex items-center justify-center mx-auto mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300 relative z-10 shadow-lg">
+            <div className="w-12 h-12 sm:w-16 sm:h-16 bg-linear-to-br from-yellow-400 to-yellow-500 rounded-xl flex items-center justify-center mx-auto mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300 relative z-10 shadow-lg">
               <svg className="w-6 h-6 sm:w-8 sm:h-8 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 7.172V5L8 4z" />
               </svg>
@@ -147,9 +147,9 @@ export default function ServicesSection() {
           {/* Service & Maintenance Card */}
           <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 sm:p-8 border border-gray-200/50 hover:bg-white/95 hover:shadow-2xl hover:border-yellow-400/30 transition-all duration-500 transform hover:-translate-y-1 sm:hover:-translate-y-3 hover:scale-105 group h-full flex flex-col relative overflow-hidden">
             {/* Subtle glow effect on hover */}
-            <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/10 via-transparent to-yellow-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl"></div>
+            <div className="absolute inset-0 bg-linear-to-br from-yellow-400/10 via-transparent to-yellow-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl"></div>
             
-            <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mx-auto mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300 relative z-10 shadow-lg">
+            <div className="w-12 h-12 sm:w-16 sm:h-16 bg-linear-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mx-auto mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300 relative z-10 shadow-lg">
               <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -197,9 +197,9 @@ export default function ServicesSection() {
           {/* Chemical Programs Card */}
           <div className="sm:col-span-2 lg:col-span-1 bg-white/80 backdrop-blur-sm rounded-xl p-6 sm:p-8 border border-gray-200/50 hover:bg-white/95 hover:shadow-2xl hover:border-yellow-400/30 transition-all duration-500 transform hover:-translate-y-1 sm:hover:-translate-y-3 hover:scale-105 group h-full flex flex-col relative overflow-hidden">
             {/* Subtle glow effect on hover */}
-            <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/10 via-transparent to-yellow-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl"></div>
+            <div className="absolute inset-0 bg-linear-to-br from-yellow-400/10 via-transparent to-yellow-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl"></div>
             
-            <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300 relative z-10 shadow-lg">
+            <div className="w-12 h-12 sm:w-16 sm:h-16 bg-linear-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300 relative z-10 shadow-lg">
               <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 7.172V5L8 4z" />
               </svg>

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React from 'react';
 import Link from 'next/link';
@@ -110,7 +110,7 @@ export default function GenericServicesGrid({
                       className="object-cover"
                       style={{ opacity: 0.5 }}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-white/60" />
+                    <div className="absolute inset-0 bg-linear-to-r from-white via-white/95 to-white/60" />
                   </div>
                 )}
 
@@ -183,3 +183,4 @@ export default function GenericServicesGrid({
     </section>
   );
 }
+

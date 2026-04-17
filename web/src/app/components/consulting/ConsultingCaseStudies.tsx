@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React from 'react';
 
@@ -152,7 +152,8 @@ export default function ConsultingCaseStudies() {
       </section>
 
       {/* Bold Gradient Divider */}
-      <div className="h-2 bg-gradient-to-r from-black via-[#f0da11] to-black"></div>
+      <div className="h-2 bg-linear-to-r from-black via-[#f0da11] to-black"></div>
     </>
   );
 }
+

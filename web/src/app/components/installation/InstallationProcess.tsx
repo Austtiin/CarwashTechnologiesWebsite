@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import SectionHeader from '../ui/SectionHeader';
 
 export default function InstallationProcess() {
@@ -36,7 +36,7 @@ export default function InstallationProcess() {
   return (
     <>
       {/* Bold Divider */}
-      <div className="h-2 bg-gradient-to-r from-slate-900 via-[#f0da11] to-slate-900"></div>
+      <div className="h-2 bg-linear-to-r from-slate-900 via-[#f0da11] to-slate-900"></div>
 
       <section className="py-20 bg-white relative">
         {/* Corner accents */}
@@ -59,11 +59,11 @@ export default function InstallationProcess() {
           {processSteps.map((step) => (
             <div key={step.number} className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 relative">
               <div className="absolute -top-4 left-8">
-                <div className={`w-8 h-8 bg-gradient-to-br ${step.color} rounded-full flex items-center justify-center text-white font-bold text-sm`}>
+                <div className={`w-8 h-8 bg-linear-to-br ${step.color} rounded-full flex items-center justify-center text-white font-bold text-sm`}>
                   {step.number}
                 </div>
               </div>
-              <div className={`w-16 h-16 bg-gradient-to-br ${step.color} rounded-xl flex items-center justify-center mx-auto mb-6 mt-4`}>
+              <div className={`w-16 h-16 bg-linear-to-br ${step.color} rounded-xl flex items-center justify-center mx-auto mb-6 mt-4`}>
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={step.icon} />
                 </svg>
@@ -78,4 +78,5 @@ export default function InstallationProcess() {
     </>
   );
 }
+
 

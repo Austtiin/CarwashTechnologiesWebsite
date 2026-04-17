@@ -124,7 +124,7 @@ public class ContactFormHttpTrigger
             {
                 _logger.LogWarning(">>> Honeypot triggered — silently discarding submission.");
                 httpResponse.StatusCode = HttpStatusCode.Accepted;
-                await httpResponse.WriteAsJsonAsync(new { success = true, message = "Your message has been received. We will be in touch shortly." });
+                await httpResponse.WriteAsJsonAsync(new { success = true, message = "Your message has been received. Our team will review it and follow up." });
                 return new Output { HttpResponse = httpResponse };
             }
 
@@ -166,7 +166,7 @@ public class ContactFormHttpTrigger
             await httpResponse.WriteAsJsonAsync(new
             {
                 success = true,
-                message = "Your message has been received. We will be in touch shortly."
+                message = "Your message has been received. Our team will review it and follow up."
             });
 
             _logger.LogInformation(">>> Message enqueued successfully. Returning 202 Accepted to client.");

@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Metadata } from 'next';
 import GenericHero from '../components/ui/GenericHero';
 import SDSDocumentGrid from '../components/sds/SDSDocumentGrid';
@@ -8,7 +8,7 @@ import pdfFileList from '../../data/pdf-list.json';
 export const metadata: Metadata = {
   title: 'Safety Data Sheets (SDS) | Carwash Technologies',
   description:
-    'Download Safety Data Sheets for carwash chemicals supplied by Carwash Technologies in Minnesota — ChemQuest, Vertech Labs, and Simoniz products. Proper handling, safety compliance, and OSHA-required SDS documentation.',
+    'Download Safety Data Sheets for carwash chemicals supplied by Carwash Technologies in Minnesota - ChemQuest, Vertech Labs, and Simoniz products. Proper handling, safety compliance, and OSHA-required SDS documentation.',
   keywords: 'safety data sheets, SDS Minnesota, carwash chemical SDS, ChemQuest SDS, Vertech Labs SDS, Simoniz SDS, MSDS car wash chemicals, chemical safety Minnesota, car wash product safety, OSHA SDS carwash',
   alternates: { canonical: '/sds' },
   openGraph: {
@@ -196,11 +196,11 @@ export default async function SafetyDataSheets() {
       </section>
 
       {/* Safety Notice */}
-      <section className="py-16 bg-gradient-to-br from-yellow-50 via-white to-yellow-50 border-t border-yellow-200">
+      <section className="py-16 bg-linear-to-br from-yellow-50 via-white to-yellow-50 border-t border-yellow-200">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="bg-white rounded-lg shadow-lg border-l-4 border-[#f0da11] p-8">
             <div className="flex items-start space-x-4">
-              <div className="flex-shrink-0">
+              <div className="shrink-0">
                 <svg className="w-8 h-8 text-[#f0da11]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                 </svg>
@@ -216,7 +216,7 @@ export default async function SafetyDataSheets() {
                     <li>Keep SDS readily accessible to all personnel</li>
                     <li>Follow all safety precautions and handling instructions</li>
                     <li>Ensure proper PPE is available and used</li>
-                    <li>Contact us immediately if you have safety questions</li>
+                    <li>Contact us if you have safety questions</li>
                   </ul>
                   <p className="mt-4 text-sm text-gray-600">
                     For questions about any safety data sheet or chemical safety, contact our team at{' '}
@@ -255,3 +255,4 @@ export default async function SafetyDataSheets() {
     </main>
   );
 }
+

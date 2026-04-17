@@ -10,7 +10,7 @@ export const contactOptions = [
     details: 'Get information about our chemical programs, pricing, and delivery options for detergents, waxes, and specialty solutions.',
     icon: 'chemicals',
     features: [
-      'Response within 2 hours',
+      'Prompt follow-up from our team',
       'Chemical program specialist',
       'Custom pricing available',
       'Free delivery consultation'
@@ -30,7 +30,7 @@ export const contactOptions = [
       'Fast support available',
       'Certified technicians',
       'Preventive maintenance',
-      'Same-day service available'
+      'Priority service scheduling'
     ]
   },
   {

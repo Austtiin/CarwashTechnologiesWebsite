@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 // Clean Tech Services Section
 import React from 'react';
@@ -68,8 +68,8 @@ export default function ServicesSectionNew() {
            style={{ animation: 'bubbleRise 6s ease-in-out infinite 2s' }} />
 
       {/* Flowing Lines Accent */}
-      <div className="absolute top-20 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#f0da11]/20 to-transparent" />
-      <div className="absolute bottom-20 right-0 w-full h-px bg-gradient-to-r from-transparent via-[#f0da11]/20 to-transparent" />
+      <div className="absolute top-20 left-0 w-full h-px bg-linear-to-r from-transparent via-[#f0da11]/20 to-transparent" />
+      <div className="absolute bottom-20 right-0 w-full h-px bg-linear-to-r from-transparent via-[#f0da11]/20 to-transparent" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
@@ -227,3 +227,4 @@ export default function ServicesSectionNew() {
     </section>
   );
 }
+

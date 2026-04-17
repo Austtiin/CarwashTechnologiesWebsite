@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function TermsOfUsePage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-gray-100 py-12">
+    <div className="min-h-screen bg-linear-to-br from-slate-50 to-gray-100 py-12">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
@@ -197,7 +197,7 @@ export default function TermsOfUsePage() {
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">11. Modifications to Terms</h2>
             <p className="text-gray-700">
-              We reserve the right to modify these Terms of Use at any time. Changes will be effective immediately 
+              We reserve the right to modify these Terms of Use at any time. Changes will be effective 
               upon posting to the website. Your continued use of the website after changes are posted constitutes 
               your acceptance of the modified terms. We encourage you to review these terms periodically.
             </p>
@@ -270,10 +270,11 @@ export default function TermsOfUsePage() {
             href="/"
             className="inline-block px-6 py-3 bg-[#f0da11] text-gray-900 font-semibold rounded-lg hover:bg-[#d0b211] transition-colors duration-200"
           >
-            ← Back to Home
+            Back to Home
           </Link>
         </div>
       </div>
     </div>
   );
 }
+

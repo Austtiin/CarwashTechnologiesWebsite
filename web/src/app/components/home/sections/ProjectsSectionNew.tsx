@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 // Clean Tech Projects Section
 import React from 'react';
@@ -46,7 +46,7 @@ export default function ProjectsSectionNew() {
   ];
 
   return (
-    <section className="relative bg-gradient-to-br from-white via-yellow-50/30 to-white py-16 sm:py-20 overflow-hidden">
+    <section className="relative bg-linear-to-br from-white via-yellow-50/30 to-white py-16 sm:py-20 overflow-hidden">
       {/* Animated Diagonal Grid */}
       <div className="absolute inset-0 opacity-[0.08]">
         <div
@@ -160,3 +160,4 @@ export default function ProjectsSectionNew() {
     </section>
   );
 }
+

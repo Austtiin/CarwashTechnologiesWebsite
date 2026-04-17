@@ -1,10 +1,10 @@
-import React from 'react';
+﻿import React from 'react';
 import BlurText from '../../animations/BlurText';
 
 // Server Component - Static hero content
 export default function ContactHero() {
   return (
-    <section className="relative py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white overflow-hidden min-h-[50vh] flex items-center">
+    <section className="relative py-20 bg-linear-to-br from-slate-900 via-slate-800 to-slate-900 text-white overflow-hidden min-h-[50vh] flex items-center">
       {/* Subtle background accents */}
       <div className="absolute inset-0 pointer-events-none opacity-20">
         <div
@@ -36,7 +36,7 @@ export default function ContactHero() {
           
           {/* Static CTA badges */}
           <div className="flex flex-col gap-4 justify-center items-center mt-8 sm:flex-row sm:gap-6">
-            <div className="bg-gradient-to-r from-[#f0da11] to-[#e6c200] text-gray-900 px-8 py-4 rounded-xl font-bold shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+            <div className="bg-linear-to-r from-[#f0da11] to-[#e6c200] text-gray-900 px-8 py-4 rounded-xl font-bold shadow-xl transition-all duration-300 transform hover:-translate-y-1">
               <span className="flex items-center">
                 Quick Response
                 <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

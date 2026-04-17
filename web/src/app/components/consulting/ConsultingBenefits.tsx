@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React from 'react';
 
@@ -120,7 +120,7 @@ export default function ConsultingBenefits() {
             </div>
 
             {/* Testimonial */}
-            <div className="mt-16 border-2 border-black bg-gradient-to-br from-black to-gray-900 text-white p-8 md:p-12 relative overflow-hidden">
+            <div className="mt-16 border-2 border-black bg-linear-to-br from-black to-gray-900 text-white p-8 md:p-12 relative overflow-hidden">
               {/* Quote Mark */}
               <div className="absolute top-4 left-4 text-[#f0da11] opacity-20 text-8xl font-serif leading-none">
                 &ldquo;
@@ -175,3 +175,4 @@ export default function ConsultingBenefits() {
     </>
   );
 }
+
