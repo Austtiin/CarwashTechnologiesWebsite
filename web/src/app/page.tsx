@@ -6,26 +6,71 @@ import WhyChooseUsSection from './components/home/sections/WhyChooseUsSection';
 import CallToActionNew from './components/ui/CallToActionNew';
 
 export const metadata: Metadata = {
-  title: 'Carwash Technologies - Car Wash Equipment, Chemicals & Installation | MN, ND, SD, WI',
-  description: 'Carwash Technologies — Minnesota\'s trusted carwash builder and equipment dealer. New tunnel systems, automatic vehicle washes, semi truck washes, fleet wash systems, carwash chemicals, and full installation across MN, ND, SD, and WI. 50+ years combined experience.',
-  keywords: 'carwash equipment MN, carwash chemicals Minnesota, carwash builder MN, vehicle washing equipment, semi truck wash Minnesota, fleet wash systems, tunnel wash Minnesota, track wash, auto vehicle washing, car wash installation MN, car wash construction Minnesota, carwash equipment North Dakota, carwash equipment South Dakota, Belanger car wash dealer, PECO car wash systems, PDQ car wash equipment, Sonny\'s car wash Minnesota, Vertech Labs chemicals, ChemQuest car wash chemicals, Simoniz car wash, Cat Pumps dealer MN, General Pump Minnesota, carwash equipment Midwest, carwash chemicals Midwest',
+  title: 'Your Midwest Carwash Builder and Maintainer | MN, ND, SD, WI',
+  description: 'Carwash Technologies is your Midwest carwash builder and maintainer. We design and install tunnel and automatic wash systems, supply chemicals, and provide automatic car wash repair across MN, ND, SD, and WI.',
+  keywords: 'midwest carwash builder, car wash builder minnesota, car dealership car wash installation, automated car wash machine minnesota, automatic car wash repair, automatic car wash repair services, car wash automation equipment supplier minnesota, car wash chemicals minnesota, car wash service and maintenance, fleet wash systems, semi truck wash systems, tunnel wash systems, car wash equipment supplier',
   alternates: { canonical: '/' },
   openGraph: {
-    title: 'Carwash Technologies - Car Wash Equipment, Chemicals & Installation | Minnesota',
-    description: 'Minnesota\'s trusted carwash builder and equipment dealer. Tunnel systems, automatic vehicle washes, semi truck washes, fleet wash, and carwash chemicals across MN, ND, SD, WI.',
+    title: 'Your Midwest Carwash Builder and Maintainer | Carwash Technologies',
+    description: 'Design-build carwash systems, chemical programs, and automatic wash repair across MN, ND, SD, and WI.',
     type: 'website',
     url: 'https://www.carwashtechnologies.com/',
+    images: [
+      {
+        url: 'https://www.carwashtechnologies.com/imgs/HomeHero.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Carwash Technologies professional wash systems',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Carwash Technologies - Car Wash Equipment, Chemicals & Installation | MN',
-    description: 'Minnesota\'s trusted carwash builder and equipment dealer serving MN, ND, SD, and WI. Tunnel systems, truck washes, fleet wash, and chemicals.',
+    title: 'Your Midwest Carwash Builder and Maintainer',
+    description: 'Carwash design-build, chemical supply, and automatic repair services across MN, ND, SD, and WI.',
+    images: ['https://www.carwashtechnologies.com/imgs/HomeHero.webp'],
   },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Can you build a new carwash from planning through installation?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. We provide planning, equipment selection, installation, and startup support for new tunnel, in-bay, fleet, and truck wash facilities across the Midwest.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do you offer automatic car wash repair services?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Our team handles preventive maintenance, emergency service, and automatic car wash repair for a wide range of equipment and pump systems.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do you supply car wash chemicals and ongoing programs?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. We provide chemical supply programs, delivery options, and performance-focused chemistry support for tunnel, in-bay, and fleet operations.',
+      },
+    },
+  ],
 };
 
 export default function Home() {
   return (
     <div className="min-h-screen relative">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
       {/* Clean Tech Hero Section */}
       <HeroSectionNew />
 
@@ -37,6 +82,48 @@ export default function Home() {
 
         {/* Chemical Programs */}
         <ChemicalsSectionNew />
+
+        <section className="bg-white py-14 sm:py-16">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+            <div className="text-center mb-10">
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
+                Midwest Carwash Growth Questions, Answered
+              </h2>
+              <p className="text-base sm:text-lg text-gray-700">
+                Built for owners searching for a reliable car wash builder, chemical partner, and long-term maintenance team.
+              </p>
+            </div>
+
+            <div className="grid gap-6 md:grid-cols-3">
+              <article className="rounded-xl border border-gray-200 p-6 shadow-sm">
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  New Carwash Construction and Installation
+                </h3>
+                <p className="text-sm text-gray-700 leading-relaxed">
+                  From site planning to equipment commissioning, we help investors and operators launch high-performing wash locations.
+                </p>
+              </article>
+
+              <article className="rounded-xl border border-gray-200 p-6 shadow-sm">
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  Automatic Car Wash Repair and Maintenance
+                </h3>
+                <p className="text-sm text-gray-700 leading-relaxed">
+                  Preventive maintenance and fast-response repair service to protect uptime, wash quality, and customer satisfaction.
+                </p>
+              </article>
+
+              <article className="rounded-xl border border-gray-200 p-6 shadow-sm">
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  Chemical Programs That Improve Results
+                </h3>
+                <p className="text-sm text-gray-700 leading-relaxed">
+                  Performance-driven chemistry with flexible supply options for tunnel, in-bay, truck, and fleet wash operations.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
 
         {/* Final Call to Action */}
         <CallToActionNew

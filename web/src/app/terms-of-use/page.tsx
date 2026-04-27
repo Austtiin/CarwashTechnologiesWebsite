@@ -4,6 +4,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Terms of Use | Carwash Technologies',
   description: 'Terms of Use for Carwash Technologies - Terms and conditions for using our website and services.',
+  alternates: { canonical: '/terms-of-use' },
 };
 
 export default function TermsOfUsePage() {

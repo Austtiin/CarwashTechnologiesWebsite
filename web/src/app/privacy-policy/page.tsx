@@ -4,6 +4,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Privacy Policy | Carwash Technologies',
   description: 'Privacy Policy for Carwash Technologies - Learn how we collect, use, and protect your personal information.',
+  alternates: { canonical: '/privacy-policy' },
 };
 
 export default function PrivacyPolicyPage() {

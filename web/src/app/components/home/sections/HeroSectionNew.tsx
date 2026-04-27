@@ -32,21 +32,21 @@ export default function HeroSectionNew() {
           <div className="relative z-10 w-full md:w-5/12 lg:w-1/2 text-left mb-10 md:mb-0 text-gray-900 bg-white/95 md:bg-transparent p-4 sm:p-6 rounded-2xl md:rounded-none md:p-0 md:pr-8">
             {/* Small eyebrow text */}
             <div className="inline-flex items-center gap-2 mb-5 text-xs sm:text-sm font-medium text-gray-600">
-              <div className="w-8 h-[2px] bg-[#f0da11]" />
-              <span>Professional Wash Systems</span>
+              <div className="w-8 h-0.5 bg-[#f0da11]" />
+              <span>Your Midwest Carwash Builder and Maintainer</span>
             </div>
 
             {/* Hero Headline */}
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold text-gray-900 mb-2 leading-tight">
-              Smart Car Wash Systems
+              Build Smarter Car Washes
             </h1>
             <p className="text-2xl sm:text-3xl font-bold text-[#f0da11] mb-4 leading-tight">
-              Built for Growth
+              Build It. Maintain It. Grow It.
             </p>
 
             {/* Subheadline */}
             <p className="text-base sm:text-lg md:text-xl text-slate-900 mb-6 max-w-xl font-normal">
-              Increase uptime, improve wash quality, and scale your operation with confidence.
+              Design-build installation, chemical supply, and automatic car wash repair services for owners across MN, ND, SD, and WI.
             </p>
 
             {/* CTA Buttons */}
@@ -55,17 +55,17 @@ export default function HeroSectionNew() {
                 href="/contact"
                 className="group inline-flex items-center gap-2 bg-[#f0da11] text-black px-6 py-3 font-semibold text-sm sm:text-base rounded-md hover:bg-[#d0b211] transition-all duration-200 hover:-translate-y-0.5 shadow-md hover:shadow-lg"
               >
-                Get a Quote
+                Plan My Carwash Build
                 <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </Link>
 
               <Link 
-                href="/services"
+                href="/service-maintenance"
                 className="group inline-flex items-center gap-2 bg-transparent border-2 border-gray-900 text-gray-900 px-6 sm:px-7 py-3 sm:py-3.5 font-semibold text-sm sm:text-base hover:bg-gray-900 hover:text-white transition-all duration-200"
               >
-                View Solutions
+                Get Repair and Maintenance
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>

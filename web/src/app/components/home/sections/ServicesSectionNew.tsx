@@ -46,12 +46,12 @@ export default function ServicesSectionNew() {
       ),
       title: 'Maintenance & Repairs',
       description: 'Responsive field service, scheduled maintenance, and emergency repairs to protect uptime and revenue.',
-      link: '/consulting'
+      link: '/service-maintenance'
     }
   ];
 
   return (
-    <section className="relative bg-gradient-to-b from-[#f6f6f6] via-gray-100 to-[#f6f6f6] py-16 sm:py-20 overflow-hidden">
+    <section className="relative bg-linear-to-b from-[#f6f6f6] via-gray-100 to-[#f6f6f6] py-16 sm:py-20 overflow-hidden">
       {/* Yellow top border to anchor against the dark hero above */}
       <div className="absolute inset-x-0 top-0 h-1 bg-[#f0da11] z-10" />
 
@@ -93,7 +93,7 @@ export default function ServicesSectionNew() {
             <Link 
               href={service.link}
               key={index}
-              className="group relative bg-white rounded-2xl shadow-[0_18px_50px_-18px_rgba(15,23,42,0.35)] hover:shadow-[0_24px_70px_-20px_rgba(15,23,42,0.55)] transition-all duration-300 hover:-translate-y-2 border border-gray-200/80 overflow-hidden flex flex-col min-h-[320px]"
+              className="group relative bg-white rounded-2xl shadow-[0_18px_50px_-18px_rgba(15,23,42,0.35)] hover:shadow-[0_24px_70px_-20px_rgba(15,23,42,0.55)] transition-all duration-300 hover:-translate-y-2 border border-gray-200/80 overflow-hidden flex flex-col min-h-80"
               style={{
                 animation: `fadeInUp 0.6s ease-out ${index * 0.1}s forwards`,
                 opacity: 0

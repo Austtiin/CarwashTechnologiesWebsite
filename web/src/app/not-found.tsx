@@ -1,4 +1,4 @@
-﻿'use client';
+﻿"use client";
 
 import React from 'react';
 import Link from 'next/link';
@@ -12,7 +12,7 @@ export default function NotFound() {
         {/* Enhanced Background Elements */}
         <div className="absolute inset-0">
           <div className="absolute top-0 left-0 w-96 h-96 bg-linear-to-br from-[#f0da11]/20 to-transparent rounded-full opacity-60 -translate-x-48 -translate-y-48 animate-pulse"></div>
-          <div className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-tl from-[#d0b211]/30 to-transparent rounded-full opacity-50 translate-x-32 translate-y-32 animate-pulse" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute bottom-0 right-0 w-80 h-80 bg-linear-to-tl from-[#d0b211]/30 to-transparent rounded-full opacity-50 translate-x-32 translate-y-32 animate-pulse" style={{ animationDelay: '1s' }}></div>
           <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-linear-to-br from-[#bfb986]/15 to-transparent rounded-full opacity-40 animate-pulse" style={{ animationDelay: '2s' }}></div>
           <div className="absolute top-1/2 left-1/4 w-48 h-48 bg-linear-to-br from-[#f0da11]/10 to-transparent rounded-full opacity-30 animate-pulse" style={{ animationDelay: '3s' }}></div>
         </div>
@@ -63,15 +63,15 @@ export default function NotFound() {
                 Go Home
               </Link>
               
-              <button 
-                onClick={() => window.history.back()}
+              <Link
+                href="/services"
                 className="border-2 border-[#f0da11] text-[#f0da11] px-8 py-4 rounded-xl font-semibold hover:bg-[#f0da11] hover:text-gray-900 transition-all duration-300 inline-flex items-center"
               >
                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                 </svg>
-                Go Back
-              </button>
+                View Services
+              </Link>
             </div>
           </div>
         </div>
@@ -89,7 +89,7 @@ export default function NotFound() {
       </section>
 
       {/* Fun Error Message Section */}
-      <section className="py-16 bg-gradient-to-b from-gray-50 to-white">
+      <section className="py-16 bg-linear-to-b from-gray-50 to-white">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-2xl mx-auto">
             <div className="bg-white rounded-2xl shadow-xl border border-gray-200 p-8">

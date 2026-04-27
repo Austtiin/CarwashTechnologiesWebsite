@@ -7,18 +7,29 @@
       }
     },
     {
+      "route": "/PDFs/*",
+      "headers": {
+        "X-Robots-Tag": "noindex, follow"
+      }
+    },
+    {
       "route": "/api/*",
       "allowedRoles": ["anonymous"]
     }
   ],
-  "navigationFallback": {
-    "rewrite": "/index.html",
-    "exclude": ["/_next/static/*", "/images/*", "/favicon.ico"]
-  },
   "mimeTypes": {
     ".js": "text/javascript",
     ".css": "text/css",
     ".json": "application/json"
+  },
+  "responseOverrides": {
+    "404": {
+      "rewrite": "/404.html",
+      "statusCode": 404,
+      "headers": {
+        "X-Robots-Tag": "noindex, follow"
+      }
+    }
   },
   "globalHeaders": {
     "X-Content-Type-Options": "nosniff",
