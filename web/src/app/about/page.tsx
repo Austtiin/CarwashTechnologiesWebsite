@@ -5,20 +5,20 @@ import GenericServicesGrid from '../components/ui/GenericServicesGrid';
 import CallToActionNew from '../components/ui/CallToActionNew';
 
 export const metadata: Metadata = {
-  title: 'About Carwash Technologies - Carwash Builder & Equipment Dealer | Minnesota',
-  description: "Learn about Carwash Technologies \u2014 Minnesota's trusted carwash builder, equipment dealer, and chemical supplier with 50+ years of combined expertise serving MN, ND, SD, and WI.",
-  keywords: 'about Carwash Technologies, carwash builder Minnesota, car wash equipment dealer MN, carwash company Minnesota, Midwest car wash company, car wash experts Minnesota, vehicle washing company MN, authorized Belanger dealer, authorized PECO dealer, PDQ dealer Minnesota, Sonny\'s dealer MN, Vertech Labs partner, ChemQuest partner, Simoniz authorized dealer, Cat Pumps partner MN, General Pump dealer Minnesota',
+  title: 'About Carwash Technologies | Gas Station, Self-Service & Heavy Duty Carwash Builder',
+  description: "Minnesota's trusted carwash builder, contractor, parts supplier, and equipment dealer specializing in gas station carwashes, self-service bays, heavy duty truck wash, express tunnels, and commercial systems. 50+ years combined expertise serving MN, ND, SD, and WI.",
+  keywords: 'about Carwash Technologies, carwash builder Minnesota, carwash contractor MN, gas station carwash builder, self service carwash parts supplier Minnesota, heavy duty carwash builder, express carwash contractor MN, car wash equipment dealer Minnesota, carwash parts supplier MN, carwash company Minnesota, Midwest carwash company, carwash experts Minnesota, touchless carwash dealer, commercial carwash builder, industrial carwash contractor, authorized Belanger dealer Minnesota, authorized PECO dealer MN, PDQ dealer Minnesota, Sonnys dealer MN, Vertech Labs partner Minnesota, ChemQuest partner MN, Simoniz authorized dealer Minnesota, Cat Pumps dealer MN, General Pump dealer Minnesota, AVW dealer Minnesota',
   alternates: { canonical: '/about' },
   openGraph: {
-    title: 'About Carwash Technologies - Carwash Builder & Equipment Dealer | Minnesota',
-    description: "Minnesota's trusted carwash builder and equipment dealer with 50+ years of combined expertise serving MN, ND, SD, and WI.",
+    title: 'About Carwash Technologies | Gas Station, Self-Service & Heavy Duty Builder',
+    description: "Minnesota's trusted carwash builder specializing in gas station carwashes, self-service parts, heavy duty truck wash, and commercial systems.",
     type: 'website',
     url: 'https://www.carwashtechnologies.com/about',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About Carwash Technologies - Carwash Builder & Equipment Dealer | Minnesota',
-    description: "Minnesota's trusted carwash builder and equipment dealer with 50+ years of combined expertise serving MN, ND, SD, and WI.",
+    title: 'About Carwash Technologies Minnesota',
+    description: 'Carwash builder, contractor, and parts supplier with 50+ years experience in gas station, self-service, and heavy duty systems.',
   },
 };
 

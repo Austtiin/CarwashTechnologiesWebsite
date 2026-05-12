@@ -6,20 +6,20 @@ import CallToActionNew from '../components/ui/CallToActionNew';
 import TrustedChemicalPartners from '../components/chemical/TrustedChemicalPartners';
 
 export const metadata: Metadata = {
-  title: 'Car Wash Chemical Sales Minnesota | Carwash Technologies',
-  description: 'Professional car wash chemicals serving Minnesota, North Dakota, South Dakota, and Wisconsin. High-performance pre-treatment, wash solutions, rinse aids, tire shine, and specialty chemicals from trusted manufacturers. Carwash chemical programs tailored to your operation.',
-  keywords: 'carwash chemicals Minnesota, car wash chemicals MN, carwash chemical supplier Minnesota, vehicle wash chemicals, car wash detergents MN, pre-treatment chemicals, wash solutions Minnesota, carwash chemical programs, car wash soap North Dakota, carwash chemicals South Dakota, car wash chemicals Wisconsin, professional car wash chemicals Midwest, carwash chemicals Midwest, Vertech Labs dealer Minnesota, Vertech Labs car wash chemicals, ChemQuest car wash chemicals, ChemQuest dealer MN, Simoniz car wash chemicals, Simoniz dealer Minnesota, Simoniz authorized dealer',
+  title: 'Car Wash Chemical Sales & Supplier Minnesota | Gas Station, Self-Service, Tunnel',
+  description: 'Professional car wash chemical supplier serving MN, ND, SD, WI. Gas station carwash chemicals, self-service bay chemicals, express tunnel chemistry, touchless solutions, heavy duty truck wash chemicals, fleet wash detergents. High-performance pre-treatment, wash solutions, rinse aids, tire shine, protectants, and complete chemical programs from trusted manufacturers.',
+  keywords: 'carwash chemicals Minnesota, car wash chemical supplier MN, carwash chemistry Minnesota, gas station carwash chemicals, convenience store wash chemicals, self service carwash chemicals Minnesota, self serve bay chemicals MN, express carwash chemicals Minnesota, tunnel wash chemistry MN, touchless carwash chemicals Minnesota, automatic carwash chemicals, in bay automatic chemicals, heavy duty carwash chemicals Minnesota, truck wash chemicals MN, fleet wash detergents Minnesota, semi truck wash chemistry, bus wash chemicals, RV wash solutions, commercial carwash chemicals MN, industrial wash chemistry, car dealership carwash chemicals, municipal fleet wash chemicals, car wash detergents Minnesota, pre treatment chemicals MN, wash solutions Minnesota, rinse aids, drying agents, tire shine, wheel cleaners, protectants, sealants, ceramic coating, carwash soap Minnesota, carwash shampoo MN, polish chemicals, wax solutions, carwash chemical programs Minnesota, chemical delivery service MN, bulk carwash chemicals, concentrated wash chemicals, environmentally friendly carwash chemicals, biodegradable wash solutions, Vertech Labs dealer Minnesota, Vertech Labs chemicals MN, ChemQuest dealer Minnesota, ChemQuest chemicals MN, Simoniz dealer Minnesota, Simoniz authorized dealer MN, Simoniz chemicals Minnesota',
   alternates: { canonical: '/chemical-sales' },
   openGraph: {
-    title: 'Car Wash Chemical Sales Minnesota | Carwash Technologies',
-    description: 'Professional-grade carwash chemicals and programs serving MN, ND, SD, and WI.',
+    title: 'Car Wash Chemical Supplier | Gas Station, Self-Service, Tunnel, Heavy Duty',
+    description: 'Professional car wash chemical supplier: gas station chemicals, self-service bay chemistry, express tunnel solutions, touchless detergents, and truck wash chemistry.',
     type: 'website',
     url: 'https://www.carwashtechnologies.com/chemical-sales',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Car Wash Chemical Sales Minnesota | Carwash Technologies',
-    description: 'Professional-grade carwash chemicals and programs serving MN, ND, SD, and WI.',
+    title: 'Car Wash Chemical Supplier Minnesota',
+    description: 'Complete carwash chemistry for gas stations, self-service, tunnels, touchless, and heavy duty operations. Vertech, ChemQuest, Simoniz dealer.',
   },
 };
 

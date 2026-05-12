@@ -6,13 +6,13 @@ import WhyChooseUsSection from './components/home/sections/WhyChooseUsSection';
 import CallToActionNew from './components/ui/CallToActionNew';
 
 export const metadata: Metadata = {
-  title: 'Your Midwest Carwash Builder and Maintainer | MN, ND, SD, WI',
-  description: 'Carwash Technologies is your Midwest carwash builder and maintainer. We design and install tunnel and automatic wash systems, supply chemicals, and provide automatic car wash repair across MN, ND, SD, and WI.',
-  keywords: 'midwest carwash builder, car wash builder minnesota, car dealership car wash installation, automated car wash machine minnesota, automatic car wash repair, automatic car wash repair services, car wash automation equipment supplier minnesota, car wash chemicals minnesota, car wash service and maintenance, fleet wash systems, semi truck wash systems, tunnel wash systems, car wash equipment supplier',
+  title: 'Midwest Carwash Builder, Parts & Contractor | Gas Station, Self-Service, Heavy Duty',
+  description: 'Leading Midwest carwash builder and contractor specializing in gas station carwashes, self-service carwash parts, heavy duty truck wash systems, express tunnel builder, car dealership installations, touchless systems, and automatic carwash repair across MN, ND, SD, WI.',
+  keywords: 'midwest carwash builder, gas station carwash builder Minnesota, self service carwash parts MN, heavy duty carwash builder, carwash contractor Minnesota, express carwash builder, car dealership carwash installation, touchless carwash systems Minnesota, self serve car wash builder MN, convenience store carwash installation, automatic carwash builder Minnesota, tunnel carwash contractor, in bay automatic builder, commercial carwash builder MN, industrial carwash contractor Minnesota, municipal carwash builder, fleet wash contractor, semi truck wash builder Minnesota, bus wash systems builder, RV wash equipment installation, car wash construction Minnesota, carwash design build, turnkey carwash contractor, carwash equipment parts supplier MN, carwash parts distributor Minnesota, automatic car wash repair Minnesota, carwash modernization services, carwash retrofit contractor, 24 hour carwash service, car wash chemicals minnesota, carwash maintenance contractor MN, carwash technician services, vehicle wash equipment supplier, automated car wash machine minnesota, car wash automation equipment, tunnel wash systems, track wash installation, carwash site development',
   alternates: { canonical: '/' },
   openGraph: {
-    title: 'Your Midwest Carwash Builder and Maintainer | Carwash Technologies',
-    description: 'Design-build carwash systems, chemical programs, and automatic wash repair across MN, ND, SD, and WI.',
+    title: 'Midwest Carwash Builder | Gas Station, Self-Service, Heavy Duty Contractor',
+    description: 'Leading Midwest carwash builder specializing in gas station carwashes, self-service parts, heavy duty truck wash, express tunnels, and automatic repair across MN, ND, SD, WI.',
     type: 'website',
     url: 'https://www.carwashtechnologies.com/',
     images: [
@@ -26,8 +26,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Your Midwest Carwash Builder and Maintainer',
-    description: 'Carwash design-build, chemical supply, and automatic repair services across MN, ND, SD, and WI.',
+    title: 'Midwest Carwash Builder | Gas Station, Self-Service, Heavy Duty',
+    description: 'Gas station carwash builder, self-service parts supplier, heavy duty truck wash contractor, and express tunnel builder serving MN, ND, SD, WI.',
     images: ['https://www.carwashtechnologies.com/imgs/HomeHero.webp'],
   },
 };
@@ -38,26 +38,58 @@ const faqSchema = {
   mainEntity: [
     {
       '@type': 'Question',
+      name: 'Do you build gas station and convenience store carwashes?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. We specialize in gas station carwash construction and convenience store wash installations across Minnesota, North Dakota, South Dakota, and Wisconsin. We handle design, equipment selection, installation, and startup for express tunnels, touchless systems, and in-bay automatics.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can you supply self-service carwash parts and equipment?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. We are a full-service self-service carwash parts supplier providing bays, equipment, pumps, motors, nozzles, hoses, guns, and all accessories needed for self-serve operations. We also build new self-service carwash facilities.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do you build heavy duty truck wash systems?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. We build and install heavy duty truck wash systems for semi trucks, buses, RVs, municipal fleets, and heavy equipment. Our solutions include touchless gantry systems, friction systems, and high-pressure wash equipment designed for commercial and industrial applications.',
+      },
+    },
+    {
+      '@type': 'Question',
       name: 'Can you build a new carwash from planning through installation?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. We provide planning, equipment selection, installation, and startup support for new tunnel, in-bay, fleet, and truck wash facilities across the Midwest.',
+        text: 'Yes. We provide turnkey carwash builder services including site planning, design, equipment selection, construction, installation, and startup support for new tunnel, express, in-bay, fleet, and truck wash facilities across the Midwest.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Do you offer automatic car wash repair services?',
+      name: 'Do you offer 24/7 automatic car wash repair services?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. Our team handles preventive maintenance, emergency service, and automatic car wash repair for a wide range of equipment and pump systems.',
+        text: 'Yes. Our team provides 24/7 emergency service, preventive maintenance, and automatic car wash repair for all equipment types and major brands. We stock parts and have certified technicians throughout Minnesota, North Dakota, South Dakota, and Wisconsin.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Do you supply car wash chemicals and ongoing programs?',
+      name: 'Do you supply car wash chemicals for all wash types?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. We provide chemical supply programs, delivery options, and performance-focused chemistry support for tunnel, in-bay, and fleet operations.',
+        text: 'Yes. We supply professional carwash chemicals and complete programs for gas stations, express tunnels, touchless systems, self-service bays, truck washes, and fleet operations. We offer delivery, technical support, and chemistry from Vertech Labs, ChemQuest, and Simoniz.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do you build car dealership and commercial carwashes?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. We build and install carwash systems for car dealerships, commercial operations, municipal facilities, and industrial applications. We provide customized solutions including tunnel systems, touchless gantries, and reclaim systems.',
       },
     },
   ],

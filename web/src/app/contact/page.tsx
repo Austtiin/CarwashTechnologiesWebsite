@@ -6,20 +6,20 @@ import CallToActionNew from '../components/ui/CallToActionNew';
 import { contactOptions } from './data/contactOptions';
 
 export const metadata: Metadata = {
-  title: 'Contact Us | Carwash Technologies - MN, ND, SD, WI',
-  description: 'Contact Carwash Technologies in Minnesota for car wash equipment, chemicals, installation, and consulting. Reach us for new wash systems, carwash construction, semi truck wash projects, fleet wash solutions, and vehicle wash service across MN, ND, SD, and WI.',
-  keywords: 'contact Carwash Technologies, carwash company Minnesota, car wash equipment quote MN, carwash builder contact, car wash installation Minnesota, carwash chemicals MN quote, semi truck wash quote, fleet wash contact, vehicle wash consulting Minnesota, car wash service request MN',
+  title: 'Contact Carwash Builder & Contractor | Gas Station, Self-Service, Heavy Duty',
+  description: 'Contact Carwash Technologies for gas station carwash construction quotes, self-service carwash parts, heavy duty truck wash systems, express tunnel installation, car dealership wash systems, equipment sales, chemicals, service, and consulting across MN, ND, SD, and WI.',
+  keywords: 'contact carwash builder Minnesota, carwash contractor quote MN, gas station carwash quote Minnesota, convenience store carwash contact, self service carwash parts quote MN, heavy duty carwash quote Minnesota, truck wash builder contact, express carwash contractor quote, car dealership carwash contact MN, touchless carwash quote Minnesota, carwash construction quote MN, car wash equipment quote Minnesota, carwash parts quote MN, carwash chemicals quote Minnesota, carwash installation quote, carwash service request MN, carwash repair contact Minnesota, emergency carwash service, carwash consulting contact, carwash builder contact Minnesota',
   alternates: { canonical: '/contact' },
   openGraph: {
-    title: 'Contact Us | Carwash Technologies - MN, ND, SD, WI',
-    description: 'Contact our specialists in MN for car wash equipment, chemicals, construction, and consulting.',
+    title: 'Contact Carwash Builder & Contractor Minnesota',
+    description: 'Contact us for gas station carwash quotes, self-service parts, heavy duty truck wash systems, express tunnel installation, and all carwash services.',
     type: 'website',
     url: 'https://www.carwashtechnologies.com/contact',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Contact Us | Carwash Technologies - MN, ND, SD, WI',
-    description: 'Contact our specialists in MN for car wash equipment, chemicals, construction, and consulting.',
+    title: 'Contact Carwash Technologies Minnesota',
+    description: 'Get quotes for gas station carwash construction, self-service parts, heavy duty systems, equipment, chemicals, service, and consulting.',
   },
 };
 

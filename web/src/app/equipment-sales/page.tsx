@@ -6,20 +6,20 @@ import GenericServicesGrid from '../components/ui/GenericServicesGrid';
 import CallToActionNew from '../components/ui/CallToActionNew';
 
 export const metadata: Metadata = {
-  title: 'Car Wash Equipment Sales Minnesota | Carwash Technologies',
-  description: 'Car wash and vehicle washing equipment sales in Minnesota, North Dakota, South Dakota, and Wisconsin. Tunnel systems, automatic vehicle washes, in-bay automatics, self-serve bays, semi truck wash systems, fleet wash equipment, and track wash conveyors from industry-leading manufacturers.',
-  keywords: 'car wash equipment Minnesota, carwash equipment MN, vehicle washing equipment, auto vehicle washing equipment, tunnel wash systems Minnesota, track wash systems, semi truck wash equipment, fleet wash equipment MN, automatic vehicle washes Minnesota, in-bay automatic wash, self-serve car wash equipment, carwash equipment North Dakota, carwash equipment South Dakota, best carwash equipment, new car wash equipment, Belanger car wash equipment, Belanger dealer Minnesota, PECO car wash systems, PECO dealer MN, PDQ car wash equipment, PDQ dealer Minnesota, Sonny\'s car wash equipment, Sonny\'s dealer MN, AVW automatic vehicle wash, Cat Pumps car wash, Cat Pumps dealer Minnesota, General Pump car wash equipment, General Pump dealer MN, carwash equipment Midwest',
+  title: 'Car Wash Equipment & Parts Sales Minnesota | Gas Station, Self-Service, Heavy Duty',
+  description: 'Comprehensive car wash equipment and parts sales in MN, ND, SD, WI. Gas station carwash systems, self-service carwash parts, heavy duty truck wash equipment, touchless systems, express tunnel equipment, in-bay automatics, conveyor tunnel systems, carwash parts warehouse, pumps, motors, and accessories from industry-leading manufacturers.',
+  keywords: 'car wash equipment Minnesota, carwash parts supplier MN, self service carwash parts Minnesota, gas station carwash equipment, heavy duty carwash equipment, express carwash equipment MN, touchless carwash systems Minnesota, carwash equipment parts supplier, car wash parts distributor MN, carwash parts warehouse Minnesota, tunnel wash equipment, conveyor carwash systems, in bay automatic equipment, automatic carwash machines, self serve bay equipment, semi truck wash equipment MN, fleet wash equipment Minnesota, bus wash systems, RV wash equipment, heavy equipment wash, municipal carwash equipment, commercial carwash equipment, industrial wash systems, car dealership carwash equipment, convenience store carwash systems, retrofit carwash equipment, carwash modernization equipment, carwash pumps Minnesota, Cat Pumps dealer MN, Cat Pumps parts Minnesota, General Pump dealer MN, General Pump parts Minnesota, carwash motors, carwash nozzles, spray arches, carwash dryers, water reclaim systems, Belanger dealer Minnesota, Belanger equipment MN, PECO dealer Minnesota, PECO systems MN, PDQ dealer Minnesota, PDQ equipment MN, Sonny\'s dealer Minnesota, Sonnys equipment MN, AVW equipment Minnesota, carwash conveyors, track systems, gantry systems, touchfree equipment, friction equipment, carwash accessories MN',
   alternates: { canonical: '/equipment-sales' },
   openGraph: {
-    title: 'Car Wash Equipment Sales Minnesota | Carwash Technologies',
-    description: 'Vehicle washing equipment sales in MN, ND, SD, and WI — tunnel systems, automatic washes, semi truck wash, fleet wash, and more.',
+    title: 'Car Wash Equipment & Parts | Gas Station, Self-Service, Heavy Duty Systems',
+    description: 'Comprehensive car wash equipment and parts: gas station carwash systems, self-service parts, heavy duty truck wash, touchless systems, tunnels, and all accessories.',
     type: 'website',
     url: 'https://www.carwashtechnologies.com/equipment-sales',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Car Wash Equipment Sales Minnesota | Carwash Technologies',
-    description: 'Vehicle washing equipment sales in MN, ND, SD, and WI — tunnel systems, automatic washes, semi truck wash, fleet wash, and more.',
+    title: 'Car Wash Equipment & Parts | Gas Station, Self-Service, Heavy Duty',
+    description: 'Gas station carwash equipment, self-service parts, heavy duty truck wash systems, and complete carwash parts warehouse in MN, ND, SD, WI.',
   },
 };
 

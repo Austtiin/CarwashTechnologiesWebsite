@@ -5,20 +5,20 @@ import GenericServicesGrid from '../components/ui/GenericServicesGrid';
 import CallToActionNew from '../components/ui/CallToActionNew';
 
 export const metadata: Metadata = {
-  title: 'Car Wash Installation & Construction Minnesota | Carwash Technologies',
-  description: 'Expert carwash builder and installation contractor serving Minnesota, North Dakota, South Dakota, and Wisconsin. New car wash construction, tunnel system installation, automatic vehicle wash setup, semi truck wash builders, fleet wash installation, and full project management.',
-  keywords: 'carwash builder Minnesota, car wash construction MN, car wash installation Minnesota, carwash contractor MN, semi truck wash builder, fleet wash installation, tunnel wash construction, automatic vehicle wash installation, new car wash construction North Dakota, car wash builder Wisconsin, carwash installation services, car wash setup Minnesota',
+  title: 'Carwash Builder & Contractor Minnesota | Gas Station, Self-Service, Heavy Duty Installation',
+  description: 'Premier carwash builder and contractor serving MN, ND, SD, WI. Gas station carwash construction, self-service carwash builder, heavy duty truck wash installation, express tunnel builder, touchless carwash installation, car dealership wash systems, convenience store carwash contractor, turnkey design-build services, and complete project management.',
+  keywords: 'carwash builder Minnesota, carwash contractor MN, gas station carwash builder Minnesota, gas station carwash contractor, gas station carwash construction MN, self service carwash builder Minnesota, self serve carwash contractor MN, self service bay construction, heavy duty carwash builder, heavy duty wash contractor Minnesota, truck wash builder MN, express carwash builder Minnesota, express tunnel contractor, touchless carwash installation MN, touchless system builder, car dealership carwash builder Minnesota, car dealership wash installation, convenience store carwash builder MN, c-store carwash contractor, commercial carwash builder Minnesota, industrial carwash contractor MN, municipal carwash builder, fleet wash builder Minnesota, fleet wash contractor MN, tunnel carwash builder Minnesota, tunnel wash contractor MN, conveyor tunnel installation, automatic carwash builder Minnesota, in bay automatic contractor, carwash construction Minnesota, car wash construction contractor MN, new carwash construction, turnkey carwash builder Minnesota, design build carwash contractor, carwash site development MN, carwash civil construction, carwash building contractor, carwash equipment installation Minnesota, semi truck wash builder MN, truck wash contractor Minnesota, bus wash builder, RV wash installation, heavy equipment wash builder, carwash modernization contractor, carwash retrofit builder Minnesota, carwash renovation contractor, carwash upgrade installation MN',
   alternates: { canonical: '/installation-setup' },
   openGraph: {
-    title: 'Car Wash Installation & Construction Minnesota | Carwash Technologies',
-    description: 'Carwash builder and installation contractor in MN, ND, SD, WI — new construction, tunnel, truck wash, and fleet wash installation.',
+    title: 'Carwash Builder & Contractor | Gas Station, Self-Service, Heavy Duty',
+    description: 'Premier carwash builder: gas station construction, self-service installation, heavy duty truck wash, express tunnels, touchless systems, and turnkey design-build.',
     type: 'website',
     url: 'https://www.carwashtechnologies.com/installation-setup',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Car Wash Installation & Construction Minnesota | Carwash Technologies',
-    description: 'Carwash builder and installation contractor in MN, ND, SD, WI — new construction, tunnel, truck wash, and fleet wash installation.',
+    title: 'Carwash Builder & Contractor Minnesota',
+    description: 'Gas station carwash builder, self-service contractor, heavy duty truck wash installation, and complete turnkey construction in MN, ND, SD, WI.',
   },
 };
 

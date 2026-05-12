@@ -31,11 +31,11 @@ const customFont = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.carwashtechnologies.com'),
   title: {
-    default: 'Carwash Technologies | Midwest Carwash Builder, Chemicals, and Repair',
+    default: 'Carwash Technologies | Midwest Carwash Builder, Chemicals, Parts & Repair',
     template: '%s | Carwash Technologies',
   },
-  description: 'Carwash Technologies helps owners build, maintain, and grow profitable carwash sites across Minnesota, North Dakota, South Dakota, and Wisconsin with equipment, installation, chemicals, and repair services.',
-  keywords: "car wash equipment Minnesota, carwash chemicals MN, carwash builder Minnesota, vehicle washing equipment, car wash installation MN, fleet wash systems, semi truck wash, tunnel wash systems, track wash, auto vehicle washing, car wash construction Minnesota, carwash equipment MN, Belanger dealer Minnesota, PECO car wash MN, PDQ car wash equipment, Sonny's car wash equipment, Vertech Labs chemicals, ChemQuest car wash, Simoniz car wash chemicals, Cat Pumps repair MN, General Pump service Minnesota, carwash chemicals Midwest, carwash equipment Midwest",
+  description: 'Carwash Technologies helps owners build, maintain, and grow profitable carwash sites across Minnesota, North Dakota, South Dakota, and Wisconsin. Gas station carwash builder, self-service carwash parts, heavy duty carwash contractor, equipment sales, chemicals, installation, and repair services.',
+  keywords: "gas station carwash builder Minnesota, self service carwash parts MN, heavy duty carwash builder, car wash equipment Minnesota, carwash contractor Minnesota, carwash builder MN, car dealership carwash installation, touchless carwash systems, express carwash builder Minnesota, self serve car wash parts supplier, carwash equipment parts MN, automatic carwash builder, tunnel carwash contractor Minnesota, in bay automatic carwash builder, carwash modernization Minnesota, carwash retrofit services, commercial carwash builder MN, industrial carwash contractor, municipal fleet wash builder, convenience store carwash installation, car wash construction Minnesota, vehicle washing equipment, fleet wash systems, semi truck wash builder, truck wash contractor Minnesota, bus wash systems, RV wash equipment, heavy equipment wash systems, carwash site planning, carwash design build Minnesota, turnkey carwash installation, carwash equipment distributor MN, carwash parts warehouse, pump parts supplier Minnesota, Cat Pumps parts MN, General Pump parts Minnesota, car wash chemical supplier, Belanger dealer Minnesota, PECO dealer MN, PDQ dealer Minnesota, Sonny's dealer MN, Vertech Labs chemicals, ChemQuest dealer, Simoniz dealer Minnesota, automatic carwash repair Minnesota, carwash maintenance contractor, 24/7 carwash service MN, carwash technician Minnesota, carwash equipment North Dakota, carwash builder South Dakota, carwash contractor Wisconsin, carwash services Midwest",
 };
 
 const organizationSchema = {
@@ -55,11 +55,26 @@ const organizationSchema = {
   },
   areaServed: ['Minnesota', 'North Dakota', 'South Dakota', 'Wisconsin'],
   serviceType: [
+    'Gas station carwash builder and contractor',
+    'Self-service carwash parts and installation',
+    'Heavy duty truck wash construction',
+    'Express carwash tunnel builder',
+    'Touchless carwash systems',
+    'Car dealership carwash installation',
+    'Convenience store carwash builder',
+    'Commercial and industrial carwash contractor',
+    'Municipal fleet wash systems',
     'Carwash construction and installation',
-    'Car wash equipment sales',
-    'Car wash chemical supply',
+    'Turnkey carwash design-build services',
+    'Car wash equipment and parts sales',
+    'Car wash chemical supply and programs',
     'Automatic car wash repair and maintenance',
-    'Fleet and truck wash systems',
+    'Emergency carwash service',
+    'Carwash modernization and retrofit',
+    'Fleet and semi truck wash systems',
+    'In-bay automatic carwash systems',
+    'Conveyor tunnel carwash systems',
+    'Carwash parts warehouse and distribution',
   ],
 };
 

@@ -5,20 +5,20 @@ import GenericServicesGrid from '@/app/components/ui/GenericServicesGrid';
 import CallToActionNew from '@/app/components/ui/CallToActionNew';
 
 export const metadata: Metadata = {
-  title: 'Car Wash Consulting Services Minnesota | Carwash Technologies',
-  description: 'Expert carwash consulting in Minnesota, North Dakota, South Dakota, and Wisconsin. New car wash planning, site development, carwash builder guidance, semi truck wash design, fleet wash planning, equipment selection, operational optimization, and business strategy. 50+ years combined industry experience.',
-  keywords: 'car wash consulting Minnesota, carwash consultant MN, carwash builder consulting, new car wash planning MN, semi truck wash design, fleet wash planning Minnesota, car wash site development, car wash business strategy, vehicle wash consulting Minnesota, carwash construction consulting, tunnel wash planning, car wash consulting North Dakota, car wash consulting Wisconsin',
+  title: 'Car Wash Consulting Services | Gas Station, Self-Service, Heavy Duty Planning',
+  description: 'Expert carwash consulting serving MN, ND, SD, WI. Gas station carwash planning, self-service bay design, heavy duty truck wash consulting, express tunnel layout, car dealership wash planning, convenience store carwash consulting, site development, equipment selection, ROI analysis, and operational optimization. 50+ years combined industry experience.',
+  keywords: 'car wash consulting Minnesota, carwash consultant MN, gas station carwash consulting, gas station wash planning Minnesota, convenience store carwash consultant, c-store wash design MN, self service carwash consulting Minnesota, self serve bay planning MN, express carwash consulting Minnesota, express tunnel planning, heavy duty carwash consulting, truck wash design consultant Minnesota, car dealership carwash planning MN, touchless carwash consulting, commercial carwash consultant Minnesota, industrial wash planning, municipal carwash consulting, fleet wash consulting MN, carwash builder consulting Minnesota, new carwash planning MN, carwash site development Minnesota, carwash feasibility study, carwash ROI analysis, carwash business plan consulting, equipment selection consulting, carwash layout design, carwash construction consulting MN, turnkey carwash planning, carwash operational consulting Minnesota, carwash profitability consulting',
   alternates: { canonical: '/consulting' },
   openGraph: {
-    title: 'Car Wash Consulting Services Minnesota | Carwash Technologies',
-    description: 'Expert carwash consulting in MN, ND, SD, WI — new wash planning, carwash builder guidance, and semi truck wash design with 50+ years of experience.',
+    title: 'Car Wash Consulting | Gas Station, Self-Service, Heavy Duty Planning',
+    description: 'Expert carwash consulting: gas station carwash planning, self-service design, heavy duty truck wash, express tunnel layout, ROI analysis, and site development.',
     type: 'website',
     url: 'https://www.carwashtechnologies.com/consulting',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Car Wash Consulting Services Minnesota | Carwash Technologies',
-    description: 'Expert carwash consulting in MN, ND, SD, WI — new wash planning, carwash builder guidance, and semi truck wash design with 50+ years of experience.',
+    title: 'Car Wash Consulting Services Minnesota',
+    description: 'Gas station carwash planning, self-service consulting, heavy duty truck wash design, and complete site development consulting with 50+ years experience.',
   },
 };
 

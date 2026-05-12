@@ -5,20 +5,20 @@ import GenericServicesGrid from '../components/ui/GenericServicesGrid';
 import CallToActionNew from '../components/ui/CallToActionNew';
 
 export const metadata: Metadata = {
-  title: 'Car Wash Service & Maintenance Minnesota | Carwash Technologies',
-  description: 'Professional car wash equipment service and maintenance in Minnesota, North Dakota, South Dakota, and Wisconsin. Emergency repair, preventive maintenance, certified technicians for tunnel systems, automatic washes, semi truck wash systems, and fleet wash equipment.',
-  keywords: 'car wash service Minnesota, carwash maintenance MN, car wash equipment repair Minnesota, semi truck wash service, fleet wash maintenance, tunnel wash service MN, automatic vehicle wash maintenance, emergency car wash repair Minnesota, car wash technician MN, preventive maintenance carwash, car wash service North Dakota, car wash service Wisconsin, Cat Pumps repair Minnesota, Cat Pumps service MN, Cat Pumps mechanics Minnesota, General Pump repair MN, General Pump service Minnesota, Belanger service MN, PDQ service Minnesota, PECO service MN, Sonny\'s service Minnesota, car wash pump repair Minnesota',
+  title: 'Car Wash Service, Repair & Parts Minnesota | 24/7 Emergency Service',
+  description: 'Professional car wash equipment service, repair, and parts in MN, ND, SD, WI. 24/7 emergency service, preventive maintenance, carwash parts supplier, certified technicians for gas station carwashes, self-service bays, express tunnels, automatic systems, truck wash, and all major brands.',
+  keywords: 'car wash service Minnesota, carwash repair MN, carwash maintenance Minnesota, carwash parts supplier MN, 24 hour carwash service Minnesota, emergency carwash repair MN, carwash technician Minnesota, carwash mechanic MN, gas station carwash service, self service carwash repair Minnesota, self serve bay maintenance MN, express carwash service Minnesota, tunnel carwash maintenance MN, automatic carwash repair Minnesota, touchless carwash service, in bay automatic repair MN, truck wash service Minnesota, fleet wash maintenance MN, heavy duty carwash repair, commercial carwash service Minnesota, industrial carwash maintenance, car dealership carwash service MN, preventive maintenance carwash Minnesota, carwash equipment repair MN, carwash parts warehouse Minnesota, carwash parts distributor MN, pump repair Minnesota, Cat Pumps repair MN, Cat Pumps service Minnesota, Cat Pumps parts MN, General Pump repair Minnesota, General Pump service MN, General Pump parts Minnesota, carwash pump repair MN, carwash motor repair Minnesota, carwash conveyor service, carwash gantry repair MN, Belanger service Minnesota, Belanger repair MN, PDQ service Minnesota, PDQ repair MN, PECO service Minnesota, PECO repair MN, Sonnys service Minnesota, Sonnys repair MN, AVW service Minnesota, carwash troubleshooting MN, carwash diagnostics Minnesota, carwash modernization service',
   alternates: { canonical: '/service-maintenance' },
   openGraph: {
-    title: 'Car Wash Service & Maintenance Minnesota | Carwash Technologies',
-    description: 'Professional car wash equipment service and maintenance with emergency support in MN, ND, SD, WI.',
+    title: 'Car Wash Service, Repair & Parts | 24/7 Emergency Service',
+    description: 'Professional car wash service, repair, and parts warehouse. 24/7 emergency service for gas station, self-service, express tunnel, and all carwash systems.',
     type: 'website',
     url: 'https://www.carwashtechnologies.com/service-maintenance',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Car Wash Service & Maintenance Minnesota | Carwash Technologies',
-    description: 'Professional car wash equipment service and maintenance with emergency support in MN, ND, SD, WI.',
+    title: 'Car Wash Service, Repair & Parts | 24/7 Emergency',
+    description: '24/7 carwash repair and parts supplier for all systems. Emergency service, preventive maintenance, and certified technicians in MN, ND, SD, WI.',
   },
 };
 

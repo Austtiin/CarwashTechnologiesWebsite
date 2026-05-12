@@ -5,20 +5,20 @@ import CallToActionNew from '../components/ui/CallToActionNew';
 import WhoWeServeSectionNew from '../components/home/sections/WhoWeServeSectionNew';
 
 export const metadata: Metadata = {
-  title: 'Types of Vehicle Washes Minnesota | Tunnel, Truck & Fleet Wash Systems',
-  description: 'Explore tunnel washes, track wash conveyors, automatic vehicle washes, semi truck wash systems, fleet wash, parts washers, and large commercial washes. Carwash Technologies serves MN, ND, SD, and WI with the right wash system for your operation.',
-  keywords: 'types of car washes, tunnel wash systems Minnesota, track wash MN, conveyor car wash, semi truck wash systems, fleet wash Minnesota, automatic vehicle washes, commercial vehicle wash MN, parts washer systems, high throughput tunnel wash, auto dealership car wash, large vehicle wash, fleet washing equipment',
+  title: 'Types of Car Washes | Gas Station, Self-Service, Express Tunnel, Heavy Duty Systems',
+  description: 'Complete guide to carwash types: gas station express tunnels, self-service bays, touchless automatics, in-bay systems, heavy duty truck wash, fleet wash, conveyor tunnels, and commercial wash systems. Find the right wash solution for your operation in MN, ND, SD, WI.',
+  keywords: 'types of car washes, gas station carwash types, convenience store wash systems, self service carwash types Minnesota, self serve bay systems, express carwash tunnel, express tunnel wash, touchless carwash systems, in bay automatic carwash, automatic vehicle washes, conveyor tunnel carwash, track wash systems Minnesota, heavy duty truck wash systems, semi truck wash types, fleet wash systems MN, bus wash systems, RV wash equipment, municipal carwash systems, commercial carwash types Minnesota, industrial wash systems, car dealership carwash types, friction carwash systems, gantry wash systems, rollover wash systems, drive through carwash, full service carwash, touchfree carwash, soft touch carwash, high pressure wash systems, carwash equipment types Minnesota',
   alternates: { canonical: '/wash-types' },
   openGraph: {
-    title: 'Types of Vehicle Washes Minnesota | Tunnel, Truck & Fleet Wash Systems',
-    description: 'Compare tunnel, track wash, automatic, fleet, semi truck, and parts wash systems in MN, ND, SD, and WI.',
+    title: 'Types of Car Washes | Gas Station, Self-Service, Express, Heavy Duty',
+    description: 'Complete guide to carwash types: gas station express tunnels, self-service bays, touchless systems, heavy duty truck wash, and commercial systems.',
     type: 'website',
     url: 'https://www.carwashtechnologies.com/wash-types',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Types of Vehicle Washes Minnesota | Tunnel, Truck & Fleet Wash Systems',
-    description: 'Compare tunnel, track wash, automatic, fleet, semi truck, and parts wash systems in MN, ND, SD, and WI.',
+    title: 'Types of Car Washes Guide',
+    description: 'Compare gas station express tunnels, self-service bays, touchless automatics, heavy duty truck wash, and all carwash system types.',
   },
 };
 
