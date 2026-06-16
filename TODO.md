@@ -31,7 +31,7 @@ Stack reference: Next.js 16 (App Router) · React 19 · Tailwind 4 · accent `#f
 ### Careers resume submission (DECISION: email attachment via backend)
 - [ ] Add multipart/form-data endpoint (e.g. `/api/careers`) — current API is JSON-only
 - [ ] `EmailService.cs`: support file attachment; email application + resume to office inbox
-- [ ] Wire `CareersForm` submit — currently STUBBED with a notice + `TODO(backend)` comment ([CareersForm.tsx](web/src/app/components/careers/CareersForm.tsx)); payload ready: `{ name, email, phone, position, message, interests, hasLicense, acknowledged, resume }`
+- [x] **Interim**: `CareersForm` now submits text-based fields to `/api/contact` with `contactType:'careers'`; resume is optional (applicant told to email it to `careers@carwashtechnologies.com`). Replace with dedicated endpoint once backend supports file uploads. ([CareersForm.tsx](web/src/app/components/careers/CareersForm.tsx))
 - [ ] Server-side validation: file type/size, required license + acknowledgment, honeypot
 - [ ] Decide resume destination inbox / email (placeholder copy says `careers@carwashtechnologies.com`)
 

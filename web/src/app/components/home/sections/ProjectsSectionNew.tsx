@@ -8,27 +8,27 @@ import Image from 'next/image';
 export default function ProjectsSectionNew() {
   const projects = [
     {
-      title: 'SuperWash Express',
-      location: 'Dallas, TX',
+      title: "World's Longest Carwash",
+      location: 'Minnesota',
       type: 'Express Tunnel',
-      description: 'Complete 120ft express tunnel installation with state-of-the-art payment systems and customer management software.',
-      image: '/images/projects/superwash.jpg',
+      description: "A record-setting express tunnel build currently underway — our most ambitious project to date. Details coming soon.",
+      image: '/imgs/WLC/4763be2a-a176-492d-a14b-948bd849b563.webp',
       stats: [
-        { label: 'Bays', value: '1 Tunnel' },
-        { label: 'Timeline', value: '8 weeks' },
+        { label: 'Type', value: 'Express Tunnel' },
+        { label: 'Status', value: 'Under Construction' },
         { label: 'Equipment', value: 'PDQ' }
       ]
     },
     {
-      title: 'Quick Clean Auto Spa',
-      location: 'Austin, TX',
-      type: 'In-Bay Automatic',
-      description: 'Modern in-bay automatic system with touchless technology and advanced chemical delivery.',
-      image: '/images/projects/quickclean.jpg',
+      title: 'Express Tunnel Installation',
+      location: 'Midwest',
+      type: 'Express Tunnel',
+      description: 'Full-build express tunnel with high-throughput Belanger conveyor system, modern payment integration, and site utilities.',
+      image: '/imgs/BelangerTunnel.webp',
       stats: [
-        { label: 'Bays', value: '3 Auto' },
-        { label: 'Timeline', value: '6 weeks' },
-        { label: 'Equipment', value: 'PECO' }
+        { label: 'Type', value: 'Express Tunnel' },
+        { label: 'Equipment', value: 'Belanger' },
+        { label: 'Service', value: 'Full Install' }
       ]
     },
     {
@@ -36,7 +36,7 @@ export default function ProjectsSectionNew() {
       location: 'Forest Lake, MN',
       type: 'Self-Serve & Automatic',
       description: 'Five Bay, featuring three car washes and two self service systems with exterior vacuums.',
-      image: '/imgs/SudzFL/IMG_20260101_213851.webp',
+      image: '/imgs/IMG_20260313_101859.webp',
       stats: [
         { label: 'Bays', value: '5 Total (3 Wash + 2 Self Serve)' },
         { label: 'Timeline', value: '6 weeks' },
