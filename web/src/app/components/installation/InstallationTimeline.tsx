@@ -36,7 +36,7 @@ export default function InstallationTimeline({ timeline }: InstallationTimelineP
                   <div className="w-16 h-16 bg-[#f0da11] rounded-full flex items-center justify-center relative z-10">
                     <span className="text-gray-900 font-bold">{index + 1}</span>
                   </div>
-                  <div className="ml-8 bg-white p-6 rounded-xl shadow-lg border border-gray-200 flex-1">
+                  <div className="ml-8 bg-white p-6 shadow-lg border border-gray-200 border-l-4 border-l-[#f0da11] flex-1">
                     <h3 className="text-xl font-bold text-gray-900 mb-2">Week {item.week}: {item.title}</h3>
                     <p className="text-gray-600 mb-4">{item.description}</p>
                     <div className="text-sm text-gray-500">Duration: {item.duration}</div>

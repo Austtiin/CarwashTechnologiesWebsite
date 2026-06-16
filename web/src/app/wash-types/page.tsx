@@ -82,7 +82,7 @@ export default function WashTypesPage() {
         compact={true}
       />
 
-      <section className="relative bg-[#f6f6f6] py-16 sm:py-20 overflow-hidden">
+      <section className="relative bg-slate-50 py-16 sm:py-20 overflow-hidden">
         <div className="absolute -top-16 -left-10 w-48 h-48 rounded-full bg-[#f0da11]/20 blur-3xl"></div>
         <div className="absolute -bottom-20 -right-12 w-56 h-56 rounded-full bg-blue-200/30 blur-3xl"></div>
 
@@ -105,10 +105,10 @@ export default function WashTypesPage() {
             {washTypes.map((type) => (
               <li
                 key={type.title}
-                className="group rounded-2xl bg-white/90 backdrop-blur p-6 sm:p-7 border border-gray-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                className="group bg-white/90 backdrop-blur p-6 sm:p-7 border border-gray-200 border-t-4 border-t-[#f0da11] shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
               >
                 <div className="flex items-start gap-4 mb-4">
-                  <div className="w-11 h-11 rounded-xl bg-linear-to-br from-[#f0da11] to-[#d4c109] flex items-center justify-center shrink-0">
+                  <div className="w-11 h-11 bg-[#f0da11] flex items-center justify-center shrink-0">
                     <svg className="w-5 h-5 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d={type.icon} />
                     </svg>

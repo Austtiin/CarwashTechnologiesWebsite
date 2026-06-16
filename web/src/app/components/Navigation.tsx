@@ -128,10 +128,10 @@ const Navbar = () => {
             }`}>
               About
             </Link>
-            <Link href="/wash-types" className={`font-medium transition-colors pb-0.5 ${
-              isActive('/wash-types') ? 'text-[#d0b211] border-b-2 border-[#f0da11]' : 'text-gray-700 hover:text-[#d0b211]'
+            <Link href="/who-we-serve" className={`font-medium transition-colors pb-0.5 ${
+              isActive('/who-we-serve') ? 'text-[#d0b211] border-b-2 border-[#f0da11]' : 'text-gray-700 hover:text-[#d0b211]'
             }`}>
-              Types of Washes
+              Who We Serve
             </Link>
             
             {/* Services Dropdown */}
@@ -144,9 +144,9 @@ const Navbar = () => {
                 onMouseLeave={() => setIsServicesOpen(false)}
                 onClick={() => setIsServicesOpen(!isServicesOpen)}
               >
-                Services
-                <svg 
-                  className={`w-4 h-4 ml-1 transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`} 
+                What We Do
+                <svg
+                  className={`w-4 h-4 ml-1 transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`}
                   fill="none" 
                   stroke="currentColor" 
                   viewBox="0 0 24 24"
@@ -188,6 +188,11 @@ const Navbar = () => {
               </div>
             </div>
             
+            <Link href="/careers" className={`font-medium transition-colors pb-0.5 ${
+              isActive('/careers') ? 'text-[#d0b211] border-b-2 border-[#f0da11]' : 'text-gray-700 hover:text-[#d0b211]'
+            }`}>
+              Careers
+            </Link>
             <Link href="/contact" className={`font-medium transition-colors pb-0.5 ${
               isActive('/contact') ? 'text-[#d0b211] border-b-2 border-[#f0da11]' : 'text-gray-700 hover:text-[#d0b211]'
             }`}>
@@ -254,12 +259,12 @@ const Navbar = () => {
                 >
                   About
                 </Link>
-                <Link 
-                  href="/wash-types" 
+                <Link
+                  href="/who-we-serve"
                   className="font-medium text-gray-600 hover:text-yellow-500 transition-colors px-4 py-2"
                   onClick={handleMobileNavClick}
                 >
-                  Types of Washes
+                  Who We Serve
                 </Link>
                 
                 {/* Mobile Services Section */}
@@ -268,8 +273,8 @@ const Navbar = () => {
                     onClick={() => setIsServicesOpen(!isServicesOpen)}
                     className="font-medium text-gray-600 hover:text-yellow-500 transition-colors flex items-center justify-between w-full py-2"
                   >
-                    Services
-                    <svg 
+                    What We Do
+                    <svg
                       className={`w-4 h-4 transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`} 
                       fill="none" 
                       stroke="currentColor" 
@@ -294,8 +299,15 @@ const Navbar = () => {
                   )}
                 </div>
                 
-                <Link 
-                  href="/contact" 
+                <Link
+                  href="/careers"
+                  className="font-medium text-gray-600 hover:text-yellow-500 transition-colors px-4 py-2"
+                  onClick={handleMobileNavClick}
+                >
+                  Careers
+                </Link>
+                <Link
+                  href="/contact"
                   className="font-medium text-gray-600 hover:text-yellow-500 transition-colors px-4 py-2"
                   onClick={handleMobileNavClick}
                 >

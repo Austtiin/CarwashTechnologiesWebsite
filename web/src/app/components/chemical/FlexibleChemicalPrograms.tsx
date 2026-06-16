@@ -44,9 +44,9 @@ export default function FlexibleChemicalPrograms({ programs }: FlexibleChemicalP
           {programs.map((program) => (
             <div 
               key={program.id} 
-              className={`bg-white p-8 rounded-xl shadow-lg flex flex-col h-full ${
-                program.popular 
-                  ? 'border-2 border-[#f0da11] relative' 
+              className={`bg-white p-8 shadow-lg flex flex-col h-full relative ${
+                program.popular
+                  ? 'border border-gray-200 border-t-4 border-t-[#f0da11]'
                   : 'border border-gray-200'
               }`}
             >
@@ -77,10 +77,10 @@ export default function FlexibleChemicalPrograms({ programs }: FlexibleChemicalP
               <div className="text-center mt-auto">
                 <SafeLink 
                   href="/contact" 
-                  className={`px-6 py-3 rounded-lg font-medium transition-colors ${
+                  className={`inline-block px-6 py-3 rounded-none font-semibold uppercase tracking-wide text-sm transition-colors ${
                     program.popular
                       ? 'bg-[#f0da11] text-gray-900 hover:bg-[#d0b211]'
-                      : 'bg-gray-200 text-gray-800 hover:bg-gray-300'
+                      : 'bg-slate-900 text-white hover:bg-slate-800'
                   }`}
                 >
                   {program.cta}

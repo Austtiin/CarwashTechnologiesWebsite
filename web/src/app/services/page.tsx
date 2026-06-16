@@ -3,6 +3,7 @@ import { Metadata } from 'next';
 import GenericHero from '../components/ui/GenericHero';
 import GenericServicesGrid from '../components/ui/GenericServicesGrid';
 import CallToActionNew from '../components/ui/CallToActionNew';
+import StatsBand from '../components/ui/StatsBand';
 
 export const metadata: Metadata = {
   title: 'Car Wash Services Minnesota | Equipment, Chemicals, Installation & Consulting',
@@ -118,6 +119,18 @@ export default function Services() {
         rightImage="/imgs/SpinLite.webp"
         centerLane="strong"
         compact={true}
+      />
+
+      <StatsBand
+        badge="Full-Service Partner"
+        heading="One team for the entire wash."
+        image="/imgs/IMG_5380.webp"
+        stats={[
+          { value: '25+', label: 'Years Experience' },
+          { value: '500+', label: 'Projects Delivered' },
+          { value: '4', label: 'States Served' },
+          { value: 'End-to-End', label: 'Support' },
+        ]}
       />
 
       <GenericServicesGrid

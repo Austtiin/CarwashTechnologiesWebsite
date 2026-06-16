@@ -28,6 +28,10 @@ public class ContactFormData
     [JsonPropertyName("contactType")]
     public string ContactType { get; set; } = "general";
 
+    /// <summary>Areas of interest selected by the visitor (e.g. chemicals, maintenance, equipment).</summary>
+    [JsonPropertyName("areasOfInterest")]
+    public List<string>? AreasOfInterest { get; set; }
+
     /// <summary>Honeypot — must be empty on legitimate submissions.</summary>
     [JsonPropertyName("website")]
     public string? Website { get; set; }

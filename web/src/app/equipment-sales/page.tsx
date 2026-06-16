@@ -4,6 +4,7 @@ import Image from 'next/image';
 import GenericHero from '../components/ui/GenericHero';
 import GenericServicesGrid from '../components/ui/GenericServicesGrid';
 import CallToActionNew from '../components/ui/CallToActionNew';
+import StatsBand from '../components/ui/StatsBand';
 
 export const metadata: Metadata = {
   title: 'Car Wash Equipment & Parts Sales Minnesota | Gas Station, Self-Service, Heavy Duty',
@@ -28,7 +29,7 @@ async function getEquipmentData() {
   return {
     manufacturers: [
       { name: 'PECO', logo: '/logos/peco-logo.webp', alt: 'PECO' },
-      { name: 'Sonnys', logo: '/logos/logoSonnys.webp', alt: "Sonny's" },
+      { name: 'Sonnys', logo: '/logos/Sonnys_Logo-RGB.webp', alt: "Sonny's" },
       { name: 'PDQ', logo: '/logos/logoPDQ.webp', alt: 'PDQ' },
       { name: 'Belanger', logo: '/logos/logoBelanger.webp', alt: 'Belanger' },
       { name: 'AVW', logo: '/logos/AVW-logo.webp', alt: 'AVW' },
@@ -149,27 +150,48 @@ export default async function EquipmentSales() {
         compact={true}
       />
 
+      {/* Stats band */}
+      <StatsBand
+        badge="Authorized Dealer"
+        heading="Equipment operators across the Midwest rely on."
+        image="/imgs/IMG_5380.webp"
+        stats={[
+          { value: data.stats.experience, label: 'Years Experience' },
+          { value: data.stats.installations, label: 'Installations' },
+          { value: data.stats.support, label: 'Support' },
+          { value: data.stats.states, label: 'States Served' },
+        ]}
+      />
+
       {/* Trusted Partners Section */}
-      <section className="py-16 bg-gradient-to-b from-white via-gray-50 to-white">
-        <div className="items-center container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="font-friz text-3xl md:text-4xl text-gray-900 mb-4">
+      <section className="py-14 sm:py-16 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10 max-w-3xl mx-auto">
+            <div className="inline-flex items-center gap-3 mb-4">
+              <div className="w-8 h-px bg-[#f0da11]" />
+              <span className="text-sm font-semibold text-gray-600 uppercase tracking-wider">Our Partners</span>
+              <div className="w-8 h-px bg-[#f0da11]" />
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
               Trusted Equipment <span className="text-[#f0da11]">Partners</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
               Authorized dealer for Belanger, PECO, PDQ, Sonny&apos;s, and AVW &mdash; industry-leading car wash equipment manufacturers trusted across the Midwest. We also supply Cat Pumps and General Pump systems for self-serve and fleet wash operations.
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center justify-items-center">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5 items-stretch justify-items-stretch">
             {data.manufacturers.map((manufacturer, index) => (
-              <div key={manufacturer.name} className="bg-white border-l-4 border-[#f0da11] p-6 hover:shadow-lg transition-shadow duration-300">
+              <div
+                key={manufacturer.name}
+                className="flex h-28 items-center justify-center border border-gray-200 bg-slate-50 px-6 py-5 hover:border-[#f0da11] hover:shadow-md transition-all duration-300"
+              >
                 <Image
                   src={manufacturer.logo}
                   alt={manufacturer.alt}
                   width={120}
                   height={60}
-                  className="h-16 w-auto object-contain"
+                  className="max-h-16 max-w-full w-auto object-contain"
                   priority={index < 3}
                 />
               </div>

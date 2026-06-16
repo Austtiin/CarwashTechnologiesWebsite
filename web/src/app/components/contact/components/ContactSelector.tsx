@@ -1,6 +1,6 @@
 ﻿'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import ContactOptionCard from './ContactOptionCard';
 import ContactForm from './ContactForm';
 
@@ -26,19 +26,35 @@ interface ContactSelectorProps {
 // Client Component - Handles selection state and navigation
 export default function ContactSelector({ contactOptions }: ContactSelectorProps) {
   const [selectedContact, setSelectedContact] = useState<ContactType | null>(null);
+  const sectionRef = useRef<HTMLElement>(null);
 
   const selectedOption = contactOptions.find(option => option.id === selectedContact);
 
+  // Scroll the section to the top of the viewport so the form starts in view
+  // (especially important on mobile where the form can render below the fold).
+  const scrollToSectionTop = () => {
+    requestAnimationFrame(() => {
+      sectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  };
+
+  const handleSelect = (id: ContactType) => {
+    setSelectedContact(id);
+    scrollToSectionTop();
+  };
+
   const resetSelection = () => {
     setSelectedContact(null);
+    scrollToSectionTop();
   };
 
   const sectionPadding = selectedContact ? 'py-10 md:py-12' : 'py-16';
 
   return (
     <section
+      ref={sectionRef}
       id="contact-inquiry"
-      className={`relative scroll-mt-32 ${sectionPadding} bg-gradient-to-b from-gray-50 via-white to-gray-50 overflow-hidden`}
+      className={`relative scroll-mt-20 ${sectionPadding} bg-gradient-to-b from-gray-50 via-white to-gray-50 overflow-hidden`}
     >
       {/* Subtle Accent Lines */}
       <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-[#f0da11]/30 to-transparent"></div>
@@ -70,7 +86,7 @@ export default function ContactSelector({ contactOptions }: ContactSelectorProps
                   <ContactOptionCard
                     key={option.id}
                     option={option}
-                    onSelect={() => setSelectedContact(option.id)}
+                    onSelect={() => handleSelect(option.id)}
                   />
                 ))}
               </div>

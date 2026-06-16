@@ -1,14 +1,15 @@
 import { Metadata } from 'next';
 import HeroSectionNew from './components/home/sections/HeroSectionNew';
+import EquipmentBrandsStrip from './components/home/sections/EquipmentBrandsStrip';
+import ConsultationCTA from './components/home/sections/ConsultationCTA';
 import ServicesSectionNew from './components/home/sections/ServicesSectionNew';
 import ChemicalsSectionNew from './components/home/sections/ChemicalsSectionNew';
 import WhyChooseUsSection from './components/home/sections/WhyChooseUsSection';
-import CallToActionNew from './components/ui/CallToActionNew';
 
 export const metadata: Metadata = {
   title: 'Midwest Carwash Builder, Parts & Contractor | Gas Station, Self-Service, Heavy Duty',
   description: 'Leading Midwest carwash builder and contractor specializing in gas station carwashes, self-service carwash parts, heavy duty truck wash systems, express tunnel builder, car dealership installations, touchless systems, and automatic carwash repair across MN, ND, SD, WI.',
-  keywords: 'midwest carwash builder, gas station carwash builder Minnesota, self service carwash parts MN, heavy duty carwash builder, carwash contractor Minnesota, express carwash builder, car dealership carwash installation, touchless carwash systems Minnesota, self serve car wash builder MN, convenience store carwash installation, automatic carwash builder Minnesota, tunnel carwash contractor, in bay automatic builder, commercial carwash builder MN, industrial carwash contractor Minnesota, municipal carwash builder, fleet wash contractor, semi truck wash builder Minnesota, bus wash systems builder, RV wash equipment installation, car wash construction Minnesota, carwash design build, turnkey carwash contractor, carwash equipment parts supplier MN, carwash parts distributor Minnesota, automatic car wash repair Minnesota, carwash modernization services, carwash retrofit contractor, 24 hour carwash service, car wash chemicals minnesota, carwash maintenance contractor MN, carwash technician services, vehicle wash equipment supplier, automated car wash machine minnesota, car wash automation equipment, tunnel wash systems, track wash installation, carwash site development',
+  keywords: 'midwest carwash builder, gas station carwash builder Minnesota, self service carwash parts MN, heavy duty carwash builder, carwash contractor Minnesota, express carwash builder, car dealership carwash installation, touchless carwash systems Minnesota, self serve car wash builder MN, convenience store carwash installation, automatic carwash builder Minnesota, tunnel carwash contractor, in bay automatic builder, commercial carwash builder MN, industrial carwash contractor Minnesota, municipal carwash builder, fleet wash contractor, semi truck wash builder Minnesota, bus wash systems builder, RV wash equipment installation, car wash construction Minnesota, carwash design build, turnkey carwash contractor, carwash equipment parts supplier MN, carwash parts distributor Minnesota, automatic car wash repair Minnesota, carwash modernization services, carwash retrofit contractor, priority carwash service, car wash chemicals minnesota, carwash maintenance contractor MN, carwash technician services, vehicle wash equipment supplier, automated car wash machine minnesota, car wash automation equipment, tunnel wash systems, track wash installation, carwash site development',
   alternates: { canonical: '/' },
   openGraph: {
     title: 'Midwest Carwash Builder | Gas Station, Self-Service, Heavy Duty Contractor',
@@ -70,10 +71,10 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
-      name: 'Do you offer 24/7 automatic car wash repair services?',
+      name: 'Do you offer automatic car wash repair and emergency service?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. Our team provides 24/7 emergency service, preventive maintenance, and automatic car wash repair for all equipment types and major brands. We stock parts and have certified technicians throughout Minnesota, North Dakota, South Dakota, and Wisconsin.',
+        text: 'Yes. Our team provides reliable, priority repair service, preventive maintenance, and emergency support for all equipment types and major brands. We stock parts and have certified technicians throughout Minnesota, North Dakota, South Dakota, and Wisconsin.',
       },
     },
     {
@@ -106,15 +107,19 @@ export default function Home() {
       {/* Clean Tech Hero Section */}
       <HeroSectionNew />
 
-        {/* Core Service Offerings */}
+        {/* Equipment brand trust strip (white) */}
+        <EquipmentBrandsStrip />
+
+        {/* Free consultation form CTA (dark) */}
+        <ConsultationCTA />
+
+        {/* Core Service Offerings (grey) */}
         <ServicesSectionNew />
 
-        {/* Why Choose Us band */}
+        {/* Why Choose Us band (dark) */}
         <WhyChooseUsSection />
 
-        {/* Chemical Programs */}
-        <ChemicalsSectionNew />
-
+        {/* Growth questions / FAQ (white) — buffers the dark bands */}
         <section className="bg-white py-14 sm:py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
             <div className="text-center mb-10">
@@ -157,28 +162,8 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Final Call to Action */}
-        <CallToActionNew
-          title="Ready to Transform Your Wash Business?"
-          description="Join hundreds of satisfied customers across the Midwest who trust Carwash Technologies for their equipment, service, and chemical needs."
-          buttons={[
-            {
-              text: "Get Started Today",
-              href: "/contact",
-              variant: "primary"
-            },
-            {
-              text: "View Our Services",
-              href: "/services",
-              variant: "secondary"
-            }
-          ]}
-          contactInfo={{
-            phone: "(612) 408-9010",
-            address: "322 19th St. SW<br />Forest Lake, MN 55025",
-            showContactCard: true
-          }}
-        />
+        {/* Chemical Programs (dark) — closing band */}
+        <ChemicalsSectionNew />
       </div>
   );
 }

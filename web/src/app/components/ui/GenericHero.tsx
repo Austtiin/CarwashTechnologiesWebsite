@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React from 'react';
 import Link from 'next/link';
@@ -25,10 +25,14 @@ interface GenericHeroProps {
   stats?: HeroStat[];
   backgroundVariant?: 'white' | 'light-grey' | 'gradient' | 'dark';
   showPattern?: boolean;
+  /** Primary background image (rendered full-bleed). */
   leftImage?: string;
+  /** Fallback background image if leftImage is not provided. */
   rightImage?: string;
   compact?: boolean;
+  /** @deprecated retained for backward compatibility; no longer affects layout */
   centerLane?: 'normal' | 'strong';
+  /** @deprecated retained for backward compatibility; no longer affects layout */
   textSurface?: boolean;
 }
 
@@ -41,167 +45,58 @@ export default function GenericHero({
   buttons = [],
   stats = [],
   backgroundVariant = 'white',
-  showPattern = true,
   leftImage,
   rightImage,
   compact = false,
-  centerLane = 'normal',
-  textSurface = false
 }: GenericHeroProps) {
-  const isDark = backgroundVariant === 'dark';
-  const bgClass = backgroundVariant === 'light-grey'
-    ? 'bg-[#f6f6f6]'
+  // Single full-bleed image; prefer leftImage, fall back to rightImage.
+  const backgroundImage = leftImage || rightImage;
+  const hasImage = Boolean(backgroundImage);
+
+  // With an image we always render light text on a dark scrim for consistency.
+  const isDark = backgroundVariant === 'dark' || hasImage;
+
+  const bgClass = hasImage
+    ? 'bg-slate-950'
+    : backgroundVariant === 'light-grey'
+    ? 'bg-slate-50'
     : backgroundVariant === 'dark'
     ? 'bg-linear-to-br from-slate-950 via-slate-900 to-slate-950'
     : 'bg-white';
-  const sectionSpacing = compact ? 'pt-20 sm:pt-22 lg:pt-24 pb-8 sm:pb-10 lg:pb-12' : 'pt-22 sm:pt-24 lg:pt-28 pb-10 sm:pb-12 lg:pb-14';
-  const titleSize = compact ? 'text-2xl sm:text-3xl md:text-4xl lg:text-4xl' : 'text-3xl sm:text-4xl md:text-4xl lg:text-5xl';
 
-  const centerLaneClass =
-    centerLane === 'strong'
-      ? isDark
-        ? 'w-[70%] sm:w-[65%] bg-linear-to-r from-transparent via-slate-900/98 to-transparent'
-        : 'w-[70%] sm:w-[65%] bg-linear-to-r from-transparent via-white/98 to-transparent'
-      : isDark
-      ? 'w-[60%] sm:w-[55%] bg-linear-to-r from-transparent via-slate-900/97 to-transparent'
-      : 'w-[60%] sm:w-[55%] bg-linear-to-r from-transparent via-white/97 to-transparent';
-
-  const textSurfaceClass = textSurface
-    ? 'bg-white/92 backdrop-blur-md rounded-2xl px-4 sm:px-6 py-5 sm:py-6 shadow-xl border border-white/95 ring-1 ring-slate-200/60'
-    : '';
+  const sectionSpacing = compact
+    ? 'pt-20 sm:pt-22 lg:pt-24 pb-12 sm:pb-14 lg:pb-16'
+    : 'pt-22 sm:pt-24 lg:pt-28 pb-14 sm:pb-16 lg:pb-20';
+  const titleSize = compact
+    ? 'text-3xl sm:text-4xl md:text-4xl lg:text-5xl'
+    : 'text-3xl sm:text-4xl md:text-5xl lg:text-6xl';
 
   return (
     <section className={`relative ${bgClass} ${sectionSpacing} overflow-hidden`}>
-      {/* Yellow top separator for dark variant */}
-      {isDark && <div className="absolute inset-x-0 top-0 h-1 bg-[#f0da11] z-20" />}
-      {/* Background Equipment Image - Left Side */}
-      {leftImage && (
-        <div className="absolute left-0 top-0 bottom-0 w-1/2 pointer-events-none overflow-hidden">
-          <div className="relative w-full h-full">
-            <Image
-              src={leftImage}
-              alt=""
-              fill
-              className="object-cover opacity-75"
-            />
-            <div className={`absolute inset-0 ${
-                isDark
-                  ? 'bg-linear-to-r from-transparent via-slate-900/70 to-slate-900/95'
-                  : 'bg-linear-to-r from-transparent via-white/70 to-white/95'
-              }`}></div>
-          </div>
-        </div>
-      )}
-
-      {/* Background Equipment Image - Right Side */}
-      {rightImage && (
-        <div className="absolute right-0 top-0 bottom-0 w-1/2 pointer-events-none overflow-hidden">
-          <div className="relative w-full h-full">
-            <Image
-              src={rightImage}
-              alt=""
-              fill
-              className="object-cover opacity-78"
-            />
-            <div className={`absolute inset-0 ${
-                isDark
-                  ? 'bg-gradient-to-l from-transparent via-slate-900/70 to-slate-900/95'
-                  : 'bg-gradient-to-l from-transparent via-white/70 to-white/95'
-              }`}></div>
-          </div>
-        </div>
-      )}
-
-      {(leftImage || rightImage) && (
-        <>
-          <div className={`absolute inset-y-0 left-1/2 -translate-x-1/2 ${centerLaneClass} pointer-events-none`}></div>
-          <div className="absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-blue-100/14 to-transparent pointer-events-none"></div>
-        </>
-      )}
-
-      {/* Framing Rails */}
-      <div className="absolute top-0 left-0 right-0 h-[3px] bg-linear-to-r from-cyan-300/60 via-[#f0da11]/80 to-blue-300/60 pointer-events-none"></div>
-      <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-linear-to-r from-blue-300/55 via-[#f0da11]/75 to-cyan-300/55 pointer-events-none"></div>
-
-      {/* Animated Grid Background */}
-      {showPattern && (
-        <div className="absolute inset-0 opacity-[0.12] overflow-hidden">
-          <div 
-            className="absolute inset-0"
-            style={{
-              backgroundImage: `
-                linear-gradient(to right, #1f2937 1px, transparent 1px),
-                linear-gradient(to bottom, #1f2937 1px, transparent 1px)
-              `,
-              backgroundSize: '60px 60px',
-              animation: 'gridMove 20s linear infinite',
-              top: '-60px' // Offset to prevent visible seam at top
-            }}
+      {/* Full-bleed background image with directional scrim */}
+      {hasImage && (
+        <div className="pointer-events-none absolute inset-0">
+          <Image
+            src={backgroundImage as string}
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
           />
+          <div className="absolute inset-0 bg-linear-to-r from-slate-950 via-slate-950/85 to-slate-950/40" />
+          <div className="absolute inset-x-0 bottom-0 h-20 bg-linear-to-t from-slate-950 to-transparent" />
         </div>
       )}
 
-      {/* Diagonal Accent Lines - Water Flow Suggestion */}
-      <div className="absolute top-0 right-0 w-1/2 h-full opacity-[0.06] overflow-hidden pointer-events-none">
-        <div className="absolute top-10 right-0 w-full h-2 bg-[#f0da11] transform -rotate-12 translate-x-20"></div>
-        <div className="absolute top-32 right-0 w-full h-1 bg-[#f0da11] transform -rotate-12 translate-x-20"></div>
-        <div className="absolute top-52 right-0 w-full h-2 bg-[#f0da11] transform -rotate-12 translate-x-20"></div>
-        <div className="absolute top-72 right-0 w-full h-1 bg-[#f0da11] transform -rotate-12 translate-x-20"></div>
-      </div>
-
-      {/* Decorative Color Lines */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute -left-24 top-14 w-96 h-[3px] bg-linear-to-r from-transparent via-cyan-400/70 to-transparent rotate-[8deg]"></div>
-        <div className="absolute -right-24 top-24 w-[30rem] h-[3px] bg-linear-to-r from-transparent via-[#f0da11]/85 to-transparent -rotate-[7deg]"></div>
-        <div className="absolute -left-20 bottom-24 w-80 h-[3px] bg-linear-to-r from-transparent via-blue-400/65 to-transparent -rotate-[10deg]"></div>
-        <div className="absolute -right-20 bottom-14 w-72 h-[3px] bg-linear-to-r from-transparent via-amber-300/70 to-transparent rotate-[10deg]"></div>
-        <div className="absolute left-8 top-1/3 h-40 w-[2px] bg-gradient-to-b from-transparent via-[#f0da11]/45 to-transparent"></div>
-        <div className="absolute right-8 top-1/2 h-44 w-[2px] bg-gradient-to-b from-transparent via-cyan-300/40 to-transparent"></div>
-      </div>
-
-      {/* Water Droplets - Animated */}
-      <div className="absolute top-20 left-1/4 w-2 h-2 bg-blue-400/20 rounded-full hidden lg:block"
-           style={{ animation: 'dropFall 3s ease-in infinite' }} />
-      <div className="absolute top-10 left-1/3 w-3 h-3 bg-blue-400/15 rounded-full hidden lg:block"
-           style={{ animation: 'dropFall 4s ease-in infinite 1s' }} />
-      <div className="absolute top-32 right-1/4 w-2 h-2 bg-blue-400/20 rounded-full hidden lg:block"
-           style={{ animation: 'dropFall 3.5s ease-in infinite 2s' }} />
-      <div className="absolute top-16 right-1/3 w-3 h-3 bg-blue-400/15 rounded-full hidden lg:block"
-           style={{ animation: 'dropFall 4.5s ease-in infinite 0.5s' }} />
-
-      {/* Soap Bubbles - Rising */}
-      <div className="absolute bottom-20 left-16 w-8 h-8 rounded-full border-2 border-blue-300/20 hidden lg:block"
-           style={{ animation: 'bubbleRise 6s ease-in-out infinite' }} />
-      <div className="absolute bottom-32 left-32 w-6 h-6 rounded-full border-2 border-blue-300/15 hidden lg:block"
-           style={{ animation: 'bubbleRise 7s ease-in-out infinite 2s' }} />
-      <div className="absolute bottom-40 right-24 w-10 h-10 rounded-full border-2 border-blue-300/10 hidden lg:block"
-           style={{ animation: 'bubbleRise 8s ease-in-out infinite 1s' }} />
-      <div className="absolute bottom-24 right-40 w-5 h-5 rounded-full border-2 border-blue-300/20 hidden lg:block"
-           style={{ animation: 'bubbleRise 6.5s ease-in-out infinite 3s' }} />
-
-      {/* Sparkle/Shine Effects */}
-      <div className="absolute top-1/4 left-20 w-1 h-1 bg-[#f0da11] rounded-full hidden lg:block"
-           style={{ animation: 'sparkle 2s ease-in-out infinite' }} />
-      <div className="absolute top-1/3 right-20 w-1 h-1 bg-[#f0da11] rounded-full hidden lg:block"
-           style={{ animation: 'sparkle 2s ease-in-out infinite 0.5s' }} />
-      <div className="absolute top-2/3 left-32 w-1 h-1 bg-[#f0da11] rounded-full hidden lg:block"
-           style={{ animation: 'sparkle 2s ease-in-out infinite 1s' }} />
-      <div className="absolute top-1/2 right-28 w-1 h-1 bg-[#f0da11] rounded-full hidden lg:block"
-           style={{ animation: 'sparkle 2s ease-in-out infinite 1.5s' }} />
-
-      {/* Floating Geometric Elements */}
-      <div className="absolute top-32 left-16 w-16 h-16 border-2 border-[#f0da11]/10 transform rotate-45 hidden lg:block"
-           style={{ animation: 'float 6s ease-in-out infinite' }} />
-      <div className="absolute bottom-32 right-32 w-20 h-20 border-2 border-gray-900/5 hidden lg:block"
-           style={{ animation: 'float 8s ease-in-out infinite 2s' }} />
-      <div className="absolute top-1/2 right-16 w-12 h-12 border-2 border-[#f0da11]/5 transform -rotate-12 hidden lg:block"
-           style={{ animation: 'float 7s ease-in-out infinite 1s' }} />
+      {/* Yellow top accent for dark / image variants */}
+      {isDark && <div className="absolute inset-x-0 top-0 h-1 bg-[#f0da11] z-20" />}
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className={`max-w-3xl mx-auto text-center ${textSurfaceClass}`} style={{ animation: 'fadeInUp 0.8s ease-out forwards', opacity: 0 }}>
-          
+        <div className={`max-w-3xl ${hasImage ? 'text-left' : 'mx-auto text-center'}`}>
           {eyebrow && (
-            <div className="inline-block mb-4">
+            <div className="inline-flex items-center gap-2 mb-4">
+              {hasImage && <span className="w-8 h-0.5 bg-[#f0da11]" />}
               <span className={`text-xs sm:text-sm font-semibold uppercase tracking-wider ${
                 isDark ? 'text-[#f0da11]' : 'text-gray-700'
               }`}>
@@ -210,8 +105,8 @@ export default function GenericHero({
             </div>
           )}
 
-          <h1 className={`${titleSize} font-bold mb-3 sm:mb-4 leading-tight ${
-            isDark ? 'text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]' : 'text-gray-900'
+          <h1 className={`${titleSize} font-bold mb-3 sm:mb-4 leading-[1.08] ${
+            isDark ? 'text-white' : 'text-gray-900'
           }`}>
             {highlightedWord ? (
               <>
@@ -225,29 +120,31 @@ export default function GenericHero({
           </h1>
 
           <p className={`text-base sm:text-lg md:text-xl font-semibold mb-3 ${
-            isDark ? 'text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]' : 'text-gray-800'
+            isDark ? 'text-white' : 'text-gray-800'
           }`}>
             {subtitle}
           </p>
 
-          <p className={`text-sm sm:text-base mb-6 sm:mb-8 leading-relaxed max-w-2xl mx-auto ${
-            isDark ? 'text-white/80' : 'text-gray-700'
-          }`}>
+          <p className={`text-sm sm:text-base mb-6 sm:mb-8 leading-relaxed max-w-2xl ${
+            hasImage ? '' : 'mx-auto'
+          } ${isDark ? 'text-slate-200' : 'text-gray-700'}`}>
             {description}
           </p>
 
           {buttons.length > 0 && (
-            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-8 sm:mb-10">
+            <div className={`flex flex-wrap items-center gap-3 sm:gap-4 ${
+              hasImage ? 'justify-start' : 'justify-center'
+            } ${stats.length > 0 ? 'mb-8 sm:mb-10' : ''}`}>
               {buttons.map((button, index) => (
                 <Link
                   key={index}
                   href={button.href}
                   className={
                     button.variant === 'primary'
-                      ? 'bg-[#f0da11] text-black font-semibold px-6 py-3 rounded-md hover:bg-[#d0b211] transition-all duration-200 shadow-md hover:shadow-lg text-sm sm:text-base hover:-translate-y-0.5'
+                      ? 'bg-[#f0da11] text-black font-semibold px-6 py-3 rounded-none hover:bg-[#d0b211] transition-all duration-200 shadow-md hover:shadow-lg text-sm sm:text-base hover:-translate-y-0.5'
                       : isDark
-                      ? 'border-2 border-white text-white font-semibold px-6 py-3 rounded-md hover:bg-white hover:text-slate-900 transition-all duration-200 text-sm sm:text-base'
-                      : 'border-2 border-gray-900 text-gray-900 font-semibold px-6 py-3 rounded-md hover:bg-gray-900 hover:text-white transition-all duration-200 text-sm sm:text-base'
+                      ? 'border-2 border-white text-white font-semibold px-6 py-3 rounded-none hover:bg-white hover:text-slate-900 transition-all duration-200 text-sm sm:text-base'
+                      : 'border-2 border-gray-900 text-gray-900 font-semibold px-6 py-3 rounded-none hover:bg-gray-900 hover:text-white transition-all duration-200 text-sm sm:text-base'
                   }
                 >
                   {button.text}
@@ -258,11 +155,13 @@ export default function GenericHero({
 
           {stats.length > 0 && (
             <>
-              <div className="w-16 h-0.5 bg-linear-to-r from-transparent via-[#f0da11] to-transparent mx-auto mb-12"></div>
-              
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-8" style={{ animation: 'fadeInUp 0.8s ease-out 0.2s forwards', opacity: 0 }}>
+              <div className={`w-16 h-0.5 bg-linear-to-r from-transparent via-[#f0da11] to-transparent mb-10 ${
+                hasImage ? '' : 'mx-auto'
+              }`}></div>
+
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                 {stats.map((stat, index) => (
-                  <div key={index} className="text-center">
+                  <div key={index} className={hasImage ? 'text-left' : 'text-center'}>
                     <div className={`text-2xl md:text-3xl font-bold mb-2 ${
                       isDark ? 'text-white' : 'text-gray-900'
                     }`}>
@@ -281,76 +180,8 @@ export default function GenericHero({
         </div>
       </div>
 
-      <style jsx>{`
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        @keyframes float {
-          0%, 100% {
-            transform: translateY(0) rotate(45deg);
-          }
-          50% {
-            transform: translateY(-20px) rotate(45deg);
-          }
-        }
-
-        @keyframes gridMove {
-          0% {
-            transform: translate(0, 0);
-          }
-          100% {
-            transform: translate(60px, 60px);
-          }
-        }
-
-        @keyframes dropFall {
-          0% {
-            transform: translateY(0);
-            opacity: 0.2;
-          }
-          50% {
-            opacity: 0.5;
-          }
-          100% {
-            transform: translateY(100vh);
-            opacity: 0;
-          }
-        }
-
-        @keyframes bubbleRise {
-          0% {
-            transform: translateY(0);
-            opacity: 0.2;
-          }
-          50% {
-            opacity: 0.4;
-          }
-          100% {
-            transform: translateY(-100vh);
-            opacity: 0;
-          }
-        }
-
-        @keyframes sparkle {
-          0%, 100% {
-            opacity: 0;
-            transform: scale(0);
-          }
-          50% {
-            opacity: 1;
-            transform: scale(1);
-          }
-        }
-      `}</style>
+      {/* Yellow accent baseline */}
+      <div className="absolute bottom-0 left-0 right-0 h-1 bg-linear-to-r from-transparent via-[#f0da11] to-transparent z-20" />
     </section>
   );
 }
-

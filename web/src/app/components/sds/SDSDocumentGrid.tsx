@@ -111,7 +111,7 @@ export default function SDSDocumentGrid({ documents, manufacturers, categories }
               return (
                 <article
                   key={doc.id}
-                  className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-200"
+                  className="bg-white shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-200 border-l-4 border-l-[#f0da11]"
                 >
                   <div className="p-6">
                     <div className="flex items-start justify-between mb-4">
@@ -150,7 +150,7 @@ export default function SDSDocumentGrid({ documents, manufacturers, categories }
             <div className="text-center mt-12">
               <button
                 onClick={handleLoadMore}
-                className="bg-[#f0da11] text-gray-900 px-8 py-4 rounded-xl font-semibold hover:bg-[#d0b211] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 inline-flex items-center cursor-pointer"
+                className="bg-[#f0da11] text-gray-900 px-8 py-4 rounded-none font-semibold uppercase tracking-wide hover:bg-[#d0b211] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 inline-flex items-center cursor-pointer"
               >
                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />

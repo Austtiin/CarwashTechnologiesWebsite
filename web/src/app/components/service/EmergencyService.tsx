@@ -43,7 +43,7 @@ export default function EmergencyService() {
           />
         </div>
 
-        <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden">
+        <div className="max-w-4xl mx-auto bg-white rounded-none shadow-xl border border-gray-200 overflow-hidden">
           <div className="bg-linear-to-r from-red-500 to-red-600 p-6">
             <div className="flex items-center justify-center text-white">
               <svg className="w-8 h-8 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -68,7 +68,7 @@ export default function EmergencyService() {
               ))}
             </div>
             
-            <div className="mt-8 p-6 bg-red-50 rounded-xl border border-red-200">
+            <div className="mt-8 p-6 bg-red-50 rounded-none border border-red-200">
               <div className="flex items-center justify-center mb-4">
                 <svg className="w-6 h-6 text-red-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />

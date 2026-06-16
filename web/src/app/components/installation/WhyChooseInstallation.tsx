@@ -87,7 +87,7 @@ export default function WhyChooseInstallation({ stats }: WhyChooseInstallationPr
           </div>
           
           {/* Right Column - Installation Guarantee Card */}
-          <div className="bg-linear-to-br from-gray-50 to-gray-100 p-8 rounded-2xl border border-gray-200">
+          <div className="bg-slate-50 p-8 border border-gray-200 border-t-4 border-t-[#f0da11]">
             <div className="text-center mb-8">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Installation Commitment</h3>
               <p className="text-gray-600">We stand behind our work with quality craftsmanship and ongoing support</p>
@@ -136,7 +136,7 @@ export default function WhyChooseInstallation({ stats }: WhyChooseInstallationPr
             <div className="text-center">
               <SafeLink 
                 href="/contact" 
-                className="bg-[#f0da11] text-gray-900 px-8 py-3 rounded-xl font-semibold hover:bg-[#d0b211] transition-colors duration-300 inline-flex items-center"
+                className="bg-[#f0da11] text-gray-900 px-8 py-3 rounded-none font-semibold uppercase tracking-wide hover:bg-[#d0b211] transition-colors duration-300 inline-flex items-center"
               >
                 Schedule Installation
                 <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

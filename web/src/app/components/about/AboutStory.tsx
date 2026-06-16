@@ -5,11 +5,11 @@ export default function AboutStory() {
   return (
     <>
       {/* Angled Transition */}
-      <div className="relative h-16 bg-gradient-to-b from-white via-gray-50 to-[#f6f6f6]">
+      <div className="relative h-16 bg-gradient-to-b from-white via-slate-50 to-slate-50">
         <div className="absolute inset-0 bg-linear-to-r from-[#f0da11]/5 to-transparent"></div>
       </div>
 
-      <section className="py-20 bg-linear-to-br from-[#f6f6f6] via-gray-100 to-[#f6f6f6] relative">
+      <section className="py-20 bg-linear-to-br from-slate-50 via-slate-100 to-slate-50 relative">
         <div className="absolute top-0 left-0 w-1 h-full bg-[#f0da11]"></div>
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
@@ -47,11 +47,11 @@ export default function AboutStory() {
               </p>
             </div>
             
-            <div className="bg-linear-to-br from-yellow-50 to-orange-50 p-8 rounded-2xl border border-yellow-200">
+            <div className="bg-slate-50 p-8 border border-gray-200 border-l-4 border-l-[#f0da11]">
               <div className="space-y-6">
               <div className="flex items-center">
-                <div className="w-12 h-12 bg-linear-to-br from-yellow-500 to-orange-500 rounded-xl flex items-center justify-center mr-4">
-                <span className="text-white font-bold text-xl">50+</span>
+                <div className="w-12 h-12 bg-slate-900 flex items-center justify-center mr-4">
+                <span className="text-[#f0da11] font-bold text-xl">50+</span>
                 </div>
                 <div>
                 <h3 className="font-bold text-gray-900">Years of Combined Experience</h3>
@@ -60,8 +60,8 @@ export default function AboutStory() {
               </div>
               
               <div className="flex items-center">
-                <div className="w-12 h-12 bg-linear-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mr-4">
-                <span className="text-white font-bold text-xl">99+</span>
+                <div className="w-12 h-12 bg-slate-900 flex items-center justify-center mr-4">
+                <span className="text-[#f0da11] font-bold text-xl">99+</span>
                 </div>
                 <div>
                 <h3 className="font-bold text-gray-900">Installations</h3>
@@ -70,8 +70,8 @@ export default function AboutStory() {
               </div>
               
               <div className="flex items-center">
-                <div className="w-12 h-12 bg-linear-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mr-4">
-                <span className="text-white font-bold text-xl">4</span>
+                <div className="w-12 h-12 bg-slate-900 flex items-center justify-center mr-4">
+                <span className="text-[#f0da11] font-bold text-xl">4</span>
                 </div>
                 <div>
                 <h3 className="font-bold text-gray-900">States Served</h3>

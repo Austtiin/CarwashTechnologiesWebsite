@@ -123,7 +123,7 @@ const Footer = () => {
                 <svg className="w-4 h-4 text-[#f0da11]" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                 </svg>
-                Iowa
+                South Dakota
               </li>
               <li className="flex items-center gap-2">
                 <svg className="w-4 h-4 text-[#f0da11]" fill="currentColor" viewBox="0 0 20 20">
@@ -150,9 +150,20 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="mt-6 pt-6 border-t border-white/10">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-sm text-white">
-              &copy; {new Date().getFullYear()} Carwash Technologies, Inc. All rights reserved.
-            </p>
+            <div className="text-sm text-white text-center md:text-left">
+              <p>&copy; {new Date().getFullYear()} Carwash Technologies, Inc. All rights reserved.</p>
+              <p className="text-xs text-gray-400 mt-1">
+                Designed &amp; built by{' '}
+                <a
+                  href="https://github.com/Austtiin"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-gray-300 hover:text-[#f0da11] transition-colors"
+                >
+                  AS
+                </a>
+              </p>
+            </div>
             <div className="flex flex-wrap gap-4 md:gap-6 mt-4 md:mt-0 justify-center md:justify-end">
               <Link href="/privacy-policy" className="text-sm text-white hover:text-[#f0da11] transition-colors">
                 Privacy Policy

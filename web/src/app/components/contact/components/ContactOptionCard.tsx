@@ -51,47 +51,43 @@ export default function ContactOptionCard({ option, onSelect }: ContactOptionCar
   };
 
   return (
-    <div
+    <button
+      type="button"
       onClick={onSelect}
-      className={`group cursor-pointer flex flex-col bg-linear-to-br ${option.bgColor} p-6 rounded-2xl border-2 ${option.borderColor} hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 relative overflow-hidden`}
+      className="group cursor-pointer flex flex-col text-left bg-white p-6 pt-7 border border-gray-200 border-t-4 border-t-[#f0da11] shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 relative overflow-hidden"
     >
-      {/* Card background glow effect */}
-      <div className="absolute inset-0 bg-linear-to-br from-white/50 to-transparent opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
-      
       {/* Icon */}
-      <div className={`relative w-12 h-12 bg-linear-to-br ${option.color} rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg`}>
+      <div className="w-12 h-12 bg-slate-900 text-white flex items-center justify-center mb-4 group-hover:bg-[#f0da11] group-hover:text-black transition-colors duration-300 shadow-sm">
         {renderIcon()}
-        <div className="absolute inset-0 bg-linear-to-br from-white/20 to-transparent rounded-xl"></div>
       </div>
-      
+
       {/* Content */}
-      <h3 className="text-xl font-bold text-gray-900 mb-3 text-center group-hover:text-gray-800 transition-colors duration-300">
+      <h3 className="text-xl font-bold text-gray-900 mb-2">
         {option.title}
       </h3>
-      <p className="text-sm text-gray-700 text-center mb-3 leading-relaxed group-hover:text-gray-600 transition-colors duration-300">
-        {option.description}
-      </p>
-      <p className="text-xs text-gray-600 text-center mb-4 group-hover:text-gray-500 transition-colors duration-300">
+      <p className="text-sm text-gray-600 mb-4 leading-relaxed">
         {option.details}
       </p>
-      
+
       {/* Features List */}
-      <ul className="text-xs text-gray-600 mb-4 space-y-1.5">
+      <ul className="text-sm text-gray-600 mb-5 space-y-2">
         {option.features.map((feature, index) => (
-          <li key={index} className="flex items-center">
-            <span className="w-1.5 h-1.5 bg-[#f0da11] rounded-full mr-2 shrink-0"></span>
+          <li key={index} className="flex items-start gap-2">
+            <svg className="w-4 h-4 text-[#f0da11] mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+            </svg>
             {feature}
           </li>
         ))}
       </ul>
-      
+
       {/* CTA */}
-      <div className={`mt-auto flex items-center justify-center w-full ${option.textColor} font-bold text-base group-hover:translate-x-2 transition-all duration-300`}>
+      <div className="mt-auto inline-flex items-center font-bold text-base text-gray-900 group-hover:text-[#d0b211] transition-colors duration-300">
         <span className="mr-2">Get Started</span>
         <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
         </svg>
       </div>
-    </div>
+    </button>
   );
 }

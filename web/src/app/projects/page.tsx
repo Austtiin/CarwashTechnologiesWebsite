@@ -3,6 +3,7 @@ import { Metadata } from 'next';
 import GenericHero from '../components/ui/GenericHero';
 import GenericServicesGrid from '../components/ui/GenericServicesGrid';
 import CallToActionNew from '../components/ui/CallToActionNew';
+import StatsBand from '../components/ui/StatsBand';
 
 export const metadata: Metadata = {
   title: 'Car Wash Projects & Case Studies Minnesota | Carwash Technologies',
@@ -72,6 +73,18 @@ const ProjectsPage = () => {
         rightImage="/imgs/SpinLite.webp"
         centerLane="strong"
         compact={true}
+      />
+
+      <StatsBand
+        badge="Proven Results"
+        heading="Builds and installs across the Midwest."
+        image="/imgs/IMG_5380.webp"
+        stats={[
+          { value: '500+', label: 'Projects Delivered' },
+          { value: '25+', label: 'Years Experience' },
+          { value: '4', label: 'States Served' },
+          { value: 'Turnkey', label: 'Design-Build' },
+        ]}
       />
 
       <GenericServicesGrid

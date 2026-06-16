@@ -37,7 +37,7 @@ export default function GenericServicesGrid({
   ctaText = 'Learn More',
   ctaLink = '/contact'
 }: GenericServicesGridProps) {
-  const bgClass = backgroundVariant === 'light-grey' ? 'bg-[#f6f6f6]' : 'bg-white';
+  const bgClass = backgroundVariant === 'light-grey' ? 'bg-slate-50' : 'bg-white';
   const colClass = {
     2: 'md:grid-cols-2',
     3: 'md:grid-cols-2 lg:grid-cols-3',
@@ -46,18 +46,6 @@ export default function GenericServicesGrid({
 
   return (
     <section className={`relative ${bgClass} py-12 sm:py-16 overflow-hidden`}>
-      {/* Subtle Wave Pattern */}
-      <div className="absolute inset-0 opacity-[0.02]">
-        <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <pattern id="wave-pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
-              <path d="M0 50 Q 25 25, 50 50 T 100 50" stroke="#1f2937" fill="none" strokeWidth="2"/>
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#wave-pattern)" />
-        </svg>
-      </div>
-
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-8 sm:mb-10 max-w-3xl mx-auto">
@@ -93,7 +81,7 @@ export default function GenericServicesGrid({
           {items.map((item, index) => {
             const CardContent = (
               <div
-                className={`relative group bg-white p-5 sm:p-6 hover:shadow-lg transition-all duration-200 hover:-translate-y-1 border-l-4 border-transparent hover:border-[#f0da11] h-full ${
+                className={`relative group bg-white p-5 sm:p-6 border border-gray-200 border-l-4 border-l-[#f0da11] shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 overflow-hidden h-full ${
                   item.link ? 'cursor-pointer' : ''
                 }`}
                 style={{
@@ -107,21 +95,21 @@ export default function GenericServicesGrid({
                       src={item.backgroundImage}
                       alt=""
                       fill
-                      className="object-cover"
-                      style={{ opacity: 0.5 }}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      className="object-cover opacity-40 transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-linear-to-r from-white via-white/95 to-white/60" />
+                    <div className="absolute inset-0 bg-linear-to-t from-white via-white/96 to-white/75" />
                   </div>
                 )}
 
                 <div className="relative z-10">
                   {/* Icon */}
-                  <div className="w-10 h-10 bg-gray-100 text-gray-900 flex items-center justify-center mb-4 group-hover:bg-[#f0da11] group-hover:text-black transition-all duration-200">
+                  <div className="w-11 h-11 bg-slate-900 text-white flex items-center justify-center mb-4 group-hover:bg-[#f0da11] group-hover:text-black transition-colors duration-300 shadow-sm">
                     {item.icon}
                   </div>
 
                   {/* Content */}
-                  <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-[#f0da11] transition-colors">
+                  <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-[#d0b211] transition-colors">
                     {item.title}
                   </h3>
                   <p className="text-gray-600 text-sm leading-relaxed mb-3">
@@ -129,7 +117,7 @@ export default function GenericServicesGrid({
                   </p>
 
                   {item.link && (
-                    <div className="flex items-center text-sm font-semibold text-gray-900 group-hover:text-[#f0da11]">
+                    <div className="flex items-center text-sm font-semibold text-gray-900 group-hover:text-[#d0b211]">
                       <span>Learn more</span>
                       <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

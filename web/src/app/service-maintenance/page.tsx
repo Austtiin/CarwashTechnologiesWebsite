@@ -3,22 +3,23 @@ import { Metadata } from 'next';
 import GenericHero from '../components/ui/GenericHero';
 import GenericServicesGrid from '../components/ui/GenericServicesGrid';
 import CallToActionNew from '../components/ui/CallToActionNew';
+import StatsBand from '../components/ui/StatsBand';
 
 export const metadata: Metadata = {
-  title: 'Car Wash Service, Repair & Parts Minnesota | 24/7 Emergency Service',
-  description: 'Professional car wash equipment service, repair, and parts in MN, ND, SD, WI. 24/7 emergency service, preventive maintenance, carwash parts supplier, certified technicians for gas station carwashes, self-service bays, express tunnels, automatic systems, truck wash, and all major brands.',
-  keywords: 'car wash service Minnesota, carwash repair MN, carwash maintenance Minnesota, carwash parts supplier MN, 24 hour carwash service Minnesota, emergency carwash repair MN, carwash technician Minnesota, carwash mechanic MN, gas station carwash service, self service carwash repair Minnesota, self serve bay maintenance MN, express carwash service Minnesota, tunnel carwash maintenance MN, automatic carwash repair Minnesota, touchless carwash service, in bay automatic repair MN, truck wash service Minnesota, fleet wash maintenance MN, heavy duty carwash repair, commercial carwash service Minnesota, industrial carwash maintenance, car dealership carwash service MN, preventive maintenance carwash Minnesota, carwash equipment repair MN, carwash parts warehouse Minnesota, carwash parts distributor MN, pump repair Minnesota, Cat Pumps repair MN, Cat Pumps service Minnesota, Cat Pumps parts MN, General Pump repair Minnesota, General Pump service MN, General Pump parts Minnesota, carwash pump repair MN, carwash motor repair Minnesota, carwash conveyor service, carwash gantry repair MN, Belanger service Minnesota, Belanger repair MN, PDQ service Minnesota, PDQ repair MN, PECO service Minnesota, PECO repair MN, Sonnys service Minnesota, Sonnys repair MN, AVW service Minnesota, carwash troubleshooting MN, carwash diagnostics Minnesota, carwash modernization service',
+  title: 'Car Wash Service, Repair & Parts Minnesota | Priority Emergency Service',
+  description: 'Professional car wash equipment service, repair, and parts in MN, ND, SD, WI. Priority emergency service, preventive maintenance, carwash parts supplier, certified technicians for gas station carwashes, self-service bays, express tunnels, automatic systems, truck wash, and all major brands.',
+  keywords: 'car wash service Minnesota, carwash repair MN, carwash maintenance Minnesota, carwash parts supplier MN, priority carwash service Minnesota, emergency carwash repair MN, carwash technician Minnesota, carwash mechanic MN, gas station carwash service, self service carwash repair Minnesota, self serve bay maintenance MN, express carwash service Minnesota, tunnel carwash maintenance MN, automatic carwash repair Minnesota, touchless carwash service, in bay automatic repair MN, truck wash service Minnesota, fleet wash maintenance MN, heavy duty carwash repair, commercial carwash service Minnesota, industrial carwash maintenance, car dealership carwash service MN, preventive maintenance carwash Minnesota, carwash equipment repair MN, carwash parts warehouse Minnesota, carwash parts distributor MN, pump repair Minnesota, Cat Pumps repair MN, Cat Pumps service Minnesota, Cat Pumps parts MN, General Pump repair Minnesota, General Pump service MN, General Pump parts Minnesota, carwash pump repair MN, carwash motor repair Minnesota, carwash conveyor service, carwash gantry repair MN, Belanger service Minnesota, Belanger repair MN, PDQ service Minnesota, PDQ repair MN, PECO service Minnesota, PECO repair MN, Sonnys service Minnesota, Sonnys repair MN, AVW service Minnesota, carwash troubleshooting MN, carwash diagnostics Minnesota, carwash modernization service',
   alternates: { canonical: '/service-maintenance' },
   openGraph: {
-    title: 'Car Wash Service, Repair & Parts | 24/7 Emergency Service',
-    description: 'Professional car wash service, repair, and parts warehouse. 24/7 emergency service for gas station, self-service, express tunnel, and all carwash systems.',
+    title: 'Car Wash Service, Repair & Parts | Priority Emergency Service',
+    description: 'Professional car wash service, repair, and parts warehouse. Priority emergency service for gas station, self-service, express tunnel, and all carwash systems.',
     type: 'website',
     url: 'https://www.carwashtechnologies.com/service-maintenance',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Car Wash Service, Repair & Parts | 24/7 Emergency',
-    description: '24/7 carwash repair and parts supplier for all systems. Emergency service, preventive maintenance, and certified technicians in MN, ND, SD, WI.',
+    title: 'Car Wash Service, Repair & Parts | Priority Emergency',
+    description: 'Priority carwash repair and parts supplier for all systems. Emergency service, preventive maintenance, and certified technicians in MN, ND, SD, WI.',
   },
 };
 
@@ -215,6 +216,44 @@ export default async function ServiceMaintenance() {
         centerLane="strong"
         compact={true}
       />
+
+      {/* Stats band */}
+      <StatsBand
+        badge="Proven Track Record"
+        heading="Keeping Midwest washes open for business."
+        image="/imgs/IMG_5380.webp"
+        stats={[
+          { value: data.stats.serviceCalls, label: 'Service Calls' },
+          { value: data.stats.satisfaction, label: 'Satisfaction' },
+          { value: data.stats.responseTime, label: 'Response' },
+          { value: data.stats.coverage, label: 'Coverage' },
+        ]}
+      />
+
+      {/* Emergency / priority service strip */}
+      <section className="bg-[#f0da11]">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+            <div className="flex items-center gap-4">
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center bg-black text-[#f0da11]">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+              </span>
+              <div>
+                <p className="text-lg sm:text-xl font-bold text-black leading-tight">Equipment down? We respond fast.</p>
+                <p className="text-sm text-black/70">Priority emergency repair across MN, ND, SD &amp; WI.</p>
+              </div>
+            </div>
+            <a
+              href="tel:+16124089010"
+              className="inline-flex items-center gap-2 bg-black text-white font-bold px-6 py-3.5 hover:bg-slate-800 transition-colors uppercase tracking-wide whitespace-nowrap"
+            >
+              Call (612) 408-9010
+            </a>
+          </div>
+        </div>
+      </section>
 
       {/* Service Categories */}
       <GenericServicesGrid

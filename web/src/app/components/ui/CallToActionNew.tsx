@@ -3,7 +3,7 @@
 // Clean Tech Call to Action Section
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+import DarkSectionBackdrop from './DarkSectionBackdrop';
 
 interface CTAButton {
   text: string;
@@ -29,18 +29,9 @@ export default function CallToActionNew({
   contactInfo
 }: CallToActionProps) {
   return (
-    <section className="relative py-16 sm:py-20 bg-linear-to-br from-slate-950 via-slate-900 to-slate-950">
-      {/* Yellow top separator */}
-      <div className="absolute inset-x-0 top-0 h-1 bg-[#f0da11] z-20" />
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/imgs/PDQ.webp"
-          alt="Car wash equipment"
-          fill
-          className="object-cover opacity-5"
-        />
-      </div>
+    <section className="relative py-16 sm:py-20 overflow-hidden">
+      <DarkSectionBackdrop image="/imgs/PDQ.webp" imageOpacity={6} />
+
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto text-center mb-8">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3">
@@ -58,8 +49,8 @@ export default function CallToActionNew({
               href={button.href}
               className={
                 button.variant === 'primary'
-                  ? 'flex-1 inline-flex items-center justify-center gap-2 bg-[#f0da11] text-black px-6 py-3 font-semibold text-sm sm:text-base rounded-md hover:bg-[#d0b211] transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5'
-                  : 'flex-1 inline-flex items-center justify-center gap-2 border-2 border-white text-white px-6 py-3 font-semibold text-sm sm:text-base rounded-md hover:bg-white hover:text-slate-900 transition-all duration-200'
+                  ? 'flex-1 inline-flex items-center justify-center gap-2 bg-[#f0da11] text-black px-6 py-3 font-semibold text-sm sm:text-base rounded-none hover:bg-[#d0b211] transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5'
+                  : 'flex-1 inline-flex items-center justify-center gap-2 border-2 border-white text-white px-6 py-3 font-semibold text-sm sm:text-base rounded-none hover:bg-white hover:text-slate-900 transition-all duration-200'
               }
             >
               {button.text}

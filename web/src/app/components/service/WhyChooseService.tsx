@@ -47,11 +47,11 @@ export default function WhyChooseService({ stats }: WhyChooseServiceProps) {
     <section className="py-16">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="bg-linear-to-br from-slate-50 to-slate-100 p-8 rounded-2xl border border-slate-200 relative overflow-hidden">
+          <div className="bg-slate-50 p-8 border border-gray-200 border-l-4 border-l-[#f0da11] relative overflow-hidden">
             <div className="absolute top-0 right-0 w-32 h-32 bg-[#f0da11]/10 rounded-full -mr-16 -mt-16"></div>
             <div className="relative z-10">
               <div className="flex items-center mb-6">
-                <div className="w-12 h-12 bg-linear-to-br from-[#f0da11] to-[#d0b211] rounded-xl flex items-center justify-center mr-3">
+                <div className="w-12 h-12 bg-[#f0da11] flex items-center justify-center mr-3">
                   <svg className="w-6 h-6 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
@@ -99,7 +99,7 @@ export default function WhyChooseService({ stats }: WhyChooseServiceProps) {
               ))}
             </div>
 
-            <div className="mt-8 p-6 bg-gray-50 rounded-xl border border-gray-200">
+            <div className="mt-8 p-6 bg-slate-50 border border-gray-200 border-l-4 border-l-[#f0da11]">
               <div className="grid grid-cols-2 gap-6">
                 <div className="text-center">
                   <div className="text-3xl font-bold text-[#f0da11] mb-2">{stats.serviceCalls}</div>

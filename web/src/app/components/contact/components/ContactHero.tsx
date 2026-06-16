@@ -36,7 +36,7 @@ export default function ContactHero() {
           
           {/* Static CTA badges */}
           <div className="flex flex-col gap-4 justify-center items-center mt-8 sm:flex-row sm:gap-6">
-            <div className="bg-linear-to-r from-[#f0da11] to-[#e6c200] text-gray-900 px-8 py-4 rounded-xl font-bold shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+            <div className="bg-[#f0da11] text-gray-900 px-8 py-4 rounded-none font-bold shadow-xl transition-all duration-300 transform hover:-translate-y-1">
               <span className="flex items-center">
                 Quick Response
                 <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -44,7 +44,7 @@ export default function ContactHero() {
                 </svg>
               </span>
             </div>
-            <div className="border-2 border-white/30 text-white px-8 py-4 rounded-xl font-bold hover:bg-white/10 transition-all duration-300">
+            <div className="border-2 border-white/30 text-white px-8 py-4 rounded-none font-bold hover:bg-white/10 transition-all duration-300">
               <span className="flex items-center">
                 Emergency Service Available
                 <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

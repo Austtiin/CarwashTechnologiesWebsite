@@ -119,6 +119,24 @@ public static class EmailTemplates
         _           => bestTime ?? "—"
     };
 
+    private static string FormatArea(string area) => area?.ToLower() switch
+    {
+        "chemicals"    => "Chemicals",
+        "maintenance"  => "Service & Maintenance",
+        "equipment"    => "Equipment Sales",
+        "installation" => "Installation & Setup",
+        "parts"        => "Parts",
+        "consulting"   => "Consulting & Planning",
+        "new-build"    => "New Carwash Build",
+        "other"        => "Other",
+        _              => area ?? string.Empty
+    };
+
+    private static string FormatAreasOfInterest(List<string>? areas) =>
+        areas is null || areas.Count == 0
+            ? string.Empty
+            : string.Join(", ", areas.Select(FormatArea).Where(a => !string.IsNullOrWhiteSpace(a)));
+
     // ── Customer Confirmation ────────────────────────────────────────────────
 
     /// <summary>Confirmation email sent to the person who submitted the form.</summary>
@@ -132,7 +150,9 @@ public static class EmailTemplates
             string.IsNullOrWhiteSpace(form.Phone)   ? "" : DetailRow("Phone",   form.Phone,   true),
             string.IsNullOrWhiteSpace(form.Company) ? "" : DetailRow("Company", form.Company, false),
             DetailRow("Best Time to Call", FormatBestTime(form.BestTime),       true),
-            DetailRow("Your Message",      form.Inquiry,                        false)
+            string.IsNullOrWhiteSpace(FormatAreasOfInterest(form.AreasOfInterest))
+                ? "" : DetailRow("Areas of Interest", FormatAreasOfInterest(form.AreasOfInterest), false),
+            DetailRow("Your Message",      form.Inquiry,                        true)
         );
 
         var body = $@"
@@ -220,7 +240,9 @@ public static class EmailTemplates
             DetailRow("Inquiry Type",      FormatContactType(form.ContactType), false),
             DetailRow("Best Time to Call", FormatBestTime(form.BestTime),       true),
             DetailRow("Urgency",           form.Urgency ?? "normal",            false),
-            DetailRow("Message",           form.Inquiry,                        true)
+            string.IsNullOrWhiteSpace(FormatAreasOfInterest(form.AreasOfInterest))
+                ? "" : DetailRow("Areas of Interest", FormatAreasOfInterest(form.AreasOfInterest), true),
+            DetailRow("Message",           form.Inquiry,                        false)
         );
 
         var urgencyBadge    = UrgencyBadge(form.Urgency ?? "normal");

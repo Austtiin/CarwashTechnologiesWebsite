@@ -4,6 +4,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import DarkSectionBackdrop from '../../ui/DarkSectionBackdrop';
 
 export default function ChemicalsSectionNew() {
   const features = [
@@ -20,18 +21,9 @@ export default function ChemicalsSectionNew() {
   ];
 
   return (
-    <section className="relative bg-linear-to-br from-slate-950 via-slate-900 to-slate-950 py-12 sm:py-14 overflow-hidden">
-      {/* Yellow top separator */}
-      <div className="absolute inset-x-0 top-0 h-1 bg-[#f0da11] z-20" />
-      {/* Subtle background image overlay */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/imgs/chems/MixStir.jpg"
-          alt=""
-          fill
-          className="object-cover opacity-5"
-        />
-      </div>
+    <section className="relative py-12 sm:py-14 overflow-hidden">
+      <DarkSectionBackdrop image="/imgs/chems/MixStir.jpg" imageOpacity={8} />
+
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 items-center">
           
@@ -65,7 +57,7 @@ export default function ChemicalsSectionNew() {
             {/* CTA Button */}
             <Link 
               href="/chemical-sales"
-              className="inline-block bg-[#f0da11] text-black font-semibold px-6 py-3 text-sm rounded-md hover:bg-[#d0b211] hover:-translate-y-0.5 transition-all duration-200 shadow-md hover:shadow-lg"
+              className="inline-block bg-[#f0da11] text-black font-semibold px-6 py-3 text-sm rounded-none hover:bg-[#d0b211] hover:-translate-y-0.5 transition-all duration-200 shadow-md hover:shadow-lg"
             >
               Explore Chemical Programs
             </Link>

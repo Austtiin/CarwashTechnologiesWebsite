@@ -119,7 +119,7 @@ export default function ServicesSection() {
                   <div className="group/logo relative">
                     <div className="bg-white hover:bg-gray-50 border border-gray-200/50 rounded-lg p-3 h-16 flex items-center justify-center transition-all duration-300 hover:shadow-md relative overflow-hidden">
                       <Image 
-                        src="/logos/logoSonnys.webp" 
+                        src="/logos/Sonnys_Logo-RGB.webp"
                         alt="Sonnys Logo" 
                         fill
                         className="object-contain"

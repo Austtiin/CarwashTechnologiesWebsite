@@ -57,13 +57,13 @@ export default function InstallationProcess() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {processSteps.map((step) => (
-            <div key={step.number} className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 relative">
+            <div key={step.number} className="bg-white p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 border-t-4 border-t-[#f0da11] relative">
               <div className="absolute -top-4 left-8">
                 <div className={`w-8 h-8 bg-linear-to-br ${step.color} rounded-full flex items-center justify-center text-white font-bold text-sm`}>
                   {step.number}
                 </div>
               </div>
-              <div className={`w-16 h-16 bg-linear-to-br ${step.color} rounded-xl flex items-center justify-center mx-auto mb-6 mt-4`}>
+              <div className={`w-16 h-16 bg-linear-to-br ${step.color} flex items-center justify-center mx-auto mb-6 mt-4`}>
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={step.icon} />
                 </svg>

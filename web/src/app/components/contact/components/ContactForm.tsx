@@ -18,6 +18,18 @@ interface ContactFormProps {
   onReset: () => void;
 }
 
+// Areas of interest the visitor can select (multi-select)
+const AREA_OPTIONS = [
+  { value: 'chemicals', label: 'Chemicals' },
+  { value: 'maintenance', label: 'Service & Maintenance' },
+  { value: 'equipment', label: 'Equipment Sales' },
+  { value: 'installation', label: 'Installation & Setup' },
+  { value: 'parts', label: 'Parts' },
+  { value: 'consulting', label: 'Consulting & Planning' },
+  { value: 'new-build', label: 'New Carwash Build' },
+  { value: 'other', label: 'Other' },
+] as const;
+
 interface FormData {
   name: string;
   email: string;
@@ -43,6 +55,14 @@ export default function ContactForm({ selectedOption, onReset }: ContactFormProp
     website: ''
   });
   
+  const [areasOfInterest, setAreasOfInterest] = useState<string[]>([]);
+
+  const toggleArea = useCallback((value: string) => {
+    setAreasOfInterest(prev =>
+      prev.includes(value) ? prev.filter(v => v !== value) : [...prev, value]
+    );
+  }, []);
+
   const { isSubmitting, isSuccess, isPending, error, submitForm, reset } = useContactForm();
 
   // List of blocked email domains
@@ -153,6 +173,7 @@ export default function ContactForm({ selectedOption, onReset }: ContactFormProp
       bestTime: formData.bestTime as ContactFormData['bestTime'],
       urgency: formData.urgency as ContactFormData['urgency'],
       contactType: selectedOption?.id || 'general',
+      areasOfInterest,
       website: formData.website
     };
 
@@ -170,6 +191,7 @@ export default function ContactForm({ selectedOption, onReset }: ContactFormProp
         urgency: 'normal',
         website: ''
       });
+      setAreasOfInterest([]);
     }
   };
 
@@ -185,6 +207,7 @@ export default function ContactForm({ selectedOption, onReset }: ContactFormProp
       urgency: 'normal',
       website: ''
     });
+    setAreasOfInterest([]);
     onReset();
   };
 
@@ -209,7 +232,7 @@ export default function ContactForm({ selectedOption, onReset }: ContactFormProp
           </p>
           <button
             onClick={handleReset}
-            className="bg-[#f0da11] text-gray-900 px-8 py-4 font-bold hover:bg-[#d0b211] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 cursor-pointer rounded-lg uppercase tracking-wide"
+            className="bg-[#f0da11] text-gray-900 px-8 py-4 font-bold hover:bg-[#d0b211] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 cursor-pointer rounded-none uppercase tracking-wide"
           >
             Submit Another Inquiry
           </button>
@@ -240,13 +263,13 @@ export default function ContactForm({ selectedOption, onReset }: ContactFormProp
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="tel:612-408-9010"
-              className="bg-[#f0da11] text-gray-900 px-8 py-4 font-bold hover:bg-[#d0b211] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 cursor-pointer rounded-lg uppercase tracking-wide"
+              className="bg-[#f0da11] text-gray-900 px-8 py-4 font-bold hover:bg-[#d0b211] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 cursor-pointer rounded-none uppercase tracking-wide"
             >
               Call (612) 408-9010
             </a>
             <button
               onClick={() => reset()}
-              className="bg-white text-gray-900 px-8 py-4 font-bold hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 cursor-pointer rounded-lg uppercase tracking-wide border-2 border-white"
+              className="bg-white text-gray-900 px-8 py-4 font-bold hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 cursor-pointer rounded-none uppercase tracking-wide border-2 border-white"
             >
               Try Again
             </button>
@@ -278,13 +301,13 @@ export default function ContactForm({ selectedOption, onReset }: ContactFormProp
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
               onClick={() => reset()}
-              className="bg-[#f0da11] text-gray-900 px-8 py-4 font-bold hover:bg-[#d0b211] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 cursor-pointer rounded-lg uppercase tracking-wide"
+              className="bg-[#f0da11] text-gray-900 px-8 py-4 font-bold hover:bg-[#d0b211] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 cursor-pointer rounded-none uppercase tracking-wide"
             >
               Try Again
             </button>
             <a
               href="tel:612-408-9010"
-              className="bg-white text-gray-900 px-8 py-4 font-bold hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 cursor-pointer rounded-lg uppercase tracking-wide border-2 border-white"
+              className="bg-white text-gray-900 px-8 py-4 font-bold hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 cursor-pointer rounded-none uppercase tracking-wide border-2 border-white"
             >
               Call Us
             </a>
@@ -298,7 +321,7 @@ export default function ContactForm({ selectedOption, onReset }: ContactFormProp
   return (
     <form
       onSubmit={handleSubmit}
-      className="max-w-4xl mx-auto bg-white border border-gray-200 p-4 sm:p-5 md:p-6 shadow-xl rounded-2xl lg:rounded-3xl"
+      className="max-w-4xl mx-auto bg-white border border-gray-200 border-t-4 border-t-[#f0da11] p-4 sm:p-5 md:p-6 shadow-xl rounded-none"
     >
       {/* Honeypot field - visually hidden, bots fill it in, humans never see it */}
       <div style={{ position: 'absolute', left: '-9999px', top: 0, height: 0, overflow: 'hidden' }} aria-hidden="true">
@@ -334,7 +357,7 @@ export default function ContactForm({ selectedOption, onReset }: ContactFormProp
                   value={formData.name}
                   onChange={handleInputChange}
                   disabled={isSubmitting}
-                  className={`w-full px-4 py-2.5 border-2 ${validationErrors.name ? 'border-red-500 focus:ring-red-500 focus:border-red-500' : 'border-gray-300 focus:ring-[#f0da11] focus:border-[#f0da11]'} bg-white text-gray-900 focus:ring-2 transition-all duration-200 placeholder-gray-400 disabled:bg-gray-100 disabled:cursor-not-allowed rounded-lg`}
+                  className={`w-full px-4 py-2.5 border-2 ${validationErrors.name ? 'border-red-500 focus:ring-red-500 focus:border-red-500' : 'border-gray-300 focus:ring-[#f0da11] focus:border-[#f0da11]'} bg-white text-gray-900 focus:ring-2 transition-all duration-200 placeholder-gray-400 disabled:bg-gray-100 disabled:cursor-not-allowed rounded-none`}
                   placeholder="Enter your full name"
                 />
                 {validationErrors.name && (
@@ -356,7 +379,7 @@ export default function ContactForm({ selectedOption, onReset }: ContactFormProp
                   value={formData.email}
                   onChange={handleInputChange}
                   disabled={isSubmitting}
-                  className={`w-full px-4 py-2.5 border-2 ${validationErrors.email ? 'border-red-500 focus:ring-red-500 focus:border-red-500' : 'border-gray-300 focus:ring-[#f0da11] focus:border-[#f0da11]'} bg-white text-gray-900 focus:ring-2 transition-all duration-200 placeholder-gray-400 disabled:bg-gray-100 disabled:cursor-not-allowed rounded-lg`}
+                  className={`w-full px-4 py-2.5 border-2 ${validationErrors.email ? 'border-red-500 focus:ring-red-500 focus:border-red-500' : 'border-gray-300 focus:ring-[#f0da11] focus:border-[#f0da11]'} bg-white text-gray-900 focus:ring-2 transition-all duration-200 placeholder-gray-400 disabled:bg-gray-100 disabled:cursor-not-allowed rounded-none`}
                   placeholder="your.email@example.com"
                 />
                 {validationErrors.email && (
@@ -377,7 +400,7 @@ export default function ContactForm({ selectedOption, onReset }: ContactFormProp
                   value={formData.phone}
                   onChange={handleInputChange}
                   disabled={isSubmitting}
-                  className="w-full px-4 py-2.5 border-2 border-gray-300 bg-white text-gray-900 focus:ring-2 focus:ring-[#f0da11] focus:border-[#f0da11] transition-all duration-200 placeholder-gray-400 disabled:bg-gray-100 disabled:cursor-not-allowed rounded-lg"
+                  className="w-full px-4 py-2.5 border-2 border-gray-300 bg-white text-gray-900 focus:ring-2 focus:ring-[#f0da11] focus:border-[#f0da11] transition-all duration-200 placeholder-gray-400 disabled:bg-gray-100 disabled:cursor-not-allowed rounded-none"
                   placeholder="(555) 123-4567"
                 />
               </div>
@@ -395,7 +418,7 @@ export default function ContactForm({ selectedOption, onReset }: ContactFormProp
                   value={formData.company}
                   onChange={handleInputChange}
                   disabled={isSubmitting}
-                  className="w-full px-4 py-2.5 border-2 border-gray-300 bg-white text-gray-900 focus:ring-2 focus:ring-[#f0da11] focus:border-[#f0da11] transition-all duration-200 placeholder-gray-400 disabled:bg-gray-100 disabled:cursor-not-allowed rounded-lg"
+                  className="w-full px-4 py-2.5 border-2 border-gray-300 bg-white text-gray-900 focus:ring-2 focus:ring-[#f0da11] focus:border-[#f0da11] transition-all duration-200 placeholder-gray-400 disabled:bg-gray-100 disabled:cursor-not-allowed rounded-none"
                   placeholder="Your business name"
                 />
               </div>
@@ -418,7 +441,7 @@ export default function ContactForm({ selectedOption, onReset }: ContactFormProp
                   value={formData.inquiry}
                   onChange={handleInputChange}
                   disabled={isSubmitting}
-                  className={`w-full px-3 py-2 border-2 ${validationErrors.inquiry ? 'border-red-500 focus:ring-red-500 focus:border-red-500' : 'border-gray-300 focus:ring-[#f0da11] focus:border-[#f0da11]'} bg-white text-gray-900 focus:ring-2 transition-all duration-200 resize-vertical min-h-20 placeholder-gray-400 text-sm disabled:bg-gray-100 disabled:cursor-not-allowed rounded-lg`}
+                  className={`w-full px-3 py-2 border-2 ${validationErrors.inquiry ? 'border-red-500 focus:ring-red-500 focus:border-red-500' : 'border-gray-300 focus:ring-[#f0da11] focus:border-[#f0da11]'} bg-white text-gray-900 focus:ring-2 transition-all duration-200 resize-vertical min-h-20 placeholder-gray-400 text-sm disabled:bg-gray-100 disabled:cursor-not-allowed rounded-none`}
                   placeholder={`Tell us about your ${selectedOption?.title.toLowerCase()} needs...`}
                 />
                 <div className="flex justify-between items-center mt-1">
@@ -430,6 +453,39 @@ export default function ContactForm({ selectedOption, onReset }: ContactFormProp
                   <div className="text-xs text-gray-500">
                     {formData.inquiry.length}/1000
                   </div>
+                </div>
+              </div>
+
+              {/* Areas of Interest (multi-select) */}
+              <div className="group">
+                <span className="block text-sm font-semibold text-gray-700 mb-1.5 uppercase tracking-wide">
+                  Areas of interest
+                </span>
+                <div className="grid grid-cols-2 gap-1.5">
+                  {AREA_OPTIONS.map((area) => {
+                    const checked = areasOfInterest.includes(area.value);
+                    return (
+                      <label
+                        key={area.value}
+                        className={`flex items-center gap-2 px-2.5 py-1.5 border-2 rounded-none cursor-pointer text-xs font-medium transition-all duration-150 ${
+                          checked
+                            ? 'border-[#f0da11] bg-[#f0da11]/10 text-gray-900'
+                            : 'border-gray-300 bg-white text-gray-700 hover:border-gray-400'
+                        } ${isSubmitting ? 'opacity-60 cursor-not-allowed' : ''}`}
+                      >
+                        <input
+                          type="checkbox"
+                          name="areasOfInterest"
+                          value={area.value}
+                          checked={checked}
+                          onChange={() => toggleArea(area.value)}
+                          disabled={isSubmitting}
+                          className="h-3.5 w-3.5 accent-[#f0da11] shrink-0"
+                        />
+                        {area.label}
+                      </label>
+                    );
+                  })}
                 </div>
               </div>
 
@@ -445,7 +501,7 @@ export default function ContactForm({ selectedOption, onReset }: ContactFormProp
                   value={formData.bestTime}
                   onChange={handleInputChange}
                   disabled={isSubmitting}
-                  className={`w-full px-4 py-2.5 border-2 ${validationErrors.bestTime ? 'border-red-500 focus:ring-red-500 focus:border-red-500' : 'border-gray-300 focus:ring-[#f0da11] focus:border-[#f0da11]'} bg-white text-gray-900 focus:ring-2 transition-all duration-200 disabled:bg-gray-100 disabled:cursor-not-allowed rounded-lg`}
+                  className={`w-full px-4 py-2.5 border-2 ${validationErrors.bestTime ? 'border-red-500 focus:ring-red-500 focus:border-red-500' : 'border-gray-300 focus:ring-[#f0da11] focus:border-[#f0da11]'} bg-white text-gray-900 focus:ring-2 transition-all duration-200 disabled:bg-gray-100 disabled:cursor-not-allowed rounded-none`}
                 >
                   <option value="">Select preferred time</option>
                   <option value="morning">Morning (8AM - 12PM)</option>
@@ -470,7 +526,7 @@ export default function ContactForm({ selectedOption, onReset }: ContactFormProp
                   value={formData.urgency}
                   onChange={handleInputChange}
                   disabled={isSubmitting}
-                  className={`w-full px-4 py-2.5 border-2 ${validationErrors.urgency ? 'border-red-500 focus:ring-red-500 focus:border-red-500' : 'border-gray-300 focus:ring-[#f0da11] focus:border-[#f0da11]'} bg-white text-gray-900 focus:ring-2 transition-all duration-200 disabled:bg-gray-100 disabled:cursor-not-allowed rounded-lg`}
+                  className={`w-full px-4 py-2.5 border-2 ${validationErrors.urgency ? 'border-red-500 focus:ring-red-500 focus:border-red-500' : 'border-gray-300 focus:ring-[#f0da11] focus:border-[#f0da11]'} bg-white text-gray-900 focus:ring-2 transition-all duration-200 disabled:bg-gray-100 disabled:cursor-not-allowed rounded-none`}
                 >
                   <option value="">Select urgency level</option>
                   <option value="normal">Normal - Within a few days</option>
@@ -489,7 +545,7 @@ export default function ContactForm({ selectedOption, onReset }: ContactFormProp
             <button
               type="submit"
               disabled={isSubmitting || !isFormValid()}
-              className="group bg-[#f0da11] text-gray-900 px-10 py-3.5 font-bold text-base hover:bg-[#d0b211] transition-all duration-300 shadow-xl transform hover:-translate-y-1 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none relative overflow-hidden uppercase tracking-wide cursor-pointer rounded-lg"
+              className="group bg-[#f0da11] text-gray-900 px-10 py-3.5 font-bold text-base hover:bg-[#d0b211] transition-all duration-300 shadow-xl transform hover:-translate-y-1 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none relative overflow-hidden uppercase tracking-wide cursor-pointer rounded-none"
             >
               {isSubmitting ? (
                 <span className="flex items-center justify-center">
@@ -511,7 +567,7 @@ export default function ContactForm({ selectedOption, onReset }: ContactFormProp
         {/* Info Column */}
         <div className="space-y-3">
           {/* Info Card */}
-          <div className={`p-4 bg-linear-to-br ${selectedOption?.bgColor} border-2 ${selectedOption?.borderColor} rounded-lg`}>
+          <div className={`p-4 bg-linear-to-br ${selectedOption?.bgColor} border-2 ${selectedOption?.borderColor} rounded-none`}>
             <h4 className="font-bold text-gray-900 mb-3 uppercase tracking-wide text-xs">What to expect:</h4>
             <ul className="text-xs text-gray-900 space-y-1.5">
               <li className="flex items-center font-medium">
@@ -534,7 +590,7 @@ export default function ContactForm({ selectedOption, onReset }: ContactFormProp
           </div>
 
           {/* Contact Type Indicator */}
-          <div className="p-3 bg-gray-50 border border-gray-200 rounded-lg">
+          <div className="p-3 bg-gray-50 border border-gray-200 rounded-none">
             <p className="text-xs text-gray-600 font-medium">
               <span className="text-gray-900">Inquiry Type:</span>
               <span className="ml-1 text-[#f0da11] font-bold">{selectedOption?.title}</span>
