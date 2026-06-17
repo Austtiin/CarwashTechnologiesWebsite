@@ -1,5 +1,6 @@
 // AboutPage.tsx
 import { Metadata } from 'next';
+import Link from 'next/link';
 import GenericHero from '../components/ui/GenericHero';
 import GenericServicesGrid from '../components/ui/GenericServicesGrid';
 import CallToActionNew from '../components/ui/CallToActionNew';
@@ -7,7 +8,7 @@ import CallToActionNew from '../components/ui/CallToActionNew';
 export const metadata: Metadata = {
   title: 'About Carwash Technologies | Gas Station, Self-Service & Heavy Duty Carwash Builder',
   description: "Minnesota's trusted carwash builder, contractor, parts supplier, and equipment dealer specializing in gas station carwashes, self-service bays, heavy duty truck wash, express tunnels, and commercial systems. 50+ years combined expertise serving MN, ND, SD, and WI.",
-  keywords: 'about Carwash Technologies, carwash builder Minnesota, carwash contractor MN, gas station carwash builder, self service carwash parts supplier Minnesota, heavy duty carwash builder, express carwash contractor MN, car wash equipment dealer Minnesota, carwash parts supplier MN, carwash company Minnesota, Midwest carwash company, carwash experts Minnesota, touchless carwash dealer, commercial carwash builder, industrial carwash contractor, authorized Belanger dealer Minnesota, authorized PECO dealer MN, PDQ dealer Minnesota, Sonnys dealer MN, Vertech Labs partner Minnesota, ChemQuest partner MN, Simoniz authorized dealer Minnesota, Cat Pumps dealer MN, General Pump dealer Minnesota, AVW dealer Minnesota',
+  keywords: 'about Carwash Technologies, carwash builder Minnesota, carwash contractor MN, gas station carwash builder, self service carwash parts supplier Minnesota, heavy duty carwash builder, express carwash contractor MN, car wash equipment dealer Minnesota, carwash parts supplier MN, carwash company Minnesota, Midwest carwash company, carwash experts Minnesota, touchless carwash dealer, commercial carwash builder, industrial carwash contractor, authorized Belanger dealer Minnesota, authorized PECO dealer MN, PDQ dealer Minnesota, Sonnys dealer MN, Vertech Labs partner Minnesota, ChemQuest partner MN, Simoniz authorized dealer Minnesota, Cat Pumps dealer MN, General Pump dealer Minnesota, AVW dealer Minnesota, worlds longest carwash builder, record setting carwash project, largest carwash tunnel builder Midwest',
   alternates: { canonical: '/about' },
   openGraph: {
     title: 'About Carwash Technologies | Gas Station, Self-Service & Heavy Duty Builder',
@@ -93,6 +94,35 @@ export default function AboutPage() {
           columns={4}
           backgroundVariant="light-grey"
         />
+
+        {/* Flagship project mention */}
+        <section className="bg-slate-950 py-12 sm:py-14">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <Link
+              href="/projects/worlds-longest-carwash"
+              className="group flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-slate-900 border border-slate-800 hover:border-[#f0da11] transition-colors duration-300 p-6 sm:p-8"
+            >
+              <div>
+                <p className="text-xs font-semibold text-[#f0da11] uppercase tracking-widest mb-2">
+                  Flagship Project · Now Building
+                </p>
+                <h2 className="text-xl sm:text-2xl font-bold text-white">
+                  Currently building the World&apos;s Longest Carwash
+                </h2>
+                <p className="text-sm text-slate-300 mt-2 max-w-2xl">
+                  A record-setting tunnel build is underway — proof of what 50+ years of combined
+                  experience and a true design-build team can deliver.
+                </p>
+              </div>
+              <span className="inline-flex items-center shrink-0 text-sm font-semibold text-white group-hover:text-[#f0da11] transition-colors">
+                See the project
+                <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </span>
+            </Link>
+          </div>
+        </section>
 
         <CallToActionNew
           title="Ready to Transform Your Wash Business?"

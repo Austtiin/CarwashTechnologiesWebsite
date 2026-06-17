@@ -1,4 +1,6 @@
 import { Metadata } from 'next';
+import Link from 'next/link';
+import Image from 'next/image';
 import HeroSectionNew from './components/home/sections/HeroSectionNew';
 import EquipmentBrandsStrip from './components/home/sections/EquipmentBrandsStrip';
 import ConsultationCTA from './components/home/sections/ConsultationCTA';
@@ -9,7 +11,7 @@ import WhyChooseUsSection from './components/home/sections/WhyChooseUsSection';
 export const metadata: Metadata = {
   title: 'Midwest Carwash Builder, Parts & Contractor | Gas Station, Self-Service, Heavy Duty',
   description: 'Leading Midwest carwash builder and contractor specializing in gas station carwashes, self-service carwash parts, heavy duty truck wash systems, express tunnel builder, car dealership installations, touchless systems, and automatic carwash repair across MN, ND, SD, WI.',
-  keywords: 'midwest carwash builder, gas station carwash builder Minnesota, self service carwash parts MN, heavy duty carwash builder, carwash contractor Minnesota, express carwash builder, car dealership carwash installation, touchless carwash systems Minnesota, self serve car wash builder MN, convenience store carwash installation, automatic carwash builder Minnesota, tunnel carwash contractor, in bay automatic builder, commercial carwash builder MN, industrial carwash contractor Minnesota, municipal carwash builder, fleet wash contractor, semi truck wash builder Minnesota, bus wash systems builder, RV wash equipment installation, car wash construction Minnesota, carwash design build, turnkey carwash contractor, carwash equipment parts supplier MN, carwash parts distributor Minnesota, automatic car wash repair Minnesota, carwash modernization services, carwash retrofit contractor, priority carwash service, car wash chemicals minnesota, carwash maintenance contractor MN, carwash technician services, vehicle wash equipment supplier, automated car wash machine minnesota, car wash automation equipment, tunnel wash systems, track wash installation, carwash site development',
+  keywords: 'midwest carwash builder, gas station carwash builder Minnesota, self service carwash parts MN, heavy duty carwash builder, carwash contractor Minnesota, express carwash builder, car dealership carwash installation, touchless carwash systems Minnesota, self serve car wash builder MN, convenience store carwash installation, automatic carwash builder Minnesota, tunnel carwash contractor, in bay automatic builder, commercial carwash builder MN, industrial carwash contractor Minnesota, municipal carwash builder, fleet wash contractor, semi truck wash builder Minnesota, bus wash systems builder, RV wash equipment installation, car wash construction Minnesota, carwash design build, turnkey carwash contractor, carwash equipment parts supplier MN, carwash parts distributor Minnesota, automatic car wash repair Minnesota, carwash modernization services, carwash retrofit contractor, priority carwash service, car wash chemicals minnesota, carwash maintenance contractor MN, carwash technician services, vehicle wash equipment supplier, automated car wash machine minnesota, car wash automation equipment, tunnel wash systems, track wash installation, carwash site development, worlds longest carwash, world record carwash, longest carwash tunnel, largest carwash builder Minnesota, biggest car wash tunnel, flagship carwash build',
   alternates: { canonical: '/' },
   openGraph: {
     title: 'Midwest Carwash Builder | Gas Station, Self-Service, Heavy Duty Contractor',
@@ -159,6 +161,46 @@ export default function Home() {
                 </p>
               </article>
             </div>
+          </div>
+        </section>
+
+        {/* Flagship build — World's Longest Carwash (dark feature band) */}
+        <section className="bg-slate-950 py-14 sm:py-16">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <Link
+              href="/projects/worlds-longest-carwash"
+              className="group grid lg:grid-cols-2 gap-8 lg:gap-10 items-center bg-slate-900 border border-slate-800 hover:border-[#f0da11] transition-colors duration-300 overflow-hidden"
+            >
+              <div className="relative aspect-[4/3] lg:aspect-auto lg:h-full min-h-[260px]">
+                <Image
+                  src="/imgs/WLC/4763be2a-a176-492d-a14b-948bd849b563.webp"
+                  alt="World's Longest Carwash flagship build under construction"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
+                />
+                <span className="absolute top-4 left-4 inline-flex items-center gap-2 bg-[#f0da11] text-slate-900 text-xs font-bold uppercase tracking-widest px-3 py-1.5">
+                  Now Building
+                </span>
+              </div>
+              <div className="p-6 sm:p-8 lg:pr-12">
+                <p className="text-sm font-semibold text-[#f0da11] uppercase tracking-wider mb-3">Flagship Project</p>
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4">
+                  We&apos;re Building the World&apos;s Longest Carwash
+                </h2>
+                <p className="text-base text-slate-300 leading-relaxed mb-6">
+                  Our most ambitious project yet is under construction right now — a record-setting tunnel
+                  on a scale the industry hasn&apos;t seen. It&apos;s the clearest proof of what our design-build
+                  team can deliver for any operation.
+                </p>
+                <span className="inline-flex items-center text-sm font-semibold text-white group-hover:text-[#f0da11] transition-colors">
+                  See the project
+                  <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </span>
+              </div>
+            </Link>
           </div>
         </section>
 

@@ -70,13 +70,13 @@ export default function CookieConsent() {
             <div className="flex flex-col sm:flex-row gap-3 lg:shrink-0">
               <button
                 onClick={handleAcceptEssential}
-                className="px-6 py-3 text-sm font-semibold text-white border-2 border-slate-600 hover:border-slate-400 hover:bg-slate-800 transition-colors duration-200 uppercase tracking-wide"
+                className="px-6 py-3 text-sm font-semibold text-white border-2 border-slate-600 hover:border-slate-400 hover:bg-slate-800 transition-colors duration-200 uppercase tracking-wide cursor-pointer"
               >
                 Accept Essential
               </button>
               <button
                 onClick={handleAcceptAll}
-                className="px-6 py-3 text-sm font-bold text-gray-900 bg-[#f0da11] hover:bg-[#d0b211] transition-colors duration-200 uppercase tracking-wide shadow-lg"
+                className="px-6 py-3 text-sm font-bold text-gray-900 bg-[#f0da11] hover:bg-[#d0b211] transition-colors duration-200 uppercase tracking-wide shadow-lg cursor-pointer"
               >
                 Accept All
               </button>

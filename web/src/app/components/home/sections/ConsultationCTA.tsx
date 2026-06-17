@@ -119,7 +119,7 @@ export default function ConsultationCTA() {
                 <button
                   type="button"
                   onClick={() => setStatus('idle')}
-                  className="inline-flex items-center gap-2 bg-slate-900 text-white font-semibold px-6 py-3 rounded-none hover:bg-slate-800 transition-colors"
+                  className="inline-flex items-center gap-2 bg-slate-900 text-white font-semibold px-6 py-3 rounded-none hover:bg-slate-800 transition-colors cursor-pointer"
                 >
                   Submit Another Request
                 </button>
@@ -187,7 +187,7 @@ export default function ConsultationCTA() {
                 <button
                   type="submit"
                   disabled={!isValid || status === 'submitting'}
-                  className="w-full inline-flex items-center justify-center gap-2 bg-[#f0da11] text-black px-6 py-3.5 font-bold rounded-none hover:bg-[#d0b211] transition-all duration-200 hover:-translate-y-0.5 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none uppercase tracking-wide"
+                  className="w-full inline-flex items-center justify-center gap-2 bg-[#f0da11] text-black px-6 py-3.5 font-bold rounded-none hover:bg-[#d0b211] transition-all duration-200 hover:-translate-y-0.5 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none uppercase tracking-wide cursor-pointer"
                 >
                   {status === 'submitting' ? (
                     <>

@@ -57,36 +57,41 @@ export default function SectionHeaderClient({
     }
   };
 
+  const alignItems =
+    textAlign === 'left' ? 'items-start' : textAlign === 'right' ? 'items-end' : 'items-center';
+
   return (
-    <div className={`${maxWidth} mx-auto ${getBackgroundClasses()} ${className}`}>
-      <div className={getTextAlignClasses()}>
-        {/* Main Title with Animation */}
-        <BlurText
-          text={title}
-          delay={titleDelay}
-          duration={0.1}
-            className="font-friz text-sm md:text-xl lg:text-2xl max-w-2xl text-black"
-        />
-
-        {/* Description with Animation */}
-        {description && (
+    <div className={`w-full flex justify-center ${className}`}>
+      <div className={`${maxWidth} w-full ${getBackgroundClasses()}`}>
+        <div className={`flex flex-col ${alignItems} ${getTextAlignClasses()}`}>
+          {/* Main Title with Animation — matches the static SectionHeader styling */}
           <BlurText
-            text={description}
-            delay={descriptionDelay}
+            text={title}
+            delay={titleDelay}
             duration={0.1}
-            className="text-sm md:text-sm lg:text-xl max-w-xl text-black"
+            className="font-friz text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-5"
           />
-        )}
 
-        {/* Subtitle with Animation */}
-        {subtitle && (
-          <BlurText
-            text={subtitle}
-            delay={subtitleDelay}
-            duration={0.1}
-            className="text-lg md:text-xl lg:text-2xl max-w-4xl text-white"
-          />
-        )}
+          {/* Description with Animation */}
+          {description && (
+            <BlurText
+              text={description}
+              delay={descriptionDelay}
+              duration={0.1}
+              className={`text-base sm:text-lg md:text-xl text-gray-700 ${subtitle ? 'mb-4' : 'mb-0'}`}
+            />
+          )}
+
+          {/* Subtitle with Animation */}
+          {subtitle && (
+            <BlurText
+              text={subtitle}
+              delay={subtitleDelay}
+              duration={0.1}
+              className="text-base sm:text-lg md:text-xl text-gray-700"
+            />
+          )}
+        </div>
       </div>
     </div>
   );

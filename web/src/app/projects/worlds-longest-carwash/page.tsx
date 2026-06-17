@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description:
     "Carwash Technologies is building the World's Longest Carwash — a flagship tunnel project currently under construction in the Midwest. Coming soon: full project details, specs, and grand-opening news.",
   keywords:
-    "world's longest carwash, longest car wash tunnel, flagship carwash build, record carwash tunnel, carwash construction project Minnesota, longest tunnel wash",
+    "world's longest carwash, worlds longest car wash, longest car wash tunnel, longest carwash in the world, world record carwash, largest carwash tunnel, biggest car wash, flagship carwash build, record carwash tunnel, carwash construction project Minnesota, longest tunnel wash, record setting car wash, largest carwash builder Midwest, flagship tunnel wash project",
   alternates: { canonical: '/projects/worlds-longest-carwash' },
   openGraph: {
     title: "World's Longest Carwash | Flagship Build In Progress",
@@ -35,6 +35,26 @@ export default function WorldsLongestCarwashPage() {
 
   return (
     <div className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'CreativeWork',
+            name: "World's Longest Carwash",
+            description:
+              "A record-setting tunnel carwash currently under construction by Carwash Technologies — the company's flagship design-build project in the Midwest.",
+            url: 'https://www.carwashtechnologies.com/projects/worlds-longest-carwash',
+            image: 'https://www.carwashtechnologies.com/imgs/WLC/4763be2a-a176-492d-a14b-948bd849b563.webp',
+            creator: {
+              '@type': 'LocalBusiness',
+              name: 'Carwash Technologies',
+              url: 'https://www.carwashtechnologies.com',
+              telephone: '+1-612-408-9010',
+            },
+          }),
+        }}
+      />
       <GenericHero
         eyebrow="Flagship Project · Now Building"
         title="The World's Longest Carwash"

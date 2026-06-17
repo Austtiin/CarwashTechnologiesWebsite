@@ -75,6 +75,7 @@ const organizationSchema = {
     'In-bay automatic carwash systems',
     'Conveyor tunnel carwash systems',
     'Carwash parts warehouse and distribution',
+    'Flagship and large-scale carwash tunnel construction',
   ],
 };
 

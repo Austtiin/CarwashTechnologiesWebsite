@@ -5,7 +5,7 @@ namespace ContactFormProcessor.Templates;
 /// <summary>
 /// Produces branded HTML email bodies for both customer confirmations
 /// and internal business notifications.
-/// All styles are inline — required for broad email client compatibility.
+/// All styles are inline - required for broad email client compatibility.
 /// </summary>
 public static class EmailTemplates
 {
@@ -94,8 +94,8 @@ public static class EmailTemplates
 
     private static string UrgencyBadge(string urgency) => urgency?.ToLower() switch
     {
-        "urgent" => $@"<span style=""display:inline-block;background-color:#dc2626;color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:999px;letter-spacing:0.5px;text-transform:uppercase;"">URGENT — High Priority</span>",
-        "soon"   => $@"<span style=""display:inline-block;background-color:#d97706;color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:999px;letter-spacing:0.5px;text-transform:uppercase;"">SOON — Elevated Priority</span>",
+        "urgent" => $@"<span style=""display:inline-block;background-color:#dc2626;color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:999px;letter-spacing:0.5px;text-transform:uppercase;"">URGENT - High Priority</span>",
+        "soon"   => $@"<span style=""display:inline-block;background-color:#d97706;color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:999px;letter-spacing:0.5px;text-transform:uppercase;"">SOON - Elevated Priority</span>",
         _        => $@"<span style=""display:inline-block;background-color:#16a34a;color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:999px;letter-spacing:0.5px;text-transform:uppercase;"">Normal Priority</span>",
     };
 
@@ -116,7 +116,7 @@ public static class EmailTemplates
         "afternoon" => "Afternoon (12PM – 5PM)",
         "evening"   => "Evening (5PM – 8PM)",
         "anytime"   => "Anytime",
-        _           => bestTime ?? "—"
+        _           => bestTime ?? "-"
     };
 
     private static string FormatArea(string area) => area?.ToLower() switch
@@ -267,7 +267,7 @@ public static class EmailTemplates
                                   DateTime.UtcNow.ToString("dddd, MMMM d, yyyy 'at' h:mm tt 'UTC'"));
 
         var body = $@"
-  {Header("Internal — New Inquiry Notification")}
+  {Header("Internal - New Inquiry Notification")}
 
   <!-- Alert band -->
   <tr>
@@ -316,7 +316,7 @@ public static class EmailTemplates
              style=""border-left:4px solid {BrandYellow};background-color:#fffde7;border-radius:0 8px 8px 0;"">
         <tr>
           <td style=""padding:16px 20px;"">
-            <p style=""margin:0 0 4px;font-size:12px;font-weight:700;color:{TextDark};"">Internal Use Only — Automated Notification</p>
+            <p style=""margin:0 0 4px;font-size:12px;font-weight:700;color:{TextDark};"">Internal Use Only - Automated Notification</p>
             <p style=""margin:0;font-size:11px;color:{TextGray};line-height:1.7;"">
               This notification was generated automatically when a visitor submitted the contact
               form on the {CompanyName} website. It is intended solely for internal business use.
@@ -383,8 +383,7 @@ public static class EmailTemplates
           <td style=""padding:20px 24px;"">
             <p style=""margin:0 0 6px;font-size:14px;font-weight:700;color:{TextDark};"">Questions?</p>
             <p style=""margin:0;font-size:14px;color:{TextGray};line-height:1.6;"">
-              Call us at <a href=""{PhoneLink}"" style=""color:{BrandDark};font-weight:700;text-decoration:none;"">{PhoneDisplay}</a>
-              or email <a href=""mailto:careers@carwashtechnologies.com"" style=""color:{BrandDark};font-weight:700;text-decoration:none;"">careers@carwashtechnologies.com</a>.
+              Call us at <a href=""{PhoneLink}"" style=""color:{BrandDark};font-weight:700;text-decoration:none;"">{PhoneDisplay}</a>.
             </p>
           </td>
         </tr>
@@ -428,7 +427,7 @@ public static class EmailTemplates
             DateTime.UtcNow.ToString("dddd, MMMM d, yyyy 'at' h:mm tt 'UTC'"));
 
         var body = $@"
-  {Header("Internal — New Job Application")}
+  {Header("Internal - New Job Application")}
 
   <!-- Alert band -->
   <tr>
@@ -466,11 +465,11 @@ public static class EmailTemplates
              style=""border-left:4px solid {BrandYellow};background-color:#fffde7;border-radius:0 8px 8px 0;"">
         <tr>
           <td style=""padding:16px 20px;"">
-            <p style=""margin:0 0 4px;font-size:12px;font-weight:700;color:{TextDark};"">Internal Use Only — Automated Notification</p>
+            <p style=""margin:0 0 4px;font-size:12px;font-weight:700;color:{TextDark};"">Internal Use Only - Automated Notification</p>
             <p style=""margin:0;font-size:11px;color:{TextGray};line-height:1.7;"">
               This notification was generated automatically when an applicant submitted the careers
               form on the {CompanyName} website. It contains personally identifiable information (PII)
-              subject to our privacy policy — do not forward outside the organization. {CompanyName}
+              subject to our privacy policy - do not forward outside the organization. {CompanyName}
               is an equal opportunity employer.
             </p>
           </td>

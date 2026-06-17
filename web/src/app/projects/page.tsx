@@ -10,7 +10,7 @@ import StatsBand from '../components/ui/StatsBand';
 export const metadata: Metadata = {
   title: 'Car Wash Projects & Case Studies Minnesota | Carwash Technologies',
   description: 'See car wash projects completed by Carwash Technologies across Minnesota, North Dakota, South Dakota, and Wisconsin. Tunnel system builds, automatic vehicle wash installations, semi truck wash construction, fleet wash projects, and carwash remodels.',
-  keywords: 'car wash projects Minnesota, carwash builder projects MN, car wash construction case studies, tunnel wash installation projects, semi truck wash projects, fleet wash builds, carwash remodel Minnesota, car wash installations North Dakota, car wash builds Wisconsin',
+  keywords: 'car wash projects Minnesota, carwash builder projects MN, car wash construction case studies, tunnel wash installation projects, semi truck wash projects, fleet wash builds, carwash remodel Minnesota, car wash installations North Dakota, car wash builds Wisconsin, worlds longest carwash, world record carwash tunnel, flagship carwash project, largest carwash build Midwest',
   alternates: { canonical: '/projects' },
   openGraph: {
     title: 'Car Wash Projects & Case Studies Minnesota | Carwash Technologies',

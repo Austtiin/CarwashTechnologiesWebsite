@@ -119,7 +119,7 @@ const Navbar = () => {
             {/* Services dropdown */}
             <div className="relative group">
               <button
-                className={`text-sm font-medium whitespace-nowrap transition-colors flex items-center focus:outline-none pb-0.5 ${
+                className={`text-sm font-medium whitespace-nowrap transition-colors flex items-center focus:outline-none pb-0.5 cursor-pointer ${
                   serviceLinks.some(l => isActive(l.href))
                     ? 'text-[#d0b211] border-b-2 border-[#f0da11]'
                     : 'text-gray-700 hover:text-[#d0b211]'
@@ -177,7 +177,7 @@ const Navbar = () => {
             </a>
 
             <button
-              className="lg:hidden p-2 rounded-md hover:bg-gray-100 transition-colors"
+              className="lg:hidden p-2 rounded-md hover:bg-gray-100 transition-colors cursor-pointer"
               onClick={() => { setIsMenuOpen(v => !v); setIsServicesOpen(false); }}
               aria-label="Toggle mobile menu"
               aria-expanded={isMenuOpen}
@@ -233,7 +233,7 @@ const Navbar = () => {
               <div className="border-b border-gray-100">
                 <button
                   onClick={() => setIsServicesOpen(v => !v)}
-                  className={`w-full px-6 py-4 text-base font-medium text-left flex items-center justify-between transition-colors ${
+                  className={`w-full px-6 py-4 text-base font-medium text-left flex items-center justify-between transition-colors cursor-pointer ${
                     serviceLinks.some(l => isActive(l.href))
                       ? 'text-[#d0b211] bg-yellow-50'
                       : 'text-gray-800 hover:text-[#d0b211] hover:bg-gray-50'

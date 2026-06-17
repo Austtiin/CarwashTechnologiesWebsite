@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useRef, useEffect } from 'react';
 import { submitCareersApplication } from '@/lib/api-client';
 
 const INTEREST_OPTIONS = [
@@ -45,6 +45,13 @@ export default function CareersForm() {
   const [resumeError, setResumeError] = useState('');
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
   const [errorMsg, setErrorMsg] = useState('');
+
+  const successRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (status === 'success') {
+      successRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }, [status]);
 
   const handleInputChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -121,7 +128,7 @@ export default function CareersForm() {
       setStatus('error');
       setErrorMsg(
         res.message ||
-          'Something went wrong. Please email your application to careers@carwashtechnologies.com or call (612) 408-9010.'
+          'Something went wrong. Please call (612) 408-9010 for assistance.'
       );
     }
   };
@@ -134,7 +141,7 @@ export default function CareersForm() {
   // Success state
   if (status === 'success') {
     return (
-      <div className="max-w-3xl mx-auto text-center">
+      <div ref={successRef} className="max-w-3xl mx-auto text-center">
         <div className="bg-white border border-gray-200 border-t-4 border-t-[#f0da11] p-8 sm:p-12 shadow-xl">
           <div className="w-16 h-16 bg-[#f0da11] flex items-center justify-center mx-auto mb-6 rounded-full">
             <svg className="w-10 h-10 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -160,7 +167,7 @@ export default function CareersForm() {
               setHasLicense(false);
               setAcknowledged(false);
             }}
-            className="inline-flex items-center gap-2 bg-slate-900 text-white font-semibold px-6 py-3 rounded-none hover:bg-slate-800 transition-colors uppercase tracking-wide"
+            className="inline-flex items-center gap-2 bg-slate-900 text-white font-semibold px-6 py-3 rounded-none hover:bg-slate-800 transition-colors uppercase tracking-wide cursor-pointer"
           >
             Submit Another Application
           </button>

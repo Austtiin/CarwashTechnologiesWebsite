@@ -1,6 +1,6 @@
 ﻿'use client';
 
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useRef, useEffect } from 'react';
 import { useContactForm } from '@/app/contact/hooks/useContactForm';
 import type { ContactFormData } from '@/types/api';
 
@@ -64,6 +64,13 @@ export default function ContactForm({ selectedOption, onReset }: ContactFormProp
   }, []);
 
   const { isSubmitting, isSuccess, isPending, error, submitForm, reset } = useContactForm();
+
+  const statusRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (isSuccess || isPending || error) {
+      statusRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }, [isSuccess, isPending, error]);
 
   // List of blocked email domains
   const BLOCKED_EMAIL_DOMAINS = [
@@ -214,7 +221,7 @@ export default function ContactForm({ selectedOption, onReset }: ContactFormProp
   // Success Message
   if (isSuccess) {
     return (
-      <div className="max-w-2xl mx-auto text-center">
+      <div ref={statusRef} className="max-w-2xl mx-auto text-center">
         <div className="bg-linear-to-br from-green-900/80 to-green-800/80 border-2 border-green-600 p-8 sm:p-12 backdrop-blur-sm rounded-2xl">
           <div className="w-16 h-16 bg-[#f0da11] flex items-center justify-center mx-auto mb-6 sm:w-20 sm:h-20 rounded-full">
             <svg className="w-10 h-10 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -244,7 +251,7 @@ export default function ContactForm({ selectedOption, onReset }: ContactFormProp
   // Pending Message (after retries)
   if (isPending) {
     return (
-      <div className="max-w-2xl mx-auto text-center mb-8">
+      <div ref={statusRef} className="max-w-2xl mx-auto text-center mb-8">
         <div className="bg-linear-to-br from-yellow-900/80 to-yellow-800/80 border-2 border-yellow-600 p-8 sm:p-12 backdrop-blur-sm rounded-2xl">
           <div className="w-16 h-16 bg-yellow-500 flex items-center justify-center mx-auto mb-6 sm:w-20 sm:h-20 rounded-full">
             <svg className="w-10 h-10 text-white animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -282,7 +289,7 @@ export default function ContactForm({ selectedOption, onReset }: ContactFormProp
   // Error Message (validation or hard failure)
   if (error && !isPending) {
     return (
-      <div className="max-w-2xl mx-auto text-center mb-8">
+      <div ref={statusRef} className="max-w-2xl mx-auto text-center mb-8">
         <div className="bg-linear-to-br from-red-900/80 to-red-800/80 border-2 border-red-600 p-8 sm:p-12 backdrop-blur-sm rounded-2xl">
           <div className="w-16 h-16 bg-red-500 flex items-center justify-center mx-auto mb-6 sm:w-20 sm:h-20 rounded-full">
             <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">

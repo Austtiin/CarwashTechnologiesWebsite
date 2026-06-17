@@ -20,7 +20,7 @@ export default function PrivacyPolicyPage() {
             <strong>Effective Date:</strong> March 30, 2026
           </p>
           <p className="text-gray-600 mt-2">
-            <strong>Last Updated:</strong> April 4, 2026
+            <strong>Last Updated:</strong> June 16, 2026
           </p>
         </div>
 
