@@ -20,6 +20,7 @@ public class EmailService
     private readonly string _toChemicals;
     private readonly string _toService;
     private readonly string _toSales;
+    private readonly string _toCareers;
     private readonly string _toDefault;
     private readonly IReadOnlyList<EmailAddress> _ccAddresses;
 
@@ -41,6 +42,7 @@ public class EmailService
         _toChemicals   = Environment.GetEnvironmentVariable("EMAIL_TO_CHEMICALS")    ?? string.Empty;
         _toService     = Environment.GetEnvironmentVariable("EMAIL_TO_SERVICE")      ?? string.Empty;
         _toSales       = Environment.GetEnvironmentVariable("EMAIL_TO_SALES")        ?? string.Empty;
+        _toCareers     = Environment.GetEnvironmentVariable("EMAIL_TO_CAREERS")      ?? string.Empty;
         _toDefault     = Environment.GetEnvironmentVariable("EMAIL_TO_DEFAULT")      ?? _toSales;
 
         // Parse comma-separated CC addresses, e.g. "Mark@Fuhrent.com, Austin@Fuhrent.com"
@@ -107,6 +109,64 @@ public class EmailService
         }
 
         await SendWithLoggingAsync(message, $"business notification → {toAddress}");
+    }
+
+    /// <summary>Sends the "thank you / confirmation" email to the job applicant.</summary>
+    public async Task SendCareersConfirmationToApplicantAsync(CareersFormData app)
+    {
+        var subject  = "We received your application – Carwash Technologies";
+        var htmlBody = EmailTemplates.CareersConfirmation(app);
+
+        var message = new EmailMessage(
+            _fromAddress,
+            app.Email,
+            new EmailContent(subject) { Html = htmlBody });
+
+        await SendWithLoggingAsync(message, $"careers applicant confirmation → {app.Email}");
+    }
+
+    /// <summary>
+    /// Sends the internal careers-application notification, optionally with the applicant's
+    /// resume attached. Routed to the careers mailbox (EMAIL_TO_CAREERS), falling back to default.
+    /// </summary>
+    public async Task SendCareersNotificationAsync(
+        CareersFormData app, byte[]? resumeBytes, string? resumeContentType, string? resumeFileName)
+    {
+        var toAddress = FallbackTo(_toCareers, _toDefault);
+        if (string.IsNullOrWhiteSpace(toAddress))
+        {
+            _logger.LogWarning(
+                "No careers email configured (EMAIL_TO_CAREERS / EMAIL_TO_DEFAULT). Skipping notification.");
+            return;
+        }
+
+        var subject  = $"New Job Application from {app.Name}";
+        var htmlBody = EmailTemplates.CareersNotification(app);
+
+        var message = new EmailMessage(
+            _fromAddress,
+            toAddress,
+            new EmailContent(subject) { Html = htmlBody });
+
+        // Allow the recipient to reply directly to the applicant.
+        message.ReplyTo.Add(new EmailAddress(app.Email, app.Name));
+
+        foreach (var cc in _ccAddresses)
+        {
+            if (!cc.Address.Equals(toAddress, StringComparison.OrdinalIgnoreCase))
+                message.Recipients.CC.Add(cc);
+        }
+
+        if (resumeBytes is { Length: > 0 })
+        {
+            var fileName = string.IsNullOrWhiteSpace(resumeFileName) ? "resume" : resumeFileName;
+            message.Attachments.Add(new EmailAttachment(
+                fileName,
+                resumeContentType ?? "application/octet-stream",
+                new BinaryData(resumeBytes)));
+        }
+
+        await SendWithLoggingAsync(message, $"careers notification → {toAddress}");
     }
 
     // ── Private helpers ──────────────────────────────────────────────────────

@@ -17,11 +17,11 @@ export default function EquipmentBrandsStrip() {
         <p className="text-center text-xs sm:text-sm font-semibold uppercase tracking-wider text-gray-500 mb-8">
           Authorized dealer &amp; service provider for leading carwash equipment brands
         </p>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 sm:gap-8 items-center justify-items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-8 sm:gap-8 items-center justify-items-center">
           {brands.map((brand, index) => (
             <div
               key={brand.name}
-              className="flex items-center justify-center grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+              className="flex items-center justify-center py-2 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
             >
               <Image
                 src={brand.logo}

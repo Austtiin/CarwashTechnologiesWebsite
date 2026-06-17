@@ -49,7 +49,7 @@ const requirements = [
   'A valid driver’s license (required for most roles)',
   'Reliable, safety-minded, and willing to learn',
   'Comfortable with hands-on mechanical and field work',
-  'Able to travel to job sites across MN, ND, SD, and WI',
+  'Potentially work on sites across MN, ND, SD, and WI (Mainly Metro area)',
 ];
 
 export default function CareersPage() {

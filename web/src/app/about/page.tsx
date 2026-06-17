@@ -78,8 +78,8 @@ export default function AboutPage() {
           description="Built on a foundation of expertise, innovation, and unwavering commitment to customer success across Minnesota, North Dakota, South Dakota, and Wisconsin. We are an authorized dealer for Belanger, PECO, PDQ, and Sonny's car wash equipment, and a trusted supplier of Vertech Labs, ChemQuest, and Simoniz chemicals."
           backgroundVariant="dark"
           showPattern={true}
-          leftImage="/imgs/AirCannon.webp"
-          rightImage="/imgs/Kondor_Flight.webp"
+          leftImage="/imgs/IMG_20260313_101859.webp"
+          rightImage="/imgs/AirCannon.webp"
           compact={true}
           centerLane="strong"
         />

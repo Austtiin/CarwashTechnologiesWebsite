@@ -180,8 +180,8 @@ export default async function SafetyDataSheets() {
         ]}
         backgroundVariant="dark"
         showPattern={true}
-        leftImage="/imgs/PDQ.webp"
-        rightImage="/imgs/Kondor_Flight.webp"
+        leftImage="/imgs/IMG_5387.webp"
+        rightImage="/imgs/PDQ.webp"
         centerLane="strong"
         compact={true}
       />

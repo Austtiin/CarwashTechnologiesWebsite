@@ -102,6 +102,65 @@ class ApiClient {
   }
 
   /**
+   * Submit a careers/job application as multipart/form-data (supports a resume file).
+   */
+  async submitCareersApplication(
+    formData: FormData
+  ): Promise<ApiResponse<ContactFormResponse>> {
+    const url = `${API_BASE_URL}/api/careers`;
+    try {
+      // Note: do NOT set Content-Type — the browser sets the multipart boundary.
+      const response = await this.fetchWithTimeout(url, {
+        method: 'POST',
+        body: formData,
+        timeout: 30000
+      });
+
+      if (response.status === 429) {
+        return {
+          success: false,
+          error: 'Too many requests',
+          message: 'You have submitted too many requests. Please wait a while before trying again.'
+        };
+      }
+
+      let result: ApiResponse<ContactFormResponse>;
+      try {
+        result = await response.json();
+      } catch {
+        return {
+          success: false,
+          error: 'Invalid response',
+          message: 'The server returned an unexpected response. Please try again.'
+        };
+      }
+
+      if (response.ok && result.success) {
+        return result;
+      }
+
+      return {
+        success: false,
+        error: result.error ?? 'Request failed',
+        message: result.message ?? 'Something went wrong. Please try again.'
+      };
+    } catch (error) {
+      if (error instanceof Error && error.name === 'AbortError') {
+        return {
+          success: false,
+          error: 'Request timeout',
+          message: 'The request took too long. Please try again.'
+        };
+      }
+      return {
+        success: false,
+        error: 'Network error',
+        message: 'Unable to connect to the server. Please check your internet connection.'
+      };
+    }
+  }
+
+  /**
    * Check API health
    */
   async checkHealth(): Promise<ApiResponse<{ healthy: boolean }>> {
@@ -130,5 +189,8 @@ export const apiClient = new ApiClient();
 // Export individual functions for convenience
 export const submitContactForm = (data: ContactFormData) =>
   apiClient.submitContactForm(data);
+
+export const submitCareersApplication = (formData: FormData) =>
+  apiClient.submitCareersApplication(formData);
 
 export const checkApiHealth = () => apiClient.checkHealth();

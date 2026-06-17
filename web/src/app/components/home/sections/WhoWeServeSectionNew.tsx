@@ -126,14 +126,22 @@ export default function WhoWeServeSectionNew() {
         {/* CTA */}
         <div className="text-center mt-8">
           <p className="text-sm text-gray-600 mb-4">
-            Not sure which solution fits your needs? Let&apos;s talk.
+            Not sure which solution fits your needs? Explore the industries we serve or let&apos;s talk.
           </p>
-          <Link 
-            href="/contact"
-            className="inline-block border-2 border-black text-black font-semibold px-6 py-2.5 text-sm hover:bg-[#f0da11] hover:border-[#f0da11] transition-all duration-200"
-          >
-            Schedule a Consultation
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
+            <Link
+              href="/who-we-serve"
+              className="inline-block bg-[#f0da11] text-black font-semibold px-6 py-2.5 text-sm hover:bg-[#d0b211] transition-all duration-200"
+            >
+              See Who We Serve
+            </Link>
+            <Link
+              href="/contact"
+              className="inline-block border-2 border-black text-black font-semibold px-6 py-2.5 text-sm hover:bg-[#f0da11] hover:border-[#f0da11] transition-all duration-200"
+            >
+              Schedule a Consultation
+            </Link>
+          </div>
         </div>
       </div>
     </section>

@@ -11,6 +11,7 @@ builder.ConfigureFunctionsWebApplication();
 builder.Services
     .AddApplicationInsightsTelemetryWorkerService()
     .ConfigureFunctionsApplicationInsights()
-    .AddSingleton<EmailService>();
+    .AddSingleton<EmailService>()
+    .AddSingleton<ResumeBlobService>();
 
 builder.Build().Run();

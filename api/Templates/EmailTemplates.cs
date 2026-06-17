@@ -137,6 +137,22 @@ public static class EmailTemplates
             ? string.Empty
             : string.Join(", ", areas.Select(FormatArea).Where(a => !string.IsNullOrWhiteSpace(a)));
 
+    private static string FormatCareerArea(string area) => area?.ToLower() switch
+    {
+        "service-tech"     => "Service Technician",
+        "installation"     => "Installation Crew",
+        "chemicals"        => "Chemical Delivery / Sales",
+        "equipment-sales"  => "Equipment Sales",
+        "admin"            => "Office / Admin",
+        "other"            => "Other",
+        _                  => area ?? string.Empty
+    };
+
+    private static string FormatCareerAreas(List<string>? areas) =>
+        areas is null || areas.Count == 0
+            ? string.Empty
+            : string.Join(", ", areas.Select(FormatCareerArea).Where(a => !string.IsNullOrWhiteSpace(a)));
+
     // ── Customer Confirmation ────────────────────────────────────────────────
 
     /// <summary>Confirmation email sent to the person who submitted the form.</summary>
@@ -308,6 +324,154 @@ public static class EmailTemplates
               commitment, or acceptance of any order. Follow up with the customer according to
               standard business procedures. Do not forward this email outside of the organization
               as it contains personally identifiable information (PII) subject to our privacy policy.
+            </p>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+  {Footer()}";
+
+        return Wrapper(body);
+    }
+
+    // ── Careers Applicant Confirmation ───────────────────────────────────────
+
+    /// <summary>Confirmation email sent to the applicant who submitted the careers form.</summary>
+    public static string CareersConfirmation(CareersFormData app)
+    {
+        var name = System.Net.WebUtility.HtmlEncode(app.Name);
+
+        var rows = string.Concat(
+            string.IsNullOrWhiteSpace(app.Position) ? "" : DetailRow("Position", app.Position!, false),
+            string.IsNullOrWhiteSpace(FormatCareerAreas(app.AreasOfInterest))
+                ? "" : DetailRow("Areas of Interest", FormatCareerAreas(app.AreasOfInterest), true),
+            DetailRow("Resume",
+                string.IsNullOrWhiteSpace(app.ResumeFileName) ? "Not attached" : app.ResumeFileName!, false)
+        );
+
+        var body = $@"
+  {Header("Application Confirmation")}
+
+  <!-- Hero band -->
+  <tr>
+    <td style=""background-color:{BrandYellow};padding:20px 20px;"">
+      <p style=""margin:0;font-size:24px;font-weight:700;color:{BrandDark};"">Thank you, {name}!</p>
+      <p style=""margin:8px 0 0;font-size:15px;color:{BrandDark};"">We've received your application and our team will review it.</p>
+    </td>
+  </tr>
+
+  <!-- Body card -->
+  <tr>
+    <td style=""background-color:{WhiteBg};padding:24px 20px;"">
+      <p style=""margin:0 0 8px;font-size:15px;color:{TextDark};line-height:1.6;"">Hi <strong>{name}</strong>,</p>
+      <p style=""margin:0 0 24px;font-size:15px;color:{TextDark};line-height:1.6;"">
+        Thank you for your interest in joining <strong>{CompanyName}</strong>. We've received your
+        application and our team will review it. If your background is a fit, we'll reach out to talk
+        about next steps.
+      </p>
+      <p style=""margin:0 0 16px;font-size:14px;font-weight:600;color:{TextDark};text-transform:uppercase;letter-spacing:0.5px;"">Your Application Summary</p>
+      <table role=""presentation"" width=""100%"" cellpadding=""0"" cellspacing=""0""
+             style=""border:1px solid {BorderColor};border-radius:8px;overflow:hidden;margin-bottom:28px;"">
+        {rows}
+      </table>
+
+      <table role=""presentation"" width=""100%"" cellpadding=""0"" cellspacing=""0""
+             style=""background-color:{LightBg};border:1px solid {BorderColor};border-radius:8px;margin-bottom:8px;"">
+        <tr>
+          <td style=""padding:20px 24px;"">
+            <p style=""margin:0 0 6px;font-size:14px;font-weight:700;color:{TextDark};"">Questions?</p>
+            <p style=""margin:0;font-size:14px;color:{TextGray};line-height:1.6;"">
+              Call us at <a href=""{PhoneLink}"" style=""color:{BrandDark};font-weight:700;text-decoration:none;"">{PhoneDisplay}</a>
+              or email <a href=""mailto:careers@carwashtechnologies.com"" style=""color:{BrandDark};font-weight:700;text-decoration:none;"">careers@carwashtechnologies.com</a>.
+            </p>
+          </td>
+        </tr>
+      </table>
+
+      <p style=""margin:16px 0 0;font-size:11px;color:{TextGray};line-height:1.7;"">
+        {CompanyName} is an equal opportunity employer. This is an automated confirmation of your
+        application submission and is not an offer of employment.
+      </p>
+    </td>
+  </tr>
+
+  {Footer()}";
+
+        return Wrapper(body);
+    }
+
+    // ── Careers Notification ─────────────────────────────────────────────────
+
+    /// <summary>Internal notification email for a job application submitted via the careers form.</summary>
+    public static string CareersNotification(CareersFormData app)
+    {
+        var resumeStatus = string.IsNullOrWhiteSpace(app.ResumeFileName)
+            ? "No resume attached (none uploaded)"
+            : $"Attached: {app.ResumeFileName}";
+
+        var rows = string.Concat(
+            DetailRow("Name",                app.Name,                                false),
+            DetailRow("Email",               app.Email,                               true),
+            string.IsNullOrWhiteSpace(app.Phone)    ? "" : DetailRow("Phone",    app.Phone!,    false),
+            string.IsNullOrWhiteSpace(app.Position) ? "" : DetailRow("Position", app.Position!, true),
+            string.IsNullOrWhiteSpace(FormatCareerAreas(app.AreasOfInterest))
+                ? "" : DetailRow("Areas of Interest", FormatCareerAreas(app.AreasOfInterest), false),
+            DetailRow("Valid Driver's License", app.HasLicense ? "Yes" : "Not confirmed", true),
+            DetailRow("At-Will / EEO Acknowledged", app.Acknowledged ? "Yes" : "No", false),
+            DetailRow("Resume",              resumeStatus,                            true),
+            string.IsNullOrWhiteSpace(app.Message) ? "" : DetailRow("About Applicant", app.Message!, false)
+        );
+
+        var submittedAt = System.Net.WebUtility.HtmlEncode(
+            DateTime.UtcNow.ToString("dddd, MMMM d, yyyy 'at' h:mm tt 'UTC'"));
+
+        var body = $@"
+  {Header("Internal — New Job Application")}
+
+  <!-- Alert band -->
+  <tr>
+    <td style=""background-color:{BrandDark};border-top:4px solid {BrandYellow};padding:20px 20px;"">
+      <p style=""margin:0 0 8px;font-size:18px;font-weight:700;color:#f1f5f9;"">New Job Application Received</p>
+      <p style=""margin:0;font-size:13px;color:#94a3b8;"">Submitted: {submittedAt}</p>
+    </td>
+  </tr>
+
+  <!-- Body card -->
+  <tr>
+    <td style=""background-color:{WhiteBg};padding:24px 20px;"">
+      <p style=""margin:0 0 16px;font-size:14px;font-weight:600;color:{TextDark};text-transform:uppercase;letter-spacing:0.5px;"">Applicant Details</p>
+      <table role=""presentation"" width=""100%"" cellpadding=""0"" cellspacing=""0""
+             style=""border:1px solid {BorderColor};border-radius:8px;overflow:hidden;margin-bottom:28px;"">
+        {rows}
+      </table>
+
+      <!-- Quick reply CTA -->
+      <table role=""presentation"" width=""100%"" cellpadding=""0"" cellspacing=""0""
+             style=""background-color:{LightBg};border:1px solid {BorderColor};border-radius:8px;margin-bottom:28px;"">
+        <tr>
+          <td style=""padding:20px 24px;"">
+            <p style=""margin:0 0 6px;font-size:14px;font-weight:700;color:{TextDark};"">Reply to this applicant</p>
+            <p style=""margin:0;font-size:13px;color:{TextGray};line-height:1.6;"">
+              Email: <a href=""mailto:{System.Net.WebUtility.HtmlEncode(app.Email)}"" style=""color:{BrandDark};font-weight:600;text-decoration:none;"">{System.Net.WebUtility.HtmlEncode(app.Email)}</a>
+              {(string.IsNullOrWhiteSpace(app.Phone) ? "" : $@"&nbsp;&nbsp;|&nbsp;&nbsp; Phone: <a href=""tel:{System.Net.WebUtility.HtmlEncode(app.Phone)}"" style=""color:{BrandDark};font-weight:600;text-decoration:none;"">{System.Net.WebUtility.HtmlEncode(app.Phone)}</a>")}
+            </p>
+          </td>
+        </tr>
+      </table>
+
+      <!-- Disclaimer -->
+      <table role=""presentation"" width=""100%"" cellpadding=""0"" cellspacing=""0""
+             style=""border-left:4px solid {BrandYellow};background-color:#fffde7;border-radius:0 8px 8px 0;"">
+        <tr>
+          <td style=""padding:16px 20px;"">
+            <p style=""margin:0 0 4px;font-size:12px;font-weight:700;color:{TextDark};"">Internal Use Only — Automated Notification</p>
+            <p style=""margin:0;font-size:11px;color:{TextGray};line-height:1.7;"">
+              This notification was generated automatically when an applicant submitted the careers
+              form on the {CompanyName} website. It contains personally identifiable information (PII)
+              subject to our privacy policy — do not forward outside the organization. {CompanyName}
+              is an equal opportunity employer.
             </p>
           </td>
         </tr>

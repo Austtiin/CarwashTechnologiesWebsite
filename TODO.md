@@ -28,42 +28,46 @@ Stack reference: Next.js 16 (App Router) · React 19 · Tailwind 4 · accent `#f
 
 ## ⏳ BACKEND PHASE (next session)
 
-### Careers resume submission (DECISION: email attachment via backend)
-- [ ] Add multipart/form-data endpoint (e.g. `/api/careers`) — current API is JSON-only
-- [ ] `EmailService.cs`: support file attachment; email application + resume to office inbox
-- [x] **Interim**: `CareersForm` now submits text-based fields to `/api/contact` with `contactType:'careers'`; resume is optional (applicant told to email it to `careers@carwashtechnologies.com`). Replace with dedicated endpoint once backend supports file uploads. ([CareersForm.tsx](web/src/app/components/careers/CareersForm.tsx))
-- [ ] Server-side validation: file type/size, required license + acknowledgment, honeypot
-- [ ] Decide resume destination inbox / email (placeholder copy says `careers@carwashtechnologies.com`)
+### Careers resume submission (DECISION: email attachment via backend) — ✅ DONE
+- [x] Added multipart/form-data endpoint `/api/careers` ([CareersHttpTrigger.cs](api/Functions/CareersHttpTrigger.cs)) — resume uploaded to Blob Storage (too big for the 64KB queue), form data enqueued; same queue as contact, routed by `Type`
+- [x] `ResumeBlobService.cs` uploads/downloads/deletes resumes (container `RESUME_BLOB_CONTAINER`, default `resumes`, on AzureWebJobsStorage)
+- [x] `EmailService.SendCareersNotificationAsync` attaches the resume to the application email; routes to `EMAIL_TO_CAREERS` (falls back to `EMAIL_TO_DEFAULT`); new `EmailTemplates.CareersNotification`
+- [x] Queue processor downloads blob → attaches → sends → best-effort deletes blob ([ContactFormQueueProcessor.cs](api/Functions/ContactFormQueueProcessor.cs))
+- [x] `CareersForm` now POSTs multipart to `/api/careers` with the actual resume file ([CareersForm.tsx](web/src/app/components/careers/CareersForm.tsx)); success copy updated (no longer asks applicant to email separately)
+- [x] Server-side validation: file type/size (5MB, PDF/Word), required license + acknowledgment, honeypot, rate limit (7/hr)
+- [ ] **Deploy config**: set `EMAIL_TO_CAREERS` in the Azure Function App settings (resume destination inbox). `RESUME_BLOB_CONTAINER` optional.
 
 ### Contact form areas-of-interest — ✅ DONE
 - [x] Backend: `areasOfInterest` added to `ContactFormData.cs` model + rendered (HtmlEncoded) in both customer + business email templates. API compiles clean. Home quick form (`ConsultationCTA`) verified end-to-end.
 
 ---
 
-## 🚧 "Who We Serve" — rename + segment pages (NEW, larger effort)
-Rename the **Types of Washes** nav/page to **"Who We Serve"** and build out audience/segment pages.
+## ✅ DONE — "Who We Serve" — rename + segment pages
+Renamed the **Types of Washes** nav/page to **"Who We Serve"** and built out audience/segment pages.
 
-- [ ] Rename `/wash-types` → "Who We Serve" (nav label in [Navigation.tsx](web/src/app/components/Navigation.tsx) desktop + mobile; update page `<h1>`/metadata; add redirect or new route `/who-we-serve`)
-- [ ] Turn it into a hub linking to dedicated segment pages:
-  - [ ] Retail chains / c-stores & gas stations
-  - [ ] Municipalities & government fleets
-  - [ ] Heavy-duty truck washes
-  - [ ] Semi / fleet washes
-  - [ ] Specialized / custom projects
-  - [ ] Dedicated wash businesses (express/tunnel chains)
-- [ ] Each segment page: GenericHero + tailored copy + relevant projects + CTA (reuse shared components + StatsBand)
-- [ ] Add segment pages to [sitemap.ts](web/src/app/sitemap.ts) + internal links
-- [ ] SEO: per-segment metadata/keywords
+- [x] Nav now "Who We Serve" → `/who-we-serve` (desktop + mobile, [Navigation.tsx](web/src/app/components/Navigation.tsx)); `/wash-types` 301-redirects to `/who-we-serve` via [staticwebapp.config.json](web/staticwebapp.config.json)
+- [x] `/who-we-serve` hub ([who-we-serve/page.tsx](web/src/app/who-we-serve/page.tsx)) — GenericHero + StatsBand + cards linking to all 5 segment pages
+- [x] Segment pages (data-driven via [SegmentPage.tsx](web/src/app/components/segments/SegmentPage.tsx) + [segmentData.ts](web/src/app/components/segments/segmentData.ts)):
+  - [x] Retail / c-stores & gas stations (`/retail-cstore-carwash`)
+  - [x] Municipalities & government fleets (`/municipal-fleet-wash`)
+  - [x] Heavy-duty / semi truck washes (`/truck-wash`)
+  - [x] Dedicated wash businesses / express-tunnel chains (`/dedicated-wash-business`)
+  - [x] Specialized / custom projects (`/specialized-wash`)
+- [x] Each segment page: GenericHero + tailored copy + StatsBand + "what we deliver" grid + CTA
+- [x] Added `/who-we-serve` + all 5 segments to [sitemap.ts](web/src/app/sitemap.ts) (removed dead `/wash-types`)
+- [x] Internal links: homepage `WhoWeServeSectionNew` now links to `/who-we-serve`; hub ↔ segments cross-link
+- [x] SEO: per-segment metadata/keywords/canonical on every page
 
-### "World's Longest Carwash" — featured in-construction page
-- [ ] New page (e.g. `/projects/worlds-longest-carwash`) — flagship build currently underway
-- [ ] "Under Construction" treatment: nice construction-style sign/banner, brief teaser copy, "coming soon" + contact CTA
-- [ ] Link from projects + who-we-serve hub once live
+### ✅ DONE — "World's Longest Carwash" — featured in-construction page
+- [x] New page [`/projects/worlds-longest-carwash`](web/src/app/projects/worlds-longest-carwash/page.tsx) — flagship build, GenericHero + StatsBand + jobsite gallery (uses `/imgs/WLC/*`)
+- [x] "Under Construction" treatment: hazard-stripe banner, "Coming Soon" badge, teaser copy (specs/location withheld), contact CTA
+- [x] Linked from projects (featured card) + who-we-serve hub (callout); added to [sitemap.ts](web/src/app/sitemap.ts) (weekly)
 
 ---
 
 ## 💡 Optional / later
-- [ ] Brand strip: link logos out to OPW/VWS PDQ + Belanger product pages
-- [ ] Curate hero imagery per page (GenericHero uses the former `leftImage` as the single bg — review each page's image choice)
-- [ ] Add real open-roles list to careers once roles are defined
-- [ ] Canonical-class lint warning in Navigation.tsx (`lg:h-[4.25rem]` → `lg:h-17`) — pre-existing, cosmetic
+- [x] Careers applicant confirmation email — branded "thank you" sent to the applicant in addition to the internal notification ([EmailService.cs](api/Services/EmailService.cs) `SendCareersConfirmationToApplicantAsync` + `EmailTemplates.CareersConfirmation`); both sent concurrently from the queue processor
+- [ ] Brand strip: link logos out to manufacturer product pages — **deferred** (manufacturers rebranded under OPW VWS; need confirmed URLs before wiring)
+- [x] Curate hero imagery per page — reviewed all `leftImage` choices; targeted swaps: **about** → branded company van (`IMG_20260313_101859`, was unused; shows logo/phone/brands), **services** → striking PDQ rainbow-LED bay (showcase, differentiates from projects), **sds** → clean neutral tunnel (`IMG_5387`, calmer for a docs page than the flashy bay). Other pages already had fitting images. Unused standout still available: `IMG_E0035` (SUDZ storefront), `Kondor_Flight` (red-LED touchless).
+- [ ] Add real open-roles list to careers once roles are defined — **blocked**: needs roles defined
+- [x] Canonical-class lint warning in Navigation.tsx — already resolved (`lg:h-17` in place)

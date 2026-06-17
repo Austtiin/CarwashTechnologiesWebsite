@@ -115,8 +115,8 @@ export default function Services() {
         ]}
         backgroundVariant="dark"
         showPattern={true}
-        leftImage="/imgs/BelangerTunnel.webp"
-        rightImage="/imgs/SpinLite.webp"
+        leftImage="/imgs/PDQ.webp"
+        rightImage="/imgs/BelangerTunnel.webp"
         centerLane="strong"
         compact={true}
       />

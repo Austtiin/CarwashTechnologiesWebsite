@@ -1,8 +1,7 @@
 'use client';
 
 import React, { useState, useCallback } from 'react';
-import { submitContactForm } from '@/lib/api-client';
-import type { ContactFormData } from '@/types/api';
+import { submitCareersApplication } from '@/lib/api-client';
 
 const INTEREST_OPTIONS = [
   { value: 'service-tech', label: 'Service Technician' },
@@ -101,36 +100,20 @@ export default function CareersForm() {
     setStatus('submitting');
     setErrorMsg('');
 
-    // Build the inquiry text from careers-specific fields
-    const parts: string[] = [];
-    if (formData.position.trim()) parts.push(`Position of Interest: ${formData.position.trim()}`);
-    if (interests.length > 0) {
-      const labels = INTEREST_OPTIONS
-        .filter(o => interests.includes(o.value))
-        .map(o => o.label);
-      parts.push(`Areas of Interest: ${labels.join(', ')}`);
-    }
-    parts.push("Has Valid Driver's License: Yes");
-    if (formData.message.trim()) parts.push(`About Applicant:\n${formData.message.trim()}`);
-    if (resume) {
-      parts.push(
-        `Resume on file: ${resume.name} — applicant has been asked to email resume to careers@carwashtechnologies.com`
-      );
-    }
+    // Multipart payload — carries the resume file directly to /api/careers.
+    const body = new FormData();
+    body.append('name', formData.name.trim());
+    body.append('email', formData.email.trim());
+    if (formData.phone.trim()) body.append('phone', formData.phone.trim());
+    if (formData.position.trim()) body.append('position', formData.position.trim());
+    if (formData.message.trim()) body.append('message', formData.message.trim());
+    if (interests.length > 0) body.append('areasOfInterest', interests.join(','));
+    body.append('hasLicense', String(hasLicense));
+    body.append('acknowledged', String(acknowledged));
+    body.append('website', formData.website);
+    if (resume) body.append('resume', resume, resume.name);
 
-    const payload: ContactFormData = {
-      name: formData.name.trim(),
-      email: formData.email.trim(),
-      phone: formData.phone.trim() || undefined,
-      inquiry: parts.join('\n\n'),
-      bestTime: 'anytime',
-      urgency: 'normal',
-      contactType: 'careers',
-      areasOfInterest: interests,
-      website: formData.website,
-    };
-
-    const res = await submitContactForm(payload);
+    const res = await submitCareersApplication(body);
 
     if (res.success) {
       setStatus('success');
@@ -164,14 +147,7 @@ export default function CareersForm() {
           </p>
           {resume && (
             <div className="mb-6 px-4 py-3 bg-[#f0da11]/10 border-l-4 border-[#f0da11] text-left text-sm text-gray-800 rounded">
-              <strong>One more step:</strong> Please email your resume ({resume.name}) to{' '}
-              <a
-                href="mailto:careers@carwashtechnologies.com"
-                className="font-semibold underline hover:text-gray-600"
-              >
-                careers@carwashtechnologies.com
-              </a>{' '}
-              so we have it on file.
+              <strong>Resume received:</strong> {resume.name} was submitted with your application.
             </div>
           )}
           <button
@@ -341,14 +317,7 @@ export default function CareersForm() {
         )}
         {resumeError && <p className="mt-1 text-sm text-red-600">{resumeError}</p>}
         <p className="mt-1 text-xs text-gray-500">
-          Optional — max 5 MB, PDF or Word. You can also email your resume to{' '}
-          <a
-            href="mailto:careers@carwashtechnologies.com"
-            className="underline hover:text-gray-700"
-          >
-            careers@carwashtechnologies.com
-          </a>
-          .
+          Optional — max 5 MB, PDF or Word. 
         </p>
       </div>
 

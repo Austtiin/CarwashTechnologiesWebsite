@@ -1,5 +1,7 @@
 import React from 'react';
 import { Metadata } from 'next';
+import Link from 'next/link';
+import Image from 'next/image';
 import GenericHero from '../components/ui/GenericHero';
 import GenericServicesGrid from '../components/ui/GenericServicesGrid';
 import CallToActionNew from '../components/ui/CallToActionNew';
@@ -86,6 +88,45 @@ const ProjectsPage = () => {
           { value: 'Turnkey', label: 'Design-Build' },
         ]}
       />
+
+      {/* Featured build — World's Longest Carwash */}
+      <section className="bg-slate-950 py-14 sm:py-16">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <Link
+            href="/projects/worlds-longest-carwash"
+            className="group grid lg:grid-cols-2 gap-8 lg:gap-10 items-center bg-slate-900 border border-slate-800 hover:border-[#f0da11] transition-colors duration-300 overflow-hidden"
+          >
+            <div className="relative aspect-[4/3] lg:aspect-auto lg:h-full min-h-[260px]">
+              <Image
+                src="/imgs/WLC/4763be2a-a176-492d-a14b-948bd849b563.webp"
+                alt="World's Longest Carwash flagship build under construction"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+              />
+              <span className="absolute top-4 left-4 inline-flex items-center gap-2 bg-[#f0da11] text-slate-900 text-xs font-bold uppercase tracking-widest px-3 py-1.5">
+                Now Building
+              </span>
+            </div>
+            <div className="p-6 sm:p-8 lg:pr-12">
+              <p className="text-sm font-semibold text-[#f0da11] uppercase tracking-wider mb-3">Flagship Project</p>
+              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">
+                The World&apos;s Longest Carwash
+              </h3>
+              <p className="text-base text-slate-300 leading-relaxed mb-6">
+                Our most ambitious build yet is under construction right now — a record-setting tunnel
+                on a scale the industry hasn&apos;t seen. Take a first look at the build.
+              </p>
+              <span className="inline-flex items-center text-sm font-semibold text-white group-hover:text-[#f0da11] transition-colors">
+                See the project
+                <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </span>
+            </div>
+          </Link>
+        </div>
+      </section>
 
       <GenericServicesGrid
         eyebrow="Client Success"

@@ -180,18 +180,18 @@ export default async function EquipmentSales() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5 items-stretch justify-items-stretch">
+          <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-8 items-center justify-items-center">
             {data.manufacturers.map((manufacturer, index) => (
               <div
                 key={manufacturer.name}
-                className="flex h-28 items-center justify-center border border-gray-200 bg-slate-50 px-6 py-5 hover:border-[#f0da11] hover:shadow-md transition-all duration-300"
+                className="flex items-center justify-center py-2 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
               >
                 <Image
                   src={manufacturer.logo}
                   alt={manufacturer.alt}
-                  width={120}
-                  height={60}
-                  className="max-h-16 max-w-full w-auto object-contain"
+                  width={130}
+                  height={64}
+                  className="max-h-12 sm:max-h-14 max-w-full w-auto object-contain"
                   priority={index < 3}
                 />
               </div>
