@@ -2,6 +2,11 @@
 
 @import "tailwindcss";
 
+/* Explicit content sources — required for Tailwind v4 in CI/CD environments
+   (Azure Static Web Apps / Oryx) where auto-detection fails to scan source files.
+   Paths are relative to this file (web/src/app/globals.css → ../  =  web/src/). */
+@source "../**/*.{tsx,ts,jsx,js,mdx}";
+
 /* Smooth scrolling and overall flow improvements */
 html {
   scroll-behavior: smooth;
