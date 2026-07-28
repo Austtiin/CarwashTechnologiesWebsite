@@ -54,11 +54,11 @@ export default function ContactSelector({ contactOptions }: ContactSelectorProps
     <section
       ref={sectionRef}
       id="contact-inquiry"
-      className={`relative scroll-mt-20 ${sectionPadding} bg-slate-950 overflow-hidden`}
+      className={`relative scroll-mt-20 ${sectionPadding} bg-gray-50 overflow-hidden`}
     >
       {/* Subtle Accent Lines */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-[#f0da11]/30 to-transparent"></div>
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-[#f0da11]/30 to-transparent"></div>
+      <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-[#f0da11]/40 to-transparent"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-[#f0da11]/40 to-transparent"></div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-6xl mx-auto">
@@ -68,14 +68,14 @@ export default function ContactSelector({ contactOptions }: ContactSelectorProps
               <div className="text-center mb-12">
                 <div className="inline-flex items-center gap-3 mb-4">
                   <div className="w-10 h-px bg-[#f0da11]"></div>
-                  <span className="text-slate-400 font-semibold uppercase tracking-wider text-sm">Get In Touch</span>
+                  <span className="text-gray-500 font-semibold uppercase tracking-wider text-sm">Get In Touch</span>
                   <div className="w-10 h-px bg-[#f0da11]"></div>
                 </div>
                 
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                  How Can We <span className="text-[#f0da11]">Help</span>?
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                  How Can We <span className="text-[#c8b400]">Help</span>?
                 </h2>
-                <p className="text-base text-slate-400 max-w-3xl mx-auto leading-relaxed">
+                <p className="text-base text-gray-600 max-w-3xl mx-auto leading-relaxed">
                   Select your area of interest below to connect with the right specialist for your needs
                 </p>
               </div>
@@ -104,7 +104,7 @@ export default function ContactSelector({ contactOptions }: ContactSelectorProps
                 <div className="relative mb-3">
                   <button
                     onClick={resetSelection}
-                    className="inline-flex items-center text-gray-700 hover:text-[#f0da11] group transition-colors duration-300 border-2 border-gray-300 px-5 py-2.5 bg-white hover:bg-gray-50 shadow-sm cursor-pointer mb-3 md:mb-0 md:absolute md:left-0 md:top-1/2 md:-translate-y-1/2"
+                    className="inline-flex items-center text-gray-600 hover:text-gray-900 group transition-colors duration-300 border border-gray-300 px-5 py-2.5 bg-white hover:bg-gray-100 shadow-sm cursor-pointer mb-3 md:mb-0 md:absolute md:left-0 md:top-1/2 md:-translate-y-1/2"
                   >
                     <svg className="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -113,7 +113,7 @@ export default function ContactSelector({ contactOptions }: ContactSelectorProps
                   </button>
 
                   <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 text-center">
-                    Inquire about <span className="text-[#f0da11]">{selectedOption?.title}</span>
+                    Inquire about <span className="text-[#c8b400]">{selectedOption?.title}</span>
                   </h2>
                 </div>
 

@@ -328,7 +328,7 @@ export default function ContactForm({ selectedOption, onReset }: ContactFormProp
   return (
     <form
       onSubmit={handleSubmit}
-      className="max-w-4xl mx-auto bg-white border border-gray-200 border-t-4 border-t-[#f0da11] p-4 sm:p-5 md:p-6 shadow-xl rounded-none"
+      className="max-w-4xl mx-auto bg-white border border-gray-200 border-t-4 border-t-[#f0da11] p-4 sm:p-5 md:p-6 shadow-md rounded-none"
     >
       {/* Honeypot field - visually hidden, bots fill it in, humans never see it */}
       <div style={{ position: 'absolute', left: '-9999px', top: 0, height: 0, overflow: 'hidden' }} aria-hidden="true">
@@ -600,7 +600,7 @@ export default function ContactForm({ selectedOption, onReset }: ContactFormProp
           <div className="p-3 bg-gray-50 border border-gray-200 rounded-none">
             <p className="text-xs text-gray-600 font-medium">
               <span className="text-gray-900">Inquiry Type:</span>
-              <span className="ml-1 text-[#f0da11] font-bold">{selectedOption?.title}</span>
+              <span className="ml-1 font-bold text-gray-900">{selectedOption?.title}</span>
             </p>
           </div>
         </div>

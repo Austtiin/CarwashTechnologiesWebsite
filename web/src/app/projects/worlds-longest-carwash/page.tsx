@@ -172,8 +172,8 @@ export default function WorldsLongestCarwashPage() {
               },
               {
                 icon: 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z',
-                title: 'Full Design-Build by Our Team',
-                body: 'Planning, civil, equipment, installation, startup — every phase is our work. No outsourcing. This is what 50+ years of combined experience looks like at full scale.',
+                title: 'Design-Built by Our Team',
+                body: 'Planning, civil, equipment, installation, startup. This is what 50+ years of combined experience looks like at full scale.',
               },
             ].map(card => (
               <div
