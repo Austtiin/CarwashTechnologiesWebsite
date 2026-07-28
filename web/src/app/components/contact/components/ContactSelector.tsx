@@ -54,7 +54,7 @@ export default function ContactSelector({ contactOptions }: ContactSelectorProps
     <section
       ref={sectionRef}
       id="contact-inquiry"
-      className={`relative scroll-mt-20 ${sectionPadding} bg-gradient-to-b from-gray-50 via-white to-gray-50 overflow-hidden`}
+      className={`relative scroll-mt-20 ${sectionPadding} bg-slate-950 overflow-hidden`}
     >
       {/* Subtle Accent Lines */}
       <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-[#f0da11]/30 to-transparent"></div>
@@ -68,14 +68,14 @@ export default function ContactSelector({ contactOptions }: ContactSelectorProps
               <div className="text-center mb-12">
                 <div className="inline-flex items-center gap-3 mb-4">
                   <div className="w-10 h-px bg-[#f0da11]"></div>
-                  <span className="text-gray-600 font-semibold uppercase tracking-wider text-sm">Get In Touch</span>
+                  <span className="text-slate-400 font-semibold uppercase tracking-wider text-sm">Get In Touch</span>
                   <div className="w-10 h-px bg-[#f0da11]"></div>
                 </div>
                 
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                   How Can We <span className="text-[#f0da11]">Help</span>?
                 </h2>
-                <p className="text-base text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                <p className="text-base text-slate-400 max-w-3xl mx-auto leading-relaxed">
                   Select your area of interest below to connect with the right specialist for your needs
                 </p>
               </div>

@@ -68,9 +68,7 @@ export default function ServicesSectionNew() {
             <div className="w-8 h-px bg-[#f0da11]" />
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-            Complete Solutions for{' '}
-            <span className="inline-block bg-[#f0da11] text-black px-2 pb-0.5 rounded-md -rotate-1">Modern</span>{' '}
-            Wash Operations
+            Complete Solutions for Modern Wash Operations
           </h2>
           <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
             From express tunnels to self-serve sites, we provide everything you need to run a modern, profitable wash.

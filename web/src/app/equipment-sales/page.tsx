@@ -86,7 +86,7 @@ async function getEquipmentData() {
     ],
     stats: {
       experience: '50+',
-      installations: '500+',
+      installations: '99+',
       support: 'Comprehensive',
       states: '4'
     }

@@ -3,7 +3,6 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import GenericHero from '../components/ui/GenericHero';
-import GenericServicesGrid from '../components/ui/GenericServicesGrid';
 import CallToActionNew from '../components/ui/CallToActionNew';
 import StatsBand from '../components/ui/StatsBand';
 
@@ -26,29 +25,6 @@ export const metadata: Metadata = {
 };
 
 const ProjectsPage = () => {
-  const testimonials = [
-    {
-      icon: (
-        <svg className="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
-        </svg>
-      ),
-      title: 'SuperWash Express',
-      description: '"Carwash Technologies transformed our outdated facility into a modern, efficient operation. Our customer satisfaction and revenue have both increased significantly since the upgrade." - Mike Johnson',
-      backgroundImage: '/imgs/Carwash1.webp'
-    },
-    {
-      icon: (
-        <svg className="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
-        </svg>
-      ),
-      title: 'Quick Clean Car Wash',
-      description: '"The team\'s expertise and attention to detail were outstanding. They delivered on time and within budget, and the results exceeded our expectations." - Sarah Chen',
-      backgroundImage: '/imgs/Existing.webp'
-    }
-  ];
-
   return (
     <div className="min-h-screen">
       <GenericHero
@@ -82,7 +58,7 @@ const ProjectsPage = () => {
         heading="Builds and installs across the Midwest."
         image="/imgs/IMG_5380.webp"
         stats={[
-          { value: '500+', label: 'Projects Delivered' },
+          { value: '99+', label: 'Projects Delivered' },
           { value: '25+', label: 'Years Experience' },
           { value: '4', label: 'States Served' },
           { value: 'Turnkey', label: 'Design-Build' },
@@ -98,7 +74,7 @@ const ProjectsPage = () => {
           >
             <div className="relative aspect-[4/3] lg:aspect-auto lg:h-full min-h-[260px]">
               <Image
-                src="/imgs/WLC/4763be2a-a176-492d-a14b-948bd849b563.webp"
+                src="/imgs/projects/WLC/20260720_095018.jpg"
                 alt="World's Longest Carwash flagship build under construction"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -128,15 +104,45 @@ const ProjectsPage = () => {
         </div>
       </section>
 
-      <GenericServicesGrid
-        eyebrow="Client Success"
-        title="What Our Clients Say"
-        highlightedWord="Clients"
-        description="Hear from wash operators who have trusted us with their business transformations."
-        items={testimonials}
-        columns={2}
-        backgroundVariant="light-grey"
-      />
+      {/* Project types — replaces placeholder testimonials */}
+      <section className="bg-slate-50 py-14 sm:py-16">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10 max-w-3xl mx-auto">
+            <div className="inline-flex items-center gap-3 mb-4">
+              <div className="w-8 h-px bg-[#f0da11]" />
+              <span className="text-sm font-semibold text-gray-600 uppercase tracking-wider">What We Build</span>
+              <div className="w-8 h-px bg-[#f0da11]" />
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
+              99+ Projects Across{' '}
+              <span className="inline-block bg-[#f0da11] text-black px-2 pb-0.5 -rotate-1">Four States</span>
+            </h2>
+            <p className="text-base sm:text-lg text-gray-700">
+              Tunnel builds, truck washes, fleet systems, remodels, and custom installs — delivered across MN, ND, SD, and WI.
+            </p>
+          </div>
+
+          <div className="grid gap-5 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {[
+              { title: 'Express Tunnel Builds', desc: 'New conveyor tunnel construction from civil work through equipment startup, including high-throughput express-format sites.' },
+              { title: 'Heavy Duty Vehicle Washes', desc: 'Semi truck wash, bus wash, and heavy equipment wash systems for trucking terminals, municipalities, and large commercial fleets.' },
+              { title: 'Automatic In-Bay Systems', desc: 'Touchless and soft-touch in-bay automatic installations for gas stations, c-stores, and car dealerships.' },
+              { title: 'Self-Service Bay Builds', desc: 'New self-service bay construction and bay equipment upgrades including pumps, booms, timers, and payment systems.' },
+              { title: 'Carwash Remodels & Retrofits', desc: 'Equipment modernization, control upgrades, and full remodels to bring aging washes up to current-generation performance.' },
+              { title: 'Fleet & Municipal Wash Systems', desc: 'Drive-through and gantry fleet wash builds for city garages, county fleets, DOT yards, and transit authorities.' },
+            ].map(item => (
+              <div key={item.title} className="bg-white border border-gray-200 border-l-4 border-l-[#f0da11] p-6 shadow-sm">
+                <h3 className="text-base font-bold text-gray-900 mb-2">{item.title}</h3>
+                <p className="text-sm text-gray-700 leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <p className="text-center text-sm text-gray-500 mt-8">
+            More case studies and project spotlights coming soon.
+          </p>
+        </div>
+      </section>
 
       <CallToActionNew
         title="Let's Build Something Great"

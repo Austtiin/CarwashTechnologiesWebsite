@@ -21,6 +21,7 @@ const Navbar = () => {
     { name: 'Chemical Sales',        href: '/chemical-sales',     description: 'High-quality car wash chemicals' },
     { name: 'Safety Data Sheets',    href: '/sds',                description: 'Product safety information' },
     { name: 'Consulting Services',   href: '/consulting',         description: 'Expert guidance and planning' },
+    { name: 'Our Projects',          href: '/projects',           description: 'Portfolio & case studies' },
   ];
 
   // Close panel on route change (handles browser back/forward too)

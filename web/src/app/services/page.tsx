@@ -127,7 +127,7 @@ export default function Services() {
         image="/imgs/IMG_5380.webp"
         stats={[
           { value: '25+', label: 'Years Experience' },
-          { value: '500+', label: 'Projects Delivered' },
+          { value: '99+', label: 'Projects Delivered' },
           { value: '4', label: 'States Served' },
           { value: 'End-to-End', label: 'Support' },
         ]}

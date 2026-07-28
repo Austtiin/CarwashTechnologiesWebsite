@@ -41,7 +41,7 @@ const benefits = [
 const stats = [
   { value: '4', label: 'States Served' },
   { value: '50+', label: 'Years in the Trade' },
-  { value: '500+', label: 'Installs & Counting' },
+  { value: '99+', label: 'Installs & Counting' },
   { value: 'Year-Round', label: 'Steady Work' },
 ];
 
@@ -144,8 +144,7 @@ export default function CareersPage() {
               <div className="w-8 h-px bg-[#f0da11]" />
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
-              Ready to{' '}
-              <span className="inline-block bg-[#f0da11] text-black px-2 pb-0.5 -rotate-1">Get to Work</span>?
+              Ready to Get to Work?
             </h2>
             <p className="text-base sm:text-lg text-gray-700">
               Fill out the form below and attach your resume. We&apos;ll be in touch.

@@ -41,7 +41,7 @@ export const segments: SegmentData[] = [
     statsBadge: 'Retail Wash Experts',
     statsHeading: 'Built for high-traffic fuel & retail sites.',
     stats: [
-      { value: '500+', label: 'Sites Equipped' },
+      { value: '99+', label: 'Sites Equipped' },
       { value: '4', label: 'States Served' },
       { value: 'Express', label: 'Tunnel & In-Bay' },
       { value: 'Priority', label: 'Service' },
@@ -83,15 +83,15 @@ export const segments: SegmentData[] = [
   {
     slug: 'truck-wash',
     eyebrow: 'Heavy-Duty · Semi · Fleet',
-    title: 'Heavy-Duty & Semi Truck Wash Systems',
+    title: 'Heavy-Duty Vehicle Wash & Semi Truck Wash Systems',
     highlight: 'Truck',
     subtitle: 'Built for the Big Rigs',
     description:
-      'Trucking companies, terminals, and large fleets need wash systems engineered for semis, trailers, buses, and heavy equipment — high-volume, high-pressure, and durable enough for round-the-clock use.',
+      'Trucking companies, terminals, and large fleets need heavy duty vehicle wash systems engineered for semis, trailers, buses, and heavy equipment — high-volume, high-pressure, and durable enough for round-the-clock use.',
     heroImage: '/imgs/IMG_5389.webp',
-    introHeading: 'Move more trucks through, faster',
+    introHeading: 'Heavy duty vehicle wash solutions that move more trucks, faster',
     introBody:
-      'Every minute a truck spends being washed is a minute off the road. We build touchless gantry and drive-through truck wash systems that clean semis, trailers, and heavy equipment quickly and consistently — with the pumps, chemistry, and reclaim to back it up.',
+      'Every minute a heavy duty vehicle spends being washed is a minute off the road. We build touchless gantry and drive-through heavy duty vehicle wash systems — from semi truck wash installations to bus wash and equipment wash builds — that clean thoroughly and consistently, with the pumps, chemistry, and reclaim to back it up.',
     challenges: [
       'Cleaning oversized vehicles and trailers consistently',
       'High throughput for busy terminals and yards',

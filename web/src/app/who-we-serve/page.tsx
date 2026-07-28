@@ -69,8 +69,7 @@ export default function WhoWeServePage() {
               <div className="w-8 h-px bg-[#f0da11]" />
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
-              Find Your{' '}
-              <span className="inline-block bg-[#f0da11] text-black px-2 pb-0.5 -rotate-1">Operation</span>
+              Find Your Operation
             </h2>
             <p className="text-base sm:text-lg text-gray-700">
               Every operation washes differently. Explore the solutions built for yours.
@@ -103,34 +102,6 @@ export default function WhoWeServePage() {
               </Link>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Featured build callout */}
-      <section className="bg-slate-950 py-12 sm:py-14">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <Link
-            href="/projects/worlds-longest-carwash"
-            className="group flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-slate-900 border border-slate-800 hover:border-[#f0da11] transition-colors duration-300 p-6 sm:p-8"
-          >
-            <div>
-              <p className="text-xs font-semibold text-[#f0da11] uppercase tracking-widest mb-2">
-                Flagship Project · Now Building
-              </p>
-              <h3 className="text-xl sm:text-2xl font-bold text-white">
-                The World&apos;s Longest Carwash
-              </h3>
-              <p className="text-sm text-slate-300 mt-2 max-w-2xl">
-                A record-setting tunnel build is under construction right now. Take a first look.
-              </p>
-            </div>
-            <span className="inline-flex items-center shrink-0 text-sm font-semibold text-white group-hover:text-[#f0da11] transition-colors">
-              See the project
-              <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </span>
-          </Link>
         </div>
       </section>
 

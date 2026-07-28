@@ -58,7 +58,7 @@ export default function WhyChooseUsSection() {
             </p>
             <h2 className="text-3xl sm:text-4xl lg:text-[2.5rem] font-bold text-white mb-4 leading-tight">
               One Partner for the{' '}
-              <span className="inline-block bg-[#f0da11] text-black px-2 pb-0.5 rounded-md -rotate-1">Whole Wash</span>
+              <span className="text-[#f0da11]">Whole Wash</span>
             </h2>
             <p className="text-sm sm:text-base text-slate-300 mb-8 max-w-xl leading-relaxed">
               Partner with a team that understands modern wash operations — equipment, chemistry, and service

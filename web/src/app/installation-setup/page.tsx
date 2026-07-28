@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 async function getInstallationData() {
   return {
     stats: {
-      installations: '500+',
+      installations: '99+',
       experience: '50+',
       satisfaction: '99%',
       support: 'Ongoing'

@@ -64,7 +64,7 @@ export default function ConsultingHero() {
               <div className="text-sm text-gray-300 uppercase tracking-wide">Years Combined Experience</div>
             </div>
             <div className="border-2 border-gray-700 bg-gray-800/50 p-6">
-              <div className="text-4xl font-bold text-[#f0da11] mb-2">500+</div>
+              <div className="text-4xl font-bold text-[#f0da11] mb-2">99+</div>
               <div className="text-sm text-gray-300 uppercase tracking-wide">Projects Completed</div>
             </div>
             <div className="border-2 border-gray-700 bg-gray-800/50 p-6">

@@ -5,7 +5,6 @@ import HeroSectionNew from './components/home/sections/HeroSectionNew';
 import EquipmentBrandsStrip from './components/home/sections/EquipmentBrandsStrip';
 import ConsultationCTA from './components/home/sections/ConsultationCTA';
 import ServicesSectionNew from './components/home/sections/ServicesSectionNew';
-import ChemicalsSectionNew from './components/home/sections/ChemicalsSectionNew';
 import WhyChooseUsSection from './components/home/sections/WhyChooseUsSection';
 
 export const metadata: Metadata = {
@@ -112,17 +111,14 @@ export default function Home() {
         {/* Equipment brand trust strip (white) */}
         <EquipmentBrandsStrip />
 
-        {/* Free consultation form CTA (dark) */}
-        <ConsultationCTA />
-
         {/* Core Service Offerings (grey) */}
         <ServicesSectionNew />
 
         {/* Why Choose Us band (dark) */}
         <WhyChooseUsSection />
 
-        {/* Growth questions / FAQ (white) — buffers the dark bands */}
-        <section className="bg-white py-14 sm:py-16">
+        {/* Growth questions / FAQ (slate-50) — breaks the dark */}
+        <section className="bg-slate-50 py-14 sm:py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
             <div className="text-center mb-10">
               <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
@@ -164,8 +160,11 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Flagship build — World's Longest Carwash (dark feature band) */}
-        <section className="bg-slate-950 py-14 sm:py-16">
+        {/* Free consultation form CTA */}
+        <ConsultationCTA />
+
+        {/* Flagship build — World's Longest Carwash */}
+        <section className="bg-slate-50 py-14 sm:py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <Link
               href="/projects/worlds-longest-carwash"
@@ -173,7 +172,7 @@ export default function Home() {
             >
               <div className="relative aspect-[4/3] lg:aspect-auto lg:h-full min-h-[260px]">
                 <Image
-                  src="/imgs/WLC/4763be2a-a176-492d-a14b-948bd849b563.webp"
+                  src="/imgs/projects/WLC/20260720_095018.webp"
                   alt="World's Longest Carwash flagship build under construction"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -204,8 +203,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Chemical Programs (dark) — closing band */}
-        <ChemicalsSectionNew />
       </div>
   );
 }
