@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import GenericHero from '../components/ui/GenericHero';
@@ -38,7 +38,7 @@ export default function WhoWeServePage() {
         title="Carwash Solutions for Every Operation"
         highlightedWord="Every"
         subtitle="One Partner. Many Industries."
-        description="From fuel retailers and municipal fleets to semi truck washes, dedicated wash chains, and custom industrial projects — we build, equip, and service the right wash for how you operate."
+        description="From fuel retailers and municipal fleets to semi truck washes, dedicated wash chains, and custom industrial projects - we build, equip, and service the right wash for how you operate."
         buttons={[
           { text: 'Request a Consultation', href: '/contact', variant: 'primary' },
           { text: 'View Our Work', href: '/projects', variant: 'secondary' },
@@ -53,7 +53,7 @@ export default function WhoWeServePage() {
         image="/imgs/IMG_5380.webp"
         stats={[
           { value: '500+', label: 'Projects Delivered' },
-          { value: '25+', label: 'Years Experience' },
+          { value: '50+', label: 'Yrs Combined Exp.' },
           { value: '4', label: 'States Served' },
           { value: 'End-to-End', label: 'Support' },
         ]}

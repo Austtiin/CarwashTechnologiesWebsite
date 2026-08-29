@@ -1,15 +1,16 @@
-import React from 'react';
+﻿import React from 'react';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import GenericHero from '../components/ui/GenericHero';
 import GenericServicesGrid from '../components/ui/GenericServicesGrid';
 import CallToActionNew from '../components/ui/CallToActionNew';
 import StatsBand from '../components/ui/StatsBand';
+import PageFAQ from '../components/ui/PageFAQ';
 
 export const metadata: Metadata = {
   title: 'Car Wash Equipment & Parts Sales Minnesota | Gas Station, Self-Service, Heavy Duty',
   description: 'Comprehensive car wash equipment and parts sales in MN, ND, SD, WI. Gas station carwash systems, self-service carwash parts, heavy duty truck wash equipment, touchless systems, express tunnel equipment, in-bay automatics, conveyor tunnel systems, carwash parts warehouse, pumps, motors, and accessories from industry-leading manufacturers.',
-  keywords: 'car wash equipment Minnesota, carwash parts supplier MN, self service carwash parts Minnesota, gas station carwash equipment, heavy duty carwash equipment, express carwash equipment MN, touchless carwash systems Minnesota, carwash equipment parts supplier, car wash parts distributor MN, carwash parts warehouse Minnesota, tunnel wash equipment, conveyor carwash systems, in bay automatic equipment, automatic carwash machines, self serve bay equipment, semi truck wash equipment MN, fleet wash equipment Minnesota, bus wash systems, RV wash equipment, heavy equipment wash, municipal carwash equipment, commercial carwash equipment, industrial wash systems, car dealership carwash equipment, convenience store carwash systems, retrofit carwash equipment, carwash modernization equipment, carwash pumps Minnesota, Cat Pumps dealer MN, Cat Pumps parts Minnesota, General Pump dealer MN, General Pump parts Minnesota, carwash motors, carwash nozzles, spray arches, carwash dryers, water reclaim systems, Belanger dealer Minnesota, Belanger equipment MN, PECO dealer Minnesota, PECO systems MN, PDQ dealer Minnesota, PDQ equipment MN, Sonny\'s dealer Minnesota, Sonnys equipment MN, AVW equipment Minnesota, carwash conveyors, track systems, gantry systems, touchfree equipment, friction equipment, carwash accessories MN',
+  keywords: 'car wash equipment Minnesota, carwash parts supplier MN, automated car wash machine Minnesota, car wash automation equipment supplier minnesota, car wash blowers Minnesota, self service carwash parts Minnesota, gas station carwash equipment, heavy duty carwash equipment, express carwash equipment MN, touchless carwash systems Minnesota, carwash equipment parts supplier, car wash parts distributor MN, carwash parts warehouse Minnesota, tunnel wash equipment, conveyor carwash systems, in bay automatic equipment, automatic carwash machines, self serve bay equipment, semi truck wash equipment MN, fleet wash equipment Minnesota, bus wash systems, RV wash equipment, heavy equipment wash, municipal carwash equipment, commercial carwash equipment, industrial wash systems, car dealership carwash equipment, convenience store carwash systems, retrofit carwash equipment, carwash modernization equipment, carwash pumps Minnesota, Cat Pumps dealer MN, Cat Pumps parts Minnesota, General Pump dealer MN, General Pump parts Minnesota, carwash motors, carwash nozzles, spray arches, carwash dryers, water reclaim systems, Belanger dealer Minnesota, PECO dealer Minnesota, PDQ dealer Minnesota, Sonnys dealer Minnesota, AVW equipment Minnesota, gantry systems, touchfree equipment, friction equipment',
   alternates: { canonical: '/equipment-sales' },
   openGraph: {
     title: 'Car Wash Equipment & Parts | Gas Station, Self-Service, Heavy Duty Systems',
@@ -180,7 +181,7 @@ export default async function EquipmentSales() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-8 items-center justify-items-center">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 items-center justify-items-center">
             {data.manufacturers.map((manufacturer, index) => (
               <div
                 key={manufacturer.name}
@@ -211,7 +212,157 @@ export default async function EquipmentSales() {
         backgroundVariant="light-grey"
       />
 
+      {/* Featured Equipment Showcase */}
+      <section className="py-14 sm:py-20 bg-white border-t border-gray-100">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-3 mb-4">
+              <div className="w-8 h-px bg-[#f0da11]" />
+              <span className="text-sm font-semibold text-gray-500 uppercase tracking-wider">Equipment Guides</span>
+              <div className="w-8 h-px bg-[#f0da11]" />
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
+              Explore Featured <span className="text-[#f0da11]">Equipment</span>
+            </h2>
+            <p className="text-base sm:text-lg text-gray-500 max-w-2xl mx-auto">
+              Specs, bay requirements, features, and brochures for our most popular systems.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 gap-8">
+            {/* PDQ Card */}
+            <div className="group relative bg-slate-950 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col">
+              <div className="relative h-52 overflow-hidden">
+                <Image
+                  src="/imgs/PDQ.webp"
+                  alt="PDQ LaserWash 360 Plus touchless in-bay automatic car wash"
+                  fill
+                  sizes="(max-width: 640px) 100vw, 50vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-linear-to-t from-slate-950 via-slate-950/40 to-transparent" />
+                <div className="absolute top-4 left-4">
+                  <span className="inline-block bg-[#f0da11] text-slate-900 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded">
+                    In-Bay Automatic
+                  </span>
+                </div>
+              </div>
+              <div className="flex flex-col flex-1 p-7">
+                <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">PDQ · OPW</div>
+                <h3 className="text-xl font-bold text-white mb-2">LaserWash® 360 Plus</h3>
+                <p className="text-slate-300 text-sm leading-relaxed mb-5 flex-1">
+                  Touchless in-bay automatic with Smart 360 Technology. Open bay, no floor tracks. Ideal for gas
+                  stations, c-stores, and car dealerships. Bay from 28&apos;4&quot; L × 13&apos;6&quot; W × 10&apos;6&quot; H.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {['Touchless', 'Smart 360', 'FlashDry', 'Networked'].map((tag) => (
+                    <span key={tag} className="text-xs bg-slate-800 text-slate-300 px-2 py-1 rounded border border-slate-700">{tag}</span>
+                  ))}
+                </div>
+                <div className="flex gap-3">
+                  <a
+                    href="/equipment-sales/pdq-laserwash-360-plus"
+                    className="flex-1 text-center bg-[#f0da11] text-slate-900 font-bold text-sm px-4 py-3 hover:bg-[#d0b211] transition-colors rounded"
+                  >
+                    View Details & Specs
+                  </a>
+                  <a
+                    href="/PDFs/Equipment/pdq-laserwash-360-plus-touchless-automatic-brochure.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-1.5 border border-slate-600 text-slate-300 text-sm px-4 py-3 hover:border-[#f0da11] hover:text-[#f0da11] transition-colors rounded"
+                    title="Download PDQ LaserWash 360 Plus Brochure"
+                  >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    PDF
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Belanger Insta-KLEEN Card */}
+            <div className="group relative bg-slate-950 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col">
+              <div className="relative h-52 overflow-hidden">
+                <Image
+                  src="/imgs/BelangerTunnel.webp"
+                  alt="Belanger insta-KLEEN drive-thru fleet car wash system"
+                  fill
+                  sizes="(max-width: 640px) 100vw, 50vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-linear-to-t from-slate-950 via-slate-950/40 to-transparent" />
+                <div className="absolute top-4 left-4">
+                  <span className="inline-block bg-[#f0da11] text-slate-900 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded">
+                    Fleet Wash System
+                  </span>
+                </div>
+              </div>
+              <div className="flex flex-col flex-1 p-7">
+                <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">Belanger · OPW</div>
+                <h3 className="text-xl font-bold text-white mb-2">insta-KLEEN™</h3>
+                <p className="text-slate-300 text-sm leading-relaxed mb-5 flex-1">
+                  Drive-thru fleet wash capable of one vehicle per minute. Only 36 gal/cycle, as little as 4HP,
+                  modular design. Ideal for car dealerships, rental agencies, and municipal fleets.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {['1 car/min', '36 gal/cycle', 'Modular', 'Fleet Ready'].map((tag) => (
+                    <span key={tag} className="text-xs bg-slate-800 text-slate-300 px-2 py-1 rounded border border-slate-700">{tag}</span>
+                  ))}
+                </div>
+                <div className="flex gap-3">
+                  <a
+                    href="/equipment-sales/belanger-insta-kleen"
+                    className="flex-1 text-center bg-[#f0da11] text-slate-900 font-bold text-sm px-4 py-3 hover:bg-[#d0b211] transition-colors rounded"
+                  >
+                    View Details & Specs
+                  </a>
+                  <a
+                    href="/PDFs/Equipment/belanger-insta-kleen-fleet-wash-system-brochure%20(2).pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-1.5 border border-slate-600 text-slate-300 text-sm px-4 py-3 hover:border-[#f0da11] hover:text-[#f0da11] transition-colors rounded"
+                    title="Download Belanger insta-KLEEN Brochure"
+                  >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    PDF
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Call to Action */}
+      <PageFAQ
+        heading="Car Wash Equipment Questions, Answered"
+        items={[
+          {
+            question: 'Do you sell automated car wash machines in Minnesota?',
+            answer: 'Yes. We are a leading car wash automation equipment supplier in Minnesota and the upper Midwest. We sell and install automated car wash machines from Belanger, PECO, PDQ, Sonny\'s, and AVW - including in-bay automatics, touchless rollover systems, and full express conveyor tunnels. We serve customers across MN, ND, SD, and WI.',
+          },
+          {
+            question: 'Do you carry car wash blowers and dryer systems?',
+            answer: 'Yes. We supply car wash blower systems and complete dryer packages including follow-you dryers, overhead blowers, and side dryers from leading manufacturers. Whether you need a replacement car wash blower near you or a full dryer system for a new tunnel, we stock parts and complete units for quick turnaround.',
+          },
+          {
+            question: 'Are you a car wash automation equipment supplier in Minnesota?',
+            answer: 'Yes. Carwash Technologies is an authorized car wash automation equipment supplier serving Minnesota and the surrounding Midwest states. We supply the full range of automated wash systems, controls, payment equipment, and automation components from top manufacturers, backed by installation and ongoing service support.',
+          },
+          {
+            question: 'Can you supply self-service carwash parts and equipment?',
+            answer: 'Yes. We are a full-service self-service carwash parts supplier providing bay equipment, pumps, motors, nozzles, hoses, guns, and all accessories needed for self-serve operations. We stock Cat Pumps, General Pump, and components for all major self-serve bay manufacturers and can usually ship same or next day.',
+          },
+          {
+            question: 'Do you supply equipment for car dealership car washes?',
+            answer: 'Yes. We supply automated car wash machines specifically suited for car dealership detail operations and service lane washes. We can recommend the right in-bay automatic or conveyor system for your dealership\'s volume, install it, and service it on an ongoing basis.',
+          },
+        ]}
+      />
+
       <CallToActionNew
         title="Let's Build Something Great"
         description="Join hundreds of satisfied customers across the Midwest who trust Carwash Technologies for their equipment, service, and chemical needs."

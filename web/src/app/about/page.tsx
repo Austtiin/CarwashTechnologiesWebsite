@@ -1,8 +1,10 @@
-// AboutPage.tsx
+﻿// AboutPage.tsx
 import { Metadata } from 'next';
+import Link from 'next/link';
 import GenericHero from '../components/ui/GenericHero';
 import GenericServicesGrid from '../components/ui/GenericServicesGrid';
 import CallToActionNew from '../components/ui/CallToActionNew';
+import StatsBand from '../components/ui/StatsBand';
 
 export const metadata: Metadata = {
   title: 'About Carwash Technologies | Gas Station, Self-Service & Heavy Duty Carwash Builder',
@@ -43,7 +45,7 @@ export default function AboutPage() {
       ),
       title: 'Our Vision',
       description: 'To be the most trusted partner in the Midwest wash industry, known for our expertise, innovation, and unwavering commitment to customer success.',
-      backgroundImage: '/imgs/Insta-KLEEN-fleet.webp'
+      backgroundImage: '/imgs/BelangerTunnel.webp'
     },
     {
       icon: (
@@ -78,10 +80,22 @@ export default function AboutPage() {
           description="Built on a foundation of expertise, innovation, and unwavering commitment to customer success across Minnesota, North Dakota, South Dakota, and Wisconsin. We are an authorized dealer for Belanger, PECO, PDQ, and Sonny's car wash equipment, and a trusted supplier of Vertech Labs, ChemQuest, and Simoniz chemicals."
           backgroundVariant="dark"
           showPattern={true}
-          leftImage="/imgs/IMG_20260313_101859.webp"
+          leftImage="/imgs/IMG_5386.webp"
           rightImage="/imgs/AirCannon.webp"
           compact={true}
           centerLane="strong"
+        />
+
+        <StatsBand
+          badge="By the Numbers"
+          heading="Experience that shows up on every job site."
+          image="/imgs/IMG_5386.webp"
+          stats={[
+            { value: '50+', label: 'Years Combined Exp.' },
+            { value: '99+', label: 'Installs Completed' },
+            { value: '4', label: 'States Served' },
+            { value: '5', label: 'Manufacturer Partners' },
+          ]}
         />
 
         <GenericServicesGrid
@@ -93,6 +107,79 @@ export default function AboutPage() {
           columns={4}
           backgroundVariant="light-grey"
         />
+
+        {/* Company story - anchored to the WLC build */}
+        <section className="bg-slate-950 py-14 sm:py-20">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="relative overflow-hidden rounded-xl ring-1 ring-white/10 shadow-2xl">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/imgs/projects/WLC/Aug-2026/20260810_090658.webp"
+                  alt="World's Longest Carwash interior under construction - Carwash Technologies flagship build"
+                  className="w-full h-auto object-cover"
+                  loading="lazy"
+                />
+                <div
+                  className="absolute bottom-0 inset-x-0 px-5 py-4"
+                  style={{ background: 'linear-gradient(to top, #020617 60%, transparent)' }}
+                >
+                  <p className="text-white text-sm font-semibold">World&apos;s Longest Carwash</p>
+                  <p className="text-slate-400 text-xs mt-0.5">Now Under Construction · Our Flagship Build</p>
+                </div>
+              </div>
+
+              <div>
+                <div className="inline-flex items-center gap-3 mb-5">
+                  <div className="w-8 h-px bg-[#f0da11]" />
+                  <span className="text-xs font-bold uppercase tracking-widest text-[#f0da11]">Our Story</span>
+                </div>
+                <h2 className="text-3xl sm:text-4xl font-bold text-white mb-5 leading-tight">
+                  50+ Years Combined Experience.{' '}
+                  <span className="inline-block bg-[#f0da11] text-slate-900 px-2 pb-0.5 -rotate-1">
+                    This Is What It Looks Like.
+                  </span>
+                </h2>
+                <p className="text-slate-300 text-base leading-relaxed mb-4">
+                  We started where every lasting company does - solving real problems for real operators.
+                  Over the decades our team has installed, serviced, and optimized hundreds of wash
+                  facilities across Minnesota, North Dakota, South Dakota, and Wisconsin.
+                </p>
+                <p className="text-slate-300 text-base leading-relaxed mb-6">
+                  That depth of experience is now going into the most ambitious project we&apos;ve ever
+                  taken on: the World&apos;s Longest Carwash. A record-setting express tunnel currently
+                  under construction, designed and built entirely in-house by our team. It&apos;s the
+                  clearest proof of what 50+ years of doing this can deliver.
+                </p>
+                <ul className="space-y-3 mb-8">
+                  {[
+                    'Authorized dealer: Belanger, PECO, PDQ, Sonny\'s, AVW',
+                    'Chemical partners: Vertech Labs, ChemQuest, Simoniz',
+                    'Equipment, installation, service, chemicals - all in one relationship',
+                  ].map(item => (
+                    <li key={item} className="flex items-start gap-3 text-sm text-slate-300">
+                      <span className="mt-0.5 w-5 h-5 rounded-full bg-[#f0da11] flex items-center justify-center shrink-0">
+                        <svg className="w-3 h-3 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                        </svg>
+                      </span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <Link
+                  href="/projects/worlds-longest-carwash"
+                  className="inline-flex items-center gap-2 text-sm font-bold text-white hover:text-[#f0da11] transition-colors group"
+                >
+                  See the build in progress
+                  <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
 
         <CallToActionNew
           title="Ready to Transform Your Wash Business?"

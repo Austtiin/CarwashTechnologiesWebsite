@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+﻿import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import HeroSectionNew from './components/home/sections/HeroSectionNew';
@@ -117,7 +117,7 @@ export default function Home() {
         {/* Why Choose Us band (dark) */}
         <WhyChooseUsSection />
 
-        {/* Growth questions / FAQ (slate-50) — breaks the dark */}
+        {/* Growth questions / FAQ (slate-50) - breaks the dark */}
         <section className="bg-slate-50 py-14 sm:py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
             <div className="text-center mb-10">
@@ -163,7 +163,7 @@ export default function Home() {
         {/* Free consultation form CTA */}
         <ConsultationCTA />
 
-        {/* Flagship build — World's Longest Carwash */}
+        {/* Flagship build - World's Longest Carwash */}
         <section className="bg-slate-50 py-14 sm:py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <Link
@@ -172,7 +172,7 @@ export default function Home() {
             >
               <div className="relative aspect-[4/3] lg:aspect-auto lg:h-full min-h-[260px]">
                 <Image
-                  src="/imgs/projects/WLC/20260720_095018.webp"
+                  src="/imgs/projects/WLC/July-2026/20260720_095018.webp"
                   alt="World's Longest Carwash flagship build under construction"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -188,7 +188,7 @@ export default function Home() {
                   We&apos;re Building the World&apos;s Longest Carwash
                 </h2>
                 <p className="text-base text-slate-300 leading-relaxed mb-6">
-                  Our most ambitious project yet is under construction right now — a record-setting tunnel
+                  Our most ambitious project yet is under construction right now - a record-setting tunnel
                   on a scale the industry hasn&apos;t seen. It&apos;s the clearest proof of what our design-build
                   team can deliver for any operation.
                 </p>
@@ -200,6 +200,72 @@ export default function Home() {
                 </span>
               </div>
             </Link>
+          </div>
+        </section>
+
+        {/* Featured equipment */}
+        <section className="bg-white py-14 sm:py-16 border-t border-gray-100">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+            <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-8">
+              <div>
+                <p className="text-xs font-bold uppercase tracking-widest text-[#d0b211] mb-1">Authorized Dealer</p>
+                <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">Featured Equipment</h2>
+              </div>
+              <Link href="/equipment-sales" className="text-sm font-semibold text-gray-600 hover:text-[#d0b211] transition-colors whitespace-nowrap">
+                Browse all equipment &rarr;
+              </Link>
+            </div>
+            <div className="grid sm:grid-cols-2 gap-6">
+              {[
+                {
+                  href: '/equipment-sales/pdq-laserwash-360-plus',
+                  image: '/imgs/PDQ.webp',
+                  brand: 'PDQ · OPW',
+                  tag: 'In-Bay Automatic',
+                  name: 'LaserWash\u00ae 360 Plus',
+                  desc: 'Touchless in-bay automatic with Smart 360 Technology. Open bay, no floor tracks. Ideal for gas stations, c-stores, and dealerships.',
+                  pdf: '/PDFs/Equipment/pdq-laserwash-360-plus-touchless-automatic-brochure.pdf',
+                },
+                {
+                  href: '/equipment-sales/belanger-insta-kleen',
+                  image: '/imgs/BelangerTunnel.webp',
+                  brand: 'Belanger · OPW',
+                  tag: 'Fleet Wash System',
+                  name: 'insta-KLEEN\u2122',
+                  desc: 'Drive-thru fleet wash - one vehicle per minute. 36 gal/cycle, modular design. Built for car dealerships and fleet operators.',
+                  pdf: '/PDFs/Equipment/belanger-insta-kleen-fleet-wash-system-brochure%20(2).pdf',
+                },
+              ].map((eq) => (
+                <div key={eq.href} className="group border border-gray-200 hover:border-[#f0da11] hover:shadow-lg transition-all duration-200 overflow-hidden flex flex-col">
+                  <Link href={eq.href} className="relative h-48 block overflow-hidden">
+                    <Image
+                      src={eq.image}
+                      alt={eq.name}
+                      fill
+                      sizes="(max-width: 640px) 100vw, 50vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <span className="absolute top-3 left-3 bg-[#f0da11] text-slate-900 text-xs font-bold uppercase tracking-wide px-2 py-1">{eq.tag}</span>
+                  </Link>
+                  <div className="p-5 flex flex-col flex-1">
+                    <p className="text-xs text-gray-400 font-semibold uppercase tracking-wider mb-1">{eq.brand}</p>
+                    <h3 className="text-lg font-bold text-gray-900 mb-2">{eq.name}</h3>
+                    <p className="text-sm text-gray-600 leading-relaxed flex-1 mb-4">{eq.desc}</p>
+                    <div className="flex gap-3">
+                      <Link href={eq.href} className="flex-1 text-center text-sm font-bold bg-slate-900 text-white hover:bg-[#f0da11] hover:text-slate-900 py-2.5 transition-colors">
+                        View Details
+                      </Link>
+                      <a href={eq.pdf} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-1.5 border border-gray-300 text-gray-600 text-sm px-3 py-2.5 hover:border-[#d0b211] hover:text-[#d0b211] transition-colors" title="Download Brochure">
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                        PDF
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 

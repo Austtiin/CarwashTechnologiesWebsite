@@ -1,8 +1,10 @@
-import React from 'react';
+﻿import React from 'react';
 import { Metadata } from 'next';
 import GenericHero from '@/app/components/ui/GenericHero';
 import GenericServicesGrid from '@/app/components/ui/GenericServicesGrid';
 import CallToActionNew from '@/app/components/ui/CallToActionNew';
+import StatsBand from '@/app/components/ui/StatsBand';
+import PageFAQ from '@/app/components/ui/PageFAQ';
 
 export const metadata: Metadata = {
   title: 'Car Wash Consulting Services | Gas Station, Self-Service, Heavy Duty Planning',
@@ -123,11 +125,11 @@ export default function ConsultingPage() {
   return (
     <div className="min-h-screen bg-white">
       <GenericHero
-        eyebrow="Expert Consulting"
+        eyebrow="Car Wash Consultant"
         title="Consulting Services"
         highlightedWord="Consulting"
-        subtitle="Strategic Guidance & Expertise"
-        description="Transform your car wash business with expert consulting services. From site development to operational optimization, we provide the strategic guidance you need to succeed."
+        subtitle="Strategic Guidance from Experienced Car Wash Consultants"
+        description="Work with a car wash consultant who understands the business - from site feasibility and equipment selection to operational optimization and ROI planning. 50+ years combined experience across MN, ND, SD, and WI."
         buttons={[
           {
             text: "Schedule Consultation",
@@ -148,6 +150,18 @@ export default function ConsultingPage() {
         compact={true}
       />
 
+      <StatsBand
+        badge="Car Wash Consulting"
+        heading="Proven car wash consulting services across the Midwest."
+        image="/imgs/Insta-KLEEN-fleet.webp"
+        stats={[
+          { value: '50+', label: 'Yrs Combined Exp.' },
+          { value: '99+', label: 'Projects Advised' },
+          { value: '4', label: 'States Served' },
+          { value: 'Full', label: 'Site-to-Open Support' },
+        ]}
+      />
+
       <GenericServicesGrid
         eyebrow="Our Services"
         title="Consulting Solutions"
@@ -166,6 +180,28 @@ export default function ConsultingPage() {
         items={benefits}
         columns={3}
         backgroundVariant="white"
+      />
+
+      <PageFAQ
+        heading="Car Wash Consulting Questions, Answered"
+        items={[
+          {
+            question: 'What does a car wash consultant do?',
+            answer: 'A car wash consultant helps owners and investors make better decisions about their wash business. That includes site feasibility analysis, equipment selection and ROI modeling, layout design, operational optimization, chemical program review, staffing structure, and business strategy. Our car wash consulting services cover everything from planning a brand-new site to improving an underperforming existing location.',
+          },
+          {
+            question: 'Can you consult on a gas station or convenience store carwash project?',
+            answer: 'Yes. Gas station and c-store carwash consulting is a core part of our practice. We help fuel retailers evaluate whether to add an in-bay automatic or express tunnel, model expected revenue and payback, select the right equipment for their traffic volume, and plan the physical layout within existing site constraints.',
+          },
+          {
+            question: 'Do you offer heavy duty vehicle wash consulting?',
+            answer: 'Yes. We provide heavy duty vehicle wash consulting for trucking terminals, fleet operators, municipalities, and industrial facilities. We assess your vehicle mix, volume, and water/effluent requirements, then recommend the right touchless gantry, drive-through, or in-bay system with the chemistry and reclaim to support it.',
+          },
+          {
+            question: 'What does car wash consulting cost?',
+            answer: 'Consulting engagements vary depending on scope - a quick equipment and layout review is much simpler than a full feasibility study and ROI model for a new build. Contact us to describe your situation and we can outline what a consulting engagement would look like for your specific project.',
+          },
+        ]}
       />
 
       <CallToActionNew

@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React, { useState, useCallback, useRef, useEffect } from 'react';
 import { submitCareersApplication } from '@/lib/api-client';
@@ -25,7 +25,7 @@ interface CareersFormData {
   phone: string;
   position: string;
   message: string;
-  /** Honeypot — should always stay empty. */
+  /** Honeypot - should always stay empty. */
   website: string;
 }
 
@@ -100,14 +100,14 @@ export default function CareersForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Honeypot — bots fill this in, humans never see it.
+    // Honeypot - bots fill this in, humans never see it.
     if (formData.website !== '') return;
     if (!isValid) return;
 
     setStatus('submitting');
     setErrorMsg('');
 
-    // Multipart payload — carries the resume file directly to /api/careers.
+    // Multipart payload - carries the resume file directly to /api/careers.
     const body = new FormData();
     body.append('name', formData.name.trim());
     body.append('email', formData.email.trim());
@@ -150,7 +150,7 @@ export default function CareersForm() {
           </div>
           <h3 className="text-2xl font-bold text-gray-900 mb-3">Application Received!</h3>
           <p className="text-gray-600 mb-4">
-            Thank you — our team will review your application and be in touch.
+            Thank you - our team will review your application and be in touch.
           </p>
           {resume && (
             <div className="mb-6 px-4 py-3 bg-[#f0da11]/10 border-l-4 border-[#f0da11] text-left text-sm text-gray-800 rounded">
@@ -324,7 +324,7 @@ export default function CareersForm() {
         )}
         {resumeError && <p className="mt-1 text-sm text-red-600">{resumeError}</p>}
         <p className="mt-1 text-xs text-gray-500">
-          Optional — max 5 MB, PDF or Word. 
+          Optional - max 5 MB, PDF or Word. 
         </p>
       </div>
 

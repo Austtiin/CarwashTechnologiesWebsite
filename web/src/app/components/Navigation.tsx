@@ -1,4 +1,4 @@
-// src/components/Navigation.tsx
+﻿// src/components/Navigation.tsx
 'use client';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -21,7 +21,7 @@ const Navbar = () => {
     { name: 'Chemical Sales',        href: '/chemical-sales',     description: 'High-quality car wash chemicals' },
     { name: 'Safety Data Sheets',    href: '/sds',                description: 'Product safety information' },
     { name: 'Consulting Services',   href: '/consulting',         description: 'Expert guidance and planning' },
-    { name: 'Our Projects',          href: '/projects',           description: 'Portfolio & case studies' },
+    { name: "World's Longest Carwash", href: '/projects/worlds-longest-carwash', description: 'Flagship record-setting build' },
   ];
 
   // Close panel on route change (handles browser back/forward too)
@@ -100,7 +100,7 @@ const Navbar = () => {
           </div>
 
           {/*
-            Desktop nav — starts at lg (1024px) so all 6 links fit comfortably.
+            Desktop nav - starts at lg (1024px) so all 6 links fit comfortably.
             At md (768px) the logo + 6 links + CTA was too crowded (~336px available
             for ~490px of links), causing items to squish into the buttons.
           */}
@@ -195,12 +195,12 @@ const Navbar = () => {
       </div>
 
       {/*
-        Mobile panel — anchored to start BELOW the header (top-14 / sm:top-16)
+        Mobile panel - anchored to start BELOW the header (top-14 / sm:top-16)
         so links are never hidden behind the fixed nav bar.
       */}
       {isMenuOpen && (
         <div className="lg:hidden fixed inset-0 z-40">
-          {/* Dimmed overlay — also starts below header so the bar stays visible */}
+          {/* Dimmed overlay - also starts below header so the bar stays visible */}
           <div
             className="absolute top-14 sm:top-16 inset-x-0 bottom-0 bg-black/50"
             onClick={closeAllMenus}

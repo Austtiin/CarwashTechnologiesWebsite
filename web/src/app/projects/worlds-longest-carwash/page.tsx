@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import fs from 'fs';
 import path from 'path';
 import { Metadata } from 'next';
@@ -11,44 +11,80 @@ import { type GalleryImage } from '../../components/ui/ProjectLightboxGallery';
 export const metadata: Metadata = {
   title: "World's Longest Carwash | Flagship Build In Progress | Carwash Technologies",
   description:
-    "Carwash Technologies is building the World's Longest Carwash — a record-setting express tunnel currently under construction in the Midwest. See the first photos from the job site.",
+    "Carwash Technologies is building the World's Longest Carwash - a record-setting express tunnel currently under construction in the Midwest. See the first photos from the job site.",
   keywords:
-    "world's longest carwash, worlds longest car wash, longest car wash tunnel, longest carwash in the world, world record carwash, largest carwash tunnel, biggest car wash, flagship carwash build, record carwash tunnel, carwash construction project Minnesota, longest tunnel wash, record setting car wash, largest carwash builder Midwest, flagship tunnel wash project",
+    "world's longest carwash, worlds longest car wash, longest car wash tunnel, longest carwash in the world, world record carwash, largest carwash tunnel, biggest car wash, flagship carwash build, record carwash tunnel, carwash construction project Minnesota, longest tunnel wash, record setting car wash, largest carwash builder Midwest, flagship tunnel wash project, carwash world record 2025, longest car wash tunnel built, record breaking carwash, worlds longest carwash construction, carwash technologies world record, Midwest carwash builder record, carwash project Minnesota 2025",
   alternates: { canonical: '/projects/worlds-longest-carwash' },
   openGraph: {
     title: "World's Longest Carwash | Flagship Build In Progress",
     description:
-      "A record-setting tunnel build currently under construction. First photos from the job site — Carwash Technologies.",
+      "A record-setting tunnel build currently under construction. First photos from the job site - Carwash Technologies.",
     type: 'website',
     url: 'https://www.carwashtechnologies.com/projects/worlds-longest-carwash',
-    images: ['/imgs/projects/WLC/20260720_095018.jpg'],
+    images: [
+      {
+        url: 'https://www.carwashtechnologies.com/imgs/projects/WLC/July-2026/20260720_095018.webp',
+        width: 1600,
+        height: 1200,
+        alt: "World's Longest Carwash - job site construction photo",
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: "World's Longest Carwash | Job Site Photos",
     description: "A record-setting tunnel build under construction by Carwash Technologies. First look inside.",
+    images: ['https://www.carwashtechnologies.com/imgs/projects/WLC/July-2026/20260720_095018.webp'],
   },
 };
 
 const WLC_BASE = '/imgs/projects/WLC';
 
-function loadGalleryImages(): GalleryImage[] {
+type GallerySection = { folder: string; label: string; images: GalleryImage[] };
+
+// Friendly display names for each date subfolder
+const FOLDER_LABELS: Record<string, string> = {
+  'April-2026': 'April 2026',
+  'July-2026': 'July 2026',
+  'Aug-2026': 'August 2026',
+};
+
+// Explicit chronological order — alphabetical would put Aug before July
+const FOLDER_ORDER = ['April-2026', 'July-2026', 'Aug-2026'];
+
+function loadGallerySections(): GallerySection[] {
   try {
     const wlcDir = path.join(process.cwd(), 'public/imgs/projects/WLC');
     return fs
-      .readdirSync(wlcDir)
-      .filter(f => /\.(jpg|jpeg|webp|png)$/i.test(f))
-      .sort()
-      .map(file => ({
-        src: `${WLC_BASE}/${file}`,
-        alt: "World's Longest Carwash construction — job site photo",
-      }));
+      .readdirSync(wlcDir, { withFileTypes: true })
+      .filter(e => e.isDirectory())
+      .sort((a, b) => {
+        const ai = FOLDER_ORDER.indexOf(a.name);
+        const bi = FOLDER_ORDER.indexOf(b.name);
+        if (ai !== -1 && bi !== -1) return ai - bi;
+        if (ai !== -1) return -1;
+        if (bi !== -1) return 1;
+        return a.name.localeCompare(b.name);
+      })
+      .map(dir => {
+        const images = fs
+          .readdirSync(path.join(wlcDir, dir.name))
+          .filter(f => /\.webp$/i.test(f))
+          .sort()
+          .map(file => ({
+            src: `${WLC_BASE}/${dir.name}/${file}`,
+            alt: `World's Longest Carwash construction - ${FOLDER_LABELS[dir.name] ?? dir.name}`,
+          }));
+        return { folder: dir.name, label: FOLDER_LABELS[dir.name] ?? dir.name, images };
+      })
+      .filter(s => s.images.length > 0);
   } catch {
     return [];
   }
 }
 
-const galleryImages = loadGalleryImages();
+const gallerySections = loadGallerySections();
+const allImages = gallerySections.flatMap(s => s.images);
 
 export default function WorldsLongestCarwashPage() {
   return (
@@ -56,21 +92,40 @@ export default function WorldsLongestCarwashPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'CreativeWork',
-            name: "World's Longest Carwash",
-            description:
-              "A record-setting tunnel carwash currently under construction by Carwash Technologies — the company's flagship design-build project in the Midwest.",
-            url: 'https://www.carwashtechnologies.com/projects/worlds-longest-carwash',
-            image: 'https://www.carwashtechnologies.com/imgs/projects/WLC/20260720_095018.jpg',
-            creator: {
-              '@type': 'LocalBusiness',
-              name: 'Carwash Technologies',
-              url: 'https://www.carwashtechnologies.com',
-              telephone: '+1-612-408-9010',
+          __html: JSON.stringify([
+            {
+              '@context': 'https://schema.org',
+              '@type': 'CreativeWork',
+              name: "World's Longest Carwash",
+              description:
+                "A record-setting tunnel carwash currently under construction by Carwash Technologies - the company’s flagship design-build project in the Midwest.",
+              url: 'https://www.carwashtechnologies.com/projects/worlds-longest-carwash',
+              image: 'https://www.carwashtechnologies.com/imgs/projects/WLC/July-2026/20260720_095018.webp',
+              creator: {
+                '@type': 'LocalBusiness',
+                name: 'Carwash Technologies',
+                url: 'https://www.carwashtechnologies.com',
+                telephone: '+1-612-408-9010',
+              },
             },
-          }),
+            {
+              '@context': 'https://schema.org',
+              '@type': 'ImageGallery',
+              name: "World's Longest Carwash - Job Site Photos",
+              description: 'Construction photos from the record-setting tunnel carwash build by Carwash Technologies.',
+              url: 'https://www.carwashtechnologies.com/projects/worlds-longest-carwash',
+              image: allImages.slice(0, 8).map(img => ({
+                '@type': 'ImageObject',
+                contentUrl: `https://www.carwashtechnologies.com${img.src}`,
+                name: img.alt,
+              })),
+              author: {
+                '@type': 'LocalBusiness',
+                name: 'Carwash Technologies',
+                url: 'https://www.carwashtechnologies.com',
+              },
+            },
+          ]),
         }}
       />
 
@@ -79,14 +134,14 @@ export default function WorldsLongestCarwashPage() {
         title="The World's Longest Carwash"
         highlightedWord="Longest"
         subtitle="A Record-Setting Tunnel, Under Construction"
-        description="Our most ambitious build yet is taking shape right now. We're engineering a tunnel wash on a scale the industry hasn't seen — and we're sharing the first photos as it comes together."
+        description="Our most ambitious build yet is taking shape right now. We're engineering a tunnel wash on a scale the industry hasn't seen - and we're sharing the first photos as it comes together."
         buttons={[
           { text: 'Get Project Updates', href: '/contact', variant: 'primary' },
-          { text: 'View All Projects', href: '/projects', variant: 'secondary' },
+          { text: 'See Build Progress', href: '#gallery', variant: 'secondary' },
         ]}
         backgroundVariant="dark"
         showPattern
-        leftImage="/imgs/projects/WLC/20260720_095018.jpg"
+        leftImage="/imgs/projects/WLC/July-2026/20260720_095018.webp"
         compact
       />
 
@@ -120,7 +175,7 @@ export default function WorldsLongestCarwashPage() {
           </h2>
           <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
             This flagship build is currently in active construction. The full specs, exact location,
-            and grand-opening details are coming soon — but check back or reach out and we&apos;ll
+            and grand-opening details are coming soon - but check back or reach out and we&apos;ll
             keep you posted as it comes together.
           </p>
         </div>
@@ -129,10 +184,10 @@ export default function WorldsLongestCarwashPage() {
       <StatsBand
         badge="The Build"
         heading="A project on a scale of its own."
-        image="/imgs/projects/WLC/20260720_100923.jpg"
+        image="/imgs/projects/WLC/July-2026/20260720_100923.webp"
         stats={[
           { value: 'Record', label: 'Setting Length' },
-          { value: '36+', label: 'Job Site Photos' },
+          { value: `${allImages.length}`, label: 'Job Site Photos' },
           { value: 'Turnkey', label: 'Design-Build' },
           { value: 'Soon', label: 'Grand Opening' },
         ]}
@@ -211,16 +266,16 @@ export default function WorldsLongestCarwashPage() {
                 </span>
               </h2>
               <p className="text-base sm:text-lg text-slate-300 mb-6 leading-relaxed">
-                Minnesota winters are brutal. Rain, snow, freezing temps — nobody wants to vacuum their car in the elements. That&apos;s why this build includes one of the largest fully enclosed, climate-controlled indoor vacuum halls ever constructed at a carwash.
+                Minnesota winters are brutal. Rain, snow, freezing temps - nobody wants to vacuum their car in the elements. That&apos;s why this build includes one of the largest fully enclosed, climate-controlled indoor vacuum halls ever constructed at a carwash.
               </p>
               <p className="text-base text-slate-400 mb-8 leading-relaxed">
-                The room you&apos;re looking at is enormous — high ceilings, open floor, built to accommodate serious capacity. Customers drive in, vacuum in total comfort, and leave with a clean car no matter what&apos;s happening outside.
+                The room you&apos;re looking at is enormous - high ceilings, open floor, built to accommodate serious capacity. Customers drive in, vacuum in total comfort, and leave with a clean car no matter what&apos;s happening outside.
               </p>
               <ul className="space-y-4">
                 {[
                   { icon: 'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6', text: 'Fully enclosed, climate-controlled interior' },
                   { icon: 'M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z', text: 'Beats Minnesota snow, wind, and freezing temps' },
-                  { icon: 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z', text: 'Scaled for high customer volume — no crowding' },
+                  { icon: 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z', text: 'Scaled for high customer volume - no crowding' },
                   { icon: 'M13 10V3L4 14h7v7l9-11h-7z', text: 'High ceilings and wide bays for easy maneuvering' },
                 ].map(item => (
                   <li key={item.text} className="flex items-start gap-3">
@@ -241,13 +296,13 @@ export default function WorldsLongestCarwashPage() {
               <div className="relative border-2 border-[#f0da11]/30 overflow-hidden">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/imgs/projects/WLC/20260720_095815.jpg"
-                  alt="Massive indoor vacuum hall under construction — World's Longest Carwash"
+                  src="/imgs/projects/WLC/July-2026/20260720_095815.webp"
+                  alt="Massive indoor vacuum hall under construction - World's Longest Carwash"
                   className="w-full h-auto object-cover"
                   loading="lazy"
                 />
                 <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-slate-900/90 to-transparent px-5 py-4">
-                  <p className="text-white text-sm font-semibold">Indoor Vacuum Hall — July 2026</p>
+                  <p className="text-white text-sm font-semibold">Indoor Vacuum Hall - July 2026</p>
                   <p className="text-slate-300 text-xs mt-0.5">World&apos;s Longest Carwash · Under Construction</p>
                 </div>
               </div>
@@ -259,28 +314,40 @@ export default function WorldsLongestCarwashPage() {
       {/* Full photo gallery */}
       <section className="bg-slate-50 py-14 sm:py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10 max-w-3xl mx-auto">
+          <div id="gallery" className="text-center mb-10 max-w-3xl mx-auto">
             <div className="inline-flex items-center gap-3 mb-4">
               <div className="w-8 h-px bg-[#f0da11]" />
               <span className="text-sm font-semibold text-gray-600 uppercase tracking-wider">From The Job Site</span>
               <div className="w-8 h-px bg-[#f0da11]" />
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
-              Construction Progress —{' '}
-              <span className="text-[#d0b211]">July 2026</span>
+              Construction Progress
             </h2>
             <p className="text-base sm:text-lg text-gray-700">
-              {galleryImages.length} photos from the job site. Click any photo to view full size.
+              {allImages.length} photos across {gallerySections.length} phases. Click any photo to view full size.
             </p>
           </div>
 
-          <WLCGallery images={galleryImages} />
+          {gallerySections.map((section, idx) => (
+            <div key={section.folder} className={idx > 0 ? 'mt-14 pt-14 border-t border-gray-200' : ''}>
+              <div className="flex items-center gap-4 mb-8">
+                <div className="flex items-center gap-3">
+                  <div className="w-1 h-8 bg-[#f0da11]" aria-hidden="true" />
+                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900">{section.label}</h3>
+                </div>
+                <span className="text-sm text-gray-500 font-medium">
+                  {section.images.length} photo{section.images.length !== 1 ? 's' : ''}
+                </span>
+              </div>
+              <WLCGallery images={section.images} />
+            </div>
+          ))}
         </div>
       </section>
 
       <CallToActionNew
         title="Want to Follow This Build?"
-        description="Reach out and we'll keep you in the loop on the World's Longest Carwash — and talk through what a flagship-scale wash could look like for your operation."
+        description="Reach out and we'll keep you in the loop on the World's Longest Carwash - and talk through what a flagship-scale wash could look like for your operation."
         buttons={[
           { text: 'Get Project Updates', href: '/contact', variant: 'primary' },
           { text: 'See Who We Serve', href: '/who-we-serve', variant: 'secondary' },

@@ -1,6 +1,6 @@
-'use client';
+﻿'use client';
 
-// Homepage Services Section — Complete Solutions
+// Homepage Services Section - Complete Solutions
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -83,7 +83,7 @@ export default function ServicesSectionNew() {
               key={service.title}
               className="group relative flex flex-col bg-white rounded-none overflow-hidden border border-gray-200 shadow-sm hover:shadow-2xl hover:-translate-y-1.5 hover:border-[#f0da11] transition-all duration-300"
             >
-              {/* Image with gradient overlay — fixed aspect for uniform cards */}
+              {/* Image with gradient overlay - fixed aspect for uniform cards */}
               <div className="relative aspect-4/3 w-full overflow-hidden">
                 <Image
                   src={service.image}
@@ -93,7 +93,7 @@ export default function ServicesSectionNew() {
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-slate-900/80 via-slate-900/20 to-transparent" />
-                {/* Icon badge — top-left, fully inside the image */}
+                {/* Icon badge - top-left, fully inside the image */}
                 <div className="absolute top-3 left-3 w-11 h-11 bg-[#f0da11] text-black flex items-center justify-center shadow-lg">
                   {service.icon}
                 </div>

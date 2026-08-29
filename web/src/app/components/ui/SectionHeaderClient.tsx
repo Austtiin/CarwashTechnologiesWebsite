@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React from 'react';
 import BlurText from '../animations/BlurText';
@@ -64,7 +64,7 @@ export default function SectionHeaderClient({
     <div className={`w-full flex justify-center ${className}`}>
       <div className={`${maxWidth} w-full ${getBackgroundClasses()}`}>
         <div className={`flex flex-col ${alignItems} ${getTextAlignClasses()}`}>
-          {/* Main Title with Animation — matches the static SectionHeader styling */}
+          {/* Main Title with Animation - matches the static SectionHeader styling */}
           <BlurText
             text={title}
             delay={titleDelay}

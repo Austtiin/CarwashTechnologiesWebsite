@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React from 'react';
 import Image from 'next/image';
@@ -7,12 +7,12 @@ import DarkSectionBackdrop from '../../ui/DarkSectionBackdrop';
 const reasons = [
   {
     title: 'Built for Owners',
-    description: 'Solutions designed around throughput, uptime, and profitability — not just hardware.',
+    description: 'Solutions designed around throughput, uptime, and profitability - not just hardware.',
     icon: 'M3 13l4 4L13 7m0 0v6m0-6h6',
   },
   {
     title: 'End-to-End Support',
-    description: 'Design, build, equip, supply, and service — one accountable partner start to finish.',
+    description: 'Design, build, equip, supply, and service - one accountable partner start to finish.',
     icon: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z',
   },
   {
@@ -61,7 +61,7 @@ export default function WhyChooseUsSection() {
               <span className="text-[#f0da11]">Whole Wash</span>
             </h2>
             <p className="text-sm sm:text-base text-slate-300 mb-8 max-w-xl leading-relaxed">
-              Partner with a team that understands modern wash operations — equipment, chemistry, and service
+              Partner with a team that understands modern wash operations - equipment, chemistry, and service
               working together to keep your site running strong.
             </p>
 

@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -13,14 +13,14 @@ export const metadata: Metadata = {
   alternates: { canonical: '/projects' },
   openGraph: {
     title: 'Car Wash Projects & Case Studies Minnesota | Carwash Technologies',
-    description: 'Completed car wash projects across MN, ND, SD, WI — tunnel builds, truck washes, fleet washes, and remodels.',
+    description: 'Completed car wash projects across MN, ND, SD, WI - tunnel builds, truck washes, fleet washes, and remodels.',
     type: 'website',
     url: 'https://www.carwashtechnologies.com/projects',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Car Wash Projects & Case Studies Minnesota | Carwash Technologies',
-    description: 'Completed car wash projects across MN, ND, SD, WI — tunnel builds, truck washes, fleet washes, and remodels.',
+    description: 'Completed car wash projects across MN, ND, SD, WI - tunnel builds, truck washes, fleet washes, and remodels.',
   },
 };
 
@@ -59,13 +59,13 @@ const ProjectsPage = () => {
         image="/imgs/IMG_5380.webp"
         stats={[
           { value: '99+', label: 'Projects Delivered' },
-          { value: '25+', label: 'Years Experience' },
+          { value: '50+', label: 'Yrs Combined Exp.' },
           { value: '4', label: 'States Served' },
           { value: 'Turnkey', label: 'Design-Build' },
         ]}
       />
 
-      {/* Featured build — World's Longest Carwash */}
+      {/* Featured build - World's Longest Carwash */}
       <section className="bg-slate-950 py-14 sm:py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <Link
@@ -74,7 +74,7 @@ const ProjectsPage = () => {
           >
             <div className="relative aspect-[4/3] lg:aspect-auto lg:h-full min-h-[260px]">
               <Image
-                src="/imgs/projects/WLC/20260720_095018.jpg"
+                src="/imgs/projects/WLC/20260720_095018.webp"
                 alt="World's Longest Carwash flagship build under construction"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -90,7 +90,7 @@ const ProjectsPage = () => {
                 The World&apos;s Longest Carwash
               </h3>
               <p className="text-base text-slate-300 leading-relaxed mb-6">
-                Our most ambitious build yet is under construction right now — a record-setting tunnel
+                Our most ambitious build yet is under construction right now - a record-setting tunnel
                 on a scale the industry hasn&apos;t seen. Take a first look at the build.
               </p>
               <span className="inline-flex items-center text-sm font-semibold text-white group-hover:text-[#f0da11] transition-colors">
@@ -104,7 +104,7 @@ const ProjectsPage = () => {
         </div>
       </section>
 
-      {/* Project types — replaces placeholder testimonials */}
+      {/* Project types - replaces placeholder testimonials */}
       <section className="bg-slate-50 py-14 sm:py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10 max-w-3xl mx-auto">
@@ -118,7 +118,7 @@ const ProjectsPage = () => {
               <span className="inline-block bg-[#f0da11] text-black px-2 pb-0.5 -rotate-1">Four States</span>
             </h2>
             <p className="text-base sm:text-lg text-gray-700">
-              Tunnel builds, truck washes, fleet systems, remodels, and custom installs — delivered across MN, ND, SD, and WI.
+              Tunnel builds, truck washes, fleet systems, remodels, and custom installs - delivered across MN, ND, SD, and WI.
             </p>
           </div>
 

@@ -1,8 +1,9 @@
-import React from 'react';
+﻿import React from 'react';
 import GenericHero from '../ui/GenericHero';
 import GenericServicesGrid from '../ui/GenericServicesGrid';
 import StatsBand from '../ui/StatsBand';
 import CallToActionNew from '../ui/CallToActionNew';
+import PageFAQ, { type FAQItem } from '../ui/PageFAQ';
 
 export interface SegmentStat {
   value: string;
@@ -29,13 +30,15 @@ export interface SegmentData {
   /** Intro section heading + body. */
   introHeading: string;
   introBody: string;
-  /** "Challenges we solve for this segment" — bullet list. */
+  /** "Challenges we solve for this segment" - bullet list. */
   challenges: string[];
-  /** "What we deliver" — cards. */
+  /** "What we deliver" - cards. */
   solutions: SegmentSolution[];
   statsBadge: string;
   statsHeading: string;
   stats: SegmentStat[];
+  /** Optional FAQ items for the page-level FAQ section. */
+  faqItems?: FAQItem[];
 }
 
 export default function SegmentPage({ data }: { data: SegmentData }) {
@@ -59,7 +62,7 @@ export default function SegmentPage({ data }: { data: SegmentData }) {
         description={data.description}
         buttons={[
           { text: 'Request a Consultation', href: '/contact', variant: 'primary' },
-          { text: 'View Our Work', href: '/projects', variant: 'secondary' },
+          { text: 'Flagship Project', href: '/projects/worlds-longest-carwash', variant: 'secondary' },
         ]}
         leftImage={data.heroImage}
         compact
@@ -118,9 +121,13 @@ export default function SegmentPage({ data }: { data: SegmentData }) {
         showCTA={false}
       />
 
+      {data.faqItems && data.faqItems.length > 0 && (
+        <PageFAQ items={data.faqItems} />
+      )}
+
       <CallToActionNew
         title="Let's Plan Your Wash"
-        description="Tell us about your site, vehicles, and volume — we'll map out the right equipment, chemistry, and service plan."
+        description="Tell us about your site, vehicles, and volume - we'll map out the right equipment, chemistry, and service plan."
         buttons={[
           { text: 'Get Started Today', href: '/contact', variant: 'primary' },
           { text: 'Who We Serve', href: '/who-we-serve', variant: 'secondary' },

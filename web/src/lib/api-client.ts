@@ -1,4 +1,4 @@
-import type { ApiResponse, ContactFormData, ContactFormResponse } from '@/types/api';
+﻿import type { ApiResponse, ContactFormData, ContactFormResponse } from '@/types/api';
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || '';
 
@@ -72,7 +72,7 @@ class ApiClient {
         return result;
       }
 
-      // Server returned a non-2xx or success:false — surface the server's message
+      // Server returned a non-2xx or success:false - surface the server's message
       return {
         success: false,
         error: result.error ?? 'Request failed',
@@ -109,7 +109,7 @@ class ApiClient {
   ): Promise<ApiResponse<ContactFormResponse>> {
     const url = `${API_BASE_URL}/api/careers`;
     try {
-      // Note: do NOT set Content-Type — the browser sets the multipart boundary.
+      // Note: do NOT set Content-Type - the browser sets the multipart boundary.
       const response = await this.fetchWithTimeout(url, {
         method: 'POST',
         body: formData,

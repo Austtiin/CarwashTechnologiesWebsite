@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React, { useState, useCallback } from 'react';
 import { submitContactForm } from '@/lib/api-client';
@@ -10,7 +10,7 @@ interface FormState {
   phone: string;
   email: string;
   message: string;
-  /** Honeypot — must stay empty. */
+  /** Honeypot - must stay empty. */
   website: string;
 }
 
@@ -87,7 +87,7 @@ export default function ConsultationCTA() {
             </h2>
             <p className="text-base sm:text-lg text-slate-300 mb-7 max-w-xl leading-relaxed">
               Building new, upgrading, or just need a second opinion? Tell us about your site and our
-              Midwest team will map out equipment, chemistry, and service options — at no cost.
+              Midwest team will map out equipment, chemistry, and service options - at no cost.
             </p>
             <ul className="space-y-3">
               {perks.map((perk) => (
@@ -114,7 +114,7 @@ export default function ConsultationCTA() {
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">Request Received!</h3>
                 <p className="text-gray-600 mb-6">
-                  Thanks — our team will reach out shortly to schedule your free consultation.
+                  Thanks - our team will reach out shortly to schedule your free consultation.
                 </p>
                 <button
                   type="button"

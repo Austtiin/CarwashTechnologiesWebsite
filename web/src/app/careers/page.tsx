@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Metadata } from 'next';
 import GenericHero from '../components/ui/GenericHero';
 import CareersForm from '../components/careers/CareersForm';
@@ -24,7 +24,7 @@ const benefits = [
   {
     num: '01',
     title: 'Hands-On, Skilled Work',
-    description: 'Build, install, and service real carwash equipment for operators across the Midwest — no two days the same.',
+    description: 'Build, install, and service real carwash equipment for operators across the Midwest - no two days the same.',
   },
   {
     num: '02',
@@ -59,7 +59,7 @@ export default function CareersPage() {
         eyebrow="Join Our Team"
         title="Careers at Carwash Technologies"
         highlightedWord="Careers"
-        subtitle="Build It. Maintain It. Grow It — With Us."
+        subtitle="Build It. Maintain It. Grow It - With Us."
         description="We're always looking for dependable, hands-on people to help us build, install, and service car washes across the Midwest. Apply below and tell us where you'd fit."
         buttons={[{ text: 'Apply Now', href: '#apply', variant: 'primary' }]}
         leftImage="/imgs/IMG_5389.webp"
@@ -107,7 +107,7 @@ export default function CareersPage() {
         </div>
       </section>
 
-      {/* Requirements — framed checklist */}
+      {/* Requirements - framed checklist */}
       <section className="bg-slate-50 py-14 sm:py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
           <div className="relative bg-white border border-gray-200 p-8 sm:p-10 shadow-sm">

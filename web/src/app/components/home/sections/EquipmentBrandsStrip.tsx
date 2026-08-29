@@ -17,7 +17,7 @@ export default function EquipmentBrandsStrip() {
         <p className="text-center text-xs sm:text-sm font-semibold uppercase tracking-wider text-gray-500 mb-8">
           Authorized dealer &amp; service provider for leading carwash equipment brands
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-8 sm:gap-8 items-center justify-items-center">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 sm:gap-8 items-center justify-items-center">
           {brands.map((brand, index) => (
             <div
               key={brand.name}

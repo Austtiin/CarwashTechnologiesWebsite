@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Metadata } from 'next';
 import GenericHero from '../components/ui/GenericHero';
 import GenericServicesGrid from '../components/ui/GenericServicesGrid';
@@ -7,19 +7,19 @@ import StatsBand from '../components/ui/StatsBand';
 
 export const metadata: Metadata = {
   title: 'Car Wash Services Minnesota | Equipment, Chemicals, Installation & Consulting',
-  description: 'Full-service carwash company in Minnesota — equipment sales, chemical supply, installation and construction, service and maintenance, and consulting. Serving MN, ND, SD, and WI for all vehicle wash needs including tunnel systems, semi truck washes, and fleet wash solutions.',
+  description: 'Full-service carwash company in Minnesota - equipment sales, chemical supply, installation and construction, service and maintenance, and consulting. Serving MN, ND, SD, and WI for all vehicle wash needs including tunnel systems, semi truck washes, and fleet wash solutions.',
   keywords: 'car wash services Minnesota, carwash company MN, vehicle wash services, car wash equipment sales MN, carwash chemicals Minnesota, car wash installation MN, carwash builder, car wash maintenance Minnesota, fleet wash services, semi truck wash services, car wash consulting MN, full service carwash company, Belanger PECO PDQ Sonny\'s dealer Minnesota, Vertech Labs ChemQuest Simoniz chemicals MN, Cat Pumps General Pump service Minnesota, carwash equipment Midwest, carwash chemicals Midwest',
   alternates: { canonical: '/services' },
   openGraph: {
     title: 'Car Wash Services Minnesota | Equipment, Chemicals, Installation & Consulting',
-    description: 'Full-service carwash company in MN — equipment, chemicals, installation, maintenance, and consulting for all vehicle wash types.',
+    description: 'Full-service carwash company in MN - equipment, chemicals, installation, maintenance, and consulting for all vehicle wash types.',
     type: 'website',
     url: 'https://www.carwashtechnologies.com/services',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Car Wash Services Minnesota | Equipment, Chemicals, Installation & Consulting',
-    description: 'Full-service carwash company in MN — equipment, chemicals, installation, maintenance, and consulting for all vehicle wash types.',
+    description: 'Full-service carwash company in MN - equipment, chemicals, installation, maintenance, and consulting for all vehicle wash types.',
   },
 };
 
@@ -126,7 +126,7 @@ export default function Services() {
         heading="One team for the entire wash."
         image="/imgs/IMG_5380.webp"
         stats={[
-          { value: '25+', label: 'Years Experience' },
+          { value: '50+', label: 'Yrs Combined Exp.' },
           { value: '99+', label: 'Projects Delivered' },
           { value: '4', label: 'States Served' },
           { value: 'End-to-End', label: 'Support' },
@@ -153,8 +153,8 @@ export default function Services() {
             variant: "primary"
           },
           {
-            text: "View Our Projects",
-            href: "/projects",
+            text: "View Flagship Project",
+            href: "/projects/worlds-longest-carwash",
             variant: "secondary"
           }
         ]}

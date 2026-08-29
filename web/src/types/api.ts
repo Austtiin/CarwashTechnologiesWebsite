@@ -1,4 +1,4 @@
-// API Response Types
+﻿// API Response Types
 export interface ApiResponse<T = unknown> {
   success: boolean;
   data?: T;
@@ -18,7 +18,7 @@ export interface ContactFormData {
   contactType: string;
   /** Areas of interest the user selected (e.g. chemicals, maintenance, equipment). Backend handling added later. */
   areasOfInterest?: string[];
-  /** Honeypot — should always be empty; bots fill it in */
+  /** Honeypot - should always be empty; bots fill it in */
   website?: string;
 }
 

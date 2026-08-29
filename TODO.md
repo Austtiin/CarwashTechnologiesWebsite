@@ -65,9 +65,87 @@ Renamed the **Types of Washes** nav/page to **"Who We Serve"** and built out aud
 
 ---
 
-## 💡 Optional / later
-- [x] Careers applicant confirmation email — branded "thank you" sent to the applicant in addition to the internal notification ([EmailService.cs](api/Services/EmailService.cs) `SendCareersConfirmationToApplicantAsync` + `EmailTemplates.CareersConfirmation`); both sent concurrently from the queue processor
-- [ ] Brand strip: link logos out to manufacturer product pages — **deferred** (manufacturers rebranded under OPW VWS; need confirmed URLs before wiring)
-- [x] Curate hero imagery per page — reviewed all `leftImage` choices; targeted swaps: **about** → branded company van (`IMG_20260313_101859`, was unused; shows logo/phone/brands), **services** → striking PDQ rainbow-LED bay (showcase, differentiates from projects), **sds** → clean neutral tunnel (`IMG_5387`, calmer for a docs page than the flashy bay). Other pages already had fitting images. Unused standout still available: `IMG_E0035` (SUDZ storefront), `Kondor_Flight` (red-LED touchless).
-- [ ] Add real open-roles list to careers once roles are defined — **blocked**: needs roles defined
-- [x] Canonical-class lint warning in Navigation.tsx — already resolved (`lg:h-17` in place)
+## ✅ DONE — SEO + Corporate Pass (session 3)
+
+### Image compression
+- [x] WLC gallery images: all 16 JPGs converted to WebP via sharp (avg ~75% smaller: 850KB → 207KB each, gallery ~13.5MB → 3.3MB). Gallery loader now serves `.webp` only. Hero/OG refs updated. JPG originals on disk can be deleted when confirmed live.
+
+### Stats consistency
+- [x] "25+ Years Experience" → **"50+ Yrs Combined Exp."** on `projects`, `services`, `who-we-serve` stats bands. Consistent with about/consulting/equipment pages. `specialized-wash` segment also fixed.
+
+### Navigation / Projects
+- [x] "Our Projects" nav item replaced with **"World's Longest Carwash"** → `/projects/worlds-longest-carwash` (direct link, no hub needed)
+- [x] `/projects` 301-redirects → `/projects/worlds-longest-carwash` via `staticwebapp.config.json`
+- [x] "View Our Work" / "View Our Projects" buttons across all pages updated to point to WLC page or removed
+
+### Chemical Sales page rebuild
+- [x] Replaced weak "benefits" `GenericServicesGrid` (6 identical-image cards) with inline **benefits checklist** + **3-tier pricing programs** section (Pay-As-You-Go / Regular Delivery / Enterprise with "Most Popular" badge)
+- [x] Added `StatsBand` (previously missing) — 3 brands / 48hr delivery / 4 states / No contracts
+- [x] Added `PageFAQ` with 5 FAQ items targeting: "car wash chemical supplier near me", "car wash chemical manufacturers", "car wash chemical distributor", "heavy duty wash chemicals", "Chicago/IL delivery"
+
+### WLC SEO boost
+- [x] OG/Twitter images: absolute URLs with dimensions
+- [x] WLC keywords expanded (2025/record-breaking long-tail)
+- [x] Structured data: `CreativeWork` + `ImageGallery` schema (8 photos as `ImageObject` entries, eligible for Google Image rich results)
+
+### Security headers
+- [x] CSP per-directive: `script-src` limited to self + GTM/GA, `frame-src 'none'`, `upgrade-insecure-requests`
+- [x] HSTS `preload` flag added
+
+### SEO — 0-click keyword fixes
+- [x] **`PageFAQ` component** created (`ui/PageFAQ.tsx`) — accordion, `FAQPage` JSON-LD schema injected, used across 5 pages
+- [x] **Installation page** fully rebuilt: new title "Car Wash Equipment Installers & Contractors MN", added `StatsBand`, 2-col intro with "car dealership car wash installation" + "car wash installation companies" keyword-dense copy, FAQ targeting: dealership install / equipment installers / car wash installation companies / automated machine / heavy duty
+- [x] **Equipment page**: keywords updated ("automated car wash machine minnesota", "car wash automation equipment supplier", "car wash blowers"); FAQ targeting those queries + self-serve parts + dealership
+- [x] **Consulting page**: added `StatsBand`, updated hero copy to "Car Wash Consultant", FAQ targeting: car wash consultant / gas station consulting / heavy duty consulting / cost
+- [x] **Chemical page**: FAQ targeting: chemical supplier near me / manufacturers / distributor / heavy duty / Chicago
+- [x] **Truck-wash segment**: FAQ targeting: heavy duty vehicle wash MN ND / semi wash equipment / repair & maintenance MN
+- [x] **Municipal-fleet-wash segment**: FAQ targeting: government fleet wash / heavy duty design for municipal
+
+## ⏳ REMAINING / NEXT STEPS
+
+- [ ] **Delete original WLC JPGs** — confirm live, then `rm web/public/imgs/projects/WLC/*.jpg` to free ~13.5MB
+- [ ] **Submit updated sitemap** to Google Search Console to accelerate indexing of rebuilt pages
+- [ ] Brand strip: link logos to manufacturer product pages — **deferred** (OPW VWS rebranding; need confirmed URLs)
+- [ ] Add real open-roles list to careers — **blocked**: needs roles defined
+- [ ] **Deploy config**: set `EMAIL_TO_CAREERS` in Azure Function App settings
+
+
+---
+
+## ✅ DONE — Site review & improvements pass (2026-08-28)
+
+### Images — WLC gallery compression
+- [x] Converted all 16 WLC JPGs to WebP via sharp at 1600px max / quality 82 — average saving ~75% per image (~13.5MB → ~3.3MB total for gallery). Original JPGs kept alongside for reference.
+- [x] Updated WLC page gallery loader to only serve `.webp` files ([worlds-longest-carwash/page.tsx](web/src/app/projects/worlds-longest-carwash/page.tsx))
+- [x] Updated all hard-coded `20260720_095018.jpg` references in WLC page and projects hub to `.webp`
+- [x] Note: site uses `output: 'export'` + `images.unoptimized: true`, so the browser receives exactly the file referenced — WebP conversion is the correct approach here (not server-side Next.js image opt)
+
+### Stats consistency
+- [x] Updated "25+ Years Experience" → **"50+ Yrs Combined Exp."** on [projects/page.tsx](web/src/app/projects/page.tsx), [services/page.tsx](web/src/app/services/page.tsx), [who-we-serve/page.tsx](web/src/app/who-we-serve/page.tsx) to match about/consulting page descriptions (which already said "50+ years combined")
+
+### Navigation & projects hub
+- [x] Replaced "Our Projects → /projects" nav entry with **"World's Longest Carwash → /projects/worlds-longest-carwash"** — promotes the flagship directly without needing a generic portfolio hub
+- [x] Added 301 redirect `/projects` → `/projects/worlds-longest-carwash` in [staticwebapp.config.json](web/staticwebapp.config.json)
+- [x] Updated services CTA buttons from "View Our Projects" → "View Flagship Project" pointing to WLC page
+
+### Chemical Sales page rebuild ([chemical-sales/page.tsx](web/src/app/chemical-sales/page.tsx))
+- [x] Added `StatsBand` (3 brands · 48hr delivery · 4 states · No contracts) between hero and manufacturer logos
+- [x] Replaced weak "Program Benefits" `GenericServicesGrid` (all-same-image repeating cards) with a compact 2-column **benefits checklist** using branded accent checkmarks
+- [x] Added a new **3-tier ordering programs section** (Pay-As-You-Go · Regular Delivery · Enterprise) using the existing `data.programs` data that was previously defined but never rendered — "Most Popular" badge on Regular Delivery tier
+
+### WLC SEO improvements
+- [x] OG image updated to absolute URL with correct dimensions (1600×1200) + Twitter card image added
+- [x] Expanded keywords to include "2025/record-breaking/world record" long-tail variants
+- [x] Upgraded structured data from single `CreativeWork` → array with `CreativeWork` + `ImageGallery` schema (first 8 gallery photos as `ImageObject` entries) for rich result eligibility
+- [x] "View All Projects" button in WLC hero → "See Build Progress" (scrolls to `#gallery`, avoids linking back to the hub that now 301-redirects)
+
+### Security headers ([staticwebapp.config.json](web/staticwebapp.config.json))
+- [x] Tightened CSP from blanket `default-src 'self' 'unsafe-inline' data: https:` to **per-directive policy**: `default-src 'self'`, `script-src` limited to self + GTM/GA, `style-src 'self' 'unsafe-inline'`, `connect-src 'self' https:`, `frame-src 'none'`
+- [x] Added `upgrade-insecure-requests` to CSP
+- [x] Added `preload` to HSTS header (`max-age=31536000; includeSubDomains; preload`)
+
+### Pending / future
+- [ ] Delete original WLC JPGs once confirmed live (they remain on disk, ~13.5MB, alongside the new WebPs)
+- [ ] Add more WLC photos as construction progresses — gallery auto-loads all `.webp` files from `/imgs/projects/WLC/`
+- [ ] Consider adding a dedicated `/world-record-carwash` vanity URL redirect for SEO and direct sharing
+- [ ] Chemical sales page: add a "Request Chemical Quote" contact form shortcut / inline email opt-in

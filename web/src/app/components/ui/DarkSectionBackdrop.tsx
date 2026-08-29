@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import Image from 'next/image';
 
 interface DarkSectionBackdropProps {
@@ -13,7 +13,7 @@ interface DarkSectionBackdropProps {
 /**
  * Shared backdrop for deep-slate sections. Renders the slate gradient base plus
  * a subtle grid texture, an optional faint carwash photo, and a soft radial
- * accent so dark bands read as deliberate — not flat empty blue.
+ * accent so dark bands read as deliberate - not flat empty blue.
  *
  * Place as the first child of a `relative` section; put real content in a
  * sibling with `relative z-10`.

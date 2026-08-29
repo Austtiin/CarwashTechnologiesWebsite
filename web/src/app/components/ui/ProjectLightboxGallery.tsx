@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
@@ -58,7 +58,8 @@ export default function ProjectLightboxGallery({ images }: Props) {
           <button
             key={img.src}
             onClick={() => openAt(i)}
-            className="group relative aspect-[4/3] overflow-hidden border border-gray-200 hover:border-[#f0da11] hover:shadow-lg transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#f0da11]"
+            className="group relative aspect-[4/3] overflow-hidden border border-gray-200 hover:border-[#f0da11] hover:shadow-lg transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#f0da11] cursor-pointer gallery-thumb"
+            style={{ animationDelay: `${Math.min(i, 7) * 0.06}s` }}
             aria-label={`View photo ${i + 1}`}
           >
             <Image
@@ -97,7 +98,7 @@ export default function ProjectLightboxGallery({ images }: Props) {
           aria-modal="true"
           aria-label="Photo lightbox"
         >
-          {/* Image container — click inside doesn't close */}
+          {/* Image container - click inside doesn't close */}
           <div
             className="relative w-full max-w-5xl mx-4 sm:mx-8"
             onClick={e => e.stopPropagation()}

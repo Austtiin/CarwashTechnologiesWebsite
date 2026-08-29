@@ -1,13 +1,15 @@
-import React from 'react';
+﻿import React from 'react';
 import { Metadata } from 'next';
 import GenericHero from '../components/ui/GenericHero';
 import GenericServicesGrid from '../components/ui/GenericServicesGrid';
 import CallToActionNew from '../components/ui/CallToActionNew';
 import TrustedChemicalPartners from '../components/chemical/TrustedChemicalPartners';
+import StatsBand from '../components/ui/StatsBand';
+import PageFAQ from '../components/ui/PageFAQ';
 
 export const metadata: Metadata = {
   title: 'Car Wash Chemical Supplier | Delivery & Support Across MN, ND, SD, WI',
-  description: 'Professional car wash chemical programs delivered across Minnesota, North Dakota, South Dakota, and Wisconsin. Full-line supplier for tunnel, in-bay, touchless, self-service, and heavy duty truck wash operations. Vertech Labs, ChemQuest, and Simoniz authorized dealer. No contracts — flexible ordering and scheduled delivery.',
+  description: 'Professional car wash chemical programs delivered across Minnesota, North Dakota, South Dakota, and Wisconsin. Full-line supplier for tunnel, in-bay, touchless, self-service, and heavy duty truck wash operations. Vertech Labs, ChemQuest, and Simoniz authorized dealer. No contracts - flexible ordering and scheduled delivery.',
 
   keywords: 'carwash chemicals Minnesota, car wash chemical supplier MN, carwash chemistry Minnesota, gas station carwash chemicals, convenience store wash chemicals, self service carwash chemicals Minnesota, self serve bay chemicals MN, express carwash chemicals Minnesota, tunnel wash chemistry MN, touchless carwash chemicals Minnesota, automatic carwash chemicals, in bay automatic chemicals, heavy duty carwash chemicals Minnesota, truck wash chemicals MN, fleet wash detergents Minnesota, semi truck wash chemistry, bus wash chemicals, RV wash solutions, commercial carwash chemicals MN, industrial wash chemistry, car dealership carwash chemicals, municipal fleet wash chemicals, car wash detergents Minnesota, pre treatment chemicals MN, wash solutions Minnesota, rinse aids, drying agents, tire shine, wheel cleaners, protectants, sealants, ceramic coating, carwash soap Minnesota, carwash shampoo MN, polish chemicals, wax solutions, carwash chemical programs Minnesota, chemical delivery service MN, bulk carwash chemicals, concentrated wash chemicals, environmentally friendly carwash chemicals, biodegradable wash solutions, Vertech Labs dealer Minnesota, Vertech Labs chemicals MN, ChemQuest dealer Minnesota, ChemQuest chemicals MN, Simoniz dealer Minnesota, Simoniz authorized dealer MN, Simoniz chemicals Minnesota',
   alternates: { canonical: '/chemical-sales' },
@@ -133,18 +135,6 @@ export default async function ChemicalSales() {
               : undefined
   }));
 
-  // Transform benefits into service items
-  const benefitServices = data.benefits.map((benefit) => ({
-    icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-      </svg>
-    ),
-    title: benefit,
-    description: "Expert chemical programs designed for your success",
-    backgroundImage: '/imgs/chems/MixStir.webp'
-  }));
-
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
@@ -174,6 +164,18 @@ export default async function ChemicalSales() {
         compact={true}
       />
 
+      <StatsBand
+        badge="Chemical Supply"
+        heading="Professional-grade chemistry for every wash type."
+        image="/imgs/chems/VLabs-Tubs.webp"
+        stats={[
+          { value: '3', label: 'Trusted Brands' },
+          { value: '48hrs', label: 'Delivery Available' },
+          { value: '4', label: 'States Served' },
+          { value: 'No', label: 'Contracts Required' },
+        ]}
+      />
+
       {/* Trusted Chemical Manufacturers */}
       <TrustedChemicalPartners manufacturers={data.manufacturers} />
 
@@ -188,15 +190,118 @@ export default async function ChemicalSales() {
         backgroundVariant="light-grey"
       />
 
-      {/* Chemical Benefits */}
-      <GenericServicesGrid
-        eyebrow="Why Choose Us"
-        title="Program Benefits"
-        highlightedWord="Benefits"
-        description="Flexible chemical programs designed to meet your operation's unique needs"
-        items={benefitServices}
-        columns={3}
-        backgroundVariant="white"
+      {/* Why Order From Us - compact benefits strip */}
+      <section className="bg-white py-14 sm:py-16 border-b border-gray-100">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+          <div className="text-center mb-10">
+            <div className="inline-flex items-center gap-3 mb-4">
+              <div className="w-8 h-px bg-[#f0da11]" />
+              <span className="text-sm font-semibold text-gray-500 uppercase tracking-wider">Why Order From Us</span>
+              <div className="w-8 h-px bg-[#f0da11]" />
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
+              Simple Ordering. <span className="text-[#d0b211]">Flexible Programs.</span>
+            </h2>
+            <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
+              No contracts, no hassle - just reliable chemistry delivered when you need it.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {data.benefits.map((benefit) => (
+              <div key={benefit} className="flex items-start gap-3 p-4 rounded-lg border border-gray-100 bg-slate-50">
+                <span className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-[#f0da11] flex items-center justify-center">
+                  <svg className="w-3 h-3 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                  </svg>
+                </span>
+                <span className="text-sm font-medium text-gray-800">{benefit}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Ordering Programs - 3-tier cards */}
+      <section className="bg-slate-50 py-14 sm:py-16">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+          <div className="text-center mb-10">
+            <div className="inline-flex items-center gap-3 mb-4">
+              <div className="w-8 h-px bg-[#f0da11]" />
+              <span className="text-sm font-semibold text-gray-500 uppercase tracking-wider">Ordering Options</span>
+              <div className="w-8 h-px bg-[#f0da11]" />
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
+              Chemical <span className="text-[#d0b211]">Programs</span>
+            </h2>
+            <p className="text-base text-gray-600 max-w-xl mx-auto">
+              Pick the ordering structure that fits your operation - all programs include full product-line access.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-3 gap-6">
+            {data.programs.map((program) => (
+              <div
+                key={program.id}
+                className={`relative rounded-xl border-2 bg-white p-7 flex flex-col shadow-sm transition-shadow hover:shadow-md ${
+                  program.popular ? 'border-[#f0da11]' : 'border-gray-200'
+                }`}
+              >
+                {program.popular && (
+                  <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#f0da11] text-slate-900 text-xs font-bold uppercase tracking-widest px-4 py-1">
+                    Most Popular
+                  </span>
+                )}
+                <h3 className="text-lg font-bold text-gray-900 mb-1">{program.title}</h3>
+                <p className="text-sm text-gray-500 mb-5 leading-snug">{program.description}</p>
+                <ul className="space-y-2 mb-7 flex-1">
+                  {program.features.map((f) => (
+                    <li key={f} className="flex items-center gap-2 text-sm text-gray-700">
+                      <svg className="w-4 h-4 text-[#d0b211] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href="/contact"
+                  className={`block text-center text-sm font-semibold py-2.5 px-4 rounded-lg transition-colors ${
+                    program.popular
+                      ? 'bg-[#f0da11] text-slate-900 hover:bg-[#d0b211]'
+                      : 'bg-slate-100 text-gray-800 hover:bg-slate-200'
+                  }`}
+                >
+                  {program.cta}
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <PageFAQ
+        heading="Car Wash Chemical Questions, Answered"
+        items={[
+          {
+            question: 'Are you a car wash chemical supplier near me?',
+            answer: 'Yes. We are a professional car wash chemical supplier serving customers across Minnesota, North Dakota, South Dakota, and Wisconsin. We offer flexible ordering with scheduled delivery routes and will-call pickup at our Forest Lake, MN location. If you are searching for a car wash chemical supplier near me in the upper Midwest, we can most likely serve your site.',
+          },
+          {
+            question: 'Which car wash chemical manufacturers do you carry?',
+            answer: 'We are an authorized dealer for Vertech Labs, ChemQuest, and Simoniz - three of the top car wash chemical manufacturers in the industry. Each brand offers a full program of pre-soak, main wash, finishing, and specialty products formulated for tunnel, in-bay, touchless, self-service, and heavy duty wash applications.',
+          },
+          {
+            question: 'Can you act as a car wash chemical distributor for my operation?',
+            answer: 'Yes. We function as a full-service car wash chemical distributor, supplying both single locations and multi-site operations. We offer volume pricing, scheduled delivery, technical support, and custom program design. No contracts required - flexible ordering on your schedule.',
+          },
+          {
+            question: 'Do you supply car wash chemicals for heavy duty and truck wash operations?',
+            answer: 'Yes. We carry a complete line of heavy duty vehicle wash chemicals including high-alkaline presoaks, traffic film removers, truck wash detergents, and drying agents specifically formulated for semi trucks, buses, municipal fleets, and heavy equipment. We can design a full chemical program around your fleet wash operation.',
+          },
+          {
+            question: 'Can you deliver car wash chemicals to Illinois or Chicago-area locations?',
+            answer: 'We primarily serve Minnesota, North Dakota, South Dakota, and Wisconsin with our delivery routes. For locations in or near the Chicago area or Illinois, contact us to discuss options - we work with distribution partners and can arrange will-call or freight shipping for qualified orders.',
+          },
+        ]}
       />
 
       {/* Call to Action */}

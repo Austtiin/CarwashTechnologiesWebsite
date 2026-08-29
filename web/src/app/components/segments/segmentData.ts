@@ -1,4 +1,4 @@
-import type { SegmentData } from './SegmentPage';
+﻿import type { SegmentData } from './SegmentPage';
 
 // Icon path helpers (Heroicons-style `d` strings)
 const ICONS = {
@@ -25,7 +25,7 @@ export const segments: SegmentData[] = [
     heroImage: '/imgs/car-wash.webp',
     introHeading: 'A wash that pays for itself',
     introBody:
-      'For c-stores and fuel retailers, the carwash is a margin engine — but only if it stays up and throughput is high. We design express tunnels and in-bay automatics sized to your lot, integrate payment and loyalty, and back it all with priority service so a down wash never costs you a weekend.',
+      'For c-stores and fuel retailers, the carwash is a margin engine - but only if it stays up and throughput is high. We design express tunnels and in-bay automatics sized to your lot, integrate payment and loyalty, and back it all with priority service so a down wash never costs you a weekend.',
     challenges: [
       'Limited lot space and tight site constraints',
       'Maximizing cars-per-hour during fuel rushes',
@@ -60,7 +60,7 @@ export const segments: SegmentData[] = [
     introBody:
       'Municipal fleets put unique demands on a wash: mixed vehicle sizes, year-round salt and grime, strict environmental compliance, and budgets that depend on uptime. We design drive-through and gantry systems with water reclaim, build to spec, and support procurement and bid processes.',
     challenges: [
-      'Mixed fleet sizes — from pickups to plow trucks',
+      'Mixed fleet sizes - from pickups to plow trucks',
       'Water reclaim and environmental compliance',
       'Procurement, spec, and bid-process requirements',
       'Year-round reliability through harsh Midwest winters',
@@ -79,6 +79,16 @@ export const segments: SegmentData[] = [
       { value: '4', label: 'States Served' },
       { value: 'Turnkey', label: 'Design-Build' },
     ],
+    faqItems: [
+      {
+        question: 'Do you install government and municipal fleet wash systems?',
+        answer: 'Yes. We build and install municipal and government fleet wash systems for city and county garages, DOT yards, transit authorities, and public-sector fleets across Minnesota, North Dakota, South Dakota, and Wisconsin. We support the procurement and bid process, write specs, and deliver turnkey, code-compliant installations.',
+      },
+      {
+        question: 'Can you design a heavy duty vehicle wash for a government fleet?',
+        answer: 'Yes. We design heavy duty vehicle wash systems specifically for government and municipal fleets. Our designs account for mixed vehicle sizes (pickups through plow trucks and heavy equipment), water reclaim requirements, environmental compliance, and year-round Midwest operating conditions. We provide drive-through gantry, in-bay, and combination wash configurations.',
+      },
+    ],
   },
   {
     slug: 'truck-wash',
@@ -87,11 +97,11 @@ export const segments: SegmentData[] = [
     highlight: 'Truck',
     subtitle: 'Built for the Big Rigs',
     description:
-      'Trucking companies, terminals, and large fleets need heavy duty vehicle wash systems engineered for semis, trailers, buses, and heavy equipment — high-volume, high-pressure, and durable enough for round-the-clock use.',
+      'Trucking companies, terminals, and large fleets need heavy duty vehicle wash systems engineered for semis, trailers, buses, and heavy equipment - high-volume, high-pressure, and durable enough for round-the-clock use.',
     heroImage: '/imgs/IMG_5389.webp',
     introHeading: 'Heavy duty vehicle wash solutions that move more trucks, faster',
     introBody:
-      'Every minute a heavy duty vehicle spends being washed is a minute off the road. We build touchless gantry and drive-through heavy duty vehicle wash systems — from semi truck wash installations to bus wash and equipment wash builds — that clean thoroughly and consistently, with the pumps, chemistry, and reclaim to back it up.',
+      'Every minute a heavy duty vehicle spends being washed is a minute off the road. We build touchless gantry and drive-through heavy duty vehicle wash systems - from semi truck wash installations to bus wash and equipment wash builds - that clean thoroughly and consistently, with the pumps, chemistry, and reclaim to back it up.',
     challenges: [
       'Cleaning oversized vehicles and trailers consistently',
       'High throughput for busy terminals and yards',
@@ -111,6 +121,24 @@ export const segments: SegmentData[] = [
       { value: 'Gantry', label: 'Touchless' },
       { value: 'High-PSI', label: 'Pump Systems' },
       { value: '4', label: 'States Served' },
+    ],
+    faqItems: [
+      {
+        question: 'Do you build heavy duty vehicle wash systems in MN and ND?',
+        answer: 'Yes. We build heavy duty vehicle wash systems across Minnesota (MN), North Dakota (ND), South Dakota (SD), and Wisconsin (WI). Our heavy duty vehicle wash projects include semi truck wash installations, bus wash systems, municipal fleet washes, and heavy equipment washes for trucking terminals, transit authorities, and government yards.',
+      },
+      {
+        question: 'What is a heavy duty vehicle wash partner?',
+        answer: 'A heavy duty vehicle wash partner handles every aspect of your fleet wash operation - designing the system, selecting the right gantry or drive-through equipment, providing fleet chemistry, installing the wash, and servicing it on an ongoing basis. Carwash Technologies acts as a complete heavy duty vehicle wash partner in MN, ND, SD, and WI, so you have one accountable team from build through daily operation.',
+      },
+      {
+        question: 'What semi wash equipment do you supply in MN?',
+        answer: 'We supply and install semi truck wash equipment including touchless gantry systems, high-pressure pump packages (Cat Pumps and General Pump), spray arches, reclaim systems, and chemistry programs specifically formulated for removing road film, mud, and salt from semi trucks, trailers, and heavy equipment. We cover MN and surrounding states.',
+      },
+      {
+        question: 'Can you repair and maintain an existing heavy duty vehicle wash?',
+        answer: 'Yes. We provide heavy duty vehicle wash repair and maintenance services across MN, ND, SD, and WI. Our technicians service all major brands of heavy duty wash equipment, stock common parts, and offer preventive maintenance contracts to minimize downtime at your terminal or fleet yard.',
+      },
     ],
   },
   {
@@ -153,11 +181,11 @@ export const segments: SegmentData[] = [
     highlight: 'Custom',
     subtitle: 'When Off-the-Shelf Won’t Cut It',
     description:
-      'Manufacturing parts washers, rail and transit, agricultural equipment, and one-off custom builds — if it needs to be cleaned at scale, we engineer a wash system around the problem.',
+      'Manufacturing parts washers, rail and transit, agricultural equipment, and one-off custom builds - if it needs to be cleaned at scale, we engineer a wash system around the problem.',
     heroImage: '/imgs/AirCannon.webp',
     introHeading: 'Engineered around your exact problem',
     introBody:
-      'Some wash needs do not fit a catalog. We take on specialized and custom projects — parts and component washers for manufacturing, process-line cleaning, agricultural and rail equipment, and unique site builds — engineering the equipment, chemistry, and controls around your specific requirement.',
+      'Some wash needs do not fit a catalog. We take on specialized and custom projects - parts and component washers for manufacturing, process-line cleaning, agricultural and rail equipment, and unique site builds - engineering the equipment, chemistry, and controls around your specific requirement.',
     challenges: [
       'Non-standard vehicles, parts, or process requirements',
       'Custom footprints and integration with existing lines',
@@ -176,7 +204,7 @@ export const segments: SegmentData[] = [
       { value: 'Custom', label: 'Engineering' },
       { value: 'Parts', label: '& Process Wash' },
       { value: 'Controls', label: 'Automation' },
-      { value: '25+', label: 'Years Experience' },
+      { value: '50+', label: 'Yrs Combined Exp.' },
     ],
   },
 ];
