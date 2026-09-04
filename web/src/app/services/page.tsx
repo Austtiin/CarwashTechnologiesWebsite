@@ -93,6 +93,39 @@ export default function Services() {
     }
   ];
 
+  const supportingPages = [
+    {
+      title: 'Car Wash Builders Minnesota',
+      description: 'Focused overview for owners searching for a design-build contractor and turnkey builder partner.',
+      href: '/car-wash-builders-minnesota',
+    },
+    {
+      title: 'Car Wash Chemical Suppliers Minnesota',
+      description: 'Chemical manufacturers, supply programs, delivery support, and site-level tuning guidance.',
+      href: '/car-wash-chemical-suppliers-minnesota',
+    },
+    {
+      title: 'Car Dealership Car Wash Installation',
+      description: 'Dealership-specific wash planning, equipment selection, retrofit work, and startup support.',
+      href: '/car-dealership-car-wash-installation',
+    },
+    {
+      title: 'Automated Car Wash Equipment Minnesota',
+      description: 'Automatic systems, blowers, parts, and replacement equipment for Midwest operators.',
+      href: '/automated-car-wash-equipment-minnesota',
+    },
+    {
+      title: 'Automatic Car Wash Repair Minnesota',
+      description: 'Emergency service, preventive maintenance, and repair support for active wash sites.',
+      href: '/automatic-car-wash-repair-minnesota',
+    },
+    {
+      title: 'Heavy-Duty Vehicle Wash Systems',
+      description: 'Truck, fleet, and heavy-duty vehicle wash solutions for terminals, yards, and municipalities.',
+      href: '/truck-wash',
+    },
+  ];
+
   return (
     <div className="min-h-screen">
       <GenericHero
@@ -142,6 +175,37 @@ export default function Services() {
         columns={3}
         backgroundVariant="light-grey"
       />
+
+      <section className="bg-white py-14 sm:py-16 border-t border-gray-100">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+          <div className="text-center mb-10 max-w-3xl mx-auto">
+            <div className="inline-flex items-center gap-3 mb-4">
+              <div className="w-8 h-px bg-[#f0da11]" />
+              <span className="text-sm font-semibold text-gray-500 uppercase tracking-wider">Service Guides</span>
+              <div className="w-8 h-px bg-[#f0da11]" />
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
+              Focused pages for common Minnesota and Midwest needs
+            </h2>
+            <p className="text-base sm:text-lg text-gray-600">
+              If you are searching for a specific service type, these pages go deeper than the broad overview.
+            </p>
+          </div>
+
+          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {supportingPages.map((page) => (
+              <a
+                key={page.href}
+                href={page.href}
+                className="border border-gray-200 bg-slate-50 p-5 transition-colors hover:border-[#f0da11] hover:bg-white"
+              >
+                <h3 className="text-lg font-bold text-gray-900 mb-2">{page.title}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">{page.description}</p>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <CallToActionNew
         title="Let's Build Something Great"

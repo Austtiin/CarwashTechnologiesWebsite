@@ -100,6 +100,21 @@ const Footer = () => {
                   All Services
                 </Link>
               </li>
+              <li>
+                <Link href="/car-wash-builders-minnesota" className="text-sm text-white hover:text-[#f0da11] transition-colors">
+                  Car Wash Builders MN
+                </Link>
+              </li>
+              <li>
+                <Link href="/automatic-car-wash-repair-minnesota" className="text-sm text-white hover:text-[#f0da11] transition-colors">
+                  Automatic Repair MN
+                </Link>
+              </li>
+              <li>
+                <Link href="/car-wash-chemical-suppliers-minnesota" className="text-sm text-white hover:text-[#f0da11] transition-colors">
+                  Chemical Suppliers MN
+                </Link>
+              </li>
             </ul>
           </div>
 
