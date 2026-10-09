@@ -147,7 +147,7 @@ export default function AboutPage() {
                 </p>
                 <p className="text-slate-300 text-base leading-relaxed mb-6">
                   That depth of experience is now going into the most ambitious project we&apos;ve ever
-                  taken on: the World&apos;s Longest Carwash. A record-setting express tunnel currently
+                  taken on: what we expect to be the World&apos;s Longest Carwash. A planned record-setting express tunnel currently
                   under construction, designed and built entirely in-house by our team. It&apos;s the
                   clearest proof of what 50+ years of doing this can deliver.
                 </p>

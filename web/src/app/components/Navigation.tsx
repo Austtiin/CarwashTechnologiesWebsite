@@ -115,7 +115,7 @@ const Navbar = () => {
 
             <Link href="/who-we-serve" className={`text-sm font-medium whitespace-nowrap transition-colors pb-0.5 ${
               isActive('/who-we-serve') ? 'text-[#d0b211] border-b-2 border-[#f0da11]' : 'text-gray-700 hover:text-[#d0b211]'
-            }`}>Who We Serve</Link>
+            }`}>Applications</Link>
 
             {/* Services dropdown */}
             <div className="relative group">
@@ -227,7 +227,7 @@ const Navbar = () => {
                 className={`px-6 py-4 text-base font-medium border-b border-gray-100 transition-colors ${
                   isActive('/who-we-serve') ? 'text-[#d0b211] bg-yellow-50' : 'text-gray-800 hover:text-[#d0b211] hover:bg-gray-50'
                 }`}>
-                Who We Serve
+                Applications
               </Link>
 
               {/* What We Do accordion */}

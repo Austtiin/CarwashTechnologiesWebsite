@@ -29,11 +29,12 @@ export const metadata: Metadata = {
 async function getEquipmentData() {
   return {
     manufacturers: [
-      { name: 'PECO', logo: '/logos/peco-logo.webp', alt: 'PECO' },
-      { name: 'Sonnys', logo: '/logos/Sonnys_Logo-RGB.webp', alt: "Sonny's" },
-      { name: 'PDQ', logo: '/logos/logoPDQ.webp', alt: 'PDQ' },
-      { name: 'Belanger', logo: '/logos/logoBelanger.webp', alt: 'Belanger' },
-      { name: 'AVW', logo: '/logos/AVW-logo.webp', alt: 'AVW' },
+      { name: 'PECO', logo: '/logos/peco-logo.webp', alt: 'PECO', url: 'https://www.pecocarwash.com/' },
+      { name: 'Sonnys', logo: '/logos/Sonnys_Logo-RGB.webp', alt: "Sonny's", url: 'https://www.sonnysdirect.com/' },
+      { name: 'PDQ', logo: '/logos/logoPDQ.webp', alt: 'PDQ', url: 'https://www.opwglobal.com/pdq' },
+      { name: 'Belanger', logo: '/logos/logoBelanger.webp', alt: 'Belanger', url: 'https://www.opwglobal.com/belanger' },
+      { name: 'AVW', logo: '/logos/AVW-logo.webp', alt: 'AVW', url: 'https://www.avwequipment.com/' },
+      { name: 'InterClean', logo: '/logos/interclean-logo-green.png', alt: 'InterClean', url: 'https://www.interclean.com/' },
     ],
     categories: [
       {
@@ -130,7 +131,7 @@ export default async function EquipmentSales() {
         title="Equipment Sales"
         highlightedWord="Equipment"
         subtitle="Industry-Leading Solutions"
-        description="Authorized dealer for Belanger, PECO, PDQ, Sonny's, and AVW car wash systems. Complete tunnel wash, automatic vehicle wash, self-serve, fleet wash, and semi truck wash equipment serving Minnesota, North Dakota, South Dakota, and Wisconsin."
+        description="Authorized dealer and partner for Belanger, PECO, PDQ, Sonny's, AVW, and InterClean systems. Complete tunnel wash, automatic vehicle wash, self-serve, fleet wash, and semi truck wash equipment serving Minnesota, North Dakota, South Dakota, and Wisconsin."
         buttons={[
           {
             text: "Get Equipment Quote",
@@ -177,14 +178,17 @@ export default async function EquipmentSales() {
               Trusted Equipment <span className="text-[#f0da11]">Partners</span>
             </h2>
             <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
-              Authorized dealer for Belanger, PECO, PDQ, Sonny&apos;s, and AVW &mdash; industry-leading car wash equipment manufacturers trusted across the Midwest. We also supply Cat Pumps and General Pump systems for self-serve and fleet wash operations.
+              Authorized dealer and partner for Belanger, PECO, PDQ, Sonny&apos;s, AVW, and InterClean &mdash; industry-leading car wash equipment manufacturers trusted across the Midwest. We also supply Cat Pumps and General Pump systems for self-serve and fleet wash operations.
             </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 items-center justify-items-center">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center">
             {data.manufacturers.map((manufacturer, index) => (
-              <div
+              <a
                 key={manufacturer.name}
+                href={manufacturer.url}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center justify-center py-2 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
               >
                 <Image
@@ -195,7 +199,7 @@ export default async function EquipmentSales() {
                   className="max-h-12 sm:max-h-14 max-w-full w-auto object-contain"
                   priority={index < 3}
                 />
-              </div>
+              </a>
             ))}
           </div>
         </div>

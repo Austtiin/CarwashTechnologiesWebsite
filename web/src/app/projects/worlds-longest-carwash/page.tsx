@@ -9,16 +9,16 @@ import WLCGallery from '../../components/ui/WLCGallery';
 import { type GalleryImage } from '../../components/ui/ProjectLightboxGallery';
 
 export const metadata: Metadata = {
-  title: "World's Longest Carwash | Flagship Build In Progress | Carwash Technologies",
+  title: "Planned World's Longest Carwash | Flagship Build In Progress | Carwash Technologies",
   description:
-    "Carwash Technologies is building the World's Longest Carwash - a record-setting express tunnel currently under construction in the Midwest. See the first photos from the job site.",
+    "Carwash Technologies is building what is planned to be the World's Longest Carwash, a flagship express tunnel currently under construction in the Midwest. See the first photos from the job site.",
   keywords:
     "world's longest carwash, worlds longest car wash, longest car wash tunnel, longest carwash in the world, world record carwash, largest carwash tunnel, biggest car wash, flagship carwash build, record carwash tunnel, carwash construction project Minnesota, longest tunnel wash, record setting car wash, largest carwash builder Midwest, flagship tunnel wash project, carwash world record 2025, longest car wash tunnel built, record breaking carwash, worlds longest carwash construction, carwash technologies world record, Midwest carwash builder record, carwash project Minnesota 2025",
   alternates: { canonical: '/projects/worlds-longest-carwash' },
   openGraph: {
-    title: "World's Longest Carwash | Flagship Build In Progress",
+    title: "Planned World's Longest Carwash | Flagship Build In Progress",
     description:
-      "A record-setting tunnel build currently under construction. First photos from the job site - Carwash Technologies.",
+      "A planned record-setting tunnel build currently under construction. First photos from the job site - Carwash Technologies.",
     type: 'website',
     url: 'https://www.carwashtechnologies.com/projects/worlds-longest-carwash',
     images: [
@@ -32,8 +32,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "World's Longest Carwash | Job Site Photos",
-    description: "A record-setting tunnel build under construction by Carwash Technologies. First look inside.",
+    title: "Planned World's Longest Carwash | Job Site Photos",
+    description: "A planned record-setting tunnel build under construction by Carwash Technologies. First look inside.",
     images: ['https://www.carwashtechnologies.com/imgs/projects/WLC/July-2026/20260720_095018.webp'],
   },
 };
@@ -98,7 +98,7 @@ export default function WorldsLongestCarwashPage() {
               '@type': 'CreativeWork',
               name: "World's Longest Carwash",
               description:
-                "A record-setting tunnel carwash currently under construction by Carwash Technologies - the company’s flagship design-build project in the Midwest.",
+                "A planned record-setting tunnel carwash currently under construction by Carwash Technologies - the company’s flagship design-build project in the Midwest.",
               url: 'https://www.carwashtechnologies.com/projects/worlds-longest-carwash',
               image: 'https://www.carwashtechnologies.com/imgs/projects/WLC/July-2026/20260720_095018.webp',
               creator: {
@@ -112,7 +112,7 @@ export default function WorldsLongestCarwashPage() {
               '@context': 'https://schema.org',
               '@type': 'ImageGallery',
               name: "World's Longest Carwash - Job Site Photos",
-              description: 'Construction photos from the record-setting tunnel carwash build by Carwash Technologies.',
+              description: 'Construction photos from the planned record-setting tunnel carwash build by Carwash Technologies.',
               url: 'https://www.carwashtechnologies.com/projects/worlds-longest-carwash',
               image: allImages.slice(0, 8).map(img => ({
                 '@type': 'ImageObject',
@@ -131,10 +131,10 @@ export default function WorldsLongestCarwashPage() {
 
       <GenericHero
         eyebrow="Flagship Project · Now Building"
-        title="The World's Longest Carwash"
+        title="The World's Longest Carwash*"
         highlightedWord="Longest"
-        subtitle="A Record-Setting Tunnel, Under Construction"
-        description="Our most ambitious build yet is taking shape right now. We're engineering a tunnel wash on a scale the industry hasn't seen - and we're sharing the first photos as it comes together."
+        subtitle="A Planned Record-Setting Tunnel, Under Construction"
+        description="Our most ambitious build yet is taking shape right now. We're engineering a tunnel wash on a scale the industry hasn't seen, and we're sharing the first photos as it comes together."
         buttons={[
           { text: 'Get Project Updates', href: '/contact', variant: 'primary' },
           { text: 'See Build Progress', href: '#gallery', variant: 'secondary' },
@@ -144,6 +144,16 @@ export default function WorldsLongestCarwashPage() {
         leftImage="/imgs/projects/WLC/July-2026/20260720_095018.webp"
         compact
       />
+
+      <section className="bg-amber-50 border-y border-amber-200">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-5 sm:py-6">
+          <p className="text-sm sm:text-base text-amber-950 leading-relaxed">
+            <span className="font-bold">Project claim disclaimer:</span> &nbsp;
+            &quot;World&apos;s Longest Carwash&quot; is used here as a planned project-positioning claim based on the current design target and construction scope.
+            Final completed length, operating configuration, and any comparative or record status remain subject to completion, field measurement, and opening conditions.
+          </p>
+        </div>
+      </section>
 
       {/* Under-construction banner */}
       <section className="relative overflow-hidden bg-slate-900 border-y-4 border-[#f0da11]">
@@ -178,6 +188,56 @@ export default function WorldsLongestCarwashPage() {
             and grand-opening details are coming soon - but check back or reach out and we&apos;ll
             keep you posted as it comes together.
           </p>
+        </div>
+      </section>
+
+      <section className="bg-white py-12 sm:py-14 border-b border-gray-100">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+          <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-8 items-center border border-gray-200 p-6 sm:p-8">
+            <div>
+              <div className="inline-flex items-center gap-3 mb-4">
+                <div className="w-8 h-px bg-[#f0da11]" />
+                <span className="text-sm font-semibold text-gray-600 uppercase tracking-wider">Project Backlink</span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">
+                Sota Shine One Six Nine
+              </h2>
+              <p className="text-base text-gray-700 leading-relaxed mb-4">
+                Follow the public-facing project page for this flagship build at Sota Shine One Six Nine. We&apos;ve also included the site address below for reference.
+              </p>
+              <p className="text-sm sm:text-base font-medium text-gray-900 mb-5">
+                8201 108th Court North, Brooklyn Park, MN 55445
+              </p>
+              <a
+                href="https://sotashine.com/sota-shine-one-six-nine/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-slate-900 text-white px-5 py-3 font-semibold hover:bg-[#f0da11] hover:text-slate-900 transition-colors"
+              >
+                Visit Sota Shine Project Page
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H8m9 0v9" />
+                </svg>
+              </a>
+            </div>
+            <div className="bg-slate-50 border border-gray-200 p-5 sm:p-6">
+              <p className="text-xs font-semibold text-[#d0b211] uppercase tracking-[0.22em] mb-3">What To Expect</p>
+              <ul className="space-y-3 text-sm text-gray-700">
+                <li className="flex items-start gap-3">
+                  <span className="mt-1 h-2 w-2 shrink-0 bg-[#f0da11]" />
+                  <span>Public project branding tied to the Sota Shine One Six Nine site.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-1 h-2 w-2 shrink-0 bg-[#f0da11]" />
+                  <span>Flagship express-tunnel positioning supported by active construction photos.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-1 h-2 w-2 shrink-0 bg-[#f0da11]" />
+                  <span>Claim language kept with an explicit disclaimer until final measurement is complete.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -301,7 +361,7 @@ export default function WorldsLongestCarwashPage() {
                   className="w-full h-auto object-cover"
                   loading="lazy"
                 />
-                <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-slate-900/90 to-transparent px-5 py-4">
+                <div className="absolute bottom-0 inset-x-0 bg-linear-to-t from-slate-900/90 to-transparent px-5 py-4">
                   <p className="text-white text-sm font-semibold">Indoor Vacuum Hall - July 2026</p>
                   <p className="text-slate-300 text-xs mt-0.5">World&apos;s Longest Carwash · Under Construction</p>
                 </div>
@@ -347,10 +407,10 @@ export default function WorldsLongestCarwashPage() {
 
       <CallToActionNew
         title="Want to Follow This Build?"
-        description="Reach out and we'll keep you in the loop on the World's Longest Carwash - and talk through what a flagship-scale wash could look like for your operation."
+        description="Reach out and we'll keep you in the loop on this planned record-setting flagship build and talk through what a project at that scale could look like for your operation."
         buttons={[
           { text: 'Get Project Updates', href: '/contact', variant: 'primary' },
-          { text: 'See Who We Serve', href: '/who-we-serve', variant: 'secondary' },
+          { text: 'See Applications', href: '/who-we-serve', variant: 'secondary' },
         ]}
         contactInfo={{
           phone: '(612) 408-9010',

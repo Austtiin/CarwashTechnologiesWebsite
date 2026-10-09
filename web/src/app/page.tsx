@@ -5,6 +5,7 @@ import HeroSectionNew from './components/home/sections/HeroSectionNew';
 import EquipmentBrandsStrip from './components/home/sections/EquipmentBrandsStrip';
 import ConsultationCTA from './components/home/sections/ConsultationCTA';
 import ServicesSectionNew from './components/home/sections/ServicesSectionNew';
+import HeavyDutyPartnerSection from './components/home/sections/HeavyDutyPartnerSection';
 import WhyChooseUsSection from './components/home/sections/WhyChooseUsSection';
 
 export const metadata: Metadata = {
@@ -114,6 +115,9 @@ export default function Home() {
         {/* Core Service Offerings (grey) */}
         <ServicesSectionNew />
 
+        {/* Heavy-duty partner feature */}
+        <HeavyDutyPartnerSection />
+
         {/* Why Choose Us band (dark) */}
         <WhyChooseUsSection />
 
@@ -170,7 +174,7 @@ export default function Home() {
               href="/projects/worlds-longest-carwash"
               className="group grid lg:grid-cols-2 gap-8 lg:gap-10 items-center bg-slate-900 border border-slate-800 hover:border-[#f0da11] transition-colors duration-300 overflow-hidden"
             >
-              <div className="relative aspect-[4/3] lg:aspect-auto lg:h-full min-h-[260px]">
+              <div className="relative aspect-4/3 lg:aspect-auto lg:h-full min-h-65">
                 <Image
                   src="/imgs/projects/WLC/July-2026/20260720_095018.webp"
                   alt="World's Longest Carwash flagship build under construction"
@@ -185,12 +189,15 @@ export default function Home() {
               <div className="p-6 sm:p-8 lg:pr-12">
                 <p className="text-sm font-semibold text-[#f0da11] uppercase tracking-wider mb-3">Flagship Project</p>
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4">
-                  We&apos;re Building the World&apos;s Longest Carwash
+                  We&apos;re Building the World&apos;s Longest Carwash*
                 </h2>
                 <p className="text-base text-slate-300 leading-relaxed mb-6">
-                  Our most ambitious project yet is under construction right now - a record-setting tunnel
+                  Our most ambitious project yet is under construction right now - a planned record-setting tunnel
                   on a scale the industry hasn&apos;t seen. It&apos;s the clearest proof of what our design-build
                   team can deliver for any operation.
+                </p>
+                <p className="text-xs text-slate-400 mb-5">
+                  *Claim refers to the current planned completed tunnel length and remains subject to final measurement and opening configuration.
                 </p>
                 <span className="inline-flex items-center text-sm font-semibold text-white group-hover:text-[#f0da11] transition-colors">
                   See the project

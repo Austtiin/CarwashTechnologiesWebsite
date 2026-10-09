@@ -55,7 +55,8 @@ export const segments: SegmentData[] = [
     subtitle: 'Clean Fleets, Compliant Sites',
     description:
       'City and county garages, DOT yards, transit authorities, and government fleets need durable wash systems that handle heavy use, protect equipment, and meet water-reclaim requirements.',
-    heroImage: '/imgs/IMG_5380.webp',
+    heroImage: '/imgs/interclean-municipal-wash.jpeg',
+    statsImage: '/imgs/interclean-municipal-wash.jpeg',
     introHeading: 'Wash systems that stand up to public-sector duty',
     introBody:
       'Municipal fleets put unique demands on a wash: mixed vehicle sizes, year-round salt and grime, strict environmental compliance, and budgets that depend on uptime. We design drive-through and gantry systems with water reclaim, build to spec, and support procurement and bid processes.',
@@ -98,28 +99,29 @@ export const segments: SegmentData[] = [
     subtitle: 'Built for the Big Rigs',
     description:
       'Trucking companies, terminals, and large fleets need heavy duty vehicle wash systems engineered for semis, trailers, buses, and heavy equipment - high-volume, high-pressure, and durable enough for round-the-clock use.',
-    heroImage: '/imgs/IMG_5389.webp',
+    heroImage: '/imgs/interclean-fleet-truck-wash.jpg',
+    statsImage: '/imgs/interclean-fleet-truck-wash.jpg',
     introHeading: 'Heavy duty vehicle wash solutions that move more trucks, faster',
     introBody:
-      'Every minute a heavy duty vehicle spends being washed is a minute off the road. We build touchless gantry and drive-through heavy duty vehicle wash systems - from semi truck wash installations to bus wash and equipment wash builds - that clean thoroughly and consistently, with the pumps, chemistry, and reclaim to back it up.',
+      'Every minute a heavy duty vehicle spends being washed is a minute off the road. Through our InterClean partnership, we deliver drive-through, gantry, and chassis-focused heavy-duty wash systems for semi fleets, municipal operations, buses, and industrial yards - with the pumps, chemistry, water recycling, and ongoing service support to keep throughput high.',
     challenges: [
       'Cleaning oversized vehicles and trailers consistently',
       'High throughput for busy terminals and yards',
       'Durability under constant, heavy-duty cycles',
-      'Managing water usage and reclaim at volume',
+      'Managing water usage, reclaim, and undercarriage debris at volume',
     ],
     solutions: [
-      { title: 'Touchless Gantry Systems', description: 'Automated gantry and drive-through systems sized for semis, trailers, and buses.', icon: ICONS.truck },
-      { title: 'High-Pressure Pumps', description: 'Cat Pumps and General Pump systems built for heavy-duty, high-volume cleaning.', icon: ICONS.bolt },
-      { title: 'Fleet Chemistry', description: 'Aggressive, surface-safe detergents and presoaks for road film, salt, and grime.', icon: ICONS.beaker },
-      { title: 'Reclaim & Uptime', description: 'Water reclaim plus preventive maintenance to keep the line running.', icon: ICONS.wrench },
+      { title: 'InterClean Drive-Through Systems', description: 'Automatic fleet wash packages for semis, trailers, tankers, and mixed commercial fleets that need fast, repeatable cleaning cycles.', icon: ICONS.truck },
+      { title: 'Gantry, Touchless & Hybrid Options', description: 'Rollover and gantry systems configured as touchless, friction, or hybrid solutions based on your vehicle mix and site constraints.', icon: ICONS.bolt },
+      { title: 'Wheel, Tire & Chassis Wash', description: 'Dedicated underbody and wheel-area cleaning to remove road salt, mud, grime, and tracked debris before it becomes a maintenance problem.', icon: ICONS.beaker },
+      { title: 'Water Recycling & Service Support', description: 'Reclaim-ready designs backed by local installation, parts, detergents, and preventive maintenance support across the Midwest.', icon: ICONS.wrench },
     ],
     statsBadge: 'Heavy-Duty Specialists',
     statsHeading: 'Semi, fleet & heavy-equipment wash builds.',
     stats: [
-      { value: 'Semi', label: '& Trailer Wash' },
-      { value: 'Gantry', label: 'Touchless' },
-      { value: 'High-PSI', label: 'Pump Systems' },
+      { value: 'Semi', label: '& Fleet Wash' },
+      { value: 'Gantry', label: '& Drive-Through' },
+      { value: 'Wheel/Chassis', label: 'Cleaning Options' },
       { value: '4', label: 'States Served' },
     ],
     faqItems: [
@@ -133,7 +135,7 @@ export const segments: SegmentData[] = [
       },
       {
         question: 'What semi wash equipment do you supply in MN?',
-        answer: 'We supply and install semi truck wash equipment including touchless gantry systems, high-pressure pump packages (Cat Pumps and General Pump), spray arches, reclaim systems, and chemistry programs specifically formulated for removing road film, mud, and salt from semi trucks, trailers, and heavy equipment. We cover MN and surrounding states.',
+        answer: 'We supply and install semi truck wash equipment including InterClean drive-through and gantry systems, wheel and chassis cleaning packages, spray arches, reclaim systems, and chemistry programs specifically formulated for removing road film, mud, and salt from semi trucks, trailers, municipal fleets, and heavy equipment. We cover MN and surrounding states.',
       },
       {
         question: 'Can you repair and maintain an existing heavy duty vehicle wash?',

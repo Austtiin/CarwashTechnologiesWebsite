@@ -5,6 +5,7 @@ interface Manufacturer {
   name: string;
   logo: string;
   alt: string;
+  url?: string;
 }
 
 interface TrustedChemicalPartnersProps {
@@ -34,8 +35,11 @@ export default function TrustedChemicalPartners({ manufacturers }: TrustedChemic
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 items-stretch justify-items-stretch max-w-4xl mx-auto">
           {manufacturers.map((manufacturer, index) => (
-            <div
+            <a
               key={manufacturer.name}
+              href={manufacturer.url}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex h-32 items-center justify-center bg-slate-50 p-6 border border-gray-200 shadow-sm hover:border-[#f0da11] hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
             >
               <Image
@@ -46,7 +50,7 @@ export default function TrustedChemicalPartners({ manufacturers }: TrustedChemic
                 className="max-h-16 sm:max-h-20 max-w-full w-auto object-contain"
                 priority={index === 0}
               />
-            </div>
+            </a>
           ))}
         </div>
       </div>

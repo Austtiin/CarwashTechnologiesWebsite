@@ -71,7 +71,7 @@ export default function ServicesSectionNew() {
             Complete Solutions for Modern Wash Operations
           </h2>
           <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
-            From express tunnels to self-serve sites, we provide everything you need to run a modern, profitable wash.
+            From express tunnels and self-serve sites to heavy-duty truck and fleet wash systems, we provide everything you need to run a modern, profitable wash.
           </p>
         </div>
 

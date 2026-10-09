@@ -27,6 +27,7 @@ export interface SegmentData {
   subtitle: string;
   description: string;
   heroImage: string;
+  statsImage?: string;
   /** Intro section heading + body. */
   introHeading: string;
   introBody: string;
@@ -71,7 +72,7 @@ export default function SegmentPage({ data }: { data: SegmentData }) {
       <StatsBand
         badge={data.statsBadge}
         heading={data.statsHeading}
-        image="/imgs/IMG_5380.webp"
+        image={data.statsImage || data.heroImage}
         stats={data.stats}
       />
 
@@ -82,14 +83,14 @@ export default function SegmentPage({ data }: { data: SegmentData }) {
             <div>
               <div className="inline-flex items-center gap-3 mb-4">
                 <div className="w-8 h-px bg-[#f0da11]" />
-                <span className="text-sm font-semibold text-gray-600 uppercase tracking-wider">Who We Serve</span>
+                <span className="text-sm font-semibold text-gray-600 uppercase tracking-wider">Applications</span>
               </div>
               <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">{data.introHeading}</h2>
               <p className="text-base sm:text-lg text-gray-700 leading-relaxed">{data.introBody}</p>
             </div>
 
             <div className="bg-slate-50 border border-gray-200 border-l-4 border-l-[#f0da11] p-6 sm:p-8">
-              <h3 className="text-lg font-bold text-gray-900 mb-4 uppercase tracking-wide text-sm">
+              <h3 className="text-sm font-bold text-gray-900 mb-4 uppercase tracking-wide">
                 Challenges we solve
               </h3>
               <ul className="space-y-3">
@@ -130,7 +131,7 @@ export default function SegmentPage({ data }: { data: SegmentData }) {
         description="Tell us about your site, vehicles, and volume - we'll map out the right equipment, chemistry, and service plan."
         buttons={[
           { text: 'Get Started Today', href: '/contact', variant: 'primary' },
-          { text: 'Who We Serve', href: '/who-we-serve', variant: 'secondary' },
+          { text: 'Applications', href: '/who-we-serve', variant: 'secondary' },
         ]}
         contactInfo={{
           phone: '(612) 408-9010',

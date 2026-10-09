@@ -15,9 +15,9 @@ export default function ChemicalsSectionNew() {
   ];
 
   const partners = [
-    { src: '/logos/logoSimo.webp', alt: 'Simoniz', width: 100, height: 100 },
-    { src: '/logos/ChemQuest-960w.webp', alt: 'ChemQuest', width: 100, height: 100 },
-    { src: '/logos/logoVertech.webp', alt: 'Vertech', width: 100, height: 100 }
+    { src: '/logos/logoSimo.webp', alt: 'Simoniz', width: 100, height: 100, href: 'https://www.simoniz.com/' },
+    { src: '/logos/ChemQuest-960w.webp', alt: 'ChemQuest', width: 100, height: 100, href: 'https://www.chemquest.com/' },
+    { src: '/logos/logoVertech.webp', alt: 'Vertech', width: 100, height: 100, href: 'https://vertechlabs.com/' }
   ];
 
   return (
@@ -72,7 +72,13 @@ export default function ChemicalsSectionNew() {
               </p>
               <div className="flex items-center justify-center gap-8 flex-wrap">
                 {partners.map((partner, index) => (
-                  <div key={index} className="bg-white/90 rounded p-2 hover:scale-110 transition-all duration-300">
+                  <a
+                    key={index}
+                    href={partner.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-white/90 rounded p-2 hover:scale-110 transition-all duration-300"
+                  >
                     <Image 
                       src={partner.src} 
                       alt={partner.alt} 
@@ -81,7 +87,7 @@ export default function ChemicalsSectionNew() {
                       className="object-contain"
                       style={{ height: 'auto' }}
                     />
-                  </div>
+                  </a>
                 ))}
               </div>
             </div>

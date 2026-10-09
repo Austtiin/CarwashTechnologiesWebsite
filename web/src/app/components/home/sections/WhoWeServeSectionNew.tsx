@@ -133,7 +133,7 @@ export default function WhoWeServeSectionNew() {
               href="/who-we-serve"
               className="inline-block bg-[#f0da11] text-black font-semibold px-6 py-2.5 text-sm hover:bg-[#d0b211] transition-all duration-200"
             >
-              See Who We Serve
+              See Applications
             </Link>
             <Link
               href="/contact"

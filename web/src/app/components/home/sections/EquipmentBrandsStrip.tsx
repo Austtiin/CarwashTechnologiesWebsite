@@ -3,11 +3,12 @@ import React from 'react';
 import Image from 'next/image';
 
 const brands = [
-  { name: 'PDQ', logo: '/logos/logoPDQ.webp' },
-  { name: 'Belanger', logo: '/logos/logoBelanger.webp' },
-  { name: "Sonny's", logo: '/logos/Sonnys_Logo-RGB.webp' },
-  { name: 'PECO', logo: '/logos/peco-logo.webp' },
-  { name: 'AVW', logo: '/logos/AVW-logo.webp' },
+  { name: 'PDQ', logo: '/logos/logoPDQ.webp', url: 'https://www.opwglobal.com/pdq' },
+  { name: 'Belanger', logo: '/logos/logoBelanger.webp', url: 'https://www.opwglobal.com/belanger' },
+  { name: "Sonny's", logo: '/logos/Sonnys_Logo-RGB.webp', url: 'https://www.sonnysdirect.com/' },
+  { name: 'PECO', logo: '/logos/peco-logo.webp', url: 'https://www.pecocarwash.com/' },
+  { name: 'AVW', logo: '/logos/AVW-logo.webp', url: 'https://www.avwequipment.com/' },
+  { name: 'InterClean', logo: '/logos/interclean-logo-green.png', url: 'https://www.interclean.com/' },
 ];
 
 export default function EquipmentBrandsStrip() {
@@ -17,10 +18,14 @@ export default function EquipmentBrandsStrip() {
         <p className="text-center text-xs sm:text-sm font-semibold uppercase tracking-wider text-gray-500 mb-8">
           Authorized dealer &amp; service provider for leading carwash equipment brands
         </p>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 sm:gap-8 items-center justify-items-center">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 sm:gap-8 items-center justify-items-center">
           {brands.map((brand, index) => (
-            <div
+            <a
               key={brand.name}
+              href={brand.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Visit ${brand.name}`}
               className="flex items-center justify-center py-2 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
             >
               <Image
@@ -29,9 +34,9 @@ export default function EquipmentBrandsStrip() {
                 width={130}
                 height={64}
                 className="max-h-12 sm:max-h-14 max-w-full w-auto object-contain"
-                priority={index < 3}
+                priority={index < 4}
               />
-            </div>
+            </a>
           ))}
         </div>
       </div>

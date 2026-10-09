@@ -72,7 +72,7 @@ const ProjectsPage = () => {
             href="/projects/worlds-longest-carwash"
             className="group grid lg:grid-cols-2 gap-8 lg:gap-10 items-center bg-slate-900 border border-slate-800 hover:border-[#f0da11] transition-colors duration-300 overflow-hidden"
           >
-            <div className="relative aspect-[4/3] lg:aspect-auto lg:h-full min-h-[260px]">
+            <div className="relative aspect-4/3 lg:aspect-auto lg:h-full min-h-65">
               <Image
                 src="/imgs/projects/WLC/20260720_095018.webp"
                 alt="World's Longest Carwash flagship build under construction"
@@ -87,11 +87,14 @@ const ProjectsPage = () => {
             <div className="p-6 sm:p-8 lg:pr-12">
               <p className="text-sm font-semibold text-[#f0da11] uppercase tracking-wider mb-3">Flagship Project</p>
               <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">
-                The World&apos;s Longest Carwash
+                The World&apos;s Longest Carwash*
               </h3>
               <p className="text-base text-slate-300 leading-relaxed mb-6">
-                Our most ambitious build yet is under construction right now - a record-setting tunnel
+                Our most ambitious build yet is under construction right now - a planned record-setting tunnel
                 on a scale the industry hasn&apos;t seen. Take a first look at the build.
+              </p>
+              <p className="text-xs text-slate-400 mb-5">
+                *Planned-length claim subject to final measurement and operating configuration at completion.
               </p>
               <span className="inline-flex items-center text-sm font-semibold text-white group-hover:text-[#f0da11] transition-colors">
                 See the project
