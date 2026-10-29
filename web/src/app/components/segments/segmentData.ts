@@ -1,4 +1,4 @@
-﻿import type { SegmentData } from './SegmentPage';
+import type { SegmentData } from './SegmentPage';
 
 // Icon path helpers (Heroicons-style `d` strings)
 const ICONS = {
@@ -99,8 +99,8 @@ export const segments: SegmentData[] = [
     subtitle: 'Built for the Big Rigs',
     description:
       'Trucking companies, terminals, and large fleets need heavy duty vehicle wash systems engineered for semis, trailers, buses, and heavy equipment - high-volume, high-pressure, and durable enough for round-the-clock use.',
-    heroImage: '/imgs/interclean-fleet-truck-wash.jpg',
-    statsImage: '/imgs/interclean-fleet-truck-wash.jpg',
+    heroImage: '/imgs/partners/interclean-refuse-truck-wash.webp',
+    statsImage: '/imgs/partners/ds-large-vehicle-wash.webp',
     introHeading: 'Heavy duty vehicle wash solutions that move more trucks, faster',
     introBody:
       'Every minute a heavy duty vehicle spends being washed is a minute off the road. Through our InterClean partnership, we deliver drive-through, gantry, and chassis-focused heavy-duty wash systems for semi fleets, municipal operations, buses, and industrial yards - with the pumps, chemistry, water recycling, and ongoing service support to keep throughput high.',
@@ -151,7 +151,7 @@ export const segments: SegmentData[] = [
     subtitle: 'Scale a Wash-First Brand',
     description:
       'Express tunnel operators and multi-site wash chains live and die by throughput, membership growth, and uptime. We are the design-build, equipment, and service partner that helps wash-first businesses scale.',
-    heroImage: '/imgs/BelangerTunnel.webp',
+    heroImage: '/imgs/partners/eurovac-vacuum-canopy-aerial.webp',
     introHeading: 'A partner for wash-first operators',
     introBody:
       'When washing cars IS the business, the equipment and service partner matters more than anything. We help express and tunnel operators design high-throughput sites, standardize equipment across locations, dial in membership-driving chemistry, and keep every site running with priority service.',
@@ -184,7 +184,7 @@ export const segments: SegmentData[] = [
     subtitle: 'When Off-the-Shelf Won’t Cut It',
     description:
       'Manufacturing parts washers, rail and transit, agricultural equipment, and one-off custom builds - if it needs to be cleaned at scale, we engineer a wash system around the problem.',
-    heroImage: '/imgs/AirCannon.webp',
+    heroImage: '/imgs/slow-sppin.webp',
     introHeading: 'Engineered around your exact problem',
     introBody:
       'Some wash needs do not fit a catalog. We take on specialized and custom projects - parts and component washers for manufacturing, process-line cleaning, agricultural and rail equipment, and unique site builds - engineering the equipment, chemistry, and controls around your specific requirement.',

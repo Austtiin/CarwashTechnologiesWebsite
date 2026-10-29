@@ -149,3 +149,26 @@ Renamed the **Types of Washes** nav/page to **"Who We Serve"** and built out aud
 - [ ] Add more WLC photos as construction progresses — gallery auto-loads all `.webp` files from `/imgs/projects/WLC/`
 - [ ] Consider adding a dedicated `/world-record-carwash` vanity URL redirect for SEO and direct sharing
 - [ ] Chemical sales page: add a "Request Chemical Quote" contact form shortcut / inline email opt-in
+
+
+---
+
+## ✅ DONE — Partners, image variety & WLC completion pass
+
+### New partners
+- [x] **D&S Car Wash Supply (IQ Self Wash)** — logo + product photos in `web/public/imgs/partners/`; new page [ds-iq-self-wash](web/src/app/equipment-sales/ds-iq-self-wash/page.tsx) (Base/Expert/Genius tiers)
+- [x] **Eurovac (carwash vacuum systems)** — logo + photos; new page [eurovac-vacuum-systems](web/src/app/equipment-sales/eurovac-vacuum-systems/page.tsx)
+- [x] Shared [PartnerProductLayout](web/src/app/components/ui/PartnerProductLayout.tsx) for partner product pages
+- [x] Homepage `PartnerSpotlightSection` + 2 new featured equipment cards; brand strip now 8 logos
+- [x] Equipment Sales: 3 new categories (vacuum, heavy-duty, pump stands), new featured cards + FAQs; Who We Serve partner list updated
+- [x] Sitemap entries for both new pages
+- [ ] **Confirm usage permission** for D&S / Eurovac / AVW / InterClean marketing images (scraped from vendor sites)
+
+### Image variety
+- [x] Replaced repeated hero/card/stats-band images across services, service-maintenance, installation-setup, consulting, about, projects, careers, who-we-serve, segment pages, CTA backdrop with vendor and WLC photos
+
+### World's Longest Carwash page
+- [x] Public facts from Sota Shine: One-Six-Nine, Brooklyn Park MN, planned 300+ ft tunnel, 30+ stall climate-controlled indoor vacuum hall, opening planned just after Labor Day 2026
+- [x] New stats, build timeline (4 phases), "Inside the Build" equipment showcase (Aug 2026 photos), next-update callout, FAQ
+- [x] Aug-2026 photos recompressed; 2 sideways July photos rotated
+- [ ] Add commissioning / grand-opening photos: drop `.webp` into a new dated folder under `web/public/imgs/projects/WLC/` and add it to `FOLDER_LABELS` / `FOLDER_ORDER`; add an image to the Phase 4 milestone

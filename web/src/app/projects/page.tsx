@@ -47,7 +47,7 @@ const ProjectsPage = () => {
         ]}
         backgroundVariant="dark"
         showPattern={true}
-        leftImage="/imgs/BelangerTunnel.webp"
+        leftImage="/imgs/projects/WLC/Aug-2026/20260810_090742.webp"
         rightImage="/imgs/SpinLite.webp"
         centerLane="strong"
         compact={true}
@@ -56,7 +56,7 @@ const ProjectsPage = () => {
       <StatsBand
         badge="Proven Results"
         heading="Builds and installs across the Midwest."
-        image="/imgs/IMG_5380.webp"
+        image="/imgs/projects/WLC/July-2026/20260720_095300.webp"
         stats={[
           { value: '99+', label: 'Projects Delivered' },
           { value: '50+', label: 'Yrs Combined Exp.' },
@@ -74,7 +74,7 @@ const ProjectsPage = () => {
           >
             <div className="relative aspect-4/3 lg:aspect-auto lg:h-full min-h-65">
               <Image
-                src="/imgs/projects/WLC/20260720_095018.webp"
+                src="/imgs/projects/WLC/July-2026/20260720_095018.webp"
                 alt="World's Longest Carwash flagship build under construction"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"

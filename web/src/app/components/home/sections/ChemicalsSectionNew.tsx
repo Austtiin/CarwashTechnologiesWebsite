@@ -22,7 +22,7 @@ export default function ChemicalsSectionNew() {
 
   return (
     <section className="relative py-12 sm:py-14 overflow-hidden">
-      <DarkSectionBackdrop image="/imgs/chems/MixStir.jpg" imageOpacity={8} />
+      <DarkSectionBackdrop image="/imgs/chems/MixStir.webp" imageOpacity={8} />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 items-center">

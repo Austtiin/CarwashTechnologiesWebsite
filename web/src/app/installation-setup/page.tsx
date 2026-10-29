@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { Metadata } from 'next';
 import GenericHero from '../components/ui/GenericHero';
 import GenericServicesGrid from '../components/ui/GenericServicesGrid';
@@ -126,22 +126,28 @@ export default async function InstallationSetup() {
     description: service.description + ' ' + service.features.join(', '),
     backgroundImage:
       service.id === 'tunnel'
-        ? '/imgs/BelangerTunnel.webp'
+        ? '/imgs/projects/WLC/Aug-2026/20260810_090742.webp'
         : service.id === 'electrical'
-          ? '/imgs/CarWash Controller.jpg'
+          ? '/imgs/CarWash Controller.webp'
           : service.id === 'chemical'
             ? '/imgs/chems/MixStir.webp'
             : service.id === 'payment'
-              ? '/imgs/CarWash Controller.jpg'
+              ? '/imgs/partners/ds-pay-station.webp'
               : service.id === 'water-reclaim'
-                ? '/imgs/Insta-KLEEN-Fleet-Wash-Rendering-Belanger (1).webp'
+                ? '/imgs/projects/WLC/Aug-2026/20260810_090949.webp'
                 : service.id === 'training'
-                  ? '/imgs/AirCannon.webp'
+                  ? '/imgs/partners/eurovac-central-vacuum-system.webp'
                   : undefined
   }));
 
   // Transform timeline into service items
-  const timelineItems = data.timeline.map(phase => ({
+  const timelineImages = [
+    '/imgs/Existing.webp',
+    '/imgs/projects/WLC/April-2026/7c1fca3d-3ba1-48c9-98d1-abb6f172b6c7.webp',
+    '/imgs/projects/WLC/Aug-2026/20260810_090838.webp',
+    '/imgs/projects/WLC/Aug-2026/20260810_092708.webp',
+  ];
+  const timelineItems = data.timeline.map((phase, i) => ({
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -149,7 +155,7 @@ export default async function InstallationSetup() {
     ),
     title: `Week ${phase.week}: ${phase.title}`,
     description: `${phase.description} (${phase.duration})`,
-    backgroundImage: '/imgs/Existing.webp'
+    backgroundImage: timelineImages[i % timelineImages.length]
   }));
 
   return (

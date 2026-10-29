@@ -149,17 +149,17 @@ export default async function ServiceMaintenance() {
     description: category.description + ' ' + category.features.join(', '),
     backgroundImage:
       category.id === 'preventive'
-        ? '/imgs/car-wash.webp'
+        ? '/imgs/partners/avw-undercarriage-washer.webp'
         : category.id === 'emergency'
           ? '/imgs/Carwash1.webp'
           : category.id === 'electrical'
-            ? '/imgs/CarWash Controller.jpg'
+            ? '/imgs/CarWash Controller.webp'
             : category.id === 'chemical'
               ? '/imgs/chems/MixStir.webp'
               : category.id === 'water'
-                ? '/imgs/Insta-KLEEN-Fleet-Wash-Rendering-Belanger (1).webp'
+                ? '/imgs/SudzFL/IMG_20260101_213851.webp'
                 : category.id === 'training'
-                  ? '/imgs/AirCannon.webp'
+                  ? '/imgs/partners/ds-iq-pump-stand.webp'
                   : undefined
   }));
 
@@ -174,15 +174,15 @@ export default async function ServiceMaintenance() {
     description: equipment.description + ' ' + equipment.services.join(', '),
     backgroundImage:
       equipment.id === 'tunnel'
-        ? '/imgs/BelangerTunnel.webp'
+        ? '/imgs/partners/avw-tunnel-wash-lights.webp'
         : equipment.id === 'self-serve'
-          ? '/imgs/car-wash.webp'
+          ? '/imgs/partners/ds-iq-self-serve-bays.webp'
           : equipment.id === 'chemical-equip'
             ? '/imgs/chems/VLabs-Tubs.webp'
             : equipment.id === 'water-treatment'
-              ? '/imgs/Insta-KLEEN-fleet.webp'
+              ? '/imgs/projects/WLC/Aug-2026/20260810_090941.webp'
               : equipment.id === 'electrical-equip'
-                ? '/imgs/CarWash Controller.jpg'
+                ? '/imgs/partners/ds-pay-station.webp'
                 : equipment.id === 'dryer'
                   ? '/imgs/SpinLite.webp'
                   : undefined
@@ -221,7 +221,7 @@ export default async function ServiceMaintenance() {
       <StatsBand
         badge="Proven Track Record"
         heading="Keeping Midwest washes open for business."
-        image="/imgs/IMG_5380.webp"
+        image="/imgs/partners/eurovac-vacuums-night.webp"
         stats={[
           { value: data.stats.serviceCalls, label: 'Service Calls' },
           { value: data.stats.satisfaction, label: 'Satisfaction' },

@@ -30,7 +30,7 @@ export default function CallToActionNew({
 }: CallToActionProps) {
   return (
     <section className="relative py-16 sm:py-20 overflow-hidden">
-      <DarkSectionBackdrop image="/imgs/PDQ.webp" imageOpacity={6} />
+      <DarkSectionBackdrop image="/imgs/slow-sppin.webp" imageOpacity={6} />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto text-center mb-8">

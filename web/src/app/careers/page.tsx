@@ -71,7 +71,7 @@ export default function CareersPage() {
         badge="Now Hiring"
         heading="Skilled trades, real equipment, steady work."
         stats={stats}
-        image="/imgs/IMG_5380.webp"
+        image="/imgs/projects/WLC/Aug-2026/20260810_091020.webp"
       />
 
       {/* About working here */}

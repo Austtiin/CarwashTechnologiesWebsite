@@ -45,7 +45,7 @@ export default function AboutPage() {
       ),
       title: 'Our Vision',
       description: 'To be the most trusted partner in the Midwest wash industry, known for our expertise, innovation, and unwavering commitment to customer success.',
-      backgroundImage: '/imgs/BelangerTunnel.webp'
+      backgroundImage: '/imgs/IMG_5379.webp'
     },
     {
       icon: (
@@ -56,7 +56,7 @@ export default function AboutPage() {
       ),
       title: 'Local Expertise',
       description: 'Deep understanding of Midwest markets, weather conditions, and local business needs. We know what works in our region.',
-      backgroundImage: '/imgs/Existing.webp'
+      backgroundImage: '/imgs/projects/WLC/July-2026/20260720_100949.webp'
     },
     {
       icon: (
@@ -77,7 +77,7 @@ export default function AboutPage() {
           title="Carwash Technologies"
           highlightedWord="Technologies"
           subtitle="Serving the Upper Midwest Wash Industry"
-          description="Built on a foundation of expertise, innovation, and unwavering commitment to customer success across Minnesota, North Dakota, South Dakota, and Wisconsin. We are an authorized dealer for Belanger, PECO, PDQ, and Sonny's car wash equipment, and a trusted supplier of Vertech Labs, ChemQuest, and Simoniz chemicals."
+          description="Built on a foundation of expertise, innovation, and unwavering commitment to customer success across Minnesota, North Dakota, South Dakota, and Wisconsin. We are an authorized dealer for Belanger, PECO, PDQ, Sonny's, AVW, InterClean, D&S Car Wash Supply, and Eurovac equipment, and a trusted supplier of Vertech Labs, ChemQuest, and Simoniz chemicals."
           backgroundVariant="dark"
           showPattern={true}
           leftImage="/imgs/IMG_5386.webp"

@@ -45,7 +45,7 @@ export default function Services() {
       title: 'Installation & Setup',
       description: 'Professional installation services ensuring your equipment is properly configured and optimized for maximum performance.',
       link: '/installation-setup',
-      backgroundImage: '/imgs/BelangerTunnel.webp'
+      backgroundImage: '/imgs/partners/eurovac-central-vacuum-system.webp'
     },
     {
       icon: (
@@ -67,7 +67,7 @@ export default function Services() {
       title: 'Service & Maintenance',
       description: 'Expert service and maintenance to keep your equipment running smoothly. Emergency service available.',
       link: '/service-maintenance',
-      backgroundImage: '/imgs/car-wash.webp'
+      backgroundImage: '/imgs/partners/avw-undercarriage-washer.webp'
     },
     {
       icon: (
@@ -78,7 +78,7 @@ export default function Services() {
       title: 'Consulting Services',
       description: 'Expert guidance for site development, operational optimization, and business strategy to help you succeed.',
       link: '/consulting',
-      backgroundImage: '/imgs/Insta-KLEEN-fleet.webp'
+      backgroundImage: '/imgs/partners/eurovac-vacuum-canopy-aerial.webp'
     },
     {
       icon: (
@@ -89,7 +89,7 @@ export default function Services() {
       title: 'Training & Support',
       description: 'Comprehensive training programs and ongoing support to ensure your team operates equipment safely and efficiently.',
       link: '/contact',
-      backgroundImage: '/imgs/AirCannon.webp'
+      backgroundImage: '/imgs/partners/ds-iq-pump-stand.webp'
     }
   ];
 
@@ -148,7 +148,7 @@ export default function Services() {
         ]}
         backgroundVariant="dark"
         showPattern={true}
-        leftImage="/imgs/PDQ.webp"
+        leftImage="/imgs/partners/avw-tunnel-wash-lights.webp"
         rightImage="/imgs/BelangerTunnel.webp"
         centerLane="strong"
         compact={true}
@@ -157,7 +157,7 @@ export default function Services() {
       <StatsBand
         badge="Full-Service Partner"
         heading="One team for the entire wash."
-        image="/imgs/IMG_5380.webp"
+        image="/imgs/partners/avw-wash-brush-detail.webp"
         stats={[
           { value: '50+', label: 'Yrs Combined Exp.' },
           { value: '99+', label: 'Projects Delivered' },

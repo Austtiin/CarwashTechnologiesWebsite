@@ -9,6 +9,8 @@ const brands = [
   { name: 'PECO', logo: '/logos/peco-logo.webp', url: 'https://www.pecocarwash.com/' },
   { name: 'AVW', logo: '/logos/AVW-logo.webp', url: 'https://www.avwequipment.com/' },
   { name: 'InterClean', logo: '/logos/interclean-logo-green.png', url: 'https://www.interclean.com/' },
+  { name: 'D&S Car Wash Supply', logo: '/logos/ds-carwash-logo.svg', url: 'https://dscarwash.com/' },
+  { name: 'Eurovac', logo: '/logos/eurovac-logo.png', url: 'https://www.eurovac.com/industries/carwash/' },
 ];
 
 export default function EquipmentBrandsStrip() {
@@ -18,7 +20,7 @@ export default function EquipmentBrandsStrip() {
         <p className="text-center text-xs sm:text-sm font-semibold uppercase tracking-wider text-gray-500 mb-8">
           Authorized dealer &amp; service provider for leading carwash equipment brands
         </p>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 sm:gap-8 items-center justify-items-center">
+        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-8 sm:gap-8 items-center justify-items-center">
           {brands.map((brand, index) => (
             <a
               key={brand.name}

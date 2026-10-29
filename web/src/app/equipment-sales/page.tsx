@@ -10,7 +10,7 @@ import PageFAQ from '../components/ui/PageFAQ';
 export const metadata: Metadata = {
   title: 'Car Wash Equipment & Parts Sales Minnesota | Gas Station, Self-Service, Heavy Duty',
   description: 'Comprehensive car wash equipment and parts sales in MN, ND, SD, WI. Gas station carwash systems, self-service carwash parts, heavy duty truck wash equipment, touchless systems, express tunnel equipment, in-bay automatics, conveyor tunnel systems, carwash parts warehouse, pumps, motors, and accessories from industry-leading manufacturers.',
-  keywords: 'car wash equipment Minnesota, carwash parts supplier MN, automated car wash machine Minnesota, car wash automation equipment supplier minnesota, car wash blowers Minnesota, self service carwash parts Minnesota, gas station carwash equipment, heavy duty carwash equipment, express carwash equipment MN, touchless carwash systems Minnesota, carwash equipment parts supplier, car wash parts distributor MN, carwash parts warehouse Minnesota, tunnel wash equipment, conveyor carwash systems, in bay automatic equipment, automatic carwash machines, self serve bay equipment, semi truck wash equipment MN, fleet wash equipment Minnesota, bus wash systems, RV wash equipment, heavy equipment wash, municipal carwash equipment, commercial carwash equipment, industrial wash systems, car dealership carwash equipment, convenience store carwash systems, retrofit carwash equipment, carwash modernization equipment, carwash pumps Minnesota, Cat Pumps dealer MN, Cat Pumps parts Minnesota, General Pump dealer MN, General Pump parts Minnesota, carwash motors, carwash nozzles, spray arches, carwash dryers, water reclaim systems, Belanger dealer Minnesota, PECO dealer Minnesota, PDQ dealer Minnesota, Sonnys dealer Minnesota, AVW equipment Minnesota, gantry systems, touchfree equipment, friction equipment',
+  keywords: 'car wash equipment Minnesota, carwash parts supplier MN, automated car wash machine Minnesota, car wash automation equipment supplier minnesota, car wash blowers Minnesota, self service carwash parts Minnesota, gas station carwash equipment, heavy duty carwash equipment, express carwash equipment MN, touchless carwash systems Minnesota, carwash equipment parts supplier, car wash parts distributor MN, carwash parts warehouse Minnesota, tunnel wash equipment, conveyor carwash systems, in bay automatic equipment, automatic carwash machines, self serve bay equipment, semi truck wash equipment MN, fleet wash equipment Minnesota, bus wash systems, RV wash equipment, heavy equipment wash, municipal carwash equipment, commercial carwash equipment, industrial wash systems, car dealership carwash equipment, convenience store carwash systems, retrofit carwash equipment, carwash modernization equipment, carwash pumps Minnesota, Cat Pumps dealer MN, Cat Pumps parts Minnesota, General Pump dealer MN, General Pump parts Minnesota, carwash motors, carwash nozzles, spray arches, carwash dryers, water reclaim systems, Belanger dealer Minnesota, PECO dealer Minnesota, PDQ dealer Minnesota, Sonnys dealer Minnesota, AVW equipment Minnesota, D&S Car Wash Supply dealer Minnesota, D&S IQ Self Wash, Eurovac car wash vacuum Minnesota, car wash central vacuum system, car wash vacuum arches, InterClean dealer Minnesota, gantry systems, touchfree equipment, friction equipment',
   alternates: { canonical: '/equipment-sales' },
   openGraph: {
     title: 'Car Wash Equipment & Parts | Gas Station, Self-Service, Heavy Duty Systems',
@@ -35,6 +35,8 @@ async function getEquipmentData() {
       { name: 'Belanger', logo: '/logos/logoBelanger.webp', alt: 'Belanger', url: 'https://www.opwglobal.com/belanger' },
       { name: 'AVW', logo: '/logos/AVW-logo.webp', alt: 'AVW', url: 'https://www.avwequipment.com/' },
       { name: 'InterClean', logo: '/logos/interclean-logo-green.png', alt: 'InterClean', url: 'https://www.interclean.com/' },
+      { name: 'D&S', logo: '/logos/ds-carwash-logo.svg', alt: 'D&S Car Wash Supply', url: 'https://dscarwash.com/' },
+      { name: 'Eurovac', logo: '/logos/eurovac-logo.png', alt: 'Eurovac', url: 'https://www.eurovac.com/industries/carwash/' },
     ],
     categories: [
       {
@@ -84,6 +86,30 @@ async function getEquipmentData() {
         icon: 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
         color: 'teal',
         features: ['Credit card readers', 'Mobile payment', 'Token systems', 'Management software']
+      },
+      {
+        id: 'vacuum',
+        title: 'Vacuum Systems',
+        description: 'Eurovac central vacuum systems with arches, canopies, and stanchions in your site colors.',
+        icon: 'M3 12h4l3-9 4 18 3-9h4',
+        color: 'blue',
+        features: ['Central vacuum producers', 'Vacuum arches & canopies', 'Hose drops at every door', 'Mat racks & compressed air']
+      },
+      {
+        id: 'heavy-duty',
+        title: 'Heavy-Duty & Fleet',
+        description: 'InterClean and Belanger systems for trucks, buses, refuse, and municipal fleets.',
+        icon: 'M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0zM13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10h10zm0 0h6v-5l-3-4h-3v9z',
+        color: 'green',
+        features: ['Gantry & drive-through washes', 'Chassis & undercarriage cleaning', 'Water reclaim', 'Fleet wash bays']
+      },
+      {
+        id: 'pump-stands',
+        title: 'Pump Stands & Parts',
+        description: 'Pump stands, pumps, motors, and replacement parts stocked for fast turnaround.',
+        icon: 'M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065zM15 12a3 3 0 11-6 0 3 3 0 016 0z',
+        color: 'purple',
+        features: ['Cat Pumps & General Pump', 'Self-serve pump stands', 'Nozzles, hoses & guns', 'Same/next-day parts']
       }
     ],
     stats: {
@@ -107,20 +133,17 @@ export default async function EquipmentSales() {
     ),
     title: category.title,
     description: category.description + ' ' + category.features.join(', '),
-    backgroundImage:
-      category.id === 'tunnel'
-        ? '/imgs/BelangerTunnel.webp'
-        : category.id === 'self-serve'
-          ? '/imgs/car-wash.webp'
-          : category.id === 'automatic'
-            ? '/imgs/PDQ.webp'
-            : category.id === 'water-recovery'
-              ? '/imgs/Insta-KLEEN-fleet.webp'
-              : category.id === 'dryer'
-                ? '/imgs/SpinLite.webp'
-                : category.id === 'payment'
-                  ? '/imgs/CarWash Controller.jpg'
-                  : undefined
+    backgroundImage: ({
+      tunnel: '/imgs/partners/ds-tunnel-wash-system.webp',
+      'self-serve': '/imgs/partners/ds-iq-self-serve-bays.webp',
+      automatic: '/imgs/PDQ.webp',
+      'water-recovery': '/imgs/Insta-KLEEN-fleet.webp',
+      dryer: '/imgs/SpinLite.webp',
+      payment: '/imgs/partners/ds-pay-station.webp',
+      vacuum: '/imgs/partners/eurovac-canopy-vacuum-lot.webp',
+      'heavy-duty': '/imgs/partners/interclean-refuse-truck-wash.webp',
+      'pump-stands': '/imgs/partners/ds-iq-pump-stand.webp',
+    } as Record<string, string>)[category.id]
   }));
 
   return (
@@ -131,7 +154,7 @@ export default async function EquipmentSales() {
         title="Equipment Sales"
         highlightedWord="Equipment"
         subtitle="Industry-Leading Solutions"
-        description="Authorized dealer and partner for Belanger, PECO, PDQ, Sonny's, AVW, and InterClean systems. Complete tunnel wash, automatic vehicle wash, self-serve, fleet wash, and semi truck wash equipment serving Minnesota, North Dakota, South Dakota, and Wisconsin."
+        description="Authorized dealer and partner for Belanger, PECO, PDQ, Sonny's, AVW, InterClean, D&S Car Wash Supply, and Eurovac systems. Complete tunnel wash, automatic vehicle wash, self-serve, vacuum, fleet wash, and semi truck wash equipment serving Minnesota, North Dakota, South Dakota, and Wisconsin."
         buttons={[
           {
             text: "Get Equipment Quote",
@@ -156,7 +179,7 @@ export default async function EquipmentSales() {
       <StatsBand
         badge="Authorized Dealer"
         heading="Equipment operators across the Midwest rely on."
-        image="/imgs/IMG_5380.webp"
+        image="/imgs/partners/avw-tunnel-wash-lights.webp"
         stats={[
           { value: data.stats.experience, label: 'Years Experience' },
           { value: data.stats.installations, label: 'Installations' },
@@ -178,11 +201,11 @@ export default async function EquipmentSales() {
               Trusted Equipment <span className="text-[#f0da11]">Partners</span>
             </h2>
             <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
-              Authorized dealer and partner for Belanger, PECO, PDQ, Sonny&apos;s, AVW, and InterClean &mdash; industry-leading car wash equipment manufacturers trusted across the Midwest. We also supply Cat Pumps and General Pump systems for self-serve and fleet wash operations.
+              Authorized dealer and partner for Belanger, PECO, PDQ, Sonny&apos;s, AVW, InterClean, D&amp;S Car Wash Supply, and Eurovac &mdash; industry-leading car wash equipment manufacturers trusted across the Midwest. We also supply Cat Pumps and General Pump systems for self-serve and fleet wash operations.
             </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center">
+          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-8 items-center justify-items-center">
             {data.manufacturers.map((manufacturer, index) => (
               <a
                 key={manufacturer.name}
@@ -336,6 +359,62 @@ export default async function EquipmentSales() {
                 </div>
               </div>
             </div>
+            {[
+              {
+                href: '/equipment-sales/ds-iq-self-wash',
+                image: '/imgs/partners/ds-iq-self-wash-rinse.webp',
+                alt: 'D&S IQ Self Wash self-serve car wash bay',
+                tag: 'Self-Serve System',
+                brand: 'D&S Car Wash Supply',
+                name: 'IQ Self Wash',
+                desc: 'Smart self-serve bays with multi-function HP/LP services, digital payment, usage reporting, and cold weather protection. Scales up to six bays.',
+                tags: ['Up to 6 Bays', '11 Menu Options', 'Smart Pay', 'Freeze Protect'],
+              },
+              {
+                href: '/equipment-sales/eurovac-vacuum-systems',
+                image: '/imgs/partners/eurovac-express-vacuum-lot.webp',
+                alt: 'Eurovac central vacuum lot at an express car wash',
+                tag: 'Vacuum Systems',
+                brand: 'Eurovac',
+                name: 'Central Vacuum Systems',
+                desc: 'Vacuum arches, canopies, and stanchions in your brand colors, powered by industrial central producers with hose drops at every car door.',
+                tags: ['Arches', 'Canopies', 'Central Producer', 'Custom Colors'],
+              },
+            ].map((eq) => (
+              <div key={eq.href} className="group relative bg-slate-950 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col">
+                <div className="relative h-52 overflow-hidden">
+                  <Image
+                    src={eq.image}
+                    alt={eq.alt}
+                    fill
+                    sizes="(max-width: 640px) 100vw, 50vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-linear-to-t from-slate-950 via-slate-950/40 to-transparent" />
+                  <div className="absolute top-4 left-4">
+                    <span className="inline-block bg-[#f0da11] text-slate-900 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded">
+                      {eq.tag}
+                    </span>
+                  </div>
+                </div>
+                <div className="flex flex-col flex-1 p-7">
+                  <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">{eq.brand}</div>
+                  <h3 className="text-xl font-bold text-white mb-2">{eq.name}</h3>
+                  <p className="text-slate-300 text-sm leading-relaxed mb-5 flex-1">{eq.desc}</p>
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {eq.tags.map((tag) => (
+                      <span key={tag} className="text-xs bg-slate-800 text-slate-300 px-2 py-1 rounded border border-slate-700">{tag}</span>
+                    ))}
+                  </div>
+                  <a
+                    href={eq.href}
+                    className="text-center bg-[#f0da11] text-slate-900 font-bold text-sm px-4 py-3 hover:bg-[#d0b211] transition-colors rounded"
+                  >
+                    View Details & Options
+                  </a>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -363,6 +442,14 @@ export default async function EquipmentSales() {
           {
             question: 'Do you supply equipment for car dealership car washes?',
             answer: 'Yes. We supply automated car wash machines specifically suited for car dealership detail operations and service lane washes. We can recommend the right in-bay automatic or conveyor system for your dealership\'s volume, install it, and service it on an ongoing basis.',
+          },
+          {
+            question: 'Do you sell and install car wash vacuum systems?',
+            answer: 'Yes. We sell, install, and service Eurovac central vacuum systems - vacuum arches, canopies, stanchions, and industrial vacuum producers - for express tunnels, new builds, and vacuum lot upgrades across MN, ND, SD, and WI.',
+          },
+          {
+            question: 'Do you offer new self-serve bay systems?',
+            answer: 'Yes. We offer the D&S Car Wash Supply IQ Self Wash system, which supports up to six bays with multi-function high- and low-pressure services, smart payment, usage reporting, and cold weather protection. We handle planning, installation, and service.',
           },
         ]}
       />

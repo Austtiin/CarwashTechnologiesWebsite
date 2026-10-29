@@ -6,6 +6,7 @@ import EquipmentBrandsStrip from './components/home/sections/EquipmentBrandsStri
 import ConsultationCTA from './components/home/sections/ConsultationCTA';
 import ServicesSectionNew from './components/home/sections/ServicesSectionNew';
 import HeavyDutyPartnerSection from './components/home/sections/HeavyDutyPartnerSection';
+import PartnerSpotlightSection from './components/home/sections/PartnerSpotlightSection';
 import WhyChooseUsSection from './components/home/sections/WhyChooseUsSection';
 
 export const metadata: Metadata = {
@@ -117,6 +118,9 @@ export default function Home() {
 
         {/* Heavy-duty partner feature */}
         <HeavyDutyPartnerSection />
+
+        {/* New partner spotlight: D&S + Eurovac */}
+        <PartnerSpotlightSection />
 
         {/* Why Choose Us band (dark) */}
         <WhyChooseUsSection />
@@ -242,6 +246,24 @@ export default function Home() {
                   desc: 'Drive-thru fleet wash - one vehicle per minute. 36 gal/cycle, modular design. Built for car dealerships and fleet operators.',
                   pdf: '/PDFs/Equipment/belanger-insta-kleen-fleet-wash-system-brochure%20(2).pdf',
                 },
+                {
+                  href: '/equipment-sales/ds-iq-self-wash',
+                  image: '/imgs/partners/ds-iq-self-serve-bays.webp',
+                  brand: 'D&S Car Wash Supply',
+                  tag: 'Self-Serve System',
+                  name: 'IQ Self Wash',
+                  desc: 'Smart, low-labor self-serve bays with multi-function services, digital payment, and cold weather protection. Scales up to six bays.',
+                  pdf: undefined,
+                },
+                {
+                  href: '/equipment-sales/eurovac-vacuum-systems',
+                  image: '/imgs/partners/eurovac-express-vacuum-lot.webp',
+                  brand: 'Eurovac',
+                  tag: 'Vacuum Systems',
+                  name: 'Central Vacuum Systems',
+                  desc: 'Vacuum arches, canopies, and stanchions in your colors, powered by industrial central producers with hose drops at every door.',
+                  pdf: undefined,
+                },
               ].map((eq) => (
                 <div key={eq.href} className="group border border-gray-200 hover:border-[#f0da11] hover:shadow-lg transition-all duration-200 overflow-hidden flex flex-col">
                   <Link href={eq.href} className="relative h-48 block overflow-hidden">
@@ -262,12 +284,14 @@ export default function Home() {
                       <Link href={eq.href} className="flex-1 text-center text-sm font-bold bg-slate-900 text-white hover:bg-[#f0da11] hover:text-slate-900 py-2.5 transition-colors">
                         View Details
                       </Link>
+                      {eq.pdf && (
                       <a href={eq.pdf} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-1.5 border border-gray-300 text-gray-600 text-sm px-3 py-2.5 hover:border-[#d0b211] hover:text-[#d0b211] transition-colors" title="Download Brochure">
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                         </svg>
                         PDF
                       </a>
+                      )}
                     </div>
                   </div>
                 </div>

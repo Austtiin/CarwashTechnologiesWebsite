@@ -29,6 +29,8 @@ const featuredPartners = [
   { name: 'PECO', logo: '/logos/peco-logo.webp', url: 'https://www.pecocarwash.com/' },
   { name: "Sonny's", logo: '/logos/Sonnys_Logo-RGB.webp', url: 'https://www.sonnysdirect.com/' },
   { name: 'AVW', logo: '/logos/AVW-logo.webp', url: 'https://www.avwequipment.com/' },
+  { name: 'D&S Car Wash Supply', logo: '/logos/ds-carwash-logo.svg', url: 'https://dscarwash.com/' },
+  { name: 'Eurovac', logo: '/logos/eurovac-logo.png', url: 'https://www.eurovac.com/industries/carwash/' },
 ];
 
 const featuredSystems: Record<string, string[]> = {
@@ -51,14 +53,14 @@ const applicationTypes = [
   {
     title: 'Truck & Fleet',
     href: '/truck-wash',
-    image: '/imgs/interclean-fleet-truck-wash.jpg',
+    image: '/imgs/partners/ds-large-vehicle-wash.webp',
     description: 'Semis, trailers, tanker fleets, and heavy-duty drive-through wash operations.',
-    partners: ['InterClean'],
+    partners: ['InterClean', 'D&S'],
   },
   {
     title: 'Municipal & Public Works',
     href: '/municipal-fleet-wash',
-    image: '/imgs/interclean-municipal-wash.jpeg',
+    image: '/imgs/partners/interclean-refuse-truck-wash.webp',
     description: 'Salt trucks, refuse fleets, city buses, DOT yards, and reclaim-ready public-sector sites.',
     partners: ['InterClean'],
   },
@@ -72,21 +74,21 @@ const applicationTypes = [
   {
     title: 'Retail Fuel & C-Store',
     href: '/retail-cstore-carwash',
-    image: '/imgs/car-wash.webp',
-    description: 'Convenience-store and fuel-retail wash applications with in-bay and express options.',
-    partners: ['PDQ', 'PECO'],
+    image: '/imgs/partners/ds-iq-self-serve-bays.webp',
+    description: 'Convenience-store and fuel-retail wash applications with in-bay, self-serve, and express options.',
+    partners: ['PDQ', 'PECO', 'D&S'],
   },
   {
     title: 'Express Tunnel Operators',
     href: '/dedicated-wash-business',
-    image: '/imgs/BelangerTunnel.webp',
+    image: '/imgs/partners/avw-tunnel-wash-lights.webp',
     description: 'High-throughput tunnel environments built to maximize wash volume and membership growth.',
-    partners: ['Belanger', "Sonny's"],
+    partners: ['Belanger', "Sonny's", 'Eurovac'],
   },
   {
     title: 'Custom & Industrial',
     href: '/specialized-wash',
-    image: '/imgs/AirCannon.webp',
+    image: '/imgs/Kondor_Flight.webp',
     description: 'Specialty applications, industrial wash challenges, and one-off engineered systems.',
     partners: ['AVW', 'InterClean'],
   },
@@ -121,7 +123,7 @@ export default function WhoWeServePage() {
       <StatsBand
         badge="Midwest Carwash Partner"
         heading="Tailored wash solutions, MN · ND · SD · WI."
-        image="/imgs/IMG_5380.webp"
+        image="/imgs/partners/eurovac-vacuums-night.webp"
         stats={[
           { value: '500+', label: 'Projects Delivered' },
           { value: '50+', label: 'Yrs Combined Exp.' },
@@ -268,7 +270,7 @@ export default function WhoWeServePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-5 items-stretch">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-5 items-stretch">
             {featuredPartners.map((partner) => (
               <a
                 key={partner.name}

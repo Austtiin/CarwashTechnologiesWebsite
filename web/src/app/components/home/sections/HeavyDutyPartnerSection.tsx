@@ -129,8 +129,8 @@ export default function HeavyDutyPartnerSection() {
 
           <div className="relative min-h-80 lg:min-h-full overflow-hidden border border-gray-200">
             <Image
-              src="/imgs/interclean-fleet-truck-wash.jpg"
-              alt="InterClean fleet truck wash system cleaning a heavy-duty vehicle"
+              src="/imgs/partners/interclean-refuse-truck-wash.webp"
+              alt="InterClean heavy-duty wash system cleaning a refuse truck"
               fill
               sizes="(max-width: 1024px) 100vw, 40vw"
               className="object-cover"

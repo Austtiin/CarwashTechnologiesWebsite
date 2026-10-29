@@ -35,7 +35,7 @@ export default function ConsultingPage() {
       ),
       title: 'Site Development',
       description: 'Expert site analysis, planning, and development for new wash locations. We help identify optimal locations and design efficient layouts.',
-      backgroundImage: '/imgs/Existing.webp'
+      backgroundImage: '/imgs/partners/eurovac-vacuum-canopy-aerial.webp'
     },
     {
       icon: (
@@ -45,7 +45,7 @@ export default function ConsultingPage() {
       ),
       title: 'Operational Optimization',
       description: 'Improve efficiency, reduce costs, and maximize profitability through process optimization and best practices implementation.',
-      backgroundImage: '/imgs/car-wash.webp'
+      backgroundImage: '/imgs/partners/ds-iq-self-serve-bays.webp'
     },
     {
       icon: (
@@ -55,7 +55,7 @@ export default function ConsultingPage() {
       ),
       title: 'Equipment Selection',
       description: 'Unbiased equipment recommendations tailored to your specific needs, budget, and business goals for optimal ROI.',
-      backgroundImage: '/imgs/BelangerTunnel.webp'
+      backgroundImage: '/imgs/partners/avw-wash-brush-detail.webp'
     },
     {
       icon: (
@@ -65,7 +65,7 @@ export default function ConsultingPage() {
       ),
       title: 'Business Strategy',
       description: 'Strategic planning and financial analysis to help you make informed decisions and achieve long-term success.',
-      backgroundImage: '/imgs/Insta-KLEEN-fleet.webp'
+      backgroundImage: '/imgs/partners/eurovac-express-vacuum-lot.webp'
     },
     {
       icon: (
@@ -75,7 +75,7 @@ export default function ConsultingPage() {
       ),
       title: 'Training Programs',
       description: 'Comprehensive staff training programs covering operations, maintenance, customer service, and safety protocols.',
-      backgroundImage: '/imgs/AirCannon.webp'
+      backgroundImage: '/imgs/IMG_20260313_124502.webp'
     },
     {
       icon: (
@@ -85,7 +85,7 @@ export default function ConsultingPage() {
       ),
       title: 'Efficiency Audits',
       description: 'Detailed assessments of your current operations with actionable recommendations for improvement and cost savings.',
-      backgroundImage: '/imgs/CarWash Controller.jpg'
+      backgroundImage: '/imgs/partners/ds-pay-station.webp'
     }
   ];
 
@@ -118,7 +118,7 @@ export default function ConsultingPage() {
       ),
       title: 'Proven Results',
       description: 'Measurable improvements in efficiency, profitability, and customer satisfaction',
-      backgroundImage: '/imgs/Insta-KLEEN-fleet.webp'
+      backgroundImage: '/imgs/IMG_5379.webp'
     }
   ];
 
@@ -153,7 +153,7 @@ export default function ConsultingPage() {
       <StatsBand
         badge="Car Wash Consulting"
         heading="Proven car wash consulting services across the Midwest."
-        image="/imgs/Insta-KLEEN-fleet.webp"
+        image="/imgs/projects/WLC/July-2026/20260720_095815.webp"
         stats={[
           { value: '50+', label: 'Yrs Combined Exp.' },
           { value: '99+', label: 'Projects Advised' },

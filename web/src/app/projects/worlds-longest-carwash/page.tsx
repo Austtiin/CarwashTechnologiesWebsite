@@ -5,20 +5,21 @@ import { Metadata } from 'next';
 import GenericHero from '../../components/ui/GenericHero';
 import CallToActionNew from '../../components/ui/CallToActionNew';
 import StatsBand from '../../components/ui/StatsBand';
+import PageFAQ from '../../components/ui/PageFAQ';
 import WLCGallery from '../../components/ui/WLCGallery';
 import { type GalleryImage } from '../../components/ui/ProjectLightboxGallery';
 
 export const metadata: Metadata = {
   title: "Planned World's Longest Carwash | Flagship Build In Progress | Carwash Technologies",
   description:
-    "Carwash Technologies is building what is planned to be the World's Longest Carwash, a flagship express tunnel currently under construction in the Midwest. See the first photos from the job site.",
+    "Carwash Technologies is building what is planned to be the World's Longest Carwash - a 300+ foot express tunnel with a 30+ stall indoor vacuum hall at Sota Shine One-Six-Nine in Brooklyn Park, MN. Opening planned just after Labor Day 2026. See job site photos.",
   keywords:
-    "world's longest carwash, worlds longest car wash, longest car wash tunnel, longest carwash in the world, world record carwash, largest carwash tunnel, biggest car wash, flagship carwash build, record carwash tunnel, carwash construction project Minnesota, longest tunnel wash, record setting car wash, largest carwash builder Midwest, flagship tunnel wash project, carwash world record 2025, longest car wash tunnel built, record breaking carwash, worlds longest carwash construction, carwash technologies world record, Midwest carwash builder record, carwash project Minnesota 2025",
+    "world's longest carwash, worlds longest car wash, longest car wash tunnel, longest carwash in the world, world record carwash, largest carwash tunnel, biggest car wash, flagship carwash build, record carwash tunnel, carwash construction project Minnesota, longest tunnel wash, record setting car wash, flagship tunnel wash project, Sota Shine One-Six-Nine, Sota Shine Brooklyn Park, Brooklyn Park car wash, indoor vacuum car wash Minnesota, carwash world record 2026, carwash technologies world record, Midwest carwash builder",
   alternates: { canonical: '/projects/worlds-longest-carwash' },
   openGraph: {
     title: "Planned World's Longest Carwash | Flagship Build In Progress",
     description:
-      "A planned record-setting tunnel build currently under construction. First photos from the job site - Carwash Technologies.",
+      "A planned 300+ foot record-setting tunnel in Brooklyn Park, MN - currently under construction. Job site photos from Carwash Technologies.",
     type: 'website',
     url: 'https://www.carwashtechnologies.com/projects/worlds-longest-carwash',
     images: [
@@ -85,6 +86,87 @@ function loadGallerySections(): GallerySection[] {
 
 const gallerySections = loadGallerySections();
 const allImages = gallerySections.flatMap(s => s.images);
+
+type Milestone = {
+  date: string;
+  title: string;
+  body: string;
+  status: 'Complete' | 'In Progress' | 'Upcoming';
+  image?: string;
+  alt?: string;
+};
+
+const milestones: Milestone[] = [
+  {
+    date: 'Spring 2026',
+    title: 'Foundations & Conveyor Pit',
+    body: 'Excavation, under-slab plumbing, and forming the 300+ foot conveyor trench that anchors the tunnel.',
+    status: 'Complete',
+    image: `${WLC_BASE}/April-2026/7c1fca3d-3ba1-48c9-98d1-abb6f172b6c7.webp`,
+    alt: 'Conveyor trench excavation and forming inside the tunnel building',
+  },
+  {
+    date: 'Summer 2026',
+    title: 'Building Enclosed & Site Paved',
+    body: 'Building shell complete, interior open and lit, parking lot paved, and site signage installed.',
+    status: 'Complete',
+    image: `${WLC_BASE}/July-2026/20260720_095300.webp`,
+    alt: 'Exterior of the completed tunnel building with fresh paving',
+  },
+  {
+    date: 'August 2026',
+    title: 'Tunnel Equipment Install',
+    body: 'Conveyor, wash arches, brushes, water treatment, chemical storage, and electrical going in down the length of the tunnel.',
+    status: 'In Progress',
+    image: `${WLC_BASE}/Aug-2026/20260810_090742.webp`,
+    alt: 'Wash equipment being installed along the conveyor inside the tunnel',
+  },
+  {
+    date: 'After Labor Day 2026',
+    title: 'Commissioning & Grand Opening',
+    body: 'Equipment startup, chemical tuning, staff training, and doors open to the public (planned).',
+    status: 'Upcoming',
+  },
+];
+
+const buildHighlights = [
+  {
+    title: 'Conveyor & Wash Arches',
+    body: 'Stainless frames and wash components set along the conveyor, running the full length of the tunnel.',
+    image: `${WLC_BASE}/Aug-2026/20260810_090838.webp`,
+    alt: 'Stainless wash arch frames along the conveyor',
+  },
+  {
+    title: 'Friction Wash Equipment',
+    body: 'Brush drive motors and mounting frames set in place ahead of brush installation and commissioning.',
+    image: `${WLC_BASE}/Aug-2026/20260810_092708.webp`,
+    alt: 'Friction wash brushes mounted in the tunnel',
+  },
+  {
+    title: 'Water Treatment',
+    body: 'Water softeners and treatment plumbing in the equipment room for consistent wash and rinse quality.',
+    image: `${WLC_BASE}/Aug-2026/20260810_090941.webp`,
+    alt: 'Water softener tanks in the equipment room',
+  },
+  {
+    title: 'Storage Tanks',
+    body: 'Large-capacity tanks staged in the equipment corridor to support high-volume operation.',
+    image: `${WLC_BASE}/Aug-2026/20260810_090949.webp`,
+    alt: 'Large storage tanks along the tunnel wall',
+  },
+  {
+    title: 'Controls & Electrical',
+    body: 'Panels and conduit runs feeding equipment down the length of the tunnel.',
+    image: `${WLC_BASE}/Aug-2026/20260810_090908.webp`,
+    alt: 'Electrical control panel with conduit runs',
+  },
+  {
+    title: 'Down the Conveyor',
+    body: 'Looking along the conveyor toward the open tunnel door, with arches framed overhead.',
+    image: `${WLC_BASE}/Aug-2026/20260810_090856.webp`,
+    alt: 'View down the tunnel conveyor toward the exit door',
+  },
+];
 
 export default function WorldsLongestCarwashPage() {
   return (
@@ -184,9 +266,9 @@ export default function WorldsLongestCarwashPage() {
             Site Work Is <span className="text-[#f0da11]">Underway</span>
           </h2>
           <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
-            This flagship build is currently in active construction. The full specs, exact location,
-            and grand-opening details are coming soon - but check back or reach out and we&apos;ll
-            keep you posted as it comes together.
+            Tunnel equipment is going in now at Sota Shine One-Six-Nine in Brooklyn Park, MN, with
+            opening planned for just after Labor Day 2026. We&apos;ll keep adding photos through
+            commissioning and grand opening.
           </p>
         </div>
       </section>
@@ -244,14 +326,78 @@ export default function WorldsLongestCarwashPage() {
       <StatsBand
         badge="The Build"
         heading="A project on a scale of its own."
-        image="/imgs/projects/WLC/July-2026/20260720_100923.webp"
+        image="/imgs/projects/WLC/July-2026/20260720_100438.webp"
         stats={[
-          { value: 'Record', label: 'Setting Length' },
+          { value: '300+ ft', label: 'Planned Tunnel' },
+          { value: '30+', label: 'Indoor Vacuum Stalls' },
           { value: `${allImages.length}`, label: 'Job Site Photos' },
-          { value: 'Turnkey', label: 'Design-Build' },
-          { value: 'Soon', label: 'Grand Opening' },
+          { value: 'Fall 2026', label: 'Planned Opening' },
         ]}
       />
+
+      {/* Build timeline */}
+      <section className="bg-slate-950 py-14 sm:py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+          <div className="text-center mb-12 max-w-3xl mx-auto">
+            <div className="inline-flex items-center gap-3 mb-4">
+              <div className="w-8 h-px bg-[#f0da11]" />
+              <span className="text-sm font-semibold text-slate-400 uppercase tracking-wider">Build Timeline</span>
+              <div className="w-8 h-px bg-[#f0da11]" />
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3">
+              From Dirt to <span className="text-[#f0da11]">Drive-Through</span>
+            </h2>
+            <p className="text-base sm:text-lg text-slate-400">
+              Key milestones on the way to opening day. Dates for upcoming phases are planned and may shift.
+            </p>
+          </div>
+
+          <ol className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {milestones.map((m, i) => (
+              <li key={m.title} className="relative flex flex-col bg-slate-900 border border-slate-800 overflow-hidden">
+                <div className="relative h-44 overflow-hidden">
+                  {m.image ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img src={m.image} alt={m.alt} className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+                  ) : (
+                    <div
+                      className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 bg-slate-800"
+                      style={{
+                        backgroundImage:
+                          'repeating-linear-gradient(45deg, rgba(240,218,17,0.08) 0, rgba(240,218,17,0.08) 12px, transparent 12px, transparent 24px)',
+                      }}
+                    >
+                      <svg className="w-8 h-8 text-[#f0da11] mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                      <span className="text-xs font-semibold uppercase tracking-widest text-slate-300">Photos coming soon</span>
+                    </div>
+                  )}
+                  <span
+                    className={`absolute top-3 left-3 text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 ${
+                      m.status === 'Complete'
+                        ? 'bg-emerald-500 text-white'
+                        : m.status === 'In Progress'
+                          ? 'bg-[#f0da11] text-slate-900'
+                          : 'bg-slate-700 text-slate-200'
+                    }`}
+                  >
+                    {m.status}
+                  </span>
+                </div>
+                <div className="flex-1 p-5">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-[#f0da11] mb-1">
+                    Phase {i + 1} · {m.date}
+                  </p>
+                  <h3 className="text-lg font-bold text-white mb-2">{m.title}</h3>
+                  <p className="text-sm text-slate-400 leading-relaxed">{m.body}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
 
       {/* Teaser specs */}
       <section className="bg-white py-14 sm:py-16">
@@ -269,7 +415,7 @@ export default function WorldsLongestCarwashPage() {
               </span>
             </h2>
             <p className="text-base sm:text-lg text-gray-700">
-              Full details drop at grand opening. Here&apos;s what we can share right now.
+              More specs drop at grand opening. Here&apos;s what we can share right now.
             </p>
           </div>
 
@@ -278,7 +424,7 @@ export default function WorldsLongestCarwashPage() {
               {
                 icon: 'M13 10V3L4 14h7v7l9-11h-7z',
                 title: 'Record-Setting Tunnel Length',
-                body: 'This build spans more wash equipment than any commercial conveyor tunnel we have seen constructed. The kind of project that redefines what a flagship wash looks like.',
+                body: 'A planned tunnel length of more than 300 feet - more wash equipment than any commercial conveyor tunnel we have seen constructed. The kind of project that redefines what a flagship wash looks like.',
               },
               {
                 icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
@@ -326,17 +472,17 @@ export default function WorldsLongestCarwashPage() {
                 </span>
               </h2>
               <p className="text-base sm:text-lg text-slate-300 mb-6 leading-relaxed">
-                Minnesota winters are brutal. Rain, snow, freezing temps - nobody wants to vacuum their car in the elements. That&apos;s why this build includes one of the largest fully enclosed, climate-controlled indoor vacuum halls ever constructed at a carwash.
+                Minnesota winters are brutal. Rain, snow, freezing temps - nobody wants to vacuum their car in the elements. That&apos;s why this build includes a fully enclosed, 100% climate-controlled indoor vacuum hall with more than 30 vacuum stalls.
               </p>
               <p className="text-base text-slate-400 mb-8 leading-relaxed">
                 The room you&apos;re looking at is enormous - high ceilings, open floor, built to accommodate serious capacity. Customers drive in, vacuum in total comfort, and leave with a clean car no matter what&apos;s happening outside.
               </p>
               <ul className="space-y-4">
                 {[
-                  { icon: 'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6', text: 'Fully enclosed, climate-controlled interior' },
+                  { icon: 'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6', text: '30+ vacuum stalls in a 100% climate-controlled room' },
                   { icon: 'M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z', text: 'Beats Minnesota snow, wind, and freezing temps' },
-                  { icon: 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z', text: 'Scaled for high customer volume - no crowding' },
-                  { icon: 'M13 10V3L4 14h7v7l9-11h-7z', text: 'High ceilings and wide bays for easy maneuvering' },
+                  { icon: 'M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15', text: 'Mat washers and compressed air at the stalls' },
+                  { icon: 'M5 13l4 4L19 7', text: 'Detail carts with towels, all-purpose cleaner, and glass cleaner' },
                 ].map(item => (
                   <li key={item.text} className="flex items-start gap-3">
                     <div className="mt-0.5 w-9 h-9 shrink-0 bg-[#f0da11] flex items-center justify-center">
@@ -356,17 +502,55 @@ export default function WorldsLongestCarwashPage() {
               <div className="relative border-2 border-[#f0da11]/30 overflow-hidden">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/imgs/projects/WLC/July-2026/20260720_095815.webp"
+                  src="/imgs/projects/WLC/Aug-2026/20260810_090718.webp"
                   alt="Massive indoor vacuum hall under construction - World's Longest Carwash"
                   className="w-full h-auto object-cover"
                   loading="lazy"
                 />
                 <div className="absolute bottom-0 inset-x-0 bg-linear-to-t from-slate-900/90 to-transparent px-5 py-4">
-                  <p className="text-white text-sm font-semibold">Indoor Vacuum Hall - July 2026</p>
+                  <p className="text-white text-sm font-semibold">Indoor Vacuum Hall - August 2026</p>
                   <p className="text-slate-300 text-xs mt-0.5">World&apos;s Longest Carwash · Under Construction</p>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Inside the tunnel / equipment showcase */}
+      <section className="bg-white py-14 sm:py-16">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+          <div className="text-center mb-10 max-w-3xl mx-auto">
+            <div className="inline-flex items-center gap-3 mb-4">
+              <div className="w-8 h-px bg-[#f0da11]" />
+              <span className="text-sm font-semibold text-gray-600 uppercase tracking-wider">Inside The Build</span>
+              <div className="w-8 h-px bg-[#f0da11]" />
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
+              What Goes Into a 300+ Foot Tunnel
+            </h2>
+            <p className="text-base sm:text-lg text-gray-700">
+              A look at the systems coming together behind the walls - from the conveyor to the equipment room.
+            </p>
+          </div>
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {buildHighlights.map(item => (
+              <figure key={item.title} className="group border border-gray-200 bg-white overflow-hidden hover:border-[#f0da11] hover:shadow-lg transition-all duration-300">
+                <div className="relative aspect-4/3 overflow-hidden">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={item.image}
+                    alt={item.alt}
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                </div>
+                <figcaption className="p-5">
+                  <h3 className="font-bold text-gray-900 mb-1">{item.title}</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">{item.body}</p>
+                </figcaption>
+              </figure>
+            ))}
           </div>
         </div>
       </section>
@@ -402,8 +586,55 @@ export default function WorldsLongestCarwashPage() {
               <WLCGallery images={section.images} />
             </div>
           ))}
+
+          <div className="mt-14 flex flex-col sm:flex-row items-center justify-between gap-4 border-2 border-dashed border-gray-300 bg-white p-6 sm:p-8">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#d0b211] mb-1">Next Update</p>
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900">Commissioning &amp; Grand Opening Photos</h3>
+              <p className="text-sm text-gray-600 mt-1">
+                We&apos;ll add new photos here as equipment is commissioned and the wash opens to the public.
+              </p>
+            </div>
+            <a
+              href="https://sotashine.com/sota-shine-one-six-nine/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="shrink-0 inline-flex items-center gap-2 bg-slate-900 text-white px-5 py-3 text-sm font-semibold hover:bg-[#f0da11] hover:text-slate-900 transition-colors"
+            >
+              Opening Info at Sota Shine
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H8m9 0v9" />
+              </svg>
+            </a>
+          </div>
         </div>
       </section>
+
+      <PageFAQ
+        heading="World's Longest Carwash: Common Questions"
+        items={[
+          {
+            question: "Where is the World's Longest Carwash being built?",
+            answer: 'At Sota Shine One-Six-Nine, 8201 108th Court North in Brooklyn Park, MN - just off Highway 169 and 109th Avenue North, serving Brooklyn Park, Champlin, Osseo, and Maple Grove.',
+          },
+          {
+            question: 'When does it open?',
+            answer: "Sota Shine has announced an opening planned for just after Labor Day 2026. Opening timing is set by the site owner and may change - check the Sota Shine project page for the latest.",
+          },
+          {
+            question: 'How long is the tunnel?',
+            answer: 'The tunnel is planned at more than 300 feet. Final completed length and any record status remain subject to completion and field measurement.',
+          },
+          {
+            question: 'What is the indoor vacuum hall?',
+            answer: 'A fully enclosed, climate-controlled room with more than 30 vacuum stalls, plus mat washers, compressed air, and detail carts with towels, all-purpose cleaner, and glass cleaner - so customers can clean their interiors comfortably year-round.',
+          },
+          {
+            question: 'Can Carwash Technologies build a project like this for me?',
+            answer: 'Yes. We design, build, install, and service express tunnels, vacuum systems, and complete wash sites across Minnesota, North Dakota, South Dakota, and Wisconsin. Reach out and we will talk through your site, volume, and goals.',
+          },
+        ]}
+      />
 
       <CallToActionNew
         title="Want to Follow This Build?"

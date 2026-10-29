@@ -8,7 +8,7 @@ const HeroSection = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image 
-          src="/imgs/HomeHero.png"
+          src="/imgs/HomeHero.webp"
           alt="Car Wash Background"
           fill
           priority

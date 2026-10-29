@@ -12,7 +12,7 @@ export default function ProjectsSectionNew() {
       location: 'Minnesota',
       type: 'Express Tunnel',
       description: "A record-setting express tunnel build currently underway - our most ambitious project to date. Details coming soon.",
-      image: '/imgs/WLC/4763be2a-a176-492d-a14b-948bd849b563.webp',
+      image: '/imgs/projects/WLC/April-2026/4763be2a-a176-492d-a14b-948bd849b563.webp',
       stats: [
         { label: 'Type', value: 'Express Tunnel' },
         { label: 'Status', value: 'Under Construction' },
