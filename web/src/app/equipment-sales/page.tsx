@@ -201,7 +201,7 @@ export default async function EquipmentSales() {
               Trusted Equipment <span className="text-[#f0da11]">Partners</span>
             </h2>
             <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
-              Authorized dealer and partner for Belanger, PECO, PDQ, Sonny&apos;s, AVW, InterClean, D&amp;S Car Wash Supply, and Eurovac &mdash; industry-leading car wash equipment manufacturers trusted across the Midwest. We also supply Cat Pumps and General Pump systems for self-serve and fleet wash operations.
+              Authorized dealer and partner for Belanger, PECO, PDQ, Sonny&apos;s, AVW, InterClean, D&amp;S Car Wash Supply, and Eurovac - industry-leading car wash equipment manufacturers trusted across the Midwest. We also supply Cat Pumps and General Pump systems for self-serve and fleet wash operations.
             </p>
           </div>
 

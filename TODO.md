@@ -2,6 +2,16 @@
 
 Working list for the current round of upgrades. Frontend pass is done; remaining items are backend.
 
+## Completed site refresh - October 2026
+
+- Sota Shine One-Six-Nine is presented as a completed flagship project. Historical construction photos remain labeled as an archive until finished-site images arrive. The existing project URL is retained for incoming links.
+- Navigation, metadata, structured data, and project previews no longer claim an official world record. The project page explicitly states that no official world-record title has been awarded.
+- Homepage services now use a featured tunnel image and supporting solution cards.
+- Contact inquiries use a two-step topic/detail flow. Changing topics preserves the draft; failed delivery is not presented as saved or queued. Submission routing and the API payload are unchanged.
+- Header images use static responsive WebP variants through [HeroImage](web/src/app/components/ui/HeroImage.tsx). From `web`, run `npm run optimize:images` after changing hero sources. Production `npm run build` also generates variants and favicons. Original gallery assets are not overwritten. Generation enforces 75,000-byte mobile and 180,000-byte desktop limits.
+- The old favicon was a non-square WebP mislabeled as ICO. Generation now writes a real multi-size ICO, a 96x96 PNG, and a 180x180 Apple icon. After deployment, request a homepage recrawl in Google Search Console; search-result changes are not immediate or guaranteed.
+- Verify with `npm run build`, then `npm run test:site` from `web`. The site test checks the static export, icon signatures/dimensions, image budgets/references, mobile/desktop layouts, contact topics, draft retention, and mocked failed/successful submissions. It does not send real inquiries.
+
 Stack reference: Next.js 16 (App Router) · React 19 · Tailwind 4 · accent `#f0da11` on slate. Contact form POSTs JSON to `/api/contact` (.NET → Azure Storage Queue).
 
 ---

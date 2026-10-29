@@ -8,14 +8,14 @@ import Image from 'next/image';
 export default function ProjectsSectionNew() {
   const projects = [
     {
-      title: "World's Longest Carwash",
+      title: 'Sota Shine One-Six-Nine',
       location: 'Minnesota',
       type: 'Express Tunnel',
-      description: "A record-setting express tunnel build currently underway - our most ambitious project to date. Details coming soon.",
+      description: 'Our completed flagship express tunnel in Brooklyn Park. Construction archive shown, with finished-site photography coming soon.',
       image: '/imgs/projects/WLC/April-2026/4763be2a-a176-492d-a14b-948bd849b563.webp',
       stats: [
         { label: 'Type', value: 'Express Tunnel' },
-        { label: 'Status', value: 'Under Construction' },
+        { label: 'Status', value: 'Complete' },
         { label: 'Equipment', value: 'PDQ' }
       ]
     },
@@ -160,4 +160,3 @@ export default function ProjectsSectionNew() {
     </section>
   );
 }
-

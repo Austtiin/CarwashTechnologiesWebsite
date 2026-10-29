@@ -3,7 +3,7 @@
 // Homepage Services Section - Complete Solutions
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+import HeroImage from '../../ui/HeroImage';
 
 const services = [
   {
@@ -55,61 +55,77 @@ const services = [
 
 export default function ServicesSectionNew() {
   return (
-    <section className="relative bg-slate-50 py-16 sm:py-20">
+    <section className="relative bg-slate-50 py-16 sm:py-24 overflow-hidden">
       {/* Yellow hairline seam to anchor the band */}
       <div className="absolute inset-x-0 top-0 h-1 bg-[#f0da11]" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-12 sm:mb-14 max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-3 mb-4">
-            <div className="w-8 h-px bg-[#f0da11]" />
-            <span className="text-sm font-semibold text-gray-600 uppercase tracking-wider">What We Offer</span>
-            <div className="w-8 h-px bg-[#f0da11]" />
+        <div className="grid lg:grid-cols-2 gap-6 lg:gap-16 items-end mb-10 sm:mb-12">
+          <div>
+            <div className="inline-flex items-center gap-3 mb-4">
+              <div className="w-8 h-px bg-[#f0da11]" />
+              <span className="text-sm font-semibold text-gray-600 uppercase tracking-wider">What We Offer</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+              Complete Solutions for{' '}
+              <span className="relative inline-block">
+                <span className="absolute inset-x-0 bottom-1 h-3 bg-[#f0da11]/70" aria-hidden="true" />
+                <span className="relative">Modern Wash Operations</span>
+              </span>
+            </h2>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-            Complete Solutions for Modern Wash Operations
-          </h2>
-          <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
-            From express tunnels and self-serve sites to heavy-duty truck and fleet wash systems, we provide everything you need to run a modern, profitable wash.
-          </p>
+          <div>
+            <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
+              One team. Every stage of your wash. From the first site plan to the next service call,
+              we bring the equipment, chemistry, and hands-on expertise that keep your business moving.
+            </p>
+            <div className="flex flex-wrap gap-2 mt-5">
+              {['Build with confidence', 'Protect your uptime', 'Deliver a better clean'].map((point, index) => (
+                <span key={point} className="inline-flex items-center gap-2 bg-white border border-slate-200 px-3 py-2 text-xs font-semibold text-slate-700">
+                  <span className="text-[#8a7b00]">0{index + 1}</span>{point}
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
 
         {/* Services Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          {services.map((service) => (
+        <div className="grid lg:grid-cols-2 gap-5 mb-10">
+          {services.map((service, index) => (
             <Link
               href={service.link}
               key={service.title}
-              className="group relative flex flex-col bg-white rounded-none overflow-hidden border border-gray-200 shadow-sm hover:shadow-2xl hover:-translate-y-1.5 hover:border-[#f0da11] transition-all duration-300"
+              className={`group relative overflow-hidden border border-gray-200 hover:border-[#d0b211] shadow-sm hover:shadow-xl transition-all duration-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-slate-900 ${
+                index === 0 ? 'lg:row-span-3 min-h-96 bg-slate-950 flex flex-col justify-end' : 'grid grid-cols-[0.85fr_1.15fr] bg-white'
+              }`}
             >
-              {/* Image with gradient overlay - fixed aspect for uniform cards */}
-              <div className="relative aspect-4/3 w-full overflow-hidden">
-                <Image
+              <div className={index === 0 ? 'absolute inset-0 overflow-hidden' : 'relative min-h-44 overflow-hidden'}>
+                <HeroImage
                   src={service.image}
                   alt={service.title}
                   fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  sizes={index === 0 ? '(max-width: 1024px) 100vw, 50vw' : '(max-width: 1024px) 45vw, 25vw'}
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-linear-to-t from-slate-900/80 via-slate-900/20 to-transparent" />
+                <div className={`absolute inset-0 ${index === 0 ? 'bg-linear-to-t from-slate-950 via-slate-950/60 to-slate-950/10' : 'bg-slate-950/10'}`} />
                 {/* Icon badge - top-left, fully inside the image */}
                 <div className="absolute top-3 left-3 w-11 h-11 bg-[#f0da11] text-black flex items-center justify-center shadow-lg">
                   {service.icon}
                 </div>
-                {/* Title overlaid on the image */}
-                <h3 className="absolute bottom-3 left-3 right-3 text-lg font-bold text-white leading-tight drop-shadow-md">
-                  {service.title}
-                </h3>
               </div>
 
               {/* Content */}
-              <div className="flex-1 flex flex-col p-5">
-                <p className="text-gray-600 text-sm leading-relaxed mb-5">
+              <div className={`relative flex flex-col ${index === 0 ? 'p-7 sm:p-9 pt-48' : 'p-4 sm:p-5'}`}>
+                {index === 0 && <span className="text-[#f0da11] text-xs font-bold uppercase tracking-widest mb-3">From concept to conveyor</span>}
+                <h3 className={`font-bold leading-tight mb-3 ${index === 0 ? 'text-3xl sm:text-4xl text-white' : 'text-lg text-slate-900'}`}>
+                  {service.title}
+                </h3>
+                <p className={`text-sm leading-relaxed mb-5 ${index === 0 ? 'text-slate-200 max-w-md' : 'text-gray-600'}`}>
                   {service.description}
                 </p>
-                <span className="mt-auto inline-flex items-center text-sm font-semibold text-gray-900 group-hover:text-[#d0b211] transition-colors">
-                  Learn More
+                <span className={`mt-auto inline-flex items-center text-sm font-semibold ${index === 0 ? 'text-[#f0da11]' : 'text-slate-900'} transition-colors`}>
+                  {index === 0 ? 'Explore tunnel solutions' : 'Explore solutions'}
                   <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>

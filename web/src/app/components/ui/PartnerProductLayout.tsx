@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import CallToActionNew from './CallToActionNew';
 import PageFAQ, { FAQItem } from './PageFAQ';
+import HeroImage from './HeroImage';
 
 export interface PartnerProductLayoutProps {
   schema: Record<string, unknown>;
@@ -107,7 +108,7 @@ export default function PartnerProductLayout(props: PartnerProductLayoutProps) {
               <p className="text-xs text-slate-500 mt-4 leading-relaxed">{disclaimer}</p>
             </div>
             <div className="relative h-64 sm:h-80 lg:h-112 rounded-xl overflow-hidden shadow-2xl ring-1 ring-white/10">
-              <Image src={heroImage.src} alt={heroImage.alt} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" priority />
+              <HeroImage src={heroImage.src} alt={heroImage.alt} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" priority />
             </div>
           </div>
         </div>

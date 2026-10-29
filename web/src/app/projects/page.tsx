@@ -9,7 +9,7 @@ import StatsBand from '../components/ui/StatsBand';
 export const metadata: Metadata = {
   title: 'Car Wash Projects & Case Studies Minnesota | Carwash Technologies',
   description: 'See car wash projects completed by Carwash Technologies across Minnesota, North Dakota, South Dakota, and Wisconsin. Tunnel system builds, automatic vehicle wash installations, semi truck wash construction, fleet wash projects, and carwash remodels.',
-  keywords: 'car wash projects Minnesota, carwash builder projects MN, car wash construction case studies, tunnel wash installation projects, semi truck wash projects, fleet wash builds, carwash remodel Minnesota, car wash installations North Dakota, car wash builds Wisconsin, worlds longest carwash, world record carwash tunnel, flagship carwash project, largest carwash build Midwest',
+  keywords: 'car wash projects Minnesota, carwash builder projects MN, car wash construction case studies, tunnel wash installation projects, semi truck wash projects, fleet wash builds, carwash remodel Minnesota, car wash installations North Dakota, car wash builds Wisconsin, Sota Shine One-Six-Nine, completed flagship carwash project',
   alternates: { canonical: '/projects' },
   openGraph: {
     title: 'Car Wash Projects & Case Studies Minnesota | Carwash Technologies',
@@ -65,7 +65,7 @@ const ProjectsPage = () => {
         ]}
       />
 
-      {/* Featured build - World's Longest Carwash */}
+      {/* Completed flagship project */}
       <section className="bg-slate-950 py-14 sm:py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <Link
@@ -75,26 +75,26 @@ const ProjectsPage = () => {
             <div className="relative aspect-4/3 lg:aspect-auto lg:h-full min-h-65">
               <Image
                 src="/imgs/projects/WLC/July-2026/20260720_095018.webp"
-                alt="World's Longest Carwash flagship build under construction"
+                alt="Sota Shine One-Six-Nine construction archive"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
               />
               <span className="absolute top-4 left-4 inline-flex items-center gap-2 bg-[#f0da11] text-slate-900 text-xs font-bold uppercase tracking-widest px-3 py-1.5">
-                Now Building
+                Completed Project
               </span>
             </div>
             <div className="p-6 sm:p-8 lg:pr-12">
               <p className="text-sm font-semibold text-[#f0da11] uppercase tracking-wider mb-3">Flagship Project</p>
               <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">
-                The World&apos;s Longest Carwash*
+                Sota Shine One-Six-Nine
               </h3>
               <p className="text-base text-slate-300 leading-relaxed mb-6">
-                Our most ambitious build yet is under construction right now - a planned record-setting tunnel
-                on a scale the industry hasn&apos;t seen. Take a first look at the build.
+                Our flagship express tunnel build in Brooklyn Park is complete.
+                Explore the construction journey behind Sota Shine One-Six-Nine.
               </p>
               <p className="text-xs text-slate-400 mb-5">
-                *Planned-length claim subject to final measurement and operating configuration at completion.
+                Construction archive shown. Finished-site photography coming soon.
               </p>
               <span className="inline-flex items-center text-sm font-semibold text-white group-hover:text-[#f0da11] transition-colors">
                 See the project

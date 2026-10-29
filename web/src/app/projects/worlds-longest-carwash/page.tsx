@@ -10,16 +10,16 @@ import WLCGallery from '../../components/ui/WLCGallery';
 import { type GalleryImage } from '../../components/ui/ProjectLightboxGallery';
 
 export const metadata: Metadata = {
-  title: "Planned World's Longest Carwash | Flagship Build In Progress | Carwash Technologies",
+  title: "Sota Shine One-Six-Nine | Completed Flagship Project",
   description:
-    "Carwash Technologies is building what is planned to be the World's Longest Carwash - a 300+ foot express tunnel with a 30+ stall indoor vacuum hall at Sota Shine One-Six-Nine in Brooklyn Park, MN. Opening planned just after Labor Day 2026. See job site photos.",
+    "Explore our completed flagship express tunnel project at Sota Shine One-Six-Nine in Brooklyn Park, MN, with an indoor vacuum hall. Browse construction photos, with finished-site images coming soon.",
   keywords:
-    "world's longest carwash, worlds longest car wash, longest car wash tunnel, longest carwash in the world, world record carwash, largest carwash tunnel, biggest car wash, flagship carwash build, record carwash tunnel, carwash construction project Minnesota, longest tunnel wash, record setting car wash, flagship tunnel wash project, Sota Shine One-Six-Nine, Sota Shine Brooklyn Park, Brooklyn Park car wash, indoor vacuum car wash Minnesota, carwash world record 2026, carwash technologies world record, Midwest carwash builder",
+    "Sota Shine One-Six-Nine, Sota Shine Brooklyn Park, completed carwash project, flagship tunnel wash project, Brooklyn Park car wash, indoor vacuum car wash Minnesota, Midwest carwash builder",
   alternates: { canonical: '/projects/worlds-longest-carwash' },
   openGraph: {
-    title: "Planned World's Longest Carwash | Flagship Build In Progress",
+    title: "Sota Shine One-Six-Nine | Completed Flagship Project",
     description:
-      "A planned 300+ foot record-setting tunnel in Brooklyn Park, MN - currently under construction. Job site photos from Carwash Technologies.",
+      "A completed flagship express tunnel in Brooklyn Park, MN. Explore the construction photo archive from Carwash Technologies.",
     type: 'website',
     url: 'https://www.carwashtechnologies.com/projects/worlds-longest-carwash',
     images: [
@@ -27,14 +27,14 @@ export const metadata: Metadata = {
         url: 'https://www.carwashtechnologies.com/imgs/projects/WLC/July-2026/20260720_095018.webp',
         width: 1600,
         height: 1200,
-        alt: "World's Longest Carwash - job site construction photo",
+        alt: "Sota Shine One-Six-Nine - construction archive photo",
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Planned World's Longest Carwash | Job Site Photos",
-    description: "A planned record-setting tunnel build under construction by Carwash Technologies. First look inside.",
+    title: "Sota Shine One-Six-Nine | Completed Flagship Project",
+    description: "Our completed flagship tunnel project in Brooklyn Park, MN. Finished-site photos coming soon.",
     images: ['https://www.carwashtechnologies.com/imgs/projects/WLC/July-2026/20260720_095018.webp'],
   },
 };
@@ -50,7 +50,7 @@ const FOLDER_LABELS: Record<string, string> = {
   'Aug-2026': 'August 2026',
 };
 
-// Explicit chronological order — alphabetical would put Aug before July
+// Explicit chronological order - alphabetical would put Aug before July
 const FOLDER_ORDER = ['April-2026', 'July-2026', 'Aug-2026'];
 
 function loadGallerySections(): GallerySection[] {
@@ -74,7 +74,7 @@ function loadGallerySections(): GallerySection[] {
           .sort()
           .map(file => ({
             src: `${WLC_BASE}/${dir.name}/${file}`,
-            alt: `World's Longest Carwash construction - ${FOLDER_LABELS[dir.name] ?? dir.name}`,
+            alt: `Sota Shine One-Six-Nine construction archive - ${FOLDER_LABELS[dir.name] ?? dir.name}`,
           }));
         return { folder: dir.name, label: FOLDER_LABELS[dir.name] ?? dir.name, images };
       })
@@ -116,16 +116,16 @@ const milestones: Milestone[] = [
   {
     date: 'August 2026',
     title: 'Tunnel Equipment Install',
-    body: 'Conveyor, wash arches, brushes, water treatment, chemical storage, and electrical going in down the length of the tunnel.',
-    status: 'In Progress',
+    body: 'Conveyor, wash arches, brushes, water treatment, chemical storage, and electrical installed along the tunnel.',
+    status: 'Complete',
     image: `${WLC_BASE}/Aug-2026/20260810_090742.webp`,
     alt: 'Wash equipment being installed along the conveyor inside the tunnel',
   },
   {
-    date: 'After Labor Day 2026',
-    title: 'Commissioning & Grand Opening',
-    body: 'Equipment startup, chemical tuning, staff training, and doors open to the public (planned).',
-    status: 'Upcoming',
+    date: 'Fall 2026',
+    title: 'Project Completed',
+    body: 'The flagship build is complete. Finished-site photography will be added as it becomes available.',
+    status: 'Complete',
   },
 ];
 
@@ -178,9 +178,9 @@ export default function WorldsLongestCarwashPage() {
             {
               '@context': 'https://schema.org',
               '@type': 'CreativeWork',
-              name: "World's Longest Carwash",
+              name: "Sota Shine One-Six-Nine",
               description:
-                "A planned record-setting tunnel carwash currently under construction by Carwash Technologies - the company’s flagship design-build project in the Midwest.",
+                "A completed flagship express tunnel carwash project by Carwash Technologies in Brooklyn Park, Minnesota.",
               url: 'https://www.carwashtechnologies.com/projects/worlds-longest-carwash',
               image: 'https://www.carwashtechnologies.com/imgs/projects/WLC/July-2026/20260720_095018.webp',
               creator: {
@@ -193,8 +193,8 @@ export default function WorldsLongestCarwashPage() {
             {
               '@context': 'https://schema.org',
               '@type': 'ImageGallery',
-              name: "World's Longest Carwash - Job Site Photos",
-              description: 'Construction photos from the planned record-setting tunnel carwash build by Carwash Technologies.',
+              name: 'Sota Shine One-Six-Nine - Construction Archive',
+              description: 'Historical construction photos from the completed flagship tunnel carwash project by Carwash Technologies.',
               url: 'https://www.carwashtechnologies.com/projects/worlds-longest-carwash',
               image: allImages.slice(0, 8).map(img => ({
                 '@type': 'ImageObject',
@@ -212,14 +212,14 @@ export default function WorldsLongestCarwashPage() {
       />
 
       <GenericHero
-        eyebrow="Flagship Project · Now Building"
-        title="The World's Longest Carwash*"
-        highlightedWord="Longest"
-        subtitle="A Planned Record-Setting Tunnel, Under Construction"
-        description="Our most ambitious build yet is taking shape right now. We're engineering a tunnel wash on a scale the industry hasn't seen, and we're sharing the first photos as it comes together."
+        eyebrow="Flagship Project - Completed"
+        title="Sota Shine One-Six-Nine"
+        highlightedWord="Sota Shine"
+        subtitle="A Completed Flagship Express Tunnel in Brooklyn Park"
+        description="Our most ambitious build is complete. Explore the construction journey behind Sota Shine One-Six-Nine, with finished-site photography coming soon."
         buttons={[
           { text: 'Get Project Updates', href: '/contact', variant: 'primary' },
-          { text: 'See Build Progress', href: '#gallery', variant: 'secondary' },
+          { text: 'Explore Project Photos', href: '#gallery', variant: 'secondary' },
         ]}
         backgroundVariant="dark"
         showPattern
@@ -230,14 +230,14 @@ export default function WorldsLongestCarwashPage() {
       <section className="bg-amber-50 border-y border-amber-200">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-5 sm:py-6">
           <p className="text-sm sm:text-base text-amber-950 leading-relaxed">
-            <span className="font-bold">Project claim disclaimer:</span> &nbsp;
-            &quot;World&apos;s Longest Carwash&quot; is used here as a planned project-positioning claim based on the current design target and construction scope.
-            Final completed length, operating configuration, and any comparative or record status remain subject to completion, field measurement, and opening conditions.
+            <span className="font-bold">Record status:</span> &nbsp;
+            No official world-record title has been awarded to this project. Previous references to
+            &quot;World&apos;s Longest Carwash&quot; described a design ambition, not a certified title.
           </p>
         </div>
       </section>
 
-      {/* Under-construction banner */}
+      {/* Completion update */}
       <section className="relative overflow-hidden bg-slate-900 border-y-4 border-[#f0da11]">
         <div
           className="absolute inset-x-0 top-0 h-2 opacity-90"
@@ -260,15 +260,15 @@ export default function WorldsLongestCarwashPage() {
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
             </svg>
-            Active Construction
+            Project Completed
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
-            Site Work Is <span className="text-[#f0da11]">Underway</span>
+            The Build Is <span className="text-[#f0da11]">Complete</span>
           </h2>
           <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
-            Tunnel equipment is going in now at Sota Shine One-Six-Nine in Brooklyn Park, MN, with
-            opening planned for just after Labor Day 2026. We&apos;ll keep adding photos through
-            commissioning and grand opening.
+            Sota Shine One-Six-Nine in Brooklyn Park, MN is now a completed project.
+            The photos below document construction, not the current finished condition.
+            We&apos;re collecting more images to share the finished site.
           </p>
         </div>
       </section>
@@ -311,11 +311,11 @@ export default function WorldsLongestCarwashPage() {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="mt-1 h-2 w-2 shrink-0 bg-[#f0da11]" />
-                  <span>Flagship express-tunnel positioning supported by active construction photos.</span>
+                  <span>A completed flagship express tunnel with a construction photo archive.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="mt-1 h-2 w-2 shrink-0 bg-[#f0da11]" />
-                  <span>Claim language kept with an explicit disclaimer until final measurement is complete.</span>
+                  <span>Finished-site photography coming soon. No official world-record title has been awarded.</span>
                 </li>
               </ul>
             </div>
@@ -328,10 +328,10 @@ export default function WorldsLongestCarwashPage() {
         heading="A project on a scale of its own."
         image="/imgs/projects/WLC/July-2026/20260720_100438.webp"
         stats={[
-          { value: '300+ ft', label: 'Planned Tunnel' },
+          { value: '300+ ft', label: 'Tunnel Design Length' },
           { value: '30+', label: 'Indoor Vacuum Stalls' },
           { value: `${allImages.length}`, label: 'Job Site Photos' },
-          { value: 'Fall 2026', label: 'Planned Opening' },
+          { value: 'Complete', label: 'Project Status' },
         ]}
       />
 
@@ -348,7 +348,7 @@ export default function WorldsLongestCarwashPage() {
               From Dirt to <span className="text-[#f0da11]">Drive-Through</span>
             </h2>
             <p className="text-base sm:text-lg text-slate-400">
-              Key milestones on the way to opening day. Dates for upcoming phases are planned and may shift.
+              A look back at the construction journey behind this completed flagship project.
             </p>
           </div>
 
@@ -405,17 +405,17 @@ export default function WorldsLongestCarwashPage() {
           <div className="text-center mb-12 max-w-3xl mx-auto">
             <div className="inline-flex items-center gap-3 mb-4">
               <div className="w-8 h-px bg-[#f0da11]" />
-              <span className="text-sm font-semibold text-gray-600 uppercase tracking-wider">What&apos;s Being Built</span>
+              <span className="text-sm font-semibold text-gray-600 uppercase tracking-wider">Project Highlights</span>
               <div className="w-8 h-px bg-[#f0da11]" />
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
               The Scale of{' '}
               <span className="inline-block bg-[#f0da11] text-black px-2 pb-0.5 -rotate-1">
-                What&apos;s Coming
+                This Flagship Build
               </span>
             </h2>
             <p className="text-base sm:text-lg text-gray-700">
-              More specs drop at grand opening. Here&apos;s what we can share right now.
+              Purpose-built systems for a high-volume express wash operation.
             </p>
           </div>
 
@@ -423,13 +423,13 @@ export default function WorldsLongestCarwashPage() {
             {[
               {
                 icon: 'M13 10V3L4 14h7v7l9-11h-7z',
-                title: 'Record-Setting Tunnel Length',
-                body: 'A planned tunnel length of more than 300 feet - more wash equipment than any commercial conveyor tunnel we have seen constructed. The kind of project that redefines what a flagship wash looks like.',
+                title: 'Large-Scale Express Tunnel',
+                body: 'Designed with a tunnel length of more than 300 feet, with integrated wash equipment and coordinated conveyor systems. Design length is not a certified world-record measurement.',
               },
               {
                 icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
                 title: 'Express-Format Throughput',
-                body: 'Designed from the start for high-volume, high-speed operation. Every bay, every arch, every dryer positioned to move cars at a scale nobody else has attempted.',
+                body: 'Designed from the start for high-volume operation, with wash arches and dryers positioned for consistent vehicle flow and wash quality.',
               },
               {
                 icon: 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z',
@@ -503,13 +503,13 @@ export default function WorldsLongestCarwashPage() {
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/imgs/projects/WLC/Aug-2026/20260810_090718.webp"
-                  alt="Massive indoor vacuum hall under construction - World's Longest Carwash"
+                  alt="Sota Shine One-Six-Nine indoor vacuum hall during construction in August 2026"
                   className="w-full h-auto object-cover"
                   loading="lazy"
                 />
                 <div className="absolute bottom-0 inset-x-0 bg-linear-to-t from-slate-900/90 to-transparent px-5 py-4">
                   <p className="text-white text-sm font-semibold">Indoor Vacuum Hall - August 2026</p>
-                  <p className="text-slate-300 text-xs mt-0.5">World&apos;s Longest Carwash · Under Construction</p>
+                  <p className="text-slate-300 text-xs mt-0.5">Sota Shine One-Six-Nine - Construction Archive</p>
                 </div>
               </div>
             </div>
@@ -530,7 +530,7 @@ export default function WorldsLongestCarwashPage() {
               What Goes Into a 300+ Foot Tunnel
             </h2>
             <p className="text-base sm:text-lg text-gray-700">
-              A look at the systems coming together behind the walls - from the conveyor to the equipment room.
+              Construction archive: the systems coming together behind the walls, from the conveyor to the equipment room.
             </p>
           </div>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -565,7 +565,7 @@ export default function WorldsLongestCarwashPage() {
               <div className="w-8 h-px bg-[#f0da11]" />
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
-              Construction Progress
+              Construction Photo Archive
             </h2>
             <p className="text-base sm:text-lg text-gray-700">
               {allImages.length} photos across {gallerySections.length} phases. Click any photo to view full size.
@@ -592,7 +592,7 @@ export default function WorldsLongestCarwashPage() {
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#d0b211] mb-1">Next Update</p>
               <h3 className="text-lg sm:text-xl font-bold text-gray-900">Commissioning &amp; Grand Opening Photos</h3>
               <p className="text-sm text-gray-600 mt-1">
-                We&apos;ll add new photos here as equipment is commissioned and the wash opens to the public.
+                The project is complete. We&apos;ll add finished-site photos as they become available.
               </p>
             </div>
             <a
@@ -601,7 +601,7 @@ export default function WorldsLongestCarwashPage() {
               rel="noopener noreferrer"
               className="shrink-0 inline-flex items-center gap-2 bg-slate-900 text-white px-5 py-3 text-sm font-semibold hover:bg-[#f0da11] hover:text-slate-900 transition-colors"
             >
-              Opening Info at Sota Shine
+              Visit Sota Shine
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H8m9 0v9" />
               </svg>
@@ -611,19 +611,19 @@ export default function WorldsLongestCarwashPage() {
       </section>
 
       <PageFAQ
-        heading="World's Longest Carwash: Common Questions"
+        heading="Sota Shine One-Six-Nine: Common Questions"
         items={[
           {
-            question: "Where is the World's Longest Carwash being built?",
+            question: "Where is Sota Shine One-Six-Nine?",
             answer: 'At Sota Shine One-Six-Nine, 8201 108th Court North in Brooklyn Park, MN - just off Highway 169 and 109th Avenue North, serving Brooklyn Park, Champlin, Osseo, and Maple Grove.',
           },
           {
-            question: 'When does it open?',
-            answer: "Sota Shine has announced an opening planned for just after Labor Day 2026. Opening timing is set by the site owner and may change - check the Sota Shine project page for the latest.",
+            question: 'Is the project complete?',
+            answer: "Yes, the Carwash Technologies flagship build is complete. Visit Sota Shine's website for current customer hours and operating information. Finished-site photos will be added here as they become available.",
           },
           {
             question: 'How long is the tunnel?',
-            answer: 'The tunnel is planned at more than 300 feet. Final completed length and any record status remain subject to completion and field measurement.',
+            answer: 'The tunnel was designed at more than 300 feet. This is a design specification, not a certified record measurement. No official world-record title has been awarded.',
           },
           {
             question: 'What is the indoor vacuum hall?',
@@ -637,8 +637,8 @@ export default function WorldsLongestCarwashPage() {
       />
 
       <CallToActionNew
-        title="Want to Follow This Build?"
-        description="Reach out and we'll keep you in the loop on this planned record-setting flagship build and talk through what a project at that scale could look like for your operation."
+        title="Ready to Build Your Next Wash?"
+        description="Talk with the team behind Sota Shine One-Six-Nine about equipment, installation, and long-term support for your operation."
         buttons={[
           { text: 'Get Project Updates', href: '/contact', variant: 'primary' },
           { text: 'See Applications', href: '/who-we-serve', variant: 'secondary' },
@@ -652,5 +652,3 @@ export default function WorldsLongestCarwashPage() {
     </div>
   );
 }
-
-

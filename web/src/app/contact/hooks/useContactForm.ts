@@ -1,11 +1,10 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import { submitContactForm } from '@/lib/api-client';
 import type { ContactFormData } from '@/types/api';
 
 interface UseContactFormReturn {
   isSubmitting: boolean;
   isSuccess: boolean;
-  isPending: boolean;
   error: string | null;
   retryCount: number;
   submitForm: (data: ContactFormData) => Promise<boolean>;
@@ -18,7 +17,6 @@ const RETRY_DELAY = 1000; // 1 second between retries
 export function useContactForm(): UseContactFormReturn {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
-  const [isPending, setIsPending] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [retryCount, setRetryCount] = useState(0);
 
@@ -26,10 +24,9 @@ export function useContactForm(): UseContactFormReturn {
     setIsSubmitting(true);
     setError(null);
     setIsSuccess(false);
-    setIsPending(false);
     setRetryCount(0);
 
-    console.log('[ContactForm] Submitting form...', { contactType: data.contactType, name: data.name, email: data.email });
+    console.log('[ContactForm] Submitting form...', { contactType: data.contactType });
 
     let lastError: string | null = null;
 
@@ -72,35 +69,21 @@ export function useContactForm(): UseContactFormReturn {
     console.error('[ContactForm] ❌ All attempts failed. Last error:', lastError);
     setIsSubmitting(false);
     
-    // Mark as pending if it's a network or service error (not validation)
-    if (lastError && (
-      lastError.includes('Network') || 
-      lastError.includes('timeout') || 
-      lastError.includes('Service') ||
-      lastError.includes('unavailable')
-    )) {
-      setIsPending(true);
-      setError('Your message is pending. We will review it and follow up. You can also call us at (612) 408-9010.');
-    } else {
-      // Hard failure for validation or other errors
-      setError(lastError || 'Failed to submit form after multiple attempts. Please try again or call us at (612) 408-9010.');
-    }
+    setError(`We could not confirm delivery. Your details are still here. Please retry or call (612) 408-9010. ${lastError || ''}`.trim());
     
     return false;
   };
 
-  const reset = () => {
+  const reset = useCallback(() => {
     setIsSubmitting(false);
     setIsSuccess(false);
-    setIsPending(false);
     setError(null);
     setRetryCount(0);
-  };
+  }, []);
 
   return {
     isSubmitting,
     isSuccess,
-    isPending,
     error,
     retryCount,
     submitForm,

@@ -16,6 +16,7 @@ interface ContactOption {
 interface ContactFormProps {
   selectedOption: ContactOption | undefined;
   onReset: () => void;
+  onNavigationLockChange: (locked: boolean) => void;
 }
 
 // Areas of interest the visitor can select (multi-select)
@@ -43,7 +44,7 @@ interface FormData {
 }
 
 // Client Component - Handles form state and submission
-export default function ContactForm({ selectedOption, onReset }: ContactFormProps) {
+export default function ContactForm({ selectedOption, onReset, onNavigationLockChange }: ContactFormProps) {
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
@@ -63,14 +64,22 @@ export default function ContactForm({ selectedOption, onReset }: ContactFormProp
     );
   }, []);
 
-  const { isSubmitting, isSuccess, isPending, error, submitForm, reset } = useContactForm();
+  const { isSubmitting, isSuccess, error, submitForm, reset } = useContactForm();
+
+  useEffect(() => {
+    reset();
+  }, [selectedOption?.id, reset]);
+
+  useEffect(() => {
+    onNavigationLockChange(isSubmitting || isSuccess);
+  }, [isSubmitting, isSuccess, onNavigationLockChange]);
 
   const statusRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    if (isSuccess || isPending || error) {
+    if (isSuccess || error) {
       statusRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
-  }, [isSuccess, isPending, error]);
+  }, [isSuccess, error]);
 
   // List of blocked email domains
   const BLOCKED_EMAIL_DOMAINS = [
@@ -108,17 +117,6 @@ export default function ContactForm({ selectedOption, onReset }: ContactFormProp
     }
 
     return true;
-  };
-
-  // Validation function
-  const isFormValid = () => {
-    return (
-      formData.name.trim().length >= 2 &&
-      validateEmail(formData.email) &&
-      formData.inquiry.trim().length >= 10 &&
-      formData.bestTime !== '' &&
-      formData.urgency !== ''
-    );
   };
 
   const [validationErrors, setValidationErrors] = useState({
@@ -221,7 +219,7 @@ export default function ContactForm({ selectedOption, onReset }: ContactFormProp
   // Success Message
   if (isSuccess) {
     return (
-      <div ref={statusRef} className="max-w-2xl mx-auto text-center">
+      <div ref={statusRef} role="status" className="max-w-2xl mx-auto text-center">
         <div className="bg-linear-to-br from-green-900/80 to-green-800/80 border-2 border-green-600 p-8 sm:p-12 backdrop-blur-sm rounded-2xl">
           <div className="w-16 h-16 bg-[#f0da11] flex items-center justify-center mx-auto mb-6 sm:w-20 sm:h-20 rounded-full">
             <svg className="w-10 h-10 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -248,48 +246,9 @@ export default function ContactForm({ selectedOption, onReset }: ContactFormProp
     );
   }
 
-  // Pending Message (after retries)
-  if (isPending) {
+  if (error) {
     return (
-      <div ref={statusRef} className="max-w-2xl mx-auto text-center mb-8">
-        <div className="bg-linear-to-br from-yellow-900/80 to-yellow-800/80 border-2 border-yellow-600 p-8 sm:p-12 backdrop-blur-sm rounded-2xl">
-          <div className="w-16 h-16 bg-yellow-500 flex items-center justify-center mx-auto mb-6 sm:w-20 sm:h-20 rounded-full">
-            <svg className="w-10 h-10 text-white animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-          </div>
-          <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
-            Message Pending
-          </h3>
-          <p className="text-gray-200 text-lg mb-2">
-            We&#39;re experiencing temporary connectivity issues.
-          </p>
-          <p className="text-gray-300 mb-6">
-            {error || 'Your message has been saved and queued for review. For immediate assistance, please call us.'}
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="tel:612-408-9010"
-              className="bg-[#f0da11] text-gray-900 px-8 py-4 font-bold hover:bg-[#d0b211] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 cursor-pointer rounded-none uppercase tracking-wide"
-            >
-              Call (612) 408-9010
-            </a>
-            <button
-              onClick={() => reset()}
-              className="bg-white text-gray-900 px-8 py-4 font-bold hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 cursor-pointer rounded-none uppercase tracking-wide border-2 border-white"
-            >
-              Try Again
-            </button>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  // Error Message (validation or hard failure)
-  if (error && !isPending) {
-    return (
-      <div ref={statusRef} className="max-w-2xl mx-auto text-center mb-8">
+      <div ref={statusRef} role="alert" className="max-w-2xl mx-auto text-center mb-8">
         <div className="bg-linear-to-br from-red-900/80 to-red-800/80 border-2 border-red-600 p-8 sm:p-12 backdrop-blur-sm rounded-2xl">
           <div className="w-16 h-16 bg-red-500 flex items-center justify-center mx-auto mb-6 sm:w-20 sm:h-20 rounded-full">
             <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -297,7 +256,7 @@ export default function ContactForm({ selectedOption, onReset }: ContactFormProp
             </svg>
           </div>
           <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
-            Submission Failed
+            Delivery Not Confirmed
           </h3>
           <p className="text-gray-200 text-lg mb-2">
             {error}
@@ -310,7 +269,7 @@ export default function ContactForm({ selectedOption, onReset }: ContactFormProp
               onClick={() => reset()}
               className="bg-[#f0da11] text-gray-900 px-8 py-4 font-bold hover:bg-[#d0b211] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 cursor-pointer rounded-none uppercase tracking-wide"
             >
-              Try Again
+              Back to My Details
             </button>
             <a
               href="tel:612-408-9010"
@@ -328,7 +287,7 @@ export default function ContactForm({ selectedOption, onReset }: ContactFormProp
   return (
     <form
       onSubmit={handleSubmit}
-      className="max-w-4xl mx-auto bg-white border border-gray-200 border-t-4 border-t-[#f0da11] p-4 sm:p-5 md:p-6 shadow-md rounded-none"
+      className="relative max-w-5xl mx-auto bg-white border border-slate-200 border-t-4 border-t-[#f0da11] p-5 sm:p-8 shadow-xl shadow-slate-200/50 rounded-2xl"
     >
       {/* Honeypot field - visually hidden, bots fill it in, humans never see it */}
       <div style={{ position: 'absolute', left: '-9999px', top: 0, height: 0, overflow: 'hidden' }} aria-hidden="true">
@@ -346,6 +305,10 @@ export default function ContactForm({ selectedOption, onReset }: ContactFormProp
       <div className="grid gap-4 md:gap-5 lg:gap-6 lg:grid-cols-3 items-start">
         {/* Main Form Fields */}
         <div className="lg:col-span-2 space-y-4">
+          <div className="border-b border-slate-100 pb-4">
+            <h3 className="text-xl font-bold text-slate-900">Your next step starts here</h3>
+            <p className="text-sm text-slate-500 mt-1">Tell us a little about your site. Fields marked * are required.</p>
+          </div>
           <div className="grid gap-3 md:grid-cols-2">
             {/* Left Column */}
             <div className="space-y-3">
@@ -358,6 +321,7 @@ export default function ContactForm({ selectedOption, onReset }: ContactFormProp
                   type="text"
                   id="name"
                   name="name"
+                  autoComplete="name"
                   required
                   minLength={2}
                   maxLength={100}
@@ -381,6 +345,7 @@ export default function ContactForm({ selectedOption, onReset }: ContactFormProp
                   type="email"
                   id="email"
                   name="email"
+                  autoComplete="email"
                   required
                   maxLength={254}
                   value={formData.email}
@@ -403,6 +368,7 @@ export default function ContactForm({ selectedOption, onReset }: ContactFormProp
                   type="tel"
                   id="phone"
                   name="phone"
+                  autoComplete="tel"
                   maxLength={20}
                   value={formData.phone}
                   onChange={handleInputChange}
@@ -421,6 +387,7 @@ export default function ContactForm({ selectedOption, onReset }: ContactFormProp
                   type="text"
                   id="company"
                   name="company"
+                  autoComplete="organization"
                   maxLength={100}
                   value={formData.company}
                   onChange={handleInputChange}
@@ -442,14 +409,18 @@ export default function ContactForm({ selectedOption, onReset }: ContactFormProp
                   id="inquiry"
                   name="inquiry"
                   required
-                  rows={3}
+                  rows={5}
                   minLength={10}
                   maxLength={1000}
                   value={formData.inquiry}
                   onChange={handleInputChange}
                   disabled={isSubmitting}
                   className={`w-full px-3 py-2 border-2 ${validationErrors.inquiry ? 'border-red-500 focus:ring-red-500 focus:border-red-500' : 'border-gray-300 focus:ring-[#f0da11] focus:border-[#f0da11]'} bg-white text-gray-900 focus:ring-2 transition-all duration-200 resize-vertical min-h-20 placeholder-gray-400 text-sm disabled:bg-gray-100 disabled:cursor-not-allowed rounded-none`}
-                  placeholder={`Tell us about your ${selectedOption?.title.toLowerCase()} needs...`}
+                  placeholder={selectedOption?.id === 'chemicals'
+                    ? 'What type of wash do you run? Tell us about your current chemistry, wash quality goals, or supply needs.'
+                    : selectedOption?.id === 'service'
+                      ? 'What equipment needs attention? Include your site location, the symptoms, and whether the wash is currently running.'
+                      : 'Are you planning a new site or upgrading an existing wash? Share your location, equipment interests, and timeline.'}
                 />
                 <div className="flex justify-between items-center mt-1">
                   {validationErrors.inquiry ? (
@@ -551,7 +522,7 @@ export default function ContactForm({ selectedOption, onReset }: ContactFormProp
           <div className="mt-2 text-center md:text-right">
             <button
               type="submit"
-              disabled={isSubmitting || !isFormValid()}
+              disabled={isSubmitting}
               className="group bg-[#f0da11] text-gray-900 px-10 py-3.5 font-bold text-base hover:bg-[#d0b211] transition-all duration-300 shadow-xl transform hover:-translate-y-1 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none relative overflow-hidden uppercase tracking-wide cursor-pointer rounded-none"
             >
               {isSubmitting ? (
@@ -575,6 +546,8 @@ export default function ContactForm({ selectedOption, onReset }: ContactFormProp
         <div className="space-y-3">
           {/* Info Card */}
           <div className={`p-4 bg-linear-to-br ${selectedOption?.bgColor} border-2 ${selectedOption?.borderColor} rounded-none`}>
+            <p className="text-xs font-bold uppercase tracking-widest text-[#817300] mb-2">Your support team</p>
+            <h3 className="text-lg font-bold text-slate-900 mb-4">{selectedOption?.title}</h3>
             <h4 className="font-bold text-gray-900 mb-3 uppercase tracking-wide text-xs">What to expect:</h4>
             <ul className="text-xs text-gray-900 space-y-1.5">
               <li className="flex items-center font-medium">

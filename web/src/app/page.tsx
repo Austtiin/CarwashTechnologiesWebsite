@@ -12,7 +12,7 @@ import WhyChooseUsSection from './components/home/sections/WhyChooseUsSection';
 export const metadata: Metadata = {
   title: 'Midwest Carwash Builder, Parts & Contractor | Gas Station, Self-Service, Heavy Duty',
   description: 'Leading Midwest carwash builder and contractor specializing in gas station carwashes, self-service carwash parts, heavy duty truck wash systems, express tunnel builder, car dealership installations, touchless systems, and automatic carwash repair across MN, ND, SD, WI.',
-  keywords: 'midwest carwash builder, gas station carwash builder Minnesota, self service carwash parts MN, heavy duty carwash builder, carwash contractor Minnesota, express carwash builder, car dealership carwash installation, touchless carwash systems Minnesota, self serve car wash builder MN, convenience store carwash installation, automatic carwash builder Minnesota, tunnel carwash contractor, in bay automatic builder, commercial carwash builder MN, industrial carwash contractor Minnesota, municipal carwash builder, fleet wash contractor, semi truck wash builder Minnesota, bus wash systems builder, RV wash equipment installation, car wash construction Minnesota, carwash design build, turnkey carwash contractor, carwash equipment parts supplier MN, carwash parts distributor Minnesota, automatic car wash repair Minnesota, carwash modernization services, carwash retrofit contractor, priority carwash service, car wash chemicals minnesota, carwash maintenance contractor MN, carwash technician services, vehicle wash equipment supplier, automated car wash machine minnesota, car wash automation equipment, tunnel wash systems, track wash installation, carwash site development, worlds longest carwash, world record carwash, longest carwash tunnel, largest carwash builder Minnesota, biggest car wash tunnel, flagship carwash build',
+  keywords: 'midwest carwash builder, gas station carwash builder Minnesota, self service carwash parts MN, heavy duty carwash builder, carwash contractor Minnesota, express carwash builder, car dealership carwash installation, touchless carwash systems Minnesota, self serve car wash builder MN, convenience store carwash installation, automatic carwash builder Minnesota, tunnel carwash contractor, in bay automatic builder, commercial carwash builder MN, industrial carwash contractor Minnesota, municipal carwash builder, fleet wash contractor, semi truck wash builder Minnesota, bus wash systems builder, RV wash equipment installation, car wash construction Minnesota, carwash design build, turnkey carwash contractor, carwash equipment parts supplier MN, carwash parts distributor Minnesota, automatic car wash repair Minnesota, carwash modernization services, carwash retrofit contractor, priority carwash service, car wash chemicals minnesota, carwash maintenance contractor MN, carwash technician services, vehicle wash equipment supplier, automated car wash machine minnesota, car wash automation equipment, tunnel wash systems, track wash installation, carwash site development, Sota Shine One-Six-Nine, flagship carwash build, completed tunnel project Minnesota',
   alternates: { canonical: '/' },
   openGraph: {
     title: 'Midwest Carwash Builder | Gas Station, Self-Service, Heavy Duty Contractor',
@@ -171,7 +171,7 @@ export default function Home() {
         {/* Free consultation form CTA */}
         <ConsultationCTA />
 
-        {/* Flagship build - World's Longest Carwash */}
+        {/* Completed flagship project */}
         <section className="bg-slate-50 py-14 sm:py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <Link
@@ -181,27 +181,26 @@ export default function Home() {
               <div className="relative aspect-4/3 lg:aspect-auto lg:h-full min-h-65">
                 <Image
                   src="/imgs/projects/WLC/July-2026/20260720_095018.webp"
-                  alt="World's Longest Carwash flagship build under construction"
+                  alt="Sota Shine One-Six-Nine construction archive"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover"
                 />
                 <span className="absolute top-4 left-4 inline-flex items-center gap-2 bg-[#f0da11] text-slate-900 text-xs font-bold uppercase tracking-widest px-3 py-1.5">
-                  Now Building
+                  Completed Project
                 </span>
               </div>
               <div className="p-6 sm:p-8 lg:pr-12">
                 <p className="text-sm font-semibold text-[#f0da11] uppercase tracking-wider mb-3">Flagship Project</p>
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4">
-                  We&apos;re Building the World&apos;s Longest Carwash*
+                  Sota Shine One-Six-Nine
                 </h2>
                 <p className="text-base text-slate-300 leading-relaxed mb-6">
-                  Our most ambitious project yet is under construction right now - a planned record-setting tunnel
-                  on a scale the industry hasn&apos;t seen. It&apos;s the clearest proof of what our design-build
-                  team can deliver for any operation.
+                  Our flagship express tunnel build in Brooklyn Park is complete. Explore the construction
+                  journey and see what our design-build team can deliver for your operation.
                 </p>
                 <p className="text-xs text-slate-400 mb-5">
-                  *Claim refers to the current planned completed tunnel length and remains subject to final measurement and opening configuration.
+                  Construction archive shown. Finished-site photography coming soon.
                 </p>
                 <span className="inline-flex items-center text-sm font-semibold text-white group-hover:text-[#f0da11] transition-colors">
                   See the project

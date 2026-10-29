@@ -1,5 +1,5 @@
 ﻿import React from 'react';
-import Image from 'next/image';
+import HeroImage from '../../components/ui/HeroImage';
 import Link from 'next/link';
 import { Metadata } from 'next';
 import CallToActionNew from '../../components/ui/CallToActionNew';
@@ -175,7 +175,7 @@ export default function PDQLaserWash360PlusPage() {
               </p>
             </div>
             <div className="relative h-64 sm:h-80 lg:h-112 rounded-xl overflow-hidden shadow-2xl ring-1 ring-white/10">
-              <Image
+              <HeroImage
                 src="/imgs/PDQ.webp"
                 alt="PDQ LaserWash 360 Plus touchless in-bay automatic car wash system"
                 fill
@@ -265,10 +265,10 @@ export default function PDQLaserWash360PlusPage() {
               <div className="w-2.5 h-2.5 rounded-full bg-slate-600" />
               <div className="w-2.5 h-2.5 rounded-full bg-slate-600" />
               <div className="w-2.5 h-2.5 rounded-full bg-slate-600" />
-              <span className="ml-2 text-xs text-slate-500 font-mono tracking-wide">PDQ LaserWash® 360 Plus — Dimensional Reference</span>
+              <span className="ml-2 text-xs text-slate-500 font-mono tracking-wide">PDQ LaserWash® 360 Plus - Dimensional Reference</span>
             </div>
             <div className="bg-[#081120] p-4 sm:p-6 overflow-x-auto">
-              <svg viewBox="0 0 800 230" xmlns="http://www.w3.org/2000/svg" className="w-full min-w-[480px]" role="img" aria-label="PDQ LaserWash 360 Plus dimensional diagram — side elevation and front section views">
+              <svg viewBox="0 0 800 230" xmlns="http://www.w3.org/2000/svg" className="w-full min-w-[480px]" role="img" aria-label="PDQ LaserWash 360 Plus dimensional diagram - side elevation and front section views">
                 <defs>
                   <marker id="pdq-a" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
                     <polygon points="0,0 6,3 0,6" fill="#64748b" />

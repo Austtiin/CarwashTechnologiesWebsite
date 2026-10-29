@@ -1,5 +1,5 @@
 ﻿import React from 'react';
-import Image from 'next/image';
+import HeroImage from '../../components/ui/HeroImage';
 import Link from 'next/link';
 import { Metadata } from 'next';
 import CallToActionNew from '../../components/ui/CallToActionNew';
@@ -176,7 +176,7 @@ export default function BelangerInstaKleenPage() {
               </p>
             </div>
             <div className="relative h-64 sm:h-80 lg:h-112 rounded-xl overflow-hidden shadow-2xl ring-1 ring-white/10">
-              <Image
+              <HeroImage
                 src="/imgs/BelangerTunnel.webp"
                 alt="Belanger insta-KLEEN drive-thru fleet car wash system"
                 fill
@@ -266,7 +266,7 @@ export default function BelangerInstaKleenPage() {
               <div className="w-2.5 h-2.5 rounded-full bg-slate-600" />
               <div className="w-2.5 h-2.5 rounded-full bg-slate-600" />
               <div className="w-2.5 h-2.5 rounded-full bg-slate-600" />
-              <span className="ml-2 text-xs text-slate-500 font-mono tracking-wide">Belanger insta-KLEEN™ — System Layout Reference</span>
+              <span className="ml-2 text-xs text-slate-500 font-mono tracking-wide">Belanger insta-KLEEN™ - System Layout Reference</span>
             </div>
             <div className="bg-[#081120] p-4 sm:p-6 overflow-x-auto">
               <svg viewBox="0 0 860 240" xmlns="http://www.w3.org/2000/svg" className="w-full min-w-[560px]" role="img" aria-label="Belanger insta-KLEEN drive-through system layout diagram showing component sequence and dimensions">

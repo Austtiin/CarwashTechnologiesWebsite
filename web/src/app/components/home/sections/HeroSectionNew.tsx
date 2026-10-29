@@ -3,7 +3,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+import HeroImage from '../../ui/HeroImage';
 
 const trustPoints = [
   'Design-Build Construction',
@@ -17,7 +17,7 @@ export default function HeroSectionNew() {
     <section className="relative overflow-hidden bg-slate-950">
       {/* Full-bleed background image */}
       <div className="pointer-events-none absolute inset-0">
-        <Image
+        <HeroImage
           src="/imgs/HomeHero.webp"
           alt="Professional car wash construction and equipment installation"
           fill
@@ -54,7 +54,7 @@ export default function HeroSectionNew() {
           {/* Subheadline */}
           <p className="text-base sm:text-lg text-slate-200 mb-7 max-w-xl leading-relaxed">
             From new carwash construction and equipment installation to chemical supply and
-            reliable automatic car wash repair &mdash; one partner for owners across MN, ND, SD, and WI.
+            reliable automatic car wash repair - one partner for owners across MN, ND, SD, and WI.
           </p>
 
           {/* Trust point chips */}

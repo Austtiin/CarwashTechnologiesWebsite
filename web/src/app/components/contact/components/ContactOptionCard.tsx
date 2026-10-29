@@ -52,7 +52,7 @@ export default function ContactOptionCard({ option, onSelect }: ContactOptionCar
     <button
       type="button"
       onClick={onSelect}
-      className="group cursor-pointer flex flex-col text-left bg-white border border-gray-200 hover:border-[#f0da11] transition-all duration-300 overflow-hidden shadow-sm hover:shadow-md hover:-translate-y-1"
+      className="group cursor-pointer flex flex-col text-left bg-white rounded-2xl border border-slate-200 hover:border-[#b8a500] transition-all duration-300 overflow-hidden shadow-sm hover:shadow-xl motion-safe:hover:-translate-y-1 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-slate-900"
     >
       {/* Yellow accent bar */}
       <div className="h-1 w-full bg-[#f0da11] group-hover:h-1.5 transition-all duration-300" />
@@ -76,13 +76,13 @@ export default function ContactOptionCard({ option, onSelect }: ContactOptionCar
         <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-[#c8b400] transition-colors duration-300">
           {option.title}
         </h3>
-        <p className="text-sm text-gray-500 mb-6 leading-relaxed">
-          {option.details}
+        <p className="text-sm text-gray-600 mb-6 leading-relaxed">
+          {option.description}
         </p>
 
         {/* Features */}
         <ul className="space-y-2 mb-7">
-          {option.features.map((feature, i) => (
+          {option.features.slice(0, 2).map((feature, i) => (
             <li key={i} className="flex items-start gap-2.5 text-sm text-gray-700">
               <svg className="w-4 h-4 text-[#c8b400] mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
@@ -95,7 +95,7 @@ export default function ContactOptionCard({ option, onSelect }: ContactOptionCar
         {/* CTA button */}
         <div className="mt-auto">
           <div className="w-full bg-gray-100 group-hover:bg-[#f0da11] text-gray-600 group-hover:text-gray-900 font-bold text-sm uppercase tracking-wider py-3.5 px-5 flex items-center justify-between transition-all duration-300">
-            <span>Contact Now</span>
+            <span>Choose this topic</span>
             <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>

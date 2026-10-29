@@ -2,7 +2,7 @@
 
 @import "tailwindcss";
 
-/* Explicit content sources — required for Tailwind v4 in CI/CD environments
+/* Explicit content sources - required for Tailwind v4 in CI/CD environments
    (Azure Static Web Apps / Oryx) where auto-detection fails to scan source files.
    Paths are relative to this file (web/src/app/globals.css → ../  =  web/src/). */
 @source "../**/*.{tsx,ts,jsx,js,mdx}";
@@ -196,7 +196,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  background-color: #f8fafc; /* slate-50 — matches section band tone */
+  background-color: #f8fafc; /* slate-50 - matches section band tone */
   color: #0f172a;
 }
 

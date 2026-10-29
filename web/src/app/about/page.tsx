@@ -9,7 +9,7 @@ import StatsBand from '../components/ui/StatsBand';
 export const metadata: Metadata = {
   title: 'About Carwash Technologies | Gas Station, Self-Service & Heavy Duty Carwash Builder',
   description: "Minnesota's trusted carwash builder, contractor, parts supplier, and equipment dealer specializing in gas station carwashes, self-service bays, heavy duty truck wash, express tunnels, and commercial systems. 50+ years combined expertise serving MN, ND, SD, and WI.",
-  keywords: 'about Carwash Technologies, carwash builder Minnesota, carwash contractor MN, gas station carwash builder, self service carwash parts supplier Minnesota, heavy duty carwash builder, express carwash contractor MN, car wash equipment dealer Minnesota, carwash parts supplier MN, carwash company Minnesota, Midwest carwash company, carwash experts Minnesota, touchless carwash dealer, commercial carwash builder, industrial carwash contractor, authorized Belanger dealer Minnesota, authorized PECO dealer MN, PDQ dealer Minnesota, Sonnys dealer MN, Vertech Labs partner Minnesota, ChemQuest partner MN, Simoniz authorized dealer Minnesota, Cat Pumps dealer MN, General Pump dealer Minnesota, AVW dealer Minnesota, worlds longest carwash builder, record setting carwash project, largest carwash tunnel builder Midwest',
+  keywords: 'about Carwash Technologies, carwash builder Minnesota, carwash contractor MN, gas station carwash builder, self service carwash parts supplier Minnesota, heavy duty carwash builder, express carwash contractor MN, car wash equipment dealer Minnesota, carwash parts supplier MN, carwash company Minnesota, Midwest carwash company, carwash experts Minnesota, touchless carwash dealer, commercial carwash builder, industrial carwash contractor, authorized Belanger dealer Minnesota, authorized PECO dealer MN, PDQ dealer Minnesota, Sonnys dealer MN, Vertech Labs partner Minnesota, ChemQuest partner MN, Simoniz authorized dealer Minnesota, Cat Pumps dealer MN, General Pump dealer Minnesota, AVW dealer Minnesota, Sota Shine One-Six-Nine, completed flagship carwash project',
   alternates: { canonical: '/about' },
   openGraph: {
     title: 'About Carwash Technologies | Gas Station, Self-Service & Heavy Duty Builder',
@@ -116,7 +116,7 @@ export default function AboutPage() {
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/imgs/projects/WLC/Aug-2026/20260810_090658.webp"
-                  alt="World's Longest Carwash interior under construction - Carwash Technologies flagship build"
+                  alt="Sota Shine One-Six-Nine interior during construction"
                   className="w-full h-auto object-cover"
                   loading="lazy"
                 />
@@ -124,8 +124,8 @@ export default function AboutPage() {
                   className="absolute bottom-0 inset-x-0 px-5 py-4"
                   style={{ background: 'linear-gradient(to top, #020617 60%, transparent)' }}
                 >
-                  <p className="text-white text-sm font-semibold">World&apos;s Longest Carwash</p>
-                  <p className="text-slate-400 text-xs mt-0.5">Now Under Construction · Our Flagship Build</p>
+                  <p className="text-white text-sm font-semibold">Sota Shine One-Six-Nine</p>
+                  <p className="text-slate-400 text-xs mt-0.5">Completed Flagship Build - Construction Archive</p>
                 </div>
               </div>
 
@@ -146,10 +146,9 @@ export default function AboutPage() {
                   facilities across Minnesota, North Dakota, South Dakota, and Wisconsin.
                 </p>
                 <p className="text-slate-300 text-base leading-relaxed mb-6">
-                  That depth of experience is now going into the most ambitious project we&apos;ve ever
-                  taken on: what we expect to be the World&apos;s Longest Carwash. A planned record-setting express tunnel currently
-                  under construction, designed and built entirely in-house by our team. It&apos;s the
-                  clearest proof of what 50+ years of doing this can deliver.
+                  That depth of experience helped deliver Sota Shine One-Six-Nine in Brooklyn Park,
+                  our completed flagship express tunnel project. It&apos;s a clear example of what
+                  50+ years of combined experience can deliver. Finished-site photos are coming soon.
                 </p>
                 <ul className="space-y-3 mb-8">
                   {[
@@ -171,7 +170,7 @@ export default function AboutPage() {
                   href="/projects/worlds-longest-carwash"
                   className="inline-flex items-center gap-2 text-sm font-bold text-white hover:text-[#f0da11] transition-colors group"
                 >
-                  See the build in progress
+                  Explore the completed project
                   <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
@@ -205,4 +204,3 @@ export default function AboutPage() {
       </div>
   );
 }
-

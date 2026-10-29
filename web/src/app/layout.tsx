@@ -30,6 +30,12 @@ const customFont = localFont({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.carwashtechnologies.com'),
+  icons: {
+    icon: [
+      { url: '/icon-96.png', type: 'image/png', sizes: '96x96' },
+    ],
+    apple: [{ url: '/apple-touch-icon.png', type: 'image/png', sizes: '180x180' }],
+  },
   title: {
     default: 'Carwash Technologies | Midwest Carwash Builder, Chemicals, Parts & Repair',
     template: '%s | Carwash Technologies',

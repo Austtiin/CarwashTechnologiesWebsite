@@ -3,13 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "optimize:images": "node ../scripts/optimize-site-images.js",
     "generate-pdfs": "node ../scripts/generate-pdf-list.js",
-    "prebuild": "npm run generate-pdfs",
+    "prebuild": "npm run generate-pdfs && npm run optimize:images",
     "dev": "npm run generate-pdfs && next dev --webpack",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test:api": "node ../scripts/test-api.js"
+    "test:api": "node ../scripts/test-api.js",
+    "test:site": "node ../scripts/test-site-updates.js"
   },
   "dependencies": {
     "@microsoft/clarity": "^1.0.2",
@@ -32,6 +34,7 @@
     "eslint": "^9",
     "eslint-config-next": "15.4.5",
     "playwright": "^1.61.0",
+    "sharp": "^0.35.5",
     "tailwindcss": "^4.1.11",
     "typescript": "^5"
   }

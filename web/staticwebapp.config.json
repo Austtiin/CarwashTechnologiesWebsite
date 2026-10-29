@@ -22,6 +22,12 @@
       }
     },
     {
+      "route": "/imgs/optimized/*",
+      "headers": {
+        "cache-control": "public, max-age=86400, stale-while-revalidate=604800"
+      }
+    },
+    {
       "route": "/PDFs/*",
       "headers": {
         "X-Robots-Tag": "noindex, follow"
@@ -33,6 +39,9 @@
     }
   ],
   "mimeTypes": {
+    ".webp": "image/webp",
+    ".ico": "image/x-icon",
+    ".png": "image/png",
     ".js": "text/javascript",
     ".css": "text/css",
     ".json": "application/json"

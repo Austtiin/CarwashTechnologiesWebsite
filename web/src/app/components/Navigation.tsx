@@ -21,7 +21,7 @@ const Navbar = () => {
     { name: 'Chemical Sales',        href: '/chemical-sales',     description: 'High-quality car wash chemicals' },
     { name: 'Safety Data Sheets',    href: '/sds',                description: 'Product safety information' },
     { name: 'Consulting Services',   href: '/consulting',         description: 'Expert guidance and planning' },
-    { name: "World's Longest Carwash", href: '/projects/worlds-longest-carwash', description: 'Flagship record-setting build' },
+    { name: 'Sota Shine One-Six-Nine', href: '/projects/worlds-longest-carwash', description: 'Completed flagship express tunnel' },
   ];
 
   // Close panel on route change (handles browser back/forward too)

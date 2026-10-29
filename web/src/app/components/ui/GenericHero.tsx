@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+import HeroImage from './HeroImage';
 
 interface HeroButton {
   text: string;
@@ -74,10 +74,10 @@ export default function GenericHero({
   return (
     <section className={`relative ${bgClass} ${sectionSpacing} overflow-hidden`}>
       {/* Full-bleed background image with directional scrim */}
-      {hasImage && (
+      {backgroundImage && (
         <div className="pointer-events-none absolute inset-0">
-          <Image
-            src={backgroundImage as string}
+          <HeroImage
+            src={backgroundImage}
             alt=""
             fill
             priority
